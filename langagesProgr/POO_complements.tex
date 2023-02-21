@@ -1,0 +1,667 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=20mm,bottom=20mm,left=20mm,right=20mm,heightrounded]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
+\KOMAoption{captions}{tablesignature}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table des matières}
+\else
+  \newcommand\contentsname{Table des matières}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Liste des Figures}
+\else
+  \newcommand\listfigurename{Liste des Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Liste des Tables}
+\else
+  \newcommand\listtablename{Liste des Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tableau}
+\else
+  \newcommand\tablename{Tableau}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{Liste des Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{french}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Programmation orientée objets (Compléments)},
+  pdflang={fr},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Programmation orientée objets (Compléments)}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{S1 - Langages et programmation}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced, breakable, sharp corners, boxrule=0pt, frame hidden]}{\end{tcolorbox}}\fi
+
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, bottomtitle=1mm, opacitybacktitle=0.6, breakable, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, rightrule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Avertissement}, coltitle=black]
+
+Les compléments présentés ici sont hors programme. Ils peuvent néanmoins
+apporter une connaissance et une compréhension plus fine de la POO et
+être utiles dans le cadre du travail sur les projets.
+
+\end{tcolorbox}
+
+\hypertarget{principes-et-duxe9finitions}{%
+\subsection{Principes et
+définitions}\label{principes-et-duxe9finitions}}
+
+\begin{description}
+\tightlist
+\item[\textbf{Objet}]
+Un \textbf{objet} est une donnée manipulable par un programme : il
+s'agit d'un conteneur pour une \emph{valeur} ou un \emph{état} auquel
+est associé un \emph{ensemble d'opérations}. Cet objet est associé à un
+\textbf{type}, défini comme l'ensemble des valeurs possibles, cette
+liste d'opérations, ainsi que leur codage (binaire).
+\end{description}
+
+Un objet est identifié dans un programme par un \emph{nom} ou une
+\emph{notation littérale}, mais peut parfois être \emph{anonyme} (comme
+les variables temporaires ou les composantes d'un tableau).
+
+Et pour une définition d'un langage orienté objet, l'idée première que
+l'on retrouve dans la définition de wikipédia offre un cadre intéressant
+: un langage objet doit permettre l'analyse et le développement logiciel
+fondés sur des \emph{relations entre objets}.
+
+Concrètement, un objet est une structure de données qui répond à un
+ensemble de messages. Cette structure de données définit son état tandis
+que l'ensemble des messages qu'il comprend décrit son comportement :
+
+\begin{itemize}
+\tightlist
+\item
+  les données, ou champs, qui décrivent sa structure interne sont
+  appelées ses \textbf{attributs} ;
+\item
+  l'ensemble des messages forme ce que l'on appelle l'interface de
+  l'objet ; c'est seulement au travers de celle-ci que les objets
+  interagissent entre eux. La réponse à la réception d'un message par un
+  objet est appelée une \textbf{méthode} (méthode de mise en œuvre du
+  message) ; elle décrit quelle réponse doit être donnée au message.
+\end{itemize}
+
+Les attributs et les méthodes constituent les \textbf{membres} d'un
+objet. Un objet possède un \textbf{type}.
+
+En Python, un objet la création d'un objet se fait en utilisant une
+\textbf{classe} : un objet est alors une instance de sa classe. La
+\textbf{classe} est un \emph{type}, un ensemble d'objets partageant les
+mêmes propriétés concrétisées par une liste de membres.
+
+\begin{description}
+\tightlist
+\item[\textbf{Langage orienté objet}]
+Un \textbf{langage orienté objet} est un langage de programmation qui
+comporte de manière native les éléments suivants :
+l'\emph{encapsulation}, l'\emph{héritage}, le \emph{polymorphisme} et la
+\emph{programmation générique}.
+\end{description}
+
+\hypertarget{les-principes-cluxe9s-de-la-poo}{%
+\subsection{Les principes clés de la
+POO}\label{les-principes-cluxe9s-de-la-poo}}
+
+\hypertarget{lencapsulation}{%
+\subsubsection{L'encapsulation}\label{lencapsulation}}
+
+Certains membres (ou plus exactement leur représentation informatique)
+sont cachés : c'est le principe
+d'\textbf{\href{https://fr.wikipedia.org/wiki/Encapsulation_(programmation)}{encapsulation}}.
+Ainsi, le programme peut modifier la structure interne des objets ou
+leurs méthodes associées sans avoir d'impact sur les utilisateurs de
+l'objet. C'est un des principes fondamentaux notamment pour la
+robustesse du code.
+
+En particulier, les bonnes pratiques de POO recommandent de na pas
+permettre un accès direct aux attributs d'un objet à l'extérieur de
+celui-ci. On appelle \textbf{interface} d'un objet l'ensemble de ses
+membres qui sont accessibles à l'extérieur de celui-ci. L'interface ne
+devrait donc contenir que des méthodes. Pas forcément toutes, certaines
+méthodes (comme \texttt{\_\_init\_\_}) restent privées.
+
+Contrairement à d'autres langages, Python offre une totale liberté de
+modification sur les membres d'un objet. C'est au programmeur de rester
+vigilant. Il existe néanmoins des conventions permettant d'identifier
+les membres de l'interface des autres membres d'un objet.
+
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, bottomtitle=1mm, opacitybacktitle=0.6, breakable, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, rightrule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Conventions de nommage en Python}, coltitle=black]
+
+\begin{itemize}
+\tightlist
+\item
+  un nom d'attribut commençant par un double underscore \texttt{\_\_}
+  désigne un attribut privé.
+\item
+  une méthode dont le nom est de la forme \texttt{\_\_nom\_\_} désigne
+  une méthode privée.
+\end{itemize}
+
+\end{tcolorbox}
+
+Mais alors si les attributs doivent rester privés, comment y accéder, et
+comment les modifier ?
+
+Il convient pour cela, en toute rigueur, de définir des méthodes ad-hoc
+: une méthode qui permet d'accéder à un attribut est un \texttt{getter},
+une période qui permet de changer la valeur d'un attribut est un
+\texttt{setter}.
+
+Voici par exemple une nouvelle définition de la classe ``Rectangle''
+tenant compte des remarques précédentes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Rectangle:}
+    \CommentTok{"""Représente un rectangle"""}
+
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, largeur}\OperatorTok{=}\DecValTok{2}\NormalTok{, hauteur}\OperatorTok{=}\DecValTok{3}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{=}\NormalTok{ largeur}
+        \VariableTok{self}\NormalTok{.\_\_hauteur }\OperatorTok{=}\NormalTok{ hauteur}
+
+    \KeywordTok{def}\NormalTok{ get\_largeur(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_\_largeur}
+
+    \KeywordTok{def}\NormalTok{ set\_largeur(}\VariableTok{self}\NormalTok{, largeur):}
+        \VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{=}\NormalTok{ largeur}
+
+    \KeywordTok{def}\NormalTok{ get\_hauteur(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_\_hauteur}
+
+    \KeywordTok{def}\NormalTok{ set\_hauteur(}\VariableTok{self}\NormalTok{, hauteur):}
+        \VariableTok{self}\NormalTok{.\_\_hauteur }\OperatorTok{=}\NormalTok{ hauteur}
+
+    \KeywordTok{def}\NormalTok{ perimetre(}\VariableTok{self}\NormalTok{):}
+        \CommentTok{"""Retourne le périmètre"""}
+        \ControlFlowTok{return} \DecValTok{2} \OperatorTok{*}\NormalTok{ (}\VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{+} \VariableTok{self}\NormalTok{.\_\_hauteur)}
+
+    \KeywordTok{def}\NormalTok{ aire(}\VariableTok{self}\NormalTok{):}
+        \CommentTok{"""Retourne l\textquotesingle{}aire"""}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{*} \VariableTok{self}\NormalTok{.\_\_hauteur}
+\end{Highlighting}
+\end{Shaded}
+
+Utilisation :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec }\OperatorTok{=}\NormalTok{ Rectangle(}\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec.\_\_hauteur}
+\PreprocessorTok{AttributeError}\NormalTok{: }\StringTok{\textquotesingle{}Rectangle\textquotesingle{}} \BuiltInTok{object}\NormalTok{ has no attribute }\StringTok{\textquotesingle{}\_\_hauteur\textquotesingle{}}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec.get\_hauteur()}
+\DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+Nous voyons que l'accès direct à l'attribut n'est plus possible.
+
+Cela n'est pas très pratique et change nos habitudes : nous aimerions en
+effet pouvoir accéder à la valeur d'un attribut en utilisant la notation
+pointée. Deux remarques à ces objections. D'une part, ces règles de
+programmation ne sont pas là pour nous embêter ! Il s'agit de sécuriser
+notre code : la définition d'un \texttt{setter} par exemple, peut
+permettre de vérifier la validité des arguments entrés et afficher un
+message d'erreur si besoin (par exemple si on appelle
+\texttt{set\_hauteur(-10}). Deuxième remarque : Python propose une
+fonctionnalité avancée, appelée \textbf{décorateurs} et qui permet de
+retrouver, en apparence, l'accès direct aux attributs. Voici une
+nouvelle version de la classe ``Rectangle'' avec l'utilisation du
+décorateur \texttt{@property} et la redéfinition des \texttt{getter} et
+\texttt{setter} (qui doivent maintenant porter le même nom que le pseudo
+argument). On a introduit dans les \texttt{setter} des tests de validité
+des données.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Rectangle:}
+    \CommentTok{"""Représente un rectangle"""}
+
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, largeur}\OperatorTok{=}\DecValTok{2}\NormalTok{, hauteur}\OperatorTok{=}\DecValTok{3}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{=}\NormalTok{ largeur}
+        \VariableTok{self}\NormalTok{.\_\_hauteur }\OperatorTok{=}\NormalTok{ hauteur}
+
+    \AttributeTok{@property}
+    \KeywordTok{def}\NormalTok{ largeur(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_\_largeur}
+
+    \AttributeTok{@largeur.setter}
+    \KeywordTok{def}\NormalTok{ largeur(}\VariableTok{self}\NormalTok{, largeur):}
+        \ControlFlowTok{if} \BuiltInTok{isinstance}\NormalTok{(largeur, (}\BuiltInTok{int}\NormalTok{, }\BuiltInTok{float}\NormalTok{)) }\KeywordTok{and}\NormalTok{ largeur }\OperatorTok{\textgreater{}=} \DecValTok{0}\NormalTok{:}
+            \VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{=}\NormalTok{ largeur}
+        \ControlFlowTok{else}\NormalTok{:}
+            \BuiltInTok{print}\NormalTok{(}\StringTok{"Argument invalide, largeur inchangée !"}\NormalTok{)}
+
+    \AttributeTok{@property}
+    \KeywordTok{def}\NormalTok{ hauteur(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_\_hauteur}
+
+    \AttributeTok{@hauteur.setter}
+    \KeywordTok{def}\NormalTok{ hauteur(}\VariableTok{self}\NormalTok{, hauteur):}
+        \ControlFlowTok{if} \BuiltInTok{isinstance}\NormalTok{(hauteur, (}\BuiltInTok{int}\NormalTok{, }\BuiltInTok{float}\NormalTok{)) }\KeywordTok{and}\NormalTok{ hauteur }\OperatorTok{\textgreater{}=} \DecValTok{0}\NormalTok{:}
+            \VariableTok{self}\NormalTok{.\_\_hauteur }\OperatorTok{=}\NormalTok{ hauteur}
+        \ControlFlowTok{else}\NormalTok{:}
+            \BuiltInTok{print}\NormalTok{(}\StringTok{"Argument invalide, hauteur inchangée !"}\NormalTok{)}
+
+    \KeywordTok{def}\NormalTok{ perimetre(}\VariableTok{self}\NormalTok{):}
+        \CommentTok{"""Retourne le périmètre"""}
+        \ControlFlowTok{return} \DecValTok{2} \OperatorTok{*}\NormalTok{ (}\VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{+} \VariableTok{self}\NormalTok{.\_\_hauteur)}
+
+    \KeywordTok{def}\NormalTok{ aire(}\VariableTok{self}\NormalTok{):}
+        \CommentTok{"""Retourne l\textquotesingle{}aire"""}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{*} \VariableTok{self}\NormalTok{.\_\_hauteur}
+
+
+\NormalTok{rec }\OperatorTok{=}\NormalTok{ Rectangle(}\DecValTok{10}\NormalTok{, }\DecValTok{25}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(rec.largeur)}
+\NormalTok{rec.largeur }\OperatorTok{=} \OperatorTok{{-}}\DecValTok{15}
+\BuiltInTok{print}\NormalTok{(rec.largeur)}
+\end{Highlighting}
+\end{Shaded}
+
+Sortie en console :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{10}
+\NormalTok{Argument invalide, largeur inchangée }\OperatorTok{!}
+\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{lhuxe9ritage}{%
+\subsubsection{L'héritage}\label{lhuxe9ritage}}
+
+L'\textbf{héritage} est une relation asymétrique entre deux classes :
+l'une est la \textbf{classe mère} (aussi nommée classe parente,
+superclasse, classe de base), l'autre la \textbf{classe-fille}.
+L'héritage permet une économie d'écriture par la réutilisation
+automatique, lors de la définition de la classe-fille, de tous les
+membres et autres éléments définis dans la classe mère. Ainsi, les
+objets de la classe-fille \emph{héritent de toutes les propriétés} de
+leur classe mère.
+
+Par exemple, nous pouvons définir une classe \texttt{carre}, fille de la
+classe \texttt{Rectangle}. Les attributs et les méthodes définis pour la
+classe \texttt{Rectangle} existent alors automatiquement aussi pour la
+classe \texttt{carre}.
+
+Voici la syntaxe Python pour définir une classe fille :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Carre(Rectangle):}
+
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, cote}\OperatorTok{=}\DecValTok{2}\NormalTok{):}
+\NormalTok{        Rectangle.}\FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, cote, cote)}
+\end{Highlighting}
+\end{Shaded}
+
+Utilisation :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ car }\OperatorTok{=}\NormalTok{ Carre(}\DecValTok{5}\NormalTok{)}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ car.perimetre()}
+\DecValTok{20}
+\end{Highlighting}
+\end{Shaded}
+
+La méthode \texttt{perimetre} est héritée de la classe mère
+\texttt{Rectangle}.
+
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, bottomtitle=1mm, opacitybacktitle=0.6, breakable, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, rightrule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Héritage et initialiseur}, coltitle=black]
+
+La méthode initialiseur de la classe \texttt{Carre} fait appel à la
+méthode initialiseur de sa classe parente par la commande
+\texttt{Rectangle.\_\_init\_\_(self,\ cote,\ cote)}. Cet appel est
+nécessaire afin que les membres de la classe \texttt{Carre} soient
+définis de la même manière que les membres de la classe
+\texttt{Rectangle}. La méthode \texttt{\_\_init\_\_} est un initialiseur
+d'instance : elle n'est pas invoquée automatiquement lorsqu'on instancie
+des objets d'une classe fille.
+
+\end{tcolorbox}
+
+\hypertarget{le-polymorphisme-et-la-reduxe9finition}{%
+\subsubsection{Le polymorphisme et la
+redéfinition}\label{le-polymorphisme-et-la-reduxe9finition}}
+
+La \textbf{redéfinition des méthodes} permet à un objet de raffiner une
+méthode définie avec la même en-tête dans la classe mère. Une même
+méthode pourra ainsi avoir un comportement différent selon qu'elle
+s'applique à la classe mère ou à la classe fille : on parle de
+\textbf{polymorphisme d'héritage}.
+
+Par exemple, nous pouvons redéfinir la méthode \texttt{aire} de la
+classe \texttt{Carre} comme ci-dessous : appliquée à un objet
+\texttt{Carre}, la nouvelle définition sera utilisée à la place de la
+méthode héritée.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Carre(Rectangle):}
+
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, cote}\OperatorTok{=}\DecValTok{2}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{=}\NormalTok{ cote}
+        \VariableTok{self}\NormalTok{.\_\_hauteur }\OperatorTok{=}\NormalTok{ cote}
+    
+    \KeywordTok{def}\NormalTok{ aire(}\VariableTok{self}\NormalTok{):}
+        \CommentTok{"""Retourne l\textquotesingle{}aire"""}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_\_largeur }\OperatorTok{**} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{les-muxe9thodes-spuxe9ciales}{%
+\subsection{Les méthodes spéciales}\label{les-muxe9thodes-spuxe9ciales}}
+
+Un bon exemple de polymorphisme est fourni par la redéfinition des
+méthodes spéciales.
+
+Nous savons que la fonction \texttt{dir()} renvoie tous les membres d'un
+objet.
+
+Appliquons cette commande à notre objet \texttt{rec}, instance de la
+classe \texttt{Rectangle} :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{dir}\NormalTok{(rec)}
+\NormalTok{[}\StringTok{\textquotesingle{}\_\_class\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_delattr\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_dict\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_dir\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_doc\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_eq\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_format\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_ge\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_getattribute\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_gt\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_hash\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_init\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_init\_subclass\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_le\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_lt\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_module\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_ne\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_new\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_reduce\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_reduce\_ex\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_repr\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_setattr\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_sizeof\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_str\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_subclasshook\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_\_weakref\_\_\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_hauteur\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}\_largeur\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}aire\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}hauteur\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}largeur\textquotesingle{}}\NormalTok{,}
+ \StringTok{\textquotesingle{}perimetre\textquotesingle{}}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Nous reconnaissons en fin de liste les attributs et méthodes que nous
+avons définis, mais nous découvrons l'existence d'un grand nombre de
+\textbf{méthodes spéciales} privées (puisque leur nom est entouré de
+\texttt{\_\_}) qui sont en fait \textbf{héritées} d'une classe
+\texttt{Object} parente de toutes les classes. Parmi celles-ci, nous
+avons déjà rencontré \texttt{\_\_init\_\_}, la méthode initialiseur.
+
+Les curieux pourront rechercher le rôle de chacune de ces méthodes
+spéciales. Le voici pour certaines d'entre elles :
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule()
+Méthode spéciale & Usage \\
+\midrule()
+\endhead
+\textbf{add} & + \\
+\textbf{mul} & * \\
+\textbf{sub} & - \\
+\textbf{eq} & == \\
+\textbf{ne} & != \\
+\textbf{lt} & \textless{} \\
+\textbf{ge} & \textless= \\
+\textbf{gt} & \textgreater{} \\
+\textbf{ge} & \textgreater= \\
+\textbf{repr} & affichage dans la console
+\textgreater\textgreater\textgreater{} obj \\
+\textbf{str} & str(obj), print(obj) \\
+\bottomrule()
+\end{longtable}
+
+La redéfinition de la méthode \texttt{\_\_add\_\_} permettrait par
+exemple de donner un sens à l'utilisation du symbole \texttt{+} entre
+deux objets (instruction du type \texttt{rec1\ +\ rec\ 2}).
+
+Dans notre exemple, nous allons redéfinir la méthode
+\texttt{\_\_str\_\_} pour spécifier ce qui doit s'afficher quand
+l'instruction \texttt{print(rec)} est exécutée.
+
+Pour l'instant, on obtient :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{print}\NormalTok{(rec)}
+\OperatorTok{\textless{}}\NormalTok{\_\_main\_\_.Rectangle }\BuiltInTok{object}\NormalTok{ at }\BaseNTok{0x000002386735C730}\OperatorTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+Ajoutons la méthode ci-dessous \textbf{dans la classe
+\texttt{Rectangle}} :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def} \FunctionTok{\_\_str\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+    \ControlFlowTok{return} \SpecialStringTok{f"Rectangle de largeur }\SpecialCharTok{\{}\VariableTok{self}\SpecialCharTok{.}\NormalTok{\_\_largeur}\SpecialCharTok{\}}\SpecialStringTok{ et de hauteur }\SpecialCharTok{\{}\VariableTok{self}\SpecialCharTok{.}\NormalTok{\_\_hauteur}\SpecialCharTok{\}}\SpecialStringTok{."}
+\end{Highlighting}
+\end{Shaded}
+
+On obtient maintenant :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{print}\NormalTok{(rec)}
+\NormalTok{Rectangle de largeur }\DecValTok{10}\NormalTok{ et de hauteur }\FloatTok{25.}
+\end{Highlighting}
+\end{Shaded}
+
+
+
+
+\end{document}

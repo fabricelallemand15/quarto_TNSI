@@ -1,0 +1,12 @@
+---
+title: S2-Structures de données
+image: duck-3217049_640.jpg
+listing: 
+    type: grid
+    contents: 
+        - "interface/index.qmd"
+        - "POO/index.qmd"
+        - "filepiledico/index.qmd"
+        - "arbres/index.qmd"
+        - "graphes/index.qmd"
+---

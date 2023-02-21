@@ -1,0 +1,9 @@
+---
+title: "Spécialité NSI - Terminale"
+---
+
+# Bienvenue !
+
+Ce site est destiné à regrouper les cours et les exercices concernant l'enseignement de spécialité NSI de terminale du lycée Emile Duclaux d'Aurillac.
+
+Lien vers l'ENT du lycée : [https://cas.ent.auvergnerhonealpes.fr/login](https://cas.ent.auvergnerhonealpes.fr/login)

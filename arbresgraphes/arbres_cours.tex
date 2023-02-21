@@ -1,0 +1,625 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=20mm,bottom=20mm,left=20mm,right=20mm,heightrounded]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
+\KOMAoption{captions}{tablesignature}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table des matières}
+\else
+  \newcommand\contentsname{Table des matières}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Liste des Figures}
+\else
+  \newcommand\listfigurename{Liste des Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Liste des Tables}
+\else
+  \newcommand\listtablename{Liste des Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tableau}
+\else
+  \newcommand\tablename{Tableau}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{Liste des Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{french}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Arbres (Cours)},
+  pdflang={fr},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Arbres (Cours)}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{S4 - Arbres et graphes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, sharp corners, boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, frame hidden]}{\end{tcolorbox}}\fi
+
+\hypertarget{introduction}{%
+\subsection{1. Introduction}\label{introduction}}
+
+\hypertarget{vocabulaire}{%
+\subsubsection{1.1. Vocabulaire}\label{vocabulaire}}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, toptitle=1mm]
+
+En informatique, un arbre est une structure de données qui peut se
+représenter sous forme d'une \textbf{hiérarchie} dont chaque élément est
+appelé \textbf{nœud}, le nœud initial étant appelé \textbf{racine}.
+
+\end{tcolorbox}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{arbre.png}
+
+}
+
+\end{figure}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Vocabulaire}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, toptitle=1mm]
+
+\begin{itemize}
+\tightlist
+\item
+  Chaque nœud a exactement un nœud \textbf{père}, sauf le nœud
+  \textbf{racine} (situé en haut) qui n'a pas de père.
+\item
+  Un nœud peut avoir une nombre quelconque de \textbf{fils}.
+\item
+  Les nœuds qui n'ont pas de fils sont appelés des \textbf{feuilles}
+  (situées aux extrémités des branches !).
+\item
+  Les nœuds possèdent une valeur, ou \textbf{clef}, ou encore
+  \textbf{étiquette}.
+\end{itemize}
+
+\end{tcolorbox}
+
+Par exemple, dans l'arbre représenté ci-dessus :
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-caution-color!10!white, toprule=.15mm, toptitle=1mm]
+
+\begin{itemize}
+\tightlist
+\item
+  La racine possède l'étiquette \textbf{D}.
+\item
+  Le nœud père \textbf{D} a trois fils \textbf{U}, \textbf{L} et
+  \textbf{A}.
+\item
+  Le nœud \textbf{V} a pour père le nœud \textbf{A}.
+\item
+  Les nœuds \textbf{C}, \textbf{L} et \textbf{X} sont des feuilles.
+\end{itemize}
+
+\end{tcolorbox}
+
+\newpage{}
+
+\hypertarget{exemples}{%
+\subsubsection{1.2. Exemples}\label{exemples}}
+
+Voici quelques exemples de situations dans lesquelles une structure de
+données arborescente est utile.
+
+\hypertarget{larborescence-dun-disque-dur}{%
+\paragraph{L'arborescence d'un disque
+dur}\label{larborescence-dun-disque-dur}}
+
+Déjà rencontrée dans le chapitre sur les systèmes d'exploitation en
+première, une arborescence de dossiers dans un disque dur peut être
+modélisée par un arbre.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{arborescence.png}
+
+}
+
+\end{figure}
+
+\hypertarget{le-dom-dune-page-web}{%
+\paragraph{Le DOM d'une page web}\label{le-dom-dune-page-web}}
+
+LE DOM (Document Object Model) est une interface de programmation pour
+les pages web dans laquelle une page HTML est modélisée sous la forme
+d'un arbre.
+
+Par exemple, le code HTML ci-dessous sera modélisé par l'arbre
+en-dessous (source :
+\href{https://www.w3.org/TR/WD-DOM/introduction.html}{w3.org}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}TABLE\textgreater{}}
+    \KeywordTok{\textless{}ROWS\textgreater{}} 
+      \KeywordTok{\textless{}TR\textgreater{}} 
+        \KeywordTok{\textless{}TD\textgreater{}}\NormalTok{Shady Grove}\KeywordTok{\textless{}/TD\textgreater{}}
+        \KeywordTok{\textless{}TD\textgreater{}}\NormalTok{Aeolian}\KeywordTok{\textless{}/TD\textgreater{}} 
+      \KeywordTok{\textless{}/TR\textgreater{}} 
+      \KeywordTok{\textless{}TR\textgreater{}}
+        \KeywordTok{\textless{}TD\textgreater{}}\NormalTok{Over the River, Charlie}\KeywordTok{\textless{}/TD\textgreater{}}
+        \KeywordTok{\textless{}TD\textgreater{}}\NormalTok{Dorian}\KeywordTok{\textless{}/TD\textgreater{}} 
+      \KeywordTok{\textless{}/TR\textgreater{}} 
+    \KeywordTok{\textless{}/ROWS\textgreater{}}
+\KeywordTok{\textless{}/TABLE\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{DOM.png}
+
+}
+
+\end{figure}
+
+\hypertarget{un-arbre-guxe9nuxe9alogique}{%
+\paragraph{Un arbre généalogique}\label{un-arbre-guxe9nuxe9alogique}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{arbre_genea.png}
+
+}
+
+\end{figure}
+
+\hypertarget{caractuxe9ristiques-dun-arbre}{%
+\subsubsection{1.3. Caractéristiques d'un
+arbre}\label{caractuxe9ristiques-dun-arbre}}
+
+Différents paramètres numériques peuvent être définis concernant un
+arbre.
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définitions}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, toptitle=1mm]
+
+\begin{itemize}
+\tightlist
+\item
+  La \textbf{taille} d'un arbre est son nombre total de nœuds.
+\item
+  La \textbf{profondeur} d'un nœud est le nombre de nœuds de la branche
+  allant de la racine à ce nœud, en comptant les extrémités.
+\item
+  La \textbf{hauteur} d'un arbre est la profondeur de son nœud le plus
+  profond. Par convention, si l'arbre est vide, sa hauteur vaut 0, si
+  l'arbre n'est composé que d'un nœud racine, sa hauteur vaut 1.
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-caution-color!10!white, toprule=.15mm, toptitle=1mm]
+
+Considérons l'arbre ci-dessous :
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{arbre.png}
+
+}
+
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  La taille de cet arbre est égale à 7.
+\item
+  La profondeur du nœud \textbf{C} est égale à 3, celle de \textbf{X}
+  est égale à 4.
+\item
+  La hauteur de cet arbre est égale à 4 : \textbf{X} est le nœud le plus
+  profond.
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{arbres-binaires}{%
+\subsection{2. Arbres binaires}\label{arbres-binaires}}
+
+\hypertarget{duxe9finition-1}{%
+\subsubsection{2.1. Définition}\label{duxe9finition-1}}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, toptitle=1mm]
+
+Un \textbf{arbre binaire} est un arbre dans lequel chaque nœud possède
+\textbf{au plus} deux fils au niveau inférieur, appelés \emph{gauche} et
+\emph{droite}.
+
+\end{tcolorbox}
+
+L'arbre donné en exemple ci-dessus n'est pas un arbre binaire car le
+nœud \textbf{D} possède 3 fils.
+
+L'arbre ci-dessous est un arbre binaire :
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{arbre_bin.png}
+
+}
+
+\end{figure}
+
+\hypertarget{sous-arbres}{%
+\subsubsection{2.2. Sous-arbres}\label{sous-arbres}}
+
+Chaque nœud n'ayant que deux fils (au maximum), nous pouvons définir un
+sous-arbre gauche et un sous-arbre droit qui sont tous les deux
+également des arbres binaires (éventuellement vides).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{arbre_bin2.png}
+
+}
+
+\end{figure}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-caution-color!10!white, toprule=.15mm, toptitle=1mm]
+
+Pour l'arbre représenté ci-dessous, nous avons mis en évidence le
+sous-arbre gauche et le sous-arbre droit du nœud racine \textbf{C}.
+
+Le nœud \textbf{Q} admet comme sous-arbre gauche le nœud \textbf{H} et
+comme sous-arbre droit, l'arbre vide.
+
+\end{tcolorbox}
+
+Cette notion de sous arbre permet de mettre en évidence la
+\textbf{structure récursive} d'un arbre binaire : un arbre binaire est
+un arbre dans lequel chaque nœud possède un arbre fils gauche et un
+arbre fils droit qui sont tous deux des arbres binaires.
+
+\hypertarget{hauteur-dun-arbre-binaire}{%
+\subsubsection{2.3. Hauteur d'un arbre
+binaire}\label{hauteur-dun-arbre-binaire}}
+
+Nous avons défini plus haut les notions de \textbf{taille} et de
+\textbf{hauteur} d'un arbre.
+
+Notons ici \(n\) la taille d'un arbre binaire et \(h\) sa hauteur. Ces
+deux entiers ne sont pas indépendants l'un de l'autre.
+
+Un cas extrême est le cas de l'arbre filiforme dans lequel chaque nœud
+n'a qu'un fils. La figure ci-dessous est réalisée avec \(n=7\).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.25\textwidth,height=\textheight]{arbre_fili.png}
+
+}
+
+\end{figure}
+
+Dans ce cas, nous avons \(n=h\) : la hauteur de l'arbre est égale au
+nombre de nœuds de l'arbre.
+
+Un autre cas ``extrême'' est le cas d'un \textbf{arbre complet} : il
+s'agit d'un arbre binaire dans lequel tous les nœuds (sauf les feuilles)
+ont exactement deux fils et toutes les feuilles ont la même profondeur.
+La figure ci-dessous représente un arbre complet à 7 nœuds.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{arbre_complet.png}
+
+}
+
+\end{figure}
+
+Dans un tel arbre, le nombre de nœuds est \textbf{doublé à chaque
+niveau}. Si la hauteur est \(h\), le nombre total de nœuds est donc égal
+à :
+
+\[n=1+2^1+2^2+2^3+\ldots+2^{h-1}\]
+
+(on numérote les niveaux de \(0\) à \(h-1\))
+
+On obtient donc le résultat suivant :
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Lien entre hauteur et taille d'un arbre binaire complet}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, toptitle=1mm]
+
+Soit un arbre binaire complet de taille \(n\) et de hauteur \(h\).
+
+On a alors :
+
+\[n=2^h-1\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Preuve}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-caution-color!10!white, toprule=.15mm, toptitle=1mm]
+
+Nous avons vu que \(n=1+2^1+2^2+2^3+\ldots+2^{h-1}\). Cette somme est la
+somme des premiers termes d'une suite géométrique de raison 2.
+
+On peut donc utiliser la formule de calcul vue en première en
+Mathématiques :
+
+\[1+2^1+2^2+2^3+\ldots+2^{h-1} = \frac{2^h-1}{2-1}=2^h-1\]
+
+Pour ceux qui n'auraient jamais vu cette formule, sa preuve n'est pas
+difficile : il suffit de calculer le produit
+\((2-1)(1+2^1+2^2+2^3+\ldots+2^{h-1})\) en développant :
+
+\[(2-1)(1+2^1+2^2+2^3+\ldots+2^{h-1})= 2^1+2^2+2^3+\ldots+2^{h} -1-2^1-2^2-2^3-\ldots-2^{h-1}\]
+
+Tous les termes s'annulent sauf \(2^{h}\) et \(-1\), d'où le résultat.
+
+\end{tcolorbox}
+
+Tout arbre étant situé entre ces deux cas extrêmes, nous pouvons écrire
+un encadrement du nombre de nœuds \(n\) en fonction de la hauteur \(h\),
+valable pour tout arbre binaire :
+
+\[h\leqslant n\leqslant 2^h-1\]
+
+À partir de cet encadrement de \(n\), on peut déduire un encadrement de
+\(h\). Nous avons déjà de façon évidente \(h\leqslant n\). La seconde
+inégalité \(n\leqslant 2^h-1\) est équivalente à \(n+1\leqslant 2^h\).
+
+Pour isoler \(h\) dans cette inégalité, nous avons besoin de la fonction
+\textbf{logarithme binaire}. Le logarithme binaire d'un entier positif
+est son exposant quand on l'écrit sous la forme d'une puissance de 2.
+Par exemple \(\log_2(8)=3\) car \(2^3=8\) et \(\log_2(2^h)=h\). Cette
+fonction \(\log_2\) étant intuitivement croissante, nous obtenons, en
+l'appliquant à l'inégalité \(n+1\leqslant 2^h\) :
+\(\log_2(n+1)\leqslant h\).
+
+Nous avons finalement l'encadrement suivant :
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Encadrement de la hauteur d'un arbre binaire}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, toptitle=1mm]
+
+Soit un arbre binaire de taille \(n\) et de hauteur \(h\).
+
+On a alors :
+
+\[\log_2(n+1)\leqslant h\leqslant n\]
+
+\end{tcolorbox}
+
+Cet encadrement nous sera utile lors du calcul du coût d'exécution des
+algorithmes sur les arbres.
+
+\hypertarget{arbres-binaires-de-recherche}{%
+\subsection{3. Arbres binaires de
+recherche}\label{arbres-binaires-de-recherche}}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, toptitle=1mm]
+
+Un \textbf{arbre binaire de recherche} (ABR) est un arbre binaire dont
+les clefs des nœuds (leur valeur) vérifient les propriétés suivantes :
+
+\begin{itemize}
+\tightlist
+\item
+  la clef d'un nœud est \textbf{supérieure} à celle de chaque nœud de
+  son \textbf{sous-arbre gauche}.
+\item
+  la clef d'un nœud est \textbf{inférieure} à celle du chaque nœud de
+  son \textbf{sous-arbre droit}.
+\end{itemize}
+
+\end{tcolorbox}
+
+Cette définition n'a de sens que dans le cas où les clefs des nœuds sont
+toujours \textbf{comparables} entre elles. Dans la pratique, nous
+travaillerons toujours avec des clefs numériques ou alphanumériques
+(ordre alphabétique).
+
+Nous supposerons toujours que toutes les clefs sont
+\textbf{différentes}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\textwidth,height=\textheight]{ABR.png}
+
+}
+
+\end{figure}
+
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remarque}, coltitle=black, left=2mm, breakable, opacityback=0, bottomtitle=1mm, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, toptitle=1mm]
+
+Dans un ABR, pour un nœud donné, \textbf{tous} les nœuds de son
+sous-arbre gauche ont des clefs inférieures et \textbf{tous} les nœuds
+de son sous-arbre droit ont des clefs supérieures.
+
+\end{tcolorbox}
+
+
+
+\end{document}

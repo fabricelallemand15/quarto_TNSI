@@ -1,0 +1,112 @@
+project:
+  type: website
+
+website:
+  title: "NSI - Terminale"
+  favicon: favicon.ico
+  page-navigation: true
+  site-url: https://flallemand.fr/ESMaths
+  repo-url: https://github.com/fabricelallemand15/site_ESMaths
+  repo-actions: [edit, issue]
+  navbar:
+    search: false
+    background: "#2c3e50"
+    left:
+      - href: index.qmd
+        text: "{{< fa house-chimney-window >}} Accueil"
+      - href: https://python.flallemand.fr/
+        text: "{{< fa brands python >}} Console Python"
+      - href: https://notebook.flallemand.fr/
+        text: "{{< fa pen-to-square >}} Notebook Python"
+      - href: ressources.qmd
+        text: "{{< fa info >}} Ressources"
+  sidebar: 
+    style: floating
+    collapse-level: 1
+    alignment: left
+    contents: 
+      - section: "S1-Langages et programmation"
+        contents: 
+            - langagesProgr/index.qmd
+            - section: "01-Récursivité"
+              contents: 
+                  - langagesProgr/recursivite_cours.qmd
+                  - langagesProgr/recursivite_exercices.qmd
+                  - langagesProgr/TPHanoi.qmd
+            - section: "02-Programmation orientée objet"
+              contents: 
+                  - langagesProgr/POO_cours.qmd
+                  - langagesProgr/POO_complements.qmd
+                  - langagesProgr/POO_exercices.qmd
+                  - langagesProgr/TPPOOBataille.qmd
+            - section: "03-Paradigmes de programmation"
+              contents: 
+                  - langagesProgr/paradigmes_cours.qmd
+                  - langagesProgr/paradigmes_exercices.qmd
+                  - langagesProgr/quiz.qmd
+      - section: "S2-Structures de données"
+        contents: 
+          - structures/index.qmd
+      - section: "S3-Bases de données"
+        contents: 
+          - BDD/index.qmd
+      - section: "S4-Arbres et graphes"
+        contents: 
+          - arbresgraphes/index.qmd
+          - arbresgraphes/arbres_cours.qmd
+          - arbresgraphes/arbres_exercices.qmd
+          - arbresgraphes/implementationArbres.qmd
+          - arbresgraphes/TParbres.qmd
+          - arbresgraphes/graphes_cours.qmd
+          - arbresgraphes/tp_graphe_matrice.ipynb
+          - arbresgraphes/tp_graphe_liste.ipynb
+          - arbresgraphes/graphes_exercices.qmd
+      - section: "S5-Architectures matérielles et systèmes d'exploitation"
+        contents: 
+          - archiSE/index.qmd
+      - section: "S6-Algorithmique"
+        contents: 
+          - algo/index.qmd
+      - section: "S7-Réseaux"
+        contents: 
+          - reseaux/index.qmd
+      - section: "Baccalauréat"
+        contents: 
+          - bac/index.qmd
+  page-footer: 
+    left:
+      - href: http://creativecommons.org/licenses/by/4.0/
+        text: <img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    right: 
+      - text: "Mentions légales"
+        href: about.qmd
+      - icon: github
+        href: https://github.com/fabricelallemand15/site_ESMaths
+  cookie-consent: true
+
+bibliography: references.bib 
+
+format:
+  html:
+    lang: fr
+    link-external-icon: true
+    theme:
+      light: [flatly, theme_light.scss]
+      dark: [darkly, theme_dark.scss]
+    css: styles.css
+    toc: true
+    grid:
+      sidebar-width: 250px
+      body-width: 1000px
+      margin-width: 300px
+    filters: 
+      - lightbox
+    lightbox: auto
+    code-block-border-left: "#31BAE9"
+    code-block-bg: true
+  pdf:
+    papersize: a4
+
+
+
+

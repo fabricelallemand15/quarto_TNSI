@@ -1,0 +1,14 @@
+---
+title: Programme
+image: Tree_graph_drawing.png
+---
+
+## Programme
+
+|Contenus |Capacités attendues| Commentaires|
+| :---| :---| :---|
+|Arbres : structures hiérarchiques. Arbres binaires : nœuds, racines, feuilles, sous-arbres gauches, sous-arbres droits.| Identifier des situations nécessitant une structure de données arborescente. Évaluer quelques mesures des arbres binaires (taille, encadrement de la hauteur, etc.).| On fait le lien avec la rubrique « algorithmique ».|
+
+|Contenus |Capacités attendues| Commentaires|
+| :---| :---| :---|
+Graphes : structures relationnelles. Sommets, arcs, arêtes, graphes orientés ou non orientés.| Modéliser des situations sous forme de graphes. Écrire les implémentations correspondantes d’un graphe : matrice d’adjacence, liste de successeurs/de prédécesseurs. Passer d’une représentation à une autre.|On s’appuie sur des exemples comme le réseau routier, le réseau électrique, Internet, les réseaux sociaux. Le choix de la représentation dépend du traitement qu’on veut mettre en place : on fait le lien avec la rubrique « algorithmique ».|
