@@ -225,9 +225,9 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced, breakable, sharp corners, boxrule=0pt, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, enhanced, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden, breakable]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, bottomtitle=1mm, opacitybacktitle=0.6, breakable, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, rightrule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Avertissement}, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, breakable, coltitle=black, rightrule=.15mm, titlerule=0mm, bottomtitle=1mm, bottomrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6, arc=.35mm, colbacktitle=quarto-callout-warning-color!10!white, leftrule=.75mm, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Avertissement}, opacityback=0]
 
 Les compléments présentés ici sont hors programme. Ils peuvent néanmoins
 apporter une connaissance et une compréhension plus fine de la POO et
@@ -319,7 +319,7 @@ modification sur les membres d'un objet. C'est au programmeur de rester
 vigilant. Il existe néanmoins des conventions permettant d'identifier
 les membres de l'interface des autres membres d'un objet.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, bottomtitle=1mm, opacitybacktitle=0.6, breakable, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, opacityback=0, rightrule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Conventions de nommage en Python}, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, breakable, coltitle=black, rightrule=.15mm, titlerule=0mm, bottomtitle=1mm, bottomrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6, arc=.35mm, colbacktitle=quarto-callout-important-color!10!white, leftrule=.75mm, left=2mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Conventions de nommage en Python}, opacityback=0]
 
 \begin{itemize}
 \tightlist
@@ -503,7 +503,7 @@ Utilisation :
 La méthode \texttt{perimetre} est héritée de la classe mère
 \texttt{Rectangle}.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, bottomtitle=1mm, opacitybacktitle=0.6, breakable, bottomrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, opacityback=0, rightrule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Héritage et initialiseur}, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, breakable, coltitle=black, rightrule=.15mm, titlerule=0mm, bottomtitle=1mm, bottomrule=.15mm, toprule=.15mm, colback=white, opacitybacktitle=0.6, arc=.35mm, colbacktitle=quarto-callout-warning-color!10!white, leftrule=.75mm, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Héritage et initialiseur}, opacityback=0]
 
 La méthode initialiseur de la classe \texttt{Carre} fait appel à la
 méthode initialiseur de sa classe parente par la commande

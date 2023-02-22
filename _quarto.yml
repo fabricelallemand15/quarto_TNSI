@@ -47,6 +47,20 @@ website:
       - section: "S2-Structures de données"
         contents: 
           - structures/index.qmd
+          - structures/interfaces_cours.qmd
+          - section: "02-Listes, Piles et Files"
+            contents: 
+              - structures/listes_cours.qmd
+              - structures/piles_cours.qmd
+              - structures/files_cours.qmd
+              - structures/listes_exercices.qmd
+          - section: "03-Dictionnaires"
+            contents: 
+              - structures/dictionnaires_cours.qmd
+              - structures/dictionnaires_exercices.qmd
+              - structures/TPDictionnaire.qmd
+          - structures/projet_detecteur_langue.qmd
+          - structures/bilan.qmd
       - section: "S3-Bases de données"
         contents: 
           - BDD/index.qmd

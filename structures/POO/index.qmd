@@ -1,4 +1,0 @@
----
-title: Vocabulaire de la programmation orientée objet
-image: coding-1841550_640.jpg
----

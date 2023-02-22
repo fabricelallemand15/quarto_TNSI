@@ -46,7 +46,7 @@
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/index.html</loc>
-    <lastmod>2023-02-21T10:50:33.357Z</lastmod>
+    <lastmod>2023-02-22T06:43:32.067Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/recursivite_cours.html</loc>
@@ -70,7 +70,7 @@
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/POO_complements.html</loc>
-    <lastmod>2023-02-21T10:51:10.737Z</lastmod>
+    <lastmod>2023-02-22T07:03:45.606Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/paradigmes_exercices.html</loc>
@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/POO_cours.html</loc>
-    <lastmod>2023-02-21T10:51:23.625Z</lastmod>
+    <lastmod>2023-02-22T06:41:12.948Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/index.html</loc>
@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/ressources.html</loc>
-    <lastmod>2023-02-21T10:51:42.873Z</lastmod>
+    <lastmod>2023-02-22T06:40:27.445Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/algo/index.html</loc>
@@ -123,5 +123,25 @@
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/index.html</loc>
     <lastmod>2023-02-21T10:52:08.800Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/structures/interfaces_cours.html</loc>
+    <lastmod>2023-02-22T06:52:10.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/structures/listes_cours.html</loc>
+    <lastmod>2023-02-22T07:06:19.487Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/structures/piles_cours.html</loc>
+    <lastmod>2023-02-22T15:11:24.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/structures/files_cours.html</loc>
+    <lastmod>2023-02-22T15:22:49.810Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/structures/listes_exercices.html</loc>
+    <lastmod>2023-02-22T15:30:11.081Z</lastmod>
   </url>
 </urlset>
