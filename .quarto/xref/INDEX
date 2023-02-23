@@ -186,5 +186,29 @@
   "structures/bilan.qmd": {
     "bilan.html": "6aee48c0",
     "bilan.tex": "b569a1c6"
+  },
+  "BDD/partie1.qmd": {
+    "partie1.html": "bce3a5ef",
+    "partie1.tex": "7db75bca"
+  },
+  "BDD/partie2.qmd": {
+    "partie2.html": "e513f3f8",
+    "partie2.tex": "9dcf7c54"
+  },
+  "BDD/quiz.qmd": {
+    "quiz.html": "7f0d39d2",
+    "quiz.tex": "127a55ca"
+  },
+  "BDD/sql_cours.md": {
+    "sql_cours.html": "b19e0234",
+    "sql_cours.tex": "68873a13"
+  },
+  "BDD/sql_cours.qmd": {
+    "sql_cours.html": "8db5e122",
+    "sql_cours.tex": "04ee0f12"
+  },
+  "BDD/exercices.qmd": {
+    "exercices.html": "3341d23c",
+    "exercices.tex": "f8975397"
   }
 }

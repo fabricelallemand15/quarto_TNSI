@@ -32,3 +32,6 @@ body {
 .menu {
     height: 10%;
 }
+.sousligne {
+    text-decoration: underline;
+}

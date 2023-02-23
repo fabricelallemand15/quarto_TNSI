@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/index.html</loc>
-    <lastmod>2023-02-22T20:06:55.692Z</lastmod>
+    <lastmod>2023-02-23T10:47:01.416Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/reseaux/index.html</loc>
@@ -134,7 +134,7 @@
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/index.html</loc>
-    <lastmod>2023-02-22T20:07:05.680Z</lastmod>
+    <lastmod>2023-02-23T10:47:11.576Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/dictionnaires_cours.html</loc>
@@ -163,5 +163,25 @@
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/bilan.html</loc>
     <lastmod>2023-02-23T09:26:07.467Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/BDD/partie1.html</loc>
+    <lastmod>2023-02-23T09:58:53.557Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/BDD/partie2.html</loc>
+    <lastmod>2023-02-23T10:19:00.100Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/BDD/quiz.html</loc>
+    <lastmod>2023-02-23T10:20:45.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/BDD/sql_cours.html</loc>
+    <lastmod>2023-02-23T10:48:26.984Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/BDD/exercices.html</loc>
+    <lastmod>2023-02-23T10:54:36.976Z</lastmod>
   </url>
 </urlset>

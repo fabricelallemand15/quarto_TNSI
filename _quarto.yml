@@ -28,18 +28,18 @@ website:
       - section: "S1-Langages et programmation"
         contents: 
             - langagesProgr/index.qmd
-            - section: "01-Récursivité"
+            - section: "1-Récursivité"
               contents: 
                   - langagesProgr/recursivite_cours.qmd
                   - langagesProgr/recursivite_exercices.qmd
                   - langagesProgr/TPHanoi.qmd
-            - section: "02-Programmation orientée objet"
+            - section: "2-Programmation orientée objet"
               contents: 
                   - langagesProgr/POO_cours.qmd
                   - langagesProgr/POO_complements.qmd
                   - langagesProgr/POO_exercices.qmd
                   - langagesProgr/TPPOOBataille.qmd
-            - section: "03-Paradigmes de programmation"
+            - section: "3-Paradigmes de programmation"
               contents: 
                   - langagesProgr/paradigmes_cours.qmd
                   - langagesProgr/paradigmes_exercices.qmd
@@ -48,13 +48,13 @@ website:
         contents: 
           - structures/index.qmd
           - structures/interfaces_cours.qmd
-          - section: "02-Listes, Piles et Files"
+          - section: "1-Listes, Piles et Files"
             contents: 
               - structures/listes_cours.qmd
               - structures/piles_cours.qmd
               - structures/files_cours.qmd
               - structures/listes_exercices.qmd
-          - section: "03-Dictionnaires"
+          - section: "2-Dictionnaires"
             contents: 
               - structures/dictionnaires_cours.qmd
               - structures/dictionnaires_exercices.qmd
@@ -64,6 +64,16 @@ website:
       - section: "S3-Bases de données"
         contents: 
           - BDD/index.qmd
+          - section: "1. Modèle relationnel"
+            contents: 
+              - BDD/partie1.qmd
+              - BDD/partie2.qmd
+              - BDD/quiz.qmd
+          - BDD/sql_cours.qmd
+          - BDD/exercices.qmd
+          - BDD/TP1.qmd
+          - BDD/TP2.qmd
+          - BDD/TP3.qmd
       - section: "S4-Arbres et graphes"
         contents: 
           - arbresgraphes/index.qmd
