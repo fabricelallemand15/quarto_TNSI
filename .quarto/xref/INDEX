@@ -174,10 +174,12 @@
     "TPDictionnaire.tex": "20af28a8"
   },
   "structures/TPDictionnaires.ipynb": {
-    "TPDictionnaires.html": "d72bb044"
+    "TPDictionnaires.html": "d72bb044",
+    "TPDictionnaires.tex": "d6ac46a6"
   },
   "structures/TPDictionnaires_CORR.ipynb": {
-    "TPDictionnaires_CORR.html": "74c8e1ae"
+    "TPDictionnaires_CORR.html": "74c8e1ae",
+    "TPDictionnaires_CORR.tex": "7c8d8a4a"
   },
   "structures/projet_detecteur_langue.qmd": {
     "projet_detecteur_langue.html": "062d49a0",
@@ -210,5 +212,17 @@
   "BDD/exercices.qmd": {
     "exercices.html": "3341d23c",
     "exercices.tex": "f8975397"
+  },
+  "BDD/TP1.qmd": {
+    "TP1.html": "a1841a86",
+    "TP1.tex": "470f24f7"
+  },
+  "BDD/TP2.qmd": {
+    "TP2.html": "23ce9810",
+    "TP2.tex": "785641e0"
+  },
+  "BDD/TP3.qmd": {
+    "TP3.html": "42fdb952",
+    "TP3.tex": "06c73f23"
   }
 }

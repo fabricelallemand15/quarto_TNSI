@@ -225,9 +225,9 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, boxrule=0pt, enhanced, breakable, frame hidden]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, opacitybacktitle=0.6, colback=white, bottomrule=.15mm, leftrule=.75mm, breakable, toptitle=1mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm, left=2mm, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Attention !}, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, toprule=.15mm, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, coltitle=black, bottomrule=.15mm, rightrule=.15mm, breakable, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Attention !}, opacitybacktitle=0.6]
 
 En Première, nous avons utilisé le type de données \texttt{list} de
 Python pour représenter des \textbf{tableaux} de d'éléments de même
@@ -246,7 +246,7 @@ liste en utilisant des structures de type \texttt{list} en Python.
 \subsection{1. Du point de vue utilisateur :
 interface}\label{du-point-de-vue-utilisateur-interface}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, colback=white, bottomrule=.15mm, leftrule=.75mm, breakable, toptitle=1mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm, left=2mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm, toprule=.15mm, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, coltitle=black, bottomrule=.15mm, rightrule=.15mm, breakable, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, opacitybacktitle=0.6]
 
 Une liste est une structure de données qui permet de stocker des données
 et d'y accéder directement.
@@ -301,7 +301,7 @@ permettant de modifier la valeur d'un élément de la liste).
 permettant par exemple de renvoyer la longueur d'une liste, de
 rechercher un élément ou d'accéder au ième élément \ldots{}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, coltitle=black, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6, colback=white, bottomrule=.15mm, leftrule=.75mm, breakable, toptitle=1mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm, left=2mm, rightrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-caution-color!10!white, arc=.35mm, toprule=.15mm, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, coltitle=black, bottomrule=.15mm, rightrule=.15mm, breakable, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, opacitybacktitle=0.6]
 
 Supposons implémenté le type abstrait \textbf{liste}. Nous disposons
 d'une interface composée des cinq primitives décrites ci-dessus. On

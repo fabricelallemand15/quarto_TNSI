@@ -1,0 +1,580 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=20mm,bottom=20mm,left=20mm,right=20mm,heightrounded]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
+\KOMAoption{captions}{tablesignature}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table des matières}
+\else
+  \newcommand\contentsname{Table des matières}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Liste des Figures}
+\else
+  \newcommand\listfigurename{Liste des Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Liste des Tables}
+\else
+  \newcommand\listtablename{Liste des Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tableau}
+\else
+  \newcommand\tablename{Tableau}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{Liste des Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{french}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={TP 1 - Créer une base de données},
+  pdflang={fr},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{TP 1 - Créer une base de données}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{S3 - Bases de données}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable, boxrule=0pt, frame hidden]}{\end{tcolorbox}}\fi
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Objectifs}, arc=.35mm, bottomrule=.15mm, breakable, colback=white, opacitybacktitle=0.6, titlerule=0mm, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, rightrule=.15mm, toprule=.15mm]
+
+Utiliser le logiciel ``DB Browser for SqLite'' et le langage SQL pour :
+
+\begin{itemize}
+\tightlist
+\item
+  \faIcon{check} créer une base de données ;
+\item
+  \faIcon{check} ajouter des données dans une table ;
+\item
+  \faIcon{check} écrire et tester différentes requêtes.
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{cruxe9ation-dune-bdd-et-insertion-de-valeurs}{%
+\subsection{1. Création d'une BDD et insertion de
+valeurs}\label{cruxe9ation-dune-bdd-et-insertion-de-valeurs}}
+
+Pour créer une base de données et effectuer des requêtes sur cette
+dernière, nous allons utiliser le logiciel ``DB Browser for SQLite'' :
+\url{https://sqlitebrowser.org/}. Ce logiciel est intégré dans
+EduPython.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Ouvrez le logiciel, puis cliquez sur ``Nouvelle base de données''.
+  Après avoir choisi un nom pour votre base de données (par exemple
+  ``db\_livres.db''), vous devriez avoir la fenêtre suivante :
+
+  \begin{figure}
+
+  {\centering \includegraphics[width=0.5\textwidth,height=\textheight]{TP1_1.png}
+
+  }
+
+  \end{figure}
+
+  Cliquez alors sur ``Annuler''.
+
+  Une nouvelle base de donnée a bien été créée, mais elle ne contient
+  encore aucune table.
+
+  \begin{figure}
+
+  {\centering \includegraphics{TP1_2.png}
+
+  }
+
+  \end{figure}
+\item
+  Pour créer une table, cliquez sur l'onglet ``Exécuter le SQL''. On
+  obtient alors :
+
+  \begin{figure}
+
+  {\centering \includegraphics[width=0.5\textwidth,height=\textheight]{TP1_3.png}
+
+  }
+
+  \end{figure}
+
+  Copiez-collez le texte ci-dessous dans la fenêtre ``SQL 1'' :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ LIVRES}
+\NormalTok{    (}\KeywordTok{id} \DataTypeTok{INT}\NormalTok{, titre TEXT, auteur TEXT, ann\_publi }\DataTypeTok{INT}\NormalTok{, note }\DataTypeTok{INT}\NormalTok{, }\KeywordTok{PRIMARY} \KeywordTok{KEY}\NormalTok{ (}\KeywordTok{id}\NormalTok{));}
+\end{Highlighting}
+\end{Shaded}
+
+  Cliquez ensuite sur le petit triangle situé au-dessus de la fenêtre
+  SQL 1 (ou appuyez sur F5), vous devriez avoir ceci :
+
+  \begin{figure}
+
+  {\centering \includegraphics[width=0.5\textwidth,height=\textheight]{TP1_4.png}
+
+  }
+
+  \end{figure}
+
+  Comme indiqué dans la fenêtre, ``Requête exécutée avec succès'' !
+
+  Quelques explications : la commande \textbf{CREATE TABLE LIVRES}
+  permet de créer une nouvelle table nommée ``LIVRES''. Elle est suivie
+  d'un p-uplet définissant les noms et les domaines des attributs de la
+  nouvelle table :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{id} est un entier ;
+  \item
+    \textbf{titre} est une chaîne de caractères ;
+  \item
+    \textbf{auteur} est une chaîne de caractères ;
+  \item
+    \textbf{ann\_pulbi} est un entier ;
+  \item
+    \textbf{note} est un entier ;
+  \end{itemize}
+
+  L'attribut ``id'' va jouer le rôle de \textbf{clé primaire}, nous
+  avons donc ajouté dans la requête la mention \textbf{(PRIMARY KEY
+  (id))}. Le système de gestion de base de données nous avertira si l'on
+  tente d'attribuer 2 fois la même valeur à l'attribut ``id''.
+\item
+  Nous allons maintenant ajouter des données à la table \textbf{LIVRES}.
+
+  Toujours dans l'onglet ``Exécuter le SQL'', après avoir effacé la
+  fenêtre SQL 1, copiez-collez dans cette même fenêtre la requête
+  ci-dessous :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{INSERT} \KeywordTok{INTO}\NormalTok{ LIVRES}
+\NormalTok{    (}\KeywordTok{id}\NormalTok{,titre,auteur,ann\_publi,note)}
+    \KeywordTok{VALUES}
+\NormalTok{    (}\DecValTok{1}\NormalTok{,}\OtherTok{"1984"}\NormalTok{,}\OtherTok{"Orwell"}\NormalTok{,}\DecValTok{1949}\NormalTok{,}\DecValTok{10}\NormalTok{),}
+\NormalTok{    (}\DecValTok{2}\NormalTok{,}\OtherTok{"Dune"}\NormalTok{,}\OtherTok{"Herbert"}\NormalTok{,}\DecValTok{1965}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{    (}\DecValTok{3}\NormalTok{,}\OtherTok{"Fondation"}\NormalTok{,}\OtherTok{"Asimov"}\NormalTok{,}\DecValTok{1951}\NormalTok{,}\DecValTok{9}\NormalTok{),}
+\NormalTok{    (}\DecValTok{4}\NormalTok{,}\OtherTok{"Le meilleur des mondes"}\NormalTok{,}\OtherTok{"Huxley"}\NormalTok{,}\DecValTok{1931}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+\NormalTok{    (}\DecValTok{5}\NormalTok{,}\OtherTok{"Fahrenheit 451"}\NormalTok{,}\OtherTok{"Bradbury"}\NormalTok{,}\DecValTok{1953}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+\NormalTok{    (}\DecValTok{6}\NormalTok{,}\OtherTok{"Ubik"}\NormalTok{,}\OtherTok{"K.Dick"}\NormalTok{,}\DecValTok{1969}\NormalTok{,}\DecValTok{9}\NormalTok{),}
+\NormalTok{    (}\DecValTok{7}\NormalTok{,}\OtherTok{"Chroniques martiennes"}\NormalTok{,}\OtherTok{"Bradbury"}\NormalTok{,}\DecValTok{1950}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{    (}\DecValTok{8}\NormalTok{,}\OtherTok{"La nuit des temps"}\NormalTok{,}\OtherTok{"Barjavel"}\NormalTok{,}\DecValTok{1968}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+\NormalTok{    (}\DecValTok{9}\NormalTok{,}\OtherTok{"Blade Runner"}\NormalTok{,}\OtherTok{"K.Dick"}\NormalTok{,}\DecValTok{1968}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{    (}\DecValTok{10}\NormalTok{,}\OtherTok{"Les Robots"}\NormalTok{,}\OtherTok{"Asimov"}\NormalTok{,}\DecValTok{1950}\NormalTok{,}\DecValTok{9}\NormalTok{),}
+\NormalTok{    (}\DecValTok{11}\NormalTok{,}\OtherTok{"La Planète des singes"}\NormalTok{,}\OtherTok{"Boulle"}\NormalTok{,}\DecValTok{1963}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{    (}\DecValTok{12}\NormalTok{,}\OtherTok{"Ravage"}\NormalTok{,}\OtherTok{"Barjavel"}\NormalTok{,}\DecValTok{1943}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{    (}\DecValTok{13}\NormalTok{,}\OtherTok{"Le Maître du Haut Château"}\NormalTok{,}\OtherTok{"K.Dick"}\NormalTok{,}\DecValTok{1962}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{    (}\DecValTok{14}\NormalTok{,}\OtherTok{"Le monde des Ā"}\NormalTok{,}\OtherTok{"Van Vogt"}\NormalTok{,}\DecValTok{1945}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+\NormalTok{    (}\DecValTok{15}\NormalTok{,}\OtherTok{"La Fin de l\textquotesingle{}éternité"}\NormalTok{,}\OtherTok{"Asimov"}\NormalTok{,}\DecValTok{1955}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{    (}\DecValTok{16}\NormalTok{,}\OtherTok{"De la Terre à la Lune"}\NormalTok{,}\OtherTok{"Verne"}\NormalTok{,}\DecValTok{1865}\NormalTok{,}\DecValTok{10}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+  Un message devrait vous préciser que votre requête a été exécutée avec
+  succès :
+
+  \begin{figure}
+
+  {\centering \includegraphics[width=0.5\textwidth,height=\textheight]{TP1_5.png}
+
+  }
+
+  \end{figure}
+
+  La table LIVRES contient maintenant les données souhaitées (onglet
+  ``Parcourir les données'') :
+
+  \begin{figure}
+
+  {\centering \includegraphics[width=0.5\textwidth,height=\textheight]{TP1_6.png}
+
+  }
+
+  \end{figure}
+\item
+  Saisissez et exécutez la requête SQL suivante :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT} \KeywordTok{id}\NormalTok{, titre, auteur, ann\_publi, note}
+\KeywordTok{FROM}\NormalTok{ LIVRES}
+\end{Highlighting}
+\end{Shaded}
+
+  Après un temps plus ou moins long, vous devriez voir s'afficher ceci :
+
+  \begin{figure}
+
+  {\centering \includegraphics[width=0.5\textwidth,height=\textheight]{TP1_7.png}
+
+  }
+
+  \end{figure}
+\item
+  Effectuez une requête qui permettra d'obtenir le titre et l'auteur de
+  tous les livres présents dans la table LIVRES.
+\item
+  Saisissez et testez la requête SQL suivante :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ titre, ann\_publi}
+\KeywordTok{FROM}\NormalTok{ LIVRES}
+\KeywordTok{WHERE}\NormalTok{ auteur}\OperatorTok{=}\StringTok{\textquotesingle{}Asimov\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+  À quelle question répond-elle ?
+\item
+  Écrivez et testez une requête permettant d'obtenir uniquement les
+  titres des livres écrits par Philip K.Dick.
+\item
+  Saisissez et testez la requête SQL suivante :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ titre, ann\_publi}
+\KeywordTok{FROM}\NormalTok{ LIVRES}
+\KeywordTok{WHERE}\NormalTok{ auteur}\OperatorTok{=}\StringTok{\textquotesingle{}Asimov\textquotesingle{}} \KeywordTok{AND}\NormalTok{ ann\_publi}\OperatorTok{\textgreater{}}\DecValTok{1953}
+\end{Highlighting}
+\end{Shaded}
+
+  À quelle question répond-elle ?
+\item
+  Écrivez une requête permettant d'obtenir les titres des livres publiés
+  après 1945 qui ont une note supérieure ou égale à 9.
+\item
+  Écrivez une requête SQL permettant d'obtenir les titres et les années
+  de publication des livres de K.Dick classés du plus ancien ou plus
+  récent.
+\end{enumerate}
+
+\hypertarget{avec-deux-tables}{%
+\subsection{2. Avec deux tables}\label{avec-deux-tables}}
+
+Dans la première partie, nous avons une redondance d'information dans
+l'attribut \textbf{auteur}, un même auteur étant répété plusieurs fois.
+Pour remédier à cela, nous allons maintenant créer une nouvelle base
+avec deux tables \textbf{AUTEURS} et \textbf{LIVRES} reliées par une
+\textbf{clef étrangère}.
+
+\begin{figure}
+
+{\centering \includegraphics{TP1_8.png}
+
+}
+
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Créez une nouvelle base de données que vous nommerez par exemple
+  \textbf{db\_livres\_auteurs.db}, puis créez une table AUTEURS à l'aide
+  de la requête SQL suivante :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ AUTEURS}
+\NormalTok{(}\KeywordTok{id} \DataTypeTok{INT}\NormalTok{, nom TEXT, prenom TEXT, ann\_naissance }\DataTypeTok{INT}\NormalTok{, langue\_ecriture TEXT, }\KeywordTok{PRIMARY} \KeywordTok{KEY}\NormalTok{ (}\KeywordTok{id}\NormalTok{));}
+\end{Highlighting}
+\end{Shaded}
+
+  Créez ensuite une deuxième table (LIVRES) :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ LIVRES}
+\NormalTok{(}\KeywordTok{id} \DataTypeTok{INT}\NormalTok{, titre TEXT, id\_auteur }\DataTypeTok{INT}\NormalTok{, ann\_publi }\DataTypeTok{INT}\NormalTok{, note }\DataTypeTok{INT}\NormalTok{, }\KeywordTok{PRIMARY} \KeywordTok{KEY}\NormalTok{ (}\KeywordTok{id}\NormalTok{), }\KeywordTok{FOREIGN} \KeywordTok{KEY}\NormalTok{ (id\_auteur) }\KeywordTok{REFERENCES}\NormalTok{ AUTEURS(}\KeywordTok{id}\NormalTok{));}
+\end{Highlighting}
+\end{Shaded}
+
+  Dans la création de la table \textbf{LIVRES}, nous avons précisé que
+  l'attribut ``id\_auteur'' jouera le rôle de \textbf{clé étrangère} :
+  liaison entre ``id\_auteur'' de la table LIVRES et ``id'' de la table
+  AUTEURS (FOREIGN KEY (id\_auteur) REFERENCES AUTEURS(id)).
+\item
+  Ajoutez des données à la table AUTEURS à l'aide de la requête SQL
+  suivante :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{INSERT} \KeywordTok{INTO}\NormalTok{ AUTEURS}
+\NormalTok{(}\KeywordTok{id}\NormalTok{,nom,prenom,ann\_naissance,langue\_ecriture)}
+\KeywordTok{VALUES}
+\NormalTok{(}\DecValTok{1}\NormalTok{,}\OtherTok{"Orwell"}\NormalTok{,}\OtherTok{"George"}\NormalTok{,}\DecValTok{1903}\NormalTok{,}\OtherTok{"anglais"}\NormalTok{),}
+\NormalTok{(}\DecValTok{2}\NormalTok{,}\OtherTok{"Herbert"}\NormalTok{,}\OtherTok{"Frank"}\NormalTok{,}\DecValTok{1920}\NormalTok{,}\OtherTok{"anglais"}\NormalTok{),}
+\NormalTok{(}\DecValTok{3}\NormalTok{,}\OtherTok{"Asimov"}\NormalTok{,}\OtherTok{"Isaac"}\NormalTok{,}\DecValTok{1920}\NormalTok{,}\OtherTok{"anglais"}\NormalTok{),}
+\NormalTok{(}\DecValTok{4}\NormalTok{,}\OtherTok{"Huxley"}\NormalTok{,}\OtherTok{"Aldous"}\NormalTok{,}\DecValTok{1894}\NormalTok{,}\OtherTok{"anglais"}\NormalTok{),}
+\NormalTok{(}\DecValTok{5}\NormalTok{,}\OtherTok{"Bradbury"}\NormalTok{,}\OtherTok{"Ray"}\NormalTok{,}\DecValTok{1920}\NormalTok{,}\OtherTok{"anglais"}\NormalTok{),}
+\NormalTok{(}\DecValTok{6}\NormalTok{,}\OtherTok{"K.Dick"}\NormalTok{,}\OtherTok{"Philip"}\NormalTok{,}\DecValTok{1928}\NormalTok{,}\OtherTok{"anglais"}\NormalTok{),}
+\NormalTok{(}\DecValTok{7}\NormalTok{,}\OtherTok{"Barjavel"}\NormalTok{,}\OtherTok{"René"}\NormalTok{,}\DecValTok{1911}\NormalTok{,}\OtherTok{"français"}\NormalTok{),}
+\NormalTok{(}\DecValTok{8}\NormalTok{,}\OtherTok{"Boulle"}\NormalTok{,}\OtherTok{"Pierre"}\NormalTok{,}\DecValTok{1912}\NormalTok{,}\OtherTok{"français"}\NormalTok{),}
+\NormalTok{(}\DecValTok{9}\NormalTok{,}\OtherTok{"Van Vogt"}\NormalTok{,}\OtherTok{"Alfred Elton"}\NormalTok{,}\DecValTok{1912}\NormalTok{,}\OtherTok{"anglais"}\NormalTok{),}
+\NormalTok{(}\DecValTok{10}\NormalTok{,}\OtherTok{"Verne"}\NormalTok{,}\OtherTok{"Jules"}\NormalTok{,}\DecValTok{1828}\NormalTok{,}\OtherTok{"français"}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+  Ajoutez des données à la table LIVRES à l'aide de la requête SQL
+  suivante :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{INSERT} \KeywordTok{INTO}\NormalTok{ LIVRES}
+\NormalTok{(}\KeywordTok{id}\NormalTok{,titre,id\_auteur,ann\_publi,note)}
+\KeywordTok{VALUES}
+\NormalTok{(}\DecValTok{1}\NormalTok{,}\OtherTok{"1984"}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1949}\NormalTok{,}\DecValTok{10}\NormalTok{),}
+\NormalTok{(}\DecValTok{2}\NormalTok{,}\OtherTok{"Dune"}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1965}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{(}\DecValTok{3}\NormalTok{,}\OtherTok{"Fondation"}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1951}\NormalTok{,}\DecValTok{9}\NormalTok{),}
+\NormalTok{(}\DecValTok{4}\NormalTok{,}\OtherTok{"Le meilleur des mondes"}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{1931}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+\NormalTok{(}\DecValTok{5}\NormalTok{,}\OtherTok{"Fahrenheit 451"}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{1953}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+\NormalTok{(}\DecValTok{6}\NormalTok{,}\OtherTok{"Ubik"}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{1969}\NormalTok{,}\DecValTok{9}\NormalTok{),}
+\NormalTok{(}\DecValTok{7}\NormalTok{,}\OtherTok{"Chroniques martiennes"}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{1950}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{(}\DecValTok{8}\NormalTok{,}\OtherTok{"La nuit des temps"}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{1968}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+\NormalTok{(}\DecValTok{9}\NormalTok{,}\OtherTok{"Blade Runner"}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{1968}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{(}\DecValTok{10}\NormalTok{,}\OtherTok{"Les Robots"}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1950}\NormalTok{,}\DecValTok{9}\NormalTok{),}
+\NormalTok{(}\DecValTok{11}\NormalTok{,}\OtherTok{"La Planète des singes"}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{1963}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{(}\DecValTok{12}\NormalTok{,}\OtherTok{"Ravage"}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{1943}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{(}\DecValTok{13}\NormalTok{,}\OtherTok{"Le Maître du Haut Château"}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{1962}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{(}\DecValTok{14}\NormalTok{,}\OtherTok{"Le monde des Ā"}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{1945}\NormalTok{,}\DecValTok{7}\NormalTok{),}
+\NormalTok{(}\DecValTok{15}\NormalTok{,}\OtherTok{"La Fin de l\textquotesingle{}éternité"}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1955}\NormalTok{,}\DecValTok{8}\NormalTok{),}
+\NormalTok{(}\DecValTok{16}\NormalTok{,}\OtherTok{"De la Terre à la Lune"}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{1865}\NormalTok{,}\DecValTok{10}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Saisissez et testez la requête SQL suivante :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ titre,nom, prenom}
+\KeywordTok{FROM}\NormalTok{ LIVRES }\KeywordTok{JOIN}\NormalTok{ AUTEURS }
+\KeywordTok{ON}\NormalTok{ LIVRES.id\_auteur }\OperatorTok{=}\NormalTok{ AUTEURS.}\KeywordTok{id}
+\end{Highlighting}
+\end{Shaded}
+
+  \textbf{Remarque} : attention, si un même nom d'attribut est présent
+  dans les 2 tables (par exemple ici l'attribut id), il est nécessaire
+  d'ajouter le nom de la table devant afin de pouvoir les distinguer
+  (AUTEURS.id et LIVRES.id).
+\item
+  Écrivez une requête SQL permettant d'obtenir les titres des livres
+  publiés après 1945 ainsi que le nom de leurs auteurs.
+\item
+  On souhaite ajouter à la base le livre de \textbf{Arthur C.Clarke}
+  intitulé \textbf{2001 : L'Odyssée de l'espace} publié en \textbf{1968}
+  et noté \textbf{7}. \textbf{Arthur C.Clarke} est un écrivain
+  britannique né en 1917 et mort en 2008.
+
+  Écrivez les requêtes nécessaires à cet ajout. Vous n'oublierez pas de
+  définir les clefs primaires pour chacune des nouvelles entrées.
+\item
+  Écrivez et testez une requête permettant d'attribuer la note de 10 à
+  tous les livres écrits par Asimov publiés après 1950.
+\item
+  Écrivez une requête permettant de supprimer les livres publiés avant
+  1945. Testez cette requête.
+\end{enumerate}
+
+
+
+\end{document}
