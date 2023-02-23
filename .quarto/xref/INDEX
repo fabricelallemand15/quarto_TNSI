@@ -160,5 +160,31 @@
   "structures/listes_exercices.qmd": {
     "listes_exercices.html": "e4e6ce5f",
     "listes_exercices.tex": "6700f4f2"
+  },
+  "structures/dictionnaires_cours.qmd": {
+    "dictionnaires_cours.html": "ea66f937",
+    "dictionnaires_cours.tex": "6d973f2b"
+  },
+  "structures/dictionnaires_exercices.qmd": {
+    "dictionnaires_exercices.html": "731ac25d",
+    "dictionnaires_exercices.tex": "b6d6b442"
+  },
+  "structures/TPDictionnaire.qmd": {
+    "TPDictionnaire.html": "7c1f9398",
+    "TPDictionnaire.tex": "20af28a8"
+  },
+  "structures/TPDictionnaires.ipynb": {
+    "TPDictionnaires.html": "d72bb044"
+  },
+  "structures/TPDictionnaires_CORR.ipynb": {
+    "TPDictionnaires_CORR.html": "74c8e1ae"
+  },
+  "structures/projet_detecteur_langue.qmd": {
+    "projet_detecteur_langue.html": "062d49a0",
+    "projet_detecteur_langue.tex": "8941a7c2"
+  },
+  "structures/bilan.qmd": {
+    "bilan.html": "6aee48c0",
+    "bilan.tex": "b569a1c6"
   }
 }
