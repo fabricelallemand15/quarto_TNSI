@@ -63,7 +63,7 @@ Une base de données est ensemble d'informations structurées mémorisées sur u
 
 Un fichier de base de données a nécessairement une structure qui permet d'une part de distinguer les données les unes des autres, et d'autre part de représenter leurs liens.
 
-Prenons l'exemple des fichiers CSV, l'une des structures les plus simples et les plus répandues, sur lesquels nous avons [travaillé en première]([../../../premiere/07_tables/tables_cours.md](https://flallemand.fr/nsi/premiere/07_tables/tables_cours/)). Dans un fichier CSV, les données élémentaires sont représentées par des « **champs** » délimités par des virgules ou des points-virgule. Les champs sont associés les uns aux autres par le simple fait d'être placés dans une même ligne. Les lignes en revanche sont indépendantes les unes des autres. On peut placer autant de lignes que l'on veut dans un fichier, et même changer leur ordre sans que cela modifie en quoi que ce soit l'information représentée.
+Prenons l'exemple des fichiers CSV, l'une des structures les plus simples et les plus répandues, sur lesquels nous avons [travaillé en première](https://flallemand.fr/nsi/premiere/07_tables/tables_cours/). Dans un fichier CSV, les données élémentaires sont représentées par des « **champs** » délimités par des virgules ou des points-virgule. Les champs sont associés les uns aux autres par le simple fait d'être placés dans une même ligne. Les lignes en revanche sont indépendantes les unes des autres. On peut placer autant de lignes que l'on veut dans un fichier, et même changer leur ordre sans que cela modifie en quoi que ce soit l'information représentée.
 
 Voici l'exemple de nos données, représentées en CSV.
 

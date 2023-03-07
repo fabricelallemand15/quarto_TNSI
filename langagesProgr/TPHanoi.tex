@@ -145,6 +145,9 @@
 \makeatother
 \makeatletter
 \makeatother
+\makeatletter
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\makeatother
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -185,12 +188,12 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, breakable, enhanced, borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
 
 Dans ce TP, vous mettrez en œuvre une procédure récursive afin de
 résoudre le célèbre problème des tours de Hanoï.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, bottomtitle=1mm, bottomrule=.15mm, opacityback=0, colback=white, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, rightrule=.15mm, coltitle=black, leftrule=.75mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Objectifs}, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Objectifs}, rightrule=.15mm, left=2mm, bottomtitle=1mm, coltitle=black, toptitle=1mm, colframe=quarto-callout-tip-color-frame, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colback=white, breakable, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -206,7 +209,7 @@ résoudre le célèbre problème des tours de Hanoï.
 
 L'énoncé au format PDF est disponible ci-dessous.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, left=2mm, bottomtitle=1mm, bottomrule=.15mm, opacityback=0, colback=white, toptitle=1mm, colbacktitle=quarto-callout-important-color!10!white, breakable, rightrule=.15mm, coltitle=black, leftrule=.75mm, arc=.35mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Critères d'évaluation}, toprule=.15mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Critères d'évaluation}, rightrule=.15mm, left=2mm, bottomtitle=1mm, coltitle=black, toptitle=1mm, colframe=quarto-callout-important-color-frame, titlerule=0mm, arc=.35mm, colbacktitle=quarto-callout-important-color!10!white, bottomrule=.15mm, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, colback=white, breakable, toprule=.15mm]
 
 \begin{itemize}
 \tightlist

@@ -15,7 +15,8 @@
     "about.tex": "9b536aae"
   },
   "histoire/index.qmd": {
-    "index.html": "26d512a4"
+    "index.html": "26d512a4",
+    "index.tex": "adbfc6c4"
   },
   "structures/index.qmd": {
     "index.html": "8ddf30aa",
@@ -224,5 +225,21 @@
   "BDD/TP3.qmd": {
     "TP3.html": "42fdb952",
     "TP3.tex": "06c73f23"
+  },
+  "arbresgraphes/tp_graphe_liste_capytale.ipynb": {
+    "tp_graphe_liste_capytale.html": "14d5e43f",
+    "tp_graphe_liste_capytale.tex": "523a4ddc"
+  },
+  "arbresgraphes/tp_graphe_liste_CORR.ipynb": {
+    "tp_graphe_liste_CORR.html": "7e76f587",
+    "tp_graphe_liste_CORR.tex": "710615e9"
+  },
+  "arbresgraphes/tp_graphe_matrice_capytale.ipynb": {
+    "tp_graphe_matrice_capytale.html": "78367536",
+    "tp_graphe_matrice_capytale.tex": "8a00e9b7"
+  },
+  "arbresgraphes/tp_graphe_matrice_CORR.ipynb": {
+    "tp_graphe_matrice_CORR.html": "369fbf6d",
+    "tp_graphe_matrice_CORR.tex": "b26e45b2"
   }
 }

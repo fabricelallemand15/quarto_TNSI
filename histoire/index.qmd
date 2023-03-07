@@ -1,0 +1,4 @@
+---
+title: "01-Histoire de l'informatique"
+image: 1024px-Census_Bureau_techs_check_out_computer_frame.jpg
+---
