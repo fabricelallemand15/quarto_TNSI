@@ -177,7 +177,7 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden, breakable, interior hidden, enhanced]}{\end{tcolorbox}}\fi
 
 \emph{Les exercices précédés du symbole \faIcon{desktop} sont à faire
 sur machine, en sauvegardant le fichier si nécessaire.}
@@ -199,15 +199,79 @@ Dessiner un graphe complet d'ordre 3, puis un graphe complet d'ordre 4.
 \subsection{\texorpdfstring{\faIcon{pencil-alt} Exercice
 2}{ Exercice 2}}\label{fa-solid-pencil-alt-exercice-2}}
 
-Donner la matrice d'adjacence du graphe suivant :
+\textbf{Graphe d'un réseau électrique}
 
-\begin{figure}
+Un de vos amis travaille pour un distributeur d'électricité.
 
-{\centering \includegraphics{graphes_exercices_files/figure-pdf/unnamed-chunk-1-1.pdf}
+Il doit proposer à son supérieur une représentation du réseau reliant
+différentes villes. Comme il n'y arrive pas trop, il voudrait que vous
+la lui fassiez.
 
-}
+Pour simplifier le problème, il a déjà renommé les villes en A, B, C, D,
+E et F. De plus, il vous donne les informations suivantes :
 
-\end{figure}
+\begin{itemize}
+\tightlist
+\item
+  la ville B est reliée par un réseau électrique aux villes A, C et D,
+\item
+  la ville A est reliée par un réseau électrique aux villes B, E et F,
+\item
+  la ville C est reliée par un réseau électrique aux villes B, D, E et
+  F,
+\item
+  la ville D est reliée par un réseau électrique aux villes B, C et F,
+\item
+  la ville E est reliée par un réseau électrique aux villes A, C et F,
+\item
+  la ville F est relié par un réseau électrique aux villes A, C, D et E.
+\end{itemize}
+
+Proposer un graphe qui modélise la situation.
+
+Ce graphe est-il complet ? Pourquoi ?
+
+Donner sa matrice d'adjacence.
+
+\hypertarget{fa-solid-pencil-alt-exercice-3}{%
+\subsection{\texorpdfstring{\faIcon{pencil-alt} Exercice
+3}{ Exercice 3}}\label{fa-solid-pencil-alt-exercice-3}}
+
+Voici un ensemble de relations :
+
+\begin{itemize}
+\tightlist
+\item
+  A est ami avec tout le monde sauf G,
+\item
+  B est ami avec A, D et H,
+\item
+  C est ami avec A, F, G et H,
+\item
+  D est ami avec A, B et H,
+\item
+  E est ami avec A et H,
+\item
+  F est ami avec A et C,
+\item
+  G est ami avec C et H,
+\item
+  H est ami avec A, B, C, D, E et G.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Représenter ce graphe et vérifier qu'il est non orienté.
+\item
+  Implémenter ce graphe sous la forme d'une liste d'adjacence dans
+  laquelle chaque clé représente le nœud étudié.
+\item
+  Écrire la matrice d'adjacence et vérifier qu'elle est symétrique (on
+  utilisera l'ordre alphabétique pour indexer les nœuds). 4 Implémenter
+  la matrice en python sous la forme d'une liste de liste.
+\end{enumerate}
 
 
 

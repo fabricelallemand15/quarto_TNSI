@@ -102,7 +102,7 @@
     "href": "arbresgraphes/graphes_exercices.html#fa-solid-pencil-alt-exercice-2",
     "title": "Exercices sur les graphes",
     "section": " Exercice 2",
-    "text": "Exercice 2\nDonner la matrice d’adjacence du graphe suivant :"
+    "text": "Exercice 2\nGraphe d’un réseau électrique\nUn de vos amis travaille pour un distributeur d’électricité.\nIl doit proposer à son supérieur une représentation du réseau reliant différentes villes. Comme il n’y arrive pas trop, il voudrait que vous la lui fassiez.\nPour simplifier le problème, il a déjà renommé les villes en A, B, C, D, E et F. De plus, il vous donne les informations suivantes :\n\nla ville B est reliée par un réseau électrique aux villes A, C et D,\nla ville A est reliée par un réseau électrique aux villes B, E et F,\nla ville C est reliée par un réseau électrique aux villes B, D, E et F,\nla ville D est reliée par un réseau électrique aux villes B, C et F,\nla ville E est reliée par un réseau électrique aux villes A, C et F,\nla ville F est relié par un réseau électrique aux villes A, C, D et E.\n\nProposer un graphe qui modélise la situation.\nCe graphe est-il complet ? Pourquoi ?\nDonner sa matrice d’adjacence."
   },
   {
     "objectID": "arbresgraphes/implementationArbres.html",
@@ -1153,5 +1153,12 @@
     "title": "T.P. Dictionnaires",
     "section": "Conclusion",
     "text": "Conclusion\nVous le constatez d’après les expériences ci-dessus : le temps de recherche dans le dictionnaire est pratiquement indépendant du nombre d’entrées dans ce dictionnaire, car en multipliant le nombre de contacts par 100, le temps est resté pratiquement identique alors que dans le cas de la recherche dans un tableau, celui-ci est proportionnel à la longueur du tableau.\nLe dictionnaire est donc une structure de données optimisée pour la recherche sur les clés."
+  },
+  {
+    "objectID": "arbresgraphes/graphes_exercices.html#fa-solid-pencil-alt-exercice-3",
+    "href": "arbresgraphes/graphes_exercices.html#fa-solid-pencil-alt-exercice-3",
+    "title": "Exercices sur les graphes",
+    "section": " Exercice 3",
+    "text": "Exercice 3\nVoici un ensemble de relations :\n\nA est ami avec tout le monde sauf G,\nB est ami avec A, D et H,\nC est ami avec A, F, G et H,\nD est ami avec A, B et H,\nE est ami avec A et H,\nF est ami avec A et C,\nG est ami avec C et H,\nH est ami avec A, B, C, D, E et G.\n\n\nReprésenter ce graphe et vérifier qu’il est non orienté.\nImplémenter ce graphe sous la forme d’une liste d’adjacence dans laquelle chaque clé représente le nœud étudié.\nÉcrire la matrice d’adjacence et vérifier qu’elle est symétrique (on utilisera l’ordre alphabétique pour indexer les nœuds). 4 Implémenter la matrice en python sous la forme d’une liste de liste."
   }
 ]

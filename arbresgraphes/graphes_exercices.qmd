@@ -51,18 +51,41 @@ Dessiner un graphe complet d'ordre 3, puis un graphe complet d'ordre 4.
 
 ## {{< fa solid pencil-alt >}} Exercice 2
 
-Donner la matrice d'adjacence du graphe suivant :
+**Graphe d’un réseau électrique**
 
-```{r,engine='tikz'}
-#| fig-align: 'center'
-#| fig.width: 4
-#| echo: false
-\begin{tikzpicture}[scale=1]
-\draw [->] (-2,0) node (V1) [left] {$V_1$} -- (0,0) node (V2) [right] {$V_2$};
-\draw [->] (V2) -- (2.5,0) node (V3) [right] {$V_3$};
-\draw (-1,0) node [above] {$\times C_1$};
-\draw (1.5,0) node [above] {$\times C_2$};
-\draw [->] (V1) .. controls (-1,-1) and (1,-1) .. (V3);
-\draw (0,-1) node [below] {$\times C_{global}$};
-\end{tikzpicture}
-```
+Un de vos amis travaille pour un distributeur d’électricité.
+
+Il doit proposer à son supérieur une représentation du réseau reliant différentes villes. Comme il n’y arrive pas trop, il voudrait que vous la lui fassiez.
+
+Pour simplifier le problème, il a déjà renommé les villes en A, B, C, D, E et F. De plus, il vous donne les informations suivantes :
+
+* la ville B est reliée par un réseau électrique aux villes A, C et D,
+* la ville A est reliée par un réseau électrique aux villes B, E et F,
+* la ville C est reliée par un réseau électrique aux villes B, D, E et F,
+* la ville D est reliée par un réseau électrique aux villes B, C et F,
+* la ville E est reliée par un réseau électrique aux villes A, C et F,
+* la ville F est relié par un réseau électrique aux villes A, C, D et E.
+
+Proposer un graphe qui modélise la situation.
+
+Ce graphe est-il complet ? Pourquoi ?
+
+Donner sa matrice d'adjacence.
+
+## {{< fa solid pencil-alt >}} Exercice 3
+
+Voici un ensemble de relations :
+
+* A est ami avec tout le monde sauf G,
+* B est ami avec A, D et H,
+* C est ami avec A, F, G et H,
+* D est ami avec A, B et H,
+* E est ami avec A et H,
+* F est ami avec A et C,
+* G est ami avec C et H,
+* H est ami avec A, B, C, D, E et G.
+
+1. Représenter ce graphe et vérifier qu’il est non orienté.
+2. Implémenter ce graphe sous la forme d'une liste d'adjacence dans laquelle chaque clé représente le nœud étudié.
+3. Écrire la matrice d’adjacence et vérifier qu’elle est symétrique (on utilisera l’ordre alphabétique pour indexer les nœuds).
+4 Implémenter la matrice en python sous la forme d’une liste de liste.

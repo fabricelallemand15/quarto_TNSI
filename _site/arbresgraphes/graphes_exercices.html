@@ -44,9 +44,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -570,6 +567,7 @@ cookieconsent.run({
   <ul>
   <li><a href="#fa-solid-pencil-alt-exercice-1" id="toc-fa-solid-pencil-alt-exercice-1" class="nav-link active" data-scroll-target="#fa-solid-pencil-alt-exercice-1"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 1</a></li>
   <li><a href="#fa-solid-pencil-alt-exercice-2" id="toc-fa-solid-pencil-alt-exercice-2" class="nav-link" data-scroll-target="#fa-solid-pencil-alt-exercice-2"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 2</a></li>
+  <li><a href="#fa-solid-pencil-alt-exercice-3" id="toc-fa-solid-pencil-alt-exercice-3" class="nav-link" data-scroll-target="#fa-solid-pencil-alt-exercice-3"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 3</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/arbresgraphes/graphes_exercices.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div><div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="graphes_exercices.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -603,16 +601,40 @@ cookieconsent.run({
 </section>
 <section id="fa-solid-pencil-alt-exercice-2" class="level2">
 <h2 class="anchored" data-anchor-id="fa-solid-pencil-alt-exercice-2"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 2</h2>
-<p>Donner la matrice d’adjacence du graphe suivant :</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="graphes_exercices_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="graphes_exercices_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="384"></a></p>
-</figure>
-</div>
-</div>
-</div>
+<p><strong>Graphe d’un réseau électrique</strong></p>
+<p>Un de vos amis travaille pour un distributeur d’électricité.</p>
+<p>Il doit proposer à son supérieur une représentation du réseau reliant différentes villes. Comme il n’y arrive pas trop, il voudrait que vous la lui fassiez.</p>
+<p>Pour simplifier le problème, il a déjà renommé les villes en A, B, C, D, E et F. De plus, il vous donne les informations suivantes :</p>
+<ul>
+<li>la ville B est reliée par un réseau électrique aux villes A, C et D,</li>
+<li>la ville A est reliée par un réseau électrique aux villes B, E et F,</li>
+<li>la ville C est reliée par un réseau électrique aux villes B, D, E et F,</li>
+<li>la ville D est reliée par un réseau électrique aux villes B, C et F,</li>
+<li>la ville E est reliée par un réseau électrique aux villes A, C et F,</li>
+<li>la ville F est relié par un réseau électrique aux villes A, C, D et E.</li>
+</ul>
+<p>Proposer un graphe qui modélise la situation.</p>
+<p>Ce graphe est-il complet ? Pourquoi ?</p>
+<p>Donner sa matrice d’adjacence.</p>
+</section>
+<section id="fa-solid-pencil-alt-exercice-3" class="level2">
+<h2 class="anchored" data-anchor-id="fa-solid-pencil-alt-exercice-3"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 3</h2>
+<p>Voici un ensemble de relations :</p>
+<ul>
+<li>A est ami avec tout le monde sauf G,</li>
+<li>B est ami avec A, D et H,</li>
+<li>C est ami avec A, F, G et H,</li>
+<li>D est ami avec A, B et H,</li>
+<li>E est ami avec A et H,</li>
+<li>F est ami avec A et C,</li>
+<li>G est ami avec C et H,</li>
+<li>H est ami avec A, B, C, D, E et G.</li>
+</ul>
+<ol type="1">
+<li>Représenter ce graphe et vérifier qu’il est non orienté.</li>
+<li>Implémenter ce graphe sous la forme d’une liste d’adjacence dans laquelle chaque clé représente le nœud étudié.</li>
+<li>Écrire la matrice d’adjacence et vérifier qu’elle est symétrique (on utilisera l’ordre alphabétique pour indexer les nœuds). 4 Implémenter la matrice en python sous la forme d’une liste de liste.</li>
+</ol>
 
 
 </section>
@@ -1006,7 +1028,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":true,"openEffect":"zoom","closeEffect":"zoom"});</script>
 
 
 
