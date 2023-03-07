@@ -9,7 +9,6 @@
   numbers=noendperiod]{scrartcl}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -19,6 +18,10 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -79,7 +82,7 @@
 \usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
 \KOMAoption{captions}{tablesignature}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \definecolor{quarto-callout-color}{HTML}{909090}
 \definecolor{quarto-callout-note-color}{HTML}{0758E5}
@@ -138,7 +141,7 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \makeatother
 \makeatletter
 \@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
@@ -146,7 +149,6 @@
 \makeatletter
 \makeatother
 \makeatletter
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \makeatother
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -188,9 +190,9 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2.5cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, interior hidden, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, frame hidden, enhanced, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, sharp corners, boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, coltitle=black, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0, rightrule=.15mm, coltitle=black, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, arc=.35mm, titlerule=0mm, left=2mm, colback=white]
 
 Le modèle relationnel est une manière de modéliser les relations
 existantes entre plusieurs informations, et de les ordonner entre elles
@@ -228,7 +230,7 @@ par exemple vous essayez d'ajouter un code postal non entier (par
 exemple 8.5), le SGBD signalera cette erreur et n'autorisera pas
 l'écriture de cette nouvelle donnée.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Règles à respecter}, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, coltitle=black, colframe=quarto-callout-important-color-frame, toprule=.15mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-important-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0, rightrule=.15mm, coltitle=black, opacitybacktitle=0.6, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Règles à respecter}, arc=.35mm, titlerule=0mm, left=2mm, colback=white]
 
 Dans une relation, il est nécessaire de respecter les deux règles
 ci-dessous :
@@ -253,7 +255,7 @@ en pratique un critère d'unicité sur l'un des attributs, la
 \subsection{2. Clef primaire, clef
 étrangère}\label{clef-primaire-clef-uxe9tranguxe8re}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, coltitle=black, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0, rightrule=.15mm, coltitle=black, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, arc=.35mm, titlerule=0mm, left=2mm, colback=white]
 
 Dans une relation, une \textbf{clef primaire} est un attribut (ou un
 groupes d'attributs) qui définit de manière unique chacun de p-uplets.
@@ -319,7 +321,7 @@ communes sont représentées dans la relation des établissements par leur
 \emph{code} dans la relation des communes. On dit que l'attribut
 \emph{id\_commune} est une \textbf{clef étrangère}.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, coltitle=black, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0, rightrule=.15mm, coltitle=black, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, arc=.35mm, titlerule=0mm, left=2mm, colback=white]
 
 Soient deux relations \(R\) et \(S\) de clefs primaires respectives
 \(c_R\) et \(c_S\).
@@ -340,7 +342,7 @@ de la relation des communes.
 
 Deux contraintes doivent toujours être vérifiées avec les clefs :
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Contraintes liées aux clefs}, bottomtitle=1mm, bottomrule=.15mm, leftrule=.75mm, coltitle=black, colframe=quarto-callout-important-color-frame, toprule=.15mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, colback=white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, colbacktitle=quarto-callout-important-color!10!white, breakable, toprule=.15mm, bottomrule=.15mm, leftrule=.75mm, opacityback=0, rightrule=.15mm, coltitle=black, opacitybacktitle=0.6, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Contraintes liées aux clefs}, arc=.35mm, titlerule=0mm, left=2mm, colback=white]
 
 \begin{itemize}
 \tightlist

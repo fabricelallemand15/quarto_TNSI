@@ -9,7 +9,6 @@
   numbers=noendperiod]{scrartcl}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -19,6 +18,10 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -119,7 +122,7 @@
 \usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
 \KOMAoption{captions}{tablesignature}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \definecolor{quarto-callout-color}{HTML}{909090}
 \definecolor{quarto-callout-note-color}{HTML}{0758E5}
@@ -178,7 +181,7 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \makeatother
 \makeatletter
 \@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
@@ -186,7 +189,6 @@
 \makeatletter
 \makeatother
 \makeatletter
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \makeatother
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -228,13 +230,13 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, enhanced, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, frame hidden, boxrule=0pt, interior hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable]}{\end{tcolorbox}}\fi
 
 \hypertarget{du-point-de-vue-utilisateur-interface}{%
 \subsection{1. Du point de vue utilisateur :
 interface}\label{du-point-de-vue-utilisateur-interface}}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, left=2mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, toprule=.15mm, bottomtitle=1mm, coltitle=black, breakable, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colback=white, titlerule=0mm, toprule=.15mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, arc=.35mm, leftrule=.75mm, opacityback=0, breakable, colbacktitle=quarto-callout-tip-color!10!white, opacitybacktitle=0.6, toptitle=1mm, left=2mm, rightrule=.15mm]
 
 La \textbf{pile} est une structure de données qui permet de stocker des
 données et d'y accéder. Une pile se comporte comme une \textbf{pile
@@ -321,7 +323,7 @@ L'interface suivante permet de définir le type abstrait de données
 L'opération d'empilement se dit ``push'' en anglais, l'opération de
 dépilement se dit ``pop''.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, left=2mm, colframe=quarto-callout-note-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, toprule=.15mm, bottomtitle=1mm, coltitle=black, breakable, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{La pile est utile dans différents types de problèmes}, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colback=white, titlerule=0mm, toprule=.15mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{La pile est utile dans différents types de problèmes}, arc=.35mm, leftrule=.75mm, opacityback=0, breakable, colbacktitle=quarto-callout-note-color!10!white, opacitybacktitle=0.6, toptitle=1mm, left=2mm, rightrule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -348,7 +350,7 @@ dépilement se dit ``pop''.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-caution-color!10!white, leftrule=.75mm, left=2mm, colframe=quarto-callout-caution-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, toprule=.15mm, bottomtitle=1mm, coltitle=black, breakable, opacityback=0, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colback=white, titlerule=0mm, toprule=.15mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, arc=.35mm, leftrule=.75mm, opacityback=0, breakable, colbacktitle=quarto-callout-caution-color!10!white, opacitybacktitle=0.6, toptitle=1mm, left=2mm, rightrule=.15mm]
 
 Supposons implémenté le type abstrait \textbf{pile}. Nous disposons
 d'une interface composée des six primitives décrites ci-dessus. On
@@ -504,7 +506,7 @@ On reprend l'idée de \textbf{chaînon} utilisée pour les listes.
 
 Cette implémentation sera testée en exercices.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomrule=.15mm, colback=white, colbacktitle=quarto-callout-important-color!10!white, leftrule=.75mm, left=2mm, colframe=quarto-callout-important-color-frame, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, toprule=.15mm, bottomtitle=1mm, coltitle=black, breakable, opacityback=0, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Comparaison des deux implémentations}, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colback=white, titlerule=0mm, toprule=.15mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Comparaison des deux implémentations}, arc=.35mm, leftrule=.75mm, opacityback=0, breakable, colbacktitle=quarto-callout-important-color!10!white, opacitybacktitle=0.6, toptitle=1mm, left=2mm, rightrule=.15mm]
 
 On peut comparer en termes de temps d'exécution l'efficacité de ces deux
 implémentations.

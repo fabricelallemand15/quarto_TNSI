@@ -9,7 +9,6 @@
   numbers=noendperiod]{scrartcl}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -19,6 +18,10 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -119,7 +122,7 @@
 \usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
 \KOMAoption{captions}{tablesignature}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \definecolor{quarto-callout-color}{HTML}{909090}
 \definecolor{quarto-callout-note-color}{HTML}{0758E5}
@@ -178,7 +181,7 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \makeatother
 \makeatletter
 \@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
@@ -186,7 +189,6 @@
 \makeatletter
 \makeatother
 \makeatletter
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \makeatother
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -228,9 +230,9 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, interior hidden, boxrule=0pt, breakable, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, sharp corners]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, breakable, colback=white, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Avertissement}, bottomtitle=1mm, opacityback=0, coltitle=black, toptitle=1mm, arc=.35mm, left=2mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, left=2mm, breakable, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Avertissement}, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, arc=.35mm, colback=white, bottomtitle=1mm, opacityback=0, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, toprule=.15mm]
 
 Les compléments présentés ici sont hors programme. Ils peuvent néanmoins
 apporter une connaissance et une compréhension plus fine de la POO et
@@ -322,7 +324,7 @@ modification sur les membres d'un objet. C'est au programmeur de rester
 vigilant. Il existe néanmoins des conventions permettant d'identifier
 les membres de l'interface des autres membres d'un objet.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, breakable, colback=white, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Conventions de nommage en Python}, bottomtitle=1mm, opacityback=0, coltitle=black, toptitle=1mm, arc=.35mm, left=2mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, left=2mm, breakable, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Conventions de nommage en Python}, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, arc=.35mm, colback=white, bottomtitle=1mm, opacityback=0, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, toprule=.15mm]
 
 \begin{itemize}
 \tightlist
@@ -506,7 +508,7 @@ Utilisation :
 La méthode \texttt{perimetre} est héritée de la classe mère
 \texttt{Rectangle}.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, bottomrule=.15mm, breakable, colback=white, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Héritage et initialiseur}, bottomtitle=1mm, opacityback=0, coltitle=black, toptitle=1mm, arc=.35mm, left=2mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, left=2mm, breakable, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Héritage et initialiseur}, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, arc=.35mm, colback=white, bottomtitle=1mm, opacityback=0, bottomrule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, toprule=.15mm]
 
 La méthode initialiseur de la classe \texttt{Carre} fait appel à la
 méthode initialiseur de sa classe parente par la commande
@@ -609,10 +611,12 @@ Les curieux pourront rechercher le rôle de chacune de ces méthodes
 spéciales. Le voici pour certaines d'entre elles :
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 Méthode spéciale & Usage \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \textbf{add} & + \\
 \textbf{mul} & * \\
 \textbf{sub} & - \\
@@ -625,7 +629,6 @@ Méthode spéciale & Usage \\
 \textbf{repr} & affichage dans la console
 \textgreater\textgreater\textgreater{} obj \\
 \textbf{str} & str(obj), print(obj) \\
-\bottomrule()
 \end{longtable}
 
 La redéfinition de la méthode \texttt{\_\_add\_\_} permettrait par

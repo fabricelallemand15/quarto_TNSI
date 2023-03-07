@@ -9,7 +9,6 @@
   numbers=noendperiod]{scrartcl}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -19,6 +18,10 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -119,7 +122,7 @@
 \usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
 \KOMAoption{captions}{tablesignature}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \definecolor{quarto-callout-color}{HTML}{909090}
 \definecolor{quarto-callout-note-color}{HTML}{0758E5}
@@ -178,7 +181,7 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \makeatother
 \makeatletter
 \@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
@@ -186,7 +189,6 @@
 \makeatletter
 \makeatother
 \makeatletter
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \makeatother
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -228,7 +230,7 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-3cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, breakable, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, sharp corners, boxrule=0pt, enhanced, interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \hypertarget{du-point-de-vue-utilisateur-interface}{%
 \subsection{1. Du point de vue utilisateur :
@@ -237,7 +239,7 @@ Interface}\label{du-point-de-vue-utilisateur-interface}}
 Nous allons maintenant étudier un autre type abstrait de données : les
 \textbf{dictionnaires} aussi appelés \textbf{tableaux associatifs}.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, coltitle=black, opacityback=0, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, left=2mm, toprule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, breakable, toprule=.15mm, arc=.35mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, rightrule=.15mm, left=2mm, bottomrule=.15mm]
 
 Un dictionnaire est une structure de donnée permettant d'\textbf{indexer
 des objets par leur nom} plutôt que par un nombre.
@@ -286,7 +288,7 @@ dictionnaire Python. Comme :
   des tuples
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, coltitle=black, opacityback=0, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, left=2mm, toprule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, breakable, toprule=.15mm, arc=.35mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, rightrule=.15mm, left=2mm, bottomrule=.15mm]
 
 Exemples de couples clé:valeur :
 
@@ -323,7 +325,7 @@ structure de dictionnaire peuvent être les suivantes :
   la clé associée à cette valeur.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, coltitle=black, opacityback=0, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, left=2mm, toprule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, breakable, toprule=.15mm, arc=.35mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, rightrule=.15mm, left=2mm, bottomrule=.15mm]
 
 Soit le dictionnaire D composé des couples clé:valeur suivants :
 prenom:Kevin, nom:Durand, naissance:17-05-2005. Pour chaque exemple
@@ -388,7 +390,7 @@ hachage}.
 
 On peut retenir que
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, colback=white, coltitle=black, opacityback=0, opacitybacktitle=0.6, breakable, titlerule=0mm, arc=.35mm, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, left=2mm, toprule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{À retenir}, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, coltitle=black, opacitybacktitle=0.6, opacityback=0, leftrule=.75mm, breakable, toprule=.15mm, arc=.35mm, titlerule=0mm, toptitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{À retenir}, rightrule=.15mm, left=2mm, bottomrule=.15mm]
 
 La complexité de recherche, d'ajout et de suppression d'un élément dans
 un dictionnaire est en \(\mathcal{O}(1)\) : elle ne dépend pas du nombre

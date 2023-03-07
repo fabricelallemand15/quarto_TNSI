@@ -9,7 +9,6 @@
   numbers=noendperiod]{scrartcl}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -19,6 +18,10 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -119,7 +122,7 @@
 \usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
 \KOMAoption{captions}{tablesignature}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \definecolor{quarto-callout-color}{HTML}{909090}
 \definecolor{quarto-callout-note-color}{HTML}{0758E5}
@@ -178,7 +181,7 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \makeatother
 \makeatletter
 \@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
@@ -186,7 +189,6 @@
 \makeatletter
 \makeatother
 \makeatletter
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \makeatother
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -228,9 +230,9 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, interior hidden, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, boxrule=0pt, enhanced, sharp corners, frame hidden, breakable]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Attention !}, colframe=quarto-callout-warning-color-frame, breakable, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-warning-color!10!white, coltitle=black, leftrule=.75mm, left=2mm, bottomrule=.15mm, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, opacityback=0, colback=white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Attention !}, opacityback=0, colback=white, bottomtitle=1mm, breakable, rightrule=.15mm, titlerule=0mm, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, left=2mm, toprule=.15mm, arc=.35mm, toptitle=1mm, leftrule=.75mm]
 
 En Première, nous avons utilisé le type de données \texttt{list} de
 Python pour représenter des \textbf{tableaux} de d'éléments de même
@@ -249,7 +251,7 @@ liste en utilisant des structures de type \texttt{list} en Python.
 \subsection{1. Du point de vue utilisateur :
 interface}\label{du-point-de-vue-utilisateur-interface}}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, colframe=quarto-callout-tip-color-frame, breakable, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, leftrule=.75mm, left=2mm, bottomrule=.15mm, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, opacityback=0, colback=white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, opacityback=0, colback=white, bottomtitle=1mm, breakable, rightrule=.15mm, titlerule=0mm, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, toprule=.15mm, arc=.35mm, toptitle=1mm, leftrule=.75mm]
 
 Une liste est une structure de données qui permet de stocker des données
 et d'y accéder directement.
@@ -304,7 +306,7 @@ permettant de modifier la valeur d'un élément de la liste).
 permettant par exemple de renvoyer la longueur d'une liste, de
 rechercher un élément ou d'accéder au ième élément \ldots{}
 
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, colframe=quarto-callout-caution-color-frame, breakable, toptitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, leftrule=.75mm, left=2mm, bottomrule=.15mm, titlerule=0mm, rightrule=.15mm, bottomtitle=1mm, opacityback=0, colback=white, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, opacityback=0, colback=white, bottomtitle=1mm, breakable, rightrule=.15mm, titlerule=0mm, coltitle=black, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, toprule=.15mm, arc=.35mm, toptitle=1mm, leftrule=.75mm]
 
 Supposons implémenté le type abstrait \textbf{liste}. Nous disposons
 d'une interface composée des cinq primitives décrites ci-dessus. On

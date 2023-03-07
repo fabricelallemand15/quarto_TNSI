@@ -9,7 +9,6 @@
   numbers=noendperiod]{scrartcl}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -19,6 +18,10 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -162,10 +165,12 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \makeatother
 \makeatletter
 \@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
 \makeatother
 \makeatletter
 \makeatother
@@ -212,7 +217,7 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-3cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, enhanced, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden, interior hidden, enhanced, breakable]}{\end{tcolorbox}}\fi
 
 \emph{Les exercices précédés du symbole \faIcon{desktop} sont à faire
 sur machine, en sauvegardant le fichier si nécessaire.}
@@ -227,15 +232,16 @@ résolus par écrit.}
 Voici un extrait d'une relation référençant des films :
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule()
+\toprule\noalign{}
 id & titre & realisateur & ann\_sortie & note\_sur\_10 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & Alien, le huitième passager & Scott & 1979 & 10 \\
 2 & Dune & Lynch & 1985 & 5 \\
 3 & 2001 : l'odyssée de l'espace & Kubrick & 1968 & 9 \\
 4 & Blade Runner & Scott & 1982 & 10 \\
-\bottomrule()
 \end{longtable}
 
 Listez les différents attributs de cette relation. Donnez le domaine de
@@ -264,30 +270,32 @@ permet de connaître les stations de ski préférées des adhérents.
 Table ADHERENTS
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule()
+\toprule\noalign{}
 num\_licence & nom & prenom & annee\_naissance & ref\_station \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 12558 & Doe & John & 1988 & 5 \\
 13668 & Vect & Alice & 1974 & 6 \\
 1777 & Dect & Bob & 1967 & 3 \\
 13447 & Beau & Tristan & 1999 & 4 \\
 1141 & Pabeau & John & 1975 & 3 \\
-\bottomrule()
 \end{longtable}
 
 table STATIONS
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 ref & nom & altitude\_max \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 3 & Le grand Bornand & 2050 \\
 4 & La clusaz & 2616 \\
 5 & Flaine & 2510 \\
 6 & Avoriaz & 2466 \\
-\bottomrule()
 \end{longtable}
 
 \begin{enumerate}
