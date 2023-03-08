@@ -36,7 +36,8 @@ format:
         biblio-title: Sources utilisées
         reference-location: document
         keep-tex: true
-format-links: [pdf, tex]
+    latex: default
+format-links: [pdf, latex]
 ---
 
 _Les exercices précédés du symbole {{< fa desktop >}} sont à faire sur machine, en sauvegardant le fichier si nécessaire._
@@ -89,3 +90,13 @@ Voici un ensemble de relations :
 2. Implémenter ce graphe sous la forme d'une liste d'adjacence dans laquelle chaque clé représente le nœud étudié.
 3. Écrire la matrice d’adjacence et vérifier qu’elle est symétrique (on utilisera l’ordre alphabétique pour indexer les nœuds).
 4 Implémenter la matrice en python sous la forme d’une liste de liste.
+
+## {{< fa solid pencil-alt >}} Exercice 4
+
+Voici un graphe représentant les distances dans le réseau sud-est.
+
+![Réseau sud-Est](reseau-routier-sud-est.png)
+
+1. Implémenter ce graphe sous la forme d’un dictionnaire de liste dans lequel chaque clé représente le nœud étudié et les sommets adjacents sont représentés sous la forme d’une liste de dictionnaires clé(sommet adjacent): valeur(distance).
+2. Écrire la matrice d’adjacence et vérifier qu’elle est symétrique(on utilisera l’ordre alphabétique pour indexer les nœuds).
+3. Proposer un algorithme qui renvoie tous les chemins possibles pour aller de Nice à Lyon sans jamais passer deux fois par la même ville. On utilisera trois paramètres d’entrée: le graphe implémenté sous la forme d’un dictionnaire d’adjacence comme celui de la question 2 et les deux villes de départ et d’arrivée.

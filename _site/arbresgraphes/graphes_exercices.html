@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../archiSE/index.html" rel="next">
+<link href="../arbresgraphes/tp_graphe_liste.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -44,6 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -131,7 +136,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exercices sur les graphes</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../arbresgraphes/index.html">S4-Arbres et graphes</a></li><li class="breadcrumb-item"><a href="../arbresgraphes/graphes_exercices.html">Exercices sur les graphes</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -430,13 +435,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
  <span class="menu-text">S4-Arbres et graphes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../arbresgraphes/index.html" class="sidebar-item-text sidebar-link">
@@ -483,6 +488,12 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../arbresgraphes/tp_graphe_liste.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP - Implémentation des graphes par liste d’adjacence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/graphes_exercices.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Exercices sur les graphes</span></a>
   </div>
 </li>
       </ul>
@@ -568,8 +579,9 @@ cookieconsent.run({
   <li><a href="#fa-solid-pencil-alt-exercice-1" id="toc-fa-solid-pencil-alt-exercice-1" class="nav-link active" data-scroll-target="#fa-solid-pencil-alt-exercice-1"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 1</a></li>
   <li><a href="#fa-solid-pencil-alt-exercice-2" id="toc-fa-solid-pencil-alt-exercice-2" class="nav-link" data-scroll-target="#fa-solid-pencil-alt-exercice-2"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 2</a></li>
   <li><a href="#fa-solid-pencil-alt-exercice-3" id="toc-fa-solid-pencil-alt-exercice-3" class="nav-link" data-scroll-target="#fa-solid-pencil-alt-exercice-3"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 3</a></li>
+  <li><a href="#fa-solid-pencil-alt-exercice-4" id="toc-fa-solid-pencil-alt-exercice-4" class="nav-link" data-scroll-target="#fa-solid-pencil-alt-exercice-4"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 4</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/arbresgraphes/graphes_exercices.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div><div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="graphes_exercices.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/arbresgraphes/graphes_exercices.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div><div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="graphes_exercices.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="graphes_exercices.tex"><i class="bi bi-file"></i>LaTeX</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -634,6 +646,21 @@ cookieconsent.run({
 <li>Représenter ce graphe et vérifier qu’il est non orienté.</li>
 <li>Implémenter ce graphe sous la forme d’une liste d’adjacence dans laquelle chaque clé représente le nœud étudié.</li>
 <li>Écrire la matrice d’adjacence et vérifier qu’elle est symétrique (on utilisera l’ordre alphabétique pour indexer les nœuds). 4 Implémenter la matrice en python sous la forme d’une liste de liste.</li>
+</ol>
+</section>
+<section id="fa-solid-pencil-alt-exercice-4" class="level2">
+<h2 class="anchored" data-anchor-id="fa-solid-pencil-alt-exercice-4"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 4</h2>
+<p>Voici un graphe représentant les distances dans le réseau sud-est.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="reseau-routier-sud-est.png" class="lightbox" title="Réseau sud-Est" data-gallery="quarto-lightbox-gallery-1"><img src="reseau-routier-sud-est.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Réseau sud-Est</figcaption><p></p>
+</figure>
+</div>
+<ol type="1">
+<li>Implémenter ce graphe sous la forme d’un dictionnaire de liste dans lequel chaque clé représente le nœud étudié et les sommets adjacents sont représentés sous la forme d’une liste de dictionnaires clé(sommet adjacent): valeur(distance).</li>
+<li>Écrire la matrice d’adjacence et vérifier qu’elle est symétrique(on utilisera l’ordre alphabétique pour indexer les nœuds).</li>
+<li>Proposer un algorithme qui renvoie tous les chemins possibles pour aller de Nice à Lyon sans jamais passer deux fois par la même ville. On utilisera trois paramètres d’entrée: le graphe implémenté sous la forme d’un dictionnaire d’adjacence comme celui de la question 2 et les deux villes de départ et d’arrivée.</li>
 </ol>
 
 
@@ -1002,6 +1029,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../arbresgraphes/tp_graphe_liste.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP - Implémentation des graphes par liste d’adjacence</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../archiSE/index.html" class="pagination-link">
+        <span class="nav-page-text">S5-Architectures matérielles, systèmes d’exploitation et réseaux</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1028,6 +1067,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":true,"selector":".lightbox"});</script>
 
 
 

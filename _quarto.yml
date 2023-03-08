@@ -84,7 +84,7 @@ website:
           - arbresgraphes/graphes_cours.qmd
           - arbresgraphes/tp_graphe_matrice.ipynb
           - arbresgraphes/tp_graphe_liste.ipynb
-          # - arbresgraphes/graphes_exercices.qmd
+          - arbresgraphes/graphes_exercices.qmd
       - section: "S5-Architectures matérielles et systèmes d'exploitation"
         contents: 
           - archiSE/index.qmd

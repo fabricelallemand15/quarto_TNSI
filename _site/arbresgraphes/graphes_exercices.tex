@@ -4,7 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  a4paper,
+  letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
 
@@ -40,7 +40,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage[top=20mm,bottom=20mm,left=20mm,right=20mm,heightrounded]{geometry}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
@@ -79,7 +78,6 @@
 \def\fps@figure{htbp}
 \makeatother
 
-\usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
 \KOMAoption{captions}{tablesignature}
 \makeatletter
 \makeatother
@@ -175,9 +173,7 @@
 
 \begin{document}
 \maketitle
-\lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
-
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden, breakable, interior hidden, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, boxrule=0pt, enhanced, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \emph{Les exercices précédés du symbole \faIcon{desktop} sont à faire
 sur machine, en sauvegardant le fichier si nécessaire.}
@@ -271,6 +267,41 @@ Voici un ensemble de relations :
   Écrire la matrice d'adjacence et vérifier qu'elle est symétrique (on
   utilisera l'ordre alphabétique pour indexer les nœuds). 4 Implémenter
   la matrice en python sous la forme d'une liste de liste.
+\end{enumerate}
+
+\hypertarget{fa-solid-pencil-alt-exercice-4}{%
+\subsection{\texorpdfstring{\faIcon{pencil-alt} Exercice
+4}{ Exercice 4}}\label{fa-solid-pencil-alt-exercice-4}}
+
+Voici un graphe représentant les distances dans le réseau sud-est.
+
+\begin{figure}
+
+{\centering \includegraphics{reseau-routier-sud-est.png}
+
+}
+
+\caption{Réseau sud-Est}
+
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Implémenter ce graphe sous la forme d'un dictionnaire de liste dans
+  lequel chaque clé représente le nœud étudié et les sommets adjacents
+  sont représentés sous la forme d'une liste de dictionnaires clé(sommet
+  adjacent): valeur(distance).
+\item
+  Écrire la matrice d'adjacence et vérifier qu'elle est symétrique(on
+  utilisera l'ordre alphabétique pour indexer les nœuds).
+\item
+  Proposer un algorithme qui renvoie tous les chemins possibles pour
+  aller de Nice à Lyon sans jamais passer deux fois par la même ville.
+  On utilisera trois paramètres d'entrée: le graphe implémenté sous la
+  forme d'un dictionnaire d'adjacence comme celui de la question 2 et
+  les deux villes de départ et d'arrivée.
 \end{enumerate}
 
 

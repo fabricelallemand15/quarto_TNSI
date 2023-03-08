@@ -1160,5 +1160,12 @@
     "title": "Exercices sur les graphes",
     "section": " Exercice 3",
     "text": "Exercice 3\nVoici un ensemble de relations :\n\nA est ami avec tout le monde sauf G,\nB est ami avec A, D et H,\nC est ami avec A, F, G et H,\nD est ami avec A, B et H,\nE est ami avec A et H,\nF est ami avec A et C,\nG est ami avec C et H,\nH est ami avec A, B, C, D, E et G.\n\n\nReprésenter ce graphe et vérifier qu’il est non orienté.\nImplémenter ce graphe sous la forme d’une liste d’adjacence dans laquelle chaque clé représente le nœud étudié.\nÉcrire la matrice d’adjacence et vérifier qu’elle est symétrique (on utilisera l’ordre alphabétique pour indexer les nœuds). 4 Implémenter la matrice en python sous la forme d’une liste de liste."
+  },
+  {
+    "objectID": "arbresgraphes/graphes_exercices.html#fa-solid-pencil-alt-exercice-4",
+    "href": "arbresgraphes/graphes_exercices.html#fa-solid-pencil-alt-exercice-4",
+    "title": "Exercices sur les graphes",
+    "section": " Exercice 4",
+    "text": "Exercice 4\nVoici un graphe représentant les distances dans le réseau sud-est.\n\n\n\nRéseau sud-Est\n\n\n\nImplémenter ce graphe sous la forme d’un dictionnaire de liste dans lequel chaque clé représente le nœud étudié et les sommets adjacents sont représentés sous la forme d’une liste de dictionnaires clé(sommet adjacent): valeur(distance).\nÉcrire la matrice d’adjacence et vérifier qu’elle est symétrique(on utilisera l’ordre alphabétique pour indexer les nœuds).\nProposer un algorithme qui renvoie tous les chemins possibles pour aller de Nice à Lyon sans jamais passer deux fois par la même ville. On utilisera trois paramètres d’entrée: le graphe implémenté sous la forme d’un dictionnaire d’adjacence comme celui de la question 2 et les deux villes de départ et d’arrivée."
   }
 ]
