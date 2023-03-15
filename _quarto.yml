@@ -97,6 +97,7 @@ website:
       - section: "Baccalauréat"
         contents: 
           - bac/index.qmd
+          - bac/annales.qmd
   page-footer: 
     left:
       - href: http://creativecommons.org/licenses/by/4.0/

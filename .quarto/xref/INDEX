@@ -241,5 +241,13 @@
   "arbresgraphes/tp_graphe_matrice_CORR.ipynb": {
     "tp_graphe_matrice_CORR.html": "369fbf6d",
     "tp_graphe_matrice_CORR.tex": "b26e45b2"
+  },
+  "bac/annales.qmd": {
+    "annales.html": "b3aae40a",
+    "annales.tex": "e3d3802a"
+  },
+  "bac/2023_CE_J1_corrige.qmd": {
+    "2023_CE_J1_corrige.html": "b2f70044",
+    "2023_CE_J1_corrige.tex": "354a248f"
   }
 }
