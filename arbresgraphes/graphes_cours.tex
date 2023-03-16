@@ -213,7 +213,7 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, interior hidden, enhanced, boxrule=0pt, sharp corners, breakable, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, interior hidden, boxrule=0pt, enhanced, sharp corners]}{\end{tcolorbox}}\fi
 
 \hypertarget{notion-de-graphe}{%
 \subsection{1. Notion de graphe}\label{notion-de-graphe}}
@@ -221,7 +221,7 @@
 \hypertarget{duxe9finition}{%
 \subsubsection{1.1. Définition}\label{duxe9finition}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, colback=white, bottomrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, rightrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm, toprule=.15mm, breakable, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, arc=.35mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, titlerule=0mm, breakable, coltitle=black, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm]
 
 Un \textbf{graphe non orienté} est constitué :
 
@@ -249,7 +249,7 @@ numérotés de 0 à 6.
 
 \end{figure}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, colback=white, bottomrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, rightrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm, toprule=.15mm, breakable, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, arc=.35mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, titlerule=0mm, breakable, coltitle=black, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm]
 
 Un \textbf{graphe orienté} est constitué :
 
@@ -302,7 +302,7 @@ Un peu de vocabulaire :
 La structure d'arbre déjà rencontrée dans le cours est un cas
 particulier de graphe non orienté.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, colback=white, bottomrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, rightrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm, toprule=.15mm, breakable, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, arc=.35mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, titlerule=0mm, breakable, coltitle=black, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm]
 
 Un \textbf{arbre} est un graphe non orienté qui satisfait les conditions
 suivantes :
@@ -381,7 +381,7 @@ où chaque élément est identifié par un couple de coordonnées (ligne,
 colonne). En Python, on peut représenter une matrice par une liste de
 listes.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, colback=white, bottomrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, rightrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm, toprule=.15mm, breakable, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, arc=.35mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, titlerule=0mm, breakable, coltitle=black, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm]
 
 La \textbf{matrice d'adjacence} d'un graphe \(G\) (orienté ou non) est
 une matrice carrée \(A\) de taille \(n\) telle que :
@@ -444,7 +444,7 @@ d'adjacence est symétrique par rapport à la diagonale principale. Dans
 le cas d'un graphe orienté, la matrice d'adjacence n'est pas forcément
 symétrique.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, colback=white, bottomrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{TP Python}, rightrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-caution-color!10!white, titlerule=0mm, left=2mm, toprule=.15mm, breakable, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, arc=.35mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{TP Python}, titlerule=0mm, breakable, coltitle=black, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, colframe=quarto-callout-caution-color-frame, toprule=.15mm, leftrule=.75mm]
 
 \href{tp_graphe_matrice.ipynb}{TP Python : implémentation des graphes
 par matrice d'adjacence}
@@ -456,7 +456,7 @@ par matrice d'adjacence}
 \hypertarget{liste-dadjacence}{%
 \subsubsection{2.2. Liste d'adjacence}\label{liste-dadjacence}}
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, colback=white, bottomrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition : liste d'adjacence}, rightrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, left=2mm, toprule=.15mm, breakable, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, arc=.35mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition : liste d'adjacence}, titlerule=0mm, breakable, coltitle=black, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, leftrule=.75mm]
 
 La \textbf{liste d'adjacence} d'un graphe \(G\) (orienté ou non) dont
 les sommets sont les entiers compris entre 0 et \(n-1\) est une liste
@@ -526,7 +526,7 @@ occupe moins de mémoire que la matrice d'adjacence. Mais certaines
 opérations, comme la vérification de l'adjacence de deux sommets ou la
 suppression d'une arête, sont plus coûteuses en temps d'exécution.
 
-\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, colback=white, bottomrule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{TP Python}, rightrule=.15mm, leftrule=.75mm, colbacktitle=quarto-callout-caution-color!10!white, titlerule=0mm, left=2mm, toprule=.15mm, breakable, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, arc=.35mm, colback=white, toptitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{TP Python}, titlerule=0mm, breakable, coltitle=black, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, colframe=quarto-callout-caution-color-frame, toprule=.15mm, leftrule=.75mm]
 
 Dans le TP ci-dessous, vous devez implémenter la structure de graphe par
 liste d'adjacence. Vous devez également implémenter les fonctions

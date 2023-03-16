@@ -43,7 +43,7 @@ format-links: [pdf, latex]
 
 1. Schéma relationnel de la relation `description` (la clé primaire est soulignée et la clé étrangère est précédée du symbole #):
 
-    description(<span style="text-decoration: underline">id_description</span> : INT, resume : STING, duree : INT, #id_emission : INT)
+    description(<span style="text-decoration: underline">id_description</span> : INT, resume : TEXT, duree : INT, #id_emission : INT)
 
 2. 
 
@@ -225,16 +225,10 @@ La base de donnée telle que définie dans l'énoncé n'est bien construite. Cha
             enfiler(sequence, defiler(stock)) # zone F
     ```
 
-::: {.callout-important}
-
-Contrairement à ce qui est annoncé dans l'énoncé, cette fonction cette fonction ne commence pas par ajouter une couleur à la séquence. Pour être cohérent, il faudrait ajouter la ligne `ajout(sequence)` juste avant  la zone A.
-:::
-
     b. Fonction modifiée :
 
 ```python
 def tour_de_jeu(sequence):
-    ajout(sequence)
     affich_seq(sequence) # zone A
     stock = creer_file_vide()
     gagne = True
@@ -249,7 +243,6 @@ def tour_de_jeu(sequence):
     while not est_vide(stock): # zone E
         enfiler(sequence, defiler(stock)) # zone F
     if gagne:
-        ajout(sequence)
         tour_de_jeu(sequence)
     else:
         vider(sequence)

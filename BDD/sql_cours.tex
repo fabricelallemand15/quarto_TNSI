@@ -230,7 +230,7 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-3cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, interior hidden, breakable, boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, breakable, boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden]}{\end{tcolorbox}}\fi
 
 \href{https://flallemand.fr/notebook/?kernel=sql\&extensions=admonitions\&module=https://flallemand.fr/nsi/assets/BDD/Cantal.db\&from=https://flallemand.fr/nsi/assets/notebooks/cours_SQL.ipynb}{Version
 Notebook de ce cours}
@@ -534,7 +534,7 @@ qu'une fois chacun des codes postaux considérés :
 Une requête dans une base de donnée peut nécessiter de regrouper des
 données provenant de différentes tables.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomtitle=1mm, toptitle=1mm, left=2mm, colback=white, leftrule=.75mm, arc=.35mm, coltitle=black, bottomrule=.15mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, toprule=.15mm, opacityback=0, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, colback=white, arc=.35mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm]
 
 Une requête combinant les données de plusieurs relations (tables) est
 appelée une \textbf{jointure}.
@@ -590,7 +590,7 @@ Résultat :
 
 \end{figure}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomtitle=1mm, toptitle=1mm, left=2mm, colback=white, leftrule=.75mm, arc=.35mm, coltitle=black, bottomrule=.15mm, breakable, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remarque}, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remarque}, toprule=.15mm, opacityback=0, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, colback=white, arc=.35mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm]
 
 Lorsqu'on effectue une jointure, plusieurs tables sont en jeu. Pour
 davantage de clarté, il est recommandé de préfixer chaque attribut par
@@ -679,7 +679,7 @@ Finalement, le projet de lycée hôtelier est abandonné :
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomtitle=1mm, toptitle=1mm, left=2mm, colback=white, leftrule=.75mm, arc=.35mm, coltitle=black, bottomrule=.15mm, breakable, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Attention !}, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Attention !}, toprule=.15mm, opacityback=0, left=2mm, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, colback=white, arc=.35mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm]
 
 La requête DELETE, sans clause WHERE, supprimera tous les p-uplets de la
 relation !
@@ -742,7 +742,7 @@ peuplée ?
 
 Résultat : VALJOUZE, 23 habitants.
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomtitle=1mm, toptitle=1mm, left=2mm, colback=white, leftrule=.75mm, arc=.35mm, coltitle=black, bottomrule=.15mm, breakable, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remarque}, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remarque}, toprule=.15mm, opacityback=0, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, colback=white, arc=.35mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm]
 
 Ce dernier exemple est un peu plus compliqué que les précédents : on a
 en effet imbriqué deux requêtes l'une dans l'autre : on parle de
@@ -805,13 +805,13 @@ Résultat : 88
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomtitle=1mm, toptitle=1mm, left=2mm, colback=white, leftrule=.75mm, arc=.35mm, coltitle=black, bottomrule=.15mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Réponse}, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Réponse}, toprule=.15mm, opacityback=0, left=2mm, leftrule=.75mm, colframe=quarto-callout-tip-color-frame, colback=white, arc=.35mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm]
 
 Combien y a-t-il de collèges à Aurillac ? Réponse : 5.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomtitle=1mm, toptitle=1mm, left=2mm, colback=white, leftrule=.75mm, arc=.35mm, coltitle=black, bottomrule=.15mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Pour compléter \ldots{}}, titlerule=0mm, opacitybacktitle=0.6, rightrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Pour compléter \ldots{}}, toprule=.15mm, opacityback=0, left=2mm, leftrule=.75mm, colframe=quarto-callout-caution-color-frame, colback=white, arc=.35mm, breakable, toptitle=1mm, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, rightrule=.15mm, bottomrule=.15mm]
 
 \begin{itemize}
 \item

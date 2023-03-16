@@ -42,3 +42,6 @@ format-links: [pdf, latex]
 ## Sujets 2023
 
 * Centres étrangers 2023, jour 1 : [Sujet PDF](2023_CE_J1.pdf), [Corrigé](2023_CE_J1_corrige.qmd).
+* Centres étrangers 2023, jour 2 : [Sujet PDF](2023_Centres_Etrangers_J2.pdf), [corrigé](2023_CE_J2_corrige.qmd).
+* Polynésie 2023, jour 1 : [Sujet PDF](2023_Polynesie_J1.pdf).
+* Polynésie 2023, jour 2 : [Sujet PDF](2023_Polynesie_J2.pdf).
