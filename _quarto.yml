@@ -100,7 +100,7 @@ website:
           - bac/annales.qmd
       - section: "Grand Oral"
         contents: 
-          - grandOral/index.qmd
+          - GrandOral/index.qmd
   page-footer: 
     left:
       - href: http://creativecommons.org/licenses/by/4.0/
