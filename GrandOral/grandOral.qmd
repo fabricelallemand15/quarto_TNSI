@@ -1,0 +1,213 @@
+## Présentation
+
+Le grand oral est une épreuve orale qui se dérouler en juin. Son coefficient est de 10 (sur un total de 100). Vous devez préparer en première et surtout en terminale deux questions en rapport avec vos spécialités de terminale. [Page de présentation officielle du grand oral](https://www.education.gouv.fr/baccalaureat-2021-epreuve-du-grand-oral-permettre-aux-eleves-de-travailler-une-competence-89576) [Article du bulletin officiel (BO) définissant le grand oral](https://www.education.gouv.fr/bo/20/Special2/MENE2002780N.htm).
+
+## Les deux questions
+
+### Répartition des spécialités
+
+Le BO dit : "ces questions portent sur les deux enseignements de spécialité soit pris isolément, soit abordés de manière transversale".  On comprend qu'il est nécessaire d'aborder les deux enseignements de spécialité, et qu'il est possible de les mélanger. Néanmoins il semblerait qu'il soit nécessaire (pour des raisons d'organisation, voir plus bas) d'avoir une spécialité majeure différente dans chaque question. Voici donc le schéma des répartitions possibles des spécialités (A et B) dans les deux questions (1 et 2) :
+
+|Question 1 |	Question 2|
+|:---:|:---:|
+|A	|B|
+|A	|majeure B et mineure A|
+|majeure A et mineure B	|B|
+|majeure A et mineure B	|majeure B et mineure A|
+
+Bien sûr, le caractère majeur ou mineur d'une spécialité dans une question peut être sujet à discussion. Cela donne néanmoins un cadre de réflexion.
+
+### Sujet des questions
+
+Encore une fois le BO est assez concis :  Elles mettent en lumière un des grands enjeux du ou des programmes de ces enseignements [de spécialité]. Elles sont adossées à tout ou partie du programme du cycle terminal.  Les questions doivent donc avoir un lien avec le programme de terminale ou éventuellement de première. La question de NSI (ou de majeure NSI) doit donc s'inscrire dans les thèmes suivants :
+
+Pour la terminale :
+
+* histoire de l'informatique ;
+* structures de données ;
+* bases de données ;
+* architectures matérielles, systèmes d’exploitation et réseaux ;
+* langages et programmation
+* algorithmique
+
+Pour la première :
+
+* histoire de l'informatique ;
+* représentation des données: types et valeurs de base ;
+* représentation des données: types construits ;
+* traitement de données en tables ;
+* interactions entre l’homme et la machine sur le Web
+* architectures matérielles et systèmes d’exploitation
+* langages et programmation
+* algorithmique
+
+Dans [ce document offiicel](https://eduscol.education.fr/media/3925/download), on peut lire :
+
+> L’entrée choisie par l’élève peut être variée : le choix du champ disciplinaire dans un parcours d’orientation ; des exemples de notions mathématiques qui ont changé son regard ou lui ont apporté des clés de lecture ; des obstacles didactiques auxquels il a été confronté ; une notion du programme ; un point de l’histoire des sciences ; une démonstration ; un lien avec une autre spécialité, une attention portée à une notion pour ses enjeux sociétaux ou dans un parcours d’orientation comme l’éducation à la santé, au développement durable, aux médias et à l’information, aux problèmes bioéthiques.
+
+Si la question rentre dans ces critères, elle peut donc être valide.
+
+### Déroulement
+
+#### Choix de la question
+
+Vous serez évalué par un jury composé d'un professeur d'une de vos spécialités et d'un professeur d'une autre matière (votre autre spécialité ou non). Le jury choisira donc la question pour laquelle il est compétent.
+
+#### 20 minutes de préparation
+
+Une fois que vous connaissez la question choisie par le jury, vous avez 20 minutes pour mettre vos idées au clair. Vous avez la possibilité de réaliser un support sur ue feuille fournie. Vous pouvez donner ce support au jury au début de l'entretien.
+
+#### 20 minutes d'entretien
+
+L'entretien se déroule en trois temps. Tout l'entretien se fait sans notes et sans support excepté, éventuellement, celui que vous avez créé pendant votre préparation.
+
+::: {.callout-important}
+## Précisions au sujet du support papier
+
+Ce support est une aide pour la parole du candidat ; il n’a pas vocation à être donné à lire au jury. Il s’agit de notes, d’un plan d’exposé, de trame de prise de parole, de mots-clefs ou d’idées directrices. Ces notes peuvent aussi servir de document d’appui à l’argumentation (schéma, courbe, diagramme, tableau, formule mathématique…).
+
+**Source** : [Eduscol](https://eduscol.education.fr/729/presentation-du-grand-oral)
+:::
+
+##### 5 minutes de présentation
+
+Vous disposez de 5 minutes pour :
+
+* expliquer pourquoi vous avez choisi cette question ;
+* développer le question ;
+* y répondre.
+
+Le jury ne vous interrompt pas sauf si vous dépassez du temps imparti. Tout cela se fait sans notes et sans support.
+
+##### 10 minutes d'échange avec le jury
+
+Pendant ce temps, le jury vous interroge sur votre question, il demande des précisions. Il peut élargir les questions au thème abordé puis à tout le programme de terminale et première.
+
+##### 5 minutes d'échange sur votre projet d'orientation
+
+Il est conseillé de faire un lien entre la question traitée et votre projet d'orientation. Vous devez expliquer les étapes de la maturation de votre projet d'orientation et détailler votre projet après le bac.
+
+### Évaluation
+
+Lors de votre présentation, le jury évalue les capacités argumentatives et les qualités oratoires du candidat. Vous n'êtes pas évalué ici sur le fond, mais plutôt sur la forme (je rappelle qu'il y aura vraisemblablement un membre du jury qui n'aura rien compris à ce que vous avez dit).
+
+Lors de l'échange avec le jury, il évalue la solidité des connaissances et les capacités argumentatives du candidat. Vous êtes donc évalué ici sur vos connaissances.
+
+Lors de l'échange sur votre projet d'orientation, le jury mesure la capacité du candidat à conduire et exprimer une réflexion personnelle témoignant de sa curiosité intellectuelle et de son aptitude à exprimer ses motivations. Il n'évalue surtout pas votre projet d’orientation en lui-même.
+
+## Exemples de sujets
+
+### Exemples issus du [document officiel](https://eduscol.education.fr/document/3919/download)
+
+#### L'histoire de l'informatique
+
+* Femmes et numérique : quelle histoire ? quel avenir ?
+* Ada Lovelace, pionnière du langage informatique.
+* Alan Turing, et l’informatique fut.
+* Quelle est la différence entre le web 1.0 et le web 2.0 ?
+
+#### Langages et programmation
+
+* P = NP, un problème à un million de dollars ?
+* Tours de Hanoï : plus qu’un jeu d’enfants ?
+* Les fractales : informatique et mathématiques imitent-elles la nature ?
+* De la récurrence à la récursivité.
+* Les bugs : bête noire des développeurs ?
+* Comment rendre l’informatique plus sûre ?
+
+####  Données structurées et structures de données
+
+* L’informatisation des métros : progrès ou outil de surveillance ?
+* Musique et informatique : une alliance possible de l’art et de la science ?
+
+#### Algorithmique
+
+* Comment créer une machine intelligente ?
+* Comment lutter contre les biais algorithmiques ?
+* Quels sont les enjeux de la reconnaissance faciale (notamment éthiques) ?
+* Quels sont les enjeux de l’intelligence artificielle ?
+* Transformation d’images : Deep Fakes, une arme de désinformation massive ? La fin de la preuve par l’image ?
+* Qu’apporte la récursivité dans un algorithme ?
+* Quel est l’impact de la complexité d’un algorithme sur son efficacité ?
+
+#### Bases de données
+
+* Données personnelles : la vie privée en voie d’extinction ?
+* Comment optimiser les données ?
+
+#### Architectures matérielles, systèmes d’exploitation et réseaux
+
+* L’ordinateur quantique : nouvelle révolution informatique ?
+* La course à l’infiniment petit : jusqu’où ?
+* Peut-on vraiment sécuriser les communications ?
+* Quelle est l’utilité des protocoles pour l’internet ?
+* Cyberguerre : la 3e guerre mondiale ?
+
+#### Interfaces Hommes-Machines (IHM)
+
+* Smart cities, smart control ?
+* La réalité virtuelle : un nouveau monde ?
+* La voiture autonome, quels enjeux ?
+
+#### Impact sociétal et éthique de l'informatique
+
+* Comment protéger les données numériques sur les réseaux sociaux ?
+* Quelle est l’empreinte carbone du numérique en termes de consommation ?
+* Pourquoi chiffrer ses communications ?
+* Les réseaux sociaux sont-ils compatibles avec la politique ?
+* Les réseaux sociaux sont-ils compatibles avec le journalisme ?
+* Les réseaux sociaux permettent-ils de lutter contre les infox ?
+* L’informatique va-t-elle révolutionner le dessin animé ?
+* L’informatique va-t-elle révolutionner la composition musicale ?
+* L’informatique va-t-elle révolutionner l’art ?
+* L’informatique va-t-elle révolutionner le cinéma ?
+* L’informatique va-t-elle révolutionner la médecine ?
+* L’informatique va-t-elle révolutionner la physique ?
+* L’informatique va-t-elle révolutionner l’entreprise ?
+* Le numérique : facteur de démocratisation ou de fractures sociales ?
+* Informatique : quel impact sur le climat ?
+
+### Exemples issus des sujets choisis les années précédentes
+
+* Pourquoi Javascript est-il devenu le langage le plus utilisé au monde ?
+* Pourquoi chiffrer les communications ?
+* L'informatique va-t-elle révolutionner le dessin animé ?
+* Comment l'informatique a-t-elle révolutionné la vie des gens dans le domaine du divertissement au fil des années ?
+* Comment fonctionnent les bases de données distribuées ?
+* Nos informations personnelles sont-elles en sécurité dans les bases de données ?
+* Comment l'informatique s'inspire du vivant ?
+* Enigma et décryptage. En quoi l'informatique a-t-elle fait évoluer les maths ?
+* Comment évolue la cyber-sécurité ?
+* Modélisation 3D et graphes.
+* L'art algorithmique est-il vraiment un art ?
+* Comment protéger les données numériques sur les réseaux
+* Quels sont les enjeux des cyberguerres ?
+* Fractales, l'info et les maths imitent-elles la nature ?
+* Les réseaux sociaux sont-ils compatibles avec la politique ?
+* Avenir de la réalité virtuelle ?
+* Les réseaux sociaux sont-ils compatibles avec le journalisme ?
+* En quoi la cryptologie a-t-elle permis de raccourcir la deuxième guerre mondiale ?
+* Comment fonctionne Tor ?
+* Comment flash est-il passé du statu d'utilisable à mort en 2021 ?
+* Pourquoi Python a-t-il été inventé ?
+* Comment l'automate cellulaire peut-il imiter les êtres vivants par de simples règles informatiques ?
+* Comment HTML 5 a révolutionné le développement web ?
+* Quelles ont été les évolutions de l'utilisation d'internet ?
+* (Maths/Info) Quel est l’impact de la complexité d’un algorithme sur son efficacité ?
+* Comment optimiser le traitement des données ?
+* La machine de Turing est-elle obsolète ?
+* (Maths/Info) De la récurrence à la récursivité.
+* (Maths/Info) La course à l’infiniment petit, jusqu’où ?
+* (Info/Phy?) En quoi l’ordinateur quantique est-il révolutionnaire ?
+* Qu’apporte la récursivité dans un algorithme ?
+* Peut-on vraiment sécuriser les communications ?
+* Quels sont les enjeux de l’intelligence artificielle ?
+* (Maths/info) P=NP, un problème à un million de dollars.
+* Comment rendre l’informatique plus sûre ?
+* (Info/ Maths) En quoi la machine Enigma a t-elle révolutionnée l’informatique ?
+* (Info/ Maths) Un ordinateur peut-il écrire une démonstration mathématique ?
+
+#### Sources
+
+* [https://kxs.fr/cours/grand-oral/exemples](https://kxs.fr/cours/grand-oral/exemples)
+* [https://bfourlegnie.com/Tnsi_2020/cours/Gd_oral/grand_oral_NSI.pdf](https://bfourlegnie.com/Tnsi_2020/cours/Gd_oral/grand_oral_NSI.pdf)

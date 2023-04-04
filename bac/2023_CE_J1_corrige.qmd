@@ -35,7 +35,7 @@ format:
         biblio-title: Sources utilisées
         reference-location: document
         keep-tex: true
-    latex: default
+    # latex: default
 format-links: [pdf, latex]
 ---
 
@@ -50,7 +50,7 @@ format-links: [pdf, latex]
     a. La requête affiche le résultat suivant :
 
     | theme | annee |
-    |-------|-------|
+    |-------|:-------:|
     | Le système d'enseignement supérieur français est-il juste et efficace ? | 2022 |
     | Trois innovations pour la croissance future (1/3) : La révolution blockchain | 2021 |
 
@@ -122,7 +122,9 @@ La base de donnée telle que définie dans l'énoncé n'est bien construite. Cha
     |---|----|
     | 00000010 | 00001101 |
 
-    L'adresse IP 164.178.2.13 est donc représentée par la chaîne de caractères `10100100.10110010.00000010.00001101`.
+    L'adresse IP 164.178.2.13 est donc représentée par la chaîne de caractères :
+    
+    `10100100.10110010.00000010.00001101`
 
     b. L'adresse IP indique que les 24 premiers bits sont réservés à l'identifiant du réseau et les 8 derniers bits sont réservés à l'identifiant de l'hôte. La machine appartient donc au réseau dont l'adresse est 164.178.2.0
 

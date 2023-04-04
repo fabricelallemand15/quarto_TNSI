@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale - Graphes (Cours)</title>
+<title>NSI - Terminale - Grand Oral et NSI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +30,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../arbresgraphes/tp_graphe_matrice.html" rel="next">
-<link href="../arbresgraphes/TParbres.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -65,9 +44,6 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -106,8 +82,6 @@ cookieconsent.run({
 </script> 
   
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -157,7 +131,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../arbresgraphes/index.html">S4-Arbres et graphes</a></li><li class="breadcrumb-item"><a href="../arbresgraphes/graphes_cours.html">Graphes (Cours)</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Grand Oral et NSI</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -456,13 +430,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
  <span class="menu-text">S4-Arbres et graphes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../arbresgraphes/index.html" class="sidebar-item-text sidebar-link">
@@ -495,7 +469,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../arbresgraphes/graphes_cours.html" class="sidebar-item-text sidebar-link active">
+  <a href="../arbresgraphes/graphes_cours.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Graphes (Cours)</span></a>
   </div>
 </li>
@@ -593,6 +567,17 @@ cookieconsent.run({
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
+ <span class="menu-text">Grand Oral</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -603,27 +588,28 @@ cookieconsent.run({
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#notion-de-graphe" id="toc-notion-de-graphe" class="nav-link active" data-scroll-target="#notion-de-graphe">1. Notion de graphe</a>
+  <li><a href="#présentation" id="toc-présentation" class="nav-link active" data-scroll-target="#présentation">Présentation</a></li>
+  <li><a href="#les-deux-questions" id="toc-les-deux-questions" class="nav-link" data-scroll-target="#les-deux-questions">Les deux questions</a>
   <ul class="collapse">
-  <li><a href="#définition" id="toc-définition" class="nav-link" data-scroll-target="#définition">1.1. Définition</a></li>
-  <li><a href="#lien-avec-les-arbres" id="toc-lien-avec-les-arbres" class="nav-link" data-scroll-target="#lien-avec-les-arbres">1.2. Lien avec les arbres</a></li>
-  <li><a href="#exemples" id="toc-exemples" class="nav-link" data-scroll-target="#exemples">1.3. Exemples</a></li>
+  <li><a href="#répartition-des-spécialités" id="toc-répartition-des-spécialités" class="nav-link" data-scroll-target="#répartition-des-spécialités">Répartition des spécialités</a></li>
+  <li><a href="#sujet-des-questions" id="toc-sujet-des-questions" class="nav-link" data-scroll-target="#sujet-des-questions">Sujet des questions</a></li>
+  <li><a href="#déroulement" id="toc-déroulement" class="nav-link" data-scroll-target="#déroulement">Déroulement</a></li>
+  <li><a href="#évaluation" id="toc-évaluation" class="nav-link" data-scroll-target="#évaluation">Évaluation</a></li>
   </ul></li>
-  <li><a href="#implémentations-dun-graphe" id="toc-implémentations-dun-graphe" class="nav-link" data-scroll-target="#implémentations-dun-graphe">2. Implémentations d’un graphe</a>
+  <li><a href="#exemples-de-sujets" id="toc-exemples-de-sujets" class="nav-link" data-scroll-target="#exemples-de-sujets">Exemples de sujets</a>
   <ul class="collapse">
-  <li><a href="#matrice-dadjacence" id="toc-matrice-dadjacence" class="nav-link" data-scroll-target="#matrice-dadjacence">2.1. Matrice d’adjacence</a></li>
-  <li><a href="#liste-dadjacence" id="toc-liste-dadjacence" class="nav-link" data-scroll-target="#liste-dadjacence">2.2. Liste d’adjacence</a></li>
+  <li><a href="#exemples-issus-du-document-officiel" id="toc-exemples-issus-du-document-officiel" class="nav-link" data-scroll-target="#exemples-issus-du-document-officiel">Exemples issus du document officiel</a></li>
+  <li><a href="#exemples-issus-des-sujets-choisis-les-années-précédentes" id="toc-exemples-issus-des-sujets-choisis-les-années-précédentes" class="nav-link" data-scroll-target="#exemples-issus-des-sujets-choisis-les-années-précédentes">Exemples issus des sujets choisis les années précédentes</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/arbresgraphes/graphes_cours.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div><div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="graphes_cours.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/GrandOral/index.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div><div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Graphes (Cours)</h1>
-<p class="subtitle lead">S4 - Arbres et graphes</p>
+<h1 class="title">Grand Oral et NSI</h1>
 </div>
 
 
@@ -638,252 +624,269 @@ cookieconsent.run({
 
 </header>
 
-<section id="notion-de-graphe" class="level2">
-<h2 class="anchored" data-anchor-id="notion-de-graphe">1. Notion de graphe</h2>
-<section id="définition" class="level3">
-<h3 class="anchored" data-anchor-id="définition">1.1. Définition</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="présentation" class="level2">
+<h2 class="anchored" data-anchor-id="présentation">Présentation</h2>
+<p>Le grand oral est une épreuve orale qui se dérouler en juin. Son coefficient est de 10 (sur un total de 100). Vous devez préparer en première et surtout en terminale deux questions en rapport avec vos spécialités de terminale. <a href="https://www.education.gouv.fr/baccalaureat-2021-epreuve-du-grand-oral-permettre-aux-eleves-de-travailler-une-competence-89576">Page de présentation officielle du grand oral</a> <a href="https://www.education.gouv.fr/bo/20/Special2/MENE2002780N.htm">Article du bulletin officiel (BO) définissant le grand oral</a>.</p>
+</section>
+<section id="les-deux-questions" class="level2">
+<h2 class="anchored" data-anchor-id="les-deux-questions">Les deux questions</h2>
+<section id="répartition-des-spécialités" class="level3">
+<h3 class="anchored" data-anchor-id="répartition-des-spécialités">Répartition des spécialités</h3>
+<p>Le BO dit : “ces questions portent sur les deux enseignements de spécialité soit pris isolément, soit abordés de manière transversale”. On comprend qu’il est nécessaire d’aborder les deux enseignements de spécialité, et qu’il est possible de les mélanger. Néanmoins il semblerait qu’il soit nécessaire (pour des raisons d’organisation, voir plus bas) d’avoir une spécialité majeure différente dans chaque question. Voici donc le schéma des répartitions possibles des spécialités (A et B) dans les deux questions (1 et 2) :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Question 1</th>
+<th style="text-align: center;">Question 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">majeure B et mineure A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">majeure A et mineure B</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">majeure A et mineure B</td>
+<td style="text-align: center;">majeure B et mineure A</td>
+</tr>
+</tbody>
+</table>
+<p>Bien sûr, le caractère majeur ou mineur d’une spécialité dans une question peut être sujet à discussion. Cela donne néanmoins un cadre de réflexion.</p>
+</section>
+<section id="sujet-des-questions" class="level3">
+<h3 class="anchored" data-anchor-id="sujet-des-questions">Sujet des questions</h3>
+<p>Encore une fois le BO est assez concis : Elles mettent en lumière un des grands enjeux du ou des programmes de ces enseignements [de spécialité]. Elles sont adossées à tout ou partie du programme du cycle terminal. Les questions doivent donc avoir un lien avec le programme de terminale ou éventuellement de première. La question de NSI (ou de majeure NSI) doit donc s’inscrire dans les thèmes suivants :</p>
+<p>Pour la terminale :</p>
+<ul>
+<li>histoire de l’informatique ;</li>
+<li>structures de données ;</li>
+<li>bases de données ;</li>
+<li>architectures matérielles, systèmes d’exploitation et réseaux ;</li>
+<li>langages et programmation</li>
+<li>algorithmique</li>
+</ul>
+<p>Pour la première :</p>
+<ul>
+<li>histoire de l’informatique ;</li>
+<li>représentation des données: types et valeurs de base ;</li>
+<li>représentation des données: types construits ;</li>
+<li>traitement de données en tables ;</li>
+<li>interactions entre l’homme et la machine sur le Web</li>
+<li>architectures matérielles et systèmes d’exploitation</li>
+<li>langages et programmation</li>
+<li>algorithmique</li>
+</ul>
+<p>Dans <a href="https://eduscol.education.fr/media/3925/download">ce document offiicel</a>, on peut lire :</p>
+<blockquote class="blockquote">
+<p>L’entrée choisie par l’élève peut être variée : le choix du champ disciplinaire dans un parcours d’orientation ; des exemples de notions mathématiques qui ont changé son regard ou lui ont apporté des clés de lecture ; des obstacles didactiques auxquels il a été confronté ; une notion du programme ; un point de l’histoire des sciences ; une démonstration ; un lien avec une autre spécialité, une attention portée à une notion pour ses enjeux sociétaux ou dans un parcours d’orientation comme l’éducation à la santé, au développement durable, aux médias et à l’information, aux problèmes bioéthiques.</p>
+</blockquote>
+<p>Si la question rentre dans ces critères, elle peut donc être valide.</p>
+</section>
+<section id="déroulement" class="level3">
+<h3 class="anchored" data-anchor-id="déroulement">Déroulement</h3>
+<section id="choix-de-la-question" class="level4">
+<h4 class="anchored" data-anchor-id="choix-de-la-question">Choix de la question</h4>
+<p>Vous serez évalué par un jury composé d’un professeur d’une de vos spécialités et d’un professeur d’une autre matière (votre autre spécialité ou non). Le jury choisira donc la question pour laquelle il est compétent.</p>
+</section>
+<section id="minutes-de-préparation" class="level4">
+<h4 class="anchored" data-anchor-id="minutes-de-préparation">20 minutes de préparation</h4>
+<p>Une fois que vous connaissez la question choisie par le jury, vous avez 20 minutes pour mettre vos idées au clair. Vous avez la possibilité de réaliser un support sur ue feuille fournie. Vous pouvez donner ce support au jury au début de l’entretien.</p>
+</section>
+<section id="minutes-dentretien" class="level4">
+<h4 class="anchored" data-anchor-id="minutes-dentretien">20 minutes d’entretien</h4>
+<p>L’entretien se déroule en trois temps. Tout l’entretien se fait sans notes et sans support excepté, éventuellement, celui que vous avez créé pendant votre préparation.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition
+Précisions au sujet du support papier
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un <strong>graphe non orienté</strong> est constitué :</p>
+<p>Ce support est une aide pour la parole du candidat ; il n’a pas vocation à être donné à lire au jury. Il s’agit de notes, d’un plan d’exposé, de trame de prise de parole, de mots-clefs ou d’idées directrices. Ces notes peuvent aussi servir de document d’appui à l’argumentation (schéma, courbe, diagramme, tableau, formule mathématique…).</p>
+<p><strong>Source</strong> : <a href="https://eduscol.education.fr/729/presentation-du-grand-oral">Eduscol</a></p>
+</div>
+</div>
+<section id="minutes-de-présentation" class="level5">
+<h5 class="anchored" data-anchor-id="minutes-de-présentation">5 minutes de présentation</h5>
+<p>Vous disposez de 5 minutes pour :</p>
 <ul>
-<li>d’un ensemble fini de <strong>sommets</strong> (représentés par des points) ;</li>
-<li>d’un ensemble d’<strong>arêtes</strong> (représentées par des traits) qui relient des sommets entre eux.</li>
+<li>expliquer pourquoi vous avez choisi cette question ;</li>
+<li>développer le question ;</li>
+<li>y répondre.</li>
 </ul>
-</div>
-</div>
-<p>La figure ci-dessous représente un graphe dont les sommets sont numérotés de 0 à 6.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="grpahe1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Graphe non orienté"><img src="grpahe1.png" class="quarto-discovered-preview-image img-fluid figure-img" style="width:30.0%"></a></p>
-<p></p><figcaption class="figure-caption">Graphe non orienté</figcaption><p></p>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Définition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Un <strong>graphe orienté</strong> est constitué :</p>
+<p>Le jury ne vous interrompt pas sauf si vous dépassez du temps imparti. Tout cela se fait sans notes et sans support.</p>
+</section>
+<section id="minutes-déchange-avec-le-jury" class="level5">
+<h5 class="anchored" data-anchor-id="minutes-déchange-avec-le-jury">10 minutes d’échange avec le jury</h5>
+<p>Pendant ce temps, le jury vous interroge sur votre question, il demande des précisions. Il peut élargir les questions au thème abordé puis à tout le programme de terminale et première.</p>
+</section>
+<section id="minutes-déchange-sur-votre-projet-dorientation" class="level5">
+<h5 class="anchored" data-anchor-id="minutes-déchange-sur-votre-projet-dorientation">5 minutes d’échange sur votre projet d’orientation</h5>
+<p>Il est conseillé de faire un lien entre la question traitée et votre projet d’orientation. Vous devez expliquer les étapes de la maturation de votre projet d’orientation et détailler votre projet après le bac.</p>
+</section>
+</section>
+</section>
+<section id="évaluation" class="level3">
+<h3 class="anchored" data-anchor-id="évaluation">Évaluation</h3>
+<p>Lors de votre présentation, le jury évalue les capacités argumentatives et les qualités oratoires du candidat. Vous n’êtes pas évalué ici sur le fond, mais plutôt sur la forme (je rappelle qu’il y aura vraisemblablement un membre du jury qui n’aura rien compris à ce que vous avez dit).</p>
+<p>Lors de l’échange avec le jury, il évalue la solidité des connaissances et les capacités argumentatives du candidat. Vous êtes donc évalué ici sur vos connaissances.</p>
+<p>Lors de l’échange sur votre projet d’orientation, le jury mesure la capacité du candidat à conduire et exprimer une réflexion personnelle témoignant de sa curiosité intellectuelle et de son aptitude à exprimer ses motivations. Il n’évalue surtout pas votre projet d’orientation en lui-même.</p>
+</section>
+</section>
+<section id="exemples-de-sujets" class="level2">
+<h2 class="anchored" data-anchor-id="exemples-de-sujets">Exemples de sujets</h2>
+<section id="exemples-issus-du-document-officiel" class="level3">
+<h3 class="anchored" data-anchor-id="exemples-issus-du-document-officiel">Exemples issus du <a href="https://eduscol.education.fr/document/3919/download">document officiel</a></h3>
+<section id="lhistoire-de-linformatique" class="level4">
+<h4 class="anchored" data-anchor-id="lhistoire-de-linformatique">L’histoire de l’informatique</h4>
 <ul>
-<li>d’un ensemble fini de <strong>sommets</strong> (représentés par des points) ;</li>
-<li>d’un ensemble d’<strong>arcs</strong> (représentés par des flèches) qui relient des sommets entre eux.</li>
-</ul>
-</div>
-</div>
-<p>La figure ci-dessous représente un graphe orienté dont les sommets sont numérotés de 0 à 6.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="graphe2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Graphe orienté"><img src="graphe2.png" class="img-fluid figure-img" style="width:30.0%"></a></p>
-<p></p><figcaption class="figure-caption">Graphe orienté</figcaption><p></p>
-</figure>
-</div>
-<div style="page-break-after: always;"></div>
-<p>Un peu de vocabulaire :</p>
-<ul>
-<li>deux sommets reliés par une arête (ou un arc) sont dits <strong>adjacents</strong>, ou <strong>voisins</strong> ;</li>
-<li>un sommet est dit <strong>isolé</strong> s’il n’est relié à aucun autre sommet ;</li>
-<li>l’<strong>ordre</strong> d’un graphe est le nombre de ses sommets ;</li>
-<li>le <strong>degré</strong> d’un sommet <span class="math inline">\(S\)</span>, noté <span class="math inline">\(deg(S)\)</span>, est le nombre d’arêtes (ou d’arcs) qui le relient à d’autres sommets ;</li>
+<li>Femmes et numérique : quelle histoire ? quel avenir ?</li>
+<li>Ada Lovelace, pionnière du langage informatique.</li>
+<li>Alan Turing, et l’informatique fut.</li>
+<li>Quelle est la différence entre le web 1.0 et le web 2.0 ?</li>
 </ul>
 </section>
-<section id="lien-avec-les-arbres" class="level3">
-<h3 class="anchored" data-anchor-id="lien-avec-les-arbres">1.2. Lien avec les arbres</h3>
-<p>La structure d’arbre déjà rencontrée dans le cours est un cas particulier de graphe non orienté.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Définition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Un <strong>arbre</strong> est un graphe non orienté qui satisfait les conditions suivantes :</p>
+<section id="langages-et-programmation" class="level4">
+<h4 class="anchored" data-anchor-id="langages-et-programmation">Langages et programmation</h4>
 <ul>
-<li>il est <strong>connexe</strong> ;</li>
-<li>il n’a pas de cycle.</li>
-</ul>
-</div>
-</div>
-<p><strong>Explications</strong> : <em>connexe</em> signifie que tous les sommets sont reliés entre eux par un chemin (il n’y a pas de points isolés). <em>pas de cycle</em> signifie que l’on ne peut pas revenir au même sommet en passant par le même chemin.</p>
-<p>En particulier le graphe ci-dessus (<strong>?@fig-graphe1</strong>) n’est pas un arbre, car il n’est pas connexe (le sommet 6 n’est pas relié au sommet 1) et il contient un cycle (le chemin 1-2-4-1).</p>
-</section>
-<section id="exemples" class="level3">
-<h3 class="anchored" data-anchor-id="exemples">1.3. Exemples</h3>
-<p>Voici quelques situations pouvant être modélisées par un graphe :</p>
-<ul>
-<li>un réseau routier ;</li>
-<li>un réseau de télécommunications ;</li>
-<li>un réseau social ;</li>
-<li>un réseau électrique ;</li>
+<li>P = NP, un problème à un million de dollars ?</li>
+<li>Tours de Hanoï : plus qu’un jeu d’enfants ?</li>
+<li>Les fractales : informatique et mathématiques imitent-elles la nature ?</li>
+<li>De la récurrence à la récursivité.</li>
+<li>Les bugs : bête noire des développeurs ?</li>
+<li>Comment rendre l’informatique plus sûre ?</li>
 </ul>
 </section>
+<section id="données-structurées-et-structures-de-données" class="level4">
+<h4 class="anchored" data-anchor-id="données-structurées-et-structures-de-données">Données structurées et structures de données</h4>
+<ul>
+<li>L’informatisation des métros : progrès ou outil de surveillance ?</li>
+<li>Musique et informatique : une alliance possible de l’art et de la science ?</li>
+</ul>
 </section>
-<section id="implémentations-dun-graphe" class="level2">
-<h2 class="anchored" data-anchor-id="implémentations-dun-graphe">2. Implémentations d’un graphe</h2>
-<p>L’objectif de cette section est de définir une structure de données en Python permettant de représenter un graphe.</p>
-<p>Les opérations suivantes doivent être possibles (cf. <span class="citation" data-cites="fortier">FORTIER (<a href="#ref-fortier" role="doc-biblioref">2022</a>)</span>):</p>
+<section id="algorithmique" class="level4">
+<h4 class="anchored" data-anchor-id="algorithmique">Algorithmique</h4>
 <ul>
-<li>créer un graphe vide ;</li>
-<li>ajouter un sommet ;</li>
-<li>ajouter une arête (ou un arc) ;</li>
-<li>supprimer un sommet ;</li>
-<li>supprimer une arête (ou un arc) ;</li>
-<li>vérifier si deux sommets sont adjacents ;</li>
-<li>connaître la liste des sommets adjacents à un sommet donné.</li>
+<li>Comment créer une machine intelligente ?</li>
+<li>Comment lutter contre les biais algorithmiques ?</li>
+<li>Quels sont les enjeux de la reconnaissance faciale (notamment éthiques) ?</li>
+<li>Quels sont les enjeux de l’intelligence artificielle ?</li>
+<li>Transformation d’images : Deep Fakes, une arme de désinformation massive ? La fin de la preuve par l’image ?</li>
+<li>Qu’apporte la récursivité dans un algorithme ?</li>
+<li>Quel est l’impact de la complexité d’un algorithme sur son efficacité ?</li>
 </ul>
-<p>Nous étudions deux implémentations : par matrice d’adjacence et par liste d’adjacence.</p>
-<section id="matrice-dadjacence" class="level3">
-<h3 class="anchored" data-anchor-id="matrice-dadjacence">2.1. Matrice d’adjacence</h3>
-<p><strong>Rappel</strong> : une <strong>matrice</strong> est un tableau à deux dimensions, où chaque élément est identifié par un couple de coordonnées (ligne, colonne). En Python, on peut représenter une matrice par une liste de listes.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Définition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La <strong>matrice d’adjacence</strong> d’un graphe <span class="math inline">\(G\)</span> (orienté ou non) est une matrice carrée <span class="math inline">\(A\)</span> de taille <span class="math inline">\(n\)</span> telle que :</p>
-<ul>
-<li><span class="math inline">\(A_{i,j} = 1\)</span> si les sommets <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> sont adjacents ;</li>
-<li><span class="math inline">\(A_{i,j} = 0\)</span> si les sommets <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> ne sont pas adjacents.</li>
-</ul>
-</div>
-</div>
-<p><strong>Exemple</strong> : la matrice d’adjacence du graphe non orienté de la figure ci-dessus (<strong>?@fig-graphe1</strong>) est la suivante :</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
-<figure class="figure">
-<p><a href="grpahe1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Graphe Fig.1"><img src="grpahe1.png" class="img-fluid figure-img" width="300"></a></p>
-<p></p><figcaption class="figure-caption">Graphe Fig.1</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><span class="math display">\[
-\begin{pmatrix}
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
-0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
-\end{pmatrix}
-\]</span></p>
-</div>
-</div>
-</div>
-<p><strong>Remarques</strong> : dans le cas d’un graphe non orienté, la matrice d’adjacence est symétrique par rapport à la diagonale principale. Dans le cas d’un graphe orienté, la matrice d’adjacence n’est pas forcément symétrique.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-TP Python
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="../arbresgraphes/tp_graphe_matrice.html">TP Python : implémentation des graphes par matrice d’adjacence</a></p>
-</div>
-</div>
-<div style="page-break-after: always;"></div>
 </section>
-<section id="liste-dadjacence" class="level3">
-<h3 class="anchored" data-anchor-id="liste-dadjacence">2.2. Liste d’adjacence</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Définition : liste d’adjacence
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La <strong>liste d’adjacence</strong> d’un graphe <span class="math inline">\(G\)</span> (orienté ou non) dont les sommets sont les entiers compris entre 0 et <span class="math inline">\(n-1\)</span> est une liste <span class="math inline">\(L\)</span> de taille <span class="math inline">\(n\)</span> telle que :</p>
+<section id="bases-de-données" class="level4">
+<h4 class="anchored" data-anchor-id="bases-de-données">Bases de données</h4>
 <ul>
-<li><span class="math inline">\(L[i]\)</span> est la liste des sommets adjacents au sommet <span class="math inline">\(i\)</span>.</li>
+<li>Données personnelles : la vie privée en voie d’extinction ?</li>
+<li>Comment optimiser les données ?</li>
 </ul>
-</div>
-</div>
-<p><strong>Exemple</strong> : la liste d’adjacence du graphe non orienté de la figure ci-dessus (<strong>?@fig-graphe1</strong>) est la suivante :</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
-<figure class="figure">
-<p><a href="grpahe1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Graphe Fig.1"><img src="grpahe1.png" class="img-fluid figure-img" width="300"></a></p>
-<p></p><figcaption class="figure-caption">Graphe Fig.1</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><span class="math display">\[
-\begin{array}{|c|c|}
-\hline
-0 &amp; [6] \\
-\hline
-1 &amp; [2,3,4] \\
-\hline
-2 &amp; [1,4,5] \\
-\hline
-3 &amp; [1,4] \\
-\hline
-4 &amp; [1,2,3] \\
-\hline
-5 &amp; [2] \\
-\hline
-6 &amp; [0] \\
-\hline
-\end{array}
-\]</span></p>
-</div>
-</div>
-</div>
-<p>Dans le cas d’un graphe comportant peu d’arêtes, la liste d’adjacence occupe moins de mémoire que la matrice d’adjacence. Mais certaines opérations, comme la vérification de l’adjacence de deux sommets ou la suppression d’une arête, sont plus coûteuses en temps d’exécution.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-TP Python
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Dans le TP ci-dessous, vous devez implémenter la structure de graphe par liste d’adjacence. Vous devez également implémenter les fonctions permettant de passer d’une représentation à l’autre.</p>
-<p><a href="../arbresgraphes/tp_graphe_liste.html">TP Python : implémentation des graphes par liste d’adjacence</a></p>
-</div>
-</div>
-<p></p>
+</section>
+<section id="architectures-matérielles-systèmes-dexploitation-et-réseaux" class="level4">
+<h4 class="anchored" data-anchor-id="architectures-matérielles-systèmes-dexploitation-et-réseaux">Architectures matérielles, systèmes d’exploitation et réseaux</h4>
+<ul>
+<li>L’ordinateur quantique : nouvelle révolution informatique ?</li>
+<li>La course à l’infiniment petit : jusqu’où ?</li>
+<li>Peut-on vraiment sécuriser les communications ?</li>
+<li>Quelle est l’utilité des protocoles pour l’internet ?</li>
+<li>Cyberguerre : la 3e guerre mondiale ?</li>
+</ul>
+</section>
+<section id="interfaces-hommes-machines-ihm" class="level4">
+<h4 class="anchored" data-anchor-id="interfaces-hommes-machines-ihm">Interfaces Hommes-Machines (IHM)</h4>
+<ul>
+<li>Smart cities, smart control ?</li>
+<li>La réalité virtuelle : un nouveau monde ?</li>
+<li>La voiture autonome, quels enjeux ?</li>
+</ul>
+</section>
+<section id="impact-sociétal-et-éthique-de-linformatique" class="level4">
+<h4 class="anchored" data-anchor-id="impact-sociétal-et-éthique-de-linformatique">Impact sociétal et éthique de l’informatique</h4>
+<ul>
+<li>Comment protéger les données numériques sur les réseaux sociaux ?</li>
+<li>Quelle est l’empreinte carbone du numérique en termes de consommation ?</li>
+<li>Pourquoi chiffrer ses communications ?</li>
+<li>Les réseaux sociaux sont-ils compatibles avec la politique ?</li>
+<li>Les réseaux sociaux sont-ils compatibles avec le journalisme ?</li>
+<li>Les réseaux sociaux permettent-ils de lutter contre les infox ?</li>
+<li>L’informatique va-t-elle révolutionner le dessin animé ?</li>
+<li>L’informatique va-t-elle révolutionner la composition musicale ?</li>
+<li>L’informatique va-t-elle révolutionner l’art ?</li>
+<li>L’informatique va-t-elle révolutionner le cinéma ?</li>
+<li>L’informatique va-t-elle révolutionner la médecine ?</li>
+<li>L’informatique va-t-elle révolutionner la physique ?</li>
+<li>L’informatique va-t-elle révolutionner l’entreprise ?</li>
+<li>Le numérique : facteur de démocratisation ou de fractures sociales ?</li>
+<li>Informatique : quel impact sur le climat ?</li>
+</ul>
+</section>
+</section>
+<section id="exemples-issus-des-sujets-choisis-les-années-précédentes" class="level3">
+<h3 class="anchored" data-anchor-id="exemples-issus-des-sujets-choisis-les-années-précédentes">Exemples issus des sujets choisis les années précédentes</h3>
+<ul>
+<li>Pourquoi Javascript est-il devenu le langage le plus utilisé au monde ?</li>
+<li>Pourquoi chiffrer les communications ?</li>
+<li>L’informatique va-t-elle révolutionner le dessin animé ?</li>
+<li>Comment l’informatique a-t-elle révolutionné la vie des gens dans le domaine du divertissement au fil des années ?</li>
+<li>Comment fonctionnent les bases de données distribuées ?</li>
+<li>Nos informations personnelles sont-elles en sécurité dans les bases de données ?</li>
+<li>Comment l’informatique s’inspire du vivant ?</li>
+<li>Enigma et décryptage. En quoi l’informatique a-t-elle fait évoluer les maths ?</li>
+<li>Comment évolue la cyber-sécurité ?</li>
+<li>Modélisation 3D et graphes.</li>
+<li>L’art algorithmique est-il vraiment un art ?</li>
+<li>Comment protéger les données numériques sur les réseaux</li>
+<li>Quels sont les enjeux des cyberguerres ?</li>
+<li>Fractales, l’info et les maths imitent-elles la nature ?</li>
+<li>Les réseaux sociaux sont-ils compatibles avec la politique ?</li>
+<li>Avenir de la réalité virtuelle ?</li>
+<li>Les réseaux sociaux sont-ils compatibles avec le journalisme ?</li>
+<li>En quoi la cryptologie a-t-elle permis de raccourcir la deuxième guerre mondiale ?</li>
+<li>Comment fonctionne Tor ?</li>
+<li>Comment flash est-il passé du statu d’utilisable à mort en 2021 ?</li>
+<li>Pourquoi Python a-t-il été inventé ?</li>
+<li>Comment l’automate cellulaire peut-il imiter les êtres vivants par de simples règles informatiques ?</li>
+<li>Comment HTML 5 a révolutionné le développement web ?</li>
+<li>Quelles ont été les évolutions de l’utilisation d’internet ?</li>
+<li>(Maths/Info) Quel est l’impact de la complexité d’un algorithme sur son efficacité ?</li>
+<li>Comment optimiser le traitement des données ?</li>
+<li>La machine de Turing est-elle obsolète ?</li>
+<li>(Maths/Info) De la récurrence à la récursivité.</li>
+<li>(Maths/Info) La course à l’infiniment petit, jusqu’où ?</li>
+<li>(Info/Phy?) En quoi l’ordinateur quantique est-il révolutionnaire ?</li>
+<li>Qu’apporte la récursivité dans un algorithme ?</li>
+<li>Peut-on vraiment sécuriser les communications ?</li>
+<li>Quels sont les enjeux de l’intelligence artificielle ?</li>
+<li>(Maths/info) P=NP, un problème à un million de dollars.</li>
+<li>Comment rendre l’informatique plus sûre ?</li>
+<li>(Info/ Maths) En quoi la machine Enigma a t-elle révolutionnée l’informatique ?</li>
+<li>(Info/ Maths) Un ordinateur peut-il écrire une démonstration mathématique ?</li>
+</ul>
+<section id="sources" class="level4">
+<h4 class="anchored" data-anchor-id="sources">Sources</h4>
+<ul>
+<li><a href="https://kxs.fr/cours/grand-oral/exemples">https://kxs.fr/cours/grand-oral/exemples</a></li>
+<li><a href="https://bfourlegnie.com/Tnsi_2020/cours/Gd_oral/grand_oral_NSI.pdf">https://bfourlegnie.com/Tnsi_2020/cours/Gd_oral/grand_oral_NSI.pdf</a></li>
+</ul>
 
 
-
 </section>
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Les références</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-fortier" class="csl-entry" role="listitem">
-FORTIER, Quentin. 2022. <span>«&nbsp;Informatique commune en 1ère année en CPGE&nbsp;»</span>. <em>CPGE-ITC</em>. <a href="https://cpge-itc.github.io/itc1/   ">https://cpge-itc.github.io/itc1/ </a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1246,18 +1249,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../arbresgraphes/TParbres.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP - Manipulation d’arbres</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../arbresgraphes/tp_graphe_matrice.html" class="pagination-link">
-        <span class="nav-page-text">TP - Implémentation des graphes par matrice d’adjacence</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1284,7 +1275,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true});</script>
 
 
 

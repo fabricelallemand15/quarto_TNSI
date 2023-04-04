@@ -72,7 +72,8 @@
   },
   "arbresgraphes/arbres_cours.qmd": {
     "arbres_cours.html": "e56187e2",
-    "arbres_cours.tex": "fae4d1e4"
+    "arbres_cours.tex": "fae4d1e4",
+    "arbres_cours.docx": "205bd9d6"
   },
   "arbresgraphes/arbres_exercices.qmd": {
     "arbres_exercices.html": "ba770348",
@@ -88,7 +89,8 @@
   },
   "arbresgraphes/graphes_cours.qmd": {
     "graphes_cours.html": "67bc20ad",
-    "graphes_cours.tex": "6194157a"
+    "graphes_cours.tex": "6194157a",
+    "graphes_cours.docx": "8e0ba120"
   },
   "arbresgraphes/tp_graphe_matrice.ipynb": {
     "tp_graphe_matrice.html": "0a33d47e",
@@ -100,7 +102,8 @@
   },
   "arbresgraphes/graphes_exercices.qmd": {
     "graphes_exercices.html": "f3e71ba3",
-    "graphes_exercices.tex": "15fcf2a2"
+    "graphes_exercices.tex": "15fcf2a2",
+    "graphes_exercices.ipynb": "1afcf58e"
   },
   "langagesProgr/recursivite_cours.qmd": {
     "recursivite_cours.html": "c04025fe",
@@ -253,5 +256,9 @@
   "bac/2023_CE_J2_corrige.qmd": {
     "2023_CE_J2_corrige.html": "07f6a3fe",
     "2023_CE_J2_corrige.tex": "1da013e0"
+  },
+  "GrandOral/index.qmd": {
+    "index.html": "2461f013",
+    "index.tex": "49a37f5e"
   }
 }

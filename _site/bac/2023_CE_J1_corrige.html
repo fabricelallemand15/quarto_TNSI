@@ -620,7 +620,7 @@ cookieconsent.run({
   <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
   <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/bac/2023_CE_J1_corrige.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div><div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="2023_CE_J1_corrige.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="2023_CE_J1_corrige.tex"><i class="bi bi-file"></i>LaTeX</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/bac/2023_CE_J1_corrige.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div><div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="2023_CE_J1_corrige.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -646,29 +646,29 @@ cookieconsent.run({
 <h2 class="anchored" data-anchor-id="exercice-1">Exercice 1</h2>
 <ol type="1">
 <li><p>Schéma relationnel de la relation <code>description</code> (la clé primaire est soulignée et la clé étrangère est précédée du symbole #):</p>
-<p>description(<span style="text-decoration: underline">id_description</span> : INT, resume : TEXT, duree : INT, #id_emission : INT)</p></li>
+<p>description(<span style="text-decoration: underline"></span> : INT, resume : TEXT, duree : INT, #id_emission : INT)</p></li>
 <li><ol type="a">
 <li>La requête affiche le résultat suivant :</li>
 </ol>
 <table class="table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 43%">
+<col style="width: 56%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>theme</th>
-<th>annee</th>
+<th style="text-align: center;">annee</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Le système d’enseignement supérieur français est-il juste et efficace ?</td>
-<td>2022</td>
+<td style="text-align: center;">2022</td>
 </tr>
 <tr class="even">
 <td>Trois innovations pour la croissance future (1/3) : La révolution blockchain</td>
-<td>2021</td>
+<td style="text-align: center;">2021</td>
 </tr>
 </tbody>
 </table>
@@ -740,7 +740,8 @@ Important
 </tr>
 </tbody>
 </table>
-<p>L’adresse IP 164.178.2.13 est donc représentée par la chaîne de caractères <code>10100100.10110010.00000010.00001101</code>.</p>
+<p>L’adresse IP 164.178.2.13 est donc représentée par la chaîne de caractères :</p>
+<p><code>10100100.10110010.00000010.00001101</code></p>
 <ol start="2" type="a">
 <li>L’adresse IP indique que les 24 premiers bits sont réservés à l’identifiant du réseau et les 8 derniers bits sont réservés à l’identifiant de l’hôte. La machine appartient donc au réseau dont l’adresse est 164.178.2.0</li>
 </ol></li>
@@ -775,7 +776,7 @@ Important
 <li><ol type="a">
 <li>Le coût d’une liaison Ethernet est <span class="math inline">\(\frac{10^9}{10^8}=10\)</span>, celui d’une liaison Fast-Ethernet est <span class="math inline">\(\frac{10^9}{10^9}=1\)</span> et celui d’une liaison fibre est <span class="math inline">\(\frac{10^9}{10^{10}}=0.1\)</span></li>
 </ol>
-<a href="2023_CE_J1_fig1.png" class="lightbox" title="Schéma du réseau avec les coûts" data-gallery="quarto-lightbox-gallery-1"><img src="2023_CE_J1_fig1.png" class="quarto-discovered-preview-image img-fluid" alt="Schéma du réseau avec les coûts"></a>
+<a href="2023_CE_J1_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Schéma du réseau avec les coûts"><img src="2023_CE_J1_fig1.png" class="quarto-discovered-preview-image img-fluid" alt="Schéma du réseau avec les coûts"></a>
 <ol start="2" type="a">
 <li><p>Nous pouvons déterminer le chemin de parcours en utilisant l’algorithme de Dijkstra.</p>
 <table class="table">
@@ -1420,7 +1421,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"closeEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});</script>
 
 
 

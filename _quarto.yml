@@ -98,6 +98,9 @@ website:
         contents: 
           - bac/index.qmd
           - bac/annales.qmd
+      - section: "Grand Oral"
+        contents: 
+          - grandOral/index.qmd
   page-footer: 
     left:
       - href: http://creativecommons.org/licenses/by/4.0/
