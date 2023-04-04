@@ -230,13 +230,13 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, frame hidden, interior hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, sharp corners]}{\end{tcolorbox}}\fi
 
 \hypertarget{du-point-de-vue-utilisateur-interface}{%
 \subsection{1. Du point de vue utilisateur :
 interface}\label{du-point-de-vue-utilisateur-interface}}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, colframe=quarto-callout-tip-color-frame, colback=white, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, breakable, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, breakable, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, bottomrule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, colback=white, coltitle=black]
 
 La \textbf{pile} est une structure de données qui permet de stocker des
 données et d'y accéder. Une pile se comporte comme une \textbf{pile
@@ -323,7 +323,7 @@ L'interface suivante permet de définir le type abstrait de données
 L'opération d'empilement se dit ``push'' en anglais, l'opération de
 dépilement se dit ``pop''.
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{La pile est utile dans différents types de problèmes}, colframe=quarto-callout-note-color-frame, colback=white, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, breakable, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, left=2mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{La pile est utile dans différents types de problèmes}, bottomrule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, colback=white, coltitle=black]
 
 \begin{itemize}
 \tightlist
@@ -350,7 +350,7 @@ dépilement se dit ``pop''.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, colframe=quarto-callout-caution-color-frame, colback=white, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, breakable, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, breakable, bottomtitle=1mm, colframe=quarto-callout-caution-color-frame, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, bottomrule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, colback=white, coltitle=black]
 
 Supposons implémenté le type abstrait \textbf{pile}. Nous disposons
 d'une interface composée des six primitives décrites ci-dessus. On
@@ -506,7 +506,7 @@ On reprend l'idée de \textbf{chaînon} utilisée pour les listes.
 
 Cette implémentation sera testée en exercices.
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, toptitle=1mm, opacityback=0, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Comparaison des deux implémentations}, colframe=quarto-callout-important-color-frame, colback=white, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, bottomrule=.15mm, left=2mm, arc=.35mm, breakable, leftrule=.75mm, toprule=.15mm, rightrule=.15mm, colbacktitle=quarto-callout-important-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, colbacktitle=quarto-callout-important-color!10!white, left=2mm, breakable, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, opacityback=0, leftrule=.75mm, toptitle=1mm, titlerule=0mm, toprule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Comparaison des deux implémentations}, bottomrule=.15mm, rightrule=.15mm, opacitybacktitle=0.6, colback=white, coltitle=black]
 
 On peut comparer en termes de temps d'exécution l'efficacité de ces deux
 implémentations.

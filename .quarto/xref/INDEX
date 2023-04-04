@@ -260,5 +260,9 @@
   "GrandOral/index.qmd": {
     "index.html": "2461f013",
     "index.tex": "49a37f5e"
+  },
+  "GrandOral/grandOral.qmd": {
+    "grandOral.html": "dd051e93",
+    "grandOral.tex": "5802fb03"
   }
 }
