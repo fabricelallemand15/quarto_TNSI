@@ -1,0 +1,237 @@
+---
+title: Parcours d'un graphe en profondeur (Cours)
+subtitle: S6 - Algorithmique
+lang: fr
+tbl-cap-location: bottom
+crossref: 
+    eq-prefix: Éq.
+    tbl-prefix: Tableau
+    tbl-title: Tableau
+format:
+    html: default
+#     pdf: 
+#         geometry:
+#             - top=20mm
+#             - bottom=20mm
+#             - left=20mm
+#             - right=20mm
+#             - heightrounded
+#         include-in-header:
+#             - text:
+#                 \usepackage{fancyhdr}
+#                 \pagestyle{fancy}
+#                 \usepackage{lastpage}
+#         include-before-body:
+#             - text:
+#                 \lhead{Spécialité NSI} 
+#                 \rhead{Terminale}
+#                 \chead{} 
+#                 \cfoot{}
+#                 \lfoot{Lycée \'Emile Duclaux}
+#                 \rfoot{Page \thepage/\pageref{LastPage}}
+#                 \renewcommand{\headrulewidth}{0pt}
+#                 \renewcommand{\footrulewidth}{0pt}
+#                 \thispagestyle{fancy}
+#                 \vspace{-2cm}
+#         biblio-title: Sources utilisées
+#         reference-location: document
+#         # fig-pos: h
+#         # fig-width: 4
+#         # fig-height: 2.5
+#         keep-tex: true
+# format-links: [pdf, tex]
+---
+
+::: {.callout-important}
+## Notion de parcours d'un graphe
+
+D'une façon générale, **parcourir** un graphe consiste à visiter chaque sommet une seule fois, en appliquant éventuellement un même traitement à chaque sommet.
+
+Plus précisément, le **parcours** d'un graphe est une liste $L$ de tous ses sommets :
+
+* Le premier élément de $L$ est un sommet de départ choisi arbitrairement.
+* Chaque sommet du graphe est visité une seule fois exactement.
+* Chaque sommet, sauf le départ, est adjacent à au moins un sommet déjà visité.
+:::
+
+## Parcours d'un graphe en profondeur d'abord
+
+Ce type de parcours est souvent désigné par le terme anglais _depth-first search_ (DFS). Il consiste à parcourir le graphe en partant d'un sommet donné, en suivant un chemin le plus profond possible, puis en revenant en arrière pour suivre un autre chemin. On peut imaginer que l'on se déplace dans le graphe en suivant un chemin qui ressemble à un serpent qui se déplace dans un labyrinthe. Le serpent se déplace le plus profondément possible dans le labyrinthe, puis revient en arrière pour suivre un autre chemin. On peut aussi imaginer que l'on se déplace dans le graphe en suivant un chemin qui ressemble à un arbre. On commence par la racine, puis on descend le plus profondément possible dans l'arbre, puis on remonte en arrière pour suivre un autre chemin.
+
+### 1. Exemple
+
+Voici un exemple de graphe et de parcours en profondeur d'abord.
+
+```{python}
+#|code-fold: true
+#|fig-align: center
+
+import networkx as nx
+from algorithmx import jupyter_canvas
+from algorithmx.networkx import add_graph
+
+# Définition du graphe
+graph = nx.Graph()
+graph.add_nodes_from(["A", "B", "C", "D", "E", "F", "G"])
+graph.add_edges_from([("A", "B"), ("A", "D"), ("B", "C"), ("B", "E"), ("C", "F"), ("D", "E"), ("E", "F"), ("F", "G")])
+
+canvas = jupyter_canvas(buttons=True)
+add_graph(canvas, graph)
+
+canvas
+```
+
+Parcours en profondeur à partir du sommet A : 
+
+* Nous visitons d'abord le nœud A, puis nous examinons tous ses voisins non visités, qui sont B et D. Nous choisissons B et continuons notre parcours en profondeur à partir de B. 
+* Nous visitons le nœud B, puis nous examinons tous ses voisins non visités, qui sont C et E. Nous choisissons C et continuons notre parcours en profondeur à partir de C. 
+* Nous visitons le nœud C, puis nous examinons tous ses voisins non visités : il n'y a que F. Nous choisissons F et continuons notre parcours en profondeur à partir de F.
+* Nous visitons le nœud F, puis nous examinons tous ses voisins non visités, qui sont G et E. Nous choisissons G et continuons notre parcours en profondeur à partir de G.
+* Nous visitons le nœud G, puis nous examinons tous ses voisins non visités : il n'y en a pas. Nous revenons en arrière et continuons notre parcours en profondeur à partir de F.
+* F possède encore un voisin non visité, E. Nous choisissons E et continuons notre parcours en profondeur à partir de E.
+* Nous visitons le nœud E, puis nous examinons tous ses voisins non visités : il n'y a que D. Nous choisissons D et continuons notre parcours en profondeur à partir de D.
+* Nous visitons le nœud D, puis nous examinons tous ses voisins non visités : il n'y en a pas.
+* Il n'y a plus de nœud non visité. Nous avons terminé notre parcours en profondeur.
+
+Le parcours en profondeur d'abord de ce graphe est donc A, B, C, F, G, E, D.
+
+::: {.callout-note}
+## Remarque
+
+Le parcours en profondeur d'abord d'un graphe n'est en général pas unique : quand un sommet a plusieurs voisins non visités, l'un d'entre eux est choisi pour continuer le parcours. Il est donc possible que le parcours en profondeur d'abord d'un même graphe donne des résultats différents.
+:::
+
+### 2. Description de l'algorithme
+
+Voici les étapes de l'algorithme DFS:
+
+::: {.callout-important}
+## Parcours en profondeur d'abord
+
+1. Choisir un nœud de départ et le marquer comme visité.
+2. Explorer tous les voisins du nœud en cours qui n'ont pas encore été visités, et choisir l'un d'eux.
+3. Marquer le nœud choisi comme visité. Il devient le nœud en cours.
+4. Répéter l'étape 2 et 3 jusqu'à ce que tous les voisins du nœud en cours aient été visités.
+5. Si tous les voisins du nœud en cours ont été visités, revenir en arrière au nœud précédent et explorer ses voisins non visités.
+6. Répéter les étapes 2 à 5 jusqu'à ce que tous les nœuds aient été visités.
+:::
+
+L'algorithme DFS peut être implémenté à l'aide d'une **pile**, en ajoutant les voisins non visités du nœud en cours à la pile et en explorant le voisin au sommet de la pile. Lorsque tous les voisins d'un nœud ont été visités, nous revenons simplement au nœud précédent en dépilant le sommet de la pile. Cette pile permet de garder une trace de la direction de l'exploration.
+
+### 3. Implémentation en Python
+
+Pour l'implémentation, nous supposerons que nous avons un graphe défini en utilisant le module `networkx` de Python.
+
+Voici une implémentation de l'algorithme de parcours en profondeur d'abord en Python.
+
+```{python}
+def dfs(graph, start):
+    """Parcours en profondeur d'abord d'un graphe à partir d'un nœud donné.
+    Args:
+        graph: Le graphe à parcourir.
+        start: Le nœud de départ.
+    Returns:
+        Une liste contenant les nœuds visités dans l'ordre du parcours.
+    """
+    visited = []
+    stack = [start]
+    while stack != []:
+        node = stack.pop()
+        if node not in visited:
+            visited.append(node)
+            stack = stack + list((graph.neighbors(node)))
+    return visited
+```
+
+Test de l'algorithme :
+
+```{python}
+import networkx as nx
+
+# Définition du graphe
+graph = nx.Graph()
+graph.add_nodes_from(["A", "B", "C", "D", "E", "F", "G"])
+graph.add_edges_from([("A", "B"), ("A", "D"), ("B", "C"), ("B", "E"), ("C", "F"), ("D", "E"), ("E", "F"), ("F", "G")])
+
+# Parcours en profondeur d'abord à partir du nœud A
+print(dfs(graph, "A"))
+```
+
+Le parcours en profondeur d'abord se prête aussi naturellement à une **implémentation récursive**. Voici une implémentation de l'algorithme de parcours en profondeur d'abord en Python, en utilisant une fonction récursive.
+
+```{python}
+def dfs_recursive(graph, start, visited=None):
+    """Parcours en profondeur d'abord d'un graphe à partir d'un nœud donné.
+    Args:
+        graph: Le graphe à parcourir.
+        start: Le nœud de départ.
+        visited: Une liste contenant les nœuds déjà visités.
+    Returns:
+        Une liste contenant les nœuds visités dans l'ordre du parcours.
+    """
+    if visited is None:
+        visited = []
+    visited.append(start)
+    for node in graph.neighbors(start):
+        if node not in visited:
+            dfs_recursive(graph, node, visited)
+    return visited
+```
+
+Test de l'algorithme :
+
+```{python}
+# Parcours en profondeur d'abord à partir du nœud A
+print(dfs_recursive(graph, "A"))
+```
+
+**Visualisation du parcours en profondeur d'abord**
+
+Nous pouvons visualiser le parcours en profondeur d'abord en utilisant le module `algorithmx` de Python. Ce module permet de visualiser les étapes de l'algorithme de parcours en profondeur d'abord.
+
+```{python}
+#|code-fold: true
+#|fig-align: center
+from algorithmx import jupyter_canvas
+from algorithmx.networkx import add_graph
+
+canvas = jupyter_canvas(buttons=True)
+add_graph(canvas, graph)
+
+canvas.pause(2)
+
+# Animation du parcours en profondeur d'abord
+dfs = nx.edge_dfs(graph, "A")
+source = None
+for e in dfs:
+    if e[0] != source:
+        # Resize the source
+        canvas.node(e[0]).size('1.6x').color('red')
+        if source is not None:
+            canvas.node(source).size('0.8x')
+
+        # Update the source
+        source = e[0]
+        canvas.pause(1)
+
+    # Traverse the edge
+    canvas.edge(e).traverse('blue')
+    canvas.pause(0.5)
+
+canvas.node(source).size('0.8x')
+
+canvas
+```
+
+### 4. Exemples d'applications
+
+Le parcours en profondeur d'abord est utilisé pour résoudre de nombreux problèmes, notamment :
+
+-   **Trouver un chemin entre deux nœuds** : le parcours en profondeur d'abord peut être utilisé pour trouver un chemin entre deux nœuds dans un graphe. Il suffit de s'arrêter lorsque le nœud de destination est atteint.
+
+-   **Trouver un cycle dans un graphe** : le parcours en profondeur d'abord peut être utilisé pour trouver un cycle dans un graphe. Si un nœud déjà visité est rencontré, cela signifie qu'il existe un cycle dans le graphe.
+
+-   **Trouver un arbre couvrant** : le parcours en profondeur d'abord peut être utilisé pour trouver un arbre couvrant dans un graphe. Il suffit de s'arrêter lorsque tous les nœuds ont été visités.
+
+Certaines applications seront développées en exercices.
+

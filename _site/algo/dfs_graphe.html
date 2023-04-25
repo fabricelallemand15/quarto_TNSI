@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale – grandoral</title>
+<title>NSI - Terminale - Parcours d’un graphe en profondeur (Cours)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../algo/bfs_graphe.html" rel="next">
+<link href="../algo/index.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -81,7 +117,13 @@ cookieconsent.run({
 });
 </script> 
   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -131,7 +173,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../algo/index.html">S6-Algorithmique</a></li><li class="breadcrumb-item"><a href="../algo/dfs_graphe.html">Parcours d’un graphe en profondeur (Cours)</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -512,17 +554,35 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
  <span class="menu-text">S6-Algorithmique</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../algo/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">S6-Algorithmique</span></a>
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../algo/dfs_graphe.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Parcours d’un graphe en profondeur (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../algo/bfs_graphe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parcours d’un graphe en largeur (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../algo/exos_graphes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices - Parcours de graphes</span></a>
   </div>
 </li>
       </ul>
@@ -576,6 +636,12 @@ cookieconsent.run({
           </a> 
       </div>
       <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../GrandOral/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grand Oral et NSI</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -588,290 +654,261 @@ cookieconsent.run({
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#présentation" id="toc-présentation" class="nav-link active" data-scroll-target="#présentation">Présentation</a></li>
-  <li><a href="#les-deux-questions" id="toc-les-deux-questions" class="nav-link" data-scroll-target="#les-deux-questions">Les deux questions</a>
+  <li><a href="#parcours-dun-graphe-en-profondeur-dabord" id="toc-parcours-dun-graphe-en-profondeur-dabord" class="nav-link active" data-scroll-target="#parcours-dun-graphe-en-profondeur-dabord">Parcours d’un graphe en profondeur d’abord</a>
   <ul class="collapse">
-  <li><a href="#répartition-des-spécialités" id="toc-répartition-des-spécialités" class="nav-link" data-scroll-target="#répartition-des-spécialités">Répartition des spécialités</a></li>
-  <li><a href="#sujet-des-questions" id="toc-sujet-des-questions" class="nav-link" data-scroll-target="#sujet-des-questions">Sujet des questions</a></li>
-  <li><a href="#déroulement" id="toc-déroulement" class="nav-link" data-scroll-target="#déroulement">Déroulement</a></li>
-  <li><a href="#évaluation" id="toc-évaluation" class="nav-link" data-scroll-target="#évaluation">Évaluation</a></li>
-  </ul></li>
-  <li><a href="#exemples-de-sujets" id="toc-exemples-de-sujets" class="nav-link" data-scroll-target="#exemples-de-sujets">Exemples de sujets</a>
-  <ul class="collapse">
-  <li><a href="#exemples-issus-du-document-officiel" id="toc-exemples-issus-du-document-officiel" class="nav-link" data-scroll-target="#exemples-issus-du-document-officiel">Exemples issus du document officiel</a></li>
-  <li><a href="#exemples-issus-des-sujets-choisis-les-années-précédentes" id="toc-exemples-issus-des-sujets-choisis-les-années-précédentes" class="nav-link" data-scroll-target="#exemples-issus-des-sujets-choisis-les-années-précédentes">Exemples issus des sujets choisis les années précédentes</a></li>
+  <li><a href="#exemple" id="toc-exemple" class="nav-link" data-scroll-target="#exemple">1. Exemple</a></li>
+  <li><a href="#description-de-lalgorithme" id="toc-description-de-lalgorithme" class="nav-link" data-scroll-target="#description-de-lalgorithme">2. Description de l’algorithme</a></li>
+  <li><a href="#implémentation-en-python" id="toc-implémentation-en-python" class="nav-link" data-scroll-target="#implémentation-en-python">3. Implémentation en Python</a></li>
+  <li><a href="#exemples-dapplications" id="toc-exemples-dapplications" class="nav-link" data-scroll-target="#exemples-dapplications">4. Exemples d’applications</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/GrandOral/grandOral.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div><div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="grandOral.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/algo/dfs_graphe.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Parcours d’un graphe en profondeur (Cours)</h1>
+<p class="subtitle lead">S6 - Algorithmique</p>
+</div>
 
 
-<section id="présentation" class="level2">
-<h2 class="anchored" data-anchor-id="présentation">Présentation</h2>
-<p>Le grand oral est une épreuve orale qui se dérouler en juin. Son coefficient est de 10 (sur un total de 100). Vous devez préparer en première et surtout en terminale deux questions en rapport avec vos spécialités de terminale. <a href="https://www.education.gouv.fr/baccalaureat-2021-epreuve-du-grand-oral-permettre-aux-eleves-de-travailler-une-competence-89576">Page de présentation officielle du grand oral</a> <a href="https://www.education.gouv.fr/bo/20/Special2/MENE2002780N.htm">Article du bulletin officiel (BO) définissant le grand oral</a>.</p>
-</section>
-<section id="les-deux-questions" class="level2">
-<h2 class="anchored" data-anchor-id="les-deux-questions">Les deux questions</h2>
-<section id="répartition-des-spécialités" class="level3">
-<h3 class="anchored" data-anchor-id="répartition-des-spécialités">Répartition des spécialités</h3>
-<p>Le BO dit : “ces questions portent sur les deux enseignements de spécialité soit pris isolément, soit abordés de manière transversale”. On comprend qu’il est nécessaire d’aborder les deux enseignements de spécialité, et qu’il est possible de les mélanger. Néanmoins il semblerait qu’il soit nécessaire (pour des raisons d’organisation, voir plus bas) d’avoir une spécialité majeure différente dans chaque question. Voici donc le schéma des répartitions possibles des spécialités (A et B) dans les deux questions (1 et 2) :</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Question 1</th>
-<th style="text-align: center;">Question 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">majeure B et mineure A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">majeure A et mineure B</td>
-<td style="text-align: center;">B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">majeure A et mineure B</td>
-<td style="text-align: center;">majeure B et mineure A</td>
-</tr>
-</tbody>
-</table>
-<p>Bien sûr, le caractère majeur ou mineur d’une spécialité dans une question peut être sujet à discussion. Cela donne néanmoins un cadre de réflexion.</p>
-</section>
-<section id="sujet-des-questions" class="level3">
-<h3 class="anchored" data-anchor-id="sujet-des-questions">Sujet des questions</h3>
-<p>Encore une fois le BO est assez concis : Elles mettent en lumière un des grands enjeux du ou des programmes de ces enseignements [de spécialité]. Elles sont adossées à tout ou partie du programme du cycle terminal. Les questions doivent donc avoir un lien avec le programme de terminale ou éventuellement de première. La question de NSI (ou de majeure NSI) doit donc s’inscrire dans les thèmes suivants :</p>
-<p>Pour la terminale :</p>
-<ul>
-<li>histoire de l’informatique ;</li>
-<li>structures de données ;</li>
-<li>bases de données ;</li>
-<li>architectures matérielles, systèmes d’exploitation et réseaux ;</li>
-<li>langages et programmation</li>
-<li>algorithmique</li>
-</ul>
-<p>Pour la première :</p>
-<ul>
-<li>histoire de l’informatique ;</li>
-<li>représentation des données: types et valeurs de base ;</li>
-<li>représentation des données: types construits ;</li>
-<li>traitement de données en tables ;</li>
-<li>interactions entre l’homme et la machine sur le Web</li>
-<li>architectures matérielles et systèmes d’exploitation</li>
-<li>langages et programmation</li>
-<li>algorithmique</li>
-</ul>
-<p>Dans <a href="https://eduscol.education.fr/media/3925/download">ce document offiicel</a>, on peut lire :</p>
-<blockquote class="blockquote">
-<p>L’entrée choisie par l’élève peut être variée : le choix du champ disciplinaire dans un parcours d’orientation ; des exemples de notions mathématiques qui ont changé son regard ou lui ont apporté des clés de lecture ; des obstacles didactiques auxquels il a été confronté ; une notion du programme ; un point de l’histoire des sciences ; une démonstration ; un lien avec une autre spécialité, une attention portée à une notion pour ses enjeux sociétaux ou dans un parcours d’orientation comme l’éducation à la santé, au développement durable, aux médias et à l’information, aux problèmes bioéthiques.</p>
-</blockquote>
-<p>Si la question rentre dans ces critères, elle peut donc être valide.</p>
-</section>
-<section id="déroulement" class="level3">
-<h3 class="anchored" data-anchor-id="déroulement">Déroulement</h3>
-<section id="choix-de-la-question" class="level4">
-<h4 class="anchored" data-anchor-id="choix-de-la-question">Choix de la question</h4>
-<p>Vous serez évalué par un jury composé d’un professeur d’une de vos spécialités et d’un professeur d’une autre matière (votre autre spécialité ou non). Le jury choisira donc la question pour laquelle il est compétent.</p>
-</section>
-<section id="minutes-de-préparation" class="level4">
-<h4 class="anchored" data-anchor-id="minutes-de-préparation">20 minutes de préparation</h4>
-<p>Une fois que vous connaissez la question choisie par le jury, vous avez 20 minutes pour mettre vos idées au clair. Vous avez la possibilité de réaliser un support sur ue feuille fournie. Vous pouvez donner ce support au jury au début de l’entretien.</p>
-</section>
-<section id="minutes-dentretien" class="level4">
-<h4 class="anchored" data-anchor-id="minutes-dentretien">20 minutes d’entretien</h4>
-<p>L’entretien se déroule en trois temps. Tout l’entretien se fait sans notes et sans support excepté, éventuellement, celui que vous avez créé pendant votre préparation.</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Précisions au sujet du support papier
+Notion de parcours d’un graphe
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ce support est une aide pour la parole du candidat ; il n’a pas vocation à être donné à lire au jury. Il s’agit de notes, d’un plan d’exposé, de trame de prise de parole, de mots-clefs ou d’idées directrices. Ces notes peuvent aussi servir de document d’appui à l’argumentation (schéma, courbe, diagramme, tableau, formule mathématique…).</p>
-<p><strong>Source</strong> : <a href="https://eduscol.education.fr/729/presentation-du-grand-oral">Eduscol</a></p>
+<p>D’une façon générale, <strong>parcourir</strong> un graphe consiste à visiter chaque sommet une seule fois, en appliquant éventuellement un même traitement à chaque sommet.</p>
+<p>Plus précisément, le <strong>parcours</strong> d’un graphe est une liste <span class="math inline">\(L\)</span> de tous ses sommets :</p>
+<ul>
+<li>Le premier élément de <span class="math inline">\(L\)</span> est un sommet de départ choisi arbitrairement.</li>
+<li>Chaque sommet du graphe est visité une seule fois exactement.</li>
+<li>Chaque sommet, sauf le départ, est adjacent à au moins un sommet déjà visité.</li>
+</ul>
 </div>
 </div>
-<section id="minutes-de-présentation" class="level5">
-<h5 class="anchored" data-anchor-id="minutes-de-présentation">5 minutes de présentation</h5>
-<p>Vous disposez de 5 minutes pour :</p>
+<section id="parcours-dun-graphe-en-profondeur-dabord" class="level2">
+<h2 class="anchored" data-anchor-id="parcours-dun-graphe-en-profondeur-dabord">Parcours d’un graphe en profondeur d’abord</h2>
+<p>Ce type de parcours est souvent désigné par le terme anglais <em>depth-first search</em> (DFS). Il consiste à parcourir le graphe en partant d’un sommet donné, en suivant un chemin le plus profond possible, puis en revenant en arrière pour suivre un autre chemin. On peut imaginer que l’on se déplace dans le graphe en suivant un chemin qui ressemble à un serpent qui se déplace dans un labyrinthe. Le serpent se déplace le plus profondément possible dans le labyrinthe, puis revient en arrière pour suivre un autre chemin. On peut aussi imaginer que l’on se déplace dans le graphe en suivant un chemin qui ressemble à un arbre. On commence par la racine, puis on descend le plus profondément possible dans l’arbre, puis on remonte en arrière pour suivre un autre chemin.</p>
+<section id="exemple" class="level3">
+<h3 class="anchored" data-anchor-id="exemple">1. Exemple</h3>
+<p>Voici un exemple de graphe et de parcours en profondeur d’abord.</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> algorithmx <span class="im">import</span> jupyter_canvas</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> algorithmx.networkx <span class="im">import</span> add_graph</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition du graphe</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>graph <span class="op">=</span> nx.Graph()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>graph.add_nodes_from([<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>])</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>graph.add_edges_from([(<span class="st">"A"</span>, <span class="st">"B"</span>), (<span class="st">"A"</span>, <span class="st">"D"</span>), (<span class="st">"B"</span>, <span class="st">"C"</span>), (<span class="st">"B"</span>, <span class="st">"E"</span>), (<span class="st">"C"</span>, <span class="st">"F"</span>), (<span class="st">"D"</span>, <span class="st">"E"</span>), (<span class="st">"E"</span>, <span class="st">"F"</span>), (<span class="st">"F"</span>, <span class="st">"G"</span>)])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>canvas <span class="op">=</span> jupyter_canvas(buttons<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>add_graph(canvas, graph)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>canvas</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"0fa211e8bcd445f78c6d4e0ef5ec207f","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+<p>Parcours en profondeur à partir du sommet A :</p>
 <ul>
-<li>expliquer pourquoi vous avez choisi cette question ;</li>
-<li>développer le question ;</li>
-<li>y répondre.</li>
+<li>Nous visitons d’abord le nœud A, puis nous examinons tous ses voisins non visités, qui sont B et D. Nous choisissons B et continuons notre parcours en profondeur à partir de B.</li>
+<li>Nous visitons le nœud B, puis nous examinons tous ses voisins non visités, qui sont C et E. Nous choisissons C et continuons notre parcours en profondeur à partir de C.</li>
+<li>Nous visitons le nœud C, puis nous examinons tous ses voisins non visités : il n’y a que F. Nous choisissons F et continuons notre parcours en profondeur à partir de F.</li>
+<li>Nous visitons le nœud F, puis nous examinons tous ses voisins non visités, qui sont G et E. Nous choisissons G et continuons notre parcours en profondeur à partir de G.</li>
+<li>Nous visitons le nœud G, puis nous examinons tous ses voisins non visités : il n’y en a pas. Nous revenons en arrière et continuons notre parcours en profondeur à partir de F.</li>
+<li>F possède encore un voisin non visité, E. Nous choisissons E et continuons notre parcours en profondeur à partir de E.</li>
+<li>Nous visitons le nœud E, puis nous examinons tous ses voisins non visités : il n’y a que D. Nous choisissons D et continuons notre parcours en profondeur à partir de D.</li>
+<li>Nous visitons le nœud D, puis nous examinons tous ses voisins non visités : il n’y en a pas.</li>
+<li>Il n’y a plus de nœud non visité. Nous avons terminé notre parcours en profondeur.</li>
 </ul>
-<p>Le jury ne vous interrompt pas sauf si vous dépassez du temps imparti. Tout cela se fait sans notes et sans support.</p>
+<p>Le parcours en profondeur d’abord de ce graphe est donc A, B, C, F, G, E, D.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remarque
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le parcours en profondeur d’abord d’un graphe n’est en général pas unique : quand un sommet a plusieurs voisins non visités, l’un d’entre eux est choisi pour continuer le parcours. Il est donc possible que le parcours en profondeur d’abord d’un même graphe donne des résultats différents.</p>
+</div>
+</div>
 </section>
-<section id="minutes-déchange-avec-le-jury" class="level5">
-<h5 class="anchored" data-anchor-id="minutes-déchange-avec-le-jury">10 minutes d’échange avec le jury</h5>
-<p>Pendant ce temps, le jury vous interroge sur votre question, il demande des précisions. Il peut élargir les questions au thème abordé puis à tout le programme de terminale et première.</p>
+<section id="description-de-lalgorithme" class="level3">
+<h3 class="anchored" data-anchor-id="description-de-lalgorithme">2. Description de l’algorithme</h3>
+<p>Voici les étapes de l’algorithme DFS:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Parcours en profondeur d’abord
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Choisir un nœud de départ et le marquer comme visité.</li>
+<li>Explorer tous les voisins du nœud en cours qui n’ont pas encore été visités, et choisir l’un d’eux.</li>
+<li>Marquer le nœud choisi comme visité. Il devient le nœud en cours.</li>
+<li>Répéter l’étape 2 et 3 jusqu’à ce que tous les voisins du nœud en cours aient été visités.</li>
+<li>Si tous les voisins du nœud en cours ont été visités, revenir en arrière au nœud précédent et explorer ses voisins non visités.</li>
+<li>Répéter les étapes 2 à 5 jusqu’à ce que tous les nœuds aient été visités.</li>
+</ol>
+</div>
+</div>
+<p>L’algorithme DFS peut être implémenté à l’aide d’une <strong>pile</strong>, en ajoutant les voisins non visités du nœud en cours à la pile et en explorant le voisin au sommet de la pile. Lorsque tous les voisins d’un nœud ont été visités, nous revenons simplement au nœud précédent en dépilant le sommet de la pile. Cette pile permet de garder une trace de la direction de l’exploration.</p>
 </section>
-<section id="minutes-déchange-sur-votre-projet-dorientation" class="level5">
-<h5 class="anchored" data-anchor-id="minutes-déchange-sur-votre-projet-dorientation">5 minutes d’échange sur votre projet d’orientation</h5>
-<p>Il est conseillé de faire un lien entre la question traitée et votre projet d’orientation. Vous devez expliquer les étapes de la maturation de votre projet d’orientation et détailler votre projet après le bac.</p>
+<section id="implémentation-en-python" class="level3">
+<h3 class="anchored" data-anchor-id="implémentation-en-python">3. Implémentation en Python</h3>
+<p>Pour l’implémentation, nous supposerons que nous avons un graphe défini en utilisant le module <code>networkx</code> de Python.</p>
+<p>Voici une implémentation de l’algorithme de parcours en profondeur d’abord en Python.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs(graph, start):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Parcours en profondeur d'abord d'un graphe à partir d'un nœud donné.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">        graph: Le graphe à parcourir.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        start: Le nœud de départ.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">        Une liste contenant les nœuds visités dans l'ordre du parcours.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    visited <span class="op">=</span> []</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    stack <span class="op">=</span> [start]</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> stack <span class="op">!=</span> []:</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        node <span class="op">=</span> stack.pop()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> node <span class="kw">not</span> <span class="kw">in</span> visited:</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            visited.append(node)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            stack <span class="op">=</span> stack <span class="op">+</span> <span class="bu">list</span>((graph.neighbors(node)))</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> visited</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Test de l’algorithme :</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition du graphe</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>graph <span class="op">=</span> nx.Graph()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>graph.add_nodes_from([<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>graph.add_edges_from([(<span class="st">"A"</span>, <span class="st">"B"</span>), (<span class="st">"A"</span>, <span class="st">"D"</span>), (<span class="st">"B"</span>, <span class="st">"C"</span>), (<span class="st">"B"</span>, <span class="st">"E"</span>), (<span class="st">"C"</span>, <span class="st">"F"</span>), (<span class="st">"D"</span>, <span class="st">"E"</span>), (<span class="st">"E"</span>, <span class="st">"F"</span>), (<span class="st">"F"</span>, <span class="st">"G"</span>)])</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Parcours en profondeur d'abord à partir du nœud A</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dfs(graph, <span class="st">"A"</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['A', 'D', 'E', 'F', 'G', 'C', 'B']</code></pre>
+</div>
+</div>
+<p>Le parcours en profondeur d’abord se prête aussi naturellement à une <strong>implémentation récursive</strong>. Voici une implémentation de l’algorithme de parcours en profondeur d’abord en Python, en utilisant une fonction récursive.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs_recursive(graph, start, visited<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Parcours en profondeur d'abord d'un graphe à partir d'un nœud donné.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">        graph: Le graphe à parcourir.</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">        start: Le nœud de départ.</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">        visited: Une liste contenant les nœuds déjà visités.</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Une liste contenant les nœuds visités dans l'ordre du parcours.</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> visited <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        visited <span class="op">=</span> []</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    visited.append(start)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> node <span class="kw">in</span> graph.neighbors(start):</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> node <span class="kw">not</span> <span class="kw">in</span> visited:</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>            dfs_recursive(graph, node, visited)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> visited</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Test de l’algorithme :</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parcours en profondeur d'abord à partir du nœud A</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dfs_recursive(graph, <span class="st">"A"</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['A', 'B', 'C', 'F', 'E', 'D', 'G']</code></pre>
+</div>
+</div>
+<p><strong>Visualisation du parcours en profondeur d’abord</strong></p>
+<p>Nous pouvons visualiser le parcours en profondeur d’abord en utilisant le module <code>algorithmx</code> de Python. Ce module permet de visualiser les étapes de l’algorithme de parcours en profondeur d’abord.</p>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> algorithmx <span class="im">import</span> jupyter_canvas</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> algorithmx.networkx <span class="im">import</span> add_graph</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>canvas <span class="op">=</span> jupyter_canvas(buttons<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>add_graph(canvas, graph)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>canvas.pause(<span class="dv">2</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Animation du parcours en profondeur d'abord</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> nx.edge_dfs(graph, <span class="st">"A"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> e <span class="kw">in</span> dfs:</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> e[<span class="dv">0</span>] <span class="op">!=</span> source:</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Resize the source</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        canvas.node(e[<span class="dv">0</span>]).size(<span class="st">'1.6x'</span>).color(<span class="st">'red'</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> source <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>            canvas.node(source).size(<span class="st">'0.8x'</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the source</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        source <span class="op">=</span> e[<span class="dv">0</span>]</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        canvas.pause(<span class="dv">1</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Traverse the edge</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    canvas.edge(e).traverse(<span class="st">'blue'</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    canvas.pause(<span class="fl">0.5</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>canvas.node(source).size(<span class="st">'0.8x'</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>canvas</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"6d2dc46f8e6c43039924de638f895cc4","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
 </section>
-</section>
-</section>
-<section id="évaluation" class="level3">
-<h3 class="anchored" data-anchor-id="évaluation">Évaluation</h3>
-<p>Lors de votre présentation, le jury évalue les capacités argumentatives et les qualités oratoires du candidat. Vous n’êtes pas évalué ici sur le fond, mais plutôt sur la forme (je rappelle qu’il y aura vraisemblablement un membre du jury qui n’aura rien compris à ce que vous avez dit).</p>
-<p>Lors de l’échange avec le jury, il évalue la solidité des connaissances et les capacités argumentatives du candidat. Vous êtes donc évalué ici sur vos connaissances.</p>
-<p>Lors de l’échange sur votre projet d’orientation, le jury mesure la capacité du candidat à conduire et exprimer une réflexion personnelle témoignant de sa curiosité intellectuelle et de son aptitude à exprimer ses motivations. Il n’évalue surtout pas votre projet d’orientation en lui-même.</p>
-</section>
-</section>
-<section id="exemples-de-sujets" class="level2">
-<h2 class="anchored" data-anchor-id="exemples-de-sujets">Exemples de sujets</h2>
-<section id="exemples-issus-du-document-officiel" class="level3">
-<h3 class="anchored" data-anchor-id="exemples-issus-du-document-officiel">Exemples issus du <a href="https://eduscol.education.fr/document/3919/download">document officiel</a></h3>
-<section id="lhistoire-de-linformatique" class="level4">
-<h4 class="anchored" data-anchor-id="lhistoire-de-linformatique">L’histoire de l’informatique</h4>
+<section id="exemples-dapplications" class="level3">
+<h3 class="anchored" data-anchor-id="exemples-dapplications">4. Exemples d’applications</h3>
+<p>Le parcours en profondeur d’abord est utilisé pour résoudre de nombreux problèmes, notamment :</p>
 <ul>
-<li>Femmes et numérique : quelle histoire ? quel avenir ?</li>
-<li>Ada Lovelace, pionnière du langage informatique.</li>
-<li>Alan Turing, et l’informatique fut.</li>
-<li>Quelle est la différence entre le web 1.0 et le web 2.0 ?</li>
+<li><p><strong>Trouver un chemin entre deux nœuds</strong> : le parcours en profondeur d’abord peut être utilisé pour trouver un chemin entre deux nœuds dans un graphe. Il suffit de s’arrêter lorsque le nœud de destination est atteint.</p></li>
+<li><p><strong>Trouver un cycle dans un graphe</strong> : le parcours en profondeur d’abord peut être utilisé pour trouver un cycle dans un graphe. Si un nœud déjà visité est rencontré, cela signifie qu’il existe un cycle dans le graphe.</p></li>
+<li><p><strong>Trouver un arbre couvrant</strong> : le parcours en profondeur d’abord peut être utilisé pour trouver un arbre couvrant dans un graphe. Il suffit de s’arrêter lorsque tous les nœuds ont été visités.</p></li>
 </ul>
-</section>
-<section id="langages-et-programmation" class="level4">
-<h4 class="anchored" data-anchor-id="langages-et-programmation">Langages et programmation</h4>
-<ul>
-<li>P = NP, un problème à un million de dollars ?</li>
-<li>Tours de Hanoï : plus qu’un jeu d’enfants ?</li>
-<li>Les fractales : informatique et mathématiques imitent-elles la nature ?</li>
-<li>De la récurrence à la récursivité.</li>
-<li>Les bugs : bête noire des développeurs ?</li>
-<li>Comment rendre l’informatique plus sûre ?</li>
-</ul>
-</section>
-<section id="données-structurées-et-structures-de-données" class="level4">
-<h4 class="anchored" data-anchor-id="données-structurées-et-structures-de-données">Données structurées et structures de données</h4>
-<ul>
-<li>L’informatisation des métros : progrès ou outil de surveillance ?</li>
-<li>Musique et informatique : une alliance possible de l’art et de la science ?</li>
-</ul>
-</section>
-<section id="algorithmique" class="level4">
-<h4 class="anchored" data-anchor-id="algorithmique">Algorithmique</h4>
-<ul>
-<li>Comment créer une machine intelligente ?</li>
-<li>Comment lutter contre les biais algorithmiques ?</li>
-<li>Quels sont les enjeux de la reconnaissance faciale (notamment éthiques) ?</li>
-<li>Quels sont les enjeux de l’intelligence artificielle ?</li>
-<li>Transformation d’images : Deep Fakes, une arme de désinformation massive ? La fin de la preuve par l’image ?</li>
-<li>Qu’apporte la récursivité dans un algorithme ?</li>
-<li>Quel est l’impact de la complexité d’un algorithme sur son efficacité ?</li>
-</ul>
-</section>
-<section id="bases-de-données" class="level4">
-<h4 class="anchored" data-anchor-id="bases-de-données">Bases de données</h4>
-<ul>
-<li>Données personnelles : la vie privée en voie d’extinction ?</li>
-<li>Comment optimiser les données ?</li>
-</ul>
-</section>
-<section id="architectures-matérielles-systèmes-dexploitation-et-réseaux" class="level4">
-<h4 class="anchored" data-anchor-id="architectures-matérielles-systèmes-dexploitation-et-réseaux">Architectures matérielles, systèmes d’exploitation et réseaux</h4>
-<ul>
-<li>L’ordinateur quantique : nouvelle révolution informatique ?</li>
-<li>La course à l’infiniment petit : jusqu’où ?</li>
-<li>Peut-on vraiment sécuriser les communications ?</li>
-<li>Quelle est l’utilité des protocoles pour l’internet ?</li>
-<li>Cyberguerre : la 3e guerre mondiale ?</li>
-</ul>
-</section>
-<section id="interfaces-hommes-machines-ihm" class="level4">
-<h4 class="anchored" data-anchor-id="interfaces-hommes-machines-ihm">Interfaces Hommes-Machines (IHM)</h4>
-<ul>
-<li>Smart cities, smart control ?</li>
-<li>La réalité virtuelle : un nouveau monde ?</li>
-<li>La voiture autonome, quels enjeux ?</li>
-</ul>
-</section>
-<section id="impact-sociétal-et-éthique-de-linformatique" class="level4">
-<h4 class="anchored" data-anchor-id="impact-sociétal-et-éthique-de-linformatique">Impact sociétal et éthique de l’informatique</h4>
-<ul>
-<li>Comment protéger les données numériques sur les réseaux sociaux ?</li>
-<li>Quelle est l’empreinte carbone du numérique en termes de consommation ?</li>
-<li>Pourquoi chiffrer ses communications ?</li>
-<li>Les réseaux sociaux sont-ils compatibles avec la politique ?</li>
-<li>Les réseaux sociaux sont-ils compatibles avec le journalisme ?</li>
-<li>Les réseaux sociaux permettent-ils de lutter contre les infox ?</li>
-<li>L’informatique va-t-elle révolutionner le dessin animé ?</li>
-<li>L’informatique va-t-elle révolutionner la composition musicale ?</li>
-<li>L’informatique va-t-elle révolutionner l’art ?</li>
-<li>L’informatique va-t-elle révolutionner le cinéma ?</li>
-<li>L’informatique va-t-elle révolutionner la médecine ?</li>
-<li>L’informatique va-t-elle révolutionner la physique ?</li>
-<li>L’informatique va-t-elle révolutionner l’entreprise ?</li>
-<li>Le numérique : facteur de démocratisation ou de fractures sociales ?</li>
-<li>Informatique : quel impact sur le climat ?</li>
-</ul>
-</section>
-</section>
-<section id="exemples-issus-des-sujets-choisis-les-années-précédentes" class="level3">
-<h3 class="anchored" data-anchor-id="exemples-issus-des-sujets-choisis-les-années-précédentes">Exemples issus des sujets choisis les années précédentes</h3>
-<ul>
-<li>Pourquoi Javascript est-il devenu le langage le plus utilisé au monde ?</li>
-<li>Pourquoi chiffrer les communications ?</li>
-<li>L’informatique va-t-elle révolutionner le dessin animé ?</li>
-<li>Comment l’informatique a-t-elle révolutionné la vie des gens dans le domaine du divertissement au fil des années ?</li>
-<li>Comment fonctionnent les bases de données distribuées ?</li>
-<li>Nos informations personnelles sont-elles en sécurité dans les bases de données ?</li>
-<li>Comment l’informatique s’inspire du vivant ?</li>
-<li>Enigma et décryptage. En quoi l’informatique a-t-elle fait évoluer les maths ?</li>
-<li>Comment évolue la cyber-sécurité ?</li>
-<li>Modélisation 3D et graphes.</li>
-<li>L’art algorithmique est-il vraiment un art ?</li>
-<li>Comment protéger les données numériques sur les réseaux</li>
-<li>Quels sont les enjeux des cyberguerres ?</li>
-<li>Fractales, l’info et les maths imitent-elles la nature ?</li>
-<li>Les réseaux sociaux sont-ils compatibles avec la politique ?</li>
-<li>Avenir de la réalité virtuelle ?</li>
-<li>Les réseaux sociaux sont-ils compatibles avec le journalisme ?</li>
-<li>En quoi la cryptologie a-t-elle permis de raccourcir la deuxième guerre mondiale ?</li>
-<li>Comment fonctionne Tor ?</li>
-<li>Comment flash est-il passé du statu d’utilisable à mort en 2021 ?</li>
-<li>Pourquoi Python a-t-il été inventé ?</li>
-<li>Comment l’automate cellulaire peut-il imiter les êtres vivants par de simples règles informatiques ?</li>
-<li>Comment HTML 5 a révolutionné le développement web ?</li>
-<li>Quelles ont été les évolutions de l’utilisation d’internet ?</li>
-<li>(Maths/Info) Quel est l’impact de la complexité d’un algorithme sur son efficacité ?</li>
-<li>Comment optimiser le traitement des données ?</li>
-<li>La machine de Turing est-elle obsolète ?</li>
-<li>(Maths/Info) De la récurrence à la récursivité.</li>
-<li>(Maths/Info) La course à l’infiniment petit, jusqu’où ?</li>
-<li>(Info/Phy?) En quoi l’ordinateur quantique est-il révolutionnaire ?</li>
-<li>Qu’apporte la récursivité dans un algorithme ?</li>
-<li>Peut-on vraiment sécuriser les communications ?</li>
-<li>Quels sont les enjeux de l’intelligence artificielle ?</li>
-<li>(Maths/info) P=NP, un problème à un million de dollars.</li>
-<li>Comment rendre l’informatique plus sûre ?</li>
-<li>(Info/ Maths) En quoi la machine Enigma a t-elle révolutionnée l’informatique ?</li>
-<li>(Info/ Maths) Un ordinateur peut-il écrire une démonstration mathématique ?</li>
-</ul>
-<section id="sources" class="level4">
-<h4 class="anchored" data-anchor-id="sources">Sources</h4>
-<ul>
-<li><a href="https://kxs.fr/cours/grand-oral/exemples">https://kxs.fr/cours/grand-oral/exemples</a></li>
-<li><a href="https://bfourlegnie.com/Tnsi_2020/cours/Gd_oral/grand_oral_NSI.pdf">https://bfourlegnie.com/Tnsi_2020/cours/Gd_oral/grand_oral_NSI.pdf</a></li>
-</ul>
+<p>Certaines applications seront développées en exercices.</p>
 
 
-</section>
 </section>
 </section>
 
 </main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"state":{"0fa211e8bcd445f78c6d4e0ef5ec207f":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}"],"layout":"IPY_MODEL_899516d6d610453891a397e545cb9339","show_buttons":true,"tabbable":null,"tooltip":null}},"58c765779e7b4b1889315cbd9b3167b3":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"6d2dc46f8e6c43039924de638f895cc4":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}","{\"queues\": {\"0\": {\"pause\": 2}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"color\": \"red\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-C\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"C-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"C\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-D\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"D-A\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"D\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-G\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}"],"layout":"IPY_MODEL_58c765779e7b4b1889315cbd9b3167b3","show_buttons":true,"tabbable":null,"tooltip":null}},"899516d6d610453891a397e545cb9339":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}},"version_major":2,"version_minor":0}
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1234,6 +1271,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../algo/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Programme</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../algo/bfs_graphe.html" class="pagination-link">
+        <span class="nav-page-text">Parcours d’un graphe en largeur (Cours)</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

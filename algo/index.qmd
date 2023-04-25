@@ -1,4 +1,16 @@
 ---
-title: S6-Algorithmique
+title: Programme
+subtitle: S6-Algorithmique
 image: khiva-198613_640.jpg
 ---
+
+## Programme
+
+Le travail de compréhension et de conception d’algorithmes se poursuit en terminale notamment via l’introduction des structures d’arbres et de graphes montrant tout l’intérêt d’une approche récursive dans la résolution algorithmique de problèmes.
+
+On continue l’étude de la notion de coût d’exécution, en temps ou en mémoire et on montre l’intérêt du passage d’un coût quadratique en $n^2$ à $n \log_2 n$ ou de $n$ à $\log_2 n$. Le logarithme en base 2 est ici manipulé comme simple outil de comptage (taille en bits d’un nombre entier).
+
+| Contenus | Capacités attendues | Commentaires |
+| --- | --- | --- |
+| Algorithmes sur les arbres binaires et sur les arbres binaires de recherche. | Calculer la taille et la hauteur d’un arbre. Parcourir un arbre de différentes façons (ordres infixe, préfixe ou suffixe ; ordre en largeur d’abord). Rechercher une clé dans un arbre de recherche, insérer une clé. | Une structure de données récursive adaptée est utilisée. L’exemple des arbres permet d’illustrer la programmation par classe. La recherche dans un arbre de recherche équilibré est de coût logarithmique. |
+| Algorithmes sur les graphes. | Parcourir un graphe en profondeur d’abord, en largeur d’abord. Repérer la présence d’un cycle dans un graphe. Chercher un chemin dans un graphe. | Le parcours d’un labyrinthe et le routage dans Internet sont des exemples d’algorithme sur les graphes. L’exemple des graphes permet d’illustrer l’utilisation des classes en programmation. |

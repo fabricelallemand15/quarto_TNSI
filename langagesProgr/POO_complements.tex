@@ -4,7 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  a4paper,
+  letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
 
@@ -230,9 +230,9 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, frame hidden, boxrule=0pt, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, frame hidden, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Avertissement}, rightrule=.15mm, opacityback=0, bottomrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-warning-color-frame, arc=.35mm, breakable, colback=white, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-warning-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Avertissement}, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, left=2mm, breakable, toptitle=1mm, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, leftrule=.75mm]
 
 Les compléments présentés ici sont hors programme. Ils peuvent néanmoins
 apporter une connaissance et une compréhension plus fine de la POO et
@@ -324,7 +324,7 @@ modification sur les membres d'un objet. C'est au programmeur de rester
 vigilant. Il existe néanmoins des conventions permettant d'identifier
 les membres de l'interface des autres membres d'un objet.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Conventions de nommage en Python}, rightrule=.15mm, opacityback=0, bottomrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-important-color-frame, arc=.35mm, breakable, colback=white, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-important-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Conventions de nommage en Python}, titlerule=0mm, colframe=quarto-callout-important-color-frame, coltitle=black, left=2mm, breakable, toptitle=1mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, leftrule=.75mm]
 
 \begin{itemize}
 \tightlist
@@ -508,7 +508,7 @@ Utilisation :
 La méthode \texttt{perimetre} est héritée de la classe mère
 \texttt{Rectangle}.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Héritage et initialiseur}, rightrule=.15mm, opacityback=0, bottomrule=.15mm, coltitle=black, left=2mm, colframe=quarto-callout-warning-color-frame, arc=.35mm, breakable, colback=white, toprule=.15mm, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm, titlerule=0mm, colbacktitle=quarto-callout-warning-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomtitle=1mm, toprule=.15mm, colback=white, bottomrule=.15mm, opacitybacktitle=0.6, arc=.35mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Héritage et initialiseur}, titlerule=0mm, colframe=quarto-callout-warning-color-frame, coltitle=black, left=2mm, breakable, toptitle=1mm, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, leftrule=.75mm]
 
 La méthode initialiseur de la classe \texttt{Carre} fait appel à la
 méthode initialiseur de sa classe parente par la commande

@@ -4,7 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  a4paper,
+  letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
 
@@ -233,9 +233,9 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, enhanced, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, sharp corners]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, leftrule=.75mm, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Objectifs}, bottomrule=.15mm, colback=white, bottomtitle=1mm, toprule=.15mm, toptitle=1mm, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-tip-color-frame, titlerule=0mm, arc=.35mm, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, colback=white, coltitle=black, titlerule=0mm, breakable, bottomtitle=1mm, opacityback=0, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Objectifs}, arc=.35mm, toptitle=1mm, left=2mm]
 
 Utiliser le logiciel ``DB Browser for SqLite'' et le langage SQL pour :
 

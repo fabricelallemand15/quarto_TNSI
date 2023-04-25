@@ -91,6 +91,9 @@ website:
       - section: "S6-Algorithmique"
         contents: 
           - algo/index.qmd
+          - algo/dfs_graphe.qmd
+          - algo/bfs_graphe.qmd
+          - algo/exos_graphes.qmd
       - section: "S7-Réseaux"
         contents: 
           - reseaux/index.qmd
@@ -132,8 +135,8 @@ format:
     lightbox: auto
     code-block-border-left: "#31BAE9"
     code-block-bg: true
-  pdf:
-    papersize: a4
+  # pdf:
+  #   papersize: a4
 
 
 

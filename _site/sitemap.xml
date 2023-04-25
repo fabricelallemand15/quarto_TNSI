@@ -2,246 +2,262 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://flallemand.fr/ESMaths/about.html</loc>
-    <lastmod>2023-04-04T20:29:28.000Z</lastmod>
+    <lastmod>2023-04-25T21:16:03.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/algo/bfs_graphe.html</loc>
+    <lastmod>2023-04-25T21:16:10.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/algo/dfs_graphe.html</loc>
+    <lastmod>2023-04-25T21:16:15.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/algo/exos_cycles_chemins.html</loc>
+    <lastmod>2023-04-25T21:16:17.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/algo/exos_graphes.html</loc>
+    <lastmod>2023-04-25T21:16:19.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://flallemand.fr/ESMaths/algo/exos_graphes_fiche1.html</loc>
+    <lastmod>2023-04-25T21:16:21.678Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/algo/index.html</loc>
-    <lastmod>2023-04-04T20:29:36.000Z</lastmod>
+    <lastmod>2023-04-25T21:16:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/arbres_cours.html</loc>
-    <lastmod>2023-04-04T20:29:51.000Z</lastmod>
+    <lastmod>2023-04-25T21:16:37.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/arbres_exercices.html</loc>
-    <lastmod>2023-04-04T20:30:03.000Z</lastmod>
+    <lastmod>2023-04-25T21:16:49.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/graphes_cours.html</loc>
-    <lastmod>2023-04-04T20:30:16.787Z</lastmod>
+    <lastmod>2023-04-25T21:17:02.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/graphes_exercices.html</loc>
-    <lastmod>2023-04-04T20:30:29.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:15.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/implementationArbres.html</loc>
-    <lastmod>2023-04-04T20:30:42.035Z</lastmod>
+    <lastmod>2023-04-25T21:17:28.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/index.html</loc>
-    <lastmod>2023-04-04T20:30:51.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:30.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/TParbres.html</loc>
-    <lastmod>2023-04-04T20:30:53.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:32.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/tp_graphe_liste.html</loc>
-    <lastmod>2023-04-04T20:31:03.552Z</lastmod>
+    <lastmod>2023-04-25T21:17:34.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/tp_graphe_liste_capytale.html</loc>
-    <lastmod>2023-04-04T20:31:12.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:35.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/tp_graphe_liste_CORR.html</loc>
-    <lastmod>2023-04-04T20:31:23.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:36.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/tp_graphe_matrice.html</loc>
-    <lastmod>2023-04-04T20:31:34.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:37.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/tp_graphe_matrice_capytale.html</loc>
-    <lastmod>2023-04-04T20:31:44.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:39.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/arbresgraphes/tp_graphe_matrice_CORR.html</loc>
-    <lastmod>2023-04-04T20:31:55.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:40.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/archiSE/index.html</loc>
-    <lastmod>2023-04-04T20:32:04.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:40.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/bac/2023_CE_J1_corrige.html</loc>
-    <lastmod>2023-04-04T20:32:18.000Z</lastmod>
+    <lastmod>2023-04-25T21:17:55.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/bac/2023_CE_J2_corrige.html</loc>
-    <lastmod>2023-04-04T20:32:30.000Z</lastmod>
+    <lastmod>2023-04-25T21:18:06.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/bac/annales.html</loc>
-    <lastmod>2023-04-04T20:32:39.000Z</lastmod>
+    <lastmod>2023-04-25T21:18:14.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/bac/index.html</loc>
-    <lastmod>2023-04-04T20:32:48.000Z</lastmod>
+    <lastmod>2023-04-25T21:18:23.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/exercices.html</loc>
-    <lastmod>2023-04-04T20:33:02.000Z</lastmod>
+    <lastmod>2023-04-25T21:18:36.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/index.html</loc>
-    <lastmod>2023-04-04T20:33:12.000Z</lastmod>
+    <lastmod>2023-04-25T21:18:38.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/partie1.html</loc>
-    <lastmod>2023-04-04T20:33:29.000Z</lastmod>
+    <lastmod>2023-04-25T21:18:54.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/partie2.html</loc>
-    <lastmod>2023-04-04T20:33:43.000Z</lastmod>
+    <lastmod>2023-04-25T21:19:08.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/quiz.html</loc>
-    <lastmod>2023-04-04T20:33:52.000Z</lastmod>
+    <lastmod>2023-04-25T21:22:09.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/sql_cours.html</loc>
-    <lastmod>2023-04-04T20:34:07.000Z</lastmod>
+    <lastmod>2023-04-25T21:22:24.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/TP1.html</loc>
-    <lastmod>2023-04-04T20:34:22.000Z</lastmod>
+    <lastmod>2023-04-25T21:22:38.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/TP2.html</loc>
-    <lastmod>2023-04-04T20:34:34.000Z</lastmod>
+    <lastmod>2023-04-25T21:22:49.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/BDD/TP3.html</loc>
-    <lastmod>2023-04-04T20:34:44.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://flallemand.fr/ESMaths/GrandOral/grandOral.html</loc>
-    <lastmod>2023-04-04T20:34:58.000Z</lastmod>
+    <lastmod>2023-04-25T21:22:59.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/GrandOral/index.html</loc>
-    <lastmod>2023-04-04T20:52:56.526Z</lastmod>
+    <lastmod>2023-04-25T21:23:12.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/histoire/index.html</loc>
-    <lastmod>2023-04-04T20:35:23.000Z</lastmod>
+    <lastmod>2023-04-25T21:23:14.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/index.html</loc>
-    <lastmod>2023-04-04T20:52:10.675Z</lastmod>
+    <lastmod>2023-04-25T21:23:14.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/index.html</loc>
-    <lastmod>2023-04-04T20:35:41.000Z</lastmod>
+    <lastmod>2023-04-25T21:23:15.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/paradigmes_cours.html</loc>
-    <lastmod>2023-04-04T20:35:55.000Z</lastmod>
+    <lastmod>2023-04-25T21:23:30.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/paradigmes_exercices.html</loc>
-    <lastmod>2023-04-04T20:36:07.000Z</lastmod>
+    <lastmod>2023-04-25T21:23:42.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/POO_complements.html</loc>
-    <lastmod>2023-04-04T20:36:22.000Z</lastmod>
+    <lastmod>2023-04-25T21:23:55.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/POO_cours.html</loc>
-    <lastmod>2023-04-04T20:36:36.000Z</lastmod>
+    <lastmod>2023-04-25T21:24:09.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/POO_exercices.html</loc>
-    <lastmod>2023-04-04T20:36:48.000Z</lastmod>
+    <lastmod>2023-04-25T21:24:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/quiz.html</loc>
-    <lastmod>2023-04-04T20:36:57.000Z</lastmod>
+    <lastmod>2023-04-25T21:24:31.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/recursivite_cours.html</loc>
-    <lastmod>2023-04-04T20:37:10.000Z</lastmod>
+    <lastmod>2023-04-25T21:24:44.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/recursivite_exercices.html</loc>
-    <lastmod>2023-04-04T20:37:24.000Z</lastmod>
+    <lastmod>2023-04-25T21:24:58.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/TPHanoi.html</loc>
-    <lastmod>2023-04-04T20:37:35.000Z</lastmod>
+    <lastmod>2023-04-25T21:25:09.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/langagesProgr/TPPOOBataille.html</loc>
-    <lastmod>2023-04-04T20:37:46.000Z</lastmod>
+    <lastmod>2023-04-25T21:25:21.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/reseaux/index.html</loc>
-    <lastmod>2023-04-04T20:37:56.000Z</lastmod>
+    <lastmod>2023-04-25T21:25:23.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/ressources.html</loc>
-    <lastmod>2023-04-04T20:38:04.000Z</lastmod>
+    <lastmod>2023-04-25T21:25:24.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/bilan.html</loc>
-    <lastmod>2023-04-04T20:38:13.000Z</lastmod>
+    <lastmod>2023-04-25T21:25:25.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/dictionnaires_cours.html</loc>
-    <lastmod>2023-04-04T20:38:27.000Z</lastmod>
+    <lastmod>2023-04-25T21:25:38.000Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/dictionnaires_exercices.html</loc>
-    <lastmod>2023-04-04T20:38:38.000Z</lastmod>
+    <lastmod>2023-04-25T21:25:50.113Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/files_cours.html</loc>
-    <lastmod>2023-04-04T20:38:52.000Z</lastmod>
+    <lastmod>2023-04-25T21:26:03.478Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/index.html</loc>
-    <lastmod>2023-04-04T20:39:01.000Z</lastmod>
+    <lastmod>2023-04-25T21:26:05.388Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/interface/index.html</loc>
-    <lastmod>2023-04-04T20:39:12.000Z</lastmod>
+    <lastmod>2023-04-25T21:26:06.329Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/interfaces_cours.html</loc>
-    <lastmod>2023-04-04T20:39:25.000Z</lastmod>
+    <lastmod>2023-04-25T21:26:18.846Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/listes_cours.html</loc>
-    <lastmod>2023-04-04T20:39:37.106Z</lastmod>
+    <lastmod>2023-04-25T21:26:30.695Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/listes_exercices.html</loc>
-    <lastmod>2023-04-04T20:39:49.232Z</lastmod>
+    <lastmod>2023-04-25T21:26:42.297Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/piles_cours.html</loc>
-    <lastmod>2023-04-04T20:40:01.805Z</lastmod>
+    <lastmod>2023-04-25T21:26:54.813Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/POO/index.html</loc>
-    <lastmod>2023-04-04T20:40:11.144Z</lastmod>
+    <lastmod>2023-04-25T21:26:56.690Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/projet_detecteur_langue.html</loc>
-    <lastmod>2023-04-04T20:40:21.734Z</lastmod>
+    <lastmod>2023-04-25T21:27:07.302Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/TPDictionnaire.html</loc>
-    <lastmod>2023-04-04T20:40:30.463Z</lastmod>
+    <lastmod>2023-04-25T21:27:15.861Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/TPDictionnaires.html</loc>
-    <lastmod>2023-04-04T20:40:40.905Z</lastmod>
+    <lastmod>2023-04-25T21:27:18.060Z</lastmod>
   </url>
   <url>
     <loc>https://flallemand.fr/ESMaths/structures/TPDictionnaires_CORR.html</loc>
-    <lastmod>2023-04-04T20:40:50.545Z</lastmod>
+    <lastmod>2023-04-25T21:27:19.070Z</lastmod>
   </url>
 </urlset>

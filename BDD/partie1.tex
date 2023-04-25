@@ -4,7 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  a4paper,
+  letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
 
@@ -230,7 +230,7 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-3cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, sharp corners, breakable, interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, interior hidden, sharp corners]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \subsection{Introduction}\label{introduction}}
@@ -261,7 +261,7 @@ contenu même en l'absence d'alimentation électrique.
 
 On arrive donc à la définition suivante :
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, toptitle=1mm, left=2mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, breakable, opacitybacktitle=0.6, arc=.35mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, breakable, opacitybacktitle=0.6, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, arc=.35mm, coltitle=black, colframe=quarto-callout-tip-color-frame, titlerule=0mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, toptitle=1mm, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm]
 
 Une base de données est ensemble d'informations structurées mémorisées
 sur un support persistant.
@@ -364,7 +364,7 @@ en garantissant l'intégrité de la base même en cas de panne sont mis en
 place. De tels systèmes sont appelés \textbf{Systèmes de Gestion de
 Bases de Données}, \textbf{SGBD} en bref.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, toptitle=1mm, left=2mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, breakable, opacitybacktitle=0.6, arc=.35mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, breakable, opacitybacktitle=0.6, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, arc=.35mm, coltitle=black, colframe=quarto-callout-tip-color-frame, titlerule=0mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, toptitle=1mm, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm]
 
 Un \textbf{Système de Gestion de Bases de Données} (\textbf{SGBD}) est
 un système informatique qui assure la gestion de l'ensemble des
@@ -415,7 +415,7 @@ Cette architecture est à peu près universellement adoptée par tous les
 SGBD. Les notions suivantes et le vocabulaire associé, sont donc très
 importantes à retenir.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Définitions}, toptitle=1mm, left=2mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, breakable, opacitybacktitle=0.6, arc=.35mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, breakable, opacitybacktitle=0.6, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Définitions}, arc=.35mm, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, toptitle=1mm, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm]
 
 \textbf{Programme serveur}. Un SGBD est instancié sur une machine sous
 la forme d'un programme serveur qui gère une ou plusieurs bases de
@@ -443,7 +443,7 @@ Une des propriétés les plus importantes des SGBD est donc la distinction
 entre plusieurs niveaux d'abstraction pour la représentation des données
 : le niveau logique et le niveau physique.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Définition}, toptitle=1mm, left=2mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm, breakable, opacitybacktitle=0.6, arc=.35mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, coltitle=black, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, left=2mm, breakable, opacitybacktitle=0.6, colback=white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Définition}, arc=.35mm, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, leftrule=.75mm, bottomrule=.15mm, opacityback=0, toptitle=1mm, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm]
 
 \begin{itemize}
 \tightlist

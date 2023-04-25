@@ -1,0 +1,200 @@
+---
+title: Parcours d'un graphe en largeur (Cours)
+subtitle: S6 - Algorithmique
+lang: fr
+tbl-cap-location: bottom
+crossref: 
+    eq-prefix: Éq.
+    tbl-prefix: Tableau
+    tbl-title: Tableau
+format:
+    html: default
+#     pdf: 
+#         geometry:
+#             - top=20mm
+#             - bottom=20mm
+#             - left=20mm
+#             - right=20mm
+#             - heightrounded
+#         include-in-header:
+#             - text:
+#                 \usepackage{fancyhdr}
+#                 \pagestyle{fancy}
+#                 \usepackage{lastpage}
+#         include-before-body:
+#             - text:
+#                 \lhead{Spécialité NSI} 
+#                 \rhead{Terminale}
+#                 \chead{} 
+#                 \cfoot{}
+#                 \lfoot{Lycée \'Emile Duclaux}
+#                 \rfoot{Page \thepage/\pageref{LastPage}}
+#                 \renewcommand{\headrulewidth}{0pt}
+#                 \renewcommand{\footrulewidth}{0pt}
+#                 \thispagestyle{fancy}
+#                 \vspace{-2cm}
+#         biblio-title: Sources utilisées
+#         reference-location: document
+#         # fig-pos: h
+#         # fig-width: 4
+#         # fig-height: 2.5
+#         keep-tex: true
+# format-links: [pdf, tex]
+---
+
+::: {.callout-important}
+## Notion de parcours d'un graphe
+
+D'une façon générale, **parcourir** un graphe consiste à visiter chaque sommet une seule fois, en appliquant éventuellement un même traitement à chaque sommet.
+
+Plus précisément, le **parcours** d'un graphe est une liste $L$ de tous ses sommets :
+
+* Le premier élément de $L$ est un sommet de départ choisi arbitrairement.
+* Chaque sommet du graphe est visité une seule fois exactement.
+* Chaque sommet, sauf le départ, est adjacent à au moins un sommet déjà visité.
+:::
+
+## Parcours d'un graphe en largeur d'abord
+
+Ce type de parcours consiste à visiter tous les sommets d'un graphe en commençant par un sommet de départ, puis en visitant tous les sommets adjacents à ce sommet, puis en visitant tous les sommets adjacents à ces sommets et encore non visités, etc. jusqu'à ce que tous les sommets soient visités. En anglais, on parle de **breadth-first search** (BFS).
+
+## 1. Exemple
+
+Voici un exemple de graphe et de parcours en largeur d'abord.
+
+```{python}
+#|code-fold: true
+#|fig-align: center
+
+import networkx as nx
+from algorithmx import jupyter_canvas
+from algorithmx.networkx import add_graph
+
+# Définition du graphe
+graph = nx.Graph()
+graph.add_nodes_from(["A", "B", "C", "D", "E", "F", "G"])
+graph.add_edges_from([("A", "B"), ("A", "D"), ("B", "C"), ("B", "E"), ("C", "F"), ("D", "E"), ("E", "F"), ("F", "G")])
+
+canvas = jupyter_canvas(buttons=True)
+add_graph(canvas, graph)
+
+canvas
+```
+
+Parcours en largeur à partir du sommet A : 
+
+* Nous commençons par visiter le sommet A. Nous l'ajoutons à la liste $L$.
+* Nous visitons tous les sommets adjacents à A, c'est-à-dire B et D. Nous les ajoutons à la liste $L$ qui devient donc $L = [A, B, D]$.
+* Tous les sommets adjacents à A sont visités. Nous considérons maintenant tous les sommets adjacents à B, c'est-à-dire C et E. Nous les ajoutons à la liste $L$ qui devient donc $L = [A, B, D, C, E]$. Tous les sommets adjacents à B sont visités.
+* Nous nous intéressons maintenant aux sommets adjacents à D, c'est-à-dire A et E, mais ceux-ci ont déjà été visités. Nous ne les ajoutons donc pas à la liste $L$.
+* Passons aux voisins de C, c'est-à-dire B et F. B a déjà été visité, mais F n'a pas encore été visité. Nous l'ajoutons à la liste $L$ qui devient donc $L = [A, B, D, C, E, F]$.
+* Considérons maintenant les voisins de E, c'est-à-dire B, D et F. Tous ont déjà été visités.
+* Passons aux voisins de F, c'est-à-dire C, E et G. C et E ont déjà été visités, mais G n'a pas encore été visité. Nous l'ajoutons à la liste $L$ qui devient donc $L = [A, B, D, C, E, F, G]$.
+
+Le parcours en largeur d'abord est terminé. Tous les sommets ont été visités et $L=[A, B, D, C, E, F, G]$.
+
+::: {.callout-note}
+## Remarque
+
+Le parcours en largeur d'abord d'un graphe n'est en général pas unique : quand un sommet a plusieurs voisins non visités, l'ordre de leur parcours est arbitraire. Il est donc possible que le parcours en largeur d'abord d'un même graphe donne des résultats différents.
+:::
+
+### 2. Description de l'algorithme
+
+Voici les étapes de l'algorithme BFS:
+
+::: {.callout-important}
+## Parcours en largeur d'abord
+
+1. Choisir un nœud de départ et le marquer comme visité.
+2. Créer une file vide et y ajouter le nœud de départ.
+3. Tant que la file n'est pas vide :
+    1. Extraire le premier élément de la file.
+    2. Pour chaque nœud adjacent au nœud extrait, si le nœud n'a pas encore été visité, le marquer comme visité et l'ajouter à la file.
+
+Lorsque l'algorithme est terminé, tous les nœuds ont été visités.
+:::
+
+L'algorithme BFS peut être implémenté à l'aide d'une **file**.
+
+### 3. Implémentation en Python
+
+Pour l'implémentation, nous supposerons que nous avons un graphe défini en utilisant le module `networkx` de Python.
+
+Voici une implémentation de l'algorithme BFS en Python.
+
+```{python}
+def bfs(graph, start):
+    """Parcours en largeur d'abord d'un graphe
+    Args:
+        graph: un graphe networkx
+        start: le sommet de départ
+    Returns:
+        list: Une liste contenant les nœuds visités dans l'ordre du parcours.
+    """
+    visited = [start]
+    queue = [start]
+    while queue != []:
+        node = queue.pop(0)
+        for neighbor in list((graph.neighbors(node))):
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.append(neighbor)            
+    return visited
+```
+
+Test de l'algorithme :
+
+```{python}
+bfs(graph, "A")
+```
+
+**Visualisation du parcours en largeur d'abord**
+
+Nous pouvons visualiser le parcours en largeur d'abord en utilisant le module `algorithmx` de Python. Ce module permet de visualiser les étapes de l'algorithme de parcours en largeur d'abord.
+
+```{python}
+#|code-fold: true
+#|fig-align: center
+
+import networkx as nx
+from algorithmx import jupyter_canvas
+from algorithmx.networkx import add_graph
+
+# Définition du graphe
+graph = nx.Graph()
+graph.add_nodes_from(["A", "B", "C", "D", "E", "F", "G"])
+graph.add_edges_from([("A", "B"), ("A", "D"), ("B", "C"), ("B", "E"), ("C", "F"), ("D", "E"), ("E", "F"), ("F", "G")])
+
+canvas = jupyter_canvas(buttons=True)
+add_graph(canvas, graph)
+
+canvas.pause(2)
+
+bfs = nx.edge_bfs(graph, "A")
+source = None
+for e in bfs:
+    if e[0] != source:
+        # Resize the source
+        canvas.node(e[0]).size('1.6x').color('red')
+        if source is not None:
+            canvas.node(source).size('0.8x')
+
+        # Update the source
+        source = e[0]
+        canvas.pause(1)
+
+    # Traverse the edge
+    canvas.edge(e).traverse('blue')
+    canvas.pause(0.5)
+
+canvas.node(source).size('0.8x')
+
+canvas
+```
+
+### 4. Exemple d'application
+
+La principale application de l'algorithme BFS est la recherche de plus court chemin dans un graphe, étant donné que l'algorithme parcourt tous les nœuds du graphe par distance croissante par rapport au nœud de départ.
+
+* **Trouver le chemin le plus court entre deux nœuds dans un graphe**. BFS peut être utilisé pour trouver le chemin le plus court entre deux nœuds dans un graphe en commençant par le premier nœud et en explorant tous ses voisins. Une fois que tous les voisins ont été explorés, l’algorithme passe au nœud suivant dans le graphe et répète le processus. Cela continue jusqu’à ce que le nœud de destination soit atteint.

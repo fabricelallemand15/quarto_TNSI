@@ -264,5 +264,22 @@
   "GrandOral/grandOral.qmd": {
     "grandOral.html": "dd051e93",
     "grandOral.tex": "5802fb03"
+  },
+  "algo/dfs_graphe.qmd": {
+    "dfs_graphe.html": "039a3e91"
+  },
+  "algo/bfs_graphe.qmd": {
+    "bfs_graphe.html": "b6a5b614"
+  },
+  "algo/exos_graphes.qmd": {
+    "exos_graphes.html": "65c8b31b"
+  },
+  "algo/exos_graphes_fiche1.ipynb": {
+    "exos_graphes_fiche1.html": "71a187a9",
+    "exos_graphes_fiche1.tex": "b7a1a35d"
+  },
+  "algo/exos_cycles_chemins.ipynb": {
+    "exos_cycles_chemins.html": "03809958",
+    "exos_cycles_chemins.tex": "2d9b4b0d"
   }
 }
