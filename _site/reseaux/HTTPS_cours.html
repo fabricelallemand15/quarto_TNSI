@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.11">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>NSI - Terminale - Sécurisation des communications</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../bac/index.html" rel="next">
+<link href="../reseaux/index.html" rel="prev">
+<link href="../favicon.ico" rel="icon">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">NSI - Terminale</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
+ <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../ressources.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reseaux/index.html">S7-Réseaux</a></li><li class="breadcrumb-item"><a href="../reseaux/HTTPS_cours.html">Sécurisation des communications</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">S1-Langages et programmation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">1-Récursivité</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/recursivite_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Récursivité (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/recursivite_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Récursivité (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/TPHanoi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP Tours de Hanoï</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">2-Programmation orientée objet</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/POO_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/POO_complements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Compléments)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/POO_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/TPPOOBataille.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Bataille</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">3-Paradigmes de programmation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/paradigmes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/paradigmes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../langagesProgr/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Quiz)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">S2-Structures de données</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/interfaces_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interfaces et implémentations (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">1-Listes, Piles et Files</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/listes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Listes (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/piles_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piles (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/files_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Files (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/listes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Listes, Piles et Files (Exercices)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">2-Dictionnaires</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/dictionnaires_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/dictionnaires_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/TPDictionnaire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (TP)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/projet_detecteur_langue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projet - Détecteur de langue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../structures/bilan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bilan de la séquence : Structures de données abstraites</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">S3-Bases de données</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">1. Modèle relationnel</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/partie1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Le modèle relationnel (Cours - Partie 1)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/partie2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Le modèle relationnel (Cours - Partie 2)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz - Le modèle relationnel, SGBD</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/sql_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de données (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/TP1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 1 - Créer une base de données</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/TP2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 2 - Le supermarché</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../BDD/TP3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text">S4-Arbres et graphes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/arbres_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbres (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/arbres_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices sur les arbres</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/implementationArbres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implémentation des arbres en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/TParbres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Manipulation d’arbres</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/graphes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphes (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/tp_graphe_matrice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Implémentation des graphes par matrice d’adjacence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/tp_graphe_liste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Implémentation des graphes par liste d’adjacence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../arbresgraphes/graphes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices sur les graphes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">S5-Architectures matérielles et systèmes d’exploitation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../archiSE/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">S5-Architectures matérielles, systèmes d’exploitation et réseaux</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text">S6-Algorithmique</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../algo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../algo/dfs_graphe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parcours d’un graphe en profondeur (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../algo/bfs_graphe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parcours d’un graphe en largeur (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../algo/exos_graphes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices - Parcours de graphes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">
+ <span class="menu-text">S7-Réseaux</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">S7-Réseaux</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/HTTPS_cours.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Sécurisation des communications</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
+ <span class="menu-text">Baccalauréat</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bac/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Épreuve de NSI au bac en Terminale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bac/annales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annales du bac de NSI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
+ <span class="menu-text">Grand Oral</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../GrandOral/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grand Oral et NSI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#le-principe-de-chiffrement" id="toc-le-principe-de-chiffrement" class="nav-link" data-scroll-target="#le-principe-de-chiffrement">Le principe de chiffrement</a></li>
+  <li><a href="#les-principes-de-chiffrement-symétrique" id="toc-les-principes-de-chiffrement-symétrique" class="nav-link" data-scroll-target="#les-principes-de-chiffrement-symétrique">Les principes de chiffrement symétrique</a>
+  <ul class="collapse">
+  <li><a href="#le-chiffre-de-césar" id="toc-le-chiffre-de-césar" class="nav-link" data-scroll-target="#le-chiffre-de-césar">Le chiffre de César</a></li>
+  <li><a href="#le-chiffre-de-vernam" id="toc-le-chiffre-de-vernam" class="nav-link" data-scroll-target="#le-chiffre-de-vernam">Le chiffre de Vernam</a></li>
+  <li><a href="#le-chiffrement-aes" id="toc-le-chiffrement-aes" class="nav-link" data-scroll-target="#le-chiffrement-aes">Le chiffrement AES</a></li>
+  </ul></li>
+  <li><a href="#les-principes-du-chiffrement-asymétrique" id="toc-les-principes-du-chiffrement-asymétrique" class="nav-link" data-scroll-target="#les-principes-du-chiffrement-asymétrique">Les principes du chiffrement asymétrique</a>
+  <ul class="collapse">
+  <li><a href="#le-chiffrement-rsa" id="toc-le-chiffrement-rsa" class="nav-link" data-scroll-target="#le-chiffrement-rsa">Le chiffrement RSA</a></li>
+  <li><a href="#autre-utilisation-du-chiffrement-symétrique-la-signature-numérique" id="toc-autre-utilisation-du-chiffrement-symétrique-la-signature-numérique" class="nav-link" data-scroll-target="#autre-utilisation-du-chiffrement-symétrique-la-signature-numérique">Autre utilisation du chiffrement symétrique : la signature numérique</a></li>
+  </ul></li>
+  <li><a href="#le-protocole-https" id="toc-le-protocole-https" class="nav-link" data-scroll-target="#le-protocole-https">Le protocole HTTPS</a>
+  <ul class="collapse">
+  <li><a href="#authentification-du-site" id="toc-authentification-du-site" class="nav-link" data-scroll-target="#authentification-du-site">Authentification du site</a></li>
+  <li><a href="#chiffrement-des-communications" id="toc-chiffrement-des-communications" class="nav-link" data-scroll-target="#chiffrement-des-communications">Chiffrement des communications</a></li>
+  <li><a href="#en-résumé" id="toc-en-résumé" class="nav-link" data-scroll-target="#en-résumé">En résumé</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie">Bibliographie</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/reseaux/HTTPS_cours.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sécurisation des communications</h1>
+<p class="subtitle lead">S7-Réseaux</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notebook Capytale pour les exercices de ce cours : <button type="button" class="btn btn-light"><a href="https://capytale2.ac-paris.fr/web/c/be7b-1618141" target="_blank">Capytale</a> </button></p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Avec l’essor d’Internet, certains échanges comme les achats en ligne, les démarches administratives ou encore les transactions bancaires nécessitent de pouvoir garantir l’authenticité et la confidentialité des données échangées.</p>
+<p>Dans ce chapitre, la première partie permet d’<strong>illustrer le principe de chiffrement symétrique</strong> avec des exemples classiques comme le chiffre de César ou bien le chiffrement de Vernam, puis de faire le <strong>lien avec des chiffrements symétriques plus récents</strong> comme DES et AES.</p>
+<p>La deuxième partie aborde le <strong>principe de chiffrement asymétrique</strong> en prenant comme exemple le chiffrement RSA.</p>
+<p>La troisième partie se concentre sur <strong>l’échange d’une clef symétrique en utilisant un protocole asymétrique</strong> pour sécuriser une communication HTTPS.</p>
+<p>Ce cours est basé sur <a href="https://eduscol.education.fr/document/11480/download">le document ressource publié sur Eduscol</a>.</p>
+</section>
+<section id="le-principe-de-chiffrement" class="level1">
+<h1>Le principe de chiffrement</h1>
+<p>Le souci de confidentialité des échanges entre des personnes n’est pas récent. En effet, dès l’Égypte ancienne (vers 2700-2195 av. J.-C.), on retrouve des procédés cryptographiques rendant des messages aux contenus religieux illisibles pour les profanes.</p>
+<p>Bien évidemment, dès l’apparition de messages chiffrés, des personnes ont essayé de les déchiffrer. Et plus les spécialistes du décodage (appelés <strong>briseurs de chiffrements</strong>) avancent dans leurs recherches, plus les chiffrements doivent évoluer. Une fois qu’une faiblesse d’un chiffrement est connue, celui-ci devient inutilisable et il faut trouver une nouvelle méthode de chiffrement. Ce combat acharné entre les concepteurs de chiffrements et les spécialistes pour déchiffrer ceux-ci a permis de faire avancer la recherche, surtout en informatique.</p>
+<p>Aujourd’hui, la cryptographie est utilisée quotidiennement, notamment par les navigateurs Web des internautes, dans le cadre des communications « HTTPS» et du protocole sous-jacent SSL/TLS qui sécurisent les échanges.</p>
+<p>Définir quelques bases de la <strong>cryptographie</strong> en abordant les principes de <strong>chiffrement symétrique</strong> et <strong>asymétrique</strong> est nécessaire avant d’aborder la sécurisation des communications.</p>
+<p>La <strong>cryptographie</strong> (du grec ancien <em>kruptos</em>, « caché», et <em>graphein</em>, « écrire») a pour objectif de protéger des messages.</p>
+<p>Le <strong>chiffrement</strong> consiste à transformer, à l’aide d’une clef, un message compréhensible (dit <strong>texte clair</strong>) en un message incompréhensible (dit <strong>texte chiffré</strong>). Il est extrêmement difficile, voire impossible, de retrouver le texte clair à partir du texte chiffré pour toute personne qui ne dispose pas de la clef de chiffrement. Le texte chiffré peut alors être envoyé sur un média qui n’est pas sécurisé, puisqu’il est incompréhensible sans la clef.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La suite de ce cours s’intéresse au chiffrement et au déchiffrement. Même si un message est indéchiffrable, la communication chiffrée entre deux personnes donne tout de même des informations sur leurs liens, puisqu’elles échangent des informations qui se veulent secrètes. Par exemple, un internaute qui se connecte en HTTPS (HTTP sécurisé) à un site illégal va laisser une trace de cette connexion, même si le contenu est chiffré. On peut aussi noter que certains algorithmes peuvent être vulnérables s’ils ne sont pas employés correctement. Par exemple, divulguer en clair certains messages chiffrés ou utiliser un en-tête identique dans tous les messages en clair peut donner des informations supplémentaires à un attaquant. C’est par exemple en se basant sur de telles informations que les Alliés ont réussi à casser le code utilisé par les Allemands dans leur machine Enigma lors de la seconde guerre mondiale.</p>
+<p>Voir Émission « La méthode scientifique » du 10/10/19 à partir de 6’36’’: <a href="https://www.franceculture.fr/emissions/la-methode-scientifique/la-methode-scientifique-emission-du-jeudi-10-octobre-2019">Enigma, les secrets du code nazi</a>.</p>
+</div>
+</div>
+</section>
+<section id="les-principes-de-chiffrement-symétrique" class="level1">
+<h1>Les principes de chiffrement symétrique</h1>
+<p>Le chiffrement symétrique, ou à <strong>clef partagée</strong>, permet de chiffrer et de déchiffrer des messages à l’aide d’une même clef. Cette clef doit donc être partagée par l’expéditeur et son destinataire tout en n’étant connue que par eux.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="cours_fig1.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<section id="le-chiffre-de-césar" class="level2">
+<h2 class="anchored" data-anchor-id="le-chiffre-de-césar">Le chiffre de César</h2>
+<p>L’exemple le plus connu de chiffrement symétrique, et un des plus simples, est le <strong>chiffre de César</strong>. Cette méthode de communication chiffrée aurait été inventée par Jules César lui-même<strong>3</strong>. Pour obtenir le texte chiffré, le chiffre de César consiste à remplacer chaque lettre du texte en clair par la lettre obtenue après un décalage d’un nombre fixe de lettres dans l’alphabet.</p>
+<p>Pour un décalage de 3 lettres, le A devient D, le B devient E… Comme le montre l’image ci-dessous :</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="cours_fig2.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p>Le nombre 3, qui correspond au nombre de lettres à décaler, est appelé la <strong>clef secrète de chiffrement</strong>. Pour déchiffrer le message, il suffit de donner la clef de chiffrement au destinataire du message qui réalise l’opération inverse pour déchiffrer le message.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig3.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="cours_fig3.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Extrait de <em>La vie des douze Césars</em> de Suétone
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On possède enfin de César des lettres à Cicéron, et sa correspondance avec ses amis sur ses affaires domestiques. Il y employait, pour les choses tout à fait secrètes, une espèce de chiffre qui en rendait le sens inintelligible (les lettres étant disposées de manière à ne pouvoir jamais former un mot), et qui consistait, je le dis pour ceux qui voudront les déchiffrer, à changer le rang des lettres dans l’alphabet, en écrivant la quatrième pour la première, c’est-à-dire le D pour le A, et ainsi de suite.</p>
+</div>
+</div>
+<p>Jules César et son destinataire utilisent la même clef de chiffrement et elle n’est connue que par eux. Ce chiffrement est donc symétrique et cette clef est la <strong>clef partagée</strong>.</p>
+<p><strong>Exercice 1</strong></p>
+<p>Déchiffrer le message chiffré « qf hwduytlwfumnj jxy zynqnxjj ifsx qjx sfanlfyjzwx bjg ! » avec la clef partagée 5, “à la main” (sans utiliser de programme informatique).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre réponse ici</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Exercice 2</strong></p>
+<p>Écrire une fonction Python qui déchiffre un message encodé par le chiffrement de César avec un décalage de <span class="math inline">\(n\)</span> caractères, en supposant que le message est écrit en minuscules et sans accents :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dechiffrement_cesar(message, n):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Déchiffre un message codé par le chiffrement de César avec un décalage de n caractères</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        message (str): message à déchiffrer</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">        n (int): décalage du chiffrement de César</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">        str: message déchiffré</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="st">"abcdefghijklmnopqrstuvwxyz"</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Votre réponse ici</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pour chiffrer un message avec une fonction analogue, il faut que le texte soit écrit en minuscules et sans accents. Il est donc préférable de calibrer le texte à chiffrer pour enlever les accents et autres caractères spéciaux. Les espaces et signes de ponctuation sont ignorés.</p>
+<p><strong>Exercice 3</strong></p>
+<p>Compléter et tester les deux fonctions suivantes</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calibrage_texte(texte_a_calibrer: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calibre le texte en enlevant les accents et autres caractères spéciaux</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    et en mettant toutes les lettres en minuscule.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">        texte_a_calibrer (str): texte à calibrer</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">        str: texte calibré</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Votre réponse ici</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> chiffrement_cesar(message: <span class="bu">str</span>, n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">    Chiffre un message en utilisant le chiffrement de César avec un décalage de n caractères.</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">        message (str): message à chiffrer</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">        n (int): décalage du chiffrement de César</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">        str: message chiffré</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Votre réponse ici</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ce chiffrement fait apparaître quelques limites intéressantes, dont le principe peut s’appliquer à d’autres algorithmes plus modernes :</p>
+<ul>
+<li><p>la clef 0 n’est pas utilisable, car elle ne chiffre pas le message (notion de <strong>clef faible</strong>) ;</p></li>
+<li><p>si on se limite à l’alphabet sans ajouter de signe de ponctuation, le nombre de clefs possibles est limité à 25. Il est donc possible de toutes les tester et il s’agit alors d’une attaque dite par « <strong>force brute</strong> » ;</p></li>
+<li><p>l’informatique permet également de réaliser une analyse de la fréquence des occurrences de chaque lettre dans une langue et de la comparer aux fréquences trouvées dans le message chiffré. On sait par exemple qu’en français, la lettre la plus fréquente est le « e ». Si la lettre la plus fréquente du message chiffré est le « f », la clef vaut alors certainement 1.</p></li>
+</ul>
+<p><strong>Exercice 4</strong></p>
+<p>Écrire et tester une fonction Python qui renvoie la lettre la plus fréquente du texte passé en argument. Si des lettres ex æquo apparaissent, on choisit parmi les plus fréquentes la première qui apparaît dans le message chiffré. La fonction doit construire un dictionnaire dont les clefs sont les lettres et les valeurs le nombre d’occurrences de chaque lettre dans le texte.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lettre_plus_frequente(texte: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Renvoie la lettre la plus fréquente du texte passé en argument.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">        texte (str): texte dans lequel on cherche la lettre la plus fréquente</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">        str: lettre la plus fréquente</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Votre réponse ici</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Exercice 5</strong></p>
+<p>Écrire et tester une fonction Python qui déchiffre le message passé en argument à partir de la recherche de la lettre la plus fréquente dans le texte passé en argument :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dechiffrement_cesar_attaque_frequences(message: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Déchiffre le message passé en argument à partir de la recherche de la lettre la plus fréquente dans le texte passé en argument.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">        message (str): message à déchiffrer</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">        str: message déchiffré</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Votre réponse ici</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Le chiffre de César est un exemple simple de chiffrement symétrique. Dans une des dernières utilisations connues, l’armée russe chiffra certaines de ses communications avec le chiffre de César durant la Première Guerre mondiale, mais les analystes autrichiens et allemands cassèrent ce code très simplement. De nos jours, le chiffre de César n’est uniquement utilisé qu’à des fins pédagogiques, car il est trop facilement déchiffrable.</p>
+</section>
+<section id="le-chiffre-de-vernam" class="level2">
+<h2 class="anchored" data-anchor-id="le-chiffre-de-vernam">Le chiffre de Vernam</h2>
+<p>Le chiffrement symétrique dit de Vernam utilise comme clef partagée une chaîne de caractères aussi longue que le message à chiffrer. L’algorithme consiste alors à :</p>
+<ul>
+<li><p>faire correspondre chaque lettre du message à chiffrer avec chaque lettre de la clef partagée ;</p></li>
+<li><p>convertir chaque lettre en nombre. Par exemple : 0 pour A, 1 pour B, 2 pour C… Le caractère « espace» est aussi codé par le nombre 26. Les décalages sont alors modulo 27 : la lettre est codée par le reste de la division euclidienne par 27.</p></li>
+<li><p>Il est aussi possible d’utiliser le codage ASCII pour convertir chaque lettre en nombre : 65 pour A, 66 pour B… ;</p></li>
+<li><p>décaler dans l’alphabet chaque lettre du message à chiffrer. Ce décalage est égal au nombre correspondant à la lettre qui a la même position dans la clef partagée. <strong>Cela revient à effectuer un chiffrement de César avec un décalage différent pour chaque lettre du message à chiffrer.</strong></p></li>
+</ul>
+<p>Attention : pour garantir la sécurité de la méthode, la clef doit être choisie de façon aléatoire et ne pourra servir qu’une fois.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig4.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="cours_fig4.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p><strong>Exercice 6</strong></p>
+<p>Écrire une onction Python qui calcule l’index de la lettre du texte à chiffrer (sens = 1) ou à déchiffrer (sens = -1) puis qui renvoie le texte chiffré ou déchiffré. Le texte et la clef ne doivent contenir que des lettres en minuscules et des espaces.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> chiffrement_vernam(texte: <span class="bu">str</span>, clef: <span class="bu">str</span>, sens: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calcule l'index de la lettre du texte à chiffrer (sens = 1) ou à déchiffrer (sens = -1) puis renvoie le texte chiffré ou déchiffré.</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">        texte (str): texte à chiffrer ou déchiffrer</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">        clef (str): clef de chiffrement</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">        sens (int): sens du chiffrement (1 pour chiffrer, -1 pour déchiffrer)</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">        str: texte chiffré ou déchiffré</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(texte) <span class="op">==</span> <span class="bu">len</span>(clef), <span class="st">"Le texte et la clef doivent contenir le même nombre de caractères."</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="st">"abcdefghijklmnopqrstuvwxyz "</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Votre réponse ici</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Une attaque par force brute n’est pas réalisable, car on peut faire dire « n’importe quoi » avec une clef adéquate. Par exemple, si on déchiffre « awqusabiobuynhoubu » avec « qwrboklepycfo<strong>tduj</strong>q », on décode la phrase « la terre est plate ».</p>
+<p>Utilisé correctement, cet algorithme est théoriquement inviolable. Il faut néanmoins faire attention à certains écueils :</p>
+<ul>
+<li><p>une clef de chiffrement déjà utilisée ne doit pas être réutilisée puisque si deux messages ont été chiffrés avec la même clef de chiffrement, il suffit d’effectuer une soustraction pour annuler l’effet du masque et avec un peu plus de travail, de retrouver les deux textes en clair ;</p></li>
+<li><p>la clef se doit d’être aléatoire, par exemple en la générant avec un générateur aléatoire. Si ce n’est pas le cas, il est possible de retrouver la séquence qui l’a générée ;</p></li>
+<li><p>comme la clef, aussi grande que les données échangées, n’est pas réutilisable, il faut au préalable partager, par un autre canal sécurisé, une assez grande quantité de données pour permettre les futurs échanges.</p></li>
+</ul>
+<p>Ce système a été utilisé durant la guerre froide par le « Téléphone rouge» entre le Kremlin et la Maison-Blanche, qui était en fait plus un téléscripteur qu’un réel téléphone. La « clef », quant à elle, était échangée par valise diplomatique.</p>
+</section>
+<section id="le-chiffrement-aes" class="level2">
+<h2 class="anchored" data-anchor-id="le-chiffrement-aes">Le chiffrement AES</h2>
+<p>Le chiffrement AES (<em>Advanced Encryption Standard</em>) est un des algorithmes les plus utilisés actuellement et il est à l’heure actuelle considéré comme sûr.</p>
+<p>Dans les utilisations les plus fréquentes de l’AES, on peut citer :</p>
+<ul>
+<li><p>le chiffrement des données lors de l’ajout d’un mot de passe à un fichier PDF ou ZIP ;</p></li>
+<li><p>la sécurisation des connexions via l’utilisation de VPN ;</p></li>
+<li><p>la sécurisation des données utilisateurs lors de l’utilisation d’outils de gestion de mots de passe ;</p></li>
+<li><p>la protection de serveurs multi-joueurs contre les attaques. C’est le cas par exemple de l’entreprise Rockstar, développeur et éditeur de la série des Grand Theft Auto (GTA) ;</p></li>
+<li><p>le chiffrement des communications lors de l’utilisation de messageries instantanées. C’est le cas de l’application WhatsApp.</p></li>
+</ul>
+<p>Ce chiffrement symétrique utilise une clef de 128, 192 ou 256 bits et elle est utilisée pour paramétrer une suite de transformations qui permettent de chiffrer ou de déchiffrer le message.</p>
+<p>Le fonctionnement plus complexe de ce chiffrement par bloc dépasse le cadre des programmes. Pour aller plus loin, il est possible de prendre connaissance, par exemple, du <a href="https://members.loria.fr/PZimmermann/cours/id12-2005-4.pdf">cours sur le sujet édité par le laboratoire lorrain de recherche en informatique et ses applications (LORIA)</a>.</p>
+</section>
+</section>
+<section id="les-principes-du-chiffrement-asymétrique" class="level1">
+<h1>Les principes du chiffrement asymétrique</h1>
+<p>Dans le cas du chiffrement symétrique, la clef est partagée. Elle est alors commune à l’émetteur et au récepteur du message chiffré. Le chiffrement est symétrique, car une unique clef permet à la fois de chiffrer et de déchiffrer le message.</p>
+<p>Pour le <strong>chiffrement asymétrique</strong>, la clef est en fait un <strong>couple de clefs</strong>, appelées <strong>clef privée</strong> et <strong>clef publique</strong>. Chaque clef peut être utilisée pour chiffrer un message, mais il n’est alors déchiffrable qu’avec l’autre clef du couple.</p>
+<p>Dans les faits, la clef publique chiffre et la clef privée déchiffre :</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="cours_fig5.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p>Plus précisément, dans une communication, lorsqu’on chiffre un message avec un algorithme asymétrique, on utilise la <strong>clef publique du destinataire</strong>. Le message ou les données ne sont alors déchiffrables que par la personne qui possède l’autre clef du couple, normalement la <strong>clef privée du destinataire</strong>. Contrairement à la clef publique, la clef privée n’est jamais diffusée.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="cours_fig6.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p>Le chiffrement asymétrique repose sur des fonctions mathématiques à sens unique. En effet, une fois qu’elles ont été appliquées, il est très difficile de les inverser sans connaître l’information contenue dans la clef de déchiffrement.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig7.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="cours_fig7.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p>Les chiffrements asymétriques sont plus coûteux en temps de traitement que les chiffrements symétriques, et à niveau de sécurité équivalent, les clefs sont généralement plus longues que les clefs des algorithmes symétriques.</p>
+<section id="le-chiffrement-rsa" class="level2">
+<h2 class="anchored" data-anchor-id="le-chiffrement-rsa">Le chiffrement RSA</h2>
+<p>Le concept de chiffrement asymétrique est attribué à Whitfield Diffie et à Martin Hellman, qui l’ont présenté en 1976. Le premier exemple de chiffrement asymétrique est le chiffrement RSA (abréviation des noms de ses inventeurs Ronald Rivest, Adi Shamir, Loenard Adleman).</p>
+<p>La sécurité du RSA repose sur la facilité à multiplier deux nombres premiers entre eux et la difficulté de factoriser le produit de deux nombres premiers, pourvu qu’ils soient suffisamment grands. C’est à l’heure actuelle l’algorithme de chiffrement asymétrique le plus utilisé.</p>
+<p>Pour comprendre les mécanismes sous-jacents au chiffrement RSA, et ceci n’est pas un attendu des programmes, on pourra lire <a href="https://interstices.info/nombres-premiers-et-cryptologie-lalgorithme-rsa/#2">l’article édité sur Interstices.info</a> qui propose aussi une animation interactive de ce chiffrement.</p>
+<p>À noter qu’il existe d’autres algorithmes asymétriques, qui dépassent, eux aussi, les attendus des programmes. On peut citer, par exemple, la « <a href="http://www.lix.polytechnique.fr/~goncalves/Downloads/Cours2_Courbes_elliptiques.pdf#Outline0.3">cryptographie sur les courbes elliptiques</a> » qui permet d’avoir un niveau de sécurité comparable à celui de RSA, mais en utilisant une clef beaucoup plus courte. Cette clef plus courte engendre des calculs plus rapides ainsi qu’une utilisation moins importante de mémoire et d’énergie.</p>
+</section>
+<section id="autre-utilisation-du-chiffrement-symétrique-la-signature-numérique" class="level2">
+<h2 class="anchored" data-anchor-id="autre-utilisation-du-chiffrement-symétrique-la-signature-numérique">Autre utilisation du chiffrement symétrique : la signature numérique</h2>
+<p>Le chiffrement asymétrique permet également de réaliser une signature numérique. Par analogie avec la signature traditionnelle d’un document papier, la signature numérique :</p>
+<ul>
+<li><p>relie un document à son auteur ;</p></li>
+<li><p>est difficilement imitable.</p></li>
+</ul>
+<p>Contrairement à une signature « papier», la signature numérique possède des propriétés supplémentaires :</p>
+<ul>
+<li><p>elle appartient à un seul message. Il est donc impossible de la copier pour la coller sur un autre message ;</p></li>
+<li><p>elle ne peut pas être falsifiée ni reniée.</p></li>
+</ul>
+<p>La signature numérique est calculée à partir de la clef privée du signataire et peut être vérifiée en utilisant la clef publique du signataire.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig8.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="cours_fig8.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="le-protocole-https" class="level1">
+<h1>Le protocole HTTPS</h1>
+<p>Le protocole HTTPS est la version sécurisée du protocole HTTP.</p>
+<p>L’objectif du protocole HTTP est de recevoir et d’envoyer des informations de et vers des serveurs web sans se soucier de la façon dont ces informations se déplacent d’un endroit à un autre. Le protocole HTTP n’étant pas sécurisé, il est donc possible de :</p>
+<ul>
+<li><p>falsifier un site : on ne peut avoir la garantie que le site auquel on se connecte est bien le bon ;</p></li>
+<li><p>intercepter et altérer les communications : n’importe quel élément du réseau sur le chemin de la connexion peut consulter les données échangées, et même les modifier au passage. Par exemple, modifier le montant d’une transaction bancaire, sans qu’il soit possible de le détecter.</p></li>
+</ul>
+<p>Pour résoudre ces problèmes, HTTPS utilise la suite de protocoles SSL/TLS qui met en jeu les 3 principes vus précédemment : signature numérique, cryptographie asymétrique et cryptographie symétrique.</p>
+<section id="authentification-du-site" class="level2">
+<h2 class="anchored" data-anchor-id="authentification-du-site">Authentification du site</h2>
+<p>Lors de l’accès à un site utilisant le protocole HTTPS, le serveur envoie sa clef publique, ainsi qu’une signature numérique de cette clef, c’est ce qu’on appelle le <strong>certificat du site</strong>. Pour être valide, la signature du certificat du site doit avoir été réalisée par une autorité en laquelle le navigateur a confiance.</p>
+<p>En pratique, le navigateur ou le système d’exploitation maintiennent une liste de clefs publiques en laquelle ils ont confiance, appelés <strong>certificats racines</strong>, et avec lesquelles ils vérifient le certificat présenté par le serveur web. Un principe résume correctement cette vérification : « <strong>les amis de mes amis sont mes amis</strong> ». Cela permet de ne pas avoir à stocker dans le navigateur l’intégralité des certificats des sites sûrs.</p>
+<p>L’inconvénient de cette méthode est que cette liste de certificats racines est critique. En effet si une entrée « malveillante» est ajoutée, tous les sites qui auront été signés avec cette entrée seront considérés comme sûrs par le navigateur.</p>
+<p>En pratique, d’autres informations sont vérifiées comme la date de validité et la liste de révocations.</p>
+</section>
+<section id="chiffrement-des-communications" class="level2">
+<h2 class="anchored" data-anchor-id="chiffrement-des-communications">Chiffrement des communications</h2>
+<p>Une fois le serveur authentifié, la communication peut commencer. Les algorithmes de chiffrement asymétrique sont en général assez coûteux en temps de calcul, c’est donc un algorithme de chiffrement symétrique qui va être utilisé pour chiffrer les échanges. Le <strong>problème</strong> est alors celui du <strong>partage de la clef</strong>.</p>
+<p>Une possibilité est que le client génère une clef, puis qu’il la partage avec le serveur en utilisant la clef publique du serveur pour la chiffrer. De cette façon, seul le serveur pourra déchiffrer la clef partagée et l’échange pourra continuer en utilisant cette clef et un algorithme symétrique.</p>
+<p>Une autre possibilité est d’utiliser un autre protocole appelé l’« <strong>Échange de clefs Diffie-Hellman7</strong> » du nom de ses auteurs, en 1976. Cet algorithme permet aux deux participants de se mettre d’accord sur la clef partagée, sans que celle-ci ait à transiter, même cryptée, sur le réseau. Cet échange est d’ailleurs obligatoire dans les versions récentes du protocole et il est utilisé, entre autres, par le réseau Tor.</p>
+<p>Explication complète, mais hors-programme : <a href="http://www.acrypta.com/telechargements/fichecrypto_205.pdf"><u>http://www.acrypta.com/telechargements/fichecrypto_205.pdf</u></a></p>
+<p>Pour une explication simplifiée : <a href="https://www.youtube.com/watch?v=-PoJqTNY1eI"><u>https://www.youtube.com/watch?v=-PoJqTNY1eI</u></a></p>
+</section>
+<section id="en-résumé" class="level2">
+<h2 class="anchored" data-anchor-id="en-résumé">En résumé</h2>
+<p>L’implémentation du protocole SSL/TLS, et donc du protocole HTTPS, est assez complexe. Les algorithmes utilisés en pratique sont en quelque sorte négociés entre le client et le serveur lors de l’établissement de la connexion. En revanche, il faut être attentif à tous les détails pour que la sécurité soit assurée.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="cours_fig9.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="cours_fig9.jpg" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Aujourd’hui, la cryptographie est partout, notamment dans les échanges informatiques pour protéger sa vie privée, sécuriser les échanges entre entreprises ou clients, acheter ou vendre en ligne, etc.</p>
+<p>La recherche dans le domaine est permanente, qu’elle soit d’ordre :</p>
+<ul>
+<li><p>mathématique : nouveaux algorithmes, nouvelles attaques ;</p></li>
+<li><p>ou informatique : augmentation de la puissance de calcul, innovation technologique (ordinateur quantique…).</p></li>
+</ul>
+<p>Pour ne citer qu’un seul exemple, le chiffrement DES (<em>Data Encryption Standard</em>), adopté comme standard en 1976, est devenu obsolète en 2001 à cause de l’augmentation de la puissance de calcul des ordinateurs.</p>
+</section>
+<section id="bibliographie" class="level1">
+<h1>Bibliographie</h1>
+<ul>
+<li><p>Singh, S., <em>Histoire des codes secrets</em>, J.-C. Lattès (1999).</p></li>
+<li><p>Ubertret, G., <em>Initiation à la cryptographie</em>, Vuibert (2018).</p></li>
+<li><p>Cormen, T. H., Leiserson, C. E. <em>et al.</em>, <em>Introduction à l’algorithmique</em>, Dunod (2002).</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children.length > 2) {
+          for (let i = 0; i < 2; i++) {
+            container.appendChild(note.children[i].cloneNode(true));
+          }
+          return container.innerHTML
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return note.innerHTML;
+      }
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../reseaux/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">S7-Réseaux</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../bac/index.html" class="pagination-link">
+        <span class="nav-page-text">Épreuve de NSI au bac en Terminale</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../about.html">Mentions légales</a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fabricelallemand15/site_ESMaths">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":true,"openEffect":"zoom","closeEffect":"zoom"});</script>
+
+
+
+</body></html>

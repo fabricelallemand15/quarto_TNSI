@@ -97,6 +97,7 @@ website:
       - section: "S7-Réseaux"
         contents: 
           - reseaux/index.qmd
+          - reseaux/HTTPS_cours.qmd
       - section: "Baccalauréat"
         contents: 
           - bac/index.qmd

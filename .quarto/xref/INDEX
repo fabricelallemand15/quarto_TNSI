@@ -281,5 +281,9 @@
   "algo/exos_cycles_chemins.ipynb": {
     "exos_cycles_chemins.html": "03809958",
     "exos_cycles_chemins.tex": "2d9b4b0d"
+  },
+  "reseaux/HTTPS_cours.qmd": {
+    "HTTPS_cours.html": "21c001bb",
+    "HTTPS_cours.ipynb": "54fd36fd"
   }
 }
