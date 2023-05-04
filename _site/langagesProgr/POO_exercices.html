@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.296">
+<meta name="generator" content="quarto-1.4.11">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -170,7 +170,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../langagesProgr/index.html">S1-Langages et programmation</a></li><li class="breadcrumb-item"><a href="../langagesProgr/POO_cours.html">Programmation orientée objets (Cours)</a></li><li class="breadcrumb-item"><a href="../langagesProgr/POO_exercices.html">Programmation orientée objets (Exercices)</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../langagesProgr/index.html">S1-Langages et programmation</a></li><li class="breadcrumb-item"><a href="../langagesProgr/POO_cours.html">2-Programmation orientée objet</a></li><li class="breadcrumb-item"><a href="../langagesProgr/POO_exercices.html">Programmation orientée objets (Exercices)</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -599,6 +599,12 @@ cookieconsent.run({
  <span class="menu-text">S7-Réseaux</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/HTTPS_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sécurisation des communications</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -715,11 +721,11 @@ cookieconsent.run({
 </section>
 <section id="fa-desktop-exercice-2" class="level2">
 <h2 class="anchored" data-anchor-id="fa-desktop-exercice-2"><i class="fa-solid fa-desktop" aria-label="desktop"></i> Exercice 2</h2>
-<p>Soit la classe <code>Date</code> définie par le diagramme de classe (<strong>?@fig-classe</strong>).</p>
-<div class="quarto-figure quarto-figure-center">
+<p>Soit la classe <code>Date</code> définie par le diagramme de classe (<a href="#fig-classe" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<div id="fig-classe" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><a href="classe_mermaid_exo.png" class="lightbox" title="Diagramme de classe de la classe Date" data-gallery="quarto-lightbox-gallery-1"><img src="classe_mermaid_exo.png" class="quarto-discovered-preview-image img-fluid figure-img" width="100"></a></p>
-<p></p><figcaption class="figure-caption">Diagramme de classe de la classe Date</figcaption><p></p>
+<p><a href="classe_mermaid_exo.png" class="lightbox" title="Diagramme de classe de la classe Date" data-gallery="quarto-lightbox-gallery-1"><img src="classe_mermaid_exo.png" class="img-fluid figure-img" width="100"></a></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Diagramme de classe de la classe Date</figcaption>
 </figure>
 </div>
 <ol type="1">
@@ -1060,6 +1066,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children.length > 2) {
+          for (let i = 0; i < 2; i++) {
+            container.appendChild(note.children[i].cloneNode(true));
+          }
+          return container.innerHTML
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return note.innerHTML;
+      }
+    });
+  }
       let selectedAnnoteEl;
       const selectorForAnnotation = ( cell, annotation) => {
         let cellAttr = 'data-code-cell="' + cell + '"';
@@ -1237,7 +1267,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
 
 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.296">
+<meta name="generator" content="quarto-1.4.11">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -172,7 +172,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../structures/index.html">S2-Structures de données</a></li><li class="breadcrumb-item"><a href="../structures/dictionnaires_cours.html">Dictionnaires (Cours)</a></li><li class="breadcrumb-item"><a href="../structures/dictionnaires_cours.html">Dictionnaires (Cours)</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../structures/index.html">S2-Structures de données</a></li><li class="breadcrumb-item"><a href="../structures/dictionnaires_cours.html">2-Dictionnaires</a></li><li class="breadcrumb-item"><a href="../structures/dictionnaires_cours.html">Dictionnaires (Cours)</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -601,6 +601,12 @@ cookieconsent.run({
  <span class="menu-text">S7-Réseaux</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/HTTPS_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sécurisation des communications</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -764,7 +770,7 @@ Exemple
 <p>L’implémentation du type abstrait dictionnaire est complexe et dépasse le cadre du programme de NSI. Cette implémentation utilise des <strong>fonctions de hachage</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="hache.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="hache.png" class="quarto-discovered-preview-image img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="hache.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="hache.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <p>L’utilisation des tables et des fonctions de hachages est omniprésente en informatique, il est donc utile pour votre “culture générale informatique”, de connaître le principe des fonctions de hachages. Voici un texte qui vous permettra de comprendre le principe des fonctions de hachages : <a href="https://culture-informatique.net/cest-quoi-hachage/" target="_blank">c’est quoi le hachage ?</a> . Pour avoir quelques idées sur le principe des tables de hachages, je vous recommande le visionnage de cette vidéo : <a href="https://www.youtube.com/watch?v=CkLctGYWFPA" target="_blank">les tables de hachage</a>.</p>
@@ -1012,6 +1018,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children.length > 2) {
+          for (let i = 0; i < 2; i++) {
+            container.appendChild(note.children[i].cloneNode(true));
+          }
+          return container.innerHTML
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return note.innerHTML;
+      }
+    });
+  }
       let selectedAnnoteEl;
       const selectorForAnnotation = ( cell, annotation) => {
         let cellAttr = 'data-code-cell="' + cell + '"';
@@ -1189,7 +1219,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 

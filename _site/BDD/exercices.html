@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.296">
+<meta name="generator" content="quarto-1.4.11">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -596,6 +596,12 @@ cookieconsent.run({
  <span class="menu-text">S7-Réseaux</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/HTTPS_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sécurisation des communications</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -849,7 +855,7 @@ cookieconsent.run({
 <p>Le CNAM (Conservatoire National des Arts et Métiers) propose en ligne des travaux pratiques sur une base de données concernant les films de cinéma. À titre d’entraînement, ouvrir cet exerciseur (cliquer sur l’image ci-dessous) et essayer de formuler les requêtes correspondant aux suggestions de la colonne de droite. Les réponses sont disponibles sur le site, mais prenez le temps de chercher, d’essayer, et de vous corriger.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://deptfod.cnam.fr/bd/tp/" target="_blank"><img src="CNAM_SQL.png" class="quarto-discovered-preview-image img-fluid figure-img"></a></p>
+<p><a href="https://deptfod.cnam.fr/bd/tp/" target="_blank"><img src="CNAM_SQL.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </section>
@@ -1096,6 +1102,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children.length > 2) {
+          for (let i = 0; i < 2; i++) {
+            container.appendChild(note.children[i].cloneNode(true));
+          }
+          return container.innerHTML
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return note.innerHTML;
+      }
     });
   }
       let selectedAnnoteEl;

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.296">
+<meta name="generator" content="quarto-1.4.11">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -599,6 +599,12 @@ cookieconsent.run({
  <span class="menu-text">S7-Réseaux</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/HTTPS_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sécurisation des communications</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -711,8 +717,8 @@ cookieconsent.run({
 <p>On considère le graphe <code>G</code> suivant</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="exos_cycles_chemins_files/figure-html/428be3d8-1-image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="image.png"><img src="exos_cycles_chemins_files/figure-html/428be3d8-1-image.png" class="quarto-discovered-preview-image img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">image.png</figcaption><p></p>
+<p><a href="exos_cycles_chemins_files/figure-html/4d44edc0-1-image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="image.png"><img src="exos_cycles_chemins_files/figure-html/4d44edc0-1-image.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">image.png</figcaption>
 </figure>
 </div>
 <section id="question-1" class="level3">
@@ -961,8 +967,8 @@ cookieconsent.run({
 <p>On donne ci-dessous l’algorithme de détection de cycle dans un graphe non orienté dont les sommets sont les entiers de <span class="math inline">\(0\)</span> à <span class="math inline">\(n-1\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="exos_cycles_chemins_files/figure-html/7cc63c60-1-image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="image.png"><img src="exos_cycles_chemins_files/figure-html/7cc63c60-1-image.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">image.png</figcaption><p></p>
+<p><a href="exos_cycles_chemins_files/figure-html/260a8ed5-1-image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="image.png"><img src="exos_cycles_chemins_files/figure-html/260a8ed5-1-image.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">image.png</figcaption>
 </figure>
 </div>
 <p>Adapter cet algorithme (pour qu’il puisse fonctionner avec des sommets autres que des entiers de 0 à n) en prenant non pas une liste de prédécesseurs, mais un dictionnaire, puis compléter la fonction suivante qui détecte s’il y a un cycle ou non, et enfin la tester.</p>
@@ -1255,6 +1261,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children.length > 2) {
+          for (let i = 0; i < 2; i++) {
+            container.appendChild(note.children[i].cloneNode(true));
+          }
+          return container.innerHTML
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return note.innerHTML;
+      }
     });
   }
       let selectedAnnoteEl;

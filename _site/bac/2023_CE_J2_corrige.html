@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.296">
+<meta name="generator" content="quarto-1.4.11">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -597,6 +597,12 @@ cookieconsent.run({
  <span class="menu-text">S7-Réseaux</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/HTTPS_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sécurisation des communications</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -942,9 +948,9 @@ cookieconsent.run({
 <li><p>Pour obtenir un arbre binaire de hauteur minimale, on range les mots dans l’ordre alphabétique et on place le mot du milieu à la racine. On répète l’opération sur les deux sous-arbres de gauche et de droite.</p>
 <p>Liste dans l’ordre alphabétique : <code>['chameau', 'gnou', 'pingouin', 'python', 'renard']</code>.</p>
 <p>On obtient l’arbre :</p>
-<a href="2023_CE_J2_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig1.png" class="quarto-discovered-preview-image img-fluid" alt="Arbre binaire de hauteur minimale"></a></li>
+<a href="2023_CE_J2_fig1.png" class="lightbox" title="Arbre binaire de hauteur minimale" data-gallery="quarto-lightbox-gallery-1"><img src="2023_CE_J2_fig1.png" class="img-fluid" alt="Arbre binaire de hauteur minimale"></a></li>
 <li><p>Pour obtenir un arbre de hauteur maximale, on peut placer à la racine le premier mot de la liste classée dans l’ordre alphabétique, puis placer le mot suivant en sous-arbre droit et chaque mot suivant en sous-arbre droit du précédent. On obtient un arbre filiforme.</p>
-<a href="2023_CE_J2_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig2.png" class="img-fluid" alt="Arbre binaire de hauteur minimale"></a></li>
+<a href="2023_CE_J2_fig2.png" class="lightbox" title="Arbre binaire de hauteur minimale" data-gallery="quarto-lightbox-gallery-2"><img src="2023_CE_J2_fig2.png" class="img-fluid" alt="Arbre binaire de hauteur minimale"></a></li>
 </ol></li>
 <li><ol type="a">
 <li><p><code>mystere(abr_mots_francais)</code> retourne 336 531. Cette fonction calcule en effet de façon récursive le nombre d’éléments de l’arbre binaire donné en paramètre, égal à un (on compte la racine, si l’arbre n’est pas vide) plus le nombre d’éléments de l’arbre binaire de gauche plus le nombre d’éléments de l’arbre binaire de droite.</p></li>
@@ -1199,6 +1205,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children.length > 2) {
+          for (let i = 0; i < 2; i++) {
+            container.appendChild(note.children[i].cloneNode(true));
+          }
+          return container.innerHTML
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return note.innerHTML;
+      }
+    });
+  }
       let selectedAnnoteEl;
       const selectorForAnnotation = ( cell, annotation) => {
         let cellAttr = 'data-code-cell="' + cell + '"';
@@ -1364,7 +1394,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});</script>
 
 
 

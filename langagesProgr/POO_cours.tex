@@ -230,9 +230,9 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt, enhanced, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, frame hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacityback=0, opacitybacktitle=0.6, breakable, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Objectifs}, left=2mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, toprule=.15mm, coltitle=black, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Objectifs}, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, opacityback=0]
 
 \begin{itemize}
 \tightlist
@@ -262,7 +262,7 @@ l'encadré ci-dessous, en grande partie tiré de l'article
 \href{https://en.wikipedia.org/wiki/Object-oriented_programming}{Object-oriented
 programming} de Wikipedia en anglais.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacityback=0, opacitybacktitle=0.6, breakable, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Un peu d'histoire}, left=2mm, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, toprule=.15mm, coltitle=black, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Un peu d'histoire}, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, opacityback=0]
 
 Les termes \textbf{objets} \textbf{orienté} au sens moderne de la
 programmation orientée objet ont fait leur première apparition au MIT à
@@ -413,7 +413,7 @@ ces paramètres) ; le premier paramètre est particulier : ce sera
 l'instance qui est en train d'être définie au moment où cette fonction
 s'exécute.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacityback=0, opacitybacktitle=0.6, breakable, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Remarque}, left=2mm, colframe=quarto-callout-tip-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, toprule=.15mm, coltitle=black, colframe=quarto-callout-tip-color-frame, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Remarque}, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, opacityback=0]
 
 Il est d'usage, et recommandé, de nommer une classe par un nom
 commençant par une majuscule.
@@ -511,7 +511,7 @@ d'\textbf{interface}) en masquant les attributs. Il s'agit d'un des
 quatre éléments constitutifs de l'orienté objet :
 l'\textbf{encapsulation}.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacityback=0, opacitybacktitle=0.6, breakable, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, coltitle=black, bottomtitle=1mm, titlerule=0mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remarque}, left=2mm, colframe=quarto-callout-note-color-frame]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, toprule=.15mm, coltitle=black, colframe=quarto-callout-note-color-frame, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remarque}, leftrule=.75mm, left=2mm, colback=white, opacitybacktitle=0.6, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, bottomtitle=1mm, breakable, rightrule=.15mm, opacityback=0]
 
 Nous avons présenté ci-dessus les \textbf{attributs d'instance}, mais il
 est aussi possible de définir des \textbf{attributs de classe} qui

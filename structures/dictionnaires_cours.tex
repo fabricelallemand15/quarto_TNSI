@@ -230,7 +230,7 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-3cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, boxrule=0pt, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, enhanced, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable, frame hidden]}{\end{tcolorbox}}\fi
 
 \hypertarget{du-point-de-vue-utilisateur-interface}{%
 \subsection{1. Du point de vue utilisateur :
@@ -239,7 +239,7 @@ Interface}\label{du-point-de-vue-utilisateur-interface}}
 Nous allons maintenant étudier un autre type abstrait de données : les
 \textbf{dictionnaires} aussi appelés \textbf{tableaux associatifs}.
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, left=2mm, colframe=quarto-callout-tip-color-frame, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, toptitle=1mm, arc=.35mm, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, leftrule=.75mm, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Définition}, colback=white, opacityback=0, opacitybacktitle=0.6, breakable, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, coltitle=black, arc=.35mm, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame]
 
 Un dictionnaire est une structure de donnée permettant d'\textbf{indexer
 des objets par leur nom} plutôt que par un nombre.
@@ -288,7 +288,7 @@ dictionnaire Python. Comme :
   des tuples
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, left=2mm, colframe=quarto-callout-caution-color-frame, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, toptitle=1mm, arc=.35mm, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, leftrule=.75mm, left=2mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, colback=white, opacityback=0, opacitybacktitle=0.6, breakable, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, coltitle=black, arc=.35mm, titlerule=0mm, colbacktitle=quarto-callout-caution-color!10!white, rightrule=.15mm, colframe=quarto-callout-caution-color-frame]
 
 Exemples de couples clé:valeur :
 
@@ -325,7 +325,7 @@ structure de dictionnaire peuvent être les suivantes :
   la clé associée à cette valeur.
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, left=2mm, colframe=quarto-callout-caution-color-frame, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, toptitle=1mm, arc=.35mm, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, leftrule=.75mm, left=2mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Exemple}, colback=white, opacityback=0, opacitybacktitle=0.6, breakable, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, coltitle=black, arc=.35mm, titlerule=0mm, colbacktitle=quarto-callout-caution-color!10!white, rightrule=.15mm, colframe=quarto-callout-caution-color-frame]
 
 Soit le dictionnaire D composé des couples clé:valeur suivants :
 prenom:Kevin, nom:Durand, naissance:17-05-2005. Pour chaque exemple
@@ -390,7 +390,7 @@ hachage}.
 
 On peut retenir que
 
-\begin{tcolorbox}[enhanced jigsaw, leftrule=.75mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{À retenir}, left=2mm, colframe=quarto-callout-important-color-frame, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, toptitle=1mm, arc=.35mm, rightrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, bottomrule=.15mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, leftrule=.75mm, left=2mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{À retenir}, colback=white, opacityback=0, opacitybacktitle=0.6, breakable, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, coltitle=black, arc=.35mm, titlerule=0mm, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, colframe=quarto-callout-important-color-frame]
 
 La complexité de recherche, d'ajout et de suppression d'un élément dans
 un dictionnaire est en \(\mathcal{O}(1)\) : elle ne dépend pas du nombre
