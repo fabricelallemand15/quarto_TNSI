@@ -230,7 +230,7 @@
 \maketitle
 \lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, boxrule=0pt, frame hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, breakable, enhanced, sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \hypertarget{motivation-et-introduction-du-concept}{%
 \subsection{1. Motivation et introduction du
@@ -359,7 +359,7 @@ la pile, chacune ayant son propre \textbf{espace de noms} : la variable
 \(n\) de la fonction située en haut de la pile n'est pas la même que la
 variable \(n\) de la fonction située en-dessous.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, toprule=.15mm, arc=.35mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Limitation propre à Python}, opacitybacktitle=0.6, coltitle=black, left=2mm, bottomtitle=1mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, colback=white, colbacktitle=quarto-callout-warning-color!10!white, rightrule=.15mm, breakable, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, breakable, left=2mm, opacityback=0, coltitle=black, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, colback=white, colbacktitle=quarto-callout-warning-color!10!white, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Limitation propre à Python}]
 
 Le langage Python limite à 1000 le nombre d'appels récursifs d'une
 fonction, autrement dit la hauteur de la pile.
@@ -379,7 +379,7 @@ récursif}\label{uxe9crire-un-algorithme-ruxe9cursif}}
 Lors de l'écriture d'un algorithme récursif, trois règles doivent
 toujours être vérifiées :
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, toprule=.15mm, arc=.35mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Les trois règles de récursivité}, opacitybacktitle=0.6, coltitle=black, left=2mm, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, toptitle=1mm, colback=white, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, breakable, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, arc=.35mm, breakable, left=2mm, opacityback=0, coltitle=black, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, opacitybacktitle=0.6, toptitle=1mm, titlerule=0mm, colback=white, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Les trois règles de récursivité}]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
