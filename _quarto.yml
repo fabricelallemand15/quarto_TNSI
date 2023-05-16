@@ -98,6 +98,9 @@ website:
         contents: 
           - reseaux/index.qmd
           - reseaux/HTTPS_cours.qmd
+      - section: "S8-Langages et programmation (2)"
+        contents: 
+          - calculabilite/calculabilite.qmd
       - section: "Baccalauréat"
         contents: 
           - bac/index.qmd

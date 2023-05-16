@@ -285,5 +285,8 @@
   "reseaux/HTTPS_cours.qmd": {
     "HTTPS_cours.html": "21c001bb",
     "HTTPS_cours.ipynb": "54fd36fd"
+  },
+  "calculabilite/calculabilite.qmd": {
+    "calculabilite.html": "a8ffcba3"
   }
 }
