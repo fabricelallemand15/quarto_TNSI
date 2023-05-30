@@ -25,7 +25,7 @@ website:
     collapse-level: 1
     alignment: left
     contents: 
-      - section: "S1-Langages et programmation"
+      - section: "S1-Langages et programmation (1)"
         contents: 
             - langagesProgr/index.qmd
             - section: "1-Récursivité"
@@ -44,23 +44,6 @@ website:
                   - langagesProgr/paradigmes_cours.qmd
                   - langagesProgr/paradigmes_exercices.qmd
                   - langagesProgr/quiz.qmd
-      - section: "S2-Structures de données"
-        contents: 
-          - structures/index.qmd
-          - structures/interfaces_cours.qmd
-          - section: "1-Listes, Piles et Files"
-            contents: 
-              - structures/listes_cours.qmd
-              - structures/piles_cours.qmd
-              - structures/files_cours.qmd
-              - structures/listes_exercices.qmd
-          - section: "2-Dictionnaires"
-            contents: 
-              - structures/dictionnaires_cours.qmd
-              - structures/dictionnaires_exercices.qmd
-              - structures/TPDictionnaire.qmd
-          - structures/projet_detecteur_langue.qmd
-          - structures/bilan.qmd
       - section: "S3-Bases de données"
         contents: 
           - BDD/index.qmd
@@ -74,33 +57,46 @@ website:
           - BDD/TP1.qmd
           - BDD/TP2.qmd
           - BDD/TP3.qmd
-      - section: "S4-Arbres et graphes"
+      - section: "S4-Arbres"
         contents: 
           - arbresgraphes/index.qmd
           - arbresgraphes/arbres_cours.qmd
           - arbresgraphes/arbres_exercices.qmd
           - arbresgraphes/implementationArbres.qmd
           - arbresgraphes/TParbres.qmd
+      - section: "S5-Architectures matérielles et systèmes d'exploitation (1)"
+        contents: 
+          - archiSE/index.qmd
+          - archiSE/processus.qmd
+      - section: "S6-Algorithmique (1)"
+        contents: 
+          - algo/index.qmd
+          - algo/algo_arbres.qmd
+          - algo/diviser_pour_regner.qmd
+      - section: "S7-Réseaux (1)"
+        contents: 
+          - reseaux/index.qmd
+          - reseaux/adressesIP.qmd
+          - reseaux/routage.qmd
+          - reseaux/HTTPS_cours.qmd
+      - section: "S8-Graphes"
+        contents:
           - arbresgraphes/graphes_cours.qmd
           - arbresgraphes/tp_graphe_matrice.ipynb
           - arbresgraphes/tp_graphe_liste.ipynb
           - arbresgraphes/graphes_exercices.qmd
-      - section: "S5-Architectures matérielles et systèmes d'exploitation"
-        contents: 
-          - archiSE/index.qmd
-      - section: "S6-Algorithmique"
-        contents: 
-          - algo/index.qmd
-          - algo/dfs_graphe.qmd
-          - algo/bfs_graphe.qmd
-          - algo/exos_graphes.qmd
-      - section: "S7-Réseaux"
+      - section: "S9-Réseaux (2)"
         contents: 
           - reseaux/index.qmd
           - reseaux/HTTPS_cours.qmd
-      - section: "S8-Langages et programmation (2)"
+      - section: "S10-Langages et programmation (2)"
         contents: 
           - calculabilite/calculabilite.qmd
+      - section: "S11-Algorithmes (2)"
+        contents: 
+          - algo/dfs_graphe.qmd
+          - algo/bfs_graphe.qmd
+          - algo/exos_graphes.qmd
       - section: "Baccalauréat"
         contents: 
           - bac/index.qmd
