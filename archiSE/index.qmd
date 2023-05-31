@@ -1,4 +1,0 @@
----
-title: S5-Architectures matérielles, systèmes d'exploitation et réseaux
-image: cpu-4393376_640.jpg
----

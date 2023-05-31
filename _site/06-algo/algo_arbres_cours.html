@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.84">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>NSI - Terminale - Algorithmes sur les arbres</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../06-algo/algo_arbres_exos.html" rel="next">
+<link href="../06-algo/rappels.html" rel="prev">
+<link href="../favicon.ico" rel="icon">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"fr"
+  });
+});
+</script> 
+  
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">NSI - Terminale</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
+ <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../ressources.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-algo/index.html">S6-Algorithmique (1)</a></li><li class="breadcrumb-item"><a href="../06-algo/algo_arbres_cours.html">Algorithmes sur les arbres</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">S1-Langages et programmation (1)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">1-Récursivité</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/recursivite_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Récursivité (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/recursivite_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Récursivité (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/TPHanoi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP Tours de Hanoï</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">2-Programmation orientée objet</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/POO_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/POO_complements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Compléments)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/POO_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/TPPOOBataille.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Bataille</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">3-Paradigmes de programmation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/paradigmes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/paradigmes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Quiz)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">S2-Structures abstraites</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/interfaces_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interfaces et implémentations (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/listes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Listes (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/piles_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piles (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/files_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Files (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/listes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Listes, Piles et Files (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/dictionnaires_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/dictionnaires_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/TPDictionnaire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (TP)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/projet_detecteur_langue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projet - Détecteur de langue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/bilan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bilan de la séquence - Structures de données abstraites</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">S3-Bases de données</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">1. Modèle relationnel</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/partie1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Le modèle relationnel (Cours - Partie 1)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/partie2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Le modèle relationnel (Cours - Partie 2)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz - Le modèle relationnel, SGBD</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/sql_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de données (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/TP1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 1 - Créer une base de données</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/TP2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 2 - Le supermarché</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/TP3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">S4-Arbres</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/arbres_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbres (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/arbres_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices sur les arbres</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/implementationArbres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implémentation des arbres en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/TParbres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Manipulation d’arbres</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">S5-Architectures matérielles et systèmes d’exploitation (1)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processus : cours</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_TP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T.P. - Processus sous Linux</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices type bac - Processus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processus sous Linux et Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+ <span class="menu-text">S6-Algorithmique (1)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/rappels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rappels d’algorithmique</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/algo_arbres_cours.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Algorithmes sur les arbres</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/algo_arbres_exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmes sur les arbres - Exercices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">06-algo/diviser_pour_regner.qmd</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">S7-Réseaux (1)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">S7-Réseaux</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">reseaux/adressesIP.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">reseaux/routage.qmd</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/HTTPS_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sécurisation des communications</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text">S8-Graphes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/index_graphes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/graphes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphes (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/tp_graphe_matrice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Implémentation des graphes par matrice d’adjacence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/tp_graphe_liste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Implémentation des graphes par liste d’adjacence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/graphes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices sur les graphes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text">S9-Réseaux (2)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">S7-Réseaux</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reseaux/HTTPS_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sécurisation des communications</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
+ <span class="menu-text">S10-Langages et programmation (2)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../calculabilite/calculabilite.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculabilité et décidabilité</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
+ <span class="menu-text">S11-Algorithmes (2)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/dfs_graphe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parcours d’un graphe en profondeur (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/bfs_graphe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parcours d’un graphe en largeur (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/exos_graphes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices - Parcours de graphes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
+ <span class="menu-text">Baccalauréat</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bac/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Épreuve de NSI au bac en Terminale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bac/annales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annales du bac de NSI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="false">
+ <span class="menu-text">Grand Oral</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../GrandOral/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grand Oral et NSI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#calculer-la-taille-et-la-hauteur-dun-arbre-binaire" id="toc-calculer-la-taille-et-la-hauteur-dun-arbre-binaire" class="nav-link active" data-scroll-target="#calculer-la-taille-et-la-hauteur-dun-arbre-binaire">1. Calculer la taille et la hauteur d’un arbre binaire</a>
+  <ul class="collapse">
+  <li><a href="#taille-dun-arbre" id="toc-taille-dun-arbre" class="nav-link" data-scroll-target="#taille-dun-arbre">Taille d’un arbre</a></li>
+  <li><a href="#hauteur-dun-arbre" id="toc-hauteur-dun-arbre" class="nav-link" data-scroll-target="#hauteur-dun-arbre">Hauteur d’un arbre</a></li>
+  </ul></li>
+  <li><a href="#parcourir-un-arbre" id="toc-parcourir-un-arbre" class="nav-link" data-scroll-target="#parcourir-un-arbre">2. Parcourir un arbre</a>
+  <ul class="collapse">
+  <li><a href="#parcours-en-profondeur-avec-ordre-préfixe" id="toc-parcours-en-profondeur-avec-ordre-préfixe" class="nav-link" data-scroll-target="#parcours-en-profondeur-avec-ordre-préfixe">2.1. Parcours en profondeur avec ordre préfixe</a></li>
+  <li><a href="#parcours-en-profondeur-avec-ordre-infixe" id="toc-parcours-en-profondeur-avec-ordre-infixe" class="nav-link" data-scroll-target="#parcours-en-profondeur-avec-ordre-infixe">2.1. Parcours en profondeur avec ordre infixe</a></li>
+  <li><a href="#parcours-en-profondeur-avec-ordre-suffixe" id="toc-parcours-en-profondeur-avec-ordre-suffixe" class="nav-link" data-scroll-target="#parcours-en-profondeur-avec-ordre-suffixe">2.3. Parcours en profondeur avec ordre suffixe</a></li>
+  <li><a href="#parcours-en-largeur-dabord" id="toc-parcours-en-largeur-dabord" class="nav-link" data-scroll-target="#parcours-en-largeur-dabord">2.4. Parcours en largeur d’abord</a></li>
+  </ul></li>
+  <li><a href="#insertion-dune-clef-dans-un-arbre-de-recherche" id="toc-insertion-dune-clef-dans-un-arbre-de-recherche" class="nav-link" data-scroll-target="#insertion-dune-clef-dans-un-arbre-de-recherche">3. Insertion d’une clef dans un arbre de recherche</a></li>
+  <li><a href="#recherche-dune-clef-dans-un-arbre-de-recherche" id="toc-recherche-dune-clef-dans-un-arbre-de-recherche" class="nav-link" data-scroll-target="#recherche-dune-clef-dans-un-arbre-de-recherche">4. Recherche d’une clef dans un arbre de recherche</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/06-algo/algo_arbres_cours.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Algorithmes sur les arbres</h1>
+<p class="subtitle lead">S6-Algorithmique (1)</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="calculer-la-taille-et-la-hauteur-dun-arbre-binaire" class="level2">
+<h2 class="anchored" data-anchor-id="calculer-la-taille-et-la-hauteur-dun-arbre-binaire">1. Calculer la taille et la hauteur d’un arbre binaire</h2>
+<p>Nous avons déjà rencontré ces algorithmes, sous la forme de programmes Python, dans le chapitre sur les arbres binaires. On s’intéresse ici à leur étude algorithmique.</p>
+<p>D’une façon générale, la structure d’arbre binaire est particulièrement adaptée à la mise en œuvre d’algorithmes récursifs. Dans la suite tous les arbres sont binaires.</p>
+<section id="taille-dun-arbre" class="level3">
+<h3 class="anchored" data-anchor-id="taille-dun-arbre">Taille d’un arbre</h3>
+<p>La taille d’un arbre est son nombre total de nœuds.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithme de calcul de la taille d’un arbre
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 60%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> taille(<em>arbre</em> : arbre binaire) : entier<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> est vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>retourner</strong> 0</span><br> <span style="margin-left: 20px;"><strong>sinon</strong></span><br> <span style="margin-left: 40px;"><strong>retourner</strong> 1 + taille(sous-arbre gauche de <em>arbre</em>) + taille(sous-arbre droit de <em>arbre</em>)</span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+</section>
+<section id="hauteur-dun-arbre" class="level3">
+<h3 class="anchored" data-anchor-id="hauteur-dun-arbre">Hauteur d’un arbre</h3>
+<p>La hauteur d’un arbre est la profondeur de son nœud le plus profond. Par convention, si l’arbre est vide, sa hauteur vaut 0, si l’arbre n’est composé que d’un nœud racine, sa hauteur vaut 1.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithme de calcul de la hauteur d’un arbre
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> hauteur(<em>arbre</em> : arbre binaire) : entier<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> est vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>retourner</strong> 0</span><br> <span style="margin-left: 20px;"><strong>sinon</strong></span><br> <span style="margin-left: 40px;"><strong>retourner</strong> 1 + max(hauteur(sous-arbre gauche de <em>arbre</em>), hauteur(sous-arbre droit de <em>arbre</em>))</span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="parcourir-un-arbre" class="level2">
+<h2 class="anchored" data-anchor-id="parcourir-un-arbre">2. Parcourir un arbre</h2>
+<p><strong>Remarque</strong> : en anglais les parcours en profondeur sont appelés <em>depth-first search</em> (DFS) et les parcours en largeur sont appelés <em>breadth-first search</em> (BFS).</p>
+<p>Tous ces algorithmes de parcours ont en commun de visiter tous les sommets d’un arbre, mais pas dans le même ordre. La structure récursive de la structure de données <em>arbre binaire</em> permet de définir très naturellement ces algorithmes de façon récursive. Chacun des algorithmes de parcours sont définis sous forme de fonctions qui comportent deux appels récursifs et qui visitent à chaque fois un seul sommet. Si on note <span class="math inline">\(n\)</span> la taille de l’arbre (le nombre de sommets), on aura donc pour tous ces algorithmes une complexité en <span class="math inline">\(\mathcal{O}(n)\)</span>.</p>
+<section id="parcours-en-profondeur-avec-ordre-préfixe" class="level3">
+<h3 class="anchored" data-anchor-id="parcours-en-profondeur-avec-ordre-préfixe">2.1. Parcours en profondeur avec ordre préfixe</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition : ordre <strong>préfixe</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On appelle parcours <strong>préfixe</strong> un parcours dans lequel chaque noeud est visité, <strong>puis</strong> chacun de ses fils :</p>
+<ul>
+<li>on visite la racine ;</li>
+<li>ensuite on visite récursivement le sous-arbre gauche ;</li>
+<li>enfin on visite récursivement le sous-arbre droit.</li>
+</ul>
+<p>Le parcours est dans l’ordre <strong>noeud - gauche - droit</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exemple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="prefixe.png" class="lightbox" title="Ordre préfixe" data-gallery="quarto-lightbox-gallery-1"><img src="prefixe.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Ordre préfixe</figcaption>
+</figure>
+</div>
+<p>Ordre de parcours des sommets : C-Z-U-R-G-Q-H.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithme de parcours préfixe en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> parcoursPrefixe(<em>arbre</em> : arbre binaire)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>afficher</strong> racine de <em>arbre</em></span><br> <span style="margin-left: 40px;">parcoursPrefixe(sous-arbre gauche de <em>arbre</em>)</span><br> <span style="margin-left: 40px;">parcoursPrefixe(sous-arbre droit de <em>arbre</em>)</span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+<p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Version itérative avec retour liste</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreGauche())</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreDroit())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreGauche(), liste)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreDroit(), liste)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Liste pour stocker les valeurs des noeuds</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parcours de l'arbre en utilisant une pile</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    pile <span class="op">=</span> [arbre]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> pile <span class="op">!=</span> []:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        noeud <span class="op">=</span> pile.pop()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        valeurs.append(noeud.getRacine())</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># On ajoute les enfants dans la pile dans l'ordre inverse pour</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># obtenir le parcours en profondeur préfixe</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreDroit().estVide():</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreDroit())</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreGauche().estVide():</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreGauche())</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Renvoie la liste des valeurs des noeuds parcourus</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Dérouler à la main, en mode papier-crayon, l’exécution de ces trois programmes est un très bon exercice !</p>
+</section>
+<section id="parcours-en-profondeur-avec-ordre-infixe" class="level3">
+<h3 class="anchored" data-anchor-id="parcours-en-profondeur-avec-ordre-infixe">2.1. Parcours en profondeur avec ordre infixe</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition : ordre infixe
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On appelle parcours <strong>infixe</strong> un parcours dans lequel chaque noeud est visité <strong>entre</strong> les noeuds de son sous arbre gauche et ceux de son sous arbre droit :</p>
+<ul>
+<li>on visite récursivement le sous-arbre gauche ;</li>
+<li>ensuite on visite la racine ;</li>
+<li>enfin on visite récursivement le sous-arbre droit.</li>
+</ul>
+<p>Le parcours est dans l’ordre <strong>gauche - noeud - droit</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exemple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="infixe.drawio.png" class="lightbox" title="Ordre infixe" data-gallery="quarto-lightbox-gallery-2"><img src="infixe.drawio.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Ordre infixe</figcaption>
+</figure>
+</div>
+<p>Ordre de parcours des sommets : U-Z-R-G-C-H-Q.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithme de parcours infixe en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> parcoursInfixe(<em>arbre</em> : arbre binaire)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;">parcoursInfixe(sous-arbre gauche de <em>arbre</em>)</span><br> <span style="margin-left: 40px;"><strong>afficher</strong> racine de <em>arbre</em></span><br> <span style="margin-left: 40px;">parcoursInfixe(sous-arbre droit de <em>arbre</em>)</span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+<p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Version itérative avec retour liste</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreGauche())</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreDroit())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreGauche(), liste)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreDroit(), liste)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Liste pour stocker les valeurs des noeuds</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parcours de l'arbre en utilisant une pile</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    pile <span class="op">=</span> []</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    noeud <span class="op">=</span> arbre</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> noeud.estVide() <span class="kw">or</span> pile <span class="op">!=</span> []:</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Si l'on a atteint une feuille, on récupère la valeur et on revient en arrière</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> noeud.estVide():</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> pile.pop()</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            valeurs.append(noeud.getRacine())</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> noeud.getSousArbreDroit()</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Sinon, on parcourt le sous-arbre gauche et on enregistre l'état actuel</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="co"># pour pouvoir revenir plus tard</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> noeud.getSousArbreGauche()</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Dérouler à la main, en mode papier-crayon, l’exécution de ces trois programmes est un très bon exercice !</p>
+</section>
+<section id="parcours-en-profondeur-avec-ordre-suffixe" class="level3">
+<h3 class="anchored" data-anchor-id="parcours-en-profondeur-avec-ordre-suffixe">2.3. Parcours en profondeur avec ordre suffixe</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition : ordre suffixe
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On appelle parcours <strong>suffixe</strong> (ou <strong>postfixe</strong>) un parcours dans lequel chaque noeud est visité <strong>après</strong> les noeuds de son sous arbre gauche et ceux de son sous arbre droit :</p>
+<ul>
+<li>on visite récursivement le sous-arbre gauche ;</li>
+<li>ensuite on visite récursivement le sous-arbre droit ;</li>
+<li>ensuite on visite la racine.</li>
+</ul>
+<p>Le parcours est dans l’ordre <strong>gauche - droit - noeud</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exemple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="suffixe.drawio.png" class="lightbox" title="Ordre suffixe" data-gallery="quarto-lightbox-gallery-3"><img src="suffixe.drawio.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Ordre suffixe</figcaption>
+</figure>
+</div>
+<p>Ordre de parcours des sommets : U-G-R-Z-H-Q-C.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithme de parcours suffixe en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> parcoursSuffixe(<em>arbre</em> : arbre binaire)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;">parcoursSuffixe(sous-arbre gauche de <em>arbre</em>)</span><br> <span style="margin-left: 40px;">parcoursSuffixe(sous-arbre droit de <em>arbre</em>)</span><br> <span style="margin-left: 40px;"><strong>afficher</strong> racine de <em>arbre</em></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Voici deux arbres binaires. Pour chacun d’entre eux, indiquer l’ordre de parcours des sommets pour chacun de types de parcours en profondeur définis ci-dessus.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="arbre_parcours_exos.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="arbre_parcours_exos.drawio.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Version itérative avec retour liste</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreGauche())</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreDroit())</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreGauche(), liste)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreDroit(), liste)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Liste pour stocker les valeurs des noeuds</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parcours de l'arbre en utilisant une pile</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    pile <span class="op">=</span> [arbre]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> pile <span class="op">!=</span> []:</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># On dépile et on note l'élément en haut de la pile</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        noeud <span class="op">=</span> pile.pop()</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        valeurs.append(noeud.getRacine())</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># On empile les sous arbres gauche et droits s'ils existent</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Droit sera traité avant Gauche car on parcours à l'envers</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreGauche().estVide():</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreGauche())</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreDroit().estVide():</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreDroit())</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On remet à l'endroit</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    valeurs.reverse()</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Dérouler à la main, en mode papier-crayon, l’exécution de ces trois programmes est un très bon exercice !</p>
+</section>
+<section id="parcours-en-largeur-dabord" class="level3">
+<h3 class="anchored" data-anchor-id="parcours-en-largeur-dabord">2.4. Parcours en largeur d’abord</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Définition : parcours en largeur d’abord
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On appelle <strong>parcours en largeur d’abord</strong> un parcours dans lequel les noeuds sont visités <strong>par ordre de niveaux croissant</strong>, de <strong>gauche à droite</strong>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exemple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="largeur.drawio.png" class="lightbox" title="Parcours en largeur" data-gallery="quarto-lightbox-gallery-5"><img src="largeur.drawio.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Parcours en largeur</figcaption>
+</figure>
+</div>
+<p>Ordre de parcours des sommets : C-Z-Q-U-R-H-G.</p>
+</div>
+</div>
+<p>Le parcours en largeur est simple à comprendre visuellement, mais il est plus difficile à traduire par un algorithme, car il n’exploite pas la définition récursive des arbres binaires.</p>
+<p>Nous utiliserons une <strong>file</strong> pour effectuer le parcours en largeur d’un arbre binaire.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithme de parcours en largeur en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> parcoursLargeur(arbre : arbre binaire)<br> <span style="margin-left: 20px;">créer une liste de résultats vide</span><br> <span style="margin-left: 20px;"><strong>si</strong> arbre n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;">créer une file vide</span><br> <span style="margin-left: 40px;">ajouter arbre à la file</span><br> <span style="margin-left: 40px;"><strong>tant que</strong> la file n’est pas vide <strong>faire</strong></span><br> <span style="margin-left: 60px;">noeud <span class="math inline">\(\leftarrow\)</span> défiler le premier élément de la file</span><br> <span style="margin-left: 60px;">ajouter l’étiquette de noeud à la liste de résultats</span><br> <span style="margin-left: 60px;"><strong>si</strong> noeud a un fils gauche <strong>alors</strong></span><br> <span style="margin-left: 80px;">ajouter le fils gauche de noeud à la file</span><br> <span style="margin-left: 60px;"><strong>fin si</strong></span><br> <span style="margin-left: 60px;"><strong>si</strong> noeud a un fils droit <strong>alors</strong></span><br> <span style="margin-left: 80px;">ajouter le fils droit de noeud à la file</span><br> <span style="margin-left: 60px;"><strong>fin si</strong></span><br> <span style="margin-left: 40px;"><strong>fin tant que</strong></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;">retourner la liste de résultats</span><br></p>
+</div>
+</div>
+</div>
+<p>Traduction en Python :</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursLargeur(arbre: ArbreBinaire()) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span> <span class="op">=</span> []</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span>.append(arbre)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="bu">file</span> <span class="op">!=</span> []:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> <span class="bu">file</span>.pop(<span class="dv">0</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>            valeurs.append(noeud.getRacine())</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreGauche().estVide():</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                <span class="bu">file</span>.append(noeud.getSousArbreGauche())</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreDroit().estVide():</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                <span class="bu">file</span>.append(noeud.getSousArbreDroit())</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Une fois encore, dérouler à la main, en mode papier-crayon, l’exécution de ce programme est un très bon exercice !</p>
+</section>
+</section>
+<section id="insertion-dune-clef-dans-un-arbre-de-recherche" class="level2">
+<h2 class="anchored" data-anchor-id="insertion-dune-clef-dans-un-arbre-de-recherche">3. Insertion d’une clef dans un arbre de recherche</h2>
+<p>On s’intéresse maintenant aux arbres binaires de recherche.</p>
+<p>Nous avons déjà utilisé cette structure de données dans la séquence 4 sur les arbres. Notre module <code>structures.py</code> définit la structure d’arbre binaire de recherche par une classe <code>ABR</code> qui possède une <strong>méthode</strong> <code>insere</code> qui insère une clef dans l’arbre en préservant la structure ABR.</p>
+<p>Voici en pseudo-code l’algorithme utilisé par cette méthode. L’insertion d’une clef va se faire au niveau d’une feuille, donc au bas de l’arbre. Il n’est pourtant pas nécessaire de descendre manuellement dans l’arbre jusqu’au bon endroit car nous exploitons la structure à la fois récursive et ordonnée d’un ABR : il suffit de distinguer dans lequel des deux sous-arbres gauche et droit doit se trouver la future clef, et d’appeler récursivement la fonction d’insertion dans le sous-arbre en question.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithme de parcours en largeur en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> insere(<em>arbre</em> : ABR, <em>valeur</em>)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> est vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>définir</strong> la racine de <em>arbre</em> avec <em>valeur</em> comme clef</span><br> <span style="margin-left: 40px;"><strong>retourner</strong> <em>arbre</em></span><br> <span style="margin-left: 20px;"><strong>sinon</strong></span><br> <span style="margin-left: 40px;"><em>clef</em> <span class="math inline">\(\leftarrow\)</span> clef de la racine de <em>arbre</em></span><br> <span style="margin-left: 40px;"><strong>si</strong> <em>valeur</em> est inférieure ou égale à <em>clef</em></span><br> <span style="margin-left: 60px;">sous-arbre gauche de <em>arbre</em> <span class="math inline">\(\leftarrow\)</span> insere(sous-arbre gauche de <em>arbre</em>, valeur)</span><br> <span style="margin-left: 40px;"><strong>sinon</strong></span><br> <span style="margin-left: 60px;">sous-arbre droit de <em>arbre</em> <span class="math inline">\(\leftarrow\)</span> insere(sous-arbre droit de <em>arbre</em>, valeur)</span><br> <span style="margin-left: 40px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;"><strong>retourner</strong> <em>arbre</em></span><br></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On considère l’ABR représenté ci-dessous. Dérouler à la main l’exécution de l’algorithme ci-dessus pour insérer la valeur 3 dans cet arbre, puis la valeur 11.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="ABR_algo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="ABR_algo.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="recherche-dune-clef-dans-un-arbre-de-recherche" class="level2">
+<h2 class="anchored" data-anchor-id="recherche-dune-clef-dans-un-arbre-de-recherche">4. Recherche d’une clef dans un arbre de recherche</h2>
+<p>Notre module <code>structure.py</code>, dans sa version définitive, comporte une fonction <code>appartient_ABR</code> qui teste l’appartenance d’un élément donné en argument à un ABR donné en argument et renvoie un booléen.</p>
+<p>Voici le code Python de cette fonction.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> appartientABR(element, arbre) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""teste l'appartenance d'un élément à un ABR"""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> element <span class="op">==</span> arbre.getRacine():</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> arbre.getRacine() <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> element <span class="op">&lt;</span> arbre.getRacine():</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> appartientABR(element, arbre.getSousArbreGauche())</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> appartientABR(element, arbre.getSousArbreDroit())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Cette fonction exploite à la fois la structure récursive et la structure ordonnée d’un ABR afin de n’effectuer qu’<strong>un appel récursif</strong> à chaque passage.</p>
+<p><strong>Déterminons une évaluation de sa complexité temporelle</strong>, dans le pire des cas, <strong>dans le cas particulier d’un arbre équilibré</strong>.</p>
+<p>On note <span class="math inline">\(n\)</span> la taille de l’arbre, c’est-à-dire son nombre de noeuds. Au départ, nous avons donc <span class="math inline">\(n\)</span> noeuds à explorer. Après chaque examen d’un noeud, le nombre de noeuds restant à explorer est divisé par 2.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="rechercheABR.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="rechercheABR.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p>Dans le <strong>pire des cas</strong>, il faudra parcourir tous les étages de l’arbre pour trouver la clef (qui est alors une feuille) ou pour constater qu’elle n’est pas dans l’arbre. On va donc parcourir au total <span class="math inline">\(h\)</span> noeuds, où <span class="math inline">\(h\)</span> est la hauteur de l’arbre.</p>
+<p>Or, nous avons vu que pour un arbre complet, nous avons la relation : <span class="math inline">\(n=2^h-1\)</span> équivalente à <span class="math inline">\(2^h=n+1\)</span> et donc <span class="math inline">\(h=\log_2(n+1)\)</span>.</p>
+<p>La complexité de la recherche d’une valeur dans un ABR est donc en <span class="math inline">\(\mathcal{O}(log_2(n))\)</span>. Il s’agit d’une complexité très performante : par exemple, pour un arbre de taille 10000, 14 étapes suffiront.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+À retenir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La complexité temporelle de la recherche d’une valeur dans un ABR équilibré est de l’ordre de <span class="math inline">\(\log_2(n)\)</span>.</p>
+</div>
+</div>
+<p><strong>Remarque</strong> :</p>
+<ul>
+<li>Cet algorithme est à rapprocher de l’algorithme de <strong>recherche dichotomique</strong> d’une valeur dans un tableau trié, étudié en première.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        if (id.startsWith('sec-')) {
+          // Special case sections, only their first couple elements
+          const container = document.createElement("div");
+          if (note.children && note.children.length > 2) {
+            for (let i = 0; i < 2; i++) {
+              container.appendChild(note.children[i].cloneNode(true));
+            }
+            return container.innerHTML
+          } else {
+            return note.innerHTML;
+          }
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return "";
+      }
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../06-algo/rappels.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rappels d’algorithmique</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../06-algo/algo_arbres_exos.html" class="pagination-link">
+        <span class="nav-page-text">Algorithmes sur les arbres - Exercices</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="http://creativecommons.org/licenses/by/4.0/">
+<p><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+<p>Mentions légales</p>
+</a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fabricelallemand15/site_ESMaths">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});</script>
+
+
+
+</body></html>

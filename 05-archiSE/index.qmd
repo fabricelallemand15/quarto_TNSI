@@ -1,0 +1,11 @@
+---
+title: Programme
+subtitle: S5-Architectures matérielles, systèmes d'exploitation et réseaux
+image: cpu-4393376_640.jpg
+---
+
+## Programme
+
+|Contenus|Capacités attendues|Commentaires|
+| ---- | ----- | ----- |
+|Gestion des processus et des ressources par un système d'exploitation.| Décrire la création d'un processus, l'ordonnancement de plusieurs processus par le système. Mettre en évidence le risque de l'interblocage (deadlock).|À l'aide d'outils standard, il s'agit d'observer les processus actifs ou en attente sur une machine. Une présentation débranchée de l'interblocage peut être proposée.|

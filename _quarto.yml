@@ -27,52 +27,70 @@ website:
     contents: 
       - section: "S1-Langages et programmation (1)"
         contents: 
-            - langagesProgr/index.qmd
+            - 01-langagesProgr/index.qmd
             - section: "1-Récursivité"
               contents: 
-                  - langagesProgr/recursivite_cours.qmd
-                  - langagesProgr/recursivite_exercices.qmd
-                  - langagesProgr/TPHanoi.qmd
+                  - 01-langagesProgr/recursivite_cours.qmd
+                  - 01-langagesProgr/recursivite_exercices.qmd
+                  - 01-langagesProgr/TPHanoi.qmd
             - section: "2-Programmation orientée objet"
               contents: 
-                  - langagesProgr/POO_cours.qmd
-                  - langagesProgr/POO_complements.qmd
-                  - langagesProgr/POO_exercices.qmd
-                  - langagesProgr/TPPOOBataille.qmd
+                  - 01-langagesProgr/POO_cours.qmd
+                  - 01-langagesProgr/POO_complements.qmd
+                  - 01-langagesProgr/POO_exercices.qmd
+                  - 01-langagesProgr/TPPOOBataille.qmd
             - section: "3-Paradigmes de programmation"
               contents: 
-                  - langagesProgr/paradigmes_cours.qmd
-                  - langagesProgr/paradigmes_exercices.qmd
-                  - langagesProgr/quiz.qmd
+                  - 01-langagesProgr/paradigmes_cours.qmd
+                  - 01-langagesProgr/paradigmes_exercices.qmd
+                  - 01-langagesProgr/quiz.qmd
+      - section: "S2-Structures abstraites"
+        contents:
+          - 02-structures/index.qmd
+          - 02-structures/interfaces_cours.qmd
+          - 02-structures/listes_cours.qmd
+          - 02-structures/piles_cours.qmd
+          - 02-structures/files_cours.qmd
+          - 02-structures/listes_exercices.qmd
+          - 02-structures/dictionnaires_cours.qmd
+          - 02-structures/dictionnaires_exercices.qmd
+          - 02-structures/TPDictionnaire.qmd
+          - 02-structures/projet_detecteur_langue.qmd
+          - 02-structures/bilan.qmd
       - section: "S3-Bases de données"
         contents: 
-          - BDD/index.qmd
+          - 03-BDD/index.qmd
           - section: "1. Modèle relationnel"
             contents: 
-              - BDD/partie1.qmd
-              - BDD/partie2.qmd
-              - BDD/quiz.qmd
-          - BDD/sql_cours.qmd
-          - BDD/exercices.qmd
-          - BDD/TP1.qmd
-          - BDD/TP2.qmd
-          - BDD/TP3.qmd
+              - 03-BDD/partie1.qmd
+              - 03-BDD/partie2.qmd
+              - 03-BDD/quiz.qmd
+          - 03-BDD/sql_cours.qmd
+          - 03-BDD/exercices.qmd
+          - 03-BDD/TP1.qmd
+          - 03-BDD/TP2.qmd
+          - 03-BDD/TP3.qmd
       - section: "S4-Arbres"
         contents: 
-          - arbresgraphes/index.qmd
-          - arbresgraphes/arbres_cours.qmd
-          - arbresgraphes/arbres_exercices.qmd
-          - arbresgraphes/implementationArbres.qmd
-          - arbresgraphes/TParbres.qmd
+          - 04-arbres/index.qmd
+          - 04-arbres/arbres_cours.qmd
+          - 04-arbres/arbres_exercices.qmd
+          - 04-arbres/implementationArbres.qmd
+          - 04-arbres/TParbres.qmd
       - section: "S5-Architectures matérielles et systèmes d'exploitation (1)"
         contents: 
-          - archiSE/index.qmd
-          - archiSE/processus.qmd
+          - 05-archiSE/index.qmd
+          - 05-archiSE/processus_cours.qmd
+          - 05-archiSE/processus_TP.qmd
+          - 05-archiSE/processus_exos.qmd
+          - 05-archiSE/processus_python.qmd
       - section: "S6-Algorithmique (1)"
         contents: 
-          - algo/index.qmd
-          - algo/algo_arbres.qmd
-          - algo/diviser_pour_regner.qmd
+          - 06-algo/index.qmd
+          - 06-algo/rappels.qmd
+          - 06-algo/algo_arbres_cours.qmd
+          - 06-algo/algo_arbres_exos.qmd
+          - 06-algo/diviser_pour_regner.qmd
       - section: "S7-Réseaux (1)"
         contents: 
           - reseaux/index.qmd
@@ -81,10 +99,11 @@ website:
           - reseaux/HTTPS_cours.qmd
       - section: "S8-Graphes"
         contents:
-          - arbresgraphes/graphes_cours.qmd
-          - arbresgraphes/tp_graphe_matrice.ipynb
-          - arbresgraphes/tp_graphe_liste.ipynb
-          - arbresgraphes/graphes_exercices.qmd
+          - 04-arbres/index_graphes.qmd
+          - 04-arbres/graphes_cours.qmd
+          - 04-arbres/tp_graphe_matrice.ipynb
+          - 04-arbres/tp_graphe_liste.ipynb
+          - 04-arbres/graphes_exercices.qmd
       - section: "S9-Réseaux (2)"
         contents: 
           - reseaux/index.qmd
@@ -94,9 +113,9 @@ website:
           - calculabilite/calculabilite.qmd
       - section: "S11-Algorithmes (2)"
         contents: 
-          - algo/dfs_graphe.qmd
-          - algo/bfs_graphe.qmd
-          - algo/exos_graphes.qmd
+          - 06-algo/dfs_graphe.qmd
+          - 06-algo/bfs_graphe.qmd
+          - 06-algo/exos_graphes.qmd
       - section: "Baccalauréat"
         contents: 
           - bac/index.qmd

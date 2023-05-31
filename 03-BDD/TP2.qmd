@@ -1,0 +1,65 @@
+---
+title: TP 2 - Le supermarché
+subtitle: S3 - Bases de données
+lang: fr
+tbl-cap-location: bottom
+crossref: 
+    eq-prefix: Éq.
+    tbl-prefix: Tableau
+    tbl-title: Tableau
+format:
+    html: default
+#     pdf: 
+#         geometry:
+#             - top=20mm
+#             - bottom=20mm
+#             - left=20mm
+#             - right=20mm
+#             - heightrounded
+#         include-in-header:
+#             - text:
+#                 \usepackage{fancyhdr}
+#                 \pagestyle{fancy}
+#                 \usepackage{lastpage}
+#         include-before-body:
+#             - text:
+#                 \lhead{Spécialité NSI} 
+#                 \rhead{Terminale}
+#                 \chead{} 
+#                 \cfoot{}
+#                 \lfoot{Lycée \'Emile Duclaux}
+#                 \rfoot{Page \thepage/\pageref{LastPage}}
+#                 \renewcommand{\headrulewidth}{0pt}
+#                 \renewcommand{\footrulewidth}{0pt}
+#                 \thispagestyle{fancy}
+#                 \vspace{-2cm}
+#         biblio-title: Sources utilisées
+#         reference-location: document
+#         # fig-pos: h
+#         # fig-width: 4
+#         # fig-height: 2.5
+#         keep-tex: true
+# format-links: [pdf, tex]
+---
+
+:::{.callout-tip}
+## Objectifs
+
+* {{< fa check >}} écrire un schéma relationnel ;
+* {{< fa check >}} manipuler des requêtes SQL ;
+* {{< fa check >}} utiliser un SGBD.
+:::
+
+## Première partie : travail débranché
+
+Sans utiliser l'ordinateur, répondre aux questions de la fiche ci-dessous.
+
+<iframe src="TP_SQL_Supermarche.pdf" width="100%" height="500px"> </iframe>
+
+## Vérifications avec DB Browser SqLite et compléments
+
+1. Ouvrir dans le logiciel la table [ExerciceSupermarche.db](ExerciceSupermarche.db).
+2. Vérifier les requêtes écrites dans la première partie.
+3. Insérer dans la base de données un nouveau client en utilisant vos propres informations personnelles.
+4. Modifier vos données en vous donnant le prénom "Toto".
+5. Supprimer votre enregistrement de la table "Clients".

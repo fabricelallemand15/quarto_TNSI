@@ -1,0 +1,41 @@
+---
+title: Bilan de la séquence - Structures de données abstraites
+subtitle: S2-Structures de données
+---
+
+* Cours :
+
+    * [Interfaces et implémentation](interfaces_cours.qmd){ target=_blank }. : savoir différencier **un type abstrait de données** et un de ses **implémentations**, notion d'interface et d'API.
+    * [Listes](listes_cours.qmd){ target=_blank }., [Piles](piles_cours.qmd){ target=_blank }. et [Files](files_cours.qmd){ target=_blank }. : connaître pour chacune de ces structures, sa définition, son fonctionnement, ses méthodes primitives et une ou deux implémentations différentes. Connaître des situations typiques d'utilisation de ces structures.
+    * [Dictionnaires](dictionnaires_cours.qmd){ target=_blank }. : connaître la définition, le fonctionnement et les méthodes primitives associées. En particulier, maîtriser l'utilisation des dictionnaires en Python. Connaître l'avantage des dictionnaires dur les listes en termes de performance.
+
+* Exercices de base faits et corrigés durant la séquence :
+
+    * [Fiche sur les listes, piles et files](listes_exercices.qmd){ target=_blank }. : exercices 1, 2, 3, 4, 6, 7.
+    * [Fiche sur les dictionnaires](dictionnaires_exercices.qmd){ target=_blank }. : exercices 1, 2, 3, 4. [Correction de l'exercice 4](dico_exo4.py){ target=_blank }.
+
+* Problèmes, T.P. et mini projets étudiés durant la séquence :
+
+    * [Parenthésage correct](listes_exercices.qmd){ target=_blank }. : exercice 5. [Corrigé](parentheses.py).
+    * [T.P. Carnet d'adresses](TPDictionnaire.qmd) sur les dictionnaires. [Corrigé](https://flallemand.fr/notebook/?from=https://flallemand.fr/TNSI/structures/TPDictionnaires_CORR.ipynb){ target=_blank }.
+    * [Projet détecteur de langue](projet_detecteur_langue.qmd) : utilisation de dictionnaires. [corrigé](detecte_langue.py).
+    * [Notation polonaise inverse](PB_RPN.pdf){ target=_blank } : énoncé et [corrigé](RPN.py).
+    * [2021 Métropole Jour 1 : exo 2](../annales/23_exo_bac_Piles_1.pdf){ target=_blank } : énoncé et [corrigé](../annales/23_exo_bac_Piles_1_CORR.pdf){ target=_blank }.
+    * [2022 Centres étrangers Jour 1 : exo 1](../annales/22-NSIJ1G11_exo1.pdf){ target=_blank } : énoncé et [corrigé](../annales/22-NSIJ1G11_exo1_CORR.pdf){ target=_blank }.
+    * [2022 Centres étrangers Jour 1 : exo 2](../annales/2022_CentresEtrangers_1.pdf){ target=_blank } : énoncé et [corrigé](supermarche.py){ target=_blank }.
+
+* Problèmes supplémentaires tirés des annales :
+
+    
+    * [2021 Centres étrangers Jour 2 : exo 1](../annales/2021_CentresEtrangers_2.pdf){ target=_blank }.
+    * [2021 Centres étrangers Jour 1 : exo 5](../annales/2021_CentresEtrangers_1.pdf){ target=_blank }.
+    * [2021 Amérique du Nord Jour1 : exo 5](../annales/2021_AmeriqueDuNord_1.pdf){ target=_blank }.
+    * [2021 Sujet zéro : exo 1](../annales/2021_Sujet_0.pdf){ target=_blank }.
+    * [2022 Métropole Jour 1 : exo 1](../annales/2022_Metropole_Jour1.pdf){ target=_blank }.
+    * [2022 Métropole Jour 2 : exo 2](../annales/2022_Metropole_Jour2.pdf){ target=_blank }.
+    * [2022 Mayotte Liban Jour 1 : exo 1](../annales/2022_Mayotte_Liban_1.pdf){ target=_blank }.
+    * [2022 Mayotte Liban Jour 2 : exo 1](../annales/2022_Mayotte_Liban_2.pdf){ target=_blank }.
+    * [2022 Amérique du Nord Jour 1 : exo 5](../annales/2022_AmeriqueDuNord_1.pdf){ target=_blank }.
+    * [2022 Centres étrangers Jour 2 : exo 2](../annales/2022_CentresEtrangers_2.pdf){ target=_blank }.
+    * [2021 Centres étrangers Jour 1 : exo 2](../annales/2021_CentresEtrangers_1.pdf){ target=_blank }.
+    * [2021 Métropole Septembre Jour 2 : exo 2](../annales/2021_Metropole_Septembre_2.pdf){ target=_blank }.
