@@ -90,32 +90,34 @@ website:
           - 06-algo/rappels.qmd
           - 06-algo/algo_arbres_cours.qmd
           - 06-algo/algo_arbres_exos.qmd
-          - 06-algo/diviser_pour_regner.qmd
+          - 06-algo/diviser_pour_regner_cours.qmd
+          - 06-algo/diviser_pour_regner_exos.qmd
       - section: "S7-Réseaux (1)"
         contents: 
-          - reseaux/index.qmd
-          - reseaux/adressesIP.qmd
-          - reseaux/routage.qmd
-          - reseaux/HTTPS_cours.qmd
+          - 07-reseaux/index.qmd
+          - 07-reseaux/adressesIP.qmd
+          - 07-reseaux/routage_cours.qmd
+          - 07-reseaux/routage_exos.qmd
+          - 07-reseaux/HTTPS_cours.qmd
       - section: "S8-Graphes"
         contents:
-          - 04-arbres/index_graphes.qmd
-          - 04-arbres/graphes_cours.qmd
-          - 04-arbres/tp_graphe_matrice.ipynb
-          - 04-arbres/tp_graphe_liste.ipynb
-          - 04-arbres/graphes_exercices.qmd
+          - 08-graphes/index_graphes.qmd
+          - 08-graphes/graphes_cours.qmd
+          - 08-graphes/tp_graphe_matrice.ipynb
+          - 08-graphes/tp_graphe_liste.ipynb
+          - 08-graphes/graphes_exercices.qmd
       - section: "S9-Réseaux (2)"
         contents: 
-          - reseaux/index.qmd
-          - reseaux/HTTPS_cours.qmd
+          - 09-reseaux2/index.qmd
+          - 09-reseaux2/HTTPS_cours.qmd
       - section: "S10-Langages et programmation (2)"
         contents: 
-          - calculabilite/calculabilite.qmd
+          - 10-langages_prog2/calculabilite.qmd
       - section: "S11-Algorithmes (2)"
         contents: 
-          - 06-algo/dfs_graphe.qmd
-          - 06-algo/bfs_graphe.qmd
-          - 06-algo/exos_graphes.qmd
+          - 11-algos2/dfs_graphe.qmd
+          - 11-algos2/bfs_graphe.qmd
+          - 11-algos2/exos_graphes.qmd
       - section: "Baccalauréat"
         contents: 
           - bac/index.qmd
@@ -154,9 +156,4 @@ format:
     lightbox: auto
     code-block-border-left: "#31BAE9"
     code-block-bg: true
-  # pdf:
-  #   papersize: a4
-
-
-
-
+  

@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.84">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>NSI - Terminale - TP - Révisions sur les adresses IP</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../07-reseaux/routage_cours.html" rel="next">
+<link href="../06-algo/diviser_pour_regner_exos.html" rel="prev">
+<link href="../favicon.ico" rel="icon">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"fr"
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">NSI - Terminale</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
+ <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../ressources.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">S7-Réseaux (1)</li><li class="breadcrumb-item"><a href="../07-reseaux/adressesIP.html">TP - Révisions sur les adresses IP</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">S1-Langages et programmation (1)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">1-Récursivité</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/recursivite_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Récursivité (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/recursivite_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Récursivité (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/TPHanoi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP Tours de Hanoï</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">2-Programmation orientée objet</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/POO_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/POO_complements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Compléments)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/POO_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation orientée objets (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/TPPOOBataille.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Bataille</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">3-Paradigmes de programmation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/paradigmes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/paradigmes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-langagesProgr/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paradigmes de programmation (Quiz)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">S2-Structures abstraites</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/interfaces_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interfaces et implémentations (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/listes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Listes (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/piles_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piles (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/files_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Files (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/listes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Listes, Piles et Files (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/dictionnaires_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/dictionnaires_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/TPDictionnaire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionnaires (TP)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/projet_detecteur_langue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projet - Détecteur de langue</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-structures/bilan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bilan de la séquence - Structures de données abstraites</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">S3-Bases de données</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">1. Modèle relationnel</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/partie1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Le modèle relationnel (Cours - Partie 1)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/partie2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Le modèle relationnel (Cours - Partie 2)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz - Le modèle relationnel, SGBD</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/sql_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de données (Exercices)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/TP1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 1 - Créer une base de données</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/TP2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 2 - Le supermarché</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/TP3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">S4-Arbres</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/arbres_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbres (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/arbres_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices sur les arbres</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/implementationArbres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implémentation des arbres en Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04-arbres/TParbres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Manipulation d’arbres</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">S5-Architectures matérielles et systèmes d’exploitation (1)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processus : cours</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_TP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T.P. - Processus sous Linux</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices type bac - Processus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processus sous Linux et Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text">S6-Algorithmique (1)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/rappels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rappels d’algorithmique</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/algo_arbres_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmes sur les arbres</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/algo_arbres_exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmes sur les arbres - Exercices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/diviser_pour_regner_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Méthode “Diviser pour régner”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../06-algo/diviser_pour_regner_exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Méthode “Diviser pour régner” - Exercices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+ <span class="menu-text">S7-Réseaux (1)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">07-reseaux/index.qmd</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-reseaux/adressesIP.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">TP - Révisions sur les adresses IP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-reseaux/routage_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Routage - Cours</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../07-reseaux/routage_exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Routage - Exercices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">07-reseaux/HTTPS_cours.qmd</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text">S8-Graphes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-graphes/index_graphes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-graphes/graphes_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphes (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-graphes/tp_graphe_matrice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Implémentation des graphes par matrice d’adjacence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-graphes/tp_graphe_liste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP - Implémentation des graphes par liste d’adjacence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../08-graphes/graphes_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices sur les graphes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text">S9-Réseaux (2)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../09-reseaux2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../09-reseaux2/HTTPS_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sécurisation des communications - Cours</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
+ <span class="menu-text">S10-Langages et programmation (2)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10-langages_prog2/calculabilite.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Calculabilité et décidabilité</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
+ <span class="menu-text">S11-Algorithmes (2)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11-algos2/dfs_graphe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parcours d’un graphe en profondeur (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11-algos2/bfs_graphe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parcours d’un graphe en largeur (Cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../11-algos2/exos_graphes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercices - Parcours de graphes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
+ <span class="menu-text">Baccalauréat</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bac/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Épreuve de NSI au bac en Terminale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bac/annales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annales du bac de NSI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="false">
+ <span class="menu-text">Grand Oral</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../GrandOral/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grand Oral et NSI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#activité-dintroduction-adressage-ip-réseaux-masques" id="toc-activité-dintroduction-adressage-ip-réseaux-masques" class="nav-link active" data-scroll-target="#activité-dintroduction-adressage-ip-réseaux-masques">Activité d’introduction : adressage IP, réseaux, masques</a>
+  <ul class="collapse">
+  <li><a href="#adresse-ip" id="toc-adresse-ip" class="nav-link" data-scroll-target="#adresse-ip">Adresse IP</a></li>
+  <li><a href="#structure-dune-adresse-ip-parties-réseau-et-hôte" id="toc-structure-dune-adresse-ip-parties-réseau-et-hôte" class="nav-link" data-scroll-target="#structure-dune-adresse-ip-parties-réseau-et-hôte">Structure d’une adresse IP : parties <em>réseau</em> et <em>hôte</em></a></li>
+  <li><a href="#masque-de-sous-réseau" id="toc-masque-de-sous-réseau" class="nav-link" data-scroll-target="#masque-de-sous-réseau">Masque de sous-réseau</a></li>
+  <li><a href="#notation-cidr" id="toc-notation-cidr" class="nav-link" data-scroll-target="#notation-cidr">Notation CIDR</a></li>
+  <li><a href="#adresse-de-diffusion" id="toc-adresse-de-diffusion" class="nav-link" data-scroll-target="#adresse-de-diffusion">Adresse de diffusion</a></li>
+  <li><a href="#plage-dadresses-machines" id="toc-plage-dadresses-machines" class="nav-link" data-scroll-target="#plage-dadresses-machines">Plage d’adresses machines</a></li>
+  <li><a href="#appartenance-à-un-même-réseau" id="toc-appartenance-à-un-même-réseau" class="nav-link" data-scroll-target="#appartenance-à-un-même-réseau">Appartenance à un même réseau</a></li>
+  <li><a href="#partie-programmation" id="toc-partie-programmation" class="nav-link" data-scroll-target="#partie-programmation">💻 Partie programmation</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/07-reseaux/adressesIP.qmd" class="toc-action">Modifier cette page</a></p><p><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action">Faire part d'un problème</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">TP - Révisions sur les adresses IP</h1>
+<p class="subtitle lead">S7-Réseaux (1)</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="activité-dintroduction-adressage-ip-réseaux-masques" class="level1">
+<h1>Activité d’introduction : adressage IP, réseaux, masques</h1>
+<blockquote class="blockquote">
+<p>Cette activité permet de (re)définir quelques notions facilitant la compréhension du chapitre sur les protocoles de routage.</p>
+</blockquote>
+<section id="adresse-ip" class="level2">
+<h2 class="anchored" data-anchor-id="adresse-ip">Adresse IP</h2>
+<p>La plupart du temps lorsque l’on parle de <em>réseau</em>, il s’agit en réalité d’un <strong>sous-réseau</strong> d’un réseau plus grand (par exemple un sous-réseau du réseau mondial IP).</p>
+<p>Chacun de ses (sous-)réseaux possède une adresse IP, appelée <strong>adresse du (sous-)réseau</strong>. Dans un (sous-)réseau, il y a plusieurs machines que l’on appellent <strong>hôtes</strong>, possédant elles aussi une adresse IP dépendant de celle du (sous-)réseau.</p>
+<p>Une adresse IP (IPv4) est une suite de 32 bits (4 octets) exprimée en décimales à point, en séparant chacun des octets par un point : <code>X1.X2.X3.X4</code> où X1, X2, X3 et X4 sont les valeurs des 4 octets.</p>
+<p><strong>Exemple</strong> :</p>
+<ul>
+<li>Représentation binaire : <code>11000001 00110111 11011101 00111110</code></li>
+<li>Représentation décimale pointée : <code>193.55.221.62</code> (où <code>193</code> est la valeur décimale de <code>11000001</code>, <code>55</code> celle de <code>00110111</code>, etc.)</li>
+</ul>
+</section>
+<section id="structure-dune-adresse-ip-parties-réseau-et-hôte" class="level2">
+<h2 class="anchored" data-anchor-id="structure-dune-adresse-ip-parties-réseau-et-hôte">Structure d’une adresse IP : parties <em>réseau</em> et <em>hôte</em></h2>
+<p>Pour chaque adresse, une partie des bits (les bits de poids fort, à gauche) représente la partie « réseau », et l’autre partie (les bits de poids faible, à droite) représente la partie « hôte » c’est-à-dire la machine du réseau.</p>
+<p>Par exemple, si les 3 premiers octets représentent la partie <em>réseau</em> et le dernier la partie <em>hôte</em>, on obtient le découpage suivant :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Réseau</th>
+<th>Hôte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11000001 00110111 11011101</td>
+<td>00111110</td>
+</tr>
+<tr class="even">
+<td>193.55.221</td>
+<td>62</td>
+</tr>
+</tbody>
+</table>
+<p>✍️ <strong>Q1</strong> : Si la partie réseau occupe les 3 premiers octets, quel est le nombre d’hôtes possibles pour le réseau en question ?</p>
+<p>✍️ <strong>Q2</strong> : Et si la partie réseau occupe les 28 premiers bits ?</p>
+</section>
+<section id="masque-de-sous-réseau" class="level2">
+<h2 class="anchored" data-anchor-id="masque-de-sous-réseau">Masque de sous-réseau</h2>
+<p>Le mécanisme permettant de situer la limite en la partie <em>réseau</em> et la partie <em>hôte</em> s’appelle le <strong>masque de sous-réseau</strong> (en anglais : <em>subnet mask</em>). C’est aussi une suite de 32 bits :</p>
+<ul>
+<li>une série continue de <code>1</code> qui fixe la partie <em>réseau</em> (celle de gauche)</li>
+<li>une série continue de <code>0</code> qui correspond à la partie <em>hôte</em></li>
+</ul>
+<p><strong>Exemple</strong> : Dans le cas où les 3 premiers octets représentent la partie <em>réseau</em>, alors le masque de sous-réseau est <code>11111111.11111111.11111111.00000000</code> ou <code>255.255.255.0</code> en décimal.</p>
+<p>✍️ <strong>Q3</strong> : Si la partie <em>réseau</em> d’un sous-réseau occupe les 28 permiers bits, donner le masque de sous-réseau en notations binaire et décimale.</p>
+</section>
+<section id="notation-cidr" class="level2">
+<h2 class="anchored" data-anchor-id="notation-cidr">Notation CIDR</h2>
+<p>Lorsque l’on donne l’adresse IP d’un (sous-)réseau, il faut donc également donner le masque associé. On pourrait le donner en notation binaire ou décimale, mais pour simplifier on donne généralement juste le nombre de bits correspondant à la partie <em>réseau</em> : <code>X1.X2.X3.X4 /n</code> signifie que les n premiers bits de poids forts de l’adresse IP représentent la partie <em>réseau</em>, les bits suivants de poids faibles représentent la partie <em>hôte</em>.</p>
+<blockquote class="blockquote">
+<p>Cette notation simplifiée s’appelle notation CIDR (<em>Classless Inter-Domain Routing</em>).</p>
+</blockquote>
+<p><strong>Exemple</strong> : le masque de sous-réseau <code>11111111.11111111.11111111.00000000</code> (ou <code>255.255.255.0</code>) s’écrit donc plus simplement <code>/24</code> car il y a 24 bits pour la partie <em>réseau</em>.</p>
+<p>✍️ <strong>Q4</strong> : Déterminer la notation CIDR pour un sous-réseau dont le masque est 255.255.255.240.</p>
+<p>##Adresse réseau</p>
+<p>L’<strong>adresse réseau</strong> permet de savoir si 2 machines peuvent communiquer entre elles (directement). Si ces 2 machines ont une adresse réseau identique, alors elles appartiennent au même réseau et elles peuvent communiquer.</p>
+<p>Cette adresse réseau est celle dont tous les bits de la partie <em>hôte</em> sont à 0, autrement dit l’adresse IP la plus “basse” du réseau.</p>
+<p><strong>Exemple</strong> : si <code>193.55.221.62</code> est une machine d’un réseau dont le masque est <code>/24</code>, alors l’adresse du réseau en question est :</p>
+<ul>
+<li><code>11000001 00110111 11011101 00000000</code> les 8 derniers bits pour l’hôte ont été mis à zéro</li>
+<li>en décimal cela donne <code>193.55.221.0</code>.</li>
+</ul>
+<p>Ainsi, le réseau en question se note <code>193.55.221.0 /24</code>.</p>
+</section>
+<section id="adresse-de-diffusion" class="level2">
+<h2 class="anchored" data-anchor-id="adresse-de-diffusion">Adresse de diffusion</h2>
+<p>L’<strong>adresse de diffusion</strong> ou <strong>broadcast</strong> est celle utilisée pour envoyer des paquets à <em>toutes</em> les machines du réseau.</p>
+<p>Cette adresse de diffusion est celle dont les bits de la partie <em>hôte</em> sont à 1, autrement dit l’adresse IP la plus “haute” du réseau.</p>
+<p><strong>Exemple</strong> : Le réseau <code>193.55.221.0 /24</code> a donc pour adresse de diffusion <code>11000001 00110111 11011101 11111111</code> ou <code>193.55.221.255</code> en décimal.</p>
+</section>
+<section id="plage-dadresses-machines" class="level2">
+<h2 class="anchored" data-anchor-id="plage-dadresses-machines">Plage d’adresses machines</h2>
+<p>La plage d’adresses machines est l’ensemble des adresses que peut prendre une machine sur le réseau. Comme l’adresse réseau et l’adresse de diffusion sont déjà prises, il reste toutes les adresses entre les deux pour les <em>machines</em> du réseau :</p>
+<ul>
+<li>la première adresse possible pour une machine est donc celle qui suit l’adresse réseau</li>
+<li>la dernière adresse possible pour une machine est donc celle qui précède l’adresse de diffusion</li>
+</ul>
+<p><strong>Exemple</strong> : Les machines sur le réseau <code>193.55.221.0 /24</code> ont des adresses IP variant de <code>193.55.221.1</code> (la première) à <code>193.55.221.254</code> (la dernière).</p>
+<p>✍️ <strong>Q5</strong> : Une machine d’adresse IP <code>112.133.102.41</code> appartient à un réseau dont le masque est <code>/24</code> (c’est-à-dire <code>255.255.255.0</code>).</p>
+<ol type="1">
+<li>Donner en notation binaire et en notation décimale, l’adresse réseau et l’adresse de diffusion du réseau.</li>
+<li>Combien de machines peut-on connecter dans ce réseau ? Quelle est leur plage d’adresses ?</li>
+</ol>
+<p>✍️ <strong>Q6</strong> : Combien de machines peut-on connecter sur un réseau dont le masque est <code>255.255.240.0</code> ?</p>
+<p>✍️ <strong>Q7</strong> : On installe 10 machines sur un réseau local. L’adresse IP <code>172.16.29.35</code> avec le masque <code>255.255.255.240</code> (soit <code>/28</code>) est attribuée à une de ces machines.</p>
+<ol type="1">
+<li>Combien d’hôtes peut-on placer dans le réseau où est située cette machine ?</li>
+<li>Dans quel réseau (préciser l’adresse) sont situées ces machines ?</li>
+<li>Pour ce réseau, donnez la première et la dernière adresse IP valide pour ces machines.</li>
+<li>Quelle est l’adresse de diffusion (<em>broadcast</em>) pour ce réseau ?</li>
+</ol>
+</section>
+<section id="appartenance-à-un-même-réseau" class="level2">
+<h2 class="anchored" data-anchor-id="appartenance-à-un-même-réseau">Appartenance à un même réseau</h2>
+<p>On a dit précédemment que si 2 machines ont une adresse réseau identique, alors elles appartiennent au même réseau et elles peuvent communiquer.</p>
+<p>Pour déterminer l’adresse réseau d’une adresse IP, il suffit d’appliquer l’opérateur logique ET (ou AND en anglais) bit à bit entre l’adresse IP et le masque de sous-réseau.</p>
+<p>On rappelle l’opérateur ET a pour table de vérité :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>x</th>
+<th>y</th>
+<th>x ET y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple</strong> : Pour déterminer l’adresse réseau de la machine d’adresse IP <code>193.55.221.62</code> avec le masque <code>255.255.255.0</code> :</p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 46%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Adresse IP (d’une machine)</th>
+<th><code>11000001.00110111.11011101.00111110</code></th>
+<th>193.55.221.62</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Masque</td>
+<td><code>11111111.11111111.11111111.00000000</code></td>
+<td>255.255.255.0</td>
+</tr>
+<tr class="even">
+<td>Adresse réseau</td>
+<td><code>11000001.00110111.11011101.00000000</code></td>
+<td>193.55.221.0</td>
+</tr>
+</tbody>
+</table>
+<p>✍️ <strong>Q8</strong> : Un réseau local contient une machine d’adresse IP <code>192.168.0.1</code> avec le masque <code>/20</code>. La machine d’adresse IP <code>192.168.1.3</code> appartient-elle au même réseau ? <em>Vous comparerez les adresses réseaux de ces deux machines pour répondre</em>.</p>
+</section>
+<section id="partie-programmation" class="level2">
+<h2 class="anchored" data-anchor-id="partie-programmation">💻 Partie programmation</h2>
+<p>L’objectif de cette partie est d’écrire une fonction <code>meme_sous_reseau(ip_a, ip_b, masque)</code> qui renvoie un booléen indiquant si les machines A et B font partie du même sous-réseau.</p>
+<p>Cette partie est à traiter dans Capytale : <a href="https://capytale2.ac-paris.fr/web/c/aa58-1299451">https://capytale2.ac-paris.fr/web/c/aa58-1299451</a>.</p>
+<p>On rappelle quelques instructions qui pourront s’avérer utiles :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">&gt;&gt;&gt;</span> <span class="bu">bin</span>(<span class="dv">45</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'0b101101'</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&gt;&gt;&gt;</span> chaine <span class="op">=</span> <span class="st">"bonjour à tous !"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&gt;&gt;&gt;</span> chaine.split(<span class="st">' '</span>)  <span class="co"># on sépare la chaîne selon le caractère espace</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'bonjour'</span>, <span class="st">'à'</span>, <span class="st">'tous'</span>, <span class="st">'!'</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> et_logique(bit1, bit2):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">        Renvoie le résultat de l'opération logique bit1 ET bit2.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        Entrées : deux string d'1 caractère ('0' ou '1')</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">        Sortie : string </span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># à vous de jouer !</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_et_logique():</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> et_logique(<span class="st">'0'</span>, <span class="st">'0'</span>) <span class="op">==</span> <span class="st">'0'</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> et_logique(<span class="st">'0'</span>, <span class="st">'1'</span>) <span class="op">==</span> <span class="st">'0'</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> et_logique(<span class="st">'1'</span>, <span class="st">'0'</span>) <span class="op">==</span> <span class="st">'0'</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> et_logique(<span class="st">'1'</span>, <span class="st">'1'</span>) <span class="op">==</span> <span class="st">'1'</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> entier_en_mot_binaire(entier, longueur_mot_binaire):</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">        Renvoie un mot binaire correspondant à l'entier.</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">        Entrées :</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">            entier : int</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">            longueur_mot_binaire : int de longueur supérieure ou égale au nombre de bits de nécessaires</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">        pour convertir entier en base 2</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">        Sortie : string de longueur longueur_mot_binaire            </span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># à vous de jouer !</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_entier_en_mot_binaire():</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> entier_en_mot_binaire(<span class="dv">1</span>, <span class="dv">8</span>) <span class="op">==</span> <span class="st">'00000001'</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> entier_en_mot_binaire(<span class="dv">192</span>, <span class="dv">8</span>) <span class="op">==</span> <span class="st">'11000000'</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> entier_en_mot_binaire(<span class="dv">168</span>, <span class="dv">8</span>) <span class="op">==</span> <span class="st">'10101000'</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> masque_en_mot_binaire(masque):</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">        Renvoie la conversion du masque en un mot binaire.</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co">        Entrée : masque (int)</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">        Sortie : string de 32 caractères</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        <span class="co"># à vous de jouer !</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_masque_en_mot_binaire():</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> masque_en_mot_binaire(<span class="dv">24</span>) <span class="op">==</span> <span class="st">'11111111111111111111111100000000'</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ip_en_liste(ip):</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co">        Renvoie une liste dont les éléments sont les 4 octets de l'adresse ip.</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co">        Entrée : ip (string) </span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">        Sortie : liste d'entiers</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>        <span class="co"># à vous de jouer !</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_ip_en_liste():</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> ip_en_liste(<span class="st">'192.168.0.1'</span>) <span class="op">==</span> [<span class="dv">192</span>, <span class="dv">168</span>, <span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ip_en_mot_binaire(ip):</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co">        Renvoie la conversion d'une ip en un mot binaire.</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">        Entrée : string contenant une IP (ex "192.168.0.1")</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">        Sortie : string de 32 caractères</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="co"># à vous de jouer !</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_ip_en_mot_binaire():</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> ip_en_mot_binaire(<span class="st">"192.168.0.1"</span>) <span class="op">==</span> <span class="st">'11000000101010000000000000000001'</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> adresse_reseau_ip(ip, masque):</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="co">        Renvoie l'adresse réseau de l'adresse ip avec le masque masque.</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="co">        Entrées :</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="co">            ip : string contenant une IP (ex "192.168.0.1")</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="co">            masque : entier du masque en notation CIDR (ex : 24)</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="co">        Sortie : string de 32 caractères    </span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>        <span class="co"># à vous de jouer !</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>           </span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_adresse_reseau_ip():</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> adresse_reseau_ip(<span class="st">"192.168.0.1"</span>, <span class="dv">24</span>) <span class="op">==</span> <span class="st">'11000000101010000000000000000000'</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> adresse_reseau_ip(<span class="st">"192.168.1.3"</span>, <span class="dv">24</span>) <span class="op">==</span> <span class="st">'11000000101010000000000100000000'</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> adresse_reseau_ip(<span class="st">"192.168.0.1"</span>, <span class="dv">20</span>) <span class="op">==</span> <span class="st">'11000000101010000000000000000000'</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> adresse_reseau_ip(<span class="st">"192.168.1.3"</span>, <span class="dv">20</span>) <span class="op">==</span> <span class="st">'11000000101010000000000000000000'</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> meme_sous_reseau(ip_a, ip_b, masque):</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="co">        Renvoie un booléen indiquant si ip_a et ip_b sont dans un même réseau de masque masque.</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="co">        Entrées :</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="co">        ip_a:  string contenant une IP (ex "192.168.0.1")</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="co">        ip_b : string contenant une IP</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="co">        masque : entier du masque en notation CIDR (ex : 24)</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>        <span class="co"># à vous de jouer !</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_meme_sous_reseau():</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> meme_sous_reseau(<span class="st">"192.168.0.1"</span>, <span class="st">"192.168.1.3"</span>, <span class="dv">24</span>) <span class="op">==</span> <span class="va">False</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> meme_sous_reseau(<span class="st">"192.168.0.1"</span>, <span class="st">"192.168.1.3"</span>, <span class="dv">20</span>) <span class="op">==</span> <span class="va">True</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> meme_sous_reseau(<span class="st">"192.168.0.1"</span>, <span class="st">"192.168.0.3"</span>, <span class="dv">30</span>) <span class="op">==</span> <span class="va">True</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Source :</strong> <a href="https://info-mounier.fr/terminale_nsi/archi_se_reseaux/ip_reseau_masque.php">https://info-mounier.fr/terminale_nsi/archi_se_reseaux/ip_reseau_masque.php</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, function() {
+      let href = xref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        if (id.startsWith('sec-')) {
+          // Special case sections, only their first couple elements
+          const container = document.createElement("div");
+          if (note.children && note.children.length > 2) {
+            for (let i = 0; i < 2; i++) {
+              container.appendChild(note.children[i].cloneNode(true));
+            }
+            return container.innerHTML
+          } else {
+            return note.innerHTML;
+          }
+        } else {
+          return note.innerHTML;
+        }
+      } else {
+        return "";
+      }
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../06-algo/diviser_pour_regner_exos.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Méthode “Diviser pour régner” - Exercices</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../07-reseaux/routage_cours.html" class="pagination-link">
+        <span class="nav-page-text">Routage - Cours</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="http://creativecommons.org/licenses/by/4.0/">
+<p><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+<p>Mentions légales</p>
+</a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fabricelallemand15/site_ESMaths">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

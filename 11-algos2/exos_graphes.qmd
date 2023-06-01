@@ -1,0 +1,12 @@
+---
+title: Exercices - Parcours de graphes
+subtitle: S11 - Algorithmique (2)
+---
+
+## Première fiche
+
+Exercices sur les parcours de graphes dans Capytale : [https://capytale2.ac-paris.fr/web/c/43e1-1602999](https://capytale2.ac-paris.fr/web/c/43e1-1602999)
+
+## Deuxième fiche
+
+Recherche de cycles et de chemins dans un graphe : [https://capytale2.ac-paris.fr/web/c/fddc-1603011](https://capytale2.ac-paris.fr/web/c/fddc-1603011)

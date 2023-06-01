@@ -1,0 +1,10 @@
+---
+title: Méthode "Diviser pour régner" - Exercices
+subtitle: S6-Algorithmique (1)
+---
+
+## Exercices tirés des annales
+
+* [Métropole Candidats Libres 2021 Sujet 1 - Exercice 5](../annales/2021_Metropole_CL_1.pdf){target="_blank"}
+* [Métropole 2021 Sujet 1 - Exercice 4](../annales/2021_Metropole_1.pdf){target="_blank"}
+* [Métropole 2022 Sujet 1 - Exercice 4](../annales/2022_Metropole_Jour1.pdf){target="_blank"}
