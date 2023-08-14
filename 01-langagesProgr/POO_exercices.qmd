@@ -1,6 +1,5 @@
 ---
 title: Programmation orientée objets (Exercices)
-subtitle: S1 - Langages et programmation
 lang: fr
 tbl-cap-location: bottom
 crossref: 

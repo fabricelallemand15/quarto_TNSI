@@ -1,6 +1,5 @@
 ---
 title: Piles (Cours)
-subtitle: S2 - Structures de données
 lang: fr
 tbl-cap-location: bottom
 crossref: 
@@ -155,7 +154,7 @@ Cette implémentation sera testée en exercices.
 
 ### Implémentation en POO
 
-Conformément au programme, on se limite à une version **naïve** de la POO. On pourra à titre d'exercice reprendre cette implémentation en respectant les règles plus strictes édictées dans [les compléments de cours sur la POO](../langagesProgr/POO_complements.qmd).
+Conformément au programme, on se limite à une version **naïve** de la POO. On pourra à titre d'exercice reprendre cette implémentation en respectant les règles plus strictes édictées dans [les compléments de cours sur la POO](../01-langagesProgr/POO_complements.qmd).
 
 On reprend l'idée de **chaînon** utilisée pour les listes.
 

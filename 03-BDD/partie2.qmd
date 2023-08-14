@@ -1,6 +1,5 @@
 ---
 title: Le modèle relationnel (Cours - Partie 2)
-subtitle: S3 - Bases de données
 lang: fr
 tbl-cap-location: bottom
 crossref: 

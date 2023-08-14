@@ -1,6 +1,5 @@
 ---
 title: TP 2 - Le supermarché
-subtitle: S3 - Bases de données
 lang: fr
 tbl-cap-location: bottom
 crossref: 

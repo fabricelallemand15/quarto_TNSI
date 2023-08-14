@@ -1,6 +1,5 @@
 ---
 title: Listes (Cours)
-subtitle: S2 - Structures de données
 lang: fr
 tbl-cap-location: bottom
 crossref: 
@@ -159,7 +158,7 @@ On remarquera que la fonction ``longueur`` est codée sans boucle, mais de faço
 
 ### Implémentation en POO
 
-Conformément au programme, on se limite à une version **naïve** de la POO. On pourra à titre d'exercice reprendre cette implémentation en respectant les règles plus strictes édictées dans [les compléments de cours sur la POO](../langagesProgr/POO_complements.qmd).
+Conformément au programme, on se limite à une version **naïve** de la POO. On pourra à titre d'exercice reprendre cette implémentation en respectant les règles plus strictes édictées dans [les compléments de cours sur la POO](../01-langagesProgr/POO_complements.qmd).
 
 On définit ci-dessous une **liste chaînée** : chaque chaînon est constitué de l'élément qui fait partie de la liste et de la référence à l'élément suivant. C'est la classe ``Chainon`` qui implémente cette structure. L'objet ``Liste`` est défini à partir de son premier élément (tête) et ses primitives sont définies sous forme de **méthodes**.
 

@@ -1,6 +1,5 @@
 ---
 title: Bases de données (Exercices)
-subtitle: S3 - Bases de données
 lang: fr
 tbl-cap-location: bottom
 crossref: 

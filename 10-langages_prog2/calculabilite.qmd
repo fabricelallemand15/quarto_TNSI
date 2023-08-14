@@ -1,6 +1,5 @@
 ---
 title: Calculabilité et décidabilité
-subtitle: S8-Langages et programmation (2)
 ---
 
 ## La thèse de Church

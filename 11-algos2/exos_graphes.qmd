@@ -1,6 +1,5 @@
 ---
 title: Exercices - Parcours de graphes
-subtitle: S11 - Algorithmique (2)
 ---
 
 ## Première fiche

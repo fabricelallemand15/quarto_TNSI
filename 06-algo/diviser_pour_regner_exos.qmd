@@ -1,6 +1,5 @@
 ---
 title: Méthode "Diviser pour régner" - Exercices
-subtitle: S6-Algorithmique (1)
 ---
 
 ## Exercices tirés des annales

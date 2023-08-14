@@ -1,6 +1,5 @@
 ---
 title: Quiz - Le modèle relationnel, SGBD
-subtitle: S3 - Bases de données
 lang: fr
 tbl-cap-location: bottom
 crossref: 

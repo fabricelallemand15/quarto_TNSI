@@ -1,6 +1,5 @@
 ---
 title: Exercices type bac - Processus
-subtitle: S5-Architectures matérielles, systèmes d'exploitation et réseaux
 ---
 
 _Les exercices précédés du symbole {{< fa desktop >}} sont à faire sur machine, en sauvegardant le fichier si nécessaire._

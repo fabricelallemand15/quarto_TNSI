@@ -1,6 +1,5 @@
 ---
 title: Arbres (Cours)
-subtitle: S4 - Arbres et graphes
 lang: fr
 tbl-cap-location: bottom
 crossref: 

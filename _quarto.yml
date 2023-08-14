@@ -25,26 +25,24 @@ website:
     collapse-level: 1
     alignment: left
     contents: 
-      - section: "S1-Langages et programmation (1)"
+      - section: "Ch. 1 - Récursivité"
         contents: 
             - 01-langagesProgr/index.qmd
-            - section: "1-Récursivité"
-              contents: 
-                  - 01-langagesProgr/recursivite_cours.qmd
-                  - 01-langagesProgr/recursivite_exercices.qmd
-                  - 01-langagesProgr/TPHanoi.qmd
-            - section: "2-Programmation orientée objet"
-              contents: 
-                  - 01-langagesProgr/POO_cours.qmd
-                  - 01-langagesProgr/POO_complements.qmd
-                  - 01-langagesProgr/POO_exercices.qmd
-                  - 01-langagesProgr/TPPOOBataille.qmd
-            - section: "3-Paradigmes de programmation"
-              contents: 
-                  - 01-langagesProgr/paradigmes_cours.qmd
-                  - 01-langagesProgr/paradigmes_exercices.qmd
-                  - 01-langagesProgr/quiz.qmd
-      - section: "S2-Structures abstraites"
+            - 01-langagesProgr/recursivite_cours.qmd
+            - 01-langagesProgr/recursivite_exercices.qmd
+            - 01-langagesProgr/TPHanoi.qmd
+      - section: "Ch. 2 - Paradigmes de programmation"
+        contents: 
+            - 01-langagesProgr/paradigmes_cours.qmd
+            - 01-langagesProgr/paradigmes_exercices.qmd
+            - 01-langagesProgr/quiz.qmd      
+      - section: "Ch. 3 - Programmation orientée objet"
+        contents: 
+            - 01-langagesProgr/POO_cours.qmd
+            - 01-langagesProgr/POO_complements.qmd
+            - 01-langagesProgr/POO_exercices.qmd
+            - 01-langagesProgr/TPPOOBataille.qmd
+      - section: "Ch. 4 - Structures linéaires : listes, piles et files - Interface et implémentation"
         contents:
           - 02-structures/index.qmd
           - 02-structures/interfaces_cours.qmd
@@ -52,72 +50,86 @@ website:
           - 02-structures/piles_cours.qmd
           - 02-structures/files_cours.qmd
           - 02-structures/listes_exercices.qmd
+      - section: "Ch. 5 - Dictionnaires"
+        contents:
           - 02-structures/dictionnaires_cours.qmd
           - 02-structures/dictionnaires_exercices.qmd
           - 02-structures/TPDictionnaire.qmd
           - 02-structures/projet_detecteur_langue.qmd
           - 02-structures/bilan.qmd
-      - section: "S3-Bases de données"
+      - section: "Ch. 6 - Modèle relationnel - Bases de données - SGBD"
         contents: 
           - 03-BDD/index.qmd
-          - section: "1. Modèle relationnel"
-            contents: 
-              - 03-BDD/partie1.qmd
-              - 03-BDD/partie2.qmd
-              - 03-BDD/quiz.qmd
+          - 03-BDD/partie1.qmd
+          - 03-BDD/partie2.qmd
+          - 03-BDD/quiz.qmd
+      - section: "Ch. 7 - Langage SQL"
+        contents:
           - 03-BDD/sql_cours.qmd
           - 03-BDD/exercices.qmd
           - 03-BDD/TP1.qmd
           - 03-BDD/TP2.qmd
           - 03-BDD/TP3.qmd
-      - section: "S4-Arbres"
+      - section: "Ch. 8 - Arbres"
         contents: 
           - 04-arbres/index.qmd
           - 04-arbres/arbres_cours.qmd
           - 04-arbres/arbres_exercices.qmd
           - 04-arbres/implementationArbres.qmd
           - 04-arbres/TParbres.qmd
-      - section: "S5-Architectures matérielles et systèmes d'exploitation (1)"
+      - section: "Ch. 9 - Processus"
         contents: 
           - 05-archiSE/index.qmd
           - 05-archiSE/processus_cours.qmd
           - 05-archiSE/processus_TP.qmd
           - 05-archiSE/processus_exos.qmd
           - 05-archiSE/processus_python.qmd
-      - section: "S6-Algorithmique (1)"
+      - section: "Ch. 10 - Algorithmes sur les arbres binaires"
         contents: 
           - 06-algo/index.qmd
           - 06-algo/rappels.qmd
           - 06-algo/algo_arbres_cours.qmd
           - 06-algo/algo_arbres_exos.qmd
+      - section: "Ch. 11 - Méthode 'Diviser pour régner'"
+        contents:
           - 06-algo/diviser_pour_regner_cours.qmd
           - 06-algo/diviser_pour_regner_exos.qmd
-      - section: "S7-Réseaux (1)"
+      - section: "Ch. 12 - Protocoles de routage"
         contents: 
           - 07-reseaux/index.qmd
           - 07-reseaux/adressesIP.qmd
           - 07-reseaux/routage_cours.qmd
           - 07-reseaux/routage_exos.qmd
-          - 07-reseaux/HTTPS_cours.qmd
-      - section: "S8-Graphes"
+      - section: "Ch. 13 - Sécurisation des communications"
+        contents:
+          - 09-reseaux2/index.qmd
+          - 09-reseaux2/HTTPS_cours.qmd
+      - section: "Ch. 14 - Graphes"
         contents:
           - 08-graphes/index_graphes.qmd
           - 08-graphes/graphes_cours.qmd
           - 08-graphes/tp_graphe_matrice.ipynb
           - 08-graphes/tp_graphe_liste.ipynb
           - 08-graphes/graphes_exercices.qmd
-      - section: "S9-Réseaux (2)"
-        contents: 
-          - 09-reseaux2/index.qmd
-          - 09-reseaux2/HTTPS_cours.qmd
-      - section: "S10-Langages et programmation (2)"
-        contents: 
-          - 10-langages_prog2/calculabilite.qmd
-      - section: "S11-Algorithmes (2)"
+      - section: "Ch. 15 - Algorithmes sur les graphes"
         contents: 
           - 11-algos2/dfs_graphe.qmd
           - 11-algos2/bfs_graphe.qmd
-          - 11-algos2/exos_graphes.qmd
+          - 11-algos2/exos_graphes.qmd  
+      - section: "Ch. 16 - Programmation dynamique"
+        contents: 
+          - 11-algos2/programmation_dynamique.qmd
+          - 11-algos2/exos_programmation_dynamique.qmd"  
+      - section: "Ch. 17 - Recherche textuelle"
+        contents: 
+          - 11-algos2/recherche_textuelle.qmd
+          - 11-algos2/exos_recherche_textuelle.qmd
+      - section: "Ch. 18 - Calculabilité - Décidabilité"
+        contents: 
+          - 10-langages_prog2/calculabilite.qmd
+      - section: "Histoire de l'informatique"
+        contents: 
+          - histoire/index.qmd
       - section: "Baccalauréat"
         contents: 
           - bac/index.qmd
@@ -133,7 +145,7 @@ website:
       - text: "Mentions légales"
         href: about.qmd
       - icon: github
-        href: https://github.com/fabricelallemand15/site_ESMaths
+        href: https://github.com/fabricelallemand15/quarto_TNSI
   cookie-consent: true
 
 bibliography: references.bib 

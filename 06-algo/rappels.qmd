@@ -1,6 +1,5 @@
 ---
 title: Rappels d'algorithmique
-subtitle: S6-Algorithmique
 ---
 
 Cette page regroupe quelques rappels importants. Revoir le cours de première pour les détails.

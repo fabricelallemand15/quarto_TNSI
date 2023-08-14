@@ -1,6 +1,5 @@
 ---
 title: Algorithmes sur les arbres - Exercices
-subtitle: S6-Algorithmique (1)
 ---
 
 

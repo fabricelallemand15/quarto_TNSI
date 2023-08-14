@@ -1,6 +1,5 @@
 ---
 title: TP - Révisions sur les adresses IP
-subtitle: S7-Réseaux (1)
 ---
 
 Activité d'introduction : adressage IP, réseaux, masques

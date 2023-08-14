@@ -1,6 +1,5 @@
 ---
 title: Processus sous Linux et Python
-subtitle: S5-Architectures matérielles, systèmes d'exploitation et réseaux
 ---
 
 La méthode Python `fork()`, du module `os` permet de créer des **processus enfants** en utilisant les processus par lesquels elle a été appelée. Cette commande n'est disponible que lorsque Python fonctionne sous Linux.

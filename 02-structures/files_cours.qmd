@@ -1,6 +1,5 @@
 ---
 title: Files (Cours)
-subtitle: S2 - Structures de données
 lang: fr
 tbl-cap-location: bottom
 crossref: 

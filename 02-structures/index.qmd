@@ -1,6 +1,5 @@
 ---
 title: Programme
-subtitle: S2-Structures de données
 image: duck-3217049_640.jpg
 ---
 

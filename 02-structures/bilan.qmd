@@ -1,6 +1,5 @@
 ---
 title: Bilan de la séquence - Structures de données abstraites
-subtitle: S2-Structures de données
 ---
 
 * Cours :

@@ -1,6 +1,5 @@
 ---
 title: Programme
-subtitle: S1-Langages et programmation
 image: snake-312561_640.png
 ---
 

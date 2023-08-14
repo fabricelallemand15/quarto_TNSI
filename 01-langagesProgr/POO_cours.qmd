@@ -1,6 +1,5 @@
 ---
 title: Programmation orientée objets (Cours)
-subtitle: S1 - Langages et programmation
 lang: fr
 tbl-cap-location: bottom
 crossref: 
@@ -50,7 +49,7 @@ format:
 * Accéder aux méthodes et attributs d'une classe.
 :::
 
-Des [compléments sur la POO](POO_complements.md) sont proposés à la suite de ce cours.
+Des [compléments sur la POO](POO_complements.qmd) sont proposés à la suite de ce cours.
 
 ## Introduction
 
@@ -245,4 +244,4 @@ Pour en savoir un peu plus sur les diagrammes de classes, je vous conseille [ce 
 
 --------------------------------
 
-Des [compléments sur la POO](POO_complements.md) sont proposés à la suite de ce cours.
+Des [compléments sur la POO](POO_complements.qmd) sont proposés à la suite de ce cours.

@@ -1,6 +1,5 @@
 ---
 title: Méthode "Diviser pour régner"
-subtitle: S6-Algorithmique (1)
 ---
 
 ## 1. Le principe

@@ -1,6 +1,5 @@
 ---
 title: Algorithmes sur les arbres
-subtitle: S6-Algorithmique (1)
 ---
 
 ## 1. Calculer la taille et la hauteur d'un arbre binaire

@@ -1,6 +1,5 @@
 ---
 title: 2. Le langage SQL (Cours)
-subtitle: S3 - Bases de données
 lang: fr
 tbl-cap-location: bottom
 crossref: 

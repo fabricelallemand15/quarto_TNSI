@@ -1,6 +1,5 @@
 ---
 title: Programme
-subtitle: S3-Bases de données
 image: database-schema-1895779_640.png
 ---
 

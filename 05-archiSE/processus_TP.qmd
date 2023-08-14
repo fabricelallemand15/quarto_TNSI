@@ -1,6 +1,5 @@
 ---
 title: T.P. - Processus sous Linux
-subtitle: S5-Architectures matérielles, systèmes d'exploitation et réseaux
 ---
 
 Pour ce T.P., nous travaillons avec les vieilles machines sous Linux : elles doivent être respectées (vu leur grand âge) et accepter leur lenteur !
