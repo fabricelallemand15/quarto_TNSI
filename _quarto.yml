@@ -96,7 +96,6 @@ website:
           - 06-algo/diviser_pour_regner_exos.qmd
       - section: "Ch. 12 - Protocoles de routage"
         contents: 
-          - 07-reseaux/index.qmd
           - 07-reseaux/adressesIP.qmd
           - 07-reseaux/routage_cours.qmd
           - 07-reseaux/routage_exos.qmd
