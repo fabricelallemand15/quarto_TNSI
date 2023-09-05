@@ -902,7 +902,7 @@ Attention !
 <li><em>Hypothèse</em> : on suppose que, pour une certaine valeur de l’entier naturel non nul <span class="math inline">\(n\)</span>, <code>fact(n-1)</code> renvoie <span class="math inline">\((n-1)!\)</span>. Montrer que, sous cette hypothèse, <code>fac(n)</code> renvoie bien <span class="math inline">\(n!\)</span>.</li>
 <li><em>Conclusion</em> : en déduire que <code>fac(n)</code> renvoie <span class="math inline">\(n!\)</span> pour tout entier naturel <span class="math inline">\(n\)</span>.</li>
 </ul></li>
-<li><p>Pour évaluer la <strong>complexité</strong> de cet algorithme, nous allons compter le nombre de multiplications et de comparaisons effectuées. Démontrer, à l’aide d’un raisonnement pas récurrence, que la complexité de cet algorithme est en <span class="math inline">\(\mathcal{O}(n)\)</span>.</p></li>
+<li><p>Pour évaluer la <strong>complexité</strong> de cet algorithme, nous allons compter le nombre de multiplications et de comparaisons effectuées. Démontrer, à l’aide d’un raisonnement par récurrence, que la complexité de cet algorithme est en <span class="math inline">\(\mathcal{O}(n)\)</span>.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -916,7 +916,7 @@ Attention !
 <div class="callout-body-container callout-body">
 <ul>
 <li>Le principe de la preuve de terminaison.</li>
-<li>Le principe du raisonnement pas récurrence</li>
+<li>Le principe du raisonnement par récurrence</li>
 </ul>
 </div>
 </div>
@@ -1086,7 +1086,7 @@ Question bonus
 <p>Un exemple simple de fractale est le flocon de Von Koch, dont voici une représentation (pour un degré 4).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="koch.png" class="lightbox" title="Flocon de von Koch" data-gallery="quarto-lightbox-gallery-2"><img src="koch.png" class="img-fluid figure-img"></a></p>
+<p><a href="koch.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Flocon de von Koch"><img src="koch.png" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Flocon de von Koch</figcaption>
 </figure>
 </div>
@@ -1099,7 +1099,7 @@ Question bonus
 <p>Voici le résultat obtenu en une étape :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="koch_etape.png" class="lightbox" title="Étape de construction" data-gallery="quarto-lightbox-gallery-3"><img src="koch_etape.png" class="img-fluid figure-img"></a></p>
+<p><a href="koch_etape.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Étape de construction"><img src="koch_etape.png" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Étape de construction</figcaption>
 </figure>
 </div>
@@ -1664,7 +1664,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
 
 
 

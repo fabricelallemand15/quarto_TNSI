@@ -332,10 +332,12 @@
     "quiz.html": "ed3d870e"
   },
   "01-langagesProgr/recursivite_cours.qmd": {
-    "recursivite_cours.html": "ff5d52d6"
+    "recursivite_cours.html": "ff5d52d6",
+    "recursivite_cours.docx": "fa161ebe"
   },
   "01-langagesProgr/recursivite_exercices.qmd": {
-    "recursivite_exercices.html": "c4839d87"
+    "recursivite_exercices.html": "c4839d87",
+    "recursivite_exercices.docx": "537d4364"
   },
   "01-langagesProgr/TPHanoi.qmd": {
     "TPHanoi.html": "ae4a8ab6"

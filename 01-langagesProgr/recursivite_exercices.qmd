@@ -75,12 +75,12 @@ On rappelle l'exemple du premier paragraphe du cours concernant le calcul de la 
     * *Hypothèse* : on suppose que, pour une certaine valeur de l'entier naturel non nul $n$, `fact(n-1)` renvoie $(n-1)!$. Montrer que, sous cette hypothèse, `fac(n)` renvoie bien $n!$.
     * *Conclusion* : en déduire que `fac(n)` renvoie $n!$ pour tout entier naturel $n$.
 
-4. Pour évaluer la **complexité** de cet algorithme, nous allons compter le nombre de multiplications et de comparaisons effectuées. Démontrer, à l'aide d'un raisonnement pas récurrence, que la complexité de cet algorithme est en $\mathcal{O}(n)$.
+4. Pour évaluer la **complexité** de cet algorithme, nous allons compter le nombre de multiplications et de comparaisons effectuées. Démontrer, à l'aide d'un raisonnement par récurrence, que la complexité de cet algorithme est en $\mathcal{O}(n)$.
 
 ::: {.callout-note}
 ## À retenir ...
 * Le principe de la preuve de terminaison.
-* Le principe du raisonnement pas récurrence
+* Le principe du raisonnement par récurrence
 :::
 
 
