@@ -867,7 +867,9 @@ cookieconsent.run({
 <section id="exercice-1-listes" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-1-listes"><i class="fa-solid fa-desktop" aria-label="desktop"></i> Exercice 1 (listes)</h2>
 <p>On reprend l’implémentation des listes avec des tuples présentée dans le cours.</p>
-<p>Prévoir l’effet et l’affichage en console des instructions suivantes, puis vérifier en exécutant ces instructions dans la console interactive après avoir créé et importé un fichier contenant le code du cours :</p>
+<ol type="1">
+<li>Prévoir l’effet et l’affichage en console des instructions suivantes, puis vérifier en exécutant ces instructions dans la console interactive après avoir créé et importé un fichier contenant le code du cours :</li>
+</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> L <span class="op">=</span> creer()</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> est_vide(L)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> L <span class="op">=</span> ajouter(<span class="dv">5</span>, ajouter(<span class="dv">4</span>, ajouter(<span class="dv">3</span>, ajouter(<span class="dv">2</span>, ajouter(<span class="dv">1</span>, ajouter(<span class="dv">0</span>,()))))))</span>
@@ -878,20 +880,27 @@ cookieconsent.run({
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> tete(L)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> queue(L)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> longueur(queue(L))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Créer un fichier nommé <code>listes_tuples.py</code> contenant le code du cours implémentant les listes avec des tuples. Dans un autre fichier, situé dans le même dossier, importer le module <code>listes_tuples</code> et tester les instructions de la question précédente.</li>
+<li>Ajouter dans le module <code>listes_tuples</code> une fonction <code>afficher(L)</code> qui affiche le contenu de la liste <code>L</code> sous la forme d’une chaîne de caractères. Par exemple, l’instruction <code>afficher(L)</code> doit afficher <code>5 -&gt; 4 -&gt; 3 -&gt; 2 -&gt; 1 -&gt; 0</code>.</li>
+</ol>
 </section>
 <section id="exercice-2-listes" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-2-listes"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 2 (listes)</h2>
-<p>Soit la suite d’instructions suivantes :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> creer()</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> ajouter(<span class="dv">2</span>, ajouter(<span class="dv">15</span>, ajouter (<span class="dv">23</span>, L)))</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>L1 <span class="op">=</span> queue(L)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> tete(L1)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>L1 <span class="op">=</span> ajouter(<span class="dv">4</span>, ajouter(<span class="dv">3</span>, L1))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Soit la suite d’instructions suivantes utilisant l’implémentation des listes avec des tuples:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> listes_tuples <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> creer()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> ajouter(<span class="dv">2</span>, ajouter(<span class="dv">15</span>, ajouter (<span class="dv">23</span>, L)))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>L1 <span class="op">=</span> queue(L)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> tete(L1)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>L1 <span class="op">=</span> ajouter(<span class="dv">4</span>, ajouter(<span class="dv">3</span>, L1))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Donnez le contenu des listes <code>L</code> et <code>L1</code> et la valeur de <code>a</code>.</p>
 </section>
 <section id="exercice-3-piles" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-3-piles"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 3 (piles)</h2>
-<p>Soit une pile P initialement vide. Soit les instructions suivantes (implémentation des piles avec des listes Python) :</p>
+<p>On suppose que l’on dispose d’un module <code>piles_listes.py</code> contenant l’implémentation des piles avec des listes Python vue dans le cours. On suppose également que l’on a importé ce module dans la console interactive.</p>
+<p>Soit une pile P initialement vide. Soit les instructions suivantes :</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> empiler(P,<span class="dv">4</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> empiler(P,<span class="dv">7</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> depiler(P)</span>
@@ -901,10 +910,12 @@ cookieconsent.run({
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> empiler(P,<span class="dv">2</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> d <span class="op">=</span> taille(P)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Donnez le contenu de la pile <code>P</code>, la valeur de <code>a</code>, la valeur de <code>b</code>, la valeur de <code>c</code> et la valeur de <code>d</code>.</p>
+<p><em>Expérimenter ensuite ces commandes dans la console Python</em>.</p>
 </section>
 <section id="exercice-4-piles" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-4-piles"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 4 (piles)</h2>
-<p>Soit le programme Python suivant (on utilise l’implémentation des piles en POO) :</p>
+<p>On suppose que l’on dispose d’un module <code>piles_POO.py</code> contenant l’implémentation des piles en POO vue dans le cours (classe <code>Pile</code>). On suppose également que l’on a importé ce module dans la console interactive.</p>
+<p>Soit le programme Python suivant :</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pile <span class="op">=</span> Pile()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> [<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> tab:</span>
@@ -917,6 +928,7 @@ cookieconsent.run({
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> k <span class="op">&gt;</span> <span class="dv">5</span>:</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        pile.depiler()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Donnez l’état de la pile <code>pile</code> après l’exécution de ce programme.</p>
+<p><em>Expérimenter ensuite ces commandes dans la console Python</em>.</p>
 </section>
 <section id="exercice-5-piles" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-5-piles"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> <i class="fa-solid fa-desktop" aria-label="desktop"></i> Exercice 5 (piles)</h2>
@@ -942,6 +954,7 @@ cookieconsent.run({
 </section>
 <section id="exercice-6-files" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-6-files"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 6 (files)</h2>
+<p>On suppose que l’on dispose d’un module <code>files_deux_piles.py</code> contenant l’implémentation des files avec deux piles vue dans le cours. On suppose également que l’on a importé ce module dans la console interactive.</p>
 <p>Soit une file F initialement vide. Soit les instructions suivantes :</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>enfiler(F,<span class="dv">6</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>enfiler(F,<span class="dv">3</span>)</span>
@@ -953,9 +966,11 @@ cookieconsent.run({
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>enfiler(F,<span class="dv">2</span>)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> taille_file(F)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Donnez le contenu de la file <code>F</code>, la valeur de <code>a</code>, la valeur de <code>b</code>, la valeur de <code>c</code> et la valeur de <code>d</code>.</p>
+<p><em>Expérimenter ensuite ces commandes dans la console Python</em>.</p>
 </section>
 <section id="exercice-7-files" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-7-files"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 7 (files)</h2>
+<p>On suppose que l’on dispose d’un module <code>files_POO.py</code> contenant l’implémentation des files en POO vue dans le cours (classe <code>File</code>). On suppose également que l’on a importé ce module dans la console interactive.</p>
 <p>Soit le programme Python suivant :</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> File()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tab <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">78</span>,<span class="dv">6</span>,<span class="dv">89</span>,<span class="dv">3</span>,<span class="dv">17</span>]</span>
@@ -967,6 +982,7 @@ cookieconsent.run({
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">50</span>:</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span>.defiler()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Donnez l’état de la file <code>file</code> après l’exécution de ce programme</p>
+<p><em>Expérimenter ensuite ces commandes dans la console Python</em>.</p>
 </section>
 <section id="exercices-tombés-au-bac" class="level2">
 <h2 class="anchored" data-anchor-id="exercices-tombés-au-bac"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercices tombés au bac</h2>

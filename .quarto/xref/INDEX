@@ -314,19 +314,24 @@
     "index.html": "060ec745"
   },
   "01-langagesProgr/paradigmes_cours.qmd": {
-    "paradigmes_cours.html": "14d4d294"
+    "paradigmes_cours.html": "14d4d294",
+    "paradigmes_cours.docx": "cc91d6bd"
   },
   "01-langagesProgr/paradigmes_exercices.qmd": {
-    "paradigmes_exercices.html": "2a07bea0"
+    "paradigmes_exercices.html": "2a07bea0",
+    "paradigmes_exercices.docx": "c12831f8"
   },
   "01-langagesProgr/POO_complements.qmd": {
-    "POO_complements.html": "67fba78f"
+    "POO_complements.html": "67fba78f",
+    "POO_complements.docx": "4776fade"
   },
   "01-langagesProgr/POO_cours.qmd": {
-    "POO_cours.html": "31fd2e09"
+    "POO_cours.html": "31fd2e09",
+    "POO_cours.docx": "8e05cc19"
   },
   "01-langagesProgr/POO_exercices.qmd": {
-    "POO_exercices.html": "6af4eaec"
+    "POO_exercices.html": "6af4eaec",
+    "POO_exercices.docx": "1508e18a"
   },
   "01-langagesProgr/quiz.qmd": {
     "quiz.html": "ed3d870e"

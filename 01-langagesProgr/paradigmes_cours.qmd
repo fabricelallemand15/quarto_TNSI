@@ -233,13 +233,13 @@ Un objet possède:
 * des données: ses **attributs** et
 * des fonctions: ses **méthodes**
 
-Les différents principes de la conception orientée objet aident à la réutilisation du code, au masquage des données, etc. Les bases de la POO sont détaillées dans le [cours précédent](POO_cours.qmd), avec ses [compléments](POO_complements.qmd).
+Les différents principes de la conception orientée objet aident à la réutilisation du code, au masquage des données, etc. Les bases de la POO sont détaillées dans le [cours suivant](POO_cours.qmd), avec ses [compléments](POO_complements.qmd).
 
 ## À quel paradigme se vouer ?
 
 Comment choisir entre les différents paradigmes existants ?
 
-Il est important de bien comprendre qu'un programmeur doit maitriser plusieurs paradigmes de programmation (impératif, objet ou encore fonctionnelle). En effet, il sera plus facile d'utiliser le paradigme objet dans certains cas alors que dans d'autres situations, l'utilisation du paradigme fonctionnel sera préférable. Être capable de choisir le "bon" paradigme en fonction des situations fait partie du bagage de tout bon programmeur.
+Il est important de bien comprendre qu'un programmeur doit maîtriser plusieurs paradigmes de programmation (impératif, objet ou encore fonctionnelle). En effet, il sera plus facile d'utiliser le paradigme objet dans certains cas alors que dans d'autres situations, l'utilisation du paradigme fonctionnel sera préférable. Être capable de choisir le "bon" paradigme en fonction des situations fait partie du bagage de tout bon programmeur.
 
 Il est aussi important de bien comprendre que la frontière entre ces différents paradigmes est parfois floue, par exemple on utilise très souvent de l'impératif en programmation orientée objet.
 

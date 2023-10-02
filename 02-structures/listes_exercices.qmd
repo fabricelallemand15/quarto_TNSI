@@ -49,7 +49,7 @@ _Les exercices précédés du symbole {{< fa solid pencil-alt >}} doivent être 
 
 On reprend l'implémentation des listes avec des tuples présentée dans le cours.
 
-Prévoir l'effet et l'affichage en console des instructions suivantes, puis vérifier en exécutant ces instructions dans la console interactive après avoir créé et importé un fichier contenant le code du cours :
+1. Prévoir l'effet et l'affichage en console des instructions suivantes, puis vérifier en exécutant ces instructions dans la console interactive après avoir créé et importé un fichier contenant le code du cours :
 
 ````python
 >>> L = creer()
@@ -64,11 +64,16 @@ Prévoir l'effet et l'affichage en console des instructions suivantes, puis vér
 >>> longueur(queue(L))
 ````
 
+2. Créer un fichier nommé `listes_tuples.py` contenant le code du cours implémentant les listes avec des tuples. Dans un autre fichier, situé dans le même dossier, importer le module `listes_tuples` et tester les instructions de la question précédente.
+3. Ajouter dans le module `listes_tuples` une fonction `afficher(L)` qui affiche le contenu de la liste `L` sous la forme d'une chaîne de caractères. Par exemple, l'instruction `afficher(L)` doit afficher `5 -> 4 -> 3 -> 2 -> 1 -> 0`.
+
 ## {{< fa solid pencil-alt >}} Exercice 2 (listes)
 
-Soit la suite d'instructions suivantes :
+Soit la suite d'instructions suivantes utilisant l'implémentation des listes avec des tuples:
 
 ````python
+from listes_tuples import *
+
 L = creer()
 L = ajouter(2, ajouter(15, ajouter (23, L)))
 L1 = queue(L)
@@ -80,7 +85,9 @@ Donnez le contenu des listes ``L`` et ``L1`` et la valeur de ``a``.
 
 ## {{< fa solid pencil-alt >}} Exercice 3 (piles)
 
-Soit une pile P initialement vide. Soit les instructions suivantes (implémentation des piles avec des listes Python) :
+On suppose que l'on dispose d'un module `piles_listes.py` contenant l'implémentation des piles avec des listes Python vue dans le cours. On suppose également que l'on a importé ce module dans la console interactive.
+
+Soit une pile P initialement vide. Soit les instructions suivantes :
 
 ````python
 >>> empiler(P,4)
@@ -95,9 +102,13 @@ Soit une pile P initialement vide. Soit les instructions suivantes (implémentat
 
 Donnez le contenu de la pile ``P``, la valeur de ``a``, la valeur de ``b``, la valeur de ``c`` et la valeur de ``d``.
 
+*Expérimenter ensuite ces commandes dans la console Python*.
+
 ## {{< fa solid pencil-alt >}} Exercice 4 (piles)
 
-Soit le programme Python suivant (on utilise l'implémentation des piles en POO) :
+On suppose que l'on dispose d'un module `piles_POO.py` contenant l'implémentation des piles en POO vue dans le cours (classe `Pile`). On suppose également que l'on a importé ce module dans la console interactive.
+
+Soit le programme Python suivant :
 
 ````python
 pile = Pile()
@@ -114,6 +125,8 @@ for k in tab:
 ````
 
 Donnez l'état de la pile `pile` après l'exécution de ce programme.
+
+*Expérimenter ensuite ces commandes dans la console Python*.
 
 ## {{< fa solid pencil-alt >}} {{< fa desktop >}} Exercice 5 (piles)
 
@@ -139,6 +152,8 @@ on retourne faux )
 
 ## {{< fa solid pencil-alt >}} Exercice 6 (files)
 
+On suppose que l'on dispose d'un module `files_deux_piles.py` contenant l'implémentation des files avec deux piles vue dans le cours. On suppose également que l'on a importé ce module dans la console interactive.
+
 Soit une file F initialement vide. Soit les instructions suivantes :
 
 ````python
@@ -155,7 +170,11 @@ d = taille_file(F)
 
 Donnez le contenu de la file ``F``, la valeur de ``a``, la valeur de ``b``, la valeur de ``c`` et la valeur de ``d``.
 
+*Expérimenter ensuite ces commandes dans la console Python*.
+
 ## {{< fa solid pencil-alt >}} Exercice 7 (files)
+
+On suppose que l'on dispose d'un module `files_POO.py` contenant l'implémentation des files en POO vue dans le cours (classe `File`). On suppose également que l'on a importé ce module dans la console interactive.
 
 Soit le programme Python suivant :
 
@@ -172,6 +191,8 @@ for i in tab:
 ````
 
 Donnez l'état de la file `file` après l'exécution de ce programme
+
+*Expérimenter ensuite ces commandes dans la console Python*.
 
 ## {{< fa solid pencil-alt >}} Exercices tombés au bac
 
