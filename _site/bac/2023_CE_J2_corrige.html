@@ -367,12 +367,6 @@ cookieconsent.run({
  <span class="menu-text">Projet - Détecteur de langue</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../02-structures/bilan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bilan de la séquence - Structures de données abstraites</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -1125,9 +1119,9 @@ cookieconsent.run({
 <li><p>Pour obtenir un arbre binaire de hauteur minimale, on range les mots dans l’ordre alphabétique et on place le mot du milieu à la racine. On répète l’opération sur les deux sous-arbres de gauche et de droite.</p>
 <p>Liste dans l’ordre alphabétique : <code>['chameau', 'gnou', 'pingouin', 'python', 'renard']</code>.</p>
 <p>On obtient l’arbre :</p>
-<a href="2023_CE_J2_fig1.png" class="lightbox" title="Arbre binaire de hauteur minimale" data-gallery="quarto-lightbox-gallery-1"><img src="2023_CE_J2_fig1.png" class="img-fluid" alt="Arbre binaire de hauteur minimale"></a></li>
+<a href="2023_CE_J2_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig1.png" class="img-fluid" alt="Arbre binaire de hauteur minimale"></a></li>
 <li><p>Pour obtenir un arbre de hauteur maximale, on peut placer à la racine le premier mot de la liste classée dans l’ordre alphabétique, puis placer le mot suivant en sous-arbre droit et chaque mot suivant en sous-arbre droit du précédent. On obtient un arbre filiforme.</p>
-<a href="2023_CE_J2_fig2.png" class="lightbox" title="Arbre binaire de hauteur minimale" data-gallery="quarto-lightbox-gallery-2"><img src="2023_CE_J2_fig2.png" class="img-fluid" alt="Arbre binaire de hauteur minimale"></a></li>
+<a href="2023_CE_J2_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig2.png" class="img-fluid" alt="Arbre binaire de hauteur minimale"></a></li>
 </ol></li>
 <li><ol type="a">
 <li><p><code>mystere(abr_mots_francais)</code> retourne 336 531. Cette fonction calcule en effet de façon récursive le nombre d’éléments de l’arbre binaire donné en paramètre, égal à un (on compte la racine, si l’arbre n’est pas vide) plus le nombre d’éléments de l’arbre binaire de gauche plus le nombre d’éléments de l’arbre binaire de droite.</p></li>
@@ -1666,7 +1660,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
 
 
 

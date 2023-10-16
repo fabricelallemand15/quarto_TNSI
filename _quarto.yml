@@ -56,7 +56,7 @@ website:
           - 02-structures/dictionnaires_exercices.qmd
           - 02-structures/TPDictionnaire.qmd
           - 02-structures/projet_detecteur_langue.qmd
-          - 02-structures/bilan.qmd
+          # - 02-structures/bilan.qmd
       - section: "Ch. 6 - Modèle relationnel - Bases de données - SGBD"
         contents: 
           - 03-BDD/index.qmd
