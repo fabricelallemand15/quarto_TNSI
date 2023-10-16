@@ -44,8 +44,6 @@ format:
 
 # T.P. Dictionnaires
 
-Ce T. P. prend la forme d'un notebook Jupyter à compléter.
+Ce T. P. prend la forme d'un notebook Jupyter à compléter dans Capytale.
 
-Télécharger la notebook en cliquant sur le bouton ci-dessous et l'ouvrir dans VSCode pour le compléter.
-
-[Notebook](TPDictionnaires.ipynb){target=_blank}
+[Notebook dans Capytale](https://capytale2.ac-paris.fr/web/c/cf79-2079461){target=_blank}
