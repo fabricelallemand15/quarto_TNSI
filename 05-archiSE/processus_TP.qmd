@@ -2,14 +2,12 @@
 title: T.P. - Processus sous Linux
 ---
 
-Pour ce T.P., nous travaillons avec les vieilles machines sous Linux : elles doivent être respectées (vu leur grand âge) et accepter leur lenteur !
-
 ![linux](linux-154544_640.png){width=30%}
 
-1. Ouvrir l'émulateur de terminal pour travailler en ligne de commandes.
+1. Ouvrir un terminal pour travailler en ligne de commandes.
 2. Au lancement du système, il n'existe qu'un seul processus (init), 
     qui est l'ancêtre de tous les autres. On peut voir l'arborescence
-    avec la commande « ***pstree »***.
+    avec la commande « **pstree** ».
 
     Quel processus est à la racine de l'arbre affiché ?
 
@@ -81,7 +79,7 @@ Pour ce T.P., nous travaillons avec les vieilles machines sous Linux : elles doi
 
         4.8. Taper Ctrl Z pour arrêter.
 
-        Pour en savoir plus sur la commande top, consultez la page : http://debian-facile.org/doc:systeme:top
+        Pour en savoir plus sur la commande top, consultez la page : [http://debian-facile.org/doc:systeme:top](http://debian-facile.org/doc:systeme:top){target="_blank"}.
 
 5. Ouvrir le navigateur Firefox et chercher avec le moteur de recherche
     proposé par le navigateur la signification du mot **daemon** pour
@@ -99,7 +97,7 @@ Pour ce T.P., nous travaillons avec les vieilles machines sous Linux : elles doi
     Fermer Firefox, et retaper la commande dans le terminal, que
     remarque-t-on ?
 
-    Réouvrir le navigateur, puis noter à quel processus il correspond dans
+    Rouvrir le navigateur, puis noter à quel processus il correspond dans
     la table du terminal.
 
     Dans le terminal, utiliser la commande **kill** qui permet
@@ -130,5 +128,3 @@ Pour ce T.P., nous travaillons avec les vieilles machines sous Linux : elles doi
     sous répertoires de « /proc ». On peut ainsi explorer le contenu de
     ces fichiers pour avoir plus d'informations sur un processus en
     particulier.    
-    Observer les résultats sur les vieux ordinateurs du lycée et proposer une raison pour laquelle les ordinateurs utilisés sont considérés comme obsolètes et les logiciels ne sont plus mis à jour pour ce type d'appareil ?
-

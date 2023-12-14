@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.274">
+<meta name="generator" content="quarto-1.4.523">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,23 +46,24 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Pas de résultats",
     "search-matching-documents-text": "documents trouvés",
@@ -71,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "correspondance de plus dans ce document",
     "search-more-matches-text": "correspondances de plus dans ce document",
     "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Annuler",
     "search-submit-button-title": "Envoyer",
     "search-label": "Recherche"
@@ -103,7 +105,7 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
@@ -117,20 +119,20 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+    <a class="nav-link" href="https://python.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+    <a class="nav-link" href="https://notebook.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../ressources.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+    <a class="nav-link" href="../ressources.html"> 
+<span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -141,11 +143,11 @@ cookieconsent.run({
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../05-archiSE/index.html">Ch. 9 - Processus</a></li><li class="breadcrumb-item"><a href="../05-archiSE/processus_TP.html">T.P. - Processus sous Linux</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -153,7 +155,7 @@ cookieconsent.run({
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -786,7 +788,7 @@ cookieconsent.run({
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -812,16 +814,16 @@ cookieconsent.run({
 
 </header>
 
-<p>Pour ce T.P., nous travaillons avec les vieilles machines sous Linux : elles doivent être respectées (vu leur grand âge) et accepter leur lenteur !</p>
+
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="linux-154544_640.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="linux"><img src="linux-154544_640.png" class="img-fluid figure-img" style="width:30.0%"></a></p>
-<figcaption class="figure-caption">linux</figcaption>
+<p><a href="linux-154544_640.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-description="" title="linux"><img src="linux-154544_640.png" class="img-fluid figure-img" style="width:30.0%" alt="linux"></a></p>
+<figcaption>linux</figcaption>
 </figure>
 </div>
 <ol type="1">
-<li><p>Ouvrir l’émulateur de terminal pour travailler en ligne de commandes.</p></li>
-<li><p>Au lancement du système, il n’existe qu’un seul processus (init), qui est l’ancêtre de tous les autres. On peut voir l’arborescence avec la commande « <strong><em>pstree »</em></strong>.</p>
+<li><p>Ouvrir un terminal pour travailler en ligne de commandes.</p></li>
+<li><p>Au lancement du système, il n’existe qu’un seul processus (init), qui est l’ancêtre de tous les autres. On peut voir l’arborescence avec la commande « <strong>pstree</strong> ».</p>
 <p>Quel processus est à la racine de l’arbre affiché ?</p>
 <p>Reconnaître et noter les noms de quelques processus liés aux entrées/sorties,</p></li>
 <li><p>Créer un fichier <code>TPlinuxTNSI.odt</code> avec le traitement de texte LibreOffice Writer.</p>
@@ -833,8 +835,8 @@ cookieconsent.run({
 <p>S’affichent plusieurs informations sur les processus en cours sur votre ordinateur du type :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="processus_tp1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="pas -aef"><img src="processus_tp1.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">pas -aef</figcaption>
+<p><a href="processus_tp1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-description="" title="pas -aef"><img src="processus_tp1.png" class="img-fluid figure-img" alt="pas -aef"></a></p>
+<figcaption>pas -aef</figcaption>
 </figure>
 </div>
 <ul>
@@ -855,11 +857,7 @@ cookieconsent.run({
 <p>4.6. Recopier la ligne du tableau dont le PID est 1 et reconnaître le processus init.</p>
 <p>La commande ps ne permet pas de suivre en temps réel les processus (affichage figé). Pour avoir un suivi en temps réel, on peut utiliser la commande <code>top</code>.</p></li>
 <li><p><strong>La commande top</strong> donne beaucoup de détails, en temps réel, sur les processus qui tournent sur une machine :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="processus_top.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="processus_top.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="processus_top.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="processus_top.png" class="img-fluid"></a></p>
 <ul>
 <li><strong>PID</strong> : numéro du processus</li>
 <li><strong>UTIL ou USER</strong> nom de l’utilisateur qui a lancé le processus</li>
@@ -883,17 +881,22 @@ cookieconsent.run({
 </ul>
 <p>4.7. Analyser en quelques lignes ce qu’on observe à l’écran.</p>
 <p>4.8. Taper Ctrl Z pour arrêter.</p>
-<p>Pour en savoir plus sur la commande top, consultez la page : http://debian-facile.org/doc:systeme:top</p></li>
+<p>Pour en savoir plus sur la commande top, consultez la page : <a href="http://debian-facile.org/doc:systeme:top" target="_blank">http://debian-facile.org/doc:systeme:top</a>.</p></li>
 </ul></li>
 <li><p>Ouvrir le navigateur Firefox et chercher avec le moteur de recherche proposé par le navigateur la signification du mot <strong>daemon</strong> pour Linux. On privilégiera Wikipédia.</p>
 <p>De même chercher sur Wikipédia la signification de <strong>processus zombie</strong> et de <strong>processus swappé sur disque</strong>. Donner des éléments de définition pour ces trois mots ou expressions.</p>
 <p>Dans le terminal, taper la commande <code>ps -aef</code> pour visualiser les processus liés à Firefox.</p>
 <p>Comment est le sous arbre (suivre la trace des <code>PID</code> et <code>PPID</code> jusqu’à <code>init</code>) ? Le construire ci-dessous en notant les <code>PID</code>.</p>
 <p>Fermer Firefox, et retaper la commande dans le terminal, que remarque-t-on ?</p>
-<p>Réouvrir le navigateur, puis noter à quel processus il correspond dans la table du terminal.</p>
+<p>Rouvrir le navigateur, puis noter à quel processus il correspond dans la table du terminal.</p>
 <p>Dans le terminal, utiliser la commande <strong>kill</strong> qui permet d’arrêter le processus (kill suivi du numéro de PID) pour tuer ce processus.</p>
 <p>Que remarque-t-on ?</p>
-<a href="zombies-1296507_640.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="zombie"><img src="zombies-1296507_640.png" class="img-fluid" style="width:20.0%" alt="zombie"></a></li>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="zombies-1296507_640.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-description="" title="zombie"><img src="zombies-1296507_640.png" class="img-fluid figure-img" style="width:20.0%" alt="zombie"></a></p>
+<figcaption>zombie</figcaption>
+</figure>
+</div></li>
 <li><p>Pour lancer un processus en tâche de fond (en arrière-plan), on peut faire suivre la commande du symbole <strong>&amp;</strong>. Cela ordonne au processus parent de “reprendre la main”, sans attendre la fin du processus “fils”</p>
 <p><strong>Exemple</strong></p>
 <ul>
@@ -903,9 +906,13 @@ cookieconsent.run({
 </ul>
 <p><strong>Remarque</strong> : <em>En utilisant <code>pkill</code>, il suffit de mettre le nom du processus au lieu de son PID.</em></p></li>
 <li><p><strong>La commande cat /proc/cpuinfo</strong> permet d’avoir des informations détaillées sur le processeur.</p>
-<a href="processus_cpuinfo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="cpuinfo"><img src="processus_cpuinfo.png" class="img-fluid" alt="cpuinfo"></a>
-<p>Sous Linux, les détails sur chacun des processus sont stockés dans les sous répertoires de « /proc ». On peut ainsi explorer le contenu de ces fichiers pour avoir plus d’informations sur un processus en particulier.<br>
-Observer les résultats sur les vieux ordinateurs du lycée et proposer une raison pour laquelle les ordinateurs utilisés sont considérés comme obsolètes et les logiciels ne sont plus mis à jour pour ce type d’appareil ?</p></li>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="processus_cpuinfo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-description="" title="cpuinfo"><img src="processus_cpuinfo.png" class="img-fluid figure-img" alt="cpuinfo"></a></p>
+<figcaption>cpuinfo</figcaption>
+</figure>
+</div>
+<p>Sous Linux, les détails sur chacun des processus sont stockés dans les sous répertoires de « /proc ». On peut ainsi explorer le contenu de ces fichiers pour avoir plus d’informations sur un processus en particulier.</p></li>
 </ol>
 
 
@@ -1134,6 +1141,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1183,15 +1205,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -1200,6 +1252,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -1242,6 +1295,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -1313,6 +1389,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1370,30 +1472,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../05-archiSE/processus_cours.html" class="pagination-link">
+      <a href="../05-archiSE/processus_cours.html" class="pagination-link  aria-label=" processus="" :="" cours"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Processus : cours</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../05-archiSE/processus_exos.html" class="pagination-link">
+      <a href="../05-archiSE/processus_exos.html" class="pagination-link" aria-label="Exercices type bac - Processus">
         <span class="nav-page-text">Exercices type bac - Processus</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1430,7 +1518,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});</script>
 
 
 
