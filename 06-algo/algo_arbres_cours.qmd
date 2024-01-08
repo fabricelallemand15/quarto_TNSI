@@ -395,7 +395,7 @@ Nous avons déjà utilisé cette structure de données dans la séquence 4 sur l
 Voici en pseudo-code l'algorithme utilisé par cette méthode. L'insertion d'une clef va se faire au niveau d'une feuille, donc au bas de l'arbre. Il n'est pourtant pas nécessaire de descendre manuellement dans l'arbre jusqu'au bon endroit car nous exploitons la structure à la fois récursive et ordonnée d'un ABR : il suffit de distinguer dans lequel des deux sous-arbres gauche et droit doit se trouver la future clef, et d'appeler récursivement la fonction d'insertion dans le sous-arbre en question.
 
 ::: {.callout-warning}
-## Algorithme de parcours en largeur en pseudo-code
+## Algorithme d'insertion d'une clef dans un ABR en pseudo-code
 
 <div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
 **fonction** insere(*arbre* : ABR, *valeur*)<br>

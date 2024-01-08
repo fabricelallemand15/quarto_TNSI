@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.274">
+<meta name="generator" content="quarto-1.4.523">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -80,23 +80,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Pas de résultats",
     "search-matching-documents-text": "documents trouvés",
@@ -105,6 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "correspondance de plus dans ce document",
     "search-more-matches-text": "correspondances de plus dans ce document",
     "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Annuler",
     "search-submit-button-title": "Envoyer",
     "search-label": "Recherche"
@@ -139,7 +141,7 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
@@ -153,20 +155,20 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+    <a class="nav-link" href="https://python.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+    <a class="nav-link" href="https://notebook.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../ressources.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+    <a class="nav-link" href="../ressources.html"> 
+<span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -177,11 +179,11 @@ cookieconsent.run({
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-algo/index.html">Ch. 10 - Algorithmes sur les arbres binaires</a></li><li class="breadcrumb-item"><a href="../06-algo/algo_arbres_cours.html">Algorithmes sur les arbres</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -189,7 +191,7 @@ cookieconsent.run({
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -822,7 +824,7 @@ cookieconsent.run({
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -866,6 +868,7 @@ cookieconsent.run({
 
 
 </header>
+
 
 <section id="calculer-la-taille-et-la-hauteur-dun-arbre-binaire" class="level2">
 <h2 class="anchored" data-anchor-id="calculer-la-taille-et-la-hauteur-dun-arbre-binaire">1. Calculer la taille et la hauteur d’un arbre binaire</h2>
@@ -947,8 +950,8 @@ Exemple
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="prefixe.png" class="lightbox" title="Ordre préfixe" data-gallery="quarto-lightbox-gallery-1"><img src="prefixe.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Ordre préfixe</figcaption>
+<p><a href="prefixe.png" class="lightbox" data-description="" data-gallery="quarto-lightbox-gallery-1" title="Ordre préfixe"><img src="prefixe.png" class="img-fluid figure-img" alt="Ordre préfixe"></a></p>
+<figcaption>Ordre préfixe</figcaption>
 </figure>
 </div>
 <p>Ordre de parcours des sommets : C-Z-U-R-G-Q-H.</p>
@@ -1046,8 +1049,8 @@ Exemple
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="infixe.drawio.png" class="lightbox" title="Ordre infixe" data-gallery="quarto-lightbox-gallery-2"><img src="infixe.drawio.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Ordre infixe</figcaption>
+<p><a href="infixe.drawio.png" class="lightbox" data-description="" data-gallery="quarto-lightbox-gallery-2" title="Ordre infixe"><img src="infixe.drawio.png" class="img-fluid figure-img" alt="Ordre infixe"></a></p>
+<figcaption>Ordre infixe</figcaption>
 </figure>
 </div>
 <p>Ordre de parcours des sommets : U-Z-R-G-C-H-Q.</p>
@@ -1147,8 +1150,8 @@ Exemple
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="suffixe.drawio.png" class="lightbox" title="Ordre suffixe" data-gallery="quarto-lightbox-gallery-3"><img src="suffixe.drawio.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Ordre suffixe</figcaption>
+<p><a href="suffixe.drawio.png" class="lightbox" data-description="" data-gallery="quarto-lightbox-gallery-3" title="Ordre suffixe"><img src="suffixe.drawio.png" class="img-fluid figure-img" alt="Ordre suffixe"></a></p>
+<figcaption>Ordre suffixe</figcaption>
 </figure>
 </div>
 <p>Ordre de parcours des sommets : U-G-R-Z-H-Q-C.</p>
@@ -1180,11 +1183,7 @@ Exercice
 </div>
 <div class="callout-body-container callout-body">
 <p>Voici deux arbres binaires. Pour chacun d’entre eux, indiquer l’ordre de parcours des sommets pour chacun de types de parcours en profondeur définis ci-dessus.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="arbre_parcours_exos.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="arbre_parcours_exos.drawio.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="arbre_parcours_exos.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="arbre_parcours_exos.drawio.png" class="img-fluid"></a></p>
 </div>
 </div>
 <p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
@@ -1260,8 +1259,8 @@ Exemple
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="largeur.drawio.png" class="lightbox" title="Parcours en largeur" data-gallery="quarto-lightbox-gallery-5"><img src="largeur.drawio.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Parcours en largeur</figcaption>
+<p><a href="largeur.drawio.png" class="lightbox" data-description="" data-gallery="quarto-lightbox-gallery-5" title="Parcours en largeur"><img src="largeur.drawio.png" class="img-fluid figure-img" alt="Parcours en largeur"></a></p>
+<figcaption>Parcours en largeur</figcaption>
 </figure>
 </div>
 <p>Ordre de parcours des sommets : C-Z-Q-U-R-H-G.</p>
@@ -1312,7 +1311,7 @@ Algorithme de parcours en largeur en pseudo-code
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithme de parcours en largeur en pseudo-code
+Algorithme d’insertion d’une clef dans un ABR en pseudo-code
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1332,11 +1331,7 @@ Exercice
 </div>
 <div class="callout-body-container callout-body">
 <p>On considère l’ABR représenté ci-dessous. Dérouler à la main l’exécution de l’algorithme ci-dessus pour insérer la valeur 3 dans cet arbre, puis la valeur 11.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="ABR_algo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="ABR_algo.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="ABR_algo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="ABR_algo.png" class="img-fluid"></a></p>
 </div>
 </div>
 </section>
@@ -1359,11 +1354,7 @@ Exercice
 <p>Cette fonction exploite à la fois la structure récursive et la structure ordonnée d’un ABR afin de n’effectuer qu’<strong>un appel récursif</strong> à chaque passage.</p>
 <p><strong>Déterminons une évaluation de sa complexité temporelle</strong>, dans le pire des cas, <strong>dans le cas particulier d’un arbre équilibré</strong>.</p>
 <p>On note <span class="math inline">\(n\)</span> la taille de l’arbre, c’est-à-dire son nombre de noeuds. Au départ, nous avons donc <span class="math inline">\(n\)</span> noeuds à explorer. Après chaque examen d’un noeud, le nombre de noeuds restant à explorer est divisé par 2.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="rechercheABR.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="rechercheABR.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="rechercheABR.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="rechercheABR.png" class="img-fluid"></a></p>
 <p>Dans le <strong>pire des cas</strong>, il faudra parcourir tous les étages de l’arbre pour trouver la clef (qui est alors une feuille) ou pour constater qu’elle n’est pas dans l’arbre. On va donc parcourir au total <span class="math inline">\(h\)</span> noeuds, où <span class="math inline">\(h\)</span> est la hauteur de l’arbre.</p>
 <p>Or, nous avons vu que pour un arbre complet, nous avons la relation : <span class="math inline">\(n=2^h-1\)</span> équivalente à <span class="math inline">\(2^h=n+1\)</span> et donc <span class="math inline">\(h=\log_2(n+1)\)</span>.</p>
 <p>La complexité de la recherche d’une valeur dans un ABR est donc en <span class="math inline">\(\mathcal{O}(log_2(n))\)</span>. Il s’agit d’une complexité très performante : par exemple, pour un arbre de taille 10000, 14 étapes suffiront.</p>
@@ -1612,6 +1603,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1661,15 +1667,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -1678,6 +1714,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -1720,6 +1757,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -1791,6 +1851,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1848,30 +1934,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../06-algo/rappels.html" class="pagination-link">
+      <a href="../06-algo/rappels.html" class="pagination-link  aria-label=" rappels="" d&#39;algorithmique"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rappels d’algorithmique</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../06-algo/algo_arbres_exos.html" class="pagination-link">
+      <a href="../06-algo/algo_arbres_exos.html" class="pagination-link" aria-label="Algorithmes sur les arbres - Exercices">
         <span class="nav-page-text">Algorithmes sur les arbres - Exercices</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1908,7 +1980,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false});</script>
 
 
 
