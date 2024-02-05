@@ -138,6 +138,11 @@ cookieconsent.run({
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Basculer en mode lecteur">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -968,21 +973,21 @@ On donne ci-dessous un tableau indiquant à un instant précis l’état des pro
 <p>Le numéro de priorité est d’autant plus petit que la priorité est grande. On suppose qu’à chaque instant, c’est le processus qui a le plus petit numéro de priorité qui est exécuté, ce qui peut provoquer la suspension d’un autre processus, lequel reprendra lorsqu’il sera le plus prioritaire.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="proc_ex2_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="image"><img src="proc_ex2_1.png" class="img-fluid figure-img" alt="image"></a></p>
+<p><a href="proc_ex2_1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="image"><img src="proc_ex2_1.png" class="img-fluid figure-img" alt="image"></a></p>
 <figcaption>image</figcaption>
 </figure>
 </div>
 <p>Reproduire le tableau ci-dessous sur la copie et indiquer dans chacune des cases le processus exécuté à chaque cycle.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="proc_ex2_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="image"><img src="proc_ex2_2.png" class="img-fluid figure-img" alt="image"></a></p>
+<p><a href="proc_ex2_2.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="image"><img src="proc_ex2_2.png" class="img-fluid figure-img" alt="image"></a></p>
 <figcaption>image</figcaption>
 </figure>
 </div>
 <p><strong>Q2.</strong> On suppose maintenant que les trois processus précédents s’exécutent et utilisent une ou plusieurs ressources parmi R1, R2 et R3. Parmi les scénarios suivants, lequel provoque un interblocage ? Justifier.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="proc_ex2_3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="image"><img src="proc_ex2_3.png" class="img-fluid figure-img" alt="image"></a></p>
+<p><a href="proc_ex2_3.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="image"><img src="proc_ex2_3.png" class="img-fluid figure-img" alt="image"></a></p>
 <figcaption>image</figcaption>
 </figure>
 </div>
@@ -994,7 +999,7 @@ On donne ci-dessous un tableau indiquant à un instant précis l’état des pro
 <p>Dans un bureau d’architectes, on dispose de certaines ressources qui ne peuvent être utilisées simultanément par plus d’un processus, comme l’imprimante, la table traçante, le modem. Chaque programme, lorsqu’il s’exécute, demande l’allocation des ressources qui lui sont nécessaires. Lorsqu’il a fini de s’exécuter, il libère ses ressources.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="proc_ex3_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4" title="image"><img src="proc_ex3_1.png" class="img-fluid figure-img" alt="image"></a></p>
+<p><a href="proc_ex3_1.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="image"><img src="proc_ex3_1.png" class="img-fluid figure-img" alt="image"></a></p>
 <figcaption>image</figcaption>
 </figure>
 </div>
@@ -1022,7 +1027,7 @@ On donne ci-dessous un tableau indiquant à un instant précis l’état des pro
 <p>Avec une ligne de commande dans un terminal sous Linux, on obtient l’affichage suivant :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="proc_ex3_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5" title="image"><img src="proc_ex3_2.png" class="img-fluid figure-img" alt="image"></a></p>
+<p><a href="proc_ex3_2.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="image"><img src="proc_ex3_2.png" class="img-fluid figure-img" alt="image"></a></p>
 <figcaption>image</figcaption>
 </figure>
 </div>
@@ -1080,7 +1085,7 @@ On donne ci-dessous un tableau indiquant à un instant précis l’état des pro
 <p>Sur la frise chronologique ci-dessous, les états du processus C₂ sont donnés. Compléter la frise avec les états des processus C₁, C₃ et C₄.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="proc_ex4_frise.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-glightbox="description: .lightbox-desc-6" title="image"><img src="proc_ex4_frise.png" class="img-fluid figure-img" alt="image"></a></p>
+<p><a href="proc_ex4_frise.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6" title="image"><img src="proc_ex4_frise.png" class="img-fluid figure-img" alt="image"></a></p>
 <figcaption>image</figcaption>
 </figure>
 </div></li>
@@ -1688,7 +1693,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

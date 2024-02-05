@@ -201,6 +201,11 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Basculer en mode lecteur">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -977,7 +982,7 @@ Exemple
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="prefixe.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Ordre préfixe"><img src="prefixe.png" class="img-fluid figure-img" alt="Ordre préfixe"></a></p>
+<p><a href="prefixe.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Ordre préfixe"><img src="prefixe.png" class="img-fluid figure-img" alt="Ordre préfixe"></a></p>
 <figcaption>Ordre préfixe</figcaption>
 </figure>
 </div>
@@ -1076,7 +1081,7 @@ Exemple
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="infixe.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Ordre infixe"><img src="infixe.drawio.png" class="img-fluid figure-img" alt="Ordre infixe"></a></p>
+<p><a href="infixe.drawio.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Ordre infixe"><img src="infixe.drawio.png" class="img-fluid figure-img" alt="Ordre infixe"></a></p>
 <figcaption>Ordre infixe</figcaption>
 </figure>
 </div>
@@ -1177,7 +1182,7 @@ Exemple
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="suffixe.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Ordre suffixe"><img src="suffixe.drawio.png" class="img-fluid figure-img" alt="Ordre suffixe"></a></p>
+<p><a href="suffixe.drawio.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Ordre suffixe"><img src="suffixe.drawio.png" class="img-fluid figure-img" alt="Ordre suffixe"></a></p>
 <figcaption>Ordre suffixe</figcaption>
 </figure>
 </div>
@@ -1286,7 +1291,7 @@ Exemple
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="largeur.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5" title="Parcours en largeur"><img src="largeur.drawio.png" class="img-fluid figure-img" alt="Parcours en largeur"></a></p>
+<p><a href="largeur.drawio.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="Parcours en largeur"><img src="largeur.drawio.png" class="img-fluid figure-img" alt="Parcours en largeur"></a></p>
 <figcaption>Parcours en largeur</figcaption>
 </figure>
 </div>
@@ -2003,7 +2008,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

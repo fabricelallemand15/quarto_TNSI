@@ -8,6 +8,7 @@ website:
   site-url: https://flallemand.fr/ESMaths
   repo-url: https://github.com/fabricelallemand15/site_ESMaths
   repo-actions: [edit, issue]
+  reader-mode: true
   navbar:
     search: false
     background: "#2c3e50"
@@ -162,8 +163,6 @@ format:
       sidebar-width: 250px
       body-width: 1000px
       margin-width: 300px
-    filters: 
-      - lightbox
     lightbox: auto
     code-block-border-left: "#31BAE9"
     code-block-bg: true

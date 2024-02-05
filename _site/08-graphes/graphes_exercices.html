@@ -138,6 +138,11 @@ cookieconsent.run({
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Basculer en mode lecteur">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -873,7 +878,7 @@ cookieconsent.run({
 <p>Voici un graphe représentant les distances dans le réseau sud-est.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="reseau-routier-sud-est.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Réseau sud-Est"><img src="reseau-routier-sud-est.png" class="img-fluid figure-img" alt="Réseau sud-Est"></a></p>
+<p><a href="reseau-routier-sud-est.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Réseau sud-Est"><img src="reseau-routier-sud-est.png" class="img-fluid figure-img" alt="Réseau sud-Est"></a></p>
 <figcaption>Réseau sud-Est</figcaption>
 </figure>
 </div>
@@ -1480,7 +1485,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

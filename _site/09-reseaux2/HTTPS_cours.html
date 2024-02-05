@@ -201,6 +201,11 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Basculer en mode lecteur">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -888,7 +893,6 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../09-reseaux2/index.html">Ch. 13 - Sécurisation des communications</a></li><li class="breadcrumb-item"><a href="../09-reseaux2/HTTPS_cours.html">Sécurisation des communications - Cours</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Sécurisation des communications - Cours</h1>
-<p class="subtitle lead">S7-Réseaux</p>
 </div>
 
 
@@ -924,7 +928,7 @@ Important
 <p>Dans ce chapitre, la première partie permet d’<strong>illustrer le principe de chiffrement symétrique</strong> avec des exemples classiques comme le chiffre de César ou bien le chiffrement de Vernam, puis de faire le <strong>lien avec des chiffrements symétriques plus récents</strong> comme DES et AES.</p>
 <p>La deuxième partie aborde le <strong>principe de chiffrement asymétrique</strong> en prenant comme exemple le chiffrement RSA.</p>
 <p>La troisième partie se concentre sur <strong>l’échange d’une clef symétrique en utilisant un protocole asymétrique</strong> pour sécuriser une communication HTTPS.</p>
-<p>Ce cours est basé sur <a href="https://eduscol.education.fr/document/11480/download">le document ressource publié sur Eduscol</a>.</p>
+<p>Ce cours est basé sur <a href="https://eduscol.education.fr/document/11480/download" target="_blank">le document ressource publié sur Eduscol</a>.</p>
 </section>
 <section id="le-principe-de-chiffrement" class="level1">
 <h1>Le principe de chiffrement</h1>
@@ -945,7 +949,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>La suite de ce cours s’intéresse au chiffrement et au déchiffrement. Même si un message est indéchiffrable, la communication chiffrée entre deux personnes donne tout de même des informations sur leurs liens, puisqu’elles échangent des informations qui se veulent secrètes. Par exemple, un internaute qui se connecte en HTTPS (HTTP sécurisé) à un site illégal va laisser une trace de cette connexion, même si le contenu est chiffré. On peut aussi noter que certains algorithmes peuvent être vulnérables s’ils ne sont pas employés correctement. Par exemple, divulguer en clair certains messages chiffrés ou utiliser un en-tête identique dans tous les messages en clair peut donner des informations supplémentaires à un attaquant. C’est par exemple en se basant sur de telles informations que les Alliés ont réussi à casser le code utilisé par les Allemands dans leur machine Enigma lors de la seconde guerre mondiale.</p>
-<p>Voir Émission « La méthode scientifique » du 10/10/19 à partir de 6’36’’: <a href="https://www.franceculture.fr/emissions/la-methode-scientifique/la-methode-scientifique-emission-du-jeudi-10-octobre-2019">Enigma, les secrets du code nazi</a>.</p>
+<p>Voir Émission « La méthode scientifique » du 10/10/19 à partir de 6’36’’: <a href="https://www.franceculture.fr/emissions/la-methode-scientifique/la-methode-scientifique-emission-du-jeudi-10-octobre-2019" target="_blank">Enigma, les secrets du code nazi</a>.</p>
 </div>
 </div>
 </section>
@@ -1091,7 +1095,7 @@ Extrait de <em>La vie des douze Césars</em> de Suétone
 <li><p>le chiffrement des communications lors de l’utilisation de messageries instantanées. C’est le cas de l’application WhatsApp.</p></li>
 </ul>
 <p>Ce chiffrement symétrique utilise une clef de 128, 192 ou 256 bits et elle est utilisée pour paramétrer une suite de transformations qui permettent de chiffrer ou de déchiffrer le message.</p>
-<p>Le fonctionnement plus complexe de ce chiffrement par bloc dépasse le cadre des programmes. Pour aller plus loin, il est possible de prendre connaissance, par exemple, du <a href="https://members.loria.fr/PZimmermann/cours/id12-2005-4.pdf">cours sur le sujet édité par le laboratoire lorrain de recherche en informatique et ses applications (LORIA)</a>.</p>
+<p>Le fonctionnement plus complexe de ce chiffrement par bloc dépasse le cadre des programmes. Pour aller plus loin, il est possible de prendre connaissance, par exemple, du <a href="https://members.loria.fr/PZimmermann/cours/id12-2005-4.pdf" target="_blank">cours sur le sujet édité par le laboratoire lorrain de recherche en informatique et ses applications (LORIA)</a>.</p>
 </section>
 </section>
 <section id="les-principes-du-chiffrement-asymétrique" class="level1">
@@ -1109,8 +1113,8 @@ Extrait de <em>La vie des douze Césars</em> de Suétone
 <h2 class="anchored" data-anchor-id="le-chiffrement-rsa">Le chiffrement RSA</h2>
 <p>Le concept de chiffrement asymétrique est attribué à Whitfield Diffie et à Martin Hellman, qui l’ont présenté en 1976. Le premier exemple de chiffrement asymétrique est le chiffrement RSA (abréviation des noms de ses inventeurs Ronald Rivest, Adi Shamir, Loenard Adleman).</p>
 <p>La sécurité du RSA repose sur la facilité à multiplier deux nombres premiers entre eux et la difficulté de factoriser le produit de deux nombres premiers, pourvu qu’ils soient suffisamment grands. C’est à l’heure actuelle l’algorithme de chiffrement asymétrique le plus utilisé.</p>
-<p>Pour comprendre les mécanismes sous-jacents au chiffrement RSA, et ceci n’est pas un attendu des programmes, on pourra lire <a href="https://interstices.info/nombres-premiers-et-cryptologie-lalgorithme-rsa/#2">l’article édité sur Interstices.info</a> qui propose aussi une animation interactive de ce chiffrement.</p>
-<p>À noter qu’il existe d’autres algorithmes asymétriques, qui dépassent, eux aussi, les attendus des programmes. On peut citer, par exemple, la « <a href="http://www.lix.polytechnique.fr/~goncalves/Downloads/Cours2_Courbes_elliptiques.pdf#Outline0.3">cryptographie sur les courbes elliptiques</a> » qui permet d’avoir un niveau de sécurité comparable à celui de RSA, mais en utilisant une clef beaucoup plus courte. Cette clef plus courte engendre des calculs plus rapides ainsi qu’une utilisation moins importante de mémoire et d’énergie.</p>
+<p>Pour comprendre les mécanismes sous-jacents au chiffrement RSA, et ceci n’est pas un attendu des programmes, on pourra lire <a href="https://interstices.info/nombres-premiers-et-cryptologie-lalgorithme-rsa/#2" target="_blank">l’article édité sur Interstices.info</a> qui propose aussi une animation interactive de ce chiffrement.</p>
+<p>À noter qu’il existe d’autres algorithmes asymétriques, qui dépassent, eux aussi, les attendus des programmes. On peut citer, par exemple, la « <a href="http://www.lix.polytechnique.fr/~goncalves/Downloads/Cours2_Courbes_elliptiques.pdf#Outline0.3" target="_blank">cryptographie sur les courbes elliptiques</a> » qui permet d’avoir un niveau de sécurité comparable à celui de RSA, mais en utilisant une clef beaucoup plus courte. Cette clef plus courte engendre des calculs plus rapides ainsi qu’une utilisation moins importante de mémoire et d’énergie.</p>
 </section>
 <section id="autre-utilisation-du-chiffrement-symétrique-la-signature-numérique" class="level2">
 <h2 class="anchored" data-anchor-id="autre-utilisation-du-chiffrement-symétrique-la-signature-numérique">Autre utilisation du chiffrement symétrique : la signature numérique</h2>
@@ -1149,8 +1153,8 @@ Extrait de <em>La vie des douze Césars</em> de Suétone
 <p>Une fois le serveur authentifié, la communication peut commencer. Les algorithmes de chiffrement asymétrique sont en général assez coûteux en temps de calcul, c’est donc un algorithme de chiffrement symétrique qui va être utilisé pour chiffrer les échanges. Le <strong>problème</strong> est alors celui du <strong>partage de la clef</strong>.</p>
 <p>Une possibilité est que le client génère une clef, puis qu’il la partage avec le serveur en utilisant la clef publique du serveur pour la chiffrer. De cette façon, seul le serveur pourra déchiffrer la clef partagée et l’échange pourra continuer en utilisant cette clef et un algorithme symétrique.</p>
 <p>Une autre possibilité est d’utiliser un autre protocole appelé l’« <strong>Échange de clefs Diffie-Hellman7</strong> » du nom de ses auteurs, en 1976. Cet algorithme permet aux deux participants de se mettre d’accord sur la clef partagée, sans que celle-ci ait à transiter, même cryptée, sur le réseau. Cet échange est d’ailleurs obligatoire dans les versions récentes du protocole et il est utilisé, entre autres, par le réseau Tor.</p>
-<p>Explication complète, mais hors-programme : <a href="http://www.acrypta.com/telechargements/fichecrypto_205.pdf"><u>http://www.acrypta.com/telechargements/fichecrypto_205.pdf</u></a></p>
-<p>Pour une explication simplifiée : <a href="https://www.youtube.com/watch?v=-PoJqTNY1eI"><u>https://www.youtube.com/watch?v=-PoJqTNY1eI</u></a></p>
+<p>Explication complète, mais hors-programme : <a href="http://www.acrypta.com/telechargements/fichecrypto_205.pdf" target="_blank"><u>http://www.acrypta.com/telechargements/fichecrypto_205.pdf</u></a></p>
+<p>Pour une explication simplifiée : <a href="https://www.youtube.com/watch?v=-PoJqTNY1eI" target="_blank"><u>https://www.youtube.com/watch?v=-PoJqTNY1eI</u></a></p>
 </section>
 <section id="en-résumé" class="level2">
 <h2 class="anchored" data-anchor-id="en-résumé">En résumé</h2>
@@ -1770,7 +1774,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

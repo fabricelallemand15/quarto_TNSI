@@ -1,45 +1,8 @@
 ---
 title: Sécurisation des communications - Cours
-subtitle: S7-Réseaux
 lang: fr
-tbl-cap-location: bottom
-crossref: 
-    eq-prefix: Éq.
-    tbl-prefix: Tableau
-    tbl-title: Tableau
 format:
     html: default
-#     pdf: 
-#         geometry:
-#             - top=20mm
-#             - bottom=20mm
-#             - left=20mm
-#             - right=20mm
-#             - heightrounded
-#         include-in-header:
-#             - text:
-#                 \usepackage{fancyhdr}
-#                 \pagestyle{fancy}
-#                 \usepackage{lastpage}
-#         include-before-body:
-#             - text:
-#                 \lhead{Spécialité NSI} 
-#                 \rhead{Terminale}
-#                 \chead{} 
-#                 \cfoot{}
-#                 \lfoot{Lycée \'Emile Duclaux}
-#                 \rfoot{Page \thepage/\pageref{LastPage}}
-#                 \renewcommand{\headrulewidth}{0pt}
-#                 \renewcommand{\footrulewidth}{0pt}
-#                 \thispagestyle{fancy}
-#                 \vspace{-2cm}
-#         biblio-title: Sources utilisées
-#         reference-location: document
-#         # fig-pos: h
-#         # fig-width: 4
-#         # fig-height: 2.5
-#         keep-tex: true
-# format-links: [pdf, tex]
 ---
 
 ::: {.callout-important}
@@ -69,7 +32,7 @@ La troisième partie se concentre sur **l'échange d'une clef symétrique
 en utilisant un protocole asymétrique** pour sécuriser une
 communication HTTPS.
 
-Ce cours est basé sur [le document ressource publié sur Eduscol](https://eduscol.education.fr/document/11480/download).
+Ce cours est basé sur [le document ressource publié sur Eduscol](https://eduscol.education.fr/document/11480/download){target="_blank"}.
 
 # Le principe de chiffrement
 
@@ -121,7 +84,7 @@ supplémentaires à un attaquant. C’est par exemple en se basant sur de telles
 
 Voir Émission « La méthode scientifique » du 10/10/19 à partir de 6'36'':
 [Enigma, les secrets du code
-nazi](https://www.franceculture.fr/emissions/la-methode-scientifique/la-methode-scientifique-emission-du-jeudi-10-octobre-2019).
+nazi](https://www.franceculture.fr/emissions/la-methode-scientifique/la-methode-scientifique-emission-du-jeudi-10-octobre-2019){target="_blank"}.
 :::
 
 # Les principes de chiffrement symétrique
@@ -403,7 +366,7 @@ Le fonctionnement plus complexe de ce chiffrement par bloc dépasse le
 cadre des programmes. Pour aller plus loin, il est possible de prendre
 connaissance, par exemple, du [cours sur le sujet édité par le
 laboratoire lorrain de recherche en informatique et ses applications
-(LORIA)](https://members.loria.fr/PZimmermann/cours/id12-2005-4.pdf).
+(LORIA)](https://members.loria.fr/PZimmermann/cours/id12-2005-4.pdf){target="_blank"}.
 
 # Les principes du chiffrement asymétrique
 
@@ -458,11 +421,11 @@ utilisé.
 
 Pour comprendre les mécanismes sous-jacents au chiffrement RSA, et
 ceci n'est pas un attendu des programmes, on pourra lire [l'article
-édité sur Interstices.info](https://interstices.info/nombres-premiers-et-cryptologie-lalgorithme-rsa/#2) qui propose aussi une animation
+édité sur Interstices.info](https://interstices.info/nombres-premiers-et-cryptologie-lalgorithme-rsa/#2){target="_blank"} qui propose aussi une animation
 interactive de ce chiffrement.
 
 À noter qu'il existe d'autres algorithmes asymétriques, qui dépassent, eux aussi, les attendus des programmes. On peut citer, par exemple, la
-« [cryptographie sur les courbes elliptiques](http://www.lix.polytechnique.fr/~goncalves/Downloads/Cours2_Courbes_elliptiques.pdf#Outline0.3) » qui permet d'avoir
+« [cryptographie sur les courbes elliptiques](http://www.lix.polytechnique.fr/~goncalves/Downloads/Cours2_Courbes_elliptiques.pdf#Outline0.3){target="_blank"} » qui permet d'avoir
 un niveau de sécurité comparable à celui de RSA, mais en utilisant une
 clef beaucoup plus courte. Cette clef plus courte engendre des calculs
 plus rapides ainsi qu'une utilisation moins importante de mémoire et
@@ -561,10 +524,10 @@ récentes du protocole et il est utilisé, entre autres, par le réseau
 Tor.
 
 Explication complète, mais hors-programme :
-    [[http://www.acrypta.com/telechargements/fichecrypto_205.pdf]{.underline}](http://www.acrypta.com/telechargements/fichecrypto_205.pdf)
+    [[http://www.acrypta.com/telechargements/fichecrypto_205.pdf]{.underline}](http://www.acrypta.com/telechargements/fichecrypto_205.pdf){target="_blank"}
     
 Pour une explication simplifiée :
-    [[https://www.youtube.com/watch?v=-PoJqTNY1eI]{.underline}](https://www.youtube.com/watch?v=-PoJqTNY1eI)
+    [[https://www.youtube.com/watch?v=-PoJqTNY1eI]{.underline}](https://www.youtube.com/watch?v=-PoJqTNY1eI){target="_blank"}
 
 ## En résumé
 

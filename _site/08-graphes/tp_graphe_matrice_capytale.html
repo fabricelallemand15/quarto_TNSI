@@ -199,6 +199,11 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Basculer en mode lecteur">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -917,7 +922,7 @@ window.Quarto = {
 <p><strong>Question 3 - Application</strong> : en utilisant les deux fonctions précédentes, créer une variable <code>g</code> représentant le graphe suivant :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="graphe_tp1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="graphe 1"><img src="graphe_tp1.png" class="img-fluid figure-img" style="width:50.0%" alt="graphe 1"></a></p>
+<p><a href="graphe_tp1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="graphe 1"><img src="graphe_tp1.png" class="img-fluid figure-img" style="width:50.0%" alt="graphe 1"></a></p>
 <figcaption>graphe 1</figcaption>
 </figure>
 </div>
@@ -1028,7 +1033,7 @@ window.Quarto = {
 <p><strong>Question 9 - Application</strong> : en utilisant la classe <code>Graph</code>, créer une variable <code>g</code> représentant le graphe suivant :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="grpahe1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="graphe 2"><img src="grpahe1.png" class="img-fluid figure-img" style="width:50.0%" alt="graphe 2"></a></p>
+<p><a href="grpahe1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="graphe 2"><img src="grpahe1.png" class="img-fluid figure-img" style="width:50.0%" alt="graphe 2"></a></p>
 <figcaption>graphe 2</figcaption>
 </figure>
 </div>
@@ -1652,7 +1657,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
