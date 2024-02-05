@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.274">
+<meta name="generator" content="quarto-1.5.4">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale - T.P. Dictionnaires</title>
+<title>NSI - Terminale – T.P. Dictionnaires</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -86,12 +86,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Pas de résultats",
     "search-matching-documents-text": "documents trouvés",
@@ -100,6 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "correspondance de plus dans ce document",
     "search-more-matches-text": "correspondances de plus dans ce document",
     "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Annuler",
     "search-submit-button-title": "Envoyer",
     "search-label": "Recherche"
@@ -132,7 +134,7 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
@@ -146,20 +148,20 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+    <a class="nav-link" href="https://python.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+    <a class="nav-link" href="https://notebook.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../ressources.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+    <a class="nav-link" href="../ressources.html"> 
+<span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -170,11 +172,11 @@ cookieconsent.run({
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">T.P. Dictionnaires</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -182,7 +184,7 @@ cookieconsent.run({
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -815,14 +817,16 @@ cookieconsent.run({
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#rappels-sur-les-dictionnaires" id="toc-rappels-sur-les-dictionnaires" class="nav-link active" data-scroll-target="#rappels-sur-les-dictionnaires">Rappels sur les dictionnaires</a>
+  <li><a href="#t.p.-dictionnaires" id="toc-t.p.-dictionnaires" class="nav-link active" data-scroll-target="#t.p.-dictionnaires">T.P. Dictionnaires</a>
+  <ul class="collapse">
+  <li><a href="#rappels-sur-les-dictionnaires" id="toc-rappels-sur-les-dictionnaires" class="nav-link" data-scroll-target="#rappels-sur-les-dictionnaires">Rappels sur les dictionnaires</a>
   <ul class="collapse">
   <li><a href="#fabrication-dun-contact" id="toc-fabrication-dun-contact" class="nav-link" data-scroll-target="#fabrication-dun-contact">Fabrication d’un contact</a></li>
   <li><a href="#génération-automatique-dun-contact" id="toc-génération-automatique-dun-contact" class="nav-link" data-scroll-target="#génération-automatique-dun-contact">Génération automatique d’un contact</a></li>
@@ -832,6 +836,7 @@ cookieconsent.run({
   <li><a href="#fabrication-du-carnet-dadresse" id="toc-fabrication-du-carnet-dadresse" class="nav-link" data-scroll-target="#fabrication-du-carnet-dadresse">Fabrication du carnet d’adresse</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/fabricelallemand15/site_ESMaths/blob/main/02-structures/TPDictionnaires.ipynb" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
@@ -856,6 +861,9 @@ cookieconsent.run({
 
 </header>
 
+
+<section id="t.p.-dictionnaires" class="level1">
+<h1>T.P. Dictionnaires</h1>
 <p>NSI Terminale</p>
 <section id="rappels-sur-les-dictionnaires" class="level2">
 <h2 class="anchored" data-anchor-id="rappels-sur-les-dictionnaires">Rappels sur les dictionnaires</h2>
@@ -864,20 +872,20 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="fabrication-dun-contact">Fabrication d’un contact</h3>
 <p>Chaque contact sera un dictionnaire dont les clés seront : - <code>nom</code> : Nom et prénom du contact - <code>tel</code> : N° de téléphone - <code>rue</code> : adresse complète - <code>code</code> : code postal - <code>ville</code> : ville</p>
 <p>Créez un dictionnaire nommé <code>contact</code> correspondant au contact suivant : &gt; Margaret Costa-Royer<br> &gt; 08 06 18 37 28<br> &gt; 93, avenue Bruneau<br> &gt; 13749 Perrot</p>
-<div id="cell-3" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;e967c7409fcfffebb53b0a985d42646b&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-2fd9bc81593ae294&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
+<div id="cell-2" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;e967c7409fcfffebb53b0a985d42646b&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-2fd9bc81593ae294&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-4" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;6263e63d2630e42a828206daa115968a&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-6f79e90fabb23d67&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-3" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;6263e63d2630e42a828206daa115968a&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-6f79e90fabb23d67&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérification</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> contact[<span class="st">"nom"</span>] <span class="op">==</span> <span class="st">"Margaret Costa-Royer"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> contact[<span class="st">"tel"</span>] <span class="op">==</span> <span class="st">"08 06 18 37 28"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> contact[<span class="st">"ville"</span>] <span class="op">==</span> <span class="st">"Perrot"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ajouter une nouvelle entrée “passwd” dans le contact ayant pour valeur ‘s75JWikE&amp;o’</p>
-<div id="cell-6" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;f3cec15cf971a73036827996d693396b&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-788061858e153019&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
+<div id="cell-5" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;f3cec15cf971a73036827996d693396b&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-788061858e153019&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-7" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;f0f0f716174549b7fbbe7756e78ecf87&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-9f918fabbdab4271&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-6" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;f0f0f716174549b7fbbe7756e78ecf87&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-9f918fabbdab4271&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérification</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> contact[<span class="st">"passwd"</span>] <span class="op">==</span> <span class="st">'s75JWikE&amp;o'</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -886,10 +894,10 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="génération-automatique-dun-contact">Génération automatique d’un contact</h3>
 <p>Écrire une fonction <code>genere_contact()</code> - qui ne prend aucun paramètre - qui renvoie un dictionnaire possédant les mêmes clés que le contact ci-dessus, y compris “passwd”</p>
 <p>On pourra utiliser le module <code>faker</code> de python dont un exemple d’utilisation est donné dans la cellule ci-dessous.</p>
-<div id="cell-9" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;4a6712e527fd4acf73da131f1bbe1fbb&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-d30407a51d0d68aa&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-8" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;4a6712e527fd4acf73da131f1bbe1fbb&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-d30407a51d0d68aa&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install faker</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-10" class="cell">
+<div id="cell-9" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> faker <span class="im">import</span> Faker</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>fake <span class="op">=</span> Faker(<span class="st">"fr_FR"</span>) <span class="co"># Générateur de données personnelles pour un français</span></span>
@@ -902,13 +910,13 @@ cookieconsent.run({
 </div>
 <p><strong><em>Remarque</em></strong> : Si la cellule ci-dessus provoque une erreur disant que le module <code>faker</code> n’est pas disponible, vous pouvez l’installer dans l’environnement jupyter via la commande</p>
 <p><code>!pip install faker</code></p>
-<div id="cell-12" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;887bd34b97f35f3a1721029695f99e92&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-4a7bb8470b471432&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
+<div id="cell-11" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;887bd34b97f35f3a1721029695f99e92&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-4a7bb8470b471432&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> genere_contact():</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fabrique un contact factice et renvoie le contact sous forme d'un dictionnaire"""</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># YOUR CODE HERE</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-13" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;be6bb38374afdfef8101c3fc9ccb60f3&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-93d3004c755a1e03&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-12" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;be6bb38374afdfef8101c3fc9ccb60f3&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-93d3004c755a1e03&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>contact1 <span class="op">=</span> genere_contact()</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">type</span>(contact1[<span class="st">"nom"</span>]) <span class="op">==</span> <span class="bu">str</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="st">"ville"</span> <span class="kw">in</span> contact1</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -924,13 +932,13 @@ cookieconsent.run({
 <h4 class="anchored" data-anchor-id="première-implémentation">Première implémentation</h4>
 <p>Dans une première approche, nous allons considérer que le carnet d’adresse sera une liste de contacts, chaque contact étant un dictionnaire dont la structure a été définie à la section précédente.</p>
 <p>Fabriquez une fonction <code>genere_carnet1</code> - prenant en paramètre le nombre <code>n</code> de contacts à générer - renvoyant une <strong>liste</strong> de <code>n</code> contacts générés aléatoirement.</p>
-<div id="cell-15" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;ddffdc3b6f414982b1ff3077c3283350&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-5d540b645515b45a&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
+<div id="cell-14" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;ddffdc3b6f414982b1ff3077c3283350&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-5d540b645515b45a&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> genere_carnet1(n):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Renvoie une liste de n contacts aléatoires"""</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># YOUR CODE HERE</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-16" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;9b01be0c292b8ee439c2ef9387c66df4&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-b9ef7ac2f3b6b1b5&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-15" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;9b01be0c292b8ee439c2ef9387c66df4&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-b9ef7ac2f3b6b1b5&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vérification</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>carnet1 <span class="op">=</span> genere_carnet1(<span class="dv">10</span>)</span>
@@ -938,13 +946,13 @@ cookieconsent.run({
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="st">"nom"</span> <span class="kw">in</span> carnet1[<span class="dv">3</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ecrire à présent une fonction <code>est_present</code> - prenant 2 paramètres : un nom et un carnet d’adresse - renvoyant <code>True</code> si le nom figure dans le carnet d’adresse, <code>False</code> sinon</p>
-<div id="cell-18" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;f32c79ff8d52a2ab8acedd246fb2186f&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-b9733eec3aeef3ed&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
+<div id="cell-17" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;f32c79ff8d52a2ab8acedd246fb2186f&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-b9733eec3aeef3ed&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> est_present(nom, carnet):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Teste si nom est présent dans le carnet d'adresse"""</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># YOUR CODE HERE</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-19" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;365af12b91dc244abd75975ad28c8fc4&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-68e271be070a4245&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-18" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;365af12b91dc244abd75975ad28c8fc4&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-68e271be070a4245&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérification</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>carnet1 <span class="op">=</span> genere_carnet1(<span class="dv">10</span>)</span>
@@ -956,13 +964,13 @@ cookieconsent.run({
 <section id="mesure-de-performance-de-la-recherche" class="level4">
 <h4 class="anchored" data-anchor-id="mesure-de-performance-de-la-recherche">Mesure de performance de la recherche</h4>
 <p>Nous allons regarder ici comment évolue la vitesse de recherche en fonction de la taille du carnet d’adresse. On utilisera pour cela la fonction magique de <em>jupyter</em> : <code>%%timeit</code>. Étudiez la cellule suivante :</p>
-<div id="cell-21" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;ba597fb0cf106319e8ae6290ebd9db73&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-2e8632dbb543a74e&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-20" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;ba597fb0cf106319e8ae6290ebd9db73&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-2e8632dbb543a74e&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fabrication d'un carnet de 100 contacts</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>carnet1 <span class="op">=</span> genere_carnet1(<span class="dv">100</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>nom <span class="op">=</span> carnet1[<span class="op">-</span><span class="dv">1</span>][<span class="st">"nom"</span>]  <span class="co"># On récupère un nom du carnet</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>nom</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-22" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;bc32f86741b295d6bfcfe5c4d790d123&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-907e36aac6add99d&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-21" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;bc32f86741b295d6bfcfe5c4d790d123&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-907e36aac6add99d&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>timeit</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># On mesure le temps d'une recherche</span></span>
@@ -970,12 +978,12 @@ cookieconsent.run({
 </div>
 <p>Vous lisez sous la cellule le temps de recherche.</p>
 <p>A présent, on refait l’expérience pour 1000 contacts dans le carnet d’adresse.</p>
-<div id="cell-24" class="cell">
+<div id="cell-23" class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>carnet1 <span class="op">=</span> genere_carnet1(<span class="dv">1000</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>nom <span class="op">=</span> carnet1[<span class="op">-</span><span class="dv">1</span>][<span class="st">"nom"</span>]  <span class="co"># On récupère un nom du carnet</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>nom</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-25" class="cell">
+<div id="cell-24" class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>timeit</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># On mesure le temps d'une recherche dans ce carnet</span></span>
@@ -987,13 +995,13 @@ cookieconsent.run({
 <p>Vous devez avoir constaté ci-dessus que le temps de recherche est proportionnel à la taille du carnet d’adresse : si celui-ci contient 10 fois plus de contact, la recherche peut être jusqu’à 10 fois plus longue.</p>
 <p>Nous allons changer d’approche et fabriquer un carnet d’adresse sous forme d’un dictionnaire dont les clés seront les <strong>noms</strong> et les valeurs seront les fiches contacts. Ainsi notre carnet d’adresse sera un dictionnaire dont les valeurs seront des dictionnaires !</p>
 <p>Fabriquez une fonction <code>genere_carnet2</code> - prenant en paramètre le nombre n de contacts à générer - renvoyant un <strong>dictionnaire</strong> de <code>n</code> contacts générés aléatoirement</p>
-<div id="cell-27" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;2b7279b4eff634e786fe05e9442fdf73&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-dd15db6baca83d33&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
+<div id="cell-26" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;2b7279b4eff634e786fe05e9442fdf73&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-dd15db6baca83d33&quot;,&quot;locked&quot;:false,&quot;schema_version&quot;:1,&quot;solution&quot;:true}">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> genere_carnet2(n):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Renvoie un dictionnaire de n contacts aléatoires"""</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># YOUR CODE HERE</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-28" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;e503968c7a0ce7e813d30a9028824d9a&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-4c06f806b0e977b1&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-27" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;e503968c7a0ce7e813d30a9028824d9a&quot;,&quot;grade&quot;:true,&quot;grade_id&quot;:&quot;cell-4c06f806b0e977b1&quot;,&quot;locked&quot;:true,&quot;points&quot;:1,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérification</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>carnet2 <span class="op">=</span> genere_carnet2(<span class="dv">10</span>)</span>
@@ -1005,26 +1013,26 @@ cookieconsent.run({
 <section id="mesure-de-performance-de-la-recherche-1" class="level4">
 <h4 class="anchored" data-anchor-id="mesure-de-performance-de-la-recherche-1">Mesure de performance de la recherche</h4>
 <p>Nous allons regarder pour cette nouvelle implémentation comment évolue la vitesse de recherche en fonction de la taille du carnet d’adresse. Validez les 2 cellules suivantes.</p>
-<div id="cell-30" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;9c0099667b5f39052f7ac2acef7a7513&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c99dbdcd9cbba6d6&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-29" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;9c0099667b5f39052f7ac2acef7a7513&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-c99dbdcd9cbba6d6&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fabrication d'un carnet de 100 contacts</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>carnet2 <span class="op">=</span> genere_carnet2(<span class="dv">100</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>nom <span class="op">=</span> <span class="bu">list</span>(carnet2.keys())[<span class="op">-</span><span class="dv">1</span>] <span class="co"># On récupère un nom du carnet</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>nom</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-31" class="cell" data-nbgrader="{&quot;checksum&quot;:&quot;73a549f43082b78b6b2750386de52c6b&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-688db45f21122b08&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
+<div id="cell-30" class="cell" data-editable="false" data-nbgrader="{&quot;checksum&quot;:&quot;73a549f43082b78b6b2750386de52c6b&quot;,&quot;grade&quot;:false,&quot;grade_id&quot;:&quot;cell-688db45f21122b08&quot;,&quot;locked&quot;:true,&quot;schema_version&quot;:1,&quot;solution&quot;:false}">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>timeit</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>nom <span class="kw">in</span> carnet2                 <span class="co"># On le recherche</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>On constate déjà que la recherche est plus rapide que pour la première implémentation du carnet à l’aide d’un tableau.</p>
 <p>Refaisons l’expérience avec 100 fois plus de contacts dans le carnet !!</p>
-<div id="cell-33" class="cell">
+<div id="cell-32" class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fabrication d'un carnet de 10000 contacts</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>carnet2 <span class="op">=</span> genere_carnet2(<span class="dv">10000</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>nom <span class="op">=</span> <span class="bu">list</span>(carnet2.keys())[<span class="op">-</span><span class="dv">1</span>] <span class="co"># On récupère un nom du carnet</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>nom</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-34" class="cell">
+<div id="cell-33" class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>timeit</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>nom <span class="kw">in</span> carnet2           <span class="co"># On le recherche</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1038,6 +1046,7 @@ cookieconsent.run({
 <p>Le dictionnaire est donc une structure de données optimisée pour la recherche sur les clés.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1264,6 +1273,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1313,15 +1337,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1330,7 +1367,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1372,6 +1417,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -1443,6 +1511,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1500,20 +1594,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 </div> <!-- /content -->
@@ -1530,7 +1610,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/fabricelallemand15/site_ESMaths/blob/main/02-structures/TPDictionnaires.ipynb" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

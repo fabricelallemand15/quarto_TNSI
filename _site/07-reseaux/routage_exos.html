@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.274">
+<meta name="generator" content="quarto-1.5.4">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale - Routage - Exercices</title>
+<title>NSI - Terminale – Routage - Exercices</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -46,23 +46,24 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Pas de résultats",
     "search-matching-documents-text": "documents trouvés",
@@ -71,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "correspondance de plus dans ce document",
     "search-more-matches-text": "correspondances de plus dans ce document",
     "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Annuler",
     "search-submit-button-title": "Envoyer",
     "search-label": "Recherche"
@@ -98,6 +100,33 @@ cookieconsent.run({
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -105,7 +134,7 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
@@ -119,20 +148,20 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+    <a class="nav-link" href="https://python.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+    <a class="nav-link" href="https://notebook.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../ressources.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+    <a class="nav-link" href="../ressources.html"> 
+<span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -143,11 +172,11 @@ cookieconsent.run({
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../07-reseaux/adressesIP.html">Ch. 12 - Protocoles de routage</a></li><li class="breadcrumb-item"><a href="../07-reseaux/routage_exos.html">Routage - Exercices</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -155,7 +184,7 @@ cookieconsent.run({
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -788,7 +817,7 @@ cookieconsent.run({
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -827,16 +856,13 @@ cookieconsent.run({
 
 </header>
 
+
 <p><em>Les exercices précédés du symbole <i class="fa-solid fa-desktop" aria-label="desktop"></i> sont à faire sur machine, en sauvegardant le fichier si nécessaire.</em></p>
 <p><em>Les exercices précédés du symbole <i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> doivent être résolus par écrit.</em></p>
 <section id="exercice-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-1"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 1</h2>
 <p>On considère un réseau composé de plusieurs routeurs reliés de la façon suivante :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_exo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="routage_exo.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="routage_exo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="routage_exo.png" class="img-fluid"></a></p>
 <ol type="1">
 <li><p>On suppose que l’on a exécuté le protocole RIP sur ce réseau. Compléter la table suivante, qui indique pour chaque machine la portion de la table de routage pour la destination G.</p>
 <table class="table">
@@ -901,11 +927,7 @@ cookieconsent.run({
 <section id="exercice-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-2"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 2</h2>
 <p>On considère le réseau représenté ci-dessous :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_exo2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="routage_exo2.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="routage_exo2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="routage_exo2.png" class="img-fluid"></a></p>
 <p>On utilise le protocole OSPF et on dispose des informations suivantes sur les débits :</p>
 <ul>
 <li>à l’intérieur du réseau 192.168.0.0/25 : 1,544 Mb/s</li>
@@ -927,17 +949,9 @@ cookieconsent.run({
 <h2 class="anchored" data-anchor-id="exercice-3"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 3</h2>
 <p><em>2020, sujet 0</em></p>
 <p>On considère un réseau composé de plusieurs routeurs reliés de la façon suivante :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_ex1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="routage_ex1.png" class="img-fluid figure-img" style="width:40.0%"></a></p>
-</figure>
-</div>
+<p><a href="routage_ex1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="routage_ex1.png" class="img-fluid" style="width:40.0%"></a></p>
 <p>Le protocole RIP permet de construire les tables de routage des différents routeurs, en indiquant pour chaque routeur la distance, en nombre de sauts, qui le sépare d’un autre routeur. Pour le réseau ci-dessus, on dispose des tables de routage suivantes :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_ex2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="routage_ex2.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
-</figure>
-</div>
+<p><a href="routage_ex2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="routage_ex2.png" class="img-fluid" style="width:80.0%"></a></p>
 <p><strong>Question 1</strong></p>
 <ol type="1">
 <li>Le routeur A doit transmettre un message au routeur G, en effectuant un nombre minimal de sauts. Déterminer le trajet parcouru.</li>
@@ -951,18 +965,10 @@ cookieconsent.run({
 <h2 class="anchored" data-anchor-id="exercice-4"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 4</h2>
 <p><em>2021, sujet Métropole 1</em></p>
 <p>On représente ci-dessous un réseau dans lequel R1, R2, R3, R4, R5 et R6 sont des routeurs. Le réseau local L1 est relié au routeur R1 et le réseau local L2 au routeur R6.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_bac1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="routage_bac1.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
-</figure>
-</div>
+<p><a href="routage_bac1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="routage_bac1.png" class="img-fluid" style="width:70.0%"></a></p>
 <p>Dans cet exercice, les adresses IP sont composées de 4 octets, soit 32 bits. Elles sont notées X1.X2.X3.X4, où X1, X2, X3 et X4 sont les valeurs des 4 octets, convertis en notation décimale. La notation X1.X2.X3.X4/n signifie que les n premiers bits de poids forts de l’adresse IP représentent la partie « réseau », les bits suivants représentent la partie « hôte ». Toutes les adresses des hôtes connectés à un réseau local ont la même partie réseau et peuvent donc communiquer directement. L’adresse IP dont tous les bits de la partie « hôte » sont à 0 est appelée « adresse du réseau ».</p>
 <p>On donne également des extraits de la table de routage des routeurs R1 à R5 dans le tableau suivant :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_bac2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="routage_bac2.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
-</figure>
-</div>
+<p><a href="routage_bac2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="routage_bac2.png" class="img-fluid" style="width:70.0%"></a></p>
 <p>1/ Un paquet part du réseau local L1 à destination du réseau local L2.</p>
 <p>1.a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 envoie-t-il ce paquet : R2 ou R3 ? Justifier.</p>
 <p>1.b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.</p>
@@ -970,11 +976,7 @@ cookieconsent.run({
 <p>2.a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.</p>
 <p>2.b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?</p>
 <p>3/ On a rétabli la liaison entre R1 et R2. Par ailleurs, pour tenir compte du débit des liaisons, on décide d’utiliser le protocole OSPF (distance liée au coût minimal des liaisons) pour effectuer le routage. Le coût des liaisons entre les routeurs est donné par le tableau suivant :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_bac3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="routage_bac3.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
-</figure>
-</div>
+<p><a href="routage_bac3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="routage_bac3.png" class="img-fluid" style="width:90.0%"></a></p>
 <ol type="a">
 <li>Le coût <em>C</em> d’une liaison est donné ici par la formule <span class="math inline">\(C = \frac{10^9}{BP}\)</span></li>
 </ol>
@@ -991,7 +993,7 @@ cookieconsent.run({
 <table class="table">
 <thead>
 <tr class="header">
-<th style="text-align: center;"><a href="routage_ex3_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="routage_ex3_1.png" class="img-fluid"></a></th>
+<th style="text-align: center;"><img src="routage_ex3_1.png" class="img-fluid"></th>
 </tr>
 </thead>
 <tbody>
@@ -1005,7 +1007,7 @@ cookieconsent.run({
 <table class="table">
 <thead>
 <tr class="header">
-<th style="text-align: center;"><a href="routage_ex3_2corr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="routage_ex3_2corr.png" class="img-fluid"></a></th>
+<th style="text-align: center;"><img src="routage_ex3_2corr.png" class="img-fluid"></th>
 </tr>
 </thead>
 <tbody>
@@ -1027,7 +1029,7 @@ cookieconsent.run({
 <table class="table">
 <thead>
 <tr class="header">
-<th style="text-align: center;"><a href="routage_ex3_3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="routage_ex3_3.png" class="img-fluid"></a></th>
+<th style="text-align: center;"><img src="routage_ex3_3.png" class="img-fluid"></th>
 </tr>
 </thead>
 <tbody>
@@ -1038,11 +1040,7 @@ cookieconsent.run({
 </table>
 <p>Quel est le chemin reliant R1 et R6 qui a le plus petit coût ? Donner le coût de ce chemin et préciser les routeurs utilisés.</p>
 <p>3/ Dans l’annexe A figurent les tables de routages des routeurs R1, R2, R5 et R6 au démarrage du réseau. Indiquer sur votre copie ce qui doit figurer dans les lignes laissées vides des tables de routage des routeurs R5 et R6 pour que les échanges entre les ordinateurs des réseaux L1 et L2 se fassent en empruntant le chemin le plus court en nombre de sauts.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_ex3_4_corrige.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="routage_ex3_4_corrige.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="routage_ex3_4_corrige.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="routage_ex3_4_corrige.png" class="img-fluid"></a></p>
 <hr>
 </section>
 <section id="exercice-6" class="level2">
@@ -1050,20 +1048,12 @@ cookieconsent.run({
 <p><em>2021, sujet Amérique du Nord</em></p>
 <p>Un constructeur automobile possède six sites de production qui échangent des documents entre eux. Les sites de production sont reliés entre eux par six routeurs A, B, C, D, E et F.<br>
 On donne ci-dessous les tables de routage des routeurs A à F obtenues avec le protocole RIP.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_tabAN.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="routage_tabAN.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="routage_tabAN.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="routage_tabAN.png" class="img-fluid"></a></p>
 <ol type="1">
 <li>Déterminer à l’aide de ces tables le chemin emprunté par un paquet de données envoyé du routeur A vers le routeur F.</li>
 <li>On veut représenter schématiquement le réseau de routeur à partir des tables de routage. Recopier sur la copie le schéma ci-dessous :</li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_graphAN.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="routage_graphAN.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="routage_graphAN.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="routage_graphAN.png" class="img-fluid"></a></p>
 <p>En s’appuyant sur les tables de routage, tracer les liaisons entre les routeurs.</p>
 <hr>
 </section>
@@ -1074,7 +1064,7 @@ On donne ci-dessous les tables de routage des routeurs A à F obtenues avec le p
 <table class="table">
 <thead>
 <tr class="header">
-<th style="text-align: center;"><a href="routage_sujet0a_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="routage_sujet0a_fig1.png" class="img-fluid"></a></th>
+<th style="text-align: center;"><img src="routage_sujet0a_fig1.png" class="img-fluid"></th>
 </tr>
 </thead>
 <tbody>
@@ -1100,7 +1090,7 @@ On donne ci-dessous les tables de routage des routeurs A à F obtenues avec le p
 <table class="table">
 <thead>
 <tr class="header">
-<th style="text-align: center;"><a href="routage_sujet0a_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="routage_sujet0a_fig2.png" class="img-fluid"></a></th>
+<th style="text-align: center;"><img src="routage_sujet0a_fig2.png" class="img-fluid"></th>
 </tr>
 </thead>
 <tbody>
@@ -1124,11 +1114,7 @@ On donne ci-dessous les tables de routage des routeurs A à F obtenues avec le p
 <li>les nœuds A, B, C, D, E, F et G sont des routeurs,</li>
 <li>le type de liaison est précisé entre chaque routeur.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="routage_sujet0b_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="routage_sujet0b_fig1.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><a href="routage_sujet0b_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="routage_sujet0b_fig1.png" class="img-fluid"></a></p>
 <p>On rappelle que la bande passante des liaisons FTTH (fibre optique : Fiber To The Home) est de 10 Gbit/s et celle des liaisons FastEthernet de 100 Mbit/s.</p>
 <p>On s’intéresse au protocole de routage OSPF. Le protocole OSPF est un protocole de routage qui cherche à minimiser la somme des coûts des liaisons entre les routeurs empruntés par un paquet. Le coût <span class="math inline">\(\mathcal{C}\)</span> d’une liaison est donné par :</p>
 <p><span class="math display">\[\mathcal{C}=\frac{10^8}{d}\]</span></p>
@@ -1365,6 +1351,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1414,15 +1415,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1431,7 +1445,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1473,6 +1495,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -1544,6 +1589,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1601,30 +1672,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../07-reseaux/routage_cours.html" class="pagination-link">
+      <a href="../07-reseaux/routage_cours.html" class="pagination-link  aria-label=" routage="" -="" cours"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Routage - Cours</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../09-reseaux2/index.html" class="pagination-link">
+      <a href="../09-reseaux2/index.html" class="pagination-link" aria-label="Programme">
         <span class="nav-page-text">Programme</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1643,7 +1700,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/07-reseaux/routage_exos.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1661,7 +1718,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

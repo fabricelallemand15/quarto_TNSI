@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.274">
+<meta name="generator" content="quarto-1.5.4">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale - Parcours d’un graphe en largeur (Cours)</title>
+<title>NSI - Terminale – Parcours d’un graphe en largeur (Cours)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -88,12 +88,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Pas de résultats",
     "search-matching-documents-text": "documents trouvés",
@@ -102,6 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "correspondance de plus dans ce document",
     "search-more-matches-text": "correspondances de plus dans ce document",
     "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Annuler",
     "search-submit-button-title": "Envoyer",
     "search-label": "Recherche"
@@ -126,12 +128,39 @@ cookieconsent.run({
 </script> 
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -140,7 +169,7 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
@@ -154,20 +183,20 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+    <a class="nav-link" href="https://python.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+    <a class="nav-link" href="https://notebook.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../ressources.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+    <a class="nav-link" href="../ressources.html"> 
+<span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -178,11 +207,11 @@ cookieconsent.run({
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../11-algos2/dfs_graphe.html">Ch. 15 - Algorithmes sur les graphes</a></li><li class="breadcrumb-item"><a href="../11-algos2/bfs_graphe.html">Parcours d’un graphe en largeur (Cours)</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -190,7 +219,7 @@ cookieconsent.run({
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -823,7 +852,7 @@ cookieconsent.run({
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -861,6 +890,7 @@ cookieconsent.run({
 
 </header>
 
+
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -887,8 +917,8 @@ Notion de parcours d’un graphe
 <section id="exemple" class="level2">
 <h2 class="anchored" data-anchor-id="exemple">1. Exemple</h2>
 <p>Voici un exemple de graphe et de parcours en largeur d’abord.</p>
-<div id="9ef15f4e" class="cell" data-execution_count="1">
-<details>
+<div id="30a4a36e" class="cell" data-execution_count="1">
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> algorithmx <span class="im">import</span> jupyter_canvas</span>
@@ -906,7 +936,7 @@ Notion de parcours d’un graphe
 </details>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"0acad67a6bc54a15b6674c0235e43361","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"afc632bd4b1847698fa71327b9595fb5","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
@@ -965,7 +995,7 @@ Parcours en largeur d’abord
 <h3 class="anchored" data-anchor-id="implémentation-en-python">3. Implémentation en Python</h3>
 <p>Pour l’implémentation, nous supposerons que nous avons un graphe défini en utilisant le module <code>networkx</code> de Python.</p>
 <p>Voici une implémentation de l’algorithme BFS en Python.</p>
-<div id="728f545c" class="cell" data-execution_count="2">
+<div id="adcf8af6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bfs(graph, start):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Parcours en largeur d'abord d'un graphe</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
@@ -985,7 +1015,7 @@ Parcours en largeur d’abord
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> visited</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Test de l’algorithme :</p>
-<div id="eabca41d" class="cell" data-execution_count="3">
+<div id="0a63b49f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bfs(graph, <span class="st">"A"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>['A', 'B', 'D', 'C', 'E', 'F', 'G']</code></pre>
@@ -993,8 +1023,8 @@ Parcours en largeur d’abord
 </div>
 <p><strong>Visualisation du parcours en largeur d’abord</strong></p>
 <p>Nous pouvons visualiser le parcours en largeur d’abord en utilisant le module <code>algorithmx</code> de Python. Ce module permet de visualiser les étapes de l’algorithme de parcours en largeur d’abord.</p>
-<div id="1a46573f" class="cell" data-execution_count="4">
-<details>
+<div id="a008665a" class="cell" data-execution_count="4">
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> algorithmx <span class="im">import</span> jupyter_canvas</span>
@@ -1033,7 +1063,7 @@ Parcours en largeur d’abord
 </details>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"225c0156249e461cad6cf0a0d64f594f","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"383d62075ab24b909be924eb2aad8a4b","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
@@ -1051,7 +1081,7 @@ Parcours en largeur d’abord
 
 </main> <!-- /main -->
 <script type="application/vnd.jupyter.widget-state+json">
-{"state":{"0acad67a6bc54a15b6674c0235e43361":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}"],"layout":"IPY_MODEL_ae8acdeaf41f4f8fb9b9e46bb9a0cb3a","show_buttons":true,"tabbable":null,"tooltip":null}},"16bf4614abf9444f8403ea92a48988db":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"225c0156249e461cad6cf0a0d64f594f":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}","{\"queues\": {\"0\": {\"pause\": 2}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"color\": \"red\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-D\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-C\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"D-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"D\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"C-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"C\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-G\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}"],"layout":"IPY_MODEL_16bf4614abf9444f8403ea92a48988db","show_buttons":true,"tabbable":null,"tooltip":null}},"ae8acdeaf41f4f8fb9b9e46bb9a0cb3a":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}},"version_major":2,"version_minor":0}
+{"state":{"171867a341ac4ecb81f182b3946904ee":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"383d62075ab24b909be924eb2aad8a4b":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}","{\"queues\": {\"0\": {\"pause\": 2}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"color\": \"red\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-D\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-C\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"D-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"D\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"C-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"C\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-G\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}"],"layout":"IPY_MODEL_5ea4963185ec470fa3bc0471ff059f63","show_buttons":true,"tabbable":null,"tooltip":null}},"5ea4963185ec470fa3bc0471ff059f63":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"afc632bd4b1847698fa71327b9595fb5":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}"],"layout":"IPY_MODEL_171867a341ac4ecb81f182b3946904ee","show_buttons":true,"tabbable":null,"tooltip":null}}},"version_major":2,"version_minor":0}
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1276,6 +1306,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1325,15 +1370,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1342,7 +1400,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1384,6 +1450,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -1455,6 +1544,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1512,30 +1627,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../11-algos2/dfs_graphe.html" class="pagination-link">
+      <a href="../11-algos2/dfs_graphe.html" class="pagination-link  aria-label=" parcours="" d&#39;un="" graphe="" en="" profondeur="" (cours)"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Parcours d’un graphe en profondeur (Cours)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../11-algos2/exos_graphes.html" class="pagination-link">
+      <a href="../11-algos2/exos_graphes.html" class="pagination-link" aria-label="Exercices - Parcours de graphes">
         <span class="nav-page-text">Exercices - Parcours de graphes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1554,7 +1655,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/11-algos2/bfs_graphe.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.523">
+<meta name="generator" content="quarto-1.5.4">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale - T.P. - Processus sous Linux</title>
+<title>NSI - Terminale – T.P. - Processus sous Linux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -790,7 +790,7 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
@@ -817,7 +817,7 @@ cookieconsent.run({
 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="linux-154544_640.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-description="" title="linux"><img src="linux-154544_640.png" class="img-fluid figure-img" style="width:30.0%" alt="linux"></a></p>
+<p><a href="linux-154544_640.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="linux"><img src="linux-154544_640.png" class="img-fluid figure-img" style="width:30.0%" alt="linux"></a></p>
 <figcaption>linux</figcaption>
 </figure>
 </div>
@@ -835,7 +835,7 @@ cookieconsent.run({
 <p>S’affichent plusieurs informations sur les processus en cours sur votre ordinateur du type :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="processus_tp1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-description="" title="pas -aef"><img src="processus_tp1.png" class="img-fluid figure-img" alt="pas -aef"></a></p>
+<p><a href="processus_tp1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="pas -aef"><img src="processus_tp1.png" class="img-fluid figure-img" alt="pas -aef"></a></p>
 <figcaption>pas -aef</figcaption>
 </figure>
 </div>
@@ -893,7 +893,7 @@ cookieconsent.run({
 <p>Que remarque-t-on ?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="zombies-1296507_640.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-description="" title="zombie"><img src="zombies-1296507_640.png" class="img-fluid figure-img" style="width:20.0%" alt="zombie"></a></p>
+<p><a href="zombies-1296507_640.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="zombie"><img src="zombies-1296507_640.png" class="img-fluid figure-img" style="width:20.0%" alt="zombie"></a></p>
 <figcaption>zombie</figcaption>
 </figure>
 </div></li>
@@ -908,7 +908,7 @@ cookieconsent.run({
 <li><p><strong>La commande cat /proc/cpuinfo</strong> permet d’avoir des informations détaillées sur le processeur.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="processus_cpuinfo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-description="" title="cpuinfo"><img src="processus_cpuinfo.png" class="img-fluid figure-img" alt="cpuinfo"></a></p>
+<p><a href="processus_cpuinfo.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="cpuinfo"><img src="processus_cpuinfo.png" class="img-fluid figure-img" alt="cpuinfo"></a></p>
 <figcaption>cpuinfo</figcaption>
 </figure>
 </div>
@@ -916,6 +916,12 @@ cookieconsent.run({
 </ol>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">linux</span>
+<span class="glightbox-desc lightbox-desc-2">pas -aef</span>
+<span class="glightbox-desc lightbox-desc-4">zombie</span>
+<span class="glightbox-desc lightbox-desc-5">cpuinfo</span>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1205,27 +1211,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -1240,10 +1225,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1252,8 +1241,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1518,7 +1514,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.274">
+<meta name="generator" content="quarto-1.5.4">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale - 2. Le langage SQL (Cours)</title>
+<title>NSI - Terminale – 2. Le langage SQL (Cours)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -80,23 +80,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Pas de résultats",
     "search-matching-documents-text": "documents trouvés",
@@ -105,6 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "correspondance de plus dans ce document",
     "search-more-matches-text": "correspondances de plus dans ce document",
     "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Annuler",
     "search-submit-button-title": "Envoyer",
     "search-label": "Recherche"
@@ -137,7 +139,7 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
@@ -151,20 +153,20 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://python.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
+    <a class="nav-link" href="https://python.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> Console Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://notebook.flallemand.fr/" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
+    <a class="nav-link" href="https://notebook.flallemand.fr/"> 
+<span class="menu-text"><i class="fa-solid fa-pen-to-square" aria-label="pen-to-square"></i> Notebook Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../ressources.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
+    <a class="nav-link" href="../ressources.html"> 
+<span class="menu-text"><i class="fa-solid fa-info" aria-label="info"></i> Ressources</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -175,11 +177,11 @@ cookieconsent.run({
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-BDD/sql_cours.html">Ch. 7 - Langage SQL</a></li><li class="breadcrumb-item"><a href="../03-BDD/sql_cours.html">2. Le langage SQL (Cours)</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -187,7 +189,7 @@ cookieconsent.run({
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -820,7 +822,7 @@ cookieconsent.run({
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -872,6 +874,7 @@ cookieconsent.run({
 
 </header>
 
+
 <p><a href="https://flallemand.fr/notebook/?kernel=sql&amp;extensions=admonitions&amp;module=https://flallemand.fr/nsi/assets/BDD/Cantal.db&amp;from=https://flallemand.fr/nsi/assets/notebooks/cours_SQL.ipynb" target="_blank">Version Notebook de ce cours</a></p>
 <p>Nous avons étudié la structure d’une base de données relationnelle, nous allons maintenant apprendre à réaliser des <strong>requêtes</strong>, c’est-à-dire que nous allons apprendre à créer une base des données, créer des attributs, ajouter des données, modifier des données et enfin, nous allons surtout apprendre à interroger une base de données afin d’obtenir des informations.</p>
 <p>Pour réaliser toutes ces requêtes, nous allons devoir apprendre un langage de requêtes : SQL (Structured Query Language). SQL est propre aux bases de données relationnelles.</p>
@@ -879,12 +882,12 @@ cookieconsent.run({
 <p>Nous allons illustrer chacune des instructions SQL du programme avec la base de donnée <a href="Cantal.db">Cantal.db</a> contenant les deux tables “etablissements” et “communes” déjà rencontrées dans la partie précédente, dont voici un extrait (les noms des attributs ont été un peu modifiés (pas d’espaces) ; la copie d’écran est faite à partir de DB Browser for SqLite). De plus, nous avons déplacé l’attribut “Codepostal” de la table “etablissement” vers la table “communes”, ce qui est plus cohérent.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="BDD9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="BDD9.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="BDD9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="BDD9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="BDD10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="BDD10.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="BDD10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="BDD10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <p><strong>Schéma relationnel</strong> :</p>
@@ -894,7 +897,7 @@ cookieconsent.run({
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="BDD11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="BDD11.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="BDD11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="BDD11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <p>Pour se connecter à cette base de donnée, vous pouvez utiliser le logiciel DB Browser (SqLite) ou bien Edupython (qui propose une version portable du même logiciel)</p>
@@ -909,7 +912,7 @@ cookieconsent.run({
 <p>Voici le résultat de cette requête dans le logiciel DB Browser for SqLite :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="SQL1.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="SQL1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="SQL1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <p>D’une façon générale, le mot clé <strong>SELECT</strong> est suivi par les attributs que l’on désire obtenir. Le mot clé <strong>FROM</strong> est suivi par la table concernée.</p>
@@ -930,7 +933,7 @@ cookieconsent.run({
 <p>La requête ci-dessus permettra d’afficher le nom des communes dont la population est strictement supérieure à 2500 habitants.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="SQL2.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="SQL2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="SQL2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <p>Il est possible de combiner les conditions à l’aide d’un OR ou d’un AND :</p>
@@ -940,7 +943,7 @@ cookieconsent.run({
 <p>Cette requête permet d’obtenir le nom des communes dont la population est comprise entre 2500 et 10000 habitants.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="SQL3.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="SQL3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="SQL3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <p>La requête ci-dessous permet d’afficher le nom des communes dont la population est supérieure à 5000 habitants OU dont le nom contient la lettre “Z” (noter le symbole “%” qui remplace n’importe quelle séquence de caractères en SQL).</p>
@@ -949,7 +952,7 @@ cookieconsent.run({
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> <span class="kw">OR</span> Nomdelacommune <span class="kw">LIKE</span> <span class="ot">"%Z%"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="SQL4.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="SQL4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="SQL4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -962,7 +965,7 @@ cookieconsent.run({
 <p>Cette requête affiche le nom et la population des communes de plus de 5000 habitants dans l’ordre croissant de leur population.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="SQL5.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="SQL5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="SQL5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <p>Pour ordonner les résultats dans l’ordre décroissant, on ajoute <strong>DESC</strong>.</p>
@@ -973,7 +976,7 @@ cookieconsent.run({
 <p>Cette requête affiche le nom et la population des communes de plus de 5000 habitants dans l’ordre inverse de l’ordre alphabétique de leur nom.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="SQL6.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="SQL6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="SQL6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -986,7 +989,7 @@ cookieconsent.run({
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> codepostal</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="SQL7.png" class="img-fluid figure-img" width="100"></a></p>
+<p><a href="SQL7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="SQL7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="100"></a></p>
 </figure>
 </div>
 <p>Nous voyons que les codes postaux sont répétés autant de fois qu’il y a de communes desservies par ce code postal.</p>
@@ -996,7 +999,7 @@ cookieconsent.run({
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> codepostal</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="SQL8.png" class="img-fluid figure-img" width="100"></a></p>
+<p><a href="SQL8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="SQL8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="100"></a></p>
 </figure>
 </div>
 </section>
@@ -1023,7 +1026,7 @@ Définition
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="BDD11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="BDD11.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="BDD11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="BDD11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <p>La requête suivante permet d’obtenir la table des noms d’établissements suivis du nom de leur commune. Il faut pour cela <strong>joindre</strong> les informations de la table “etablissements” (pour le nom de l’établissement) avec celles de la table “communes” (pour le nom de la commune). L’élément qui permet cette <strong>jointure</strong> est la <strong>clef étrangère</strong> “id_commune” de la table “etablissements” qui fait référence à la <strong>clef primaire</strong> “Codecommune” de la table “communes”.</p>
@@ -1033,7 +1036,7 @@ Définition
 <p>Résultat :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="SQL9.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="SQL9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="SQL9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1057,7 +1060,7 @@ Remarque
 <p>Résultat la table de tous les collèges avec leur commune :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="SQL10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="SQL10.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+<p><a href="SQL10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="SQL10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -1428,6 +1431,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1477,15 +1495,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1494,7 +1525,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1536,6 +1575,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -1607,6 +1669,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1664,30 +1752,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../03-BDD/quiz.html" class="pagination-link">
+      <a href="../03-BDD/quiz.html" class="pagination-link  aria-label=" quiz="" -="" le="" modèle="" relationnel,="" sgbd"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quiz - Le modèle relationnel, SGBD</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../03-BDD/exercices.html" class="pagination-link">
+      <a href="../03-BDD/exercices.html" class="pagination-link" aria-label="Bases de données (Exercices)">
         <span class="nav-page-text">Bases de données (Exercices)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1706,7 +1780,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/03-BDD/sql_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1724,7 +1798,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom","selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
