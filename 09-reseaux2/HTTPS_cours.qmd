@@ -100,7 +100,7 @@ n'étant connue que par eux.
 
 L'exemple le plus connu de chiffrement symétrique, et un des plus
 simples, est le **chiffre de César**. Cette méthode de communication
-chiffrée aurait été inventée par Jules César lui-même**3**. Pour
+chiffrée aurait été inventée par Jules César lui-même **3**. Pour
 obtenir le texte chiffré, le chiffre de César consiste à remplacer
 chaque lettre du texte en clair par la lettre obtenue après un
 décalage d'un nombre fixe de lettres dans l'alphabet.
