@@ -118,8 +118,9 @@ website:
           - 11-algos2/exos_graphes.qmd  
       - section: "Ch. 16 - Programmation dynamique"
         contents: 
-          - 11-algos2/programmation_dynamique.qmd
-          - 11-algos2/exos_programmation_dynamique.qmd"  
+          - 16-ProgDyn/index.qmd
+          - 16-ProgDyn/ProgDyn_Cours.qmd
+          - 16-ProgDyn/ProgDyn_Exos.qmd
       - section: "Ch. 17 - Recherche textuelle"
         contents: 
           - 11-algos2/recherche_textuelle.qmd

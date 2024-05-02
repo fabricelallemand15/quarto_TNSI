@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.4">
+<meta name="generator" content="quarto-1.5.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -168,7 +168,7 @@ cookieconsent.run({
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Basculer en mode lecteur">
   <div class="quarto-reader-toggle-btn">
@@ -724,11 +724,23 @@ cookieconsent.run({
       </div>
       <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">11-algos2/programmation_dynamique.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../16-ProgDyn/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">11-algos2/exos_programmation_dynamique.qmd"</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../16-ProgDyn/ProgDyn_Cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cours</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../16-ProgDyn/ProgDyn_Exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TP Capytale</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -832,12 +844,9 @@ cookieconsent.run({
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#exercices-parcours-de-graphes" id="toc-exercices-parcours-de-graphes" class="nav-link active" data-scroll-target="#exercices-parcours-de-graphes">Exercices : Parcours de graphes</a>
-  <ul class="collapse">
-  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1">Exercice 1</a></li>
+  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link active" data-scroll-target="#exercice-1">Exercice 1</a></li>
   <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
   <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/fabricelallemand15/site_ESMaths/blob/main/06-algo/exos_graphes_fiche1.ipynb" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
@@ -863,8 +872,6 @@ cookieconsent.run({
 </header>
 
 
-<section id="exercices-parcours-de-graphes" class="level1">
-<h1>Exercices : Parcours de graphes</h1>
 <section id="exercice-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-1">Exercice 1</h2>
 <p>Voici quatre animations qui représentent 4 parcours différents sur le même graphe à partir du sommet ‘A’.</p>
@@ -873,32 +880,32 @@ cookieconsent.run({
 <p>Parcours 1 :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Parcours 1"><img src="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_1.gif" class="img-fluid figure-img" alt="Parcours 1"></a></p>
+<p><a href="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Parcours 1"><img src="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_1.gif" class="img-fluid figure-img" alt="Parcours 1"></a></p>
 <figcaption>Parcours 1</figcaption>
 </figure>
 </div>
 <p>Parcours 2 :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_2.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Parcours 2"><img src="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_2.gif" class="img-fluid figure-img" alt="Parcours 2"></a></p>
+<p><a href="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_2.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Parcours 2"><img src="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_2.gif" class="img-fluid figure-img" alt="Parcours 2"></a></p>
 <figcaption>Parcours 2</figcaption>
 </figure>
 </div>
 <p>Parcours 3 :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_3.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Parcours 3"><img src="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_3.gif" class="img-fluid figure-img" alt="Parcours 3"></a></p>
+<p><a href="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_3.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Parcours 3"><img src="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_3.gif" class="img-fluid figure-img" alt="Parcours 3"></a></p>
 <figcaption>Parcours 3</figcaption>
 </figure>
 </div>
 <p>Parcours 4 :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_4.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4" title="Parcours 4"><img src="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_4.gif" class="img-fluid figure-img" alt="Parcours 4"></a></p>
+<p><a href="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_4.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Parcours 4"><img src="https://monlyceenumerique.fr/nsi_terminale/a/img/a2_reperer_profondeur_4.gif" class="img-fluid figure-img" alt="Parcours 4"></a></p>
 <figcaption>Parcours 4</figcaption>
 </figure>
 </div>
-<div id="cell-2" class="cell" data-execution_count="15">
+<div id="cell-3" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre réponse ici</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -914,7 +921,7 @@ cookieconsent.run({
 <p>Voici la carte des pays du continent sud-américain :</p>
 <p><a href="a2_carte_amerique_sud_pays.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="a2_carte_amerique_sud_pays.png" class="img-fluid"></a></p>
 <p>On considère le dictionnaire suivant qui permet d’associer à chaque pays d’Amérique du Sud la liste des pays partageant une frontière terrestre.</p>
-<div id="cell-4" class="cell" data-execution_count="16">
+<div id="cell-5" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> {}</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>G[<span class="st">"France"</span>] <span class="op">=</span> [<span class="st">"Brésil"</span>,<span class="st">"Suriname"</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>G[<span class="st">"Argentine"</span>] <span class="op">=</span> [<span class="st">"Bolivie"</span>,<span class="st">"Brésil"</span>,<span class="st">"Chili"</span>,<span class="st">"Paraguay"</span>,<span class="st">"Uruguay"</span>]</span>
@@ -934,13 +941,13 @@ cookieconsent.run({
 <ol type="1">
 <li>Créer une fonction initialiser qui prend comme paramètre un graphe et renvoie un dictionnaire dont les clés sont les sommets du graphe et la valeur est toujours “inconnu”.</li>
 </ol>
-<div id="cell-6" class="cell" data-execution_count="17">
+<div id="cell-7" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ci-dessous</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>Créer une fonction visiter qui prend comme paramètre le dictionnaire associant à chaque sommet son état de connaissance et un sommet du graphe, fonction qui renvoie le dictionnaire de connaissance où la valeur associée au sommet entré est mise à ‘visite’</li>
 </ol>
-<div id="cell-8" class="cell" data-execution_count="18">
+<div id="cell-9" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ci-dessous</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
@@ -948,13 +955,13 @@ cookieconsent.run({
 </ol>
 <p>Cette procédure prend en argument un graphe et un sommet de ce graphe, sommet servant de point de départ au parcours.</p>
 <p>Gérer l’affichage à l’aide de l’instruction <code>print</code>.</p>
-<div id="cell-10" class="cell" data-execution_count="19">
+<div id="cell-11" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ci-dessous</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Appliquer cette procédure au graphe modélisant les pays d’Amérique du Sud en prenant comme racine, c’est-à-dire sommet de départ la France (pour la Guyane Française). À la lecture de tous les pays que vous allez visiter, vous allez être profondément heureux.ses.</li>
 </ol>
-<div id="cell-12" class="cell" data-execution_count="20">
+<div id="cell-13" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ci-dessous</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -970,30 +977,23 @@ cookieconsent.run({
 <ol type="1">
 <li>Écrire en langage Python une fonction <code>parcours_largeur</code> qui met en œuvre l’algorithme de parcours en largeur d’un graphe à partir d’un sommet donné.</li>
 </ol>
-<div id="cell-14" class="cell" data-execution_count="21">
+<div id="cell-15" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ci-dessous</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>Tester cet algorithme de parcours en profondeur en prenant le graphe sur les pays d’Amérique du Sud.</li>
 </ol>
-<div id="cell-16" class="cell" data-execution_count="22">
+<div id="cell-17" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre code ci-dessous</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>En vous aidant de la carte de l’Amérique du Sud ci-dessus, vérifier que la liste renvoyée correspond bien à un parcours en largeur.</li>
 </ol>
-<div id="cell-18" class="cell" data-execution_count="23">
+<div id="cell-19" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Votre réponse ci-dessous</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Parcours 1</span>
-<span class="glightbox-desc lightbox-desc-2">Parcours 2</span>
-<span class="glightbox-desc lightbox-desc-3">Parcours 3</span>
-<span class="glightbox-desc lightbox-desc-4">Parcours 4</span>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1176,18 +1176,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1219,7 +1208,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
@@ -1227,10 +1238,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // default icon
           link.classList.add("external");
       }
@@ -1269,7 +1285,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1575,7 +1595,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

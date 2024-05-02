@@ -1,0 +1,249 @@
+---
+title: Cours
+subtitle: "Ch. 16 : Programmation dynamique"
+---
+
+# 1. Rappel introductif : la suite de Fibonacci
+
+La suite de Fibonacci est une suite de nombres entiers notés $F_n$, définie par $F_0=0$, $F_1=1$ et dans laquelle chaque terme est égal à la somme des deux termes qui le précèdent.
+
+D'après la définition de la suite, on a, pour tout entier naturel $n\geqslant 2$ : 
+    
+$$F_{n}=F_{n-2}+F_{n-1}$$
+
+On en déduit une version **récursive** de l'algorithme de calcul de $F_n$. Cet algorithme a ceci de particulier que chaque fonction procède à **deux** appels récursifs.
+
+```{python}
+def fibo_rec(n: int) -> int:
+    """Suite de Fibonacci version récursive"""
+    # Cas de base
+    if n in {0,1}:
+        return n
+    # Récursion
+    else:
+        return fibo_rec(n-1) + fibo_rec(n-2)
+
+for k in range(10):
+    print(fibo_rec(k))
+```
+
+Nous avons vu que cet algorithme est très inefficace. Le calcul de $F_{50}$, par exemple, est très long. En effet, le nombre d'appels récursifs est très grand. Il est possible de démontrer que ce nombre augmente de façon **exponentielle**. Pour calculer $F_{100}$, il y aurait environ $10^{20}$ opérations. À raison de $10^9$ opérations par seconde, le calcul prendra de l'ordre de $10^{11}$ secondes, soit environ 3 000 ans !
+
+![](fibo_mermaid.png)
+
+Un autre constat qui montre l'inefficacité de ce programme : plusieurs calculs identiques sont répétés plusieurs fois. On calcule par exemple $F_3$ deux fois et $F_2$ trois fois si l'on veut obtenir $F_5$. Une solution meilleure serait de garder en mémoire les éléments déjà calculés et de ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la **programmation dynamique** qui consiste pour faire simple à mémoriser les résultats déjà calculés pour ne pas avoir à les recalculer.
+
+```{python}
+def fibo_dyn(n: int, suite: dict = {0: 0, 1: 1}) -> int:
+    """Suite de Fibonacci version dynamique"""
+    # Cas de base
+    if n in {0,1}:
+        return n
+    # Récursion
+    else:
+        # Si Fn est déjà calculé, on le retourne
+        if n in suite:
+            return suite[n]
+        else:
+            # Sinon, on le calcule et on le garde en mémoire
+            f = fibo_dyn(n-2, suite) + fibo_dyn(n-1, suite)
+            suite[n] = f
+            return f
+
+
+for k in range(10):
+    print(fibo_dyn(k))
+```
+
+Avec cette version, la calcule de $F_{50}$ ne pose plus de problème.
+
+# 2. Principe de la programmation dynamique
+
+La programmation dynamique est une méthode algorithmique qui résout des problèmes complexes en les décomposant en sous-problèmes plus simples, en **évitant la redondance** des calculs grâce à la mémorisation des résultats intermédiaires. Cette technique est particulièrement efficace pour les problèmes d'optimisation où l'on cherche la meilleure solution parmi un ensemble de possibilités.
+
+Le principe repose sur deux concepts clés : l'**optimalité** et la **sous-structure optimale**. Un problème présente une sous-structure optimale si une solution optimale globale peut être construite à partir de solutions optimales de ses sous-problèmes. L'optimalité, quant à elle, garantit que pour obtenir la meilleure solution, il suffit de considérer les meilleures solutions des sous-problèmes.
+
+Pour mettre en œuvre la programmation dynamique, on utilise généralement deux approches : la **mémoïsation**, qui consiste à enregistrer les solutions des sous-problèmes dans une structure de données (comme un tableau) pour les réutiliser ultérieurement ; et la **programmation en bottom-up**, qui calcule les solutions des sous-problèmes de manière itérative en partant des cas les plus simples pour remonter vers la solution complète.
+
+:::{.callout-tip}
+## En résumé
+
+La programmation dynamique transforme un problème complexe en un assemblage de problèmes plus petits et gérables, permettant ainsi de réduire considérablement le temps de calcul nécessaire à la résolution du problème initial.
+:::
+
+**Exemple détaillé : retour sur la chenille vorace**
+
+Une chenille se déplace dans une pyramide de nombres (représentant des pucerons) en partant du sommet, et elle cherche à manger le nombre maximal de pucerons possibles.
+
+```{mermaid}
+graph TD
+A[3] --> B{7}
+A --> C{4}
+B --> D{2}
+B --> E{4}
+C --> E
+C --> G{6}
+D --> H{9}
+D --> I{5}
+E --> I
+E --> J{9}
+G --> J
+G --> K{3}
+```
+
+Un algorithme naïf, sur l'exemple, consiste à examiner les 8 chemins possibles, et choisir celui qui a le plus grand total. En général, quand la pyramide a $n$ niveaux, il y a $\displaystyle 2^{n-1}$ chemins et $\displaystyle 2^{n}-2$ calculs à effectuer. Donc l'algorithme naïf est de complexité exponentielle.
+
+Le paradigme de la programmation dynamique permet d'obtenir un algorithme efficace en définissant des sous-problèmes, en écrivant une relation de récurrence, puis en donnant un algorithme (avec méthode ascendante ou descendante).
+
+Pour toute position  $\displaystyle x$ dans la pyramide, notons ${\displaystyle v(x)}$ le nombre écrit à cette position et  ${\displaystyle c(x)}$ la somme des nombres traversés dans un chemin maximal issu de $\displaystyle x$. Les sous-problèmes consistent à calculer les valeurs de ${\displaystyle c(x)}$ pour tout ${\displaystyle x}$. Le problème initial consiste à calculer ${\displaystyle c(x)}$ lorsque ${\displaystyle x}$ est le sommet de la pyramide.
+
+Donnons maintenant une définition récursive de ${\displaystyle c(x)}$ : ${\displaystyle c(x)=v(x)}$ pour toute position ${\displaystyle x}$ située au rez-de chaussée de la pyramide ${\displaystyle c(x)=v(x)+\max(c(g(x)),c(d(x)))}$ pour toute autre position ${\displaystyle x}$, où ${\displaystyle g(x)}$ et ${\displaystyle d(x)}$ sont les positions inférieures gauche et droite sous la position ${\displaystyle x}$.
+
+Si on cherche à calculer directement par la définition récursive, on évalue plusieurs fois la même valeur : dans l'exemple ci-dessus, la valeur 4 de la troisième ligne est calculée deux fois en venant de la ligne supérieure (une fois depuis le 7, une fois depuis le 4). Le paradigme de la programmation dynamique consiste à calculer les valeurs ${\displaystyle c(x)}$, soit à l'aide d'un algorithme itératif ascendant en stockant les valeurs déjà calculées dans un tableau, soit à l'aide d'un algorithme récursif descendant avec mémoïsation. L'important est de conserver dans un tableau les valeurs intermédiaires.
+
+:::{.callout-tip}
+## Définition
+
+**Mémoïsation** : En informatique, la mémoïsation (ou mémoïzation) est la mise en cache des valeurs de retour d'une fonction selon ses valeurs d'entrée. Le but de cette technique d'optimisation de code est de diminuer le temps d'exécution d'un programme informatique en mémorisant les valeurs retournées par une fonction.
+:::
+
+Le nombre de calculs est seulement ${\displaystyle n(n-1)/2}$ : la complexité est donc ramenée à ${\displaystyle O(n^2)}$.
+
+### Exercice
+
+Dérouler à la main, l'algorithme décrit ci-dessus, en deux versions : une version itérative ascendante avec un tableau, et une version récursive avec mémoïsation.
+
+# 3. Exemple de référence : le rendu de monnaie
+
+[On a déjà vu en classe de première qu’un algorithme glouton pouvait donner une réponse au problème.](https://pnsi.flallemand.fr/26_gloutons/gloutons_cours.html#exemples-dalgorithmes-gloutons)
+
+Fixons les notations. On suppose donné un système monétaire où les valeurs faciales des pièces (ou des billets) sont rangées
+en ordre décroissant. Par exemple, le système Euro pourra être décrit par la liste ``euros = [50, 20, 10, 5, 2, 1]``. Pour
+payer une somme de 48 unités on pourrait bien sûr payer 48 pièces de 1, ou encore 3 pièces de 10, 3 pièces de 5, 1 pièce de 2 et 1
+pièce de 1.
+
+On cherche à payer la somme indiquée, en supposant qu’on a autant de pièces de chaque valeur que de besoin, en utilisant un
+nombre minimal de pièces.
+
+L’algorithme glouton consiste à payer d’abord avec la plus grosse pièce possible : ici, il s’agit de 20, puisque 50 > 48. Ayant donné 20,
+il reste 28 à payer, et on poursuit avec la même méthode. Finalement, on va payer 48 sous la forme 48 = 20 + 20 + 5 + 2 + 1. On a
+eu besoin de 5 pièces.
+
+Considérons un autre système monétaire (en fait c’est l’ancien système impérial britannique) représenté par la liste suivante de
+valeurs faciales : ``imperial = [30, 24, 12, 6, 3, 1]``. Pour payer 48 l’algorithme glouton va répondre : 48 = 30+12+6.
+À la différence du système euro, pour lequel on peut démontrer que l’algorithme glouton donne toujours la réponse optimale, on
+constate que ce n’est pas le cas avec le système impérial, puisque on aurait pu se contenter de 2 pièces : 48 = 24 + 24.
+
+Rappelons comment peut se programmer l’algorithme glouton.
+
+```{python}
+euros = [50, 20, 10, 5, 2, 1]
+imperial = [30, 24, 12, 6, 3, 1]
+
+def glouton(valeursFaciales, somme):
+    i = 0 # index de la pièce qu'on va essayer
+    p = len(valeursFaciales) # nombre de valeurs de pièces disponibles
+    monnaie = [] # liste des pièces rendues
+    while i<p and somme>0:
+        if valeursFaciales[i]>somme:
+            i += 1
+        else:
+            monnaie.append(valeursFaciales[i])
+            somme -= valeursFaciales[i]
+    if somme==0:
+        return monnaie
+    else:
+        return None
+```
+
+L’appel ``glouton(euros, 48)`` renvoie la liste ``[20, 20, 5, 2, 1]``; l’appel ``glouton(imperial, 48)`` renvoie la liste
+``[30, 12, 6]``.
+
+La réponse optimale est celle qui utilise le nombre minimal de pièces. On a vu que l’algorithme glouton échoue à la trouver en général
+(l’exemple de rendre 48 avec le système impérial suffit à le prouver).
+
+Une approche récursive permet de résoudre le problème : soit $x$ une valeur faciale de l’une des pièces du système monétaire. Pour
+rendre une somme $s$ de façon optimale, si l’on veut utiliser au moins une fois la pièce $x$, il suffit de rendre $x$ et la somme $s − x$ de
+façon optimale. Il n’y a plus qu’à choisir, parmi tous les choix possibles de $x$, celui qui permet d’utiliser le minimum de pièces.
+Autrement dit, si j’appelle $f(s)$ le nombre minimal de pièces qu’il faut utiliser pour payer la somme $x$, on a simplement $f(0) = 0$ et
+
+$$f(s) = \min_{x\leqslant s} (1 + f(s − x))$$
+
+le minimum étant calculé sur toutes les valeurs $x$ d’une pièce.
+
+Cette remarque permet d’écrire le programme récursif suivant :
+
+```{python}
+from math import inf
+
+def dynRecursif(valeursFaciales, somme):
+    if somme < 0:
+        return inf
+    elif somme == 0:
+        return 0
+    mini = inf
+    for x in valeursFaciales:
+        if somme >= x:
+            mini = min(mini, 1 + dynRecursif(valeursFaciales, somme - x))
+    return mini
+```
+
+On a importé du module ``math`` la valeur spéciale ``inf`` qui représente l’infini : pour tout entier ``a``, l’expression a`` < inf`` vaut ``True``.
+
+Hélas, l’exécution de l’appel ``dynRecursif(euros, 48)`` est extrêmement lente. les mêmes calculs étant effectués de façon
+répétée. Une analyse du problème montrerait que la complexité est exponentielle.
+
+Une idée classique consiste à mémoriser les résultats des appels pour être sûr qu’on n’aura pas besoin de les calculer plusieurs fois.
+
+## 3.1. Approche récursive
+
+Il s'agit de l'approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive dont un des arguments est un dictionnaire pour mémoriser les résultats déjà calculés. On prend soin de donner une valeur par défaut vide pour que la fonction reste pure (pas de variable globale).
+
+```{python}
+def dynRecursifMem(valeursFaciales, somme, mem={}):
+    if somme < 0:
+        return inf
+    elif somme == 0:
+        return 0
+    mini = inf
+    for x in valeursFaciales:
+        if somme >= x:
+            # si le résultat a déjà été calculé, on le récupère
+            if somme in mem:
+                mini = mem[somme]
+            # Sinon, on calcule et mémorise le résultat
+            else:
+                mini = min(mini, 1 + dynRecursifMem(valeursFaciales, somme - x, mem))
+    mem[somme] = mini
+    return mini
+```	
+
+Cette fois, l'exécution de ``dynRecursifMem(euros, 48)`` est immédiate.
+
+## 3.2. Approche itérative
+
+Ici, le calcul de ``f(s)`` utilise le calcul de ``f(s − x)`` pour chaque valeur de ``x``. Autrement dit, ``f(s)`` n’utilise au plus que les valeurs de ``f(s − 1)``, ``f(s − 2)``, …, ``f(3)``, ``f(2)``, ``f(1)``.
+
+On va donc créer un tableau conservant ces données, et calculer de façon systématique pour des valeurs croissantes de l’index.
+
+```{python}
+def dynMemoise(valeursFaciales, somme):
+    f = [0] * (somme + 1)
+    for s in range(1, somme + 1):
+        f[s] = inf
+        for x in valeursFaciales:
+            if s >= x:
+                f[s] = min(f[s], 1 + f[s - x])
+    return f[somme]
+```
+
+Le calcul de ``f(48)`` va peut-être utiliser plusieurs fois la valeur de ``f(8)``, mais celle-ci n’aura cette fois été calculée qu’une seule fois, et aussitôt rangée en mémoire. Cela ne fonctionne que parce que pour calculer ``f(48)``, par exemple, on a recours seulement aux
+valeurs de ``f(s)`` pour ``s < 48``.
+
+Cette fois l’appel ``dynMemoise(euros, 48)`` répond immédiatement ``5`` (l’algorithme glouton avait bien trouvé la réponse optimale)
+et ``dynMemoise(imperial, 48)`` renvoie ``2``, ce qui correspond à la solution optimale ``48 = 24 + 24``.
+
+L’algorithme est de complexité tout à fait raisonnable : les deux boucles emboîtées correspondent à un temps d’exécution de l’ordre
+de ``somme * len(valeursFaciales)``.
+
+En revanche, il a un coût en espace (ou en mémoire) : il faut réserver la place nécessaire pour ranger toutes les valeurs de ``f(n)``.

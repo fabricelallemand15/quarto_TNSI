@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale – Files (Cours)</title>
+<title>NSI - Terminale – Programme</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../02-structures/listes_exercices.html" rel="next">
-<link href="../02-structures/piles_cours.html" rel="prev">
+<link href="../16-ProgDyn/ProgDyn_Cours.html" rel="next">
+<link href="../11-algos2/exos_graphes.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -82,9 +48,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -214,7 +177,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/index.html">Ch. 4 - Structures linéaires : listes, piles et files - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/files_cours.html">Files (Cours)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../16-ProgDyn/index.html">Ch. 16 - Programmation dynamique</a></li><li class="breadcrumb-item"><a href="../16-ProgDyn/index.html">Programme</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -327,13 +290,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Ch. 4 - Structures linéaires : listes, piles et files - Interface et implémentation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/index.html" class="sidebar-item-text sidebar-link">
@@ -360,7 +323,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02-structures/files_cours.html" class="sidebar-item-text sidebar-link active">
+  <a href="../02-structures/files_cours.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Files (Cours)</span></a>
   </div>
 </li>
@@ -747,16 +710,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="true">
  <span class="menu-text">Ch. 16 - Programmation dynamique</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../16-ProgDyn/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../16-ProgDyn/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Programme</span></a>
   </div>
 </li>
@@ -875,21 +838,16 @@ window.Quarto = {
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#du-point-de-vue-utilisateur-interface" id="toc-du-point-de-vue-utilisateur-interface" class="nav-link active" data-scroll-target="#du-point-de-vue-utilisateur-interface">1. Du point de vue utilisateur : interface</a></li>
-  <li><a href="#du-point-de-vue-concepteur-implémentations" id="toc-du-point-de-vue-concepteur-implémentations" class="nav-link" data-scroll-target="#du-point-de-vue-concepteur-implémentations">2. Du point de vue concepteur : implémentation(s)</a>
-  <ul class="collapse">
-  <li><a href="#implémentation-utilisant-deux-piles" id="toc-implémentation-utilisant-deux-piles" class="nav-link" data-scroll-target="#implémentation-utilisant-deux-piles">Implémentation utilisant deux piles</a></li>
-  <li><a href="#implémentation-utilisant-la-poo" id="toc-implémentation-utilisant-la-poo" class="nav-link" data-scroll-target="#implémentation-utilisant-la-poo">Implémentation utilisant la POO</a></li>
-  </ul></li>
+  <li><a href="#algorithmique" id="toc-algorithmique" class="nav-link active" data-scroll-target="#algorithmique">Algorithmique</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/02-structures/files_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/16-ProgDyn/index.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/index.html">Ch. 4 - Structures linéaires : listes, piles et files - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/files_cours.html">Files (Cours)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../16-ProgDyn/index.html">Ch. 16 - Programmation dynamique</a></li><li class="breadcrumb-item"><a href="../16-ProgDyn/index.html">Programme</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Files (Cours)</h1>
+<h1 class="title">Programme</h1>
 </div>
 
 
@@ -906,275 +864,33 @@ window.Quarto = {
 </header>
 
 
-<section id="du-point-de-vue-utilisateur-interface" class="level2">
-<h2 class="anchored" data-anchor-id="du-point-de-vue-utilisateur-interface">1. Du point de vue utilisateur : interface</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Définition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La <strong>file</strong>, comme la liste et la pile, permet de stocker des données et d’y accéder. La différence se situe au niveau de l’ajout et du retrait d’éléments.</p>
-<ul>
-<li>Le prochain élément auquel on peut accéder est le premier élément ajouté à la structure ;</li>
-<li>Les nouveaux éléments viennent en bout de file : on ne pourra y accéder que lorsque tous les éléments ayant été ajoutés avant eux seront sortis de la file.</li>
-</ul>
-</div>
-</div>
-<p>On parle de mode <strong>FIFO</strong> (First in, First out, en anglais, premier arrivé, premier sorti), c’est-à-dire que le premier élément ayant été ajouté à la structure sera le prochain élément auquel on accédera. Les derniers éléments ajoutés devront « attendre » que tous les éléments ayant été ajoutés avant eux soient sortis de la file. Contrairement aux listes, on ne peut donc pas accéder à n’importe quelle valeur de la structure (pas d’index).</p>
-<p>Pour gérer cette contrainte, la pile est caractérisée par deux « emplacements » :</p>
-<ul>
-<li>la <strong>tête</strong> de file, sortie de la file (début de la structure), où les éléments sont retirés ;</li>
-<li>le <strong>bout</strong> de file, entrée de la file (fin de la structure), où les éléments sont ajoutés.</li>
-</ul>
-<p>On peut s’imaginer une <strong>file d’attente</strong>, dans un cinéma par exemple. Les premières personnes à pouvoir acheter leur place sont les premières arrivées, et les nouveaux arrivants se placent au bout de la file.</p>
-<p><a href="file.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="file.jpg" class="img-fluid"></a></p>
-<p>Une file est une collection de données. On appelle tête de file le premier élément de la structure et bout de file le dernier élément. Quand un élément est ajouté à la file, on l’ajoute en bout de file et il devient le nouveau bout de file c’est-à-dire l’élément « suivant » l’élément situé précédemment en bout de file. Quand un élément est retiré de la file, on le sélectionne à la tête de la file et la nouvelle tête est l’élément qui suivait l’ancienne tête. Lorsqu’on ajoute un élément à une file vide, celui-ci est donc à la fois la tête et le bout de la file.</p>
-<p><a href="FIFO_queue.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="FIFO_queue.png" class="img-fluid"></a></p>
-<p>6 primitives constituent l’interface permettant de définir le type abstrait de données “file” :</p>
-<ul>
-<li><code>creer()</code>, qui crée une file vide ;</li>
-<li><code>taille(file)</code>, qui permet de connaître le nombre d’éléments contenus dans la file ;</li>
-<li><code>est_vide(file)</code>, qui renvoie vrai si la file est vide, faux sinon ;</li>
-<li><code>enfiler(file, element)</code>, qui ajoute un élément au bout de la file (et devient le nouveau bout de file) ;</li>
-<li><code>defiler(file)</code>, qui retire et renvoie l’élément situé à la tête de la file (la nouvelle tête devient l’élément qui suivait l’ancienne tête) ;</li>
-<li><code>tete(file)</code>, qui renvoie l’élément situé à la tête de la file (sans le retirer).</li>
-</ul>
-<p>Enfiler se dit <em>enqueue</em> en anglais et défiler se dit <em>dequeue</em>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-La file est utile dans différents types de problèmes
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>pour une imprimante, gestion de la file d’attente des documents à imprimer ;</li>
-<li>modélisation du jeu de la bataille (on révèle la carte au-dessus du paquet et on place celles gagnées en dessous…) ;</li>
-<li>gestion de mémoires tampon, pour gérer les flux de lecture et d’écriture dans un fichier, par exemple ;</li>
-<li>matérialisation d’une file d’attente, pour un logiciel (visioconférence par exemple) ou un jeu (gestion des connexions des utilisateurs, des tours de jeu…),…</li>
-<li>algorithme du parcours en largeur pour les arbres et les graphes, par exemple, pour trouver le plus court trajet sur une carte, ou récupérer les valeurs d’une structure dans l’ordre croissant.. (voir séquence 6).</li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Exemple
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Supposons implémenté le type abstrait <strong>file</strong>. Nous disposons d’une interface composée des six primitives décrites ci-dessus. On considère une file <code>F</code> composée des éléments suivants : 12, 14, 8, 7, 19 et 22 (la tête = premier élément entré dans la file est 22, le dernier élément entré est 12). On exécute le code suivant ligne par ligne :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>    enfiler(F,<span class="dv">42</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    defiler(F)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    defiler(F)</span>
-<span id="cb1-4"><a href="#cb1-4"></a>    taille(F)</span>
-<span id="cb1-5"><a href="#cb1-5"></a>    estVide(F)</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    tete(F)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>L’exécution de la ligne 1 ajoute l’élément 42 au bout de la file qui contient alors 42, 12, 14, 8, 7, 19, 22 ;</li>
-<li>L’exécution de la ligne 2 affiche 22 et retire cet élément de la file qui contient maintenant 42, 12, 14, 8, 7, 19 ;</li>
-<li>L’exécution de la ligne 3 affiche 19 et retire cet élément de la file qui contient maintenant 42, 12, 14, 8, 7 ;</li>
-<li>La ligne 4 renvoie la taille de <code>F</code> : 5 ;</li>
-<li>La file n’est pas vide, on obtient dont <code>False</code>.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="du-point-de-vue-concepteur-implémentations" class="level2">
-<h2 class="anchored" data-anchor-id="du-point-de-vue-concepteur-implémentations">2. Du point de vue concepteur : implémentation(s)</h2>
-<p>L’implémentation utilisant des listes Python est possible, mais l’opération <code>defiler()</code> est inefficace dans ce cas (on a une complexité en <span class="math inline">\(\mathcal{O}(n)\)</span>).</p>
-<p>Nous allons tout d’abord étudier une implémentation utilisant <strong>deux piles</strong>.</p>
-<section id="implémentation-utilisant-deux-piles" class="level3">
-<h3 class="anchored" data-anchor-id="implémentation-utilisant-deux-piles">Implémentation utilisant deux piles</h3>
-<p>Comme le programme le suggère, il est possible d’implanter une file en utilisant deux piles. Le procédé est le suivant :</p>
-<ul>
-<li><p>la file est, au départ, composée de deux piles vides ;</p></li>
-<li><p>la première pile est une pile dite « d’entrée » et la seconde « de sortie » ;</p></li>
-<li><p>quand on ajoute un élément dans la file, on le place dans la pile « d’entrée » ;</p></li>
-<li><p>Quand on retire (ou qu’on accède) au premier élément de la file, on a deux cas :</p>
-<ul>
-<li>soit la pile « de sortie » est vide et on dépile chaque élément de la pile « d’entrée » pour les empiler immédiatement dans la pile « de sortie » ;</li>
-<li>soit il y a au moins un élément dans la pile « de sortie », auquel cas on ne fait rien de plus.</li>
-<li>Enfin, on sélectionne le sommet de la pile « de sortie » ;</li>
-</ul></li>
-<li><p>comme il y a deux piles, la taille de la file (et le fait qu’elle soit vide ou non) doit se baser sur les éléments contenus dans les deux piles.</p></li>
-</ul>
-<p><a href="file2piles.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="file2piles.png" class="img-fluid"></a></p>
-<p>Dans notre implémentation, on propose de matérialiser la file sous la forme d’un tuple contenant deux piles, crées (et manipulées) avec les méthodes du module modélisant le type abstrait de données pile en utilisant les listes Python, définit plus tôt dans la section sur les piles. Ce module, nommé <code>piles.py</code> sera importé dans le présent fichier. On introduit également une nouvelle méthode « transferer » qui sert à effectuer le transfert entre les piles (si nécessaire) avant de retirer ou de récupérer le premier élément de la file.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> piles</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">"""Implémentation du type abstrait "file" avec deux piles"""</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> creer_file():</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne une file vide"""</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    pile_in <span class="op">=</span> piles.creer()</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    pile_out <span class="op">=</span> piles.creer()</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (pile_in, pile_out)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> taille_file(<span class="bu">file</span>):</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne le nombre d'éléments dans la file"""</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> piles.taille(<span class="bu">file</span>[<span class="dv">0</span>]) <span class="op">+</span> piles.taille(<span class="bu">file</span>[<span class="dv">1</span>])</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> est_vide_file(<span class="bu">file</span>):</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne True si la file est vide, False sinon"""</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> piles.est_vide(<span class="bu">file</span>[<span class="dv">0</span>]) <span class="kw">and</span> piles.est_vide(<span class="bu">file</span>[<span class="dv">1</span>])</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> enfiler(<span class="bu">file</span>, element):</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Ajoute un nouvel élément à l'arrière de la file"""</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    piles.empiler(<span class="bu">file</span>[<span class="dv">0</span>], element)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transferer(<span class="bu">file</span>):</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Transfère les éléments de la pile d'entrée vers la pile de sortie"""</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> piles.taille(<span class="bu">file</span>[<span class="dv">0</span>]) <span class="op">!=</span> <span class="dv">0</span>:</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> piles.depiler(<span class="bu">file</span>[<span class="dv">0</span>])</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        piles.empiler(<span class="bu">file</span>[<span class="dv">1</span>], item)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> defiler(<span class="bu">file</span>):</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne l'élément situé en tête de la file et le supprime de la file"""</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> taille_file(<span class="bu">file</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> piles.sommet(<span class="bu">file</span>[<span class="dv">1</span>]) <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>            transferer(<span class="bu">file</span>)</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">file</span>[<span class="dv">1</span>].pop()</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tete_file(<span class="bu">file</span>):</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne l'élément situé en tête de la file"""</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> taille_file(<span class="bu">file</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> piles.sommet(<span class="bu">file</span>[<span class="dv">1</span>]) <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>            transferer(<span class="bu">file</span>)</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> piles.sommet(<span class="bu">file</span>[<span class="dv">1</span>])</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Cette implémentation sera testée en exercices.</p>
-</section>
-<section id="implémentation-utilisant-la-poo" class="level3">
-<h3 class="anchored" data-anchor-id="implémentation-utilisant-la-poo">Implémentation utilisant la POO</h3>
-<p>On reprend l’idée du chaînon, mais cette fois-ci, un chaînon est lié à son élément <strong>précédent</strong> dans la file, et non à son élément suivant : en effet, quand un élément sort de la file, c’est le précédent qui prend la tête.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">""""Implémentation du type abstrait file en POO"""</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Chainon:</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, element<span class="op">=</span><span class="va">None</span>, precedent<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""element est la valeur du chainon et precedent est le chainon qui suit"""</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.element <span class="op">=</span> element</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.precedent <span class="op">=</span> precedent</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> File():</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.front <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.back <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> taille(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne le nombre d'éléments dans la file"""</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">long</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        chainon <span class="op">=</span> <span class="va">self</span>.front</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> chainon <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>            chainon <span class="op">=</span> chainon.precedent</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>            <span class="bu">long</span> <span class="op">=</span> <span class="bu">long</span> <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">long</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> est_vide(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne True si la file est vide et False sinon"""</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.front <span class="kw">is</span> <span class="va">None</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> enfiler(<span class="va">self</span>, element):</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Ajoute un nouvel élément à l'arrière de la file"""</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        new_back <span class="op">=</span> Chainon(element, <span class="va">None</span>)   <span class="co"># Création d'un nouveau chaînon</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.taille() <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>            <span class="co"># dans ce cas la file est vide et la tête est la queue</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.front <span class="op">=</span> new_back</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.back.precedent <span class="op">=</span> new_back    <span class="co"># On relie l'ancien dernier élément au nouveau</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.back <span class="op">=</span> new_back    <span class="co"># On définit le nouveau dernier élément</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> defiler(<span class="va">self</span>):</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne l'élément situé en tête de la file et le supprime de la file"""</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> <span class="va">self</span>.front.element</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.front <span class="op">=</span> <span class="va">self</span>.front.precedent</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> item</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> tete(<span class="va">self</span>):</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne l'élément situé en tête de la file"""</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.front.element</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>        chainon <span class="op">=</span> <span class="va">self</span>.front</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> <span class="bu">str</span>(chainon.element)</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> chainon.precedent <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>            res <span class="op">=</span> <span class="st">" &lt;-- "</span> <span class="op">+</span> res</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>            chainon <span class="op">=</span> chainon.precedent</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>            res <span class="op">=</span> <span class="bu">str</span>(chainon.element) <span class="op">+</span> res</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> res</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La méthode <strong>enfiler</strong> demande un peu d’attention et doit être bien comprise.</p>
-<p>Exemple d’utilisation de cette interface en console :</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> File()</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a.taille()</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a.est_vide()</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        a.enfiler(<span class="dv">10</span><span class="op">*</span>k)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a.est_vide()</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="va">False</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a.taille()</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(a)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="dv">40</span> <span class="op">&lt;--</span> <span class="dv">30</span> <span class="op">&lt;--</span> <span class="dv">20</span> <span class="op">&lt;--</span> <span class="dv">10</span> <span class="op">&lt;--</span> <span class="dv">0</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a.tete()</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a.defiler()</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a.defiler()</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a.taille()</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Remarque (extrait de la documentation Python)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Il est également possible d’utiliser une liste comme une file, où le premier élément ajouté est le premier récupéré (« premier entré, premier sorti » ou FIFO pour first-in, first-out) ; toutefois, les listes ne sont pas très efficaces pour réaliser ce type de traitement. Alors que les ajouts et suppressions en fin de liste sont rapides, les insertions ou les retraits en début de liste sont lents (car tous les autres éléments doivent être décalés d’une position).</p>
-<p>Pour implémenter une file, utilisez plutôt la classe <code>collections.deque</code> qui a été conçue spécialement pour réaliser rapidement les opérations d’ajout et de retrait aux deux extrémités. Par exemple :</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> collections <span class="im">import</span> deque</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> queue <span class="op">=</span> deque([<span class="st">"Eric"</span>, <span class="st">"John"</span>, <span class="st">"Michael"</span>])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> queue.append(<span class="st">"Terry"</span>)           <span class="co"># Terry arrives</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> queue.append(<span class="st">"Graham"</span>)          <span class="co"># Graham arrives</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> queue.popleft()                 <span class="co"># The first to arrive now leaves</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">'Eric'</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> queue.popleft()                 <span class="co"># The second to arrive now leaves</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">'John'</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> queue                           <span class="co"># Remaining queue in order of arrival</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>deque([<span class="st">'Michael'</span>, <span class="st">'Terry'</span>, <span class="st">'Graham'</span>])</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<section id="algorithmique" class="level2">
+<h2 class="anchored" data-anchor-id="algorithmique">Algorithmique</h2>
+<p>Le travail de compréhension et de conception d’algorithmes se poursuit en terminale notamment via l’introduction des structures d’arbres et de graphes montrant tout l’intérêt d’une approche récursive dans la résolution algorithmique de problèmes.</p>
+<p>On continue l’étude de la notion de coût d’exécution, en temps ou en mémoire et on montre l’intérêt du passage d’un coût quadratique en <span class="math inline">\(n^2\)</span> à <span class="math inline">\(n log_2 n\)</span> ou de <span class="math inline">\(n\)</span> à <span class="math inline">\(log_2 n\)</span>. Le logarithme en base 2 est ici manipulé comme simple outil de comptage (taille en bits d’un nombre entier).</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Contenus</th>
+<th>Capacités attendues</th>
+<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Programmation dynamique.</td>
+<td>Utiliser la programmation dynamique pour écrire un algorithme.</td>
+<td>Les exemples de l’alignement de séquences ou du rendu de monnaie peuvent être présentés. La discussion sur le coût en mémoire peut être développée.</td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1746,13 +1462,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../02-structures/piles_cours.html" class="pagination-link" aria-label="Piles (Cours)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Piles (Cours)</span>
+      <a href="../11-algos2/exos_graphes.html" class="pagination-link" aria-label="Exercices - Parcours de graphes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercices - Parcours de graphes</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../02-structures/listes_exercices.html" class="pagination-link" aria-label="Listes, Piles et Files (Exercices)">
-        <span class="nav-page-text">Listes, Piles et Files (Exercices)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../16-ProgDyn/ProgDyn_Cours.html" class="pagination-link" aria-label="Cours">
+        <span class="nav-page-text">Cours</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1770,7 +1486,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/02-structures/files_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/16-ProgDyn/index.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1788,31 +1504,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 
