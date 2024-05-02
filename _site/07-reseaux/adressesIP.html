@@ -849,6 +849,7 @@ cookieconsent.run({
   <li><a href="#structure-dune-adresse-ip-parties-réseau-et-hôte" id="toc-structure-dune-adresse-ip-parties-réseau-et-hôte" class="nav-link" data-scroll-target="#structure-dune-adresse-ip-parties-réseau-et-hôte">Structure d’une adresse IP : parties <em>réseau</em> et <em>hôte</em></a></li>
   <li><a href="#masque-de-sous-réseau" id="toc-masque-de-sous-réseau" class="nav-link" data-scroll-target="#masque-de-sous-réseau">Masque de sous-réseau</a></li>
   <li><a href="#notation-cidr" id="toc-notation-cidr" class="nav-link" data-scroll-target="#notation-cidr">Notation CIDR</a></li>
+  <li><a href="#adresse-réseau" id="toc-adresse-réseau" class="nav-link" data-scroll-target="#adresse-réseau">Adresse réseau</a></li>
   <li><a href="#adresse-de-diffusion" id="toc-adresse-de-diffusion" class="nav-link" data-scroll-target="#adresse-de-diffusion">Adresse de diffusion</a></li>
   <li><a href="#plage-dadresses-machines" id="toc-plage-dadresses-machines" class="nav-link" data-scroll-target="#plage-dadresses-machines">Plage d’adresses machines</a></li>
   <li><a href="#appartenance-à-un-même-réseau" id="toc-appartenance-à-un-même-réseau" class="nav-link" data-scroll-target="#appartenance-à-un-même-réseau">Appartenance à un même réseau</a></li>
@@ -938,7 +939,9 @@ cookieconsent.run({
 </blockquote>
 <p><strong>Exemple</strong> : le masque de sous-réseau <code>11111111.11111111.11111111.00000000</code> (ou <code>255.255.255.0</code>) s’écrit donc plus simplement <code>/24</code> car il y a 24 bits pour la partie <em>réseau</em>.</p>
 <p>✍️ <strong>Q4</strong> : Déterminer la notation CIDR pour un sous-réseau dont le masque est 255.255.255.240.</p>
-<p>##Adresse réseau</p>
+</section>
+<section id="adresse-réseau" class="level2">
+<h2 class="anchored" data-anchor-id="adresse-réseau">Adresse réseau</h2>
 <p>L’<strong>adresse réseau</strong> permet de savoir si 2 machines peuvent communiquer entre elles (directement). Si ces 2 machines ont une adresse réseau identique, alors elles appartiennent au même réseau et elles peuvent communiquer.</p>
 <p>Cette adresse réseau est celle dont tous les bits de la partie <em>hôte</em> sont à 0, autrement dit l’adresse IP la plus “basse” du réseau.</p>
 <p><strong>Exemple</strong> : si <code>193.55.221.62</code> est une machine d’un réseau dont le masque est <code>/24</code>, alors l’adresse du réseau en question est :</p>

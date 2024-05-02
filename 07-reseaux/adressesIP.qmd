@@ -88,7 +88,7 @@ plus simplement `/24` car il y a 24 bits pour la partie *réseau*.
 ✍️ **Q4** : Déterminer la notation CIDR pour un sous-réseau dont le
 masque est 255.255.255.240.
 
-##Adresse réseau
+## Adresse réseau
 
 L'**adresse réseau** permet de savoir si 2 machines peuvent communiquer
 entre elles (directement). Si ces 2 machines ont une adresse réseau
