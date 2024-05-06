@@ -273,7 +273,7 @@ façon algorithmique le calcul de n'importe quelle fonction. C'est ce
 qui fait son importance, à la fois historique, scientifique et
 philosophique.
 
-![Alan Turing (1912 - 1954)](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/330px-Alan_Turing_Aged_16.jpg){width=30%}
+![Alan Turing (1912 - 1954)](https://upload.wikimedia.org/wikipedia/commons/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg){width=30%}
 
 #### Démonstration du théorème
 
