@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -82,9 +48,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -853,14 +816,6 @@ cookieconsent.run({
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
-  <li><a href="#recherche-naïve" id="toc-recherche-naïve" class="nav-link" data-scroll-target="#recherche-naïve">2. Recherche naïve</a></li>
-  <li><a href="#algorithme-de-boyer-et-moore" id="toc-algorithme-de-boyer-et-moore" class="nav-link" data-scroll-target="#algorithme-de-boyer-et-moore">3. Algorithme de Boyer et Moore</a>
-  <ul class="collapse">
-  <li><a href="#exemple-à-la-main" id="toc-exemple-à-la-main" class="nav-link" data-scroll-target="#exemple-à-la-main">Exemple “à la main”</a></li>
-  <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice">Exercice</a></li>
-  <li><a href="#programmation-de-lalgorithme" id="toc-programmation-de-lalgorithme" class="nav-link" data-scroll-target="#programmation-de-lalgorithme">Programmation de l’algorithme</a></li>
-  </ul></li>
-  <li><a href="#comparaison-expérimentale-des-deux-algorithmes" id="toc-comparaison-expérimentale-des-deux-algorithmes" class="nav-link" data-scroll-target="#comparaison-expérimentale-des-deux-algorithmes">4. Comparaison expérimentale des deux algorithmes</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/fabricelallemand15/site_ESMaths/blob/main/17-RechercheTextuelle/cours.ipynb" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
@@ -889,225 +844,6 @@ cookieconsent.run({
 
 <section id="introduction" class="level1">
 <h1>1. Introduction</h1>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Objectif de la recherche textuelle
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>On considère deux chaînes de caractères, l’une appelée <code>texte</code> et l’autre <code>motif</code>. On cherche dans <code>texte</code> s’il existe une occurrence du motif <code>motif</code>.</p>
-<p>Autrement dit, avec les notations de Python, on cherche s’il existe un indice <code>i</code> tel que <code>texte[i:i+len(motif)] == motif</code>.</p>
-</div>
-</div>
-<p>Plusieurs algorithmes ont été inventés pour résoudre ce problème, un des plus connus est l’algorithme de Knuth, Morris, Pratt, qui ne figure pas au programme. Un autre algorithme, très efficace, est l’algorithme de Boyer et Moore, qui a été inventé en 1977. Boyer et Moore travaillaient alors à l’université d’Austin au Texas en tant qu’informaticiens.</p>
-<p>Dans la suite, <code>texte</code> correspond au texte intégral du roman <em>Le Rouge et le Noir</em> de Stendhal, au format <code>txt</code> encodé en UTF-8.</p>
-<div id="cell-2" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fichier <span class="op">=</span> <span class="bu">open</span>(<span class="st">"LeRougeEtLeNoir.txt"</span> , <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>texte <span class="op">=</span> fichier.read()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fichier.close()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Compléter la cellule ci-dessous pour obtenir la taille du texte en carcatères.</p>
-<div id="cell-4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(texte))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1027755</code></pre>
-</div>
-</div>
-<p>Avant d’aller plus loin, remarquons qu’il existe une fonction Python qui répond à notre problème : il s’agit de la méthode <code>find</code> de l’objet <code>str</code>. Par exemple, le code ci-dessous renvoie l’indice de la première occurrence du motif <code>Julien trembla</code> dans le texte.</p>
-<div id="cell-6" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(texte.find(<span class="st">"Julien trembla"</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>162926</code></pre>
-</div>
-</div>
-<p>L’indice retourné est celui de la première lettre du motif dans le texte :</p>
-<div id="cell-8" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(texte[<span class="dv">162926</span>:<span class="dv">162960</span>])</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Julien tremblait que sa demande ne</code></pre>
-</div>
-</div>
-<p>Si le motif recherché n’apparaît pas dans le texte, alors la fonction <code>find</code> renvoie <code>-1</code>.</p>
-<div id="cell-10" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(texte.find(<span class="st">"Goldorak"</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>-1</code></pre>
-</div>
-</div>
-<p>Une variante de la fonction <code>find</code> prend deux arguments : le second argument est la position de départ dans la recherche.</p>
-<p>Compléter le code suivant, utilisant cette variante, pour déterminer le <strong>nombre d’occurrences</strong> de <code>motif</code> dans <code>texte</code>.</p>
-<div id="cell-12" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nbOccurrences(texte, motif):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    compteur <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    position <span class="op">=</span> texte.find(motif)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> position <span class="op">!=</span> <span class="op">-</span><span class="dv">1</span>:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        compteur <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        position <span class="op">=</span> texte.find(motif, position <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> compteur</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Exécuter le code ci-dessous pour vérifier votre fonction.</p>
-<div id="cell-14" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> nbOccurrences(texte, <span class="st">"Julien"</span>) <span class="op">==</span> <span class="dv">1908</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> nbOccurrences(texte, <span class="st">"Goldorak"</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> nbOccurrences(texte, <span class="st">"mort"</span>) <span class="op">==</span> <span class="dv">178</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tests réussis"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Tests réussis</code></pre>
-</div>
-</div>
-</section>
-<section id="recherche-naïve" class="level1">
-<h1>2. Recherche naïve</h1>
-<p>L’algorithme naïf consiste simplement à comparer un à un, de gauche à droite, les caractères du texte apparaissant dans la fenêtre avec ceux du motif. En cas de non-correspondance on avance simplement la fenêtre d’une unité vers la droite. Par exemple, dans la situation suivante,</p>
-<p><a href="fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="fig1.png" class="img-fluid"></a></p>
-<p>on compare le ‘a’ du motif avec le ‘r’ du texte, obtenant immédiatement une différence : on peut avancer la fenêtre en incrémentant i, qui passe de 14 à 15.</p>
-<p>Dans la nouvelle fenêtre, le premier caractère coïncide bien :</p>
-<p><a href="fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="fig2.png" class="img-fluid"></a></p>
-<p>et on incrémente j pour tester les caractères suivants, ‘d’ et ‘c’ :</p>
-<p><a href="fig3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="fig3.png" class="img-fluid"></a></p>
-<p>On est à nouveau en situation d’échec, et on effectue donc i = i + 1 et j = 0.</p>
-<p>Compléter maintenant la fonction <code>cherche_naif</code> ci-dessous :</p>
-<div id="cell-17" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cherche_naif(texte, motif):</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(texte)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> <span class="bu">len</span>(motif)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    resultat <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;=</span> n<span class="op">-</span>p <span class="kw">and</span> resultat <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>:</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        j <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> j <span class="op">&lt;</span> p <span class="kw">and</span> texte[i<span class="op">+</span>j] <span class="op">==</span> motif[j]:</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>            j <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> j <span class="op">==</span> p:</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>            resultat <span class="op">=</span> i</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultat</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-18" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test de la fonction cherche_naif</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> cherche_naif(<span class="st">"Julien Sorel"</span>, <span class="st">"Julien"</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> cherche_naif(<span class="st">"Julien Sorel"</span>, <span class="st">"Sorel"</span>) <span class="op">==</span> <span class="dv">7</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> cherche_naif(<span class="st">"Julien Sorel"</span>, <span class="st">"Julienne"</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> cherche_naif(texte, <span class="st">"Julien trembla"</span>) <span class="op">==</span> <span class="dv">162926</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tests réussis"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Tests réussis</code></pre>
-</div>
-</div>
-</section>
-<section id="algorithme-de-boyer-et-moore" class="level1">
-<h1>3. Algorithme de Boyer et Moore</h1>
-<p>On étudie en réalité une version simplifiée de cet algorithme, due à Nigel Horspool, né en Grande-Bretagne, mais citoyen canadien. Il est professeur émérite d’informatique de l’université de Victoria.</p>
-<p>La première idée consiste à comparer le motif avec la portion du texte qui apparaît dans la fenêtre de droite à gauche, et non pas de gauche à droite. Ainsi, on fait décroître <code>j</code> à partir de <code>p − 1</code> (<code>p</code> représente toujours la longueur du motif) jusqu’à trouver que le caractère qui lui fait face dans le texte, c’est-à-dire <code>x = texte[i + j]</code>, est différent du caractère <code>y = motif[j]</code> du motif.</p>
-<p>La deuxième idée consiste à opérer un décalage de la fenêtre qui varie en fonction de la paire de caractères qui ont révélé la non-correspondance, c’est-à-dire en fonction de <code>(x; y)</code>.</p>
-<ul>
-<li>Si le caractère <code>x</code> n’apparaît pas dans le motif, alors on peut décaler la fenêtre de <code>p</code> caractères vers la droite.</li>
-<li>Si le caractère <code>x</code> apparaît dans le motif (mais pas en dernière position), alors on peut décaler la fenêtre afin de faire coïncider le <code>x</code> du motif et le <code>x</code> du texte.</li>
-</ul>
-<section id="exemple-à-la-main" class="level2">
-<h2 class="anchored" data-anchor-id="exemple-à-la-main">Exemple “à la main”</h2>
-<p>Nous considérons ici la recherche du motif ‘dab’ dans le texte ‘abracadabra’.</p>
-<p>Avec nos notations, <code>p = 3</code>, <code>n = 11</code> et la première occurrence du motif dans le texte apparaît en position <code>i = 6</code>.</p>
-<p>On commence avec la fenêtre tout à gauche, c’est-à-dire avec <code>i = 0</code>.</p>
-<pre><code>abracadabra
-dab</code></pre>
-<p>Comme on commence à comparer de droite à gauche, c’est pour <code>j = 2</code> qu’il y a non-correspondance : <code>motif[2]='b'</code> est différent de <code>'r'=texte[0 + 2]</code>.</p>
-<p>On note <code>x ='r'</code> le caractère du texte qui ne correspond pas à <code>y ='b'</code> le caractère du motif qui lui fait face.</p>
-<p>De combien peut-on décaler la fenêtre ? Comme <code>x</code> n’apparaît nulle part dans le motif, on peut carrément décaler le motif de <code>p = 3</code> unités vers la droite !</p>
-<pre><code>abracadabra
-   dab</code></pre>
-<p>Ainsi on se retrouve avec <code>i = 3</code> et le premier échec intervient avec <code>j = 2</code>, où le caractère <code>x =texte[3 + 2]='a'</code> du texte est distinct du caractère face à lui dans le motif, c’est-à-dire <code>y =motif[2]='b'</code>.</p>
-<p>Mais à la différence du cas précédent, le caractère <code>x</code> apparaît bien dans le motif. On déplace donc la fenêtre d’une unité vers la droite.</p>
-<p>Voici la prochaine étape :</p>
-<pre><code>abracadabra
-    dab</code></pre>
-<p><code>i = 4</code>; <code>x ='d'</code> ; <code>y ='b'</code> : on décale de 2 pour faire correspondre les deux ‘d’.</p>
-<p>Finalement avec i = 6, on trouve la première occurrence du motif et l’algorithme se termine.</p>
-<pre><code>abracadabra
-      dab</code></pre>
-</section>
-<section id="exercice" class="level2">
-<h2 class="anchored" data-anchor-id="exercice">Exercice</h2>
-<p>Dérouler à la main l’exécution de l’algorithme de Boyer et Moore pour la recherche du motif <code>"cavalier"</code> dans le texte <code>"“Le cheval court, le cavalier se vante”</code>.</p>
-</section>
-<section id="programmation-de-lalgorithme" class="level2">
-<h2 class="anchored" data-anchor-id="programmation-de-lalgorithme">Programmation de l’algorithme</h2>
-<p>On commence par calculer un dictionnaire dont les clés sont les caractères du motif et les valeurs l’indice de la position la plus à droite du caractère.</p>
-<p>C’est ce que réalise la fonction <code>calculeADroite</code>.</p>
-<p>Dans le cas du mot <code>maman</code>, par exemple, ce dictionnaire sera : <code>{'m': 2, 'a': 3, 'n': 4}</code>.</p>
-<p>Compléter le code de la fonction <code>calculeADroite</code>.</p>
-<div id="cell-23" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculeADroite(motif):</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> <span class="bu">len</span>(motif)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    dico <span class="op">=</span> {}</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(p):</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        dico[motif[j]] <span class="op">=</span> j</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dico</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-24" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test de la fonction calculeADroite</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> calculeADroite(<span class="st">"Julien"</span>) <span class="op">==</span> {<span class="st">'J'</span>: <span class="dv">0</span>, <span class="st">'u'</span>: <span class="dv">1</span>, <span class="st">'l'</span>: <span class="dv">2</span>, <span class="st">'i'</span>: <span class="dv">3</span>, <span class="st">'e'</span>: <span class="dv">4</span>, <span class="st">'n'</span>: <span class="dv">5</span>}</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> calculeADroite(<span class="st">"maman"</span>) <span class="op">==</span> {<span class="st">'m'</span>: <span class="dv">2</span>, <span class="st">'a'</span>: <span class="dv">3</span>, <span class="st">'n'</span>: <span class="dv">4</span>}</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tests réussis"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Tests réussis</code></pre>
-</div>
-</div>
-<p>On peut maintenant compléter la fonction <code>recherche_BMH</code> pour appliquer les idées ci-dessus : on parcourt le motif de droite à gauche et on calcule le décalage en utilisant le dictionnaire créé par la fonction précédente.</p>
-<div id="cell-26" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> recherche_BMH(texte, motif):</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(texte)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> <span class="bu">len</span>(motif)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    dico <span class="op">=</span> calculeADroite(motif)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;=</span> n <span class="op">-</span> p:</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        j <span class="op">=</span> p <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> j <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> texte[i<span class="op">+</span>j] <span class="op">==</span> motif[j]:</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>            j <span class="op">-=</span> <span class="dv">1</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> j <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>:</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> i</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> texte[i<span class="op">+</span>j] <span class="kw">in</span> dico:</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>                i <span class="op">+=</span> <span class="bu">max</span>(<span class="dv">1</span>, j <span class="op">-</span> dico[texte[i<span class="op">+</span>j]])</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>                i <span class="op">+=</span> j <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-27" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test de la fonction recherche_BMH</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> recherche_BMH(<span class="st">"Julien Sorel"</span>, <span class="st">"Julien"</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> recherche_BMH(<span class="st">"Julien Sorel"</span>, <span class="st">"Sorel"</span>) <span class="op">==</span> <span class="dv">7</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> recherche_BMH(<span class="st">"Julien Sorel"</span>, <span class="st">"Julienne"</span>) <span class="op">==</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> recherche_BMH(texte, <span class="st">"Julien trembla"</span>) <span class="op">==</span> <span class="dv">162926</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tests réussis"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Tests réussis</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="comparaison-expérimentale-des-deux-algorithmes" class="level1">
-<h1>4. Comparaison expérimentale des deux algorithmes</h1>
-<p>À l’aide du module <code>timeit</code> de Python, on peut comparer les performances des deux algorithmes.</p>
-<div id="cell-29" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparaison des deux algorithmes avec timeit</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> timeit</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Algorithme naïf</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>temps_naif <span class="op">=</span> timeit.timeit(<span class="st">"cherche_naif(texte, 'Julien trembla')"</span>, <span class="bu">globals</span><span class="op">=</span><span class="bu">globals</span>(), number<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Temps de l'algorithme naïf :"</span>, temps_naif)</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Algorithme de Boyer-Moore-Horspool</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>temps_BMH <span class="op">=</span> timeit.timeit(<span class="st">"recherche_BMH(texte, 'Julien trembla')"</span>, <span class="bu">globals</span><span class="op">=</span><span class="bu">globals</span>(), number<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Temps de l'algorithme BMH :"</span>, temps_BMH)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Temps de l'algorithme naïf : 3.2481508999990183
-Temps de l'algorithme BMH : 0.6167228000049363</code></pre>
-</div>
-</div>
 
 
 </section>
@@ -1712,31 +1448,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 
