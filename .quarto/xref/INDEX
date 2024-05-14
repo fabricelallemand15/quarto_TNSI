@@ -579,5 +579,11 @@
   },
   "16-ProgDyn/ProgDyn_Exos.qmd": {
     "ProgDyn_Exos.html": "812d4321"
+  },
+  "17-RechercheTextuelle/index.qmd": {
+    "index.html": "fd458ee5"
+  },
+  "17-RechercheTextuelle/cours.ipynb": {
+    "cours.html": "a520f2f6"
   }
 }

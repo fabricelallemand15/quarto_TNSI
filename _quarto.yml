@@ -123,8 +123,8 @@ website:
           - 16-ProgDyn/ProgDyn_Exos.qmd
       - section: "Ch. 17 - Recherche textuelle"
         contents: 
-          - 11-algos2/recherche_textuelle.qmd
-          - 11-algos2/exos_recherche_textuelle.qmd
+          - 17-RechercheTextuelle/index.qmd
+          - 17-RechercheTextuelle/cours.ipynb
       - section: "Ch. 18 - Calculabilité - Décidabilité"
         contents: 
           - 10-langages_prog2/calculabilite.qmd

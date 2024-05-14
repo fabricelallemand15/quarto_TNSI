@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.31">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NSI - Terminale – Centres étrangers 2023 Jour 2</title>
+<title>NSI - Terminale - Centres étrangers 2023 Jour 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -168,7 +168,7 @@ cookieconsent.run({
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Basculer en mode lecteur">
   <div class="quarto-reader-toggle-btn">
@@ -753,11 +753,17 @@ cookieconsent.run({
       </div>
       <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">11-algos2/recherche_textuelle.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../17-RechercheTextuelle/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programme</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">11-algos2/exos_recherche_textuelle.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../17-RechercheTextuelle/cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cours</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -1141,14 +1147,14 @@ cookieconsent.run({
 <p>On obtient l’arbre :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="2023_CE_J2_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig1.png" class="img-fluid figure-img" alt="Arbre binaire de hauteur minimale"></a></p>
+<p><a href="2023_CE_J2_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig1.png" class="img-fluid figure-img" alt="Arbre binaire de hauteur minimale"></a></p>
 <figcaption>Arbre binaire de hauteur minimale</figcaption>
 </figure>
 </div></li>
 <li><p>Pour obtenir un arbre de hauteur maximale, on peut placer à la racine le premier mot de la liste classée dans l’ordre alphabétique, puis placer le mot suivant en sous-arbre droit et chaque mot suivant en sous-arbre droit du précédent. On obtient un arbre filiforme.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="2023_CE_J2_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig2.png" class="img-fluid figure-img" alt="Arbre binaire de hauteur minimale"></a></p>
+<p><a href="2023_CE_J2_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig2.png" class="img-fluid figure-img" alt="Arbre binaire de hauteur minimale"></a></p>
 <figcaption>Arbre binaire de hauteur minimale</figcaption>
 </figure>
 </div></li>
@@ -1180,6 +1186,10 @@ cookieconsent.run({
 </ol>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Arbre binaire de hauteur minimale</span>
+<span class="glightbox-desc lightbox-desc-2">Arbre binaire de hauteur minimale</span>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1362,7 +1372,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1394,29 +1415,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/flallemand\.fr\/ESMaths");
@@ -1424,7 +1423,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1781,7 +1780,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
