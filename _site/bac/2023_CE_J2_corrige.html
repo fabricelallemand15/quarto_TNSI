@@ -133,7 +133,7 @@ cookieconsent.run({
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -845,21 +845,7 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
-   
-  <ul>
-  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link active" data-scroll-target="#exercice-1">Exercice 1</a>
-  <ul class="collapse">
-  <li><a href="#partie-a-ladressage-ip" id="toc-partie-a-ladressage-ip" class="nav-link" data-scroll-target="#partie-a-ladressage-ip">Partie A : L’adressage IP</a></li>
-  <li><a href="#partie-b-le-routage" id="toc-partie-b-le-routage" class="nav-link" data-scroll-target="#partie-b-le-routage">Partie B : Le routage</a></li>
-  </ul></li>
-  <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
-  <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/bac/2023_CE_J2_corrige.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -1147,14 +1133,14 @@ cookieconsent.run({
 <p>On obtient l’arbre :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="2023_CE_J2_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig1.png" class="img-fluid figure-img" alt="Arbre binaire de hauteur minimale"></a></p>
+<p><a href="2023_CE_J2_fig1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig1.png" class="img-fluid figure-img" alt="Arbre binaire de hauteur minimale"></a></p>
 <figcaption>Arbre binaire de hauteur minimale</figcaption>
 </figure>
 </div></li>
 <li><p>Pour obtenir un arbre de hauteur maximale, on peut placer à la racine le premier mot de la liste classée dans l’ordre alphabétique, puis placer le mot suivant en sous-arbre droit et chaque mot suivant en sous-arbre droit du précédent. On obtient un arbre filiforme.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="2023_CE_J2_fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig2.png" class="img-fluid figure-img" alt="Arbre binaire de hauteur minimale"></a></p>
+<p><a href="2023_CE_J2_fig2.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Arbre binaire de hauteur minimale"><img src="2023_CE_J2_fig2.png" class="img-fluid figure-img" alt="Arbre binaire de hauteur minimale"></a></p>
 <figcaption>Arbre binaire de hauteur minimale</figcaption>
 </figure>
 </div></li>
@@ -1762,7 +1748,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/bac/2023_CE_J2_corrige.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/bac/2023_CE_J2_corrige.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1780,7 +1766,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

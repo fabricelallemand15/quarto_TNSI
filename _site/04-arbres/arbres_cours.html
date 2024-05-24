@@ -164,7 +164,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -876,27 +876,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a>
-  <ul class="collapse">
-  <li><a href="#vocabulaire" id="toc-vocabulaire" class="nav-link" data-scroll-target="#vocabulaire">1.1. Vocabulaire</a></li>
-  <li><a href="#exemples" id="toc-exemples" class="nav-link" data-scroll-target="#exemples">1.2. Exemples</a></li>
-  <li><a href="#caractéristiques-dun-arbre" id="toc-caractéristiques-dun-arbre" class="nav-link" data-scroll-target="#caractéristiques-dun-arbre">1.3. Caractéristiques d’un arbre</a></li>
-  </ul></li>
-  <li><a href="#arbres-binaires" id="toc-arbres-binaires" class="nav-link" data-scroll-target="#arbres-binaires">2. Arbres binaires</a>
-  <ul class="collapse">
-  <li><a href="#définition-1" id="toc-définition-1" class="nav-link" data-scroll-target="#définition-1">2.1. Définition</a></li>
-  <li><a href="#sous-arbres" id="toc-sous-arbres" class="nav-link" data-scroll-target="#sous-arbres">2.2. Sous-arbres</a></li>
-  <li><a href="#hauteur-dun-arbre-binaire" id="toc-hauteur-dun-arbre-binaire" class="nav-link" data-scroll-target="#hauteur-dun-arbre-binaire">2.3. Hauteur d’un arbre binaire</a></li>
-  </ul></li>
-  <li><a href="#arbres-binaires-de-recherche" id="toc-arbres-binaires-de-recherche" class="nav-link" data-scroll-target="#arbres-binaires-de-recherche">3. Arbres binaires de recherche</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/04-arbres/arbres_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -1822,7 +1802,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/04-arbres/arbres_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/04-arbres/arbres_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1840,7 +1820,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

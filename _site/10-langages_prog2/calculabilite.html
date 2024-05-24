@@ -164,7 +164,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -876,27 +876,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
-   
-  <ul>
-  <li><a href="#la-thèse-de-church" id="toc-la-thèse-de-church" class="nav-link active" data-scroll-target="#la-thèse-de-church">La thèse de Church</a></li>
-  <li><a href="#fixons-le-vocabulaire" id="toc-fixons-le-vocabulaire" class="nav-link" data-scroll-target="#fixons-le-vocabulaire">Fixons le vocabulaire</a>
-  <ul class="collapse">
-  <li><a href="#problèmes-instances-prédicats" id="toc-problèmes-instances-prédicats" class="nav-link" data-scroll-target="#problèmes-instances-prédicats">Problèmes, instances, prédicats</a></li>
-  <li><a href="#problèmes-de-décision-décidables" id="toc-problèmes-de-décision-décidables" class="nav-link" data-scroll-target="#problèmes-de-décision-décidables">Problèmes de décision décidables</a></li>
-  </ul></li>
-  <li><a href="#le-problème-de-larrêt" id="toc-le-problème-de-larrêt" class="nav-link" data-scroll-target="#le-problème-de-larrêt">Le problème de l'arrêt</a>
-  <ul class="collapse">
-  <li><a href="#les-fonctions-calculables" id="toc-les-fonctions-calculables" class="nav-link" data-scroll-target="#les-fonctions-calculables">Les fonctions calculables</a></li>
-  <li><a href="#les-programmes-comme-données" id="toc-les-programmes-comme-données" class="nav-link" data-scroll-target="#les-programmes-comme-données">Les programmes comme données</a></li>
-  <li><a href="#le-problème-de-larrêt-est-indécidable" id="toc-le-problème-de-larrêt-est-indécidable" class="nav-link" data-scroll-target="#le-problème-de-larrêt-est-indécidable">Le problème de l’arrêt est indécidable</a></li>
-  <li><a href="#un-autre-exemple-de-problème-indécidable-le-dixième-problème-de-hilbert" id="toc-un-autre-exemple-de-problème-indécidable-le-dixième-problème-de-hilbert" class="nav-link" data-scroll-target="#un-autre-exemple-de-problème-indécidable-le-dixième-problème-de-hilbert">Un autre exemple de problème indécidable : Le dixième problème de Hilbert</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/10-langages_prog2/calculabilite.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -942,7 +922,7 @@ Fonction calculable
 <p>La <strong>thèse de Church</strong> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> postule que tous ces modèles de calcul sont équivalents : une fonction calculable pour un modèle l’est pour un autre. Cela nous permet d’utiliser le modèle des fonctions programmables en Python <strong>sans perdre de généralité</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://upload.wikimedia.org/wikipedia/en/a/a6/Alonzo_Church.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Alonzo Church (1903-1995)"><img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Alonzo_Church.jpg" class="img-fluid figure-img" style="width:30.0%" alt="Alonzo Church (1903-1995)"></a></p>
+<p><a href="https://upload.wikimedia.org/wikipedia/en/a/a6/Alonzo_Church.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Alonzo Church (1903-1995)"><img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Alonzo_Church.jpg" class="img-fluid figure-img" style="width:30.0%" alt="Alonzo Church (1903-1995)"></a></p>
 <figcaption>Alonzo Church (1903-1995)</figcaption>
 </figure>
 </div>
@@ -1096,7 +1076,7 @@ Fonction calculable
 <p>Ce résultat met définitivement fin à tout espoir d’automatiser de façon algorithmique le calcul de n’importe quelle fonction. C’est ce qui fait son importance, à la fois historique, scientifique et philosophique.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Alan Turing (1912 - 1954)"><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg" class="img-fluid figure-img" style="width:30.0%" alt="Alan Turing (1912 - 1954)"></a></p>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Alan Turing (1912 - 1954)"><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg" class="img-fluid figure-img" style="width:30.0%" alt="Alan Turing (1912 - 1954)"></a></p>
 <figcaption>Alan Turing (1912 - 1954)</figcaption>
 </figure>
 </div>
@@ -1132,7 +1112,7 @@ Fonction calculable
 <p>Lors du deuxième congrès international des mathématiciens, tenu à Paris en août 1900, <strong>le grand mathématicien allemand David Hilbert</strong> (1862–1943) a présenté en août 1900, à Paris, une liste de 23 problèmes à ses collègues. Ces problèmes interrogent en particulier les fondements des mathématiques et de la logique et seule une moitié d’entre eux ont été résolus depuis.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/7/79/Hilbert.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="David Hilbert (1862 - 1943)"><img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Hilbert.jpg" class="img-fluid figure-img" style="width:30.0%" alt="David Hilbert (1862 - 1943)"></a></p>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/7/79/Hilbert.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="David Hilbert (1862 - 1943)"><img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Hilbert.jpg" class="img-fluid figure-img" style="width:30.0%" alt="David Hilbert (1862 - 1943)"></a></p>
 <figcaption>David Hilbert (1862 - 1943)</figcaption>
 </figure>
 </div>
@@ -1143,7 +1123,7 @@ Fonction calculable
 <p>Il a fallu attendre 1970 pour que le mathématicien russe <strong>Iouri Vladimirovitch Matiassevitch</strong> démontre, à l’âge de 23 ans, que ce problème est indécidable.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yuri_Matiyasevich._Portrait_1969.jpg/348px-Yuri_Matiyasevich._Portrait_1969.jpg?uselang=fr" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4" title="Iouri Vladimirovitch Matiassevitch (1947 - )"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yuri_Matiyasevich._Portrait_1969.jpg/348px-Yuri_Matiyasevich._Portrait_1969.jpg?uselang=fr" class="img-fluid figure-img" style="width:30.0%" alt="Iouri Vladimirovitch Matiassevitch (1947 - )"></a></p>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yuri_Matiyasevich._Portrait_1969.jpg/348px-Yuri_Matiyasevich._Portrait_1969.jpg?uselang=fr" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="Iouri Vladimirovitch Matiassevitch (1947 - )"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yuri_Matiyasevich._Portrait_1969.jpg/348px-Yuri_Matiyasevich._Portrait_1969.jpg?uselang=fr" class="img-fluid figure-img" style="width:30.0%" alt="Iouri Vladimirovitch Matiassevitch (1947 - )"></a></p>
 <figcaption>Iouri Vladimirovitch Matiassevitch (1947 - )</figcaption>
 </figure>
 </div>
@@ -1762,7 +1742,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/10-langages_prog2/calculabilite.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/10-langages_prog2/calculabilite.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1780,7 +1760,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

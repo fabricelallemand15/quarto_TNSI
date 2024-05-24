@@ -135,7 +135,7 @@ cookieconsent.run({
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -847,35 +847,7 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
-   
-  <ul>
-  <li><a href="#requêtes-dinterrogation" id="toc-requêtes-dinterrogation" class="nav-link active" data-scroll-target="#requêtes-dinterrogation">1. Requêtes d’interrogation</a>
-  <ul class="collapse">
-  <li><a href="#requêtes-simples" id="toc-requêtes-simples" class="nav-link" data-scroll-target="#requêtes-simples">Requêtes simples</a></li>
-  <li><a href="#requêtes-conditionnelles" id="toc-requêtes-conditionnelles" class="nav-link" data-scroll-target="#requêtes-conditionnelles">Requêtes conditionnelles</a></li>
-  <li><a href="#ordonner-les-résultats" id="toc-ordonner-les-résultats" class="nav-link" data-scroll-target="#ordonner-les-résultats">Ordonner les résultats</a></li>
-  <li><a href="#éviter-les-doublons" id="toc-éviter-les-doublons" class="nav-link" data-scroll-target="#éviter-les-doublons">Éviter les doublons</a></li>
-  <li><a href="#les-jointures" id="toc-les-jointures" class="nav-link" data-scroll-target="#les-jointures">Les jointures</a></li>
-  </ul></li>
-  <li><a href="#requêtes-de-mise-à-jour" id="toc-requêtes-de-mise-à-jour" class="nav-link" data-scroll-target="#requêtes-de-mise-à-jour">2.2. Requêtes de mise à jour</a>
-  <ul class="collapse">
-  <li><a href="#ajouter-une-entrée" id="toc-ajouter-une-entrée" class="nav-link" data-scroll-target="#ajouter-une-entrée">Ajouter une entrée</a></li>
-  <li><a href="#modifier-une-entrée-existante" id="toc-modifier-une-entrée-existante" class="nav-link" data-scroll-target="#modifier-une-entrée-existante">Modifier une entrée existante</a></li>
-  <li><a href="#supprimer-une-entrée" id="toc-supprimer-une-entrée" class="nav-link" data-scroll-target="#supprimer-une-entrée">Supprimer une entrée</a></li>
-  </ul></li>
-  <li><a href="#quelques-compléments" id="toc-quelques-compléments" class="nav-link" data-scroll-target="#quelques-compléments">2.3. Quelques compléments</a>
-  <ul class="collapse">
-  <li><a href="#calculer-une-somme" id="toc-calculer-une-somme" class="nav-link" data-scroll-target="#calculer-une-somme">Calculer une somme</a></li>
-  <li><a href="#calculer-une-moyenne" id="toc-calculer-une-moyenne" class="nav-link" data-scroll-target="#calculer-une-moyenne">Calculer une moyenne</a></li>
-  <li><a href="#calculer-un-minimum-ou-un-maximum" id="toc-calculer-un-minimum-ou-un-maximum" class="nav-link" data-scroll-target="#calculer-un-minimum-ou-un-maximum">Calculer un minimum ou un maximum</a></li>
-  <li><a href="#compter-des-données" id="toc-compter-des-données" class="nav-link" data-scroll-target="#compter-des-données">Compter des données</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/03-BDD/sql_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -1812,7 +1784,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/03-BDD/sql_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/03-BDD/sql_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1830,7 +1802,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

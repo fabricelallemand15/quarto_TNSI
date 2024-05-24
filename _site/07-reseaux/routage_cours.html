@@ -130,7 +130,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -842,24 +842,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
-   
-  <ul>
-  <li><a href="#introduction-aux-protocoles-de-routage" id="toc-introduction-aux-protocoles-de-routage" class="nav-link active" data-scroll-target="#introduction-aux-protocoles-de-routage">1. Introduction aux protocoles de routage</a></li>
-  <li><a href="#protocoles-de-routage-dynamiques-généralités" id="toc-protocoles-de-routage-dynamiques-généralités" class="nav-link" data-scroll-target="#protocoles-de-routage-dynamiques-généralités">2. Protocoles de routage dynamiques : généralités</a></li>
-  <li><a href="#zoom-sur-le-protocole-rip" id="toc-zoom-sur-le-protocole-rip" class="nav-link" data-scroll-target="#zoom-sur-le-protocole-rip">3. Zoom sur le protocole RIP</a></li>
-  <li><a href="#zoom-sur-le-protocole-ospf" id="toc-zoom-sur-le-protocole-ospf" class="nav-link" data-scroll-target="#zoom-sur-le-protocole-ospf">4. Zoom sur le protocole OSPF</a>
-  <ul class="collapse">
-  <li><a href="#principe" id="toc-principe" class="nav-link" data-scroll-target="#principe">4.1. Principe</a></li>
-  <li><a href="#calcul-du-coût-dune-route" id="toc-calcul-du-coût-dune-route" class="nav-link" data-scroll-target="#calcul-du-coût-dune-route">4.2. Calcul du coût d’une route</a></li>
-  <li><a href="#lien-avec-les-graphes" id="toc-lien-avec-les-graphes" class="nav-link" data-scroll-target="#lien-avec-les-graphes">4.3. Lien avec les graphes</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/07-reseaux/routage_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -1814,7 +1797,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/07-reseaux/routage_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/07-reseaux/routage_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1832,7 +1815,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

@@ -164,7 +164,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -876,35 +876,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#le-principe-de-chiffrement" id="toc-le-principe-de-chiffrement" class="nav-link" data-scroll-target="#le-principe-de-chiffrement">Le principe de chiffrement</a></li>
-  <li><a href="#les-principes-de-chiffrement-symétrique" id="toc-les-principes-de-chiffrement-symétrique" class="nav-link" data-scroll-target="#les-principes-de-chiffrement-symétrique">Les principes de chiffrement symétrique</a>
-  <ul class="collapse">
-  <li><a href="#le-chiffre-de-césar" id="toc-le-chiffre-de-césar" class="nav-link" data-scroll-target="#le-chiffre-de-césar">Le chiffre de César</a></li>
-  <li><a href="#le-chiffre-de-vernam" id="toc-le-chiffre-de-vernam" class="nav-link" data-scroll-target="#le-chiffre-de-vernam">Le chiffre de Vernam</a></li>
-  <li><a href="#le-chiffrement-aes" id="toc-le-chiffrement-aes" class="nav-link" data-scroll-target="#le-chiffrement-aes">Le chiffrement AES</a></li>
-  </ul></li>
-  <li><a href="#les-principes-du-chiffrement-asymétrique" id="toc-les-principes-du-chiffrement-asymétrique" class="nav-link" data-scroll-target="#les-principes-du-chiffrement-asymétrique">Les principes du chiffrement asymétrique</a>
-  <ul class="collapse">
-  <li><a href="#le-chiffrement-rsa" id="toc-le-chiffrement-rsa" class="nav-link" data-scroll-target="#le-chiffrement-rsa">Le chiffrement RSA</a></li>
-  <li><a href="#autre-utilisation-du-chiffrement-symétrique-la-signature-numérique" id="toc-autre-utilisation-du-chiffrement-symétrique-la-signature-numérique" class="nav-link" data-scroll-target="#autre-utilisation-du-chiffrement-symétrique-la-signature-numérique">Autre utilisation du chiffrement symétrique : la signature numérique</a></li>
-  </ul></li>
-  <li><a href="#le-protocole-https" id="toc-le-protocole-https" class="nav-link" data-scroll-target="#le-protocole-https">Le protocole HTTPS</a>
-  <ul class="collapse">
-  <li><a href="#authentification-du-site" id="toc-authentification-du-site" class="nav-link" data-scroll-target="#authentification-du-site">Authentification du site</a></li>
-  <li><a href="#chiffrement-des-communications" id="toc-chiffrement-des-communications" class="nav-link" data-scroll-target="#chiffrement-des-communications">Chiffrement des communications</a></li>
-  <li><a href="#en-résumé" id="toc-en-résumé" class="nav-link" data-scroll-target="#en-résumé">En résumé</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie">Bibliographie</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/09-reseaux2/HTTPS_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -1783,7 +1755,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/09-reseaux2/HTTPS_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/09-reseaux2/HTTPS_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1801,7 +1773,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

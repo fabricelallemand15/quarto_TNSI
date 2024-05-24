@@ -162,7 +162,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -874,16 +874,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
-   
-  <ul>
-  <li><a href="#implémentation-simple" id="toc-implémentation-simple" class="nav-link active" data-scroll-target="#implémentation-simple">Implémentation simple</a></li>
-  <li><a href="#implémentation-objet" id="toc-implémentation-objet" class="nav-link" data-scroll-target="#implémentation-objet">Implémentation objet</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/fabricelallemand15/site_ESMaths/blob/main/08-graphes/tp_graphe_matrice_CORR.ipynb" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -940,7 +931,7 @@ window.Quarto = {
 <p><strong>Question 3 - Application</strong> : en utilisant les deux fonctions précédentes, créer une variable <code>g</code> représentant le graphe suivant :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="graphe_tp1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="graphe 1"><img src="graphe_tp1.png" class="img-fluid figure-img" style="width:50.0%" alt="graphe 1"></a></p>
+<p><a href="graphe_tp1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="graphe 1"><img src="graphe_tp1.png" class="img-fluid figure-img" style="width:50.0%" alt="graphe 1"></a></p>
 <figcaption>graphe 1</figcaption>
 </figure>
 </div>
@@ -1135,7 +1126,7 @@ window.Quarto = {
 <p><strong>Question 9 - Application</strong> : en utilisant la classe <code>Graph</code>, créer une variable <code>g</code> représentant le graphe suivant :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="grpahe1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="graphe 2"><img src="grpahe1.png" class="img-fluid figure-img" style="width:50.0%" alt="graphe 2"></a></p>
+<p><a href="grpahe1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="graphe 2"><img src="grpahe1.png" class="img-fluid figure-img" style="width:50.0%" alt="graphe 2"></a></p>
 <figcaption>graphe 2</figcaption>
 </figure>
 </div>
@@ -1772,7 +1763,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/fabricelallemand15/site_ESMaths/blob/main/08-graphes/tp_graphe_matrice_CORR.ipynb" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.dev/fabricelallemand15/site_ESMaths/blob/main/08-graphes/tp_graphe_matrice_CORR.ipynb" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1790,7 +1781,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

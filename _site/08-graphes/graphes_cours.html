@@ -150,7 +150,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -862,25 +862,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sur cette page</h2>
-   
-  <ul>
-  <li><a href="#notion-de-graphe" id="toc-notion-de-graphe" class="nav-link active" data-scroll-target="#notion-de-graphe">1. Notion de graphe</a>
-  <ul class="collapse">
-  <li><a href="#définition" id="toc-définition" class="nav-link" data-scroll-target="#définition">1.1. Définition</a></li>
-  <li><a href="#lien-avec-les-arbres" id="toc-lien-avec-les-arbres" class="nav-link" data-scroll-target="#lien-avec-les-arbres">1.2. Lien avec les arbres</a></li>
-  <li><a href="#exemples" id="toc-exemples" class="nav-link" data-scroll-target="#exemples">1.3. Exemples</a></li>
-  </ul></li>
-  <li><a href="#implémentations-dun-graphe" id="toc-implémentations-dun-graphe" class="nav-link" data-scroll-target="#implémentations-dun-graphe">2. Implémentations d’un graphe</a>
-  <ul class="collapse">
-  <li><a href="#matrice-dadjacence" id="toc-matrice-dadjacence" class="nav-link" data-scroll-target="#matrice-dadjacence">2.1. Matrice d’adjacence</a></li>
-  <li><a href="#liste-dadjacence" id="toc-liste-dadjacence" class="nav-link" data-scroll-target="#liste-dadjacence">2.2. Liste d’adjacence</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/08-graphes/graphes_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -928,7 +910,7 @@ Définition
 <div id="fig-graphe1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graphe1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="grpahe1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="grpahe1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a>
+<a href="grpahe1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="grpahe1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graphe1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Graphe non orienté
@@ -956,7 +938,7 @@ Définition
 <div id="fig-graphe2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graphe2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="graphe2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="graphe2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a>
+<a href="graphe2.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="graphe2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graphe2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Graphe orienté
@@ -1051,7 +1033,7 @@ Définition
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="grpahe1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Graphe Fig.1"><img src="grpahe1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300" alt="Graphe Fig.1"></a></p>
+<p><a href="grpahe1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Graphe Fig.1"><img src="grpahe1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300" alt="Graphe Fig.1"></a></p>
 </figure>
 </div>
 <figcaption>Graphe Fig.1</figcaption>
@@ -1118,7 +1100,7 @@ Définition : liste d’adjacence
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="grpahe1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4" title="Graphe Fig.1"><img src="grpahe1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300" alt="Graphe Fig.1"></a></p>
+<p><a href="grpahe1.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="Graphe Fig.1"><img src="grpahe1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300" alt="Graphe Fig.1"></a></p>
 </figure>
 </div>
 <figcaption>Graphe Fig.1</figcaption>
@@ -1762,7 +1744,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/08-graphes/graphes_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/site_ESMaths/edit/main/08-graphes/graphes_cours.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/fabricelallemand15/site_ESMaths/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1780,7 +1762,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
