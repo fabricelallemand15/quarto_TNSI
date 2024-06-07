@@ -47,7 +47,7 @@
     "href": "bac/index.html#nature-de-lépreuve-de-nsi-au-bac-en-terminale",
     "title": "Épreuve de NSI au bac en Terminale",
     "section": "Nature de l’épreuve de NSI au bac en Terminale",
-    "text": "Nature de l’épreuve de NSI au bac en Terminale\nD’après le Bulletin Officiel n°36 du 30 septembre 2022 :\n\nDurée : 3 heures 30 + 1 heure\nCoefficient : 16\nFormat : L’épreuve terminale obligatoire de spécialité est composée de deux parties :\n\nune partie écrite, comptant pour 12 points sur 20,\nune partie pratique comptant pour 8 points sur 20.\n\n\nPartie écrite de l’épreuve de NSI au bac en terminale\n\nDurée : 3 heures 30\nModalités : La partie écrite consiste en la résolution de trois exercices permettant d’évaluer les connaissances et les capacités attendues conformément aux programmes de première et de terminale de la spécialité.\nChaque exercice est noté sur 4 points.\nLe sujet comporte trois exercices indépendants les uns des autres, qui permettent d’évaluer les connaissances et compétences des candidats.\n\n\nPoints du programme évaluables lors de l’épreuve écrite\nRéférence : Bulletin officiel n°36 du 30 septembre 2022\n\nThème 2 – Structures de données\n\nStructures de données, interface et implémentation.\nVocabulaire de la programmation objet : classes, attributs, méthodes, objets.\nListes, piles, files : structures linéaires. Dictionnaires, index et clé.\nArbres : structures hiérarchiques. Arbres binaires : nœuds, racines, feuilles, sous-arbres gauches, sous-arbres droits.\n\nThème 3 – Bases de données\n\nModèle relationnel : relation, attribut, domaine, clef primaire, clef étrangère, schéma relationnel.\nBase de données relationnelle.\nLangage SQL : requêtes d’interrogation et de mise à jour d’une base de données.\n\nThème 4 – Architectures matérielles, systèmes d’exploitation et réseaux\n\nGestion des processus et des ressources par un système d’exploitation.\nProtocoles de routage.\n\nThème 5 – Langages et programmation\n\nRécursivité.\nModularité.\nMise au point des programmes. Gestion des bugs.\n\nThème 6 – Algorithmique\n\nAlgorithmes sur les arbres binaires et sur les arbres binaires de recherche.\nMéthode « diviser pour régner »\n\n\n\n\nPoints du programme non évalués à l’écrit\n\nThème 1 – Histoire de l’informatique\nThème 2 – Structures de données\n\nGraphes : structures relationnelles. Sommets, arcs, arêtes, graphes orientés ou non orientés.\n\nThème 3 – Bases de données\n\nSystème de gestion de bases de données relationnelles.\n\nThème 4 – Architectures matérielles, systèmes d’exploitation et réseaux\n\nComposants intégrés d’un système sur puce.\nSécurisation des communications.\n\nThème 5 – Langages et programmation\n\nNotion de programme en tant que donnée. Calculabilité, décidabilité.\nParadigmes de programmation\n\nThème 6 – Algorithmique\n\nAlgorithmes sur les graphes.\nProgrammation dynamique.\nRecherche textuelle.",
+    "text": "Nature de l’épreuve de NSI au bac en Terminale\nD’après le Bulletin Officiel n°36 du 30 septembre 2022 :\n\nDurée : 3 heures 30 + 1 heure\nCoefficient : 16\nFormat : L’épreuve terminale obligatoire de spécialité est composée de deux parties :\n\nune partie écrite, notée sur 20 et comptant pour 75 % de la note finale ;\nune partie pratique, notée sur 20 et comptant pour 25 % de la note finale.s\n\n\nPartie écrite de l’épreuve de NSI au bac en terminale\n\nDurée : 3 heures 30\nModalités : La partie écrite consiste en la résolution de trois exercices permettant d’évaluer les connaissances et les capacités attendues conformément aux programmes de première et de terminale de la spécialité.\nLe sujet comporte trois exercices indépendants les uns des autres, qui permettent d’évaluer les connaissances et compétences des candidats.\n\n\nPoints du programme évaluables lors de l’épreuve écrite\nLa totalité du programme de NSI de terminale est évaluée lors de l’épreuve écrite.",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Baccalauréat",
@@ -59,7 +59,7 @@
     "href": "bac/index.html#partie-pratique-de-lépreuve-de-nsi-au-bac-en-terminale",
     "title": "Épreuve de NSI au bac en Terminale",
     "section": "Partie pratique de l’épreuve de NSI au bac en terminale",
-    "text": "Partie pratique de l’épreuve de NSI au bac en terminale\n\nDurée : 1 heure\nModalités : La partie pratique consiste en la résolution de deux exercices sur ordinateur, chacun étant noté sur 4 points.\nLe candidat est évalué sur la base d’un dialogue avec un professeur-examinateur.\nUn examinateur évalue au maximum quatre élèves. L’examinateur ne peut pas évaluer un élève qu’il a eu en classe durant l’année en cours.\nL’évaluation de cette partie se déroule au cours du deuxième trimestre pendant la période de l’épreuve écrite de spécialité.\n\nPremier exercice\nLe premier exercice consiste à programmer un algorithme figurant explicitement au programme, ne présentant pas de difficulté particulière, dont on fournit une spécification.\nIl s’agit donc de restituer un algorithme rencontré et travaillé à plusieurs reprises en cours de formation.\nLe sujet peut proposer un jeu de test avec les réponses attendues pour permettre au candidat de vérifier son travail.\nDeuxième exercice\nPour le second exercice, un programme est fourni au candidat.\nCet exercice ne demande pas l’écriture complète d’un programme, mais permet de valider des compétences de programmation suivant des modalités variées : le candidat doit, par exemple, compléter un programme « à trous » afin de répondre à une spécification donnée, ou encore compléter un programme pour le documenter, ou encore compléter un programme en ajoutant des assertions, etc.",
+    "text": "Partie pratique de l’épreuve de NSI au bac en terminale\n\nDurée : 1 heure\nModalités : La partie pratique consiste en la résolution de deux exercices sur ordinateur, chacun étant noté sur 10 points.\nLe candidat est évalué sur la base d’un dialogue avec un professeur-examinateur.\nUn examinateur évalue au maximum quatre élèves. L’examinateur ne peut pas évaluer un élève qu’il a eu en classe durant l’année en cours.\nL’évaluation de cette partie se déroule en fin de troisième trimestre.\n\nPremier exercice\nLe premier exercice consiste à programmer un algorithme figurant explicitement au programme, ne présentant pas de difficulté particulière, dont on fournit une spécification.\nIl s’agit donc de restituer un algorithme rencontré et travaillé à plusieurs reprises en cours de formation.\nLe sujet peut proposer un jeu de test avec les réponses attendues pour permettre au candidat de vérifier son travail.\nDeuxième exercice\nPour le second exercice, un programme est fourni au candidat.\nCet exercice ne demande pas l’écriture complète d’un programme, mais permet de valider des compétences de programmation suivant des modalités variées : le candidat doit, par exemple, compléter un programme « à trous » afin de répondre à une spécification donnée, ou encore compléter un programme pour le documenter, ou encore compléter un programme en ajoutant des assertions, etc.",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Baccalauréat",
@@ -3213,7 +3213,7 @@
     "href": "bac/annales.html",
     "title": "Annales du bac de NSI",
     "section": "",
-    "text": "Centres étrangers 2023, jour 1 : Sujet PDF, Corrigé.\nCentres étrangers 2023, jour 2 : Sujet PDF, corrigé.\nPolynésie 2023, jour 1 : Sujet PDF.\nPolynésie 2023, jour 2 : Sujet PDF.",
+    "text": "Centres Étrangers J1\nCentres Étrangers J2\nAmérique du Nord J1\nAmérique du Nord J2\nSujet 0 - version A\nSujet 0 - version B\n\n\n\n\n\nLiban J2\nLiban J1\nMétropole J2\nMétropole J1\nCentres Étrangers J2, corrigé.\nCentres Étrangers J1, Corrigé.\nPolynésie J2\nPolynésie J1\nSujet 0 - version A\nSujet 0 - version B\n\n\n\n\n\nNouvelle-Calédonie J1\nNouvelle-Calédonie J2\nAmérique du Nord J1\nAmérique du Nord J2\nAmérique du Sud J1\nAmérique du Sud J2\nAsie J1\nAsie J2\nCentres Étrangers J2\nCentres Étrangers J1\nLa Réunion J2\nLa Réunion J1\nMétropole J2\nMétropole J1\nMétropole Septembre\nPolynésie\n\n\n\n\n\nAmérique du Nord\nCentres Étrangers 1\nCentres Étrangers 2\nMétropole 1\nMétropole 2\nMétropole Candidats Libres 1\nMétropole Candidats Libres 2\nPolynésie\nMétropole Septembre 1\nMétropole Septembre 2\nSujet 0",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Baccalauréat",
@@ -3286,5 +3286,53 @@
     "title": "Spécialité NSI - Terminale",
     "section": "",
     "text": "Bienvenue !\nCe site est destiné à regrouper les cours et les exercices concernant l’enseignement de spécialité NSI de terminale du lycée Émile Duclaux d’Aurillac.\nLien vers l’ENT du lycée : https://cas.ent.auvergnerhonealpes.fr/login\nLien vers Capytale : https://capytale2.ac-paris.fr/web/c-auth/list\nLien vers Replit : https://replit.com/team/premiere-nsi\nLien vers le programme officiel : Programme officiel terminale NSI\n\n\n\nImage by storyset on Freepik\n\n\n\n\n\nImage by storyset on Freepik"
+  },
+  {
+    "objectID": "bac/annales.html#section",
+    "href": "bac/annales.html#section",
+    "title": "Annales du bac de NSI",
+    "section": "",
+    "text": "Centres Étrangers J1\nCentres Étrangers J2\nAmérique du Nord J1\nAmérique du Nord J2\nSujet 0 - version A\nSujet 0 - version B",
+    "crumbs": [
+      "{{< fa house-chimney-window >}} Accueil",
+      "Baccalauréat",
+      "Annales du bac de NSI"
+    ]
+  },
+  {
+    "objectID": "bac/annales.html#section-1",
+    "href": "bac/annales.html#section-1",
+    "title": "Annales du bac de NSI",
+    "section": "",
+    "text": "Liban J2\nLiban J1\nMétropole J2\nMétropole J1\nCentres Étrangers J2, corrigé.\nCentres Étrangers J1, Corrigé.\nPolynésie J2\nPolynésie J1\nSujet 0 - version A\nSujet 0 - version B",
+    "crumbs": [
+      "{{< fa house-chimney-window >}} Accueil",
+      "Baccalauréat",
+      "Annales du bac de NSI"
+    ]
+  },
+  {
+    "objectID": "bac/annales.html#section-2",
+    "href": "bac/annales.html#section-2",
+    "title": "Annales du bac de NSI",
+    "section": "",
+    "text": "Nouvelle-Calédonie J1\nNouvelle-Calédonie J2\nAmérique du Nord J1\nAmérique du Nord J2\nAmérique du Sud J1\nAmérique du Sud J2\nAsie J1\nAsie J2\nCentres Étrangers J2\nCentres Étrangers J1\nLa Réunion J2\nLa Réunion J1\nMétropole J2\nMétropole J1\nMétropole Septembre\nPolynésie",
+    "crumbs": [
+      "{{< fa house-chimney-window >}} Accueil",
+      "Baccalauréat",
+      "Annales du bac de NSI"
+    ]
+  },
+  {
+    "objectID": "bac/annales.html#section-3",
+    "href": "bac/annales.html#section-3",
+    "title": "Annales du bac de NSI",
+    "section": "",
+    "text": "Amérique du Nord\nCentres Étrangers 1\nCentres Étrangers 2\nMétropole 1\nMétropole 2\nMétropole Candidats Libres 1\nMétropole Candidats Libres 2\nPolynésie\nMétropole Septembre 1\nMétropole Septembre 2\nSujet 0",
+    "crumbs": [
+      "{{< fa house-chimney-window >}} Accueil",
+      "Baccalauréat",
+      "Annales du bac de NSI"
+    ]
   }
 ]

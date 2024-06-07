@@ -10,9 +10,57 @@ format:
     html: default
 ---
 
-## Sujets 2023
+# Annales des Épreuves Écrites
 
-* Centres étrangers 2023, jour 1 : [Sujet PDF](2023_CE_J1.pdf), [Corrigé](2023_CE_J1_corrige.qmd).
-* Centres étrangers 2023, jour 2 : [Sujet PDF](2023_Centres_Etrangers_J2.pdf), [corrigé](2023_CE_J2_corrige.qmd).
-* Polynésie 2023, jour 1 : [Sujet PDF](2023_Polynesie_J1.pdf).
-* Polynésie 2023, jour 2 : [Sujet PDF](2023_Polynesie_J2.pdf).
+## 2024
+- [Centres Étrangers J1](2024/24-NSIJ1G1.pdf)
+- [Centres Étrangers J2](2024/24-NSIJ2G1.pdf)
+- [Amérique du Nord J1](2024/24-NSIJ1AN1.pdf)
+- [Amérique du Nord J2](2024/24-NSIJ2AN1.pdf)
+- [Sujet 0 - version A](2024/bac_nsi_2024_sujet0a.pdf)
+- [Sujet 0 - version B](2024/bac_nsi_2024_sujet0b.pdf)
+
+## 2023
+- [Liban J2](2023/2023_Liban_J2.pdf)
+- [Liban J1](2023/2023_Liban_J1.pdf)
+- [Métropole J2](2023/2023_Metropole_J2.pdf)
+- [Métropole J1](2023/2023_Metropole_J1.pdf)
+- [Centres Étrangers J2](2023/2023_Centres_Etrangers_J2.pdf), [corrigé](2023_CE_J2_corrige.qmd).
+- [Centres Étrangers J1](2023/2023_Centres_Etrangers_J1.pdf), [Corrigé](2023_CE_J1_corrige.qmd).
+- [Polynésie J2](2023/2023_Polynesie_J2.pdf)
+- [Polynésie J1](2023/2023_Polynesie_J1.pdf)
+- [Sujet 0 - version A](2023/2023-sujet_0-a.pdf)
+- [Sujet 0 - version B](2023/2023-sujet_0-b.pdf)
+
+## 2022
+
+- [Nouvelle-Calédonie J1](2022/2022_Nouvelle-Caledonie_J1.pdf)
+- [Nouvelle-Calédonie J2](2022/2022_Nouvelle-Caledonie_J2.pdf)
+- [Amérique du Nord J1](2022/2022_AmeriqueDuNord_2.pdf)
+- [Amérique du Nord J2](2022/2022_AmeriqueDuNord_2.pdf)
+- [Amérique du Sud J1](2022/2022_Amerique_Sud_J1.pdf)
+- [Amérique du Sud J2](2022/2022_Amerique_Sud_J2.pdf)
+- [Asie J1](2022/2022_Asie_1.pdf.pdf)
+- [Asie J2](2022/2022_Asie_2.pdf)
+- [Centres Étrangers J2](2022/2022_CentresEtrangers_2.pdf)
+- [Centres Étrangers J1](2022/2022_CentresEtrangers_1.pdf)
+- [La Réunion J2](2022/2022_Mayotte_Liban_2.pdf)
+- [La Réunion J1](2022/2022_Mayotte_Liban_1.pdf)
+- [Métropole J2](2022/2022_Metropole_Jour2.pdf)
+- [Métropole J1](2022/2022_Metropole_Jour1.pdf)
+- [Métropole Septembre](2022/2022_Metropole_Septembre.pdf)
+- [Polynésie](2022/2022_Polynesie_Jour1.pdf)
+
+## 2021
+
+- [Amérique du Nord](2021/2021_AmeriqueDuNord_1.pdf)
+- [Centres Étrangers 1](2021/2021_CentresEtrangers_1.pdf)
+- [Centres Étrangers 2](2021/2021_CentresEtrangers_2.pdf)
+- [Métropole 1](2021/2021_Metropole_1.pdf)
+- [Métropole 2](2021/2021_Metropole_2.pdf)
+- [Métropole Candidats Libres 1](2021/2021_Metropole_CL_1.pdf)
+- [Métropole Candidats Libres 2](2021/2021_Metropole_CL_2.pdf)
+- [Polynésie](2021/2021_Polynesie_2.pdf)
+- [Métropole Septembre 1](2021/2021_Metropole_Septembre_1.pdf)
+- [Métropole Septembre 2](2021/2021_Metropole_Septembre_2.pdf)
+- [Sujet 0](2021/2021_Sujet_0.pdf)
