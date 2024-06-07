@@ -3,6 +3,8 @@ title: "Histoire de l'informatique"
 image: 1024px-Census_Bureau_techs_check_out_computer_frame.jpg
 ---
 
+![](1024px-Census_Bureau_techs_check_out_computer_frame.jpg)
+
 La chronologie de l’informatique est très riche et remonte à plusieurs siècles. Les événements clés de l’histoire de l’informatique sont nombreux. Selon la page Wikipédia française, les principaux événements de l’histoire de l’informatique et leurs protagonistes sont les suivants :
 
 * 1645 : La Pascaline : Blaise Pascal invente la machine à calculer.
@@ -24,34 +26,3 @@ La chronologie de l’informatique est très riche et remonte à plusieurs sièc
 * 1984 : Apple lance le Macintosh.
 * 1991 : Linus Torvalds crée le noyau Linux.
 * 1994 : Création du World Wide Web Consortium (W3C).
-
-Voici une liste de quelques dates clés de l’histoire de l’informatique:
-
-* 1642 : Blaise Pascal invente la Pascaline, la première machine à calculer.
-* 1801 : Joseph Marie Jacquard invente le métier Jacquard, la première machine programmable à grande diffusion.
-* 1822 : Charles Babbage invente la machine à différences, la première machine à calculer automatique.
-* 1946 : Le premier ordinateur électronique est fabriqué. Il pèse 30 tonnes et occupe plus de 70 m2.
-* 1947 : Le transistor est mis au point aux États-Unis. C’est un petit composant électronique fondamental pour l’informatique.
-* 1971 : L’Américain Ted Hoff invente le microprocesseur.
-
-Voici quelques dates clés de l’histoire de l’informatique après 1971:
-
-* 1973 : Invention du premier ordinateur personnel par Xerox.
-* 1975 : Création de Microsoft par Bill Gates et Paul Allen.
-* 1981 : Lancement du premier ordinateur personnel IBM PC.
-* 1989 : Invention du World Wide Web par Tim Berners-Lee.
-* 1991 : Lancement de Linux, un système d’exploitation libre et gratuit.
-* 2007 : Lancement du premier iPhone par Apple.
-
-```{mermaid}
-timeline
-        title England's History Timeline
-        section Stone Age
-          7600 BC : Britain's oldest known house was built in Orkney, Scotland
-          6000 BC : Sea levels rise and Britain becomes an island.<br> The people who live here are hunter-gatherers.
-        section Broze Age
-          2300 BC : People arrive from Europe and settle in Britain. <br>They bring farming and metalworking.
-                  : New styles of pottery and ways of burying the dead appear.
-          2200 BC : The last major building works are completed at Stonehenge.<br> People now bury their dead in stone circles.
-                  : The first metal objects are made in Britain.Some other nice things happen. it is a good time to be alive.
-```
