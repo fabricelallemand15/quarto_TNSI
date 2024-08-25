@@ -186,7 +186,7 @@ Les règles de calcul sur les exposants permettent d'affirmer que, pour $n>0$, $
 
 ::: {.callout-caution}
 ## Question bonus
-Un autre méthode de calcul de $x^n$ consiste à distinguer le cas où $n$ est pair et celui où $n$ est impair :
+Une autre méthode de calcul de $x^n$ consiste à distinguer le cas où $n$ est pair et celui où $n$ est impair :
 
 * si $n=0$, alors $x^n=1$ ;
 * si $n$ est pair, alors $x^n=\left(x^{n/2}\right)^2$ ;
