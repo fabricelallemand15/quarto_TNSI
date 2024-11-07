@@ -7,7 +7,7 @@ website:
   page-navigation: true
   site-url: https://tnsi.flallemand.fr
   repo-url: https://github.com/fabricelallemand15/quarto_TNSI
-  repo-actions: [edit, issue]
+  repo-actions: [issue]
   reader-mode: true
   navbar:
     search: false
