@@ -5,8 +5,8 @@ website:
   title: "NSI - Terminale"
   favicon: favicon.ico
   page-navigation: true
-  site-url: https://flallemand.fr/ESMaths
-  repo-url: https://github.com/fabricelallemand15/site_ESMaths
+  site-url: https://tnsi.flallemand.fr
+  repo-url: https://github.com/fabricelallemand15/quarto_TNSI
   repo-actions: [edit, issue]
   reader-mode: true
   navbar:
@@ -20,7 +20,7 @@ website:
       - href: https://notebook.flallemand.fr/
         text: "{{< fa pen-to-square >}} Notebook Python"
       - href: ressources.qmd
-        text: "{{< fa info >}} Ressources"
+        text: "{{< fa info >}} Sources"
   sidebar: 
     style: floating
     collapse-level: 1
@@ -159,7 +159,8 @@ format:
       light: [flatly, theme_light.scss]
       dark: [darkly, theme_dark.scss]
     css: styles.css
-    toc: false
+    toc: true
+    toc-location: right
     grid:
       sidebar-width: 250px
       body-width: 1000px

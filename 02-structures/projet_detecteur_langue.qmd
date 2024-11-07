@@ -67,7 +67,7 @@ Créer un programme qui :
 
 * il peut être judicieux de décomposer le programme en plusieurs fonctions ;
 * vous rechercherez dans la documentation les exemples d'utilisation de MatPlotLib ;
-* voici un fichier texte pour tester votre programme : [texte](texteFR.txt).
+* voici un fichier texte pour tester votre programme : [texte](texteFR.txt){target="_blank"}.
 
 ## Étape 2
 
@@ -89,7 +89,7 @@ On se limitera aux langues suivantes : Français, Anglais, Allemand, Espagnol, I
 
 Écrire une fonction `detecte_langue(texte)` qui, à partir des éléments précédents, retourne le nom de la langue dans laquelle le `texte` donné en paramètre est le plus probablement écrit. Il vous faudra notamment choisir un moyen de comparer la liste `signature_texte` avec l'ensemble des listes du dictionnaire `signature` afin de trouver cette qui est la plus "proche".
 
-Pour tester votre programme, voici des fichiers texte dans les différentes langues concernées : [textes](textes.zip) (fichier .zip à décompresser).
+Pour tester votre programme, voici des fichiers texte dans les différentes langues concernées : [textes](textes.zip){target="_blank"} (fichier .zip à décompresser).
 
 Proposer des améliorations possibles.
 

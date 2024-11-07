@@ -1,1 +1,1 @@
-Sitemap: https://flallemand.fr/ESMaths/sitemap.xml
+Sitemap: https://tnsi.flallemand.fr/sitemap.xml
