@@ -71,20 +71,20 @@ website:
           - 03-BDD/TP1.qmd
           - 03-BDD/TP2.qmd
           - 03-BDD/TP3.qmd
-      - section: "Ch. 8 - Arbres"
-        contents: 
-          - 04-arbres/index.qmd
-          - 04-arbres/arbres_cours.qmd
-          - 04-arbres/arbres_exercices.qmd
-          - 04-arbres/implementationArbres.qmd
-          - 04-arbres/TParbres.qmd
-      - section: "Ch. 9 - Processus"
+      - section: "Ch. 8 - Processus"
         contents: 
           - 05-archiSE/index.qmd
           - 05-archiSE/processus_cours.qmd
           - 05-archiSE/processus_TP.qmd
           - 05-archiSE/processus_exos.qmd
           - 05-archiSE/processus_python.qmd
+      - section: "Ch. 9 - Arbres"
+        contents: 
+          - 04-arbres/index.qmd
+          - 04-arbres/arbres_cours.qmd
+          - 04-arbres/arbres_exercices.qmd
+          - 04-arbres/implementationArbres.qmd
+          - 04-arbres/TParbres.qmd
       - section: "Ch. 10 - Algorithmes sur les arbres binaires"
         contents: 
           - 06-algo/index.qmd
