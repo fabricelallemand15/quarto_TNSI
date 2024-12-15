@@ -54,7 +54,7 @@ Une interface souhaitable devrait permettre de :
 
 De plus, il serait souhaitable de parvenir à afficher un arbre de façon visuelle.
 
-Nous avons vu que la structure d'arbre binaire est une structure **récursive** : cette propriété est exploitée dans l'implémentation que nous allons présenter. Pour définir un arbre, il suffit de définir un nœud racine ainsi que les deux sous-arbres gauche et droite qui sont eux-même des arbres binaires. Cela revient à assimiler un arbre à sa racine associée à un lien vers ses deux fils.
+Nous avons vu que la structure d'arbre binaire est une structure **récursive** : cette propriété est exploitée dans l'implémentation que nous allons présenter. Pour définir un arbre, il suffit de définir un nœud racine ainsi que les deux sous-arbres gauche et droite qui sont eux-mêmes des arbres binaires. Cela revient à assimiler un arbre à sa racine associée à un lien vers ses deux fils.
 
 Nous définissons ci-dessous un objet `ArbreBinaire` possédant trois attributs `clef`, `gauche`, `droit`. Pour respecter les principes de la POO, et notamment la notion d'**encapsulation**, nous avons défini des méthodes d'accès aux attributs (elles commencent par `get`) et des méthodes de modification des attributs (elles commencent par `set`) et on s'interdira tout accès ou affectation direct(e) du type `arbre.racine = ...`.
 
@@ -162,7 +162,7 @@ c.getSousArbreDroit().estFeuille()
 >>> True
 ```
 
-Nous pouvons maintenant ajouter au fichier `structures.py` les deux fonctions suivantes (en dehors de la classe `ArbreBinaire` car ce ne sont pas des méthodes) qui retournent respectivement la taille et la hauteur d'un arbre binaire.
+Nous pouvons maintenant ajouter au fichier `structures.py` les deux fonctions suivantes (en dehors de la classe `ArbreBinaire`, car ce ne sont pas des méthodes) qui retournent respectivement la taille et la hauteur d'un arbre binaire.
 
 ``` python
 def taille(arbre) -> int:
@@ -180,7 +180,7 @@ def hauteur(arbre) -> int:
         return 1 + max(hauteur(arbre.gauche), hauteur(arbre.droit))
 ```
 
-Prendre le temps de bien comprendre comment fonctionnent ces deux fonctions ...
+Prendre le temps de bien comprendre comment fonctionnent ces deux fonctions…
 
 ``` python
 taille(a)
@@ -227,7 +227,7 @@ class ABR(ArbreBinaire):
                 self.droit.insere(racine)
 ```
 
-Pour définir un arbre binaire de recherche valide, on utilisera toujours la méthode `insere` car elle permet de s'assurer de toujours conserver un ABR.
+Pour définir un arbre binaire de recherche valide, on utilisera toujours la méthode `insere`, car elle permet de s'assurer de toujours conserver un ABR.
 
 Pour faciliter la vérification, nous définissons une fonction `estABR` qui peut s'appliquer aussi bien à un arbre binaire quelconque qu'à un ABR et qui retourne `True` si l'arbre est un ABR et `False` sinon.
 
@@ -241,7 +241,7 @@ def estABR(arbre, mini=-float("inf"), maxi=+float("inf")) -> bool:
                mini < arbre.racine < maxi
 ```
 
-Prendre le temps de bien comprendre cette fonction ...
+Prendre le temps de bien comprendre cette fonction…
 
 Utilisation :
 

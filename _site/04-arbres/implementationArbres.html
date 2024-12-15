@@ -893,7 +893,7 @@ cookieconsent.run({
 <li>Retourner la hauteur.</li>
 </ul>
 <p>De plus, il serait souhaitable de parvenir à afficher un arbre de façon visuelle.</p>
-<p>Nous avons vu que la structure d’arbre binaire est une structure <strong>récursive</strong> : cette propriété est exploitée dans l’implémentation que nous allons présenter. Pour définir un arbre, il suffit de définir un nœud racine ainsi que les deux sous-arbres gauche et droite qui sont eux-même des arbres binaires. Cela revient à assimiler un arbre à sa racine associée à un lien vers ses deux fils.</p>
+<p>Nous avons vu que la structure d’arbre binaire est une structure <strong>récursive</strong> : cette propriété est exploitée dans l’implémentation que nous allons présenter. Pour définir un arbre, il suffit de définir un nœud racine ainsi que les deux sous-arbres gauche et droite qui sont eux-mêmes des arbres binaires. Cela revient à assimiler un arbre à sa racine associée à un lien vers ses deux fils.</p>
 <p>Nous définissons ci-dessous un objet <code>ArbreBinaire</code> possédant trois attributs <code>clef</code>, <code>gauche</code>, <code>droit</code>. Pour respecter les principes de la POO, et notamment la notion d’<strong>encapsulation</strong>, nous avons défini des méthodes d’accès aux attributs (elles commencent par <code>get</code>) et des méthodes de modification des attributs (elles commencent par <code>set</code>) et on s’interdira tout accès ou affectation direct(e) du type <code>arbre.racine = ...</code>.</p>
 <p>La méthode <code>setRacine</code>, qui permet de définir la clef d’un nœud assure que chaque nœud a toujours un sous-arbre gauche <strong>et</strong> un sous-arbre droit, éventuellement vides, ce qui facilite le traitement des arbres dans les algorithmes suivants. On matérialise ici l’aspect récursif de la structure.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ArbreBinaire:</span>
@@ -982,7 +982,7 @@ cookieconsent.run({
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="va">False</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>c.getSousArbreDroit().estFeuille()</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="va">True</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Nous pouvons maintenant ajouter au fichier <code>structures.py</code> les deux fonctions suivantes (en dehors de la classe <code>ArbreBinaire</code> car ce ne sont pas des méthodes) qui retournent respectivement la taille et la hauteur d’un arbre binaire.</p>
+<p>Nous pouvons maintenant ajouter au fichier <code>structures.py</code> les deux fonctions suivantes (en dehors de la classe <code>ArbreBinaire</code>, car ce ne sont pas des méthodes) qui retournent respectivement la taille et la hauteur d’un arbre binaire.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> taille(arbre) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la taille de l'arbre, càd son nombre de noeuds"""</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.racine <span class="kw">is</span> <span class="va">None</span>:</span>
@@ -996,7 +996,7 @@ cookieconsent.run({
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> <span class="bu">max</span>(hauteur(arbre.gauche), hauteur(arbre.droit))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Prendre le temps de bien comprendre comment fonctionnent ces deux fonctions …</p>
+<p>Prendre le temps de bien comprendre comment fonctionnent ces deux fonctions…</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>taille(a)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">6</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>hauteur(a)</span>
@@ -1035,7 +1035,7 @@ cookieconsent.run({
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.gauche.insere(racine)</span>
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.droit.insere(racine)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pour définir un arbre binaire de recherche valide, on utilisera toujours la méthode <code>insere</code> car elle permet de s’assurer de toujours conserver un ABR.</p>
+<p>Pour définir un arbre binaire de recherche valide, on utilisera toujours la méthode <code>insere</code>, car elle permet de s’assurer de toujours conserver un ABR.</p>
 <p>Pour faciliter la vérification, nous définissons une fonction <code>estABR</code> qui peut s’appliquer aussi bien à un arbre binaire quelconque qu’à un ABR et qui retourne <code>True</code> si l’arbre est un ABR et <code>False</code> sinon.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> estABR(arbre, mini<span class="op">=-</span><span class="bu">float</span>(<span class="st">"inf"</span>), maxi<span class="op">=+</span><span class="bu">float</span>(<span class="st">"inf"</span>)) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.getRacine() <span class="kw">is</span> <span class="va">None</span>:</span>
@@ -1044,7 +1044,7 @@ cookieconsent.run({
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> estABR(arbre.getSousArbreGauche(), mini, arbre.getRacine()) <span class="kw">and</span> </span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>               estABR(arbre.getSousArbreDroit(), arbre.getRacine(), maxi) <span class="kw">and</span> </span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>               mini <span class="op">&lt;</span> arbre.racine <span class="op">&lt;</span> maxi</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Prendre le temps de bien comprendre cette fonction …</p>
+<p>Prendre le temps de bien comprendre cette fonction…</p>
 <p>Utilisation :</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> structures <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1786,7 +1786,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
