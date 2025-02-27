@@ -140,3 +140,5 @@ Serious game : SQL Island ...
 
 [![](sql_island.png)](https://sql-island.informatik.uni-kl.de/){ target=_blank }
 
+Et encore un autre : [![](sql_noir.png)](https://www.sqlnoir.com/){ target=_blank }
+
