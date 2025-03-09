@@ -36,7 +36,6 @@ website:
         contents: 
             - 01-langagesProgr/paradigmes_cours.qmd
             - 01-langagesProgr/paradigmes_exercices.qmd
-            - 01-langagesProgr/quiz.qmd      
       - section: "Ch. 3 - Programmation orientée objet"
         contents: 
             - 01-langagesProgr/POO_cours.qmd
@@ -63,7 +62,6 @@ website:
           - 03-BDD/index.qmd
           - 03-BDD/partie1.qmd
           - 03-BDD/partie2.qmd
-          - 03-BDD/quiz.qmd
       - section: "Ch. 7 - Langage SQL"
         contents:
           - 03-BDD/sql_cours.qmd
