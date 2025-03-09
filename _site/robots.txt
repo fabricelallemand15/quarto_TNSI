@@ -1,1 +1,1 @@
-Sitemap: https://tnsi.flallemand.fr/sitemap.xml
+Sitemap: https://tnsi.sitelf.fr/sitemap.xml

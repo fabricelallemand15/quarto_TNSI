@@ -5,7 +5,7 @@ website:
   title: "NSI - Terminale"
   favicon: favicon.ico
   page-navigation: true
-  site-url: https://tnsi.flallemand.fr
+  site-url: https://tnsi.sitelf.fr
   repo-url: https://github.com/fabricelallemand15/quarto_TNSI
   repo-actions: [issue]
   reader-mode: true
@@ -15,9 +15,9 @@ website:
     left:
       - href: index.qmd
         text: "{{< fa house-chimney-window >}} Accueil"
-      - href: https://python.flallemand.fr/
+      - href: https://python.sitelf.fr/
         text: "{{< fa brands python >}} Console Python"
-      - href: https://notebook.flallemand.fr/
+      - href: https://notebook.sitelf.fr/
         text: "{{< fa pen-to-square >}} Notebook Python"
       - href: ressources.qmd
         text: "{{< fa info >}} Sources"
@@ -170,4 +170,3 @@ format:
     code-block-bg: true
     include-in-header: 
       file: matomo.html
-  
