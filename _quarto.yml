@@ -126,6 +126,11 @@ website:
       - section: "Ch. 18 - Calculabilité - Décidabilité"
         contents: 
           - 10-langages_prog2/calculabilite.qmd
+      - section: "Ch. 19 - Systèmes sur puce"
+        contents: 
+          - 19-SystPuces/index.qmd
+          - 19-SystPuces/SystPuces_cours.qmd
+          - 19-SystPuces/SystPuces_exos.qmd
       - section: "Histoire de l'informatique"
         contents: 
           - histoire/index.qmd

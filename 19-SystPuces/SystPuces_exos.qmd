@@ -1,0 +1,65 @@
+---
+title: Exercice
+---
+
+## Exercice 1 (Amérique du Nord 2021)
+
+Cet exercice porte sur les notions de routage, de processus et de systèmes sur puces.
+
+Un constructeur automobile utilise des ordinateurs pour la conception de ses véhicules.
+Ceux-ci sont munis d'un système d'exploitation ainsi que de nombreuses applications parmi lesquelles on peut citer :
+
+- un logiciel de traitement de texte;
+- un tableur;
+- un logiciel de Conception Assistée par Ordinateur (CAO);
+- un système de gestion de base de donnée (SGBD).
+
+Chaque ordinateur est équipé des périphériques classiques: clavier, souris, écran et est relié à une imprimante réseau.
+
+1.  Ce constructeur automobile intègre à ses véhicules des systèmes embarqués, comme par exemple un système de guidage par satellites (GPS), un système de freinage antiblocage (ABS) ...
+    Ces dispositifs utilisent des systèmes sur puces (SoC: Système on a Chip).
+    Citer deux avantages à utiliser ces systèmes sur puces plutôt qu'une architecture classique d'ordinateur.
+
+2.  Un ingénieur travaille sur son ordinateur et utilise les quatre applications citées au début de l'énoncé.
+    Pendant l'exécution de ces applications, des processus mobilisent des données et sont en attente d'autres données mobilisées par d'autres processus.
+    On donne ci-dessous un tableau indiquant à un instant précis l'état des processus en cours d'exécution et dans lequel D1, D2, D3, D4 et D5 sont des données.
+    La lettre M signifie que la donnée est mobilisée par l'application; la lettre A signifie que l'application est en attente de cette donnée.
+    Lecture du tableau: le logiciel de traitement de texte mobilise (M) la donnée D1 et est en attente (A) de la donnée D2.
+
+    |                     | D1 | D2 | D3 | D4 | D5 |
+    |---------------------|----|----|----|----|----|
+    | Traitement de texte | M  | A  | -  | -  | -  |
+    | Tableur             | A  | -  | -  | M  | -  |
+    | SGBD                | -  | M  | A  | A  | -  |
+    | CAO                 | -  | -  | A  | M  | A  |
+
+    Montrer que les applications s'attendent mutuellement. Comment s'appelle cette situation?
+
+3.  Ce constructeur automobile possède six sites de production qui échangent des documents entre eux. Les sites de production sont reliés entre eux par six routeurs A, B, C, D, E et F.
+    On donne ci dessous les tables de routage des routeurs A à F obtenus avec le protocole RIP :
+
+    | Routeur A |       | Routeur B |       | Routeur C |       | Routeur D |       | Routeur E |       | Routeur F |       |
+    |-----------|-------|-----------|-------|-----------|-------|-----------|-------|-----------|-------|-----------|-------|
+    | Dest      | Pass  | Dest      | Pass  | Dest      | Pass  | Dest      | Pass  | Dest      | Pass  | Dest      | Pass  |
+    | B         | B     | A         | A     | A         | A     | A         | C     | A         | B     | A         | D     |
+    | C         | C     | C         | C     | B         | B     | B         | C     | B         | B     | B         | E     |
+    | D         | C     | D         | C     | D         | D     | C         | C     | C         | B     | C         | D     |
+    | E         | B     | E         | E     | E         | B     | E         | E     | D         | D     | D         | D     |
+    | F         | B     | F         | E     | F         | D     | F         | F     | F         | F     | E         | E     |
+
+    Déterminer à l'aide de ces tables le chemin emprunté par un paquet de données envoyé du routeur A vers le routeur F.
+
+4.  On veut représenter schématiquement le réseau de routeurs à partir des tables de routage.
+    Recopier sur la copie le schéma ci-dessous :
+
+    ```text
+          (B)
+
+    (A)         (D)   (E)
+
+          (C)
+
+              (F)
+    ```
+
+    En s'appuyant sur les tables de routage, tracer les liaisons entre les routeurs.

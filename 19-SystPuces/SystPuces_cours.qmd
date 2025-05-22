@@ -1,0 +1,185 @@
+---
+title: Cours
+subtitle: "Ch. 19 : Systèmes sur puce"
+---
+
+# Les Socs (« *Systèmes on Chip* » ou Système sur Puce en français)
+
+## 1. Rappel : Architecture de Von Neumann
+
+### 1.1 Définition
+
+L'**architecture de Von Neumann** est un modèle structurel d'ordinateur dans lequel une unité de stockage (mémoire) unique sert à conserver à la fois les instructions et les données demandées ou produites par le calcul. Les ordinateurs actuels sont tous basés sur des versions améliorées de cette architecture.
+
+L'architecture de Von Neumann décompose l'ordinateur en 4 parties distinctes :
+
+* L'unité **arithmétique et logique** (UAL ou ALU en anglais) ou **unité de traitement** : son rôle est d'effectuer les opérations de base ;
+* L'unité **de contrôle (ou de commande)**, chargée du « séquençage » des opérations ;
+* La **mémoire** qui contient à la fois les données et le programme qui indiquera à l'unité de contrôle quels sont les calculs à faire sur ces données ;
+* Les **dispositifs d'entrée-sortie**, qui permettent de communiquer avec le monde extérieur.
+
+![](media/img1.png){width="6.558209755030621in" height="3.88625in"}
+
+
+### 1.2 Principaux composants
+
+#### Le Microprocesseur
+
+![Intel CPU Core i7 6700K](media/img2.jpg){width="1.9083333333333334in"
+height="1.3333333333333333in"}
+
+Le **microprocesseur** (ou unité centrale de traitement : UCT, en anglais Central Processing Unit : **CPU**) est un composant essentiel qui exécute les instructions machine des programmes informatiques.
+
+Remarque : il est le plus souvent amovible, placé sur un support appelé **socket**, et équipé d'un **radiateur** et d'un **ventilateur** (c'est le composant de la carte mère le plus gourmand en énergie).
+
+Il est schématiquement constitué de 3 parties :
+
+* L'**unité arithmétique et logique** est chargée de l'exécution de tous les calculs que peut réaliser le microprocesseur ;
+
+* Les **registres** permettent de mémoriser de l'information (donnée ou instruction) au sein même du CPU, en très petite quantité ;
+
+* L'**unité de contrôle (ou de commande)** . C'est le coordinateur général qui lit les instructions du programme en mémoire et commande l'UAL pour exécuter ces instructions.
+
+Les microprocesseurs sont [cadencés](https://fr.wiktionary.org/wiki/cadenc%C3%A9) par un [signal d\'horloge](https://fr.wikipedia.org/wiki/Signal_d%27horloge) (signal [oscillant](https://fr.wiktionary.org/wiki/oscillant) régulier imposant un rythme au transfert entre circuit). Au milieu des [années 1980](https://fr.wikipedia.org/wiki/Ann%C3%A9es_1980), ce signal avait une fréquence de 4 à 8 [MHz](https://fr.wikipedia.org/wiki/Hertz). Dans les années 2000, cette fréquence atteint 3 GHz. Plus cette fréquence est élevée, plus le microprocesseur peut exécuter à un rythme élevé les instructions de base des programmes, mais plus la qualité des [bus](https://fr.wikipedia.org/wiki/Bus_(informatique)) doit être soignée et leur longueur adaptée à la fréquence.
+
+#### La Mémoire
+
+La **mémoire** permet de stocker des données et des programmes. Elle se divise entre mémoire volatile donc non permanente (programmes et données en cours de fonctionnement) et mémoire permanente (programmes et données de base de la machine)
+
+Dans la plupart des mémoires, les informations sont classées par **adresses** : chaque octet est accessible par une adresse unique.
+
+Pour des raisons économiques, les mémoires sont en général divisées en plusieurs familles :
+
+* **Une mémoire de masse ou mémoire de stockage (permanente)**
+
+![SSD](media/img3.jpg){width="1.5416666666666667in" height="1.0083333333333333in"}
+
+![HDD](media/img4.jpg){width="1.6333333333333333in" height="1.2333333333333334in"}
+
+Cette mémoire sert à stocker à **long terme** des **grandes quantités d'informations**. Les technologies les plus courantes de mémoires de masse sont **electromécaniques** (disques durs -- HDD) ou à **semi-conducteurs** (SSD, clefs USB, ...), elles visent à obtenir une capacité de stockage élevée à faible coût et ont généralement une **vitesse inférieure** aux autres mémoires.
+
+**Ordres de grandeur :**
+
+**Capacité : jusqu'à 10 To (HDD)**
+
+**Vitesse : jusqu'à 500 Mo/s (SSD)**
+
+* **La mémoire vive ou RAM : Random Access Memory (non permanente)**
+
+![SDRAM](media/img5.jpg){width="3.325in" height="0.925in"}
+
+Espace principal de stockage du microprocesseur, mais dont le contenu disparaît lors de la mise hors tension de l'ordinateur.
+
+**Ordres de grandeur :**
+
+**Capacité : jusqu'à 32 Go**
+
+**Vitesse : jusqu'à 2 Go/s**
+
+![Différents niveaux de mémoire](media/img6.jpg)
+
+* **La mémoire cache**
+
+Sert à conserver un court instant des informations fréquemment consultées. Les technologies des mémoires caches visent à accélérer la vitesse des opérations de consultation. Elles ont une très grande vitesse, et un coût élevé pour une faible capacité de stockage. Cette mémoire est intégrée au microprocesseur.
+
+**Ordres de grandeur : Capacité : quelques ko (L1) à quelques Mo (L2)**
+
+**Vitesse : jusqu'à 5 Go/s**
+
+* **Le registre de processeur**
+
+Intégré au processeur. Ce type de mémoire est très rapide, mais aussi très cher et est donc réservé à une très faible quantité de données.
+
+**Ordres de grandeur : Capacité : quelques dizaines d'octets**
+
+**Vitesse : jusqu'à 30 Go/s**
+
+#### Les bus
+
+![](media/img7.png){width="4.2347222222222225in"
+height="2.5729166666666665in"} 
+
+Pour que les données circulent entre les différentes parties d'un ordinateur (mémoire, CPU et les entrées/sorties), il existe des systèmes de communication appelés **bus** ( c'est le squelette de l'architecture). Il en existe de 3 grands types :
+
+-   Le **bus d'adresse** permet de faire circuler des adresses. *Par exemple, l'adresse d'une donnée à aller chercher en mémoire ;*
+
+-   Le **bus de données** permet de faire circuler des données ;
+
+-   Le **bus de contrôle** permet de spécifier le type d'action. *Par exemple : écriture d'une donnée en mémoire, lecture d'une donnée en mémoire.*
+
+## 2. Vers les systèmes sur puce
+
+### 2.1 L\'intérieur d\'un PC
+
+![](media/img8.png){width="3.970138888888889in" height="4.270833333333333in"}
+
+La carte mère accueille tous les éléments fondamentaux au bon fonctionnement d\'un ordinateur : microprocesseur (CPU) (caché sous un système de refroidissement), barrettes de mémoire RAM, carte graphique (qui permet de gérer l\'affichage). On trouve aussi sur la carte mère les puces qui gèrent les interfaces réseau (Wifi et Ethernet) et bien d\'autres choses\...
+
+On peut donc s\'interroger sur la taille d\'un smartphone par rapport à la taille d\'un PC (la carte mère d\'un PC mesure environ 25 cm sur 30 cm, soit bien plus qu\'un smartphone). Pourtant, on doit obligatoirement trouver dans un smartphone les mêmes composants que dans un PC : CPU, RAM, carte graphique et interfaces réseau (Wifi et Bluetooth dans le cas d\'un smartphone) !
+
+### 2.2 Une solution : les SoC
+
+![](media/img9.png){width="2.9166666666666665in" height="2.1979166666666665in"}
+
+Grâce aux progrès techniques de miniaturisation, tous ces composants sont placés dans une puce unique d\'une centaine de mm^2^. Elles accueillent CPU, RAM, circuit graphique (GPU) (équivalent à la carte graphique dans un PC) et circuits radio (Wifi et Bluetooth). Elles sont souvent appelées \"système sur puce\", \"system on a chip\" en anglais (abréviation \"SoC\").
+
+Les meilleurs SoC, plus fins que les microprocesseurs « classiques » de dernière génération, sont gravés en 5 nm et comprennent des milliards de transistors. Un tel système sur puce est conçu et mis au point de façon logicielle, ses briques électroniques sont accessibles par des APIs, comme pour les bibliothèques logicielles.
+
+Outre leur taille, les SoC ont d\'autres avantages par rapport aux systèmes \"classiques\" (carte mère + CPU + carte graphique\...) : ils sont conçus pour consommer beaucoup moins d\'énergie qu\'un système classique (à puissance de calcul équivalente).
+
+Cette consommation réduite permet dans la plupart des cas de s\'affranchir de la présence de système de refroidissement actif comme les ventilateurs. Un système équipé de SoC est donc silencieux.
+
+Vu les distances réduites entre, par exemple, le CPU et la mémoire, les données circulent beaucoup plus vites, ce qui permet d\'améliorer les performances.
+
+En revanche, le principal inconvénient d'un SoC est que là où un ordinateur équipé d\'une carte mère permet de faire évoluer les composants individuellement, l\'extrême intégration du SoC présente l\'inconvénient de n\'autoriser aucune mise à jour possible du matériel.
+
+### 2.3 Exemples : Quelques noms des SoC
+
+* Apple iPhone 11 : SoC A13 Bionic
+
+* Samsung Galaxy S11 : SoC Exynos 990
+
+* Nintendo Switch : SoC Nvidia Tegra
+
+* Apple MacBook (ordinateur portable) : SoC M1
+
+Le marché des SoC a aujourd\'hui un poids économique très important. On commence même à trouver des ordinateurs portables équipés de SoC à la place des cartes mères \"classiques\". Les SoC commencent doucement, mais sûrement à rattraper les systèmes \"classiques\" en termes de puissance (pour les systèmes \"classiques\" d\'entrées et de moyennes gammes, mais aussi haut de gamme avec les nouveaux MacBook d\'Apple équipés de SoC M1).
+
+![](media/img10.png){width="3.591666666666667in" height="2.225in"}
+
+On trouve aussi ce système de SoC sur des nano-ordinateurs comme le Raspberry Pi ou les cartes microbits.
+
+Dans sa version 4, le Raspberry Pi est équipé du SoC BCM2711 de la société Broadcom
+
+### 2.4 Architecture simplifiée du SoC Samsung Exynos 990 - Galaxy S20
+
+![](media/img11.png){width="2.099932195975503in" height="2.1145833333333335in"}
+
+**◼ Le processeur (CPU)**
+
+Le processeur ou « Central Processing Unit » (CPU) est le cœur du SoC. Son fonctionnement est identique à celui d'un ordinateur. On y retrouve plusieurs cœurs qui permettent de lancer en parallèle plusieurs applications de manière simultanée (multitâche) et permettent l'utilisation d'applications lourdes comme des jeux.
+
+**◼ La puce graphique (GPU)**
+
+La puce graphique ou « Graphics Processing Unit » (GPU) a en charge de calculer les images afin de pouvoir les afficher à l'écran. Une carte graphique doit donc réaliser un nombre élevé de tâches, puisque qu'elle doit par exemple calculer la couleur à afficher sur chaque pixel de l'écran de votre smartphone. Par exemple dans le cas d'une image Full HD (1920×1080), le GPU affiche 2 073 600 pixels différents ou 8 294 400 pixels pour de l'Ultra HD (3840×2160). Le calcul prend en compte la fréquence de rafraîchissement de l'écran qui peut par exemple varier entre 60 et 120 fois par secondes, c'est-à-dire entre 60 Hz et 120 Hz.
+
+**◼ La puce neuronale (NPU)**
+
+La puce neuronale ou « Neuronal Processing Unit » (NPU) est une puce en charge de l'intelligence artificielle des smartphones. Les calculs de l'intelligence artificielle ont longtemps été faits par le biais de serveurs dans le cloud (distant). Néanmoins, depuis quelques années pour des raisons de rapidité et de respect de la vie privée, les calculs se font désormais directement sur les smartphones. C'est utile par exemple dans « Google Translate » pour reconnaître des caractères, pour optimiser les photos ou encore l'autonomie.
+
+**◼ Le modem (Interface)**
+
+Les smartphones embarquent également dans le SoC une unité réseau assurant la prise en charge des différents protocoles de communication. Cette unité est la partie la plus compliquée à développer et à implémenter sur un SoC. Néanmoins, il s'agit d'un élément crucial afin d'assurer le nomadisme d'un smartphone en itinérance. Le modem intégré au SoC gère non seulement le Wifi, le Bluetooth, le NFC ou bien encore les technologies mobiles. C'est-à-dire la 4G, ou plus récemment la 5G, mais également de plus vieux réseaux tels que la 3G.
+
+**◼ Le processeur de signal numérique (DSP)**
+
+Le processeur de signal numérique ou « Digital Signal Processor » (DSP) est en charge de traiter les signaux numériques. Ainsi, il va permettre le filtrage, la compression ou encore l'extraction de différents signaux tels que la musique ou encore une vidéo.
+
+**◼ Le processeur de signal d'images (ISP)**
+
+Le processeur d'image ou « Image Signal Processor » (ISP) est une puce prenant en charge la création d'images numériques. En effet, à cause de leurs tailles minuscules, les capteurs photo des smartphones ne sont pas de très bonne qualité d'un point de vue de l'optique pure. La qualité qu'il est actuellement possible d'obtenir va être intimement liée à cette puce qui va compenser logiquement certaines limitations optiques (zoom numérique \...).
+
+**◼ Le processeur de sécurité (SPU)**
+
+Le processeur de sécurité ou « Secure Processing Unit » (SPU) est le « bouclier » du smartphone. Son alimentation électrique est indépendante afin de ne pas pouvoir être éteint en cas d'attaque sur celui-ci. Le SPU est d'une importance capitale. En effet celui-ci va stocker les données biométriques, bancaires, la carte SIM ou encore les titres de transport. C'est lui qui contient les clés de chiffrement des données de
+l'utilisateur.

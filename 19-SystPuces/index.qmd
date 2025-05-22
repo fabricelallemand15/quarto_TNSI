@@ -1,0 +1,11 @@
+---
+title: Programme
+---
+
+## Architectures matérielles, systèmes d’exploitation et réseaux
+
+La réduction de taille des éléments des circuits électroniques a conduit à l’avènement de systèmes sur puce (SoCs pour Systems on Chips en anglais) qui regroupent dans un seul circuit nombre de fonctions autrefois effectuées par des circuits séparés assemblés sur une carte électronique. Un tel système sur puce est conçu et mis au point de façon logicielle, ses briques électroniques sont accessibles par des API, comme pour les bibliothèques logicielles.
+
+|Contenus| Capacités attendues| Commentaires|
+|-----|-----|-----|
+|Composants intégrés d’un système sur puce.|Identifier les principaux composants sur un schéma de circuit et les avantages de leur intégration en termes de vitesse et de consommation.| Le circuit d’un téléphone peut être pris comme un exemple : microprocesseurs, mémoires locales, interfaces radio et filaires, gestion d’énergie, contrôleurs vidéo, accélérateur graphique, réseaux sur puce, etc.|
