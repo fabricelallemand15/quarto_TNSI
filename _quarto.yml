@@ -26,23 +26,21 @@ website:
     collapse-level: 1
     alignment: left
     contents: 
-      - section: "Ch. 1 - Récursivité"
-        contents: 
-            - 01-langagesProgr/index.qmd
-            - 01-langagesProgr/recursivite_cours.qmd
-            - 01-langagesProgr/recursivite_exercices.qmd
-            - 01-langagesProgr/TPHanoi.qmd
-      - section: "Ch. 2 - Paradigmes de programmation"
-        contents: 
-            - 01-langagesProgr/paradigmes_cours.qmd
-            - 01-langagesProgr/paradigmes_exercices.qmd
-      - section: "Ch. 3 - Programmation orientée objet"
+      - section: "Ch. 1 - Programmation orientée objet"
         contents: 
             - 01-langagesProgr/POO_cours.qmd
             - 01-langagesProgr/POO_complements.qmd
             - 01-langagesProgr/POO_exercices.qmd
             - 01-langagesProgr/TPPOOBataille.qmd
-      - section: "Ch. 4 - Structures linéaires : listes, piles et files - Interface et implémentation"
+      - section: "Ch. 2 - Récursivité"
+        contents: 
+            - 01-langagesProgr/index.qmd
+            - 01-langagesProgr/recursivite_cours.qmd
+            - 01-langagesProgr/recursivite_exercices.qmd
+            - 01-langagesProgr/TPHanoi.qmd 
+            - 01-langagesProgr/paradigmes_cours.qmd
+            - 01-langagesProgr/paradigmes_exercices.qmd
+      - section: "Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation"
         contents:
           - 02-structures/index.qmd
           - 02-structures/interfaces_cours.qmd
@@ -50,87 +48,71 @@ website:
           - 02-structures/piles_cours.qmd
           - 02-structures/files_cours.qmd
           - 02-structures/listes_exercices.qmd
-      - section: "Ch. 5 - Dictionnaires"
-        contents:
           - 02-structures/dictionnaires_cours.qmd
           - 02-structures/dictionnaires_exercices.qmd
           - 02-structures/TPDictionnaire.qmd
           - 02-structures/projet_detecteur_langue.qmd
           # - 02-structures/bilan.qmd
-      - section: "Ch. 6 - Modèle relationnel - Bases de données - SGBD"
+      - section: "Ch. 4 - Bases de données"
         contents: 
           - 03-BDD/index.qmd
           - 03-BDD/partie1.qmd
           - 03-BDD/partie2.qmd
-      - section: "Ch. 7 - Langage SQL"
-        contents:
           - 03-BDD/sql_cours.qmd
           - 03-BDD/exercices.qmd
           - 03-BDD/TP1.qmd
           - 03-BDD/TP2.qmd
           - 03-BDD/TP3.qmd
-      - section: "Ch. 8 - Processus"
-        contents: 
-          - 05-archiSE/index.qmd
-          - 05-archiSE/processus_cours.qmd
-          - 05-archiSE/processus_TP.qmd
-          - 05-archiSE/processus_exos.qmd
-          - 05-archiSE/processus_python.qmd
-      - section: "Ch. 9 - Arbres"
+      - section: "Ch. 5 - Arbres binaires"
         contents: 
           - 04-arbres/index.qmd
           - 04-arbres/arbres_cours.qmd
           - 04-arbres/arbres_exercices.qmd
           - 04-arbres/implementationArbres.qmd
           - 04-arbres/TParbres.qmd
-      - section: "Ch. 10 - Algorithmes sur les arbres binaires"
-        contents: 
           - 06-algo/index.qmd
           - 06-algo/rappels.qmd
           - 06-algo/algo_arbres_cours.qmd
           - 06-algo/algo_arbres_exos.qmd
-      - section: "Ch. 11 - Méthode 'Diviser pour régner'"
-        contents:
-          - 06-algo/diviser_pour_regner_cours.qmd
-          - 06-algo/diviser_pour_regner_exos.qmd
-      - section: "Ch. 12 - Protocoles de routage"
-        contents: 
-          - 07-reseaux/adressesIP.qmd
-          - 07-reseaux/routage_cours.qmd
-          - 07-reseaux/routage_exos.qmd
-      - section: "Ch. 13 - Sécurisation des communications"
-        contents:
-          - 09-reseaux2/index.qmd
-          - 09-reseaux2/HTTPS_cours.qmd
-      - section: "Ch. 14 - Graphes"
+      - section: "Ch. 6 - Graphes"
         contents:
           - 08-graphes/index_graphes.qmd
           - 08-graphes/graphes_cours.qmd
           - 08-graphes/tp_graphe_matrice.ipynb
           - 08-graphes/tp_graphe_liste.ipynb
-          - 08-graphes/graphes_exercices.qmd
-      - section: "Ch. 15 - Algorithmes sur les graphes"
-        contents: 
+          - 08-graphes/graphes_exercices.qmd 
           - 11-algos2/dfs_graphe.qmd
           - 11-algos2/bfs_graphe.qmd
-          - 11-algos2/exos_graphes.qmd  
-      - section: "Ch. 16 - Programmation dynamique"
+          - 11-algos2/exos_graphes.qmd
+      - section: "Ch. 7 - Sécurité et réseaux"
         contents: 
+          - 07-reseaux/adressesIP.qmd
+          - 07-reseaux/routage_cours.qmd
+          - 07-reseaux/routage_exos.qmd
+          - 09-reseaux2/index.qmd
+          - 09-reseaux2/HTTPS_cours.qmd
+      - section: "Ch. 8 - Stratégies algorithmiques avancées"
+        contents:
+          - 06-algo/diviser_pour_regner_cours.qmd
+          - 06-algo/diviser_pour_regner_exos.qmd
           - 16-ProgDyn/index.qmd
           - 16-ProgDyn/ProgDyn_Cours.qmd
-          - 16-ProgDyn/ProgDyn_Exos.qmd
-      - section: "Ch. 17 - Recherche textuelle"
-        contents: 
+          - 16-ProgDyn/ProgDyn_Exos.qmd 
           - 17-RechercheTextuelle/index.qmd
           - 17-RechercheTextuelle/cours.ipynb
-      - section: "Ch. 18 - Calculabilité - Décidabilité"
+      - section: "Ch. 9 - Systèmes sur puce et Processus"
         contents: 
-          - 10-langages_prog2/calculabilite.qmd
-      - section: "Ch. 19 - Systèmes sur puce"
-        contents: 
+          - 05-archiSE/index.qmd
+          - 05-archiSE/processus_cours.qmd
+          - 05-archiSE/processus_TP.qmd
+          - 05-archiSE/processus_exos.qmd
+          - 05-archiSE/processus_python.qmd
           - 19-SystPuces/index.qmd
           - 19-SystPuces/SystPuces_cours.qmd
           - 19-SystPuces/SystPuces_exos.qmd
+      - section: "Ch. 10 - Limites du calculable"
+        contents: 
+          - 10-langages_prog2/calculabilite.qmd
       - section: "Histoire de l'informatique"
         contents: 
           - histoire/index.qmd
