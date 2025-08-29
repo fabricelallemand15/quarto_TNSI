@@ -1003,7 +1003,7 @@ Objectifs
 <p>Des <a href="../01-langagesProgr/POO_complements.html">compléments sur la POO</a> sont proposés à la suite de ce cours.</p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>La Programmation Orientée Objets (<strong>POO</strong>) pour les intimes (que vous allez devenir !) est un <strong>paradigme</strong> (c’est-à-dire une manière de faire) de programmation</p>
+<p>La Programmation Orientée Objets (<strong>POO</strong>) pour les intimes (que vous allez devenir !) est un <strong>paradigme</strong> (c’est-à-dire une manière de faire) de programmation.</p>
 <p>Pour un bref aperçu historique de l’idée d’objet en programmation, lire l’encadré ci-dessous, en grande partie tiré de l’article <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming</a> de Wikipedia en anglais.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1016,7 +1016,7 @@ Un peu d’histoire
 </div>
 <div class="callout-body-container callout-body">
 <p>Les termes <strong>objets</strong> <strong>orienté</strong> au sens moderne de la programmation orientée objet ont fait leur première apparition au MIT à la fin des années 1950 et au début des années 1960. Dans l’environnement du groupe d’intelligence artificielle, dès 1960, “objet” pouvait désigner des éléments identifiés avec des propriétés (attributs).</p>
-<p>C’est l’informaticien Alan Kay (1940-) qui est considéré comme l’un de pères de la programmation orientée objets.</p>
+<p>C’est l’informaticien Alan Kay (1940-) qui est considéré comme l’un des pères de la programmation orientée objets.</p>
 <blockquote class="blockquote">
 <p>Je pensais que les objets étaient comme des cellules biologiques et / ou des ordinateurs individuels sur un réseau, uniquement capables de communiquer avec des messages.</p>
 <p>Alan Kay</p>
@@ -1035,8 +1035,7 @@ Un peu d’histoire
 <p>Le premier bénéfice de cette approche de la programmation réside dans le fait que les différents objets utilisés peuvent être construits indépendamment les uns des autres (par exemple par des programmeurs différents) sans qu’il n’y ait de risque d’interférence. Ce résultat est obtenu grâce au concept d’encapsulation : la fonctionnalité interne de l’objet et les variables qu’il utilise pour effectuer son travail, sont en quelque sorte « enfermées » dans l’objet. Les autres objets et le monde extérieur ne peuvent y avoir accès qu’à travers des procédures bien définies : l’interface de l’objet.</p>
 <p>En particulier, l’utilisation de classes dans vos programmes va vous permettre – entre autres avantages – d’éviter au maximum l’emploi de variables globales. Vous devez savoir en effet que l’utilisation de variables globales comporte des risques, d’autant plus importants que les programmes sont volumineux, parce qu’il est toujours possible que de telles variables soient modifiées, ou même redéfinies, n’importe où dans le corps du programme (ce risque s’aggrave particulièrement si plusieurs programmeurs différents travaillent sur un même logiciel).</p>
 </blockquote>
-<p>En utilisant Python, nous avons déjà fréquenté des classes d’objets : il est usuel de lire qu’en Python “tout est objet”, même si Python ne permet pas vraiment de faire de la POO dans toute sa rigueur.</p>
-<p>Par exemple, définissons une chaîne de caractères et demandons à Python quel est son type :</p>
+<p>En utilisant Python, nous avons déjà fréquenté des classes d’objets : il est usuel de lire qu’en Python “tout est objet”. Par exemple, définissons une chaîne de caractères et demandons à Python quel est son type :</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> <span class="st">"Coucou !"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">'str'</span><span class="op">&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1049,7 +1048,7 @@ Un peu d’histoire
 <section id="classe-initialiseur-attributs" class="level2">
 <h2 class="anchored" data-anchor-id="classe-initialiseur-attributs">Classe, initialiseur, attributs</h2>
 <p>En Python, la définition d’une classe se fait avec le mot-clef <code>class</code> suivi du nom de la classe.</p>
-<p>Supposons par exemple que nous voulons définir une classe pour représenter des rectangles. Nous avons besoin, pour chaque rectangle, de connaître sa largeur et se hauteur, ce qui nous permettra de faire quelques calculs.</p>
+<p>Supposons par exemple que nous voulons définir une classe pour représenter des rectangles. Nous avons besoin, pour chaque rectangle, de connaître sa largeur et sa hauteur, ce qui nous permettra de faire quelques calculs.</p>
 <p>Observons le code suivant :</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Représente un rectangle"""</span></span>
@@ -1082,7 +1081,7 @@ Remarque
 </section>
 <section id="méthodes" class="level2">
 <h2 class="anchored" data-anchor-id="méthodes">Méthodes</h2>
-<p>Une <strong>méthode</strong>, c’est ce qui permet à une instance de réaliser des actions. Techniquement se sont des fonctions définies <strong>dans le corps de la classe</strong>, et qui prennent toujours au moins un premier paramètre qui est <code>self</code>.</p>
+<p>Une <strong>méthode</strong>, c’est ce qui permet à une instance de réaliser des actions. Techniquement ce sont des fonctions définies <strong>dans le corps de la classe</strong>, et qui prennent toujours au moins un premier paramètre qui est <code>self</code>.</p>
 <p>Certaines méthodes sont particulières, leurs noms commencent par un double <em>undescore</em> (le caractère <code>_</code>). On a vu une première de ces méthodes : l’initialiseur <code>__init__</code>.</p>
 <p>Définissons ici une méthode permettant de calculer le périmètre d’un rectangle et une autre pour l’aire :</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>

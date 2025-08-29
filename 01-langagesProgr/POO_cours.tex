@@ -1,0 +1,602 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  french,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage[top=20mm,bottom=20mm,left=20mm,right=20mm,heightrounded]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{fancyhdr} \pagestyle{fancy} \usepackage{lastpage}
+\KOMAoption{captions}{tablesignature}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table des matières}
+\else
+  \newcommand\contentsname{Table des matières}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Liste des Figures}
+\else
+  \newcommand\listfigurename{Liste des Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Liste des Tables}
+\else
+  \newcommand\listtablename{Liste des Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tableau}
+\else
+  \newcommand\tablename{Tableau}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{Liste des Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Programmation orientée objets (Cours)},
+  pdflang={fr},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Programmation orientée objets (Cours)}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\lhead{Spécialité NSI} \rhead{Terminale} \chead{} \cfoot{} \lfoot{Lycée \'Emile Duclaux} \rfoot{Page \thepage/\pageref{LastPage}} \renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt} \thispagestyle{fancy} \vspace{-2cm}
+
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Objectifs}, toptitle=1mm, coltitle=black, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, rightrule=.15mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm]
+
+\begin{itemize}
+\tightlist
+\item
+  Connaître le vocabulaire de la POO : classes, attributs, méthodes
+  objets.
+\item
+  Écrire la définition d'une classe.
+\item
+  Accéder aux méthodes et attributs d'une classe.
+\end{itemize}
+
+\end{tcolorbox}
+
+Des \href{POO_complements.qmd}{compléments sur la POO} sont proposés à
+la suite de ce cours.
+
+\subsection{Introduction}\label{introduction}
+
+La Programmation Orientée Objets (\textbf{POO}) pour les intimes (que
+vous allez devenir !) est un \textbf{paradigme} (c'est-à-dire une
+manière de faire) de programmation.
+
+Pour un bref aperçu historique de l'idée d'objet en programmation, lire
+l'encadré ci-dessous, en grande partie tiré de l'article
+\href{https://en.wikipedia.org/wiki/Object-oriented_programming}{Object-oriented
+programming} de Wikipedia en anglais.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Un peu d'histoire}, toptitle=1mm, coltitle=black, colback=white, left=2mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, rightrule=.15mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm]
+
+Les termes \textbf{objets} \textbf{orienté} au sens moderne de la
+programmation orientée objet ont fait leur première apparition au MIT à
+la fin des années 1950 et au début des années 1960. Dans l'environnement
+du groupe d'intelligence artificielle, dès 1960, ``objet'' pouvait
+désigner des éléments identifiés avec des propriétés (attributs).
+
+C'est l'informaticien Alan Kay (1940-) qui est considéré comme l'un des
+pères de la programmation orientée objets.
+
+\begin{quote}
+Je pensais que les objets étaient comme des cellules biologiques et / ou
+des ordinateurs individuels sur un réseau, uniquement capables de
+communiquer avec des messages.
+
+Alan Kay
+\end{quote}
+
+Le langage Simula dans les années 1960, puis Smalltalk dans les années
+1970 posent les bases toujours actuelles de ce paradigme.
+
+Au début et au milieu des années 1990, la programmation orientée objet
+s'est développée comme le paradigme de programmation dominant lorsque
+les langages de programmation prenant en charge ces techniques sont
+devenus largement disponibles. Ceux-ci incluent par exemple C++ ou
+Delphi. Sa domination a été renforcée par la popularité croissante des
+interfaces utilisateur graphiques, qui reposent fortement sur des
+techniques de programmation orientées objet.
+
+Des fonctionnalités orientées objet ont été ajoutées à de nombreux
+langages existants, notamment Ada, BASIC, Fortran, Pascal et COBOL.
+
+Plus récemment, un certain nombre de langages ont émergé qui sont
+principalement orientés objet, mais qui sont également compatibles avec
+la méthodologie procédurale. Deux de ces langages sont Python et Ruby.
+Les langages orientés objet récents les plus importants sur le plan
+commercial sont probablement Java, développé par Sun Microsystems, ainsi
+que C\# et Visual Basic.NET (VB.NET), tous deux conçus pour la
+plate-forme.NET de Microsoft.
+
+*{[}MIT{]} : Massachusetts Institute of Technology
+
+\end{tcolorbox}
+
+Alors de quoi s'agit-il ? Une approche intuitive consiste à dire que
+cette méthode de programmation nous permet de définir des nouveaux types
+de données, de nouveaux objets, correspondant à un objectif précis. Ces
+nouveaux types sont appelés \textbf{classes}. En définissant une classe,
+nous pouvons également définir ses \textbf{attributs}, c'est-à-dire les
+variables qui lui sont associées et ses \textbf{méthodes}, c'est-à-dire
+les fonctions sui lui sont propres.
+
+Voici ce que Gérard SWINNEN écrit dans son livre \emph{Apprendre à
+programmer avec Python 3} :
+
+\begin{quote}
+Les classes sont les principaux outils de la programmation orientée
+objet (Object Oriented Programming ou OOP). Ce type de programmation
+permet de structurer les logiciels complexes en les organisant comme des
+ensembles d'objets qui interagissent, entre eux et avec le monde
+extérieur.
+
+Le premier bénéfice de cette approche de la programmation réside dans le
+fait que les différents objets utilisés peuvent être construits
+indépendamment les uns des autres (par exemple par des programmeurs
+différents) sans qu'il n'y ait de risque d'interférence. Ce résultat est
+obtenu grâce au concept d'encapsulation : la fonctionnalité interne de
+l'objet et les variables qu'il utilise pour effectuer son travail, sont
+en quelque sorte « enfermées » dans l'objet. Les autres objets et le
+monde extérieur ne peuvent y avoir accès qu'à travers des procédures
+bien définies : l'interface de l'objet.
+
+En particulier, l'utilisation de classes dans vos programmes va vous
+permettre -- entre autres avantages -- d'éviter au maximum l'emploi de
+variables globales. Vous devez savoir en effet que l'utilisation de
+variables globales comporte des risques, d'autant plus importants que
+les programmes sont volumineux, parce qu'il est toujours possible que de
+telles variables soient modifiées, ou même redéfinies, n'importe où dans
+le corps du programme (ce risque s'aggrave particulièrement si plusieurs
+programmeurs différents travaillent sur un même logiciel).
+\end{quote}
+
+En utilisant Python, nous avons déjà fréquenté des classes d'objets : il
+est usuel de lire qu'en Python ``tout est objet''. Par exemple,
+définissons une chaîne de caractères et demandons à Python quel est son
+type :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ a }\OperatorTok{=} \StringTok{"Coucou !"}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{type}\NormalTok{(a)}
+\OperatorTok{\textless{}}\KeywordTok{class} \StringTok{\textquotesingle{}str\textquotesingle{}}\OperatorTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+Le type `str' bien connu est en fait une classe d'objet prédéfinie. On
+dit que \texttt{a} est une \textbf{instance} de l'objet \texttt{str}.
+
+Un exemple de \textbf{méthode} rattachée à la classe str est la fonction
+\texttt{capitalize} qui met le premier caractère en majuscule. Cette
+méthode est appelée par la notation pointée déjà rencontrée.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ a.capitalize()}
+\CommentTok{\textquotesingle{}Coucou !\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+La commande \texttt{help(str)} affiche toutes les méthodes prédéfinies
+pour les objets de la classe \texttt{str}.
+
+\subsection{Classe, initialiseur,
+attributs}\label{classe-initialiseur-attributs}
+
+En Python, la définition d'une classe se fait avec le mot-clef
+\texttt{class} suivi du nom de la classe.
+
+Supposons par exemple que nous voulons définir une classe pour
+représenter des rectangles. Nous avons besoin, pour chaque rectangle, de
+connaître sa largeur et sa hauteur, ce qui nous permettra de faire
+quelques calculs.
+
+Observons le code suivant :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Rectangle:}
+    \CommentTok{"""Représente un rectangle"""}
+    
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, largeur }\OperatorTok{=} \DecValTok{2}\NormalTok{, hauteur }\OperatorTok{=} \DecValTok{3}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.largeur }\OperatorTok{=}\NormalTok{ largeur}
+        \VariableTok{self}\NormalTok{.hauteur }\OperatorTok{=}\NormalTok{ hauteur}
+\end{Highlighting}
+\end{Shaded}
+
+À l'intérieur de la classe \texttt{Rectangle}, la \textbf{méthode}
+\texttt{\_\_init\_\_} est l'\textbf{initialiseur} : elle est toujours
+exécutée lorsqu'une \textbf{instance} de l'objet \texttt{Rectangle} est
+créée (on parle aussi de \textbf{constructeur}). Cette \emph{fonction}
+accepte des paramètres qui seront les valeurs à donner aux attributs à
+la création de l'objet (ici on a aussi donné des valeurs par défaut à
+ces paramètres) ; le premier paramètre est particulier : ce sera
+\textbf{toujours} le mot-clé \texttt{self} : ce mot-clef désigne
+l'instance qui est en train d'être définie au moment où cette fonction
+s'exécute.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Remarque}, toptitle=1mm, coltitle=black, colback=white, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, rightrule=.15mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm]
+
+Il est d'usage, et recommandé, de nommer une classe par un nom
+commençant par une majuscule.
+
+\end{tcolorbox}
+
+Observons les lignes suivantes dans la console Python :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec1 }\OperatorTok{=}\NormalTok{ Rectangle()}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec2}\OperatorTok{=}\NormalTok{Rectangle(}\DecValTok{15}\NormalTok{, }\DecValTok{25}\NormalTok{)}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec1.largeur}
+\DecValTok{2}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec2.largeur}
+\DecValTok{15}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{rec1} est une instance de l'objet \texttt{Rectangle}. Aucun
+paramètre n'étant donné lors de sa création, les valeurs par défaut ont
+été appliquées. \texttt{rec2} est une autre instance de l'objet
+\texttt{Rectangle} pour laquelle on a défini les \textbf{attributs
+d'instance} \texttt{largeur} et \texttt{hauteur}. On accède à ces
+attributs par la notation pointée.
+
+\subsection{Méthodes}\label{muxe9thodes}
+
+Une \textbf{méthode}, c'est ce qui permet à une instance de réaliser des
+actions. Techniquement ce sont des fonctions définies \textbf{dans le
+corps de la classe}, et qui prennent toujours au moins un premier
+paramètre qui est \texttt{self}.
+
+Certaines méthodes sont particulières, leurs noms commencent par un
+double \emph{undescore} (le caractère \texttt{\_}). On a vu une première
+de ces méthodes : l'initialiseur \texttt{\_\_init\_\_}.
+
+Définissons ici une méthode permettant de calculer le périmètre d'un
+rectangle et une autre pour l'aire :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Rectangle:}
+    \CommentTok{"""Représente un rectangle"""}
+
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, largeur}\OperatorTok{=}\DecValTok{2}\NormalTok{, hauteur}\OperatorTok{=}\DecValTok{3}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.largeur }\OperatorTok{=}\NormalTok{ largeur}
+        \VariableTok{self}\NormalTok{.hauteur }\OperatorTok{=}\NormalTok{ hauteur}
+
+    \KeywordTok{def}\NormalTok{ perimetre(}\VariableTok{self}\NormalTok{):}
+        \CommentTok{"""Retourne le périmètre"""}
+        \ControlFlowTok{return} \DecValTok{2} \OperatorTok{*}\NormalTok{ (}\VariableTok{self}\NormalTok{.largeur }\OperatorTok{+} \VariableTok{self}\NormalTok{.hauteur)}
+
+    \KeywordTok{def}\NormalTok{ aire(}\VariableTok{self}\NormalTok{):}
+        \CommentTok{"""Retourne l\textquotesingle{}aire"""}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.largeur }\OperatorTok{*} \VariableTok{self}\NormalTok{.hauteur}
+\end{Highlighting}
+\end{Shaded}
+
+Utilisation :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec }\OperatorTok{=}\NormalTok{ Rectangle(}\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec.perimetre()}
+\DecValTok{30}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec.aire()}
+\DecValTok{50}
+\end{Highlighting}
+\end{Shaded}
+
+Une méthode peut modifier la valeur d'un attribut. Définissons par
+exemple une méthode permettant de doubler la largeur d'un rectangle.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ double\_largeur(}\VariableTok{self}\NormalTok{):}
+    \CommentTok{"""Double la largeur du rectangle)"""}
+    \VariableTok{self}\NormalTok{.largeur }\OperatorTok{*=} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec }\OperatorTok{=}\NormalTok{ Rectangle(}\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec.double\_largeur()}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ rec.largeur}
+\DecValTok{20}
+\end{Highlighting}
+\end{Shaded}
+
+La POO encourage à n'exposer que des méthodes vers l'extérieur (on parle
+d'\textbf{interface}) en masquant les attributs. Il s'agit d'un des
+quatre éléments constitutifs de l'orienté objet :
+l'\textbf{encapsulation}.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remarque}, toptitle=1mm, coltitle=black, colback=white, left=2mm, colbacktitle=quarto-callout-note-color!10!white, opacityback=0, opacitybacktitle=0.6, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, rightrule=.15mm, arc=.35mm, titlerule=0mm, toprule=.15mm, leftrule=.75mm]
+
+Nous avons présenté ci-dessus les \textbf{attributs d'instance}, mais il
+est aussi possible de définir des \textbf{attributs de classe} qui
+seront donc les mêmes pour toutes les instances d'une même classe créées
+dans un programme. Ces attributs sont définis à l'intérieur de la
+classe, sans le préfixe \texttt{self} (puisque celui-ci fait référence à
+l'instance en train d'être créée).
+
+Par exemple, dans la définition de la classe \texttt{Atome} ci-dessous,
+la liste \texttt{table} est un attribut de classe, alors que l'entier
+\texttt{np} est un attribut d'instance. Dans la méthode
+\texttt{\_\_init\_\_}, on accède à l'attribut de classe en le préfixant
+par le nom de la classe \texttt{Atome.table} et on accède à l'attribut
+d'instance en le préfixant par le nom de l'instance \texttt{self.np}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Atome:}
+\CommentTok{"""atomes simplifiés, choisis parmi les 10 premiers éléments du TP"""}
+\NormalTok{table }\OperatorTok{=}\NormalTok{ [}\VariableTok{None}\NormalTok{, (}\StringTok{\textquotesingle{}hydrogène\textquotesingle{}}\NormalTok{, }\DecValTok{0}\NormalTok{), (}\StringTok{\textquotesingle{}hélium\textquotesingle{}}\NormalTok{, }\DecValTok{2}\NormalTok{), (}\StringTok{\textquotesingle{}lithium\textquotesingle{}}\NormalTok{, }\DecValTok{4}\NormalTok{), (}\StringTok{\textquotesingle{}béryllium\textquotesingle{}}\NormalTok{, }\DecValTok{5}\NormalTok{),}
+\NormalTok{            (}\StringTok{\textquotesingle{}bore\textquotesingle{}}\NormalTok{, }\DecValTok{6}\NormalTok{), (}\StringTok{\textquotesingle{}carbone\textquotesingle{}}\NormalTok{, }\DecValTok{6}\NormalTok{), (}\StringTok{\textquotesingle{}azote\textquotesingle{}}\NormalTok{, }\DecValTok{7}\NormalTok{), (}\StringTok{\textquotesingle{}oxygène\textquotesingle{}}\NormalTok{, }\DecValTok{8}\NormalTok{), (}\StringTok{\textquotesingle{}fluor\textquotesingle{}}\NormalTok{, }\DecValTok{10}\NormalTok{), (}\StringTok{\textquotesingle{}néon\textquotesingle{}}\NormalTok{, }\DecValTok{10}\NormalTok{)]}
+
+\KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, nat):}
+    \CommentTok{"le n° atomique détermine le n. de protons, d\textquotesingle{}électrons et de neutrons"}
+    \VariableTok{self}\NormalTok{.np, }\VariableTok{self}\NormalTok{.ne }\OperatorTok{=}\NormalTok{ nat, nat  }\CommentTok{\# nat = numéro atomique}
+    \VariableTok{self}\NormalTok{.nn }\OperatorTok{=}\NormalTok{ Atome.table[nat][}\DecValTok{1}\NormalTok{]}
+
+\KeywordTok{def}\NormalTok{ affiche(}\VariableTok{self}\NormalTok{):}
+    \BuiltInTok{print}\NormalTok{()}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"Nom de l\textquotesingle{}élément :"}\NormalTok{, Atome.table[}\VariableTok{self}\NormalTok{.np][}\DecValTok{0}\NormalTok{])}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"}\SpecialCharTok{\{}\VariableTok{self}\SpecialCharTok{.}\NormalTok{np}\SpecialCharTok{\}}\SpecialStringTok{ protons, }\SpecialCharTok{\{}\VariableTok{self}\SpecialCharTok{.}\NormalTok{ne}\SpecialCharTok{\}}\SpecialStringTok{ électrons, }\SpecialCharTok{\{}\VariableTok{self}\SpecialCharTok{.}\NormalTok{nn}\SpecialCharTok{\}}\SpecialStringTok{ neutrons"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+De la même façon, il est possible de définir des \textbf{méthodes de
+classe}.
+
+\end{tcolorbox}
+
+\subsection{Représentation simplifiée d'une
+classe}\label{repruxe9sentation-simplifiuxe9e-dune-classe}
+
+Lorsqu'un module comportant plusieurs définitions de classe est
+développé, on peut réaliser une représentation graphique, appelée
+\textbf{diagramme de classes} qui permet de visualiser le nom de chaque
+classe, son interface (c'est-à-dire l'ensemble de ses attributs et
+méthodes publiques) et les relations éventuelles entre les différentes
+classes.
+
+Une présentation détaillée de ce type de diagramme n'est pas au
+programme, mais de manière simplifiée, le diagramme correspondant à la
+classe \texttt{Rectangle} pourrait ressembler à ce qui suit :
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{classe_mermaid.png}}
+
+}
+
+\caption{Diagramme de classe}
+
+\end{figure}%
+
+Dans des cases séparées, on place d'abord le nom de la classe, puis ses
+attributs et enfin ses méthodes. Un codage spécifique permet de préciser
+le type des différents membres, leur caractère public ou privé (voir les
+compléments à ce sujet) ou même leur état.
+
+Un attribut de classe ou une méthode de classe seront soulignés dans un
+tel diagramme.
+
+Pour en savoir un peu plus sur les diagrammes de classes, je vous
+conseille
+\href{https://inf1410.teluq.ca/teluqDownload.php?file=2014/01/INF1410_Guide_UML_DCC.pdf}{ce
+document} ou encore
+\href{https://laurent-audibert.developpez.com/Cours-UML/?page=diagramme-classes}{ce
+cours} plus difficile.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Des \href{POO_complements.qmd}{compléments sur la POO} sont proposés à
+la suite de ce cours.
+
+
+
+
+\end{document}

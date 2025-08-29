@@ -8,37 +8,37 @@ crossref:
     tbl-title: Tableau
 format:
     html: default
-#     pdf: 
-#         geometry:
-#             - top=20mm
-#             - bottom=20mm
-#             - left=20mm
-#             - right=20mm
-#             - heightrounded
-#         include-in-header:
-#             - text:
-#                 \usepackage{fancyhdr}
-#                 \pagestyle{fancy}
-#                 \usepackage{lastpage}
-#         include-before-body:
-#             - text:
-#                 \lhead{Spécialité NSI} 
-#                 \rhead{Terminale}
-#                 \chead{} 
-#                 \cfoot{}
-#                 \lfoot{Lycée \'Emile Duclaux}
-#                 \rfoot{Page \thepage/\pageref{LastPage}}
-#                 \renewcommand{\headrulewidth}{0pt}
-#                 \renewcommand{\footrulewidth}{0pt}
-#                 \thispagestyle{fancy}
-#                 \vspace{-2cm}
-#         biblio-title: Sources utilisées
-#         reference-location: document
-#         # fig-pos: h
-#         # fig-width: 4
-#         # fig-height: 2.5
-#         keep-tex: true
-# format-links: [pdf, tex]
+    #pdf: 
+    #    geometry:
+    #        - top=20mm
+    #        - bottom=20mm
+    #        - left=20mm
+    #        - right=20mm
+    #        - heightrounded
+    #    include-in-header:
+    #        - text:
+    #            \usepackage{fancyhdr}
+    #            \pagestyle{fancy}
+    #            \usepackage{lastpage}
+    #    include-before-body:
+    #        - text:
+    #            \lhead{Spécialité NSI} 
+    #            \rhead{Terminale}
+    #            \chead{} 
+    #            \cfoot{}
+    #            \lfoot{Lycée \'Emile Duclaux}
+    #            \rfoot{Page \thepage/\pageref{LastPage}}
+    #            \renewcommand{\headrulewidth}{0pt}
+    #            \renewcommand{\footrulewidth}{0pt}
+    #            \thispagestyle{fancy}
+    #            \vspace{-2cm}
+    #    biblio-title: Sources utilisées
+    #    reference-location: document
+    #    # fig-pos: h
+    #    # fig-width: 4
+    #    # fig-height: 2.5
+    #    keep-tex: true
+format-links: [pdf]
 ---
 
 ::: {.callout-tip}
@@ -53,7 +53,7 @@ Des [compléments sur la POO](POO_complements.qmd) sont proposés à la suite de
 
 ## Introduction
 
-La Programmation Orientée Objets (**POO**) pour les intimes (que vous allez devenir !) est un **paradigme** (c'est-à-dire une manière de faire) de programmation 
+La Programmation Orientée Objets (**POO**) pour les intimes (que vous allez devenir !) est un **paradigme** (c'est-à-dire une manière de faire) de programmation. 
 
 Pour un bref aperçu historique de l'idée d'objet en programmation, lire l'encadré ci-dessous, en grande partie tiré de l'article [Object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming) de Wikipedia en anglais.
 
@@ -62,7 +62,7 @@ Pour un bref aperçu historique de l'idée d'objet en programmation, lire l'enca
 
 Les termes **objets** **orienté** au sens moderne de la programmation orientée objet ont fait leur première apparition au MIT à la fin des années 1950 et au début des années 1960. Dans l'environnement du groupe d'intelligence artificielle, dès 1960, "objet" pouvait désigner des éléments identifiés avec des propriétés (attributs).
 
-C'est l'informaticien Alan Kay (1940-) qui est considéré comme l'un de pères de la programmation orientée objets.
+C'est l'informaticien Alan Kay (1940-) qui est considéré comme l'un des pères de la programmation orientée objets.
 
 > Je pensais que les objets étaient comme des cellules biologiques et / ou des ordinateurs individuels sur un réseau, uniquement capables de communiquer avec des messages.
 > 
@@ -89,8 +89,7 @@ Voici ce que Gérard SWINNEN écrit dans son livre _Apprendre à programmer avec
 > 
 > En particulier, l’utilisation de classes dans vos programmes va vous permettre – entre autres avantages – d’éviter au maximum l’emploi de variables globales. Vous devez savoir en effet que l’utilisation de variables globales comporte des risques, d’autant plus importants que les programmes sont volumineux, parce qu’il est toujours possible que de telles variables soient modifiées, ou même redéfinies, n’importe où dans le corps du programme (ce risque s’aggrave particulièrement si plusieurs programmeurs différents travaillent sur un même logiciel).
 
-En utilisant Python, nous avons déjà fréquenté des classes d'objets : il est usuel de lire qu'en Python "tout est objet", même si Python ne permet pas vraiment de faire de la POO dans toute sa rigueur.
-
+En utilisant Python, nous avons déjà fréquenté des classes d'objets : il est usuel de lire qu'en Python "tout est objet".
 Par exemple, définissons une chaîne de caractères et demandons à Python quel est son type :
 
 ````python
@@ -114,7 +113,7 @@ La commande `help(str)` affiche toutes les méthodes prédéfinies pour les obje
 
 En Python, la définition d'une classe se fait avec le mot-clef `class` suivi du nom de la classe.
 
-Supposons par exemple que nous voulons définir une classe pour représenter des rectangles. Nous avons besoin, pour chaque rectangle, de connaître sa largeur et se hauteur, ce qui nous permettra de faire quelques calculs.
+Supposons par exemple que nous voulons définir une classe pour représenter des rectangles. Nous avons besoin, pour chaque rectangle, de connaître sa largeur et sa hauteur, ce qui nous permettra de faire quelques calculs.
 
 Observons le code suivant : 
 
@@ -151,7 +150,7 @@ Observons les lignes suivantes dans la console Python :
 
 ## Méthodes
 
-Une **méthode**, c'est ce qui permet à une instance de réaliser des actions. Techniquement se sont des fonctions définies **dans le corps de la classe**, et qui prennent toujours au moins un premier paramètre qui est `self`.
+Une **méthode**, c'est ce qui permet à une instance de réaliser des actions. Techniquement ce sont des fonctions définies **dans le corps de la classe**, et qui prennent toujours au moins un premier paramètre qui est `self`.
 
 Certaines méthodes sont particulières, leurs noms commencent par un double _undescore_ (le caractère `_`). On a vu une première de ces méthodes : l'initialiseur `__init__`.
 

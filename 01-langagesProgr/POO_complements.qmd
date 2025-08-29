@@ -74,7 +74,7 @@ En Python, un objet la création d'un objet se fait en utilisant une **classe** 
 
 Certains membres (ou plus exactement leur représentation informatique) sont cachés : c'est le principe d'**[encapsulation](https://fr.wikipedia.org/wiki/Encapsulation_(programmation))**. Ainsi, le programme peut modifier la structure interne des objets ou leurs méthodes associées sans avoir d'impact sur les utilisateurs de l'objet. C'est un des principes fondamentaux notamment pour la robustesse du code.
 
-En particulier, les bonnes pratiques de POO recommandent de na pas permettre un accès direct aux attributs d'un objet à l'extérieur de celui-ci. On appelle **interface** d'un objet l'ensemble de ses membres qui sont accessibles à l'extérieur de celui-ci. L'interface ne devrait donc contenir que des méthodes. Pas forcément toutes, certaines méthodes (comme `__init__`) restent privées.
+En particulier, les bonnes pratiques de POO recommandent de ne pas permettre un accès direct aux attributs d'un objet à l'extérieur de celui-ci. On appelle **interface** d'un objet l'ensemble de ses membres qui sont accessibles à l'extérieur de celui-ci. L'interface ne devrait donc contenir que des méthodes. Pas forcément toutes, certaines méthodes (comme `__init__`) restent privées.
 
 Contrairement à d'autres langages, Python offre une totale liberté de modification sur les membres d'un objet. C'est au programmeur de rester vigilant. Il existe néanmoins des conventions permettant d'identifier les membres de l'interface des autres membres d'un objet.
 
