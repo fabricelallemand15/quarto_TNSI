@@ -87,7 +87,7 @@ Contrairement à d'autres langages, Python offre une totale liberté de modifica
 
 Mais alors si les attributs doivent rester privés, comment y accéder, et comment les modifier ?
 
-Il convient pour cela, en toute rigueur, de définir des méthodes ad-hoc : une méthode qui permet d'accéder à un attribut est un `getter`, une période qui permet de changer la valeur d'un attribut est un `setter`.
+Il convient pour cela, en toute rigueur, de définir des méthodes ad-hoc : une méthode qui permet d'accéder à un attribut est un `getter`, une méthode qui permet de changer la valeur d'un attribut est un `setter`.
 
 Voici par exemple une nouvelle définition de la classe "Rectangle" tenant compte des remarques précédentes.
 
