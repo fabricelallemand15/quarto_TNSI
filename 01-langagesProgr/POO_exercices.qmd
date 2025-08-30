@@ -45,6 +45,10 @@ _Les exercices précédés du symbole {{< fa desktop >}} sont à faire sur machi
 
 _Les exercices précédés du symbole {{< fa solid pencil-alt >}} doivent être résolus par écrit._
 
+## {{< fa desktop >}} Quiz
+
+Pour vérifier votre bonne connaissance du cours, faire le quiz sur ELEA : [Quiz POO](https://aura-15-43.elea.apps.education.fr/mod/quiz/view.php?id=13088)
+
 ## {{< fa desktop >}} Exercice 1
 
 On considère la classe suivante :
@@ -93,8 +97,8 @@ Soit la classe ``Date`` définie par le diagramme de classe (@fig-classe).
 1. Implémenter cette classe en Python.
 2. Créer deux dates le 20 janvier 2012 et le 14 février 2022.
 3. Dans la méthode d'initialisation d'instance de la classe, prévoir un dispositif pour éviter les dates impossibles (du genre 32/14/2020). Dans ce cas, la création doit provoquer une erreur, chose possible grâce à l’instruction ``raise`` (documentation à rechercher !).
-4. Ajouter une méthode ``__repr__`` et une méthode `__str__`permettant d’afficher la date sous la forme “25 janvier 1989”. Les noms des mois seront définis en tant qu’attribut de classe à l’aide d’une liste.
-5. Ajouter une méthode ``__lt__`` qui permet de comparer deux dates. L’expression ``d1 < d2`` (``d1`` et ``d2`` étant deux objets de type ``Date``) doit grâce à cette méthode renvoyer ``True`` ou ``False`` .
+4. Ajouter une méthode ``__repr__`` et une méthode `__str__` permettant d’afficher la date sous la forme “25 janvier 1989”. Les noms des mois seront définis en tant qu’attribut de classe à l’aide d’une liste.
+5. Ajouter une méthode ``__lt__`` qui permet de comparer deux dates. L’expression ``d1 < d2`` (``d1`` et ``d2`` étant deux objets de type ``Date``) doit grâce à cette méthode renvoyer ``True`` ou ``False``.
 
 
 ## {{< fa solid pencil-alt >}} Exercice 3 (Bac 2022, extrait)
@@ -119,9 +123,9 @@ _Si deux cartes sont de même valeur, il y a "bataille"._
 
 Lorsque l'un des joueurs possède toutes les cartes du jeu, la partie s'arrête et ce dernier gagne. 
 
-Pour cela Simon crée une classe Python ``Carte``. Chaque instance de la classe a deux attributs : un pour sa valeur et un pour sa couleur. Il donne au valet la valeur 11, à la dame la valeur 12, au roi la valeur 13 et à l'as la valeur 14. La couleur est une chaîne de caractères: "trefle", "carreau", "coeur" ou "pique". 
+Pour cela Simon crée une classe Python ``Carte``. Chaque instance de la classe a deux attributs : un pour sa valeur et un pour sa couleur. Il donne au valet la valeur 11, à la dame la valeur 12, au roi la valeur 13 et à l'as la valeur 14. La couleur est une chaîne de caractères : "trefle", "carreau", "coeur" ou "pique". 
 
-Simon a écrit la classe Python ``Carte`` suivante, ayant deux attributs ``valeur`` et ``couleur``, et dont le constructeur prend deux arguments: ``val`` et ``coul``.
+Simon a écrit la classe Python ``Carte`` suivante, ayant deux attributs ``valeur`` et ``couleur``, et dont le constructeur prend deux arguments : ``val`` et ``coul``.
 
 1. Recopier et compléter les pointillés des lignes ci-dessous.
 
@@ -162,9 +166,6 @@ Simon a écrit la classe Python ``Carte`` suivante, ayant deux attributs ``valeu
     * 1 si la carte cartel est strictement plus forte que carte2
     * -1 si la carte carte2 est strictement plus forte que cartel
 
-[Voir le corrigé](https://sitelf.fr/notebook/?from=https://sitelf.fr/nsi/assets/notebooks/exo3_POO_CORR.ipynb){target=_blank .md-button .md-button--primary}
-
-
 ## {{< fa solid pencil-alt >}} Exercice 4 (Bac 2022)
 
 Un fabricant de brioches décide d’informatiser sa gestion des stocks. Il écrit pour cela un programme en langage Python. Une partie de son travail consiste à développer une classe Stock dont la première version est la suivante :
@@ -196,7 +197,7 @@ class Stock:
     beurre: 560 
     ````
 
-3.	Pour faire une brioche, il faut 350 g de farine, 175 g de beurre et 4 oeufs. Écrire une méthode ``stock_suffisant_brioche(self)`` qui renvoie un booléen : VRAI s'il y a assez d'ingrédients dans le stock pour faire une brioche et FAUX sinon.
+3.	Pour faire une brioche, il faut 350 g de farine, 175 g de beurre et 4 œufs. Écrire une méthode ``stock_suffisant_brioche(self)`` qui renvoie un booléen : VRAI s'il y a assez d'ingrédients dans le stock pour faire une brioche et FAUX sinon.
 
 4.	On considère la méthode supplémentaire ``produire(self)`` de la classe ``Stock`` donnée par le code suivant :
 
@@ -226,6 +227,4 @@ class Stock:
 5. L’industriel possède n lieux de production distincts et donc n stocks distincts.
 
     On suppose que ces stocks sont dans une liste dont chaque élément est un objet de type ``Stock``. Écrire une fonction Python ``nb_brioches(liste_stocks)`` possédant pour unique paramètre la liste des stocks et qui renvoie le nombre total de brioches produites.
-
-[Voir le corrigé](https://sitelf.fr/notebook/?from=https://sitelf.fr/nsi/assets/notebooks/exo4_POO_CORR.ipynb){target=_blank .md-button .md-button--primary}
 
