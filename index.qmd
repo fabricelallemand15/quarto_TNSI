@@ -10,8 +10,6 @@ Lien vers l'ENT du lycée : [https://cas.ent.auvergnerhonealpes.fr/login](https:
 
 Lien vers Capytale : [https://capytale2.ac-paris.fr/web/c-auth/list](https://capytale2.ac-paris.fr/web/c-auth/list){target="_blank"}
 
-Lien vers Replit : [https://replit.com/team/premiere-nsi](https://replit.com/team/premiere-nsi){target="_blank"}
-
 Lien vers le programme officiel : [Programme officiel terminale NSI](Programme_Term_NSI.pdf)
 
 ![<a href="https://www.freepik.com/free-vector/code-typing-concept-illustration_10259340.htm#query=computer%20science&position=0&from_view=search&track=ais">Image by storyset</a> on Freepik](4401280.jpg){width=50%}

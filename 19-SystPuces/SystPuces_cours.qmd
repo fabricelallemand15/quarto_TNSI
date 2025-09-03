@@ -1,6 +1,5 @@
 ---
-title: Cours
-subtitle: "Ch. 19 : Systèmes sur puce"
+title: "Systèmes sur puce (cours)"
 ---
 
 # Les Socs (« *Systèmes on Chip* » ou Système sur Puce en français)

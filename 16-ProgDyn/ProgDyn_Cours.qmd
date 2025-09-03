@@ -1,6 +1,5 @@
 ---
-title: Cours
-subtitle: "Ch. 16 : Programmation dynamique"
+title: "Programmation dynamique"
 ---
 
 # 1. Rappel introductif : la suite de Fibonacci

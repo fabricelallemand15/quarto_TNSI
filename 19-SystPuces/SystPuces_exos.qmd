@@ -1,5 +1,5 @@
 ---
-title: Exercice
+title: Systèmes sur puce (Exercice)
 ---
 
 ## Exercice 1 (Amérique du Nord 2021)
