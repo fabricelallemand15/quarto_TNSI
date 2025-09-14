@@ -78,7 +78,7 @@ On rappelle l'exemple du premier paragraphe du cours concernant le calcul de la 
 4. Pour évaluer la **complexité** de cet algorithme, nous allons compter le nombre de multiplications et de comparaisons effectuées. Démontrer, à l'aide d'un raisonnement par récurrence, que la complexité de cet algorithme est en $\mathcal{O}(n)$.
 
 ::: {.callout-note}
-## À retenir ...
+## À retenir…
 * Le principe de la preuve de terminaison.
 * Le principe du raisonnement par récurrence
 :::
@@ -140,7 +140,7 @@ La version récursive se révèle beaucoup moins efficace. Pour comprendre pourq
 
 On retrouve les cas de base dans les feuilles de l'arbre. Nous pouvons constater que le nombre d'appels récursifs est très grand. Il est possible de démontrer que ce nombre augmente de façon **exponentielle**. Pour calculer $F_{100}$, il y aurait environ $10^{20}$ opérations. À raison de $10^9$ opérations par seconde, le calcul prendra de l'ordre de $10^{11}$ secondes, soit environ 3 000 ans !
 
-Un autre constat qui montre l'inefficacité de ce programme : plusieurs calculs identiques sont répétés plusieurs fois. On calcule par exemple $F_3$ deux fois et $F_2$ trois fois. Une solution meilleure serait de garder en mémoire les éléments déjà calculés et de ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la **programmation dynamique** qui sera abordée en fin d'année.
+Un autre constat qui montre l'inefficacité de ce programme : plusieurs calculs identiques sont répétés plusieurs fois. On calcule par exemple $F_3$ deux fois et $F_2$ trois fois. Une meilleure solution serait de garder en mémoire les éléments déjà calculés et de ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la **programmation dynamique** qui sera abordée en fin d'année.
 
 Pour satisfaire votre curiosité insatiable, vous pouvez déjà observer et tester le programme ci-dessous :
 

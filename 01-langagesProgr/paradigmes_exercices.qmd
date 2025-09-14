@@ -47,7 +47,7 @@ _Les exercices précédés du symbole {{< fa solid pencil-alt >}} doivent être 
 
 ## {{< fa solid pencil-alt >}} Exercice 1
 
-Voici différents algorithmiques permettant l'affichage des 10 chiffres entiers dans l'ordre décroissant.
+Voici différents algorithmes permettant l'affichage des 10 chiffres entiers dans l'ordre décroissant.
 
 Préciser pour chacun des algorithme le type de paradigme auquel il correspond.
 

@@ -962,10 +962,10 @@ window.Quarto = {
 <section id="motivation-et-introduction-du-concept" class="level2">
 <h2 class="anchored" data-anchor-id="motivation-et-introduction-du-concept">1. Motivation et introduction du concept</h2>
 <p>Un algorithme est dit récursif s’il <strong>s’appelle lui-même</strong> directement ou indirectement via l’appel d’une ou de plusieurs autres fonctions qui elles-mêmes finissent par l’appeler.</p>
-<p>La récursivité est un concept fondamental en informatique qui met naturellement en pratique un mode de pensée puissant qui consiste à pouvoir découper la tâche à réaliser en sous-tâches de mêmes natures mais plus petites qui finalement sont simples à résoudre.</p>
-<p>Prenons par exemple le calcul de la factorielle d’un nombre entier <span class="math inline">\(n\)</span>. Par définition pour un <span class="math inline">\(n\)</span> entier strictement positif, <span class="math inline">\(n!\)</span> est égale au produit des entiers strictement positifs inférieurs à <span class="math inline">\(n\)</span>. Par convention on a aussi <span class="math inline">\(0! = 1\)</span>.</p>
+<p>La récursivité est un concept fondamental en informatique qui met naturellement en pratique un mode de pensée puissant qui consiste à pouvoir découper la tâche à réaliser en sous-tâches de mêmes natures, mais plus petites qui finalement sont simples à résoudre.</p>
+<p>Prenons par exemple le calcul de la factorielle d’un nombre entier <span class="math inline">\(n\)</span>. Par définition pour un <span class="math inline">\(n\)</span> entier strictement positif, <span class="math inline">\(n!\)</span> est égale au produit des entiers strictement positifs inférieurs à <span class="math inline">\(n\)</span>. Par convention, on a aussi <span class="math inline">\(0! = 1\)</span>.</p>
 <p>Par exemple, on a : <span class="math inline">\(5!=1\times 2\times 3\times 4\times 5 = 120\)</span>.</p>
-<p>Donnons le code itératif d’une fonction calculant la factorielle:</p>
+<p>Donnons le code itératif d’une fonction calculant la factorielle&nbsp;:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> fact(n):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Renvoie la factorielle de n."""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> <span class="dv">1</span></span>
@@ -973,7 +973,7 @@ window.Quarto = {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      res <span class="op">=</span> res <span class="op">*</span> i  </span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La définition récursive se base sur le fait que <span class="math inline">\(n! = n\times (n-1)!\)</span> pour tout <span class="math inline">\(n&gt;0\)</span>.</p>
-<p>On obtient le code:</p>
+<p>On obtient le code&nbsp;:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> fact(n):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Renvoie la factorielle de n (méthode récursive)."""</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
@@ -1015,7 +1015,7 @@ Fin avec n =  3</code></pre>
 </div>
 <p>Il est important de bien comprendre que la fonction située au sommet de la pile d’exécution est en cours d’exécution. Toutes les fonctions situées “en dessous” sont mises en pause jusqu’au moment où elles se retrouveront au sommet de la pile. Quand une fonction termine son exécution, elle est automatiquement retirée du sommet de la pile (on dit que la fonction est dépilée).</p>
 <p>La pile d’exécution permet de retenir la prochaine instruction à exécuter au moment où une fonction sera sortie de son “état de pause” (qu’elle se retrouvera au sommet de la pile d’exécution). Elle enregistre aussi <strong>le contexte</strong>, c’est-à-dire par exemple ici la valeur de la variable locale <span class="math inline">\(n\)</span> associée à chaque appel de la fonction.</p>
-<p>Nous pouvons comprendre que ce sont plusieurs copies (on dira plutôt des <strong>instances</strong>) de la fonction <code>foo</code> qui sont présentent dans la pile, chacune ayant son propre <strong>espace de noms</strong> : la variable <span class="math inline">\(n\)</span> de la fonction située en haut de la pile n’est pas la même que la variable <span class="math inline">\(n\)</span> de la fonction située en-dessous.</p>
+<p>Nous pouvons comprendre que ce sont plusieurs copies (on dira plutôt des <strong>instances</strong>) de la fonction <code>foo</code> qui sont présentes dans la pile, chacune ayant son propre <strong>espace de noms</strong> : la variable <span class="math inline">\(n\)</span> de la fonction située en haut de la pile n’est pas la même que la variable <span class="math inline">\(n\)</span> de la fonction située en dessous.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1056,7 +1056,7 @@ Les trois règles de récursivité
 <section id="fonction-récursive-et-fonction-itérative" class="level2">
 <h2 class="anchored" data-anchor-id="fonction-récursive-et-fonction-itérative">4. Fonction récursive et fonction itérative</h2>
 <p>La programmation récursive n’est ni meilleure, ni pire que, la programmation itérative. Toute fonction récursive peut aussi être programmée de façon itérative. Cependant, en cas de nombreux appels récursifs, la mémoire de la machine sera trop fortement sollicitée et l’exécution ralentie, voire impossible.</p>
-<p>Le choix entre une solution récursive ou une solution itérative est donc guidé par le type de problème à résoudre car certains problèmes s’écrivent <em>naturellement</em> de façon récursive.</p>
+<p>Le choix entre une solution récursive ou une solution itérative est donc guidé par le type de problème à résoudre, car certains problèmes s’écrivent <em>naturellement</em> de façon récursive.</p>
 
 
 </section>

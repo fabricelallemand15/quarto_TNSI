@@ -63,7 +63,7 @@ Il faut que la formulation textuelle d'un programme soit :
 * parfaitement univoque, non ambiguë, puisque destinée à un traitement automatique ;
 * intelligible par un être humain.
 
-Vu le grand nombre de langages existants, une classification s'est fait jour. On regroupe en général les langages en « familles » selon le paradigme de programmation auquel ils sont (le mieux) adaptés.
+Vu le grand nombre de langages existants, une classification s'est faite jour. On regroupe en général les langages en « familles » selon le paradigme de programmation auquel ils sont (le mieux) adaptés.
 
 Conformément au programme, nous allons définir les paradigmes **impératif**, **fonctionnel** et **objet**.
 
@@ -228,12 +228,12 @@ Les langages OCamL, Haskell, F#, Rust par exemple sont des langages fonctionnels
 
 La POO consiste en la définition et l'interaction de briques logicielles appelées objets; un objet représente un concept, une idée ou toute entité du monde physique, comme une voiture, une personne ou encore une page d'un livre.
 
-Un objet possède:
+Un objet possède :
 
-* des données: ses **attributs** et
-* des fonctions: ses **méthodes**
+* des données : ses **attributs** et
+* des fonctions : ses **méthodes**
 
-Les différents principes de la conception orientée objet aident à la réutilisation du code, au masquage des données, etc. Les bases de la POO sont détaillées dans le [cours suivant](POO_cours.qmd), avec ses [compléments](POO_complements.qmd).
+Les différents principes de la conception orientée objet aident à la réutilisation du code, au masquage des données, etc. Les bases de la POO sont détaillées dans le [cours correspondant](POO_cours.qmd), avec ses [compléments](POO_complements.qmd).
 
 ## À quel paradigme se vouer ?
 
@@ -241,7 +241,7 @@ Comment choisir entre les différents paradigmes existants ?
 
 Il est important de bien comprendre qu'un programmeur doit maîtriser plusieurs paradigmes de programmation (impératif, objet ou encore fonctionnelle). En effet, il sera plus facile d'utiliser le paradigme objet dans certains cas alors que dans d'autres situations, l'utilisation du paradigme fonctionnel sera préférable. Être capable de choisir le "bon" paradigme en fonction des situations fait partie du bagage de tout bon programmeur.
 
-Il est aussi important de bien comprendre que la frontière entre ces différents paradigmes est parfois floue, par exemple on utilise très souvent de l'impératif en programmation orientée objet.
+Il est aussi important de bien comprendre que la frontière entre ces différents paradigmes est parfois floue, par exemple, on utilise très souvent de l'impératif en programmation orientée objet.
 
 Dans l'article [Perceiving Python programming paradigms](https://opensource.com/article/19/10/python-programming-paradigms) du site [opensource.com/](https://opensource.com/), les conseils suivants sont donnés :
 

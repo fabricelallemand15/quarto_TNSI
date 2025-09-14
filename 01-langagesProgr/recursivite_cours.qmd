@@ -49,17 +49,17 @@ elles-mêmes finissent par l'appeler.
 
 La récursivité est un concept fondamental en informatique qui met
 naturellement en pratique un mode de pensée puissant qui consiste à
-pouvoir découper la tâche à réaliser en sous-tâches de mêmes natures mais
+pouvoir découper la tâche à réaliser en sous-tâches de mêmes natures, mais
 plus petites qui finalement sont simples à résoudre.
 
-Prenons par exemple le calcul de la factorielle d'un nombre entier $n$.  Par
+Prenons par exemple le calcul de la factorielle d'un nombre entier $n$. Par
 définition pour un $n$ entier strictement positif, $n!$ est égale au
-produit des entiers strictement positifs inférieurs à $n$.  Par
-convention on a aussi $0! = 1$.
+produit des entiers strictement positifs inférieurs à $n$. Par
+convention, on a aussi $0! = 1$.
 
 Par exemple, on a : $5!=1\times 2\times 3\times 4\times 5 = 120$.
 
-Donnons le code itératif d'une fonction calculant la factorielle:
+Donnons le code itératif d'une fonction calculant la factorielle :
 
 ```python
   def fact(n):
@@ -73,7 +73,7 @@ Donnons le code itératif d'une fonction calculant la factorielle:
 La définition récursive se base sur le fait que $n! = n\times (n-1)!$ pour
 tout $n>0$.
 
-On obtient le code:
+On obtient le code :
 
 ```python
   def fact(n):
@@ -126,7 +126,7 @@ Il est important de bien comprendre que la fonction située au sommet de la pile
 
 La pile d'exécution permet de retenir la prochaine instruction à exécuter au moment où une fonction sera sortie de son "état de pause" (qu'elle se retrouvera au sommet de la pile d'exécution). Elle enregistre aussi **le contexte**, c'est-à-dire par exemple ici la valeur de la variable locale $n$ associée à chaque appel de la fonction.
 
-Nous pouvons comprendre que ce sont plusieurs copies (on dira plutôt des **instances**) de la fonction `foo` qui sont présentent dans la pile, chacune ayant son propre **espace de noms** : la variable $n$ de la fonction située en haut de la pile n'est pas la même que la variable $n$ de la fonction située en-dessous.
+Nous pouvons comprendre que ce sont plusieurs copies (on dira plutôt des **instances**) de la fonction `foo` qui sont présentes dans la pile, chacune ayant son propre **espace de noms** : la variable $n$ de la fonction située en haut de la pile n'est pas la même que la variable $n$ de la fonction située en dessous.
 
 ::: {.callout-warning}
 ## Limitation propre à Python
@@ -154,5 +154,5 @@ La troisième règle est assurée par la **preuve de terminaison** qui se fait s
 
 La programmation récursive n'est ni meilleure, ni pire que, la programmation itérative. Toute fonction récursive peut aussi être programmée de façon itérative. Cependant, en cas de nombreux appels récursifs, la mémoire de la machine sera trop fortement sollicitée et l'exécution ralentie, voire impossible.
 
-Le choix entre une solution récursive ou une solution itérative est donc guidé par le type de problème à résoudre car certains problèmes s'écrivent *naturellement* de façon récursive.
+Le choix entre une solution récursive ou une solution itérative est donc guidé par le type de problème à résoudre, car certains problèmes s'écrivent *naturellement* de façon récursive.
 
