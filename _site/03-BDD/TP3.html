@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -85,25 +85,26 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../04-arbres/arbres_cours.html" rel="next">
+<link href="../03-BDD/projet_BDD.html" rel="next">
 <link href="../03-BDD/TP2.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f90cbdadd06a7ce36d2760346202a0fd.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d68fca165f3cabe6266cf6424b0100e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-eb7df5598483e1c59e1ff74c6a72a654.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -344,6 +345,8 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">NSI - Terminale</span>
     </a>
@@ -354,7 +357,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -396,6 +399,10 @@ cookieconsent.run({
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -563,13 +570,13 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/sql_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+ <span class="menu-text">Le langage SQL (Cours - Partie 3)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bases de données (Exercices)</span></a>
+ <span class="menu-text">Exercices - Bases de données</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -588,6 +595,12 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/TP3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/projet_BDD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mini projet SQL - The Mondial Database</span></a>
   </div>
 </li>
       </ul>
@@ -960,7 +973,7 @@ cookieconsent.run({
 <p>Dans ce TP (source : <span class="citation" data-cites="lassus">LASSUS (<a href="#ref-lassus" role="doc-biblioref">2021</a>)</span>), nous allons créer et interroger une base de données <code>sqlite</code> avec le module <code>sqlite3</code> de Python.</p>
 <section id="création-dune-table" class="level2">
 <h2 class="anchored" data-anchor-id="création-dune-table">Création d’une table</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Connexion</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>connexion <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">'mynewbase.db'</span>)</span>
@@ -985,7 +998,7 @@ cookieconsent.run({
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#Déconnexion</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>connexion.close()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>connexion.close()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Le fichier <code>mynewbase.db</code> sera créé dans le même répertoire que le fichier source Python. Si le fichier existe déjà, il est ouvert et peut être modifié.</li>
 <li><code>IF NOT EXISTS</code> assure de ne pas écraser une table existante qui porterait le même nom. Si une telle table existe, elle n’est alors pas modifiée.</li>
@@ -997,19 +1010,19 @@ cookieconsent.run({
 <p>Les morceaux de code ci-dessous sont à positionner entre les balises <code># ---- début des instructions SQL</code> et <code># ---- fin des instructions SQL</code>.</p>
 <section id="insertion-dun-enregistrement-unique" class="level3">
 <h3 class="anchored" data-anchor-id="insertion-dun-enregistrement-unique">Insertion d’un enregistrement unique</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>c.execute(<span class="st">'''INSERT INTO bulletin VALUES ('Simpson', 'Bart', 17)'''</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>c.execute(<span class="st">'''INSERT INTO bulletin VALUES ('Simpson', 'Bart', 17)'''</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pensez à vérifier avec <code>DB Browser</code> si les modifications sont effectives.</p>
 </section>
 <section id="insertion-dun-enregistrement-unique-avec-variable" class="level3">
 <h3 class="anchored" data-anchor-id="insertion-dun-enregistrement-unique-avec-variable">Insertion d’un enregistrement unique avec variable</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> (<span class="st">'Simpson'</span>, <span class="st">'Maggie'</span>, <span class="dv">2</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>c.execute(<span class="st">'''INSERT INTO bulletin VALUES (?,?,?)'''</span>, data)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> (<span class="st">'Simpson'</span>, <span class="st">'Maggie'</span>, <span class="dv">2</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>c.execute(<span class="st">'''INSERT INTO bulletin VALUES (?,?,?)'''</span>, data)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="insertion-de-multiples-enregistrements" class="level3">
 <h3 class="anchored" data-anchor-id="insertion-de-multiples-enregistrements">Insertion de multiples enregistrements</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lst_notes <span class="op">=</span> [ (<span class="st">'Simpson'</span>, <span class="st">'Lisa'</span>, <span class="dv">19</span>), (<span class="st">'Muntz'</span>, <span class="st">'Nelson'</span>, <span class="dv">4</span>), (<span class="st">'Van Houten'</span>, <span class="st">'Milhouse'</span>, <span class="dv">12</span>) ]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lst_notes <span class="op">=</span> [ (<span class="st">'Simpson'</span>, <span class="st">'Lisa'</span>, <span class="dv">19</span>), (<span class="st">'Muntz'</span>, <span class="st">'Nelson'</span>, <span class="dv">4</span>), (<span class="st">'Van Houten'</span>, <span class="st">'Milhouse'</span>, <span class="dv">12</span>) ]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>c.executemany(<span class="st">'''INSERT INTO bulletin VALUES (?, ?, ?)'''</span>, lst_notes)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>c.executemany(<span class="st">'''INSERT INTO bulletin VALUES (?, ?, ?)'''</span>, lst_notes)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Les différentes valeurs sont stockées au préalable dans une liste de tuples.</p>
 </section>
 <section id="mini-projet-1" class="level3">
@@ -1022,7 +1035,7 @@ cookieconsent.run({
 <ul>
 <li>Créez un fichier contenant le code suivant :</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Connexion</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>connexion <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">'mabasecobaye.db'</span>)</span>
@@ -1050,7 +1063,7 @@ cookieconsent.run({
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>connexion.commit()</span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#Déconnexion</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>connexion.close()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>connexion.close()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Exécutez ce fichier, rentrez quelques valeurs, quittez et ouvrez dans <code>DB Browser</code> la table <code>notes</code> pour bien vérifier que vos valeurs ont bien été stockées.</li>
 <li>Lancez à nouveau le fichier, en donnant ensuite comme nom la chaîne de caractères suivante : <code>g','3'); DROP TABLE notes;--</code></li>
@@ -1067,7 +1080,7 @@ Le reste du code (qui n’est pas correct) est ignoré car <code>--</code> est l
 </section>
 <section id="lecture-des-enregistrements" class="level2">
 <h2 class="anchored" data-anchor-id="lecture-des-enregistrements">Lecture des enregistrements</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Connexion</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>connexion <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">'mynewbase.db'</span>)</span>
@@ -1082,7 +1095,7 @@ Le reste du code (qui n’est pas correct) est ignoré car <code>--</code> est l
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Déconnexion</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>connexion.close()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>connexion.close()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ce code renvoie <code>[('Homer',), ('Lisa',), ('Maggie',)]</code>, ou une liste vide s’il n’y a pas de résultat à la requête.</p>
 <section id="mini-projet-2" class="level3">
 <h3 class="anchored" data-anchor-id="mini-projet-2">Mini-projet 2</h3>
@@ -1168,13 +1181,14 @@ LASSUS, Gilles. 2021. <span>«&nbsp;Terminale NSI - Lycée François Mauriac - B
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1525,8 +1539,8 @@ LASSUS, Gilles. 2021. <span>«&nbsp;Terminale NSI - Lycée François Mauriac - B
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../04-arbres/arbres_cours.html" class="pagination-link" aria-label="Arbres (Cours)">
-        <span class="nav-page-text">Arbres (Cours)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../03-BDD/projet_BDD.html" class="pagination-link" aria-label="Mini projet SQL - The Mondial Database">
+        <span class="nav-page-text">Mini projet SQL - The Mondial Database</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

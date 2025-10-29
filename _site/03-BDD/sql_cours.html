@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2. Le langage SQL (Cours) – NSI - Terminale</title>
+<title>Le langage SQL (Cours - Partie 3) – NSI - Terminale</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,18 +72,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f90cbdadd06a7ce36d2760346202a0fd.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d68fca165f3cabe6266cf6424b0100e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-eb7df5598483e1c59e1ff74c6a72a654.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -327,6 +328,8 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">NSI - Terminale</span>
     </a>
@@ -337,7 +340,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -369,7 +372,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-BDD/partie1.html">Ch. 4 - Bases de données</a></li><li class="breadcrumb-item"><a href="../03-BDD/sql_cours.html">2. Le langage SQL (Cours)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-BDD/partie1.html">Ch. 4 - Bases de données</a></li><li class="breadcrumb-item"><a href="../03-BDD/sql_cours.html">Le langage SQL (Cours - Partie 3)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -379,6 +382,10 @@ cookieconsent.run({
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -546,13 +553,13 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/sql_cours.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+ <span class="menu-text">Le langage SQL (Cours - Partie 3)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bases de données (Exercices)</span></a>
+ <span class="menu-text">Exercices - Bases de données</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -571,6 +578,12 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/TP3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/projet_BDD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mini projet SQL - The Mondial Database</span></a>
   </div>
 </li>
       </ul>
@@ -928,9 +941,9 @@ cookieconsent.run({
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-BDD/partie1.html">Ch. 4 - Bases de données</a></li><li class="breadcrumb-item"><a href="../03-BDD/sql_cours.html">2. Le langage SQL (Cours)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../03-BDD/partie1.html">Ch. 4 - Bases de données</a></li><li class="breadcrumb-item"><a href="../03-BDD/sql_cours.html">Le langage SQL (Cours - Partie 3)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">2. Le langage SQL (Cours)</h1>
+<h1 class="title">Le langage SQL (Cours - Partie 3)</h1>
 </div>
 
 
@@ -978,8 +991,8 @@ cookieconsent.run({
 <section id="requêtes-simples" class="level3">
 <h3 class="anchored" data-anchor-id="requêtes-simples">Requêtes simples</h3>
 <p>Quand on désire extraire des informations d’une table, on effectue une <strong>requête d’interrogation</strong> à l’aide du mot clé <strong>SELECT</strong>. Voici un exemple de requête d’interrogation :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune, Populationtotale</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune, Populationtotale</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette requête va nous permettre d’obtenir le nom de la commune et sa population pour toutes les communes présentes dans la table “communes”.</p>
 <p>Voici le résultat de cette requête dans le logiciel DB Browser for SqLite :</p>
 <div class="quarto-figure quarto-figure-center">
@@ -989,19 +1002,19 @@ cookieconsent.run({
 </div>
 <p>D’une façon générale, le mot clé <strong>SELECT</strong> est suivi par les attributs que l’on désire obtenir. Le mot clé <strong>FROM</strong> est suivi par la table concernée.</p>
 <p>Noter qu’il est possible d’obtenir tous les attributs sans être obligé de tous les noter grâce au caractère étoile * :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>est équivalent à :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  Codecommune, Nomdelacommune, Populationtotale, Codepostal</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  Codecommune, Nomdelacommune, Populationtotale, Codepostal</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="requêtes-conditionnelles" class="level3">
 <h3 class="anchored" data-anchor-id="requêtes-conditionnelles">Requêtes conditionnelles</h3>
 <p>La clause <strong>WHERE</strong> permet d’imposer une (ou des) condition(s) permettant de sélectionner uniquement certaines lignes.</p>
 <p>La condition doit suivre le mot-clé <strong>WHERE</strong>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">2500</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">2500</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>La requête ci-dessus permettra d’afficher le nom des communes dont la population est strictement supérieure à 2500 habitants.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1009,9 +1022,9 @@ cookieconsent.run({
 </figure>
 </div>
 <p>Il est possible de combiner les conditions à l’aide d’un OR ou d’un AND :</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">2500</span> <span class="kw">AND</span> Populationtotale <span class="op">&lt;</span> <span class="dv">10000</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">2500</span> <span class="kw">AND</span> Populationtotale <span class="op">&lt;</span> <span class="dv">10000</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette requête permet d’obtenir le nom des communes dont la population est comprise entre 2500 et 10000 habitants.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1019,9 +1032,9 @@ cookieconsent.run({
 </figure>
 </div>
 <p>La requête ci-dessous permet d’afficher le nom des communes dont la population est supérieure à 5000 habitants OU dont le nom contient la lettre “Z” (noter le symbole “%” qui remplace n’importe quelle séquence de caractères en SQL).</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> <span class="kw">OR</span> Nomdelacommune <span class="kw">LIKE</span> <span class="ot">"%Z%"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> <span class="kw">OR</span> Nomdelacommune <span class="kw">LIKE</span> <span class="ot">"%Z%"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="SQL4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="SQL4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
@@ -1031,9 +1044,9 @@ cookieconsent.run({
 <section id="ordonner-les-résultats" class="level3">
 <h3 class="anchored" data-anchor-id="ordonner-les-résultats">Ordonner les résultats</h3>
 <p>La clause <strong>ORDER BY</strong> permet d’ordonner les résultats dans l’ordre croissant.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune, Populationtotale</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune, Populationtotale</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> <span class="kw">ORDER</span> <span class="kw">BY</span> Populationtotale</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> <span class="kw">ORDER</span> <span class="kw">BY</span> Populationtotale</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette requête affiche le nom et la population des communes de plus de 5000 habitants dans l’ordre croissant de leur population.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1042,9 +1055,9 @@ cookieconsent.run({
 </div>
 <p>Pour ordonner les résultats dans l’ordre décroissant, on ajoute <strong>DESC</strong>.</p>
 <p>Si la clause <strong>ORDER BY</strong> porte sur un attribut de type TEXT, on aura un rangement dans l’ordre alphabétique.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune, Populationtotale</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune, Populationtotale</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> <span class="kw">ORDER</span> <span class="kw">BY</span> Nomdelacommune <span class="kw">DESC</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> <span class="kw">ORDER</span> <span class="kw">BY</span> Nomdelacommune <span class="kw">DESC</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette requête affiche le nom et la population des communes de plus de 5000 habitants dans l’ordre inverse de l’ordre alphabétique de leur nom.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1056,9 +1069,9 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="éviter-les-doublons">Éviter les doublons</h3>
 <p>Pour éviter les doublons dans les résultats d’une requête, on peut ajouter la clause DISTINCT juste après SELECT.</p>
 <p>Considérons par exemple la relation “communes”, la requête suivante a pour objectif d’afficher, dans l’ordre croissant, la liste des codes postaux des communes du Cantal :</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> codepostal</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> codepostal</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> codepostal</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> codepostal</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="SQL7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="SQL7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="100"></a></p>
@@ -1066,9 +1079,9 @@ cookieconsent.run({
 </div>
 <p>Nous voyons que les codes postaux sont répétés autant de fois qu’il y a de communes desservies par ce code postal.</p>
 <p>La requête suivante, avec la clause DISTINCT, permet de n’afficher qu’une fois chacun des codes postaux considérés :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> codepostal</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> codepostal</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> codepostal</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> codepostal</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="SQL8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="SQL8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="100"></a></p>
@@ -1084,7 +1097,7 @@ cookieconsent.run({
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition
+<span class="screen-reader-only">Astuce</span>Définition
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1102,9 +1115,9 @@ Définition
 </figure>
 </div>
 <p>La requête suivante permet d’obtenir la table des noms d’établissements suivis du nom de leur commune. Il faut pour cela <strong>joindre</strong> les informations de la table “etablissements” (pour le nom de l’établissement) avec celles de la table “communes” (pour le nom de la commune). L’élément qui permet cette <strong>jointure</strong> est la <strong>clef étrangère</strong> “id_commune” de la table “etablissements” qui fait référence à la <strong>clef primaire</strong> “Codecommune” de la table “communes”.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> etablissements.nom, communes.Nomdelacommune </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> etablissements.nom, communes.Nomdelacommune </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> etablissements <span class="kw">JOIN</span> communes </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> etablissements.id_commune <span class="op">=</span> communes.Codecommune</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> etablissements.id_commune <span class="op">=</span> communes.Codecommune</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Résultat :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1117,7 +1130,7 @@ Définition
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Remarque
+<span class="screen-reader-only">Note</span>Remarque
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1125,10 +1138,10 @@ Remarque
 </div>
 </div>
 <p>Il est possible d’ajouter à la suite de la jointure une clause WHERE afin de ne sélectionner que quelques lignes de la table obtenue :</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> etablissements.nom, communes.Nomdelacommune </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> etablissements.nom, communes.Nomdelacommune </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> etablissements <span class="kw">JOIN</span> communes </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> etablissements.id_commune <span class="op">=</span> communes.Codecommune</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> etablissements.nom <span class="kw">LIKE</span> <span class="ot">"Collège%"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> etablissements.nom <span class="kw">LIKE</span> <span class="ot">"Collège%"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Résultat la table de tous les collèges avec leur commune :</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1143,33 +1156,33 @@ Remarque
 <h3 class="anchored" data-anchor-id="ajouter-une-entrée">Ajouter une entrée</h3>
 <p>Pour ajouter une entrée, nous utilisons la clause INSERT.</p>
 <p>Supposons par exemple qu’un nouvel établissement soit ouvert à Labrousse (code 85): il s’agit d’un lycée hôtelier public. La requête suivante permet de créer cette nouvelle entrée. Attention, l’ordre des valeurs données doit être strictement le même que l’ordre des attributs cités.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> etablissements</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> etablissements</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>(code, nom, statut, id_commune, latitude, longitude)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>(<span class="ot">"0159999Z"</span>, <span class="ot">"Lycée hôtelier du Cantal"</span>, <span class="ot">"Public"</span>, <span class="dv">85</span>, <span class="fl">44.8572222</span>, <span class="fl">2.5427778</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>(<span class="ot">"0159999Z"</span>, <span class="ot">"Lycée hôtelier du Cantal"</span>, <span class="ot">"Public"</span>, <span class="dv">85</span>, <span class="fl">44.8572222</span>, <span class="fl">2.5427778</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="modifier-une-entrée-existante" class="level3">
 <h3 class="anchored" data-anchor-id="modifier-une-entrée-existante">Modifier une entrée existante</h3>
 <p>Pour modifier un ou plusieurs attributs d’un p-uplet existant, on utilise la clause UPDATE.</p>
 <p>Supposons par exemple que le nouveau lycée soit en fait un lycée Privé et que son code soit “0158888Z” :</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> etablissements</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> etablissements</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> code<span class="op">=</span><span class="ot">"0158888Z"</span>, statut<span class="op">=</span><span class="ot">"Privé"</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> code<span class="op">=</span><span class="ot">"0159999Z"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> code<span class="op">=</span><span class="ot">"0159999Z"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>La clause WHERE permet de spécifier le ou les p-uplets à modifier.</p>
 </section>
 <section id="supprimer-une-entrée" class="level3">
 <h3 class="anchored" data-anchor-id="supprimer-une-entrée">Supprimer une entrée</h3>
 <p>Pour supprimer un p-uplet, on utilise la clause DELETE.</p>
 <p>Finalement, le projet de lycée hôtelier est abandonné :</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> etablissements</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> code<span class="op">=</span><span class="ot">"0158888Z"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> etablissements</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> code<span class="op">=</span><span class="ot">"0158888Z"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Attention !
+<span class="screen-reader-only">Avertissement</span>Attention !
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1184,25 +1197,25 @@ Attention !
 <section id="calculer-une-somme" class="level3">
 <h3 class="anchored" data-anchor-id="calculer-une-somme">Calculer une somme</h3>
 <p>Par exemple, la somme des populations de toutes les communes du Cantal :</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(Populationtotale)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(Populationtotale)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Résultat : 149 664.</p>
 </section>
 <section id="calculer-une-moyenne" class="level3">
 <h3 class="anchored" data-anchor-id="calculer-une-moyenne">Calculer une moyenne</h3>
 <p>Par exemple, la population moyenne des communes du Cantal dont le code postal est 15250 (AVG = average):</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">AVG</span>(Populationtotale)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">AVG</span>(Populationtotale)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> Codepostal<span class="op">=</span><span class="dv">15250</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> Codepostal<span class="op">=</span><span class="dv">15250</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Résultat : 1 099, 67</p>
 </section>
 <section id="calculer-un-minimum-ou-un-maximum" class="level3">
 <h3 class="anchored" data-anchor-id="calculer-un-minimum-ou-un-maximum">Calculer un minimum ou un maximum</h3>
 <p>Les fonctions MIN et MAX fonctionnent de la même façon.</p>
 <p>Quel est le nom et la population de la commune du Cantal la moins peuplée ?</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune, Populationtotale</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nomdelacommune, Populationtotale</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">=</span> (<span class="kw">SELECT</span> <span class="fu">MIN</span>(Populationtotale) <span class="kw">FROM</span> communes)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Populationtotale <span class="op">=</span> (<span class="kw">SELECT</span> <span class="fu">MIN</span>(Populationtotale) <span class="kw">FROM</span> communes)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Résultat : VALJOUZE, 23 habitants.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1210,7 +1223,7 @@ Attention !
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Remarque
+<span class="screen-reader-only">Note</span>Remarque
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1222,30 +1235,30 @@ Remarque
 <h3 class="anchored" data-anchor-id="compter-des-données">Compter des données</h3>
 <p>La fonction COUNT permet de compter des données.</p>
 <p>Combien y a-t-il d’établissements scolaires dans le Cantal ?</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> etablissements</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> etablissements</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Résultat : 203</p>
 <p>Combien de communes possèdent le code postal 15250 ?</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> communes</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Codepostal<span class="op">=</span><span class="dv">15250</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Codepostal<span class="op">=</span><span class="dv">15250</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Résultat : 9</p>
 <p>Combien de noms d’établissements différents parmi les établissements scolaires ?</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> nom)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> etablissements</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> nom)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> etablissements</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Résultat : 88</p>
 <p>À quelle question répond la requête suivante ?</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> etablissements <span class="kw">JOIN</span> communes </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> etablissements.id_commune<span class="op">=</span>communes.Codecommune</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (etablissements.nom <span class="kw">LIKE</span> <span class="ot">"Collège%"</span>) <span class="kw">AND</span> communes.Nomdelacommune<span class="op">=</span><span class="ot">"AURILLAC"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (etablissements.nom <span class="kw">LIKE</span> <span class="ot">"Collège%"</span>) <span class="kw">AND</span> communes.Nomdelacommune<span class="op">=</span><span class="ot">"AURILLAC"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Réponse
+<span class="screen-reader-only">Astuce</span>Réponse
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1261,7 +1274,7 @@ Réponse
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Pour compléter …
+<span class="screen-reader-only">Mise en garde</span>Pour compléter …
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1344,13 +1357,14 @@ Pour compléter …
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1701,8 +1715,8 @@ Pour compléter …
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../03-BDD/exercices.html" class="pagination-link" aria-label="Bases de données (Exercices)">
-        <span class="nav-page-text">Bases de données (Exercices)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../03-BDD/exercices.html" class="pagination-link" aria-label="Exercices - Bases de données">
+        <span class="nav-page-text">Exercices - Bases de données</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

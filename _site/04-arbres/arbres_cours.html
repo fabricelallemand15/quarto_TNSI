@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -66,24 +66,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../04-arbres/arbres_exercices.html" rel="next">
-<link href="../03-BDD/TP3.html" rel="prev">
+<link href="../03-BDD/projet_BDD.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f90cbdadd06a7ce36d2760346202a0fd.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d68fca165f3cabe6266cf6424b0100e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-eb7df5598483e1c59e1ff74c6a72a654.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -330,7 +331,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -356,6 +357,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">NSI - Terminale</span>
     </a>
@@ -366,7 +369,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -408,6 +411,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -575,13 +582,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/sql_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+ <span class="menu-text">Le langage SQL (Cours - Partie 3)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bases de données (Exercices)</span></a>
+ <span class="menu-text">Exercices - Bases de données</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -600,6 +607,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/TP3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/projet_BDD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mini projet SQL - The Mondial Database</span></a>
   </div>
 </li>
       </ul>
@@ -978,7 +991,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition
+<span class="screen-reader-only">Astuce</span>Définition
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -996,7 +1009,7 @@ Définition
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Vocabulaire
+<span class="screen-reader-only">Note</span>Vocabulaire
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1015,7 +1028,7 @@ Vocabulaire
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exemple
+<span class="screen-reader-only">Mise en garde</span>Exemple
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1045,7 +1058,7 @@ Exemple
 <h4 class="anchored" data-anchor-id="le-dom-dune-page-web">Le DOM d’une page web</h4>
 <p>LE DOM (Document Object Model) est une interface de programmation pour les pages web dans laquelle une page HTML est modélisée sous la forme d’un arbre.</p>
 <p>Par exemple, le code HTML ci-dessous sera modélisé par l’arbre en-dessous (source : <a href="https://www.w3.org/TR/WD-DOM/introduction.html">w3.org</a>).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">TABLE</span><span class="dt">&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">TABLE</span><span class="dt">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">ROWS</span><span class="dt">&gt;</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">TR</span><span class="dt">&gt;</span> </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">TD</span><span class="dt">&gt;</span>Shady Grove<span class="dt">&lt;/</span><span class="kw">TD</span><span class="dt">&gt;</span></span>
@@ -1056,7 +1069,7 @@ Exemple
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">TD</span><span class="dt">&gt;</span>Dorian<span class="dt">&lt;/</span><span class="kw">TD</span><span class="dt">&gt;</span> </span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">TR</span><span class="dt">&gt;</span> </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">ROWS</span><span class="dt">&gt;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">TABLE</span><span class="dt">&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">TABLE</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="DOM.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="DOM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
@@ -1081,7 +1094,7 @@ Exemple
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définitions
+<span class="screen-reader-only">Astuce</span>Définitions
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1098,7 +1111,7 @@ Définitions
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exemple
+<span class="screen-reader-only">Mise en garde</span>Exemple
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1127,7 +1140,7 @@ Exemple
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition
+<span class="screen-reader-only">Astuce</span>Définition
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1156,7 +1169,7 @@ Définition
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exemple
+<span class="screen-reader-only">Mise en garde</span>Exemple
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1193,7 +1206,7 @@ Exemple
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lien entre hauteur et taille d’un arbre binaire complet
+<span class="screen-reader-only">Important</span>Lien entre hauteur et taille d’un arbre binaire complet
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1203,12 +1216,12 @@ Lien entre hauteur et taille d’un arbre binaire complet
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Preuve
+<span class="screen-reader-only">Mise en garde</span>Preuve
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1234,7 +1247,7 @@ Preuve
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Encadrement de la hauteur d’un arbre binaire
+<span class="screen-reader-only">Important</span>Encadrement de la hauteur d’un arbre binaire
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1254,7 +1267,7 @@ Encadrement de la hauteur d’un arbre binaire
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition
+<span class="screen-reader-only">Astuce</span>Définition
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1278,7 +1291,7 @@ Définition
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Remarque
+<span class="screen-reader-only">Note</span>Remarque
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1354,13 +1367,14 @@ Remarque
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1706,8 +1720,8 @@ Remarque
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../03-BDD/TP3.html" class="pagination-link" aria-label="TP 3 - BDD et Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TP 3 - BDD et Python</span>
+      <a href="../03-BDD/projet_BDD.html" class="pagination-link" aria-label="Mini projet SQL - The Mondial Database">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Mini projet SQL - The Mondial Database</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

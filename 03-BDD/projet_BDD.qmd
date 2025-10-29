@@ -1,0 +1,13 @@
+---
+title: Mini projet SQL - The Mondial Database
+---
+
+Ce mini projet a pour but de vous faire manipuler une base de données relationnelle en SQL à partir d'un ensemble de données réelles. Vous utiliserez la base de données "Mondial" qui contient des informations géographiques, politiques et économiques sur les pays du monde.
+
+Ce projet est à réaliser dans Capytale : [https://capytale2.ac-paris.fr/web/c/798c-7767469](https://capytale2.ac-paris.fr/web/c/798c-7767469){target="_blank"}.
+
+Voici le schéma relationnel de la base de données Mondial :
+[Schéma relationnel](Sch%C3%A9ma%20relationnel.pdf)
+
+et sous forme graphique : 
+[Schéma relationnel graphique](Sch%C3%A9ma%20relationnel%20graphique.pdf).

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,18 +72,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f90cbdadd06a7ce36d2760346202a0fd.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d68fca165f3cabe6266cf6424b0100e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-eb7df5598483e1c59e1ff74c6a72a654.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -330,7 +331,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -356,6 +357,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">NSI - Terminale</span>
     </a>
@@ -366,7 +369,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -408,6 +411,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -575,13 +582,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/sql_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+ <span class="menu-text">Le langage SQL (Cours - Partie 3)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bases de données (Exercices)</span></a>
+ <span class="menu-text">Exercices - Bases de données</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -600,6 +607,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/TP3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/projet_BDD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mini projet SQL - The Mondial Database</span></a>
   </div>
 </li>
       </ul>
@@ -982,7 +995,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithme de calcul de la taille d’un arbre
+<span class="screen-reader-only">Avertissement</span>Algorithme de calcul de la taille d’un arbre
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1001,7 +1014,7 @@ Algorithme de calcul de la taille d’un arbre
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithme de calcul de la hauteur d’un arbre
+<span class="screen-reader-only">Avertissement</span>Algorithme de calcul de la hauteur d’un arbre
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1024,7 +1037,7 @@ Algorithme de calcul de la hauteur d’un arbre
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition : ordre <strong>préfixe</strong>
+<span class="screen-reader-only">Note</span>Définition : ordre <strong>préfixe</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1043,7 +1056,7 @@ Définition : ordre <strong>préfixe</strong>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exemple
+<span class="screen-reader-only">Mise en garde</span>Exemple
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1062,7 +1075,7 @@ Exemple
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithme de parcours préfixe en pseudo-code
+<span class="screen-reader-only">Avertissement</span>Algorithme de parcours préfixe en pseudo-code
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1073,25 +1086,25 @@ Algorithme de parcours préfixe en pseudo-code
 </div>
 <p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Version itérative avec retour liste</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Version itérative avec retour liste</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreGauche())</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreDroit())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreDroit())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreGauche(), liste)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreDroit(), liste)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
@@ -1109,7 +1122,7 @@ Algorithme de parcours préfixe en pseudo-code
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreGauche().estVide():</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreGauche())</span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Renvoie la liste des valeurs des noeuds parcourus</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1123,7 +1136,7 @@ Algorithme de parcours préfixe en pseudo-code
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition : ordre infixe
+<span class="screen-reader-only">Astuce</span>Définition : ordre infixe
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1142,7 +1155,7 @@ Définition : ordre infixe
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exemple
+<span class="screen-reader-only">Mise en garde</span>Exemple
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1161,7 +1174,7 @@ Exemple
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithme de parcours infixe en pseudo-code
+<span class="screen-reader-only">Avertissement</span>Algorithme de parcours infixe en pseudo-code
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1172,25 +1185,25 @@ Algorithme de parcours infixe en pseudo-code
 </div>
 <p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Version itérative avec retour liste</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Version itérative avec retour liste</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreGauche())</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreDroit())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreDroit())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreGauche(), liste)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreDroit(), liste)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
@@ -1210,7 +1223,7 @@ Algorithme de parcours infixe en pseudo-code
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="co"># pour pouvoir revenir plus tard</span></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud)</span>
 <span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> noeud.getSousArbreGauche()</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1224,7 +1237,7 @@ Algorithme de parcours infixe en pseudo-code
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition : ordre suffixe
+<span class="screen-reader-only">Astuce</span>Définition : ordre suffixe
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1243,7 +1256,7 @@ Définition : ordre suffixe
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exemple
+<span class="screen-reader-only">Mise en garde</span>Exemple
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1262,7 +1275,7 @@ Exemple
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithme de parcours suffixe en pseudo-code
+<span class="screen-reader-only">Avertissement</span>Algorithme de parcours suffixe en pseudo-code
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1277,7 +1290,7 @@ Algorithme de parcours suffixe en pseudo-code
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercice
+<span class="screen-reader-only">Mise en garde</span>Exercice
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1287,25 +1300,25 @@ Exercice
 </div>
 <p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Version itérative avec retour liste</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Version itérative avec retour liste</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreGauche())</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreDroit())</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreGauche(), liste)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreDroit(), liste)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
@@ -1325,7 +1338,7 @@ Exercice
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreDroit())</span>
 <span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On remet à l'endroit</span></span>
 <span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    valeurs.reverse()</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1339,7 +1352,7 @@ Exercice
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition : parcours en largeur d’abord
+<span class="screen-reader-only">Astuce</span>Définition : parcours en largeur d’abord
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1352,7 +1365,7 @@ Définition : parcours en largeur d’abord
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exemple
+<span class="screen-reader-only">Mise en garde</span>Exemple
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1373,7 +1386,7 @@ Exemple
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithme de parcours en largeur en pseudo-code
+<span class="screen-reader-only">Avertissement</span>Algorithme de parcours en largeur en pseudo-code
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1383,7 +1396,7 @@ Algorithme de parcours en largeur en pseudo-code
 </div>
 </div>
 <p>Traduction en Python :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursLargeur(arbre: ArbreBinaire()) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursLargeur(arbre: ArbreBinaire()) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span> <span class="op">=</span> []</span>
@@ -1395,7 +1408,7 @@ Algorithme de parcours en largeur en pseudo-code
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                <span class="bu">file</span>.append(noeud.getSousArbreGauche())</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreDroit().estVide():</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                <span class="bu">file</span>.append(noeud.getSousArbreDroit())</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Une fois encore, dérouler à la main, en mode papier-crayon, l’exécution de ce programme est un très bon exercice !</p>
 </section>
 </section>
@@ -1410,7 +1423,7 @@ Algorithme de parcours en largeur en pseudo-code
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithme d’insertion d’une clef dans un ABR en pseudo-code
+<span class="screen-reader-only">Avertissement</span>Algorithme d’insertion d’une clef dans un ABR en pseudo-code
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1425,7 +1438,7 @@ Algorithme d’insertion d’une clef dans un ABR en pseudo-code
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercice
+<span class="screen-reader-only">Mise en garde</span>Exercice
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1438,7 +1451,7 @@ Exercice
 <h2 class="anchored" data-anchor-id="recherche-dune-clef-dans-un-arbre-de-recherche">4. Recherche d’une clef dans un arbre de recherche</h2>
 <p>Notre module <code>structure.py</code>, dans sa version définitive, comporte une fonction <code>appartient_ABR</code> qui teste l’appartenance d’un élément donné en argument à un ABR donné en argument et renvoie un booléen.</p>
 <p>Voici le code Python de cette fonction.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> appartientABR(element, arbre) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> appartientABR(element, arbre) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""teste l'appartenance d'un élément à un ABR"""</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="kw">is</span> <span class="va">None</span>:</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
@@ -1449,7 +1462,7 @@ Exercice
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> element <span class="op">&lt;</span> arbre.getRacine():</span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> appartientABR(element, arbre.getSousArbreGauche())</span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> appartientABR(element, arbre.getSousArbreDroit())</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> appartientABR(element, arbre.getSousArbreDroit())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette fonction exploite à la fois la structure récursive et la structure ordonnée d’un ABR afin de n’effectuer qu’<strong>un appel récursif</strong> à chaque passage.</p>
 <p><strong>Déterminons une évaluation de sa complexité temporelle</strong>, dans le pire des cas, <strong>dans le cas particulier d’un arbre équilibré</strong>.</p>
 <p>On note <span class="math inline">\(n\)</span> la taille de l’arbre, c’est-à-dire son nombre de noeuds. Au départ, nous avons donc <span class="math inline">\(n\)</span> noeuds à explorer. Après chaque examen d’un noeud, le nombre de noeuds restant à explorer est divisé par 2.</p>
@@ -1463,7 +1476,7 @@ Exercice
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-À retenir
+<span class="screen-reader-only">Important</span>À retenir
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1543,13 +1556,14 @@ Exercice
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

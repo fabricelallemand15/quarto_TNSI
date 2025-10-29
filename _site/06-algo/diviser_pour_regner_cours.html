@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,18 +72,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f90cbdadd06a7ce36d2760346202a0fd.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d68fca165f3cabe6266cf6424b0100e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-eb7df5598483e1c59e1ff74c6a72a654.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -330,7 +331,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -356,6 +357,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">NSI - Terminale</span>
     </a>
@@ -366,7 +369,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -408,6 +411,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -575,13 +582,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/sql_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+ <span class="menu-text">Le langage SQL (Cours - Partie 3)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bases de données (Exercices)</span></a>
+ <span class="menu-text">Exercices - Bases de données</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -600,6 +607,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/TP3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/projet_BDD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mini projet SQL - The Mondial Database</span></a>
   </div>
 </li>
       </ul>
@@ -972,7 +985,7 @@ window.Quarto = {
 <p>L’<strong>algorithme de tri fusion</strong> (merge sort en anglais) est un algorithme de tri utilisé pour trier des éléments dans un ordre croissant ou décroissant. Il fonctionne en divisant récursivement la liste d’éléments à trier en sous-listes plus petites jusqu’à ce qu’il ne reste plus qu’une seule valeur dans chaque sous-liste. Ces sous-listes sont ensuite fusionnées en une seule liste triée en comparant les valeurs de chaque sous-liste et en plaçant les valeurs plus petites en premier.</p>
 <p>Il s’agit d’une utilisation classique de la méthode “diviser pour régner” : à chaque étape, on appelle récursivement la même fonction, mais avec une liste dont la taille a été <strong>divisée</strong> par deux.</p>
 <p>Voici une description de cet algorithme en pseudo-code :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fonction tri_fusion(liste : tableau d'entiers) -&gt; tableau d'entiers</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fonction tri_fusion(liste : tableau d'entiers) -&gt; tableau d'entiers</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    si longueur(liste) &lt;= 1</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        retourner liste</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    sinon</span>
@@ -1007,14 +1020,14 @@ window.Quarto = {
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        j = j + 1</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    // Retourner la liste fusionnée</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    retourner liste_fus</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    retourner liste_fus</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercice
+<span class="screen-reader-only">Mise en garde</span>Exercice
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1023,7 +1036,7 @@ Exercice
 </div>
 <p>Pour utiliser cet algorithme, on peut appeler la fonction <code>tri_fusion</code> en lui passant la liste d’entiers à trier.</p>
 <p><strong>Implémentation</strong> en Python :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tri_fusion(liste):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tri_fusion(liste):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(liste) <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
@@ -1058,12 +1071,12 @@ Exercice
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        j <span class="op">=</span> j <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Retourner la liste fusionnée</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> liste_fus</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> liste_fus</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Test du programme en console :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> liste <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">3</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> liste <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">3</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> tri_fusion(liste)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(liste)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Visualisation</strong> de l’exécution avec Python Tutor :</p>
 <iframe width="100%" height="800" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20tri_fusion%28liste%29%3A%0A%20%20%20%20if%20len%28liste%29%20%3C%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20liste%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20milieu%20%3D%20len%28liste%29%20//%202%0A%20%20%20%20%20%20%20%20liste_gauche%20%3D%20tri_fusion%28liste%5B%3Amilieu%5D%29%0A%20%20%20%20%20%20%20%20liste_droite%20%3D%20tri_fusion%28liste%5Bmilieu%3A%5D%29%0A%20%20%20%20%20%20%20%20return%20fusionner%28liste_gauche,%20liste_droite%29%0A%0A%0Adef%20fusionner%28liste_gauche,%20liste_droite%29%3A%0A%20%20%20%20%23%20Initialiser%20les%20indices%20des%20sous-listes%20et%20de%20la%20liste%20originale%0A%20%20%20%20i%20%3D%200%0A%20%20%20%20j%20%3D%200%0A%20%20%20%20liste_fus%20%3D%20%20%5B%5D%0A%0A%20%20%20%20%23%20Fusionner%20les%20deux%20sous-listes%20en%20comparant%20les%20%C3%A9l%C3%A9ments%20de%20chaque%20liste%0A%20%20%20%20while%20i%20%3C%20len%28liste_droite%29%20and%20j%20%3C%20len%28liste_gauche%29%3A%0A%20%20%20%20%20%20%20%20if%20liste_droite%5Bi%5D%20%3C%3D%20liste_gauche%5Bj%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20liste_fus.append%28liste_droite%5Bi%5D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20i%20%3D%20i%20%2B%201%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20liste_fus.append%28liste_gauche%5Bj%5D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20j%20%3D%20j%20%2B%201%0A%20%20%20%20%23%20Copier%20les%20%C3%A9l%C3%A9ments%20restants%20de%20la%20liste_droite%20%28s'il%20y%20en%20a%29%0A%20%20%20%20while%20i%20%3C%20len%28liste_droite%29%3A%0A%20%20%20%20%20%20%20%20liste_fus.append%28liste_droite%5Bi%5D%29%0A%20%20%20%20%20%20%20%20i%20%3D%20i%20%2B%201%0A%0A%20%20%20%20%23%20Copier%20les%20%C3%A9l%C3%A9ments%20restants%20de%20la%20liste_gauche%20%28s'il%20y%20en%20a%29%0A%20%20%20%20while%20j%20%3C%20len%28liste_gauche%29%3A%0A%20%20%20%20%20%20%20%20liste_fus.append%28liste_gauche%5Bj%5D%29%0A%20%20%20%20%20%20%20%20j%20%3D%20j%20%2B%201%0A%0A%20%20%20%20%23%20Retourner%20la%20liste%20fusionn%C3%A9e%0A%20%20%20%20return%20liste_fus%0A%0A%23%20Cr%C3%A9er%20une%20liste%20d'entiers%20%C3%A0%20trier%0Aliste%20%3D%20%5B5,%202,%204,%206,%201,%203%5D%0A%0A%23%20Trier%20la%20liste%20en%20utilisant%20l'algorithme%20de%20tri%20fusion%0Aliste%20%3D%20tri_fusion%28liste%29%0A%0A%23%20Afficher%20la%20liste%20tri%C3%A9e%0Aprint%28liste%29%20%20%23%20Affiche%20%3A%20%5B1,%202,%203,%204,%205,%206%5D%0A&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
 </iframe>
@@ -1077,7 +1090,7 @@ Exercice
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Complexité de l’algorithme de tri fusion
+<span class="screen-reader-only">Important</span>Complexité de l’algorithme de tri fusion
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1158,13 +1171,14 @@ Complexité de l’algorithme de tri fusion
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

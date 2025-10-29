@@ -60,6 +60,7 @@ website:
           - 03-BDD/TP1.qmd
           - 03-BDD/TP2.qmd
           - 03-BDD/TP3.qmd
+          - 03-BDD/projet_BDD.qmd
       - section: "Ch. 5 - Arbres binaires"
         contents: 
           - 04-arbres/arbres_cours.qmd

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,18 +72,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f90cbdadd06a7ce36d2760346202a0fd.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0ed29b1f0e6f007c337b74d6a5232f88.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d68fca165f3cabe6266cf6424b0100e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-956939379f8de946342115ecdf4a2630.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-eb7df5598483e1c59e1ff74c6a72a654.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -333,7 +334,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -359,6 +360,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">NSI - Terminale</span>
     </a>
@@ -369,7 +372,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text"><i class="fa-solid fa-house-chimney-window" aria-label="house-chimney-window"></i> Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -411,6 +414,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -578,13 +585,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/sql_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Le langage SQL (Cours)</span></a>
+ <span class="menu-text">Le langage SQL (Cours - Partie 3)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bases de données (Exercices)</span></a>
+ <span class="menu-text">Exercices - Bases de données</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -603,6 +610,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../03-BDD/TP3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TP 3 - BDD et Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03-BDD/projet_BDD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mini projet SQL - The Mondial Database</span></a>
   </div>
 </li>
       </ul>
@@ -974,8 +987,8 @@ window.Quarto = {
 <p>D’après la définition de la suite, on a, pour tout entier naturel <span class="math inline">\(n\geqslant 2\)</span> :</p>
 <p><span class="math display">\[F_{n}=F_{n-2}+F_{n-1}\]</span></p>
 <p>On en déduit une version <strong>récursive</strong> de l’algorithme de calcul de <span class="math inline">\(F_n\)</span>. Cet algorithme a ceci de particulier que chaque fonction procède à <strong>deux</strong> appels récursifs.</p>
-<div id="1bd140b8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_rec(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<div id="c11a4e82" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_rec(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version récursive"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="kw">in</span> {<span class="dv">0</span>,<span class="dv">1</span>}:</span>
@@ -985,7 +998,7 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> fibo_rec(n<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> fibo_rec(n<span class="op">-</span><span class="dv">2</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fibo_rec(k))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fibo_rec(k))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0
 1
@@ -1002,8 +1015,8 @@ window.Quarto = {
 <p>Nous avons vu que cet algorithme est très inefficace. Le calcul de <span class="math inline">\(F_{50}\)</span>, par exemple, est très long. En effet, le nombre d’appels récursifs est très grand. Il est possible de démontrer que ce nombre augmente de façon <strong>exponentielle</strong>. Pour calculer <span class="math inline">\(F_{100}\)</span>, il y aurait environ <span class="math inline">\(10^{20}\)</span> opérations. À raison de <span class="math inline">\(10^9\)</span> opérations par seconde, le calcul prendra de l’ordre de <span class="math inline">\(10^{11}\)</span> secondes, soit environ 3 000 ans !</p>
 <p><a href="fibo_mermaid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="fibo_mermaid.png" class="img-fluid"></a></p>
 <p>Un autre constat qui montre l’inefficacité de ce programme : plusieurs calculs identiques sont répétés plusieurs fois. On calcule par exemple <span class="math inline">\(F_3\)</span> deux fois et <span class="math inline">\(F_2\)</span> trois fois si l’on veut obtenir <span class="math inline">\(F_5\)</span>. Une solution meilleure serait de garder en mémoire les éléments déjà calculés et de ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la <strong>programmation dynamique</strong> qui consiste pour faire simple à mémoriser les résultats déjà calculés pour ne pas avoir à les recalculer.</p>
-<div id="ef31546c" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_dyn(n: <span class="bu">int</span>, suite: <span class="bu">dict</span> <span class="op">=</span> {<span class="dv">0</span>: <span class="dv">0</span>, <span class="dv">1</span>: <span class="dv">1</span>}) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<div id="e27505ef" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_dyn(n: <span class="bu">int</span>, suite: <span class="bu">dict</span> <span class="op">=</span> {<span class="dv">0</span>: <span class="dv">0</span>, <span class="dv">1</span>: <span class="dv">1</span>}) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version dynamique"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="kw">in</span> {<span class="dv">0</span>,<span class="dv">1</span>}:</span>
@@ -1021,7 +1034,7 @@ window.Quarto = {
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fibo_dyn(k))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fibo_dyn(k))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0
 1
@@ -1048,7 +1061,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-En résumé
+<span class="screen-reader-only">Astuce</span>En résumé
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1092,7 +1105,7 @@ G --&gt; K{3}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Définition
+<span class="screen-reader-only">Astuce</span>Définition
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1113,8 +1126,8 @@ Définition
 <p>L’algorithme glouton consiste à payer d’abord avec la plus grosse pièce possible : ici, il s’agit de 20, puisque 50 &gt; 48. Ayant donné 20, il reste 28 à payer, et on poursuit avec la même méthode. Finalement, on va payer 48 sous la forme 48 = 20 + 20 + 5 + 2 + 1. On a eu besoin de 5 pièces.</p>
 <p>Considérons un autre système monétaire (en fait c’est l’ancien système impérial britannique) représenté par la liste suivante de valeurs faciales : <code>imperial = [30, 24, 12, 6, 3, 1]</code>. Pour payer 48 l’algorithme glouton va répondre : 48 = 30+12+6. À la différence du système euro, pour lequel on peut démontrer que l’algorithme glouton donne toujours la réponse optimale, on constate que ce n’est pas le cas avec le système impérial, puisque on aurait pu se contenter de 2 pièces : 48 = 24 + 24.</p>
 <p>Rappelons comment peut se programmer l’algorithme glouton.</p>
-<div id="c3cf4a95" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>euros <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
+<div id="3fc340d3" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>euros <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>imperial <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">24</span>, <span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> glouton(valeursFaciales, somme):</span>
@@ -1130,7 +1143,7 @@ Définition
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme<span class="op">==</span><span class="dv">0</span>:</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> monnaie</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>L’appel <code>glouton(euros, 48)</code> renvoie la liste <code>[20, 20, 5, 2, 1]</code>; l’appel <code>glouton(imperial, 48)</code> renvoie la liste <code>[30, 12, 6]</code>.</p>
 <p>La réponse optimale est celle qui utilise le nombre minimal de pièces. On a vu que l’algorithme glouton échoue à la trouver en général (l’exemple de rendre 48 avec le système impérial suffit à le prouver).</p>
@@ -1138,8 +1151,8 @@ Définition
 <p><span class="math display">\[f(s) = \min_{x\leqslant s} (1 + f(s − x))\]</span></p>
 <p>le minimum étant calculé sur toutes les valeurs <span class="math inline">\(x\)</span> d’une pièce.</p>
 <p>Cette remarque permet d’écrire le programme récursif suivant :</p>
-<div id="dd260c10" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> inf</span>
+<div id="a1f799ba" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> inf</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursif(valeursFaciales, somme):</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
@@ -1150,7 +1163,7 @@ Définition
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> valeursFaciales:</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> somme <span class="op">&gt;=</span> x:</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>            mini <span class="op">=</span> <span class="bu">min</span>(mini, <span class="dv">1</span> <span class="op">+</span> dynRecursif(valeursFaciales, somme <span class="op">-</span> x))</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mini</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mini</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>On a importé du module <code>math</code> la valeur spéciale <code>inf</code> qui représente l’infini : pour tout entier <code>a</code>, l’expression a<code>&lt; inf</code> vaut <code>True</code>.</p>
 <p>Hélas, l’exécution de l’appel <code>dynRecursif(euros, 48)</code> est extrêmement lente. les mêmes calculs étant effectués de façon répétée. Une analyse du problème montrerait que la complexité est exponentielle.</p>
@@ -1158,8 +1171,8 @@ Définition
 <section id="approche-récursive" class="level2">
 <h2 class="anchored" data-anchor-id="approche-récursive">3.1. Approche récursive</h2>
 <p>Il s’agit de l’approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive dont un des arguments est un dictionnaire pour mémoriser les résultats déjà calculés. On prend soin de donner une valeur par défaut vide pour que la fonction reste pure (pas de variable globale).</p>
-<div id="8ebd9ae3" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
+<div id="982a7327" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> inf</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> somme <span class="op">==</span> <span class="dv">0</span>:</span>
@@ -1174,7 +1187,7 @@ Définition
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                mini <span class="op">=</span> <span class="bu">min</span>(mini, <span class="dv">1</span> <span class="op">+</span> dynRecursifMem(valeursFaciales, somme <span class="op">-</span> x, mem))</span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    mem[somme] <span class="op">=</span> mini</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mini</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mini</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Cette fois, l’exécution de <code>dynRecursifMem(euros, 48)</code> est immédiate.</p>
 </section>
@@ -1182,15 +1195,15 @@ Définition
 <h2 class="anchored" data-anchor-id="approche-itérative">3.2. Approche itérative</h2>
 <p>Ici, le calcul de <code>f(s)</code> utilise le calcul de <code>f(s − x)</code> pour chaque valeur de <code>x</code>. Autrement dit, <code>f(s)</code> n’utilise au plus que les valeurs de <code>f(s − 1)</code>, <code>f(s − 2)</code>, …, <code>f(3)</code>, <code>f(2)</code>, <code>f(1)</code>.</p>
 <p>On va donc créer un tableau conservant ces données, et calculer de façon systématique pour des valeurs croissantes de l’index.</p>
-<div id="4e0de4ff" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
+<div id="9dd191cb" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (somme <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, somme <span class="op">+</span> <span class="dv">1</span>):</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        f[s] <span class="op">=</span> inf</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> valeursFaciales:</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> s <span class="op">&gt;=</span> x:</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                f[s] <span class="op">=</span> <span class="bu">min</span>(f[s], <span class="dv">1</span> <span class="op">+</span> f[s <span class="op">-</span> x])</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f[somme]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f[somme]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Le calcul de <code>f(48)</code> va peut-être utiliser plusieurs fois la valeur de <code>f(8)</code>, mais celle-ci n’aura cette fois été calculée qu’une seule fois, et aussitôt rangée en mémoire. Cela ne fonctionne que parce que pour calculer <code>f(48)</code>, par exemple, on a recours seulement aux valeurs de <code>f(s)</code> pour <code>s &lt; 48</code>.</p>
 <p>Cette fois l’appel <code>dynMemoise(euros, 48)</code> répond immédiatement <code>5</code> (l’algorithme glouton avait bien trouvé la réponse optimale) et <code>dynMemoise(imperial, 48)</code> renvoie <code>2</code>, ce qui correspond à la solution optimale <code>48 = 24 + 24</code>.</p>
@@ -1266,13 +1279,14 @@ Définition
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
