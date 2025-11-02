@@ -41,7 +41,7 @@ format:
 # format-links: [pdf, tex]
 ---
 
-[Version Notebook de ce cours](https://sitelf.fr/notebook/?kernel=sql&extensions=admonitions&module=https://tnsi.sitelf.fr/03-BDD/Cantal.db&from=https://tnsi.sitelf.fr/03-BDD/cours_SQL.ipynb){ target=_blank }
+[Version Notebook de ce cours](https://sitelf.fr/notebook/?kernel=sql&extensions=admonitions&module=https://sitelf.fr/TNSI/03-BDD/Cantal.db&from=https://sitelf.fr/TNSI/03-BDD/cours_SQL.ipynb){ target=_blank }
 
 Nous avons étudié la structure d'une base de données relationnelle, nous allons maintenant apprendre à réaliser des **requêtes**, c'est-à-dire que nous allons apprendre à créer une base des données, créer des attributs, ajouter des données, modifier des données et enfin, nous allons surtout apprendre à interroger une base de données afin d'obtenir des informations.
 
