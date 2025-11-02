@@ -41,7 +41,7 @@ format:
 # format-links: [pdf, tex]
 ---
 
-[Version Notebook de ce cours](https://sitelf.fr/notebook/?kernel=sql&extensions=admonitions&module=https://sitelf.fr/nsi/assets/BDD/Cantal.db&from=https://sitelf.fr/nsi/assets/notebooks/cours_SQL.ipynb){ target=_blank }
+[Version Notebook de ce cours](https://sitelf.fr/notebook/?kernel=sql&extensions=admonitions&module=https://sitelf.fr/tnsi/03-BDD/Cantal.db&from=https://sitelf.fr/tnsi/03-BDD/cours_SQL.ipynb){ target=_blank }
 
 Nous avons étudié la structure d'une base de données relationnelle, nous allons maintenant apprendre à réaliser des **requêtes**, c'est-à-dire que nous allons apprendre à créer une base des données, créer des attributs, ajouter des données, modifier des données et enfin, nous allons surtout apprendre à interroger une base de données afin d'obtenir des informations.
 
@@ -62,7 +62,7 @@ Nous allons illustrer chacune des instructions SQL du programme avec la base de 
 
 ![](BDD11.png){fig-align="center" width="50%"}
 
-Pour se connecter à cette base de donnée, vous pouvez utiliser le logiciel DB Browser (SqLite) ou bien Edupython (qui propose une version portable du même logiciel)
+Pour se connecter à cette base de donnée, vous pouvez utiliser le logiciel DB Browser (SqLite) ou bien le notebook SQL en lien ci-dessus.
 
 ## 1. Requêtes d'interrogation
 
