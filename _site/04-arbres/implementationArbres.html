@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Implémentation des arbres en Python – NSI - Terminale</title>
+<title>Ch. 5 - Arbres : Cours - Partie 2 - Implémentation des Arbres Binaires en Python – NSI - Terminale</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -87,9 +87,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -135,6 +132,9 @@ cookieconsent.run({
 });
 </script> 
   
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 <!-- Matomo -->
 <script>
@@ -372,7 +372,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres binaires</a></li><li class="breadcrumb-item"><a href="../04-arbres/implementationArbres.html">Implémentation des arbres en Python</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres binaires</a></li><li class="breadcrumb-item"><a href="../04-arbres/implementationArbres.html">Ch. 5 - Arbres : Cours - Partie 2 - Implémentation des Arbres Binaires en Python</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -600,7 +600,7 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04-arbres/arbres_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Arbres (Cours)</span></a>
+ <span class="menu-text">Ch. 5 - Arbres : Cours - Partie 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -612,7 +612,7 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04-arbres/implementationArbres.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Implémentation des arbres en Python</span></a>
+ <span class="menu-text">Ch. 5 - Arbres : Cours - Partie 2 - Implémentation des Arbres Binaires en Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -913,8 +913,21 @@ cookieconsent.run({
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#arbres-binaires" id="toc-arbres-binaires" class="nav-link active" data-scroll-target="#arbres-binaires">1. Arbres binaires</a></li>
-  <li><a href="#arbres-binaires-de-recherche-abr" id="toc-arbres-binaires-de-recherche-abr" class="nav-link" data-scroll-target="#arbres-binaires-de-recherche-abr">2. Arbres binaires de recherche (ABR)</a></li>
+  <li><a href="#choix-de-limplémentation" id="toc-choix-de-limplémentation" class="nav-link active" data-scroll-target="#choix-de-limplémentation">1. Choix de l’implémentation</a></li>
+  <li><a href="#la-classe-noeud" id="toc-la-classe-noeud" class="nav-link" data-scroll-target="#la-classe-noeud">2. La classe <code>Noeud</code></a>
+  <ul class="collapse">
+  <li><a href="#construction-dun-arbre" id="toc-construction-dun-arbre" class="nav-link" data-scroll-target="#construction-dun-arbre">Construction d’un arbre</a></li>
+  </ul></li>
+  <li><a href="#fonctions-de-base-sur-les-arbres" id="toc-fonctions-de-base-sur-les-arbres" class="nav-link" data-scroll-target="#fonctions-de-base-sur-les-arbres">3. Fonctions de base sur les arbres</a>
+  <ul class="collapse">
+  <li><a href="#taille-et-hauteur" id="toc-taille-et-hauteur" class="nav-link" data-scroll-target="#taille-et-hauteur">3.1. Taille et Hauteur</a></li>
+  <li><a href="#visualisation-bonus" id="toc-visualisation-bonus" class="nav-link" data-scroll-target="#visualisation-bonus">3.2. Visualisation (Bonus)</a></li>
+  </ul></li>
+  <li><a href="#arbres-binaires-de-recherche-abr" id="toc-arbres-binaires-de-recherche-abr" class="nav-link" data-scroll-target="#arbres-binaires-de-recherche-abr">4. Arbres Binaires de Recherche (ABR)</a>
+  <ul class="collapse">
+  <li><a href="#insertion-version-récursive" id="toc-insertion-version-récursive" class="nav-link" data-scroll-target="#insertion-version-récursive">Insertion (Version récursive)</a></li>
+  <li><a href="#recherche" id="toc-recherche" class="nav-link" data-scroll-target="#recherche">Recherche</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
@@ -922,9 +935,9 @@ cookieconsent.run({
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres binaires</a></li><li class="breadcrumb-item"><a href="../04-arbres/implementationArbres.html">Implémentation des arbres en Python</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres binaires</a></li><li class="breadcrumb-item"><a href="../04-arbres/implementationArbres.html">Ch. 5 - Arbres : Cours - Partie 2 - Implémentation des Arbres Binaires en Python</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Implémentation des arbres en Python</h1>
+<h1 class="title">Ch. 5 - Arbres : Cours - Partie 2 - Implémentation des Arbres Binaires en Python</h1>
 </div>
 
 
@@ -941,300 +954,153 @@ cookieconsent.run({
 </header>
 
 
-<p>L’objectif de cette partie est d’<strong>implémenter</strong> la structure d’arbre binaire en Python. Nous allons pour cela utiliser la Programmation Orientée Objet et construire un module réutilisable proposant à l’utilisateur une interface (<strong>API</strong>) permettant de travailler avec les arbres binaires.</p>
-<section id="arbres-binaires" class="level2">
-<h2 class="anchored" data-anchor-id="arbres-binaires">1. Arbres binaires</h2>
-<p>Une interface souhaitable devrait permettre de :</p>
+<section id="choix-de-limplémentation" class="level2">
+<h2 class="anchored" data-anchor-id="choix-de-limplémentation">1. Choix de l’implémentation</h2>
+<p>Pour implémenter un arbre binaire en Python, la méthode la plus standard et la plus “propre” scientifiquement consiste à définir une classe pour les <strong>Nœuds</strong>.</p>
+<p>Un <strong>Arbre Binaire</strong> est alors simplement :</p>
 <ul>
-<li>Créer un arbre vide ;</li>
-<li>Accéder au sous-arbre gauche et au sous-arbre droit d’un nœud ;</li>
-<li>Accéder à une clef ;</li>
-<li>Tester si un nœud est une feuille ;</li>
-<li>Tester si un arbre est vide ;</li>
-<li>Retourner la taille ;</li>
-<li>Retourner la hauteur.</li>
+<li>Soit <code>None</code> (l’arbre vide).</li>
+<li>Soit une instance de la classe <code>Noeud</code> (la racine), qui pointe vers deux autres arbres binaires (ses fils).</li>
 </ul>
-<p>De plus, il serait souhaitable de parvenir à afficher un arbre de façon visuelle.</p>
-<p>Nous avons vu que la structure d’arbre binaire est une structure <strong>récursive</strong> : cette propriété est exploitée dans l’implémentation que nous allons présenter. Pour définir un arbre, il suffit de définir un nœud racine ainsi que les deux sous-arbres gauche et droite qui sont eux-mêmes des arbres binaires. Cela revient à assimiler un arbre à sa racine associée à un lien vers ses deux fils.</p>
-<p>Nous définissons ci-dessous un objet <code>ArbreBinaire</code> possédant trois attributs <code>clef</code>, <code>gauche</code>, <code>droit</code>. Pour respecter les principes de la POO, et notamment la notion d’<strong>encapsulation</strong>, nous avons défini des méthodes d’accès aux attributs (elles commencent par <code>get</code>) et des méthodes de modification des attributs (elles commencent par <code>set</code>) et on s’interdira tout accès ou affectation direct(e) du type <code>arbre.racine = ...</code>.</p>
-<p>La méthode <code>setRacine</code>, qui permet de définir la clef d’un nœud assure que chaque nœud a toujours un sous-arbre gauche <strong>et</strong> un sous-arbre droit, éventuellement vides, ce qui facilite le traitement des arbres dans les algorithmes suivants. On matérialise ici l’aspect récursif de la structure.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ArbreBinaire:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" Implémentation de la structure d'arbre binaire """</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.racine <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># les sous-arbres gauche et droit doivent être des </span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># instances de l'objet ArbreBinaire</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.gauche <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.droit <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setRacine(<span class="va">self</span>, racine):</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""définit la clef de la racine de l'instance</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">         et crée les sous arbres vides gauches et droits"""</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.racine <span class="op">=</span> racine</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.gauche <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.gauche <span class="op">=</span> ArbreBinaire()</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.droit <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.droit <span class="op">=</span> ArbreBinaire()</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getRacine(<span class="va">self</span>):</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""retourne la clef de la racine de l'arbre"""</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.racine</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getSousArbreGauche(<span class="va">self</span>):</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.gauche</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setSousArbreGauche(<span class="va">self</span>, arbre):</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(arbre, ArbreBinaire):</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.gauche <span class="op">=</span> arbre</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getSousArbreDroit(<span class="va">self</span>):</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.droit</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setSousArbreDroit(<span class="va">self</span>, arbre):</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(arbre, ArbreBinaire):</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.droit <span class="op">=</span> arbre</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> estVide(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.racine <span class="kw">is</span> <span class="va">None</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> estFeuille(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.estVide():</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.gauche.estVide() <span class="kw">and</span> <span class="va">self</span>.droit.estVide()</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.estVide():</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"()"</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="va">self</span>.estFeuille():</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"('</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>racine<span class="sc">}</span><span class="ss">', (), ())"</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"('</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>racine<span class="sc">}</span><span class="ss">', </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>gauche<span class="sc">.</span><span class="fu">__str__</span>()<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>droit<span class="sc">.</span><span class="fu">__str__</span>()<span class="sc">}</span><span class="ss">)"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>La classe est complétée par une méthode <code>estVide</code> permettant de tester si un arbre est vide ou non et une méthode <code>estFeuille</code> permettant de tester si un nœud est une feuille ou non (on confond un nœud avec un arbre de hauteur 1).</p>
-<p>La dernière méthode est la méthode spéciale <code>__str__</code> qui définit la façon dont un arbre va être affiché par la fonction <code>print</code>. Ici, on a choisi un affichage sous forme de tuple du type <code>(clef, sous-arbre gauche, sous-arbre droit)</code>.</p>
-<p>Pour créer un module, on enregistre le code ci-dessus dans un fichier nommé par exemple <code>structures.py</code>.</p>
-<p>On peut ensuite utiliser notre nouvelle structure dans un autre fichier Python (dans le même dossier), ou dans la console interactive, en important le module :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> structures <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> ArbreBinaire()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>a.setRacine(<span class="dv">8</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>a.getSousArbreGauche().setRacine(<span class="dv">3</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>a.getSousArbreDroit().setRacine(<span class="dv">9</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a.getSousArbreGauche()</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a.getSousArbreDroit()</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>b.getSousArbreGauche().setRacine(<span class="dv">7</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>b.getSousArbreDroit().setRacine(<span class="dv">5</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>c.getSousArbreDroit().setRacine(<span class="dv">1</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>On obtient en sortie :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> (<span class="dv">8</span>, (<span class="dv">3</span>, (<span class="dv">7</span>, (), ()), (<span class="dv">5</span>, (), ())), (<span class="dv">9</span>, (), (<span class="dv">1</span>, (), ())))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Cela correspond à l’arbre représenté ci-dessous :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="arbre_bin3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="arbre_bin3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
-</figure>
+<p>Cette approche distingue bien la structure récursive et évite de créer des objets “vides” inutiles.</p>
+</section>
+<section id="la-classe-noeud" class="level2">
+<h2 class="anchored" data-anchor-id="la-classe-noeud">2. La classe <code>Noeud</code></h2>
+<p>Voici une implémentation moderne et documentée.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Noeud:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, etiquette, gauche<span class="op">=</span><span class="va">None</span>, droit<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">        Crée un nouveau noeud.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">        :param etiquette: La valeur stockée dans le noeud.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">        :param gauche: Le sous-arbre gauche (instance de Noeud ou None).</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">        :param droit: Le sous-arbre droit (instance de Noeud ou None).</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.etiquette <span class="op">=</span> etiquette</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.gauche <span class="op">=</span> gauche</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.droit <span class="op">=</span> droit</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> est_feuille(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Renvoie True si le noeud est une feuille."""</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.gauche <span class="kw">is</span> <span class="va">None</span> <span class="kw">and</span> <span class="va">self</span>.droit <span class="kw">is</span> <span class="va">None</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Représentation textuelle pour le débogage."""</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Noeud(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>etiquette<span class="sc">}</span><span class="ss">)"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="construction-dun-arbre" class="level3">
+<h3 class="anchored" data-anchor-id="construction-dun-arbre">Construction d’un arbre</h3>
+<p>Pour construire l’arbre suivant :</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A((A)) --- B((B))
+    A --- C((C))
+    B --- D((D))
+    B --- E((E))
+</pre>
 </div>
-<p>On peut tester les autres méthodes dans la console :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> (<span class="dv">9</span>, (), (<span class="dv">1</span>, (), ()))</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>c.getSousArbreGauche().estVide()</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="va">True</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>c.estFeuille()</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="va">False</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>c.getSousArbreDroit().estFeuille()</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="va">True</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Nous pouvons maintenant ajouter au fichier <code>structures.py</code> les deux fonctions suivantes (en dehors de la classe <code>ArbreBinaire</code>, car ce ne sont pas des méthodes) qui retournent respectivement la taille et la hauteur d’un arbre binaire.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> taille(arbre) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la taille de l'arbre, càd son nombre de noeuds"""</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.racine <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> taille(arbre.gauche) <span class="op">+</span> taille(arbre.droit)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hauteur(arbre) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la hauteur de l'arbre"""</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.racine <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> <span class="bu">max</span>(hauteur(arbre.gauche), hauteur(arbre.droit))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Prendre le temps de bien comprendre comment fonctionnent ces deux fonctions…</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>taille(a)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">6</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>hauteur(a)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">3</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Ce module <code>structures</code> sera utilisé en exercices et plus tard dans l’année lorsque nous étudierons les algorithmes sur les arbres.</p>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Construction de bas en haut (Bottom-Up)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> Noeud(<span class="st">"D"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> Noeud(<span class="st">"E"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> Noeud(<span class="st">"B"</span>, d, e)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> Noeud(<span class="st">"C"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> Noeud(<span class="st">"A"</span>, b, c)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># L'arbre est représenté par sa racine 'a'</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>mon_arbre <span class="op">=</span> a</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="fonctions-de-base-sur-les-arbres" class="level2">
+<h2 class="anchored" data-anchor-id="fonctions-de-base-sur-les-arbres">3. Fonctions de base sur les arbres</h2>
+<p>Puisque l’arbre vide est représenté par <code>None</code>, nous ne pouvons pas utiliser de méthodes d’instance (comme <code>arbre.taille()</code>) directement sur un arbre qui pourrait être vide. Nous définissons donc des <strong>fonctions</strong> qui prennent l’arbre en paramètre.</p>
+<section id="taille-et-hauteur" class="level3">
+<h3 class="anchored" data-anchor-id="taille-et-hauteur">3.1. Taille et Hauteur</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> taille(arbre) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calcule la taille de l'arbre (nombre total de noeuds).</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> taille(arbre.gauche) <span class="op">+</span> taille(arbre.droit)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hauteur(arbre) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Calcule la hauteur de l'arbre.</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Convention : Hauteur(vide) = 0, Hauteur(feuille) = 1.</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> <span class="bu">max</span>(hauteur(arbre.gauche), hauteur(arbre.droit))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="visualisation-bonus" class="level3">
+<h3 class="anchored" data-anchor-id="visualisation-bonus">3.2. Visualisation (Bonus)</h3>
+<p>Pour visualiser l’arbre, nous pouvons utiliser une fonction récursive qui affiche l’arbre dans la console (tourné à 90°).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> affiche(arbre, niveau<span class="op">=</span><span class="dv">0</span>, prefixe<span class="op">=</span><span class="st">"Racine: "</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Affiche l'arbre dans la console de manière textuelle."""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On affiche d'abord le sous-arbre droit (pour qu'il soit en haut)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    affiche(arbre.droit, niveau <span class="op">+</span> <span class="dv">1</span>, <span class="st">" /-- "</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On affiche le noeud courant</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"    "</span> <span class="op">*</span> niveau <span class="op">+</span> prefixe <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.etiquette))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On affiche le sous-arbre gauche</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    affiche(arbre.gauche, niveau <span class="op">+</span> <span class="dv">1</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">-- "</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 </section>
 <section id="arbres-binaires-de-recherche-abr" class="level2">
-<h2 class="anchored" data-anchor-id="arbres-binaires-de-recherche-abr">2. Arbres binaires de recherche (ABR)</h2>
-<p>Les ABR sont des arbres binaires. Nous pouvons donc créer une classe <code>ABR</code> fille de la classe <code>ArbreBinaire</code> en utilisant la notion d’<strong>héritage</strong> et de <strong>polymorphisme</strong> de la POO (voir les compléments de cours à ce sujet). Nous définissons une méthode spécifique : l’insertion d’une clef. Cette méthode ajoute une clef à un ABR existant en s’assurant que l’arbre obtenu est toujours un ABR (le nouveau nœud est toujours une feuille).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ABR(ArbreBinaire):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" Implémentation de la structure d'arbre binaire de recherche """</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> setRacine(<span class="va">self</span>, racine):</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""définit la clef de la racine de l'instance</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">         et crée les sous arbres vides gauches et droits</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">         Provoque une erreur si la racine casse la structure d'ABR"""</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.racine <span class="op">=</span> racine</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.gauche <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.gauche <span class="op">=</span> ABR()</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.droit <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.droit <span class="op">=</span> ABR()</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> estABR(<span class="va">self</span>):</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">"Cette affectation de clef casse la structure ABR !!!"</span>)</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> insere(<span class="va">self</span>, racine):</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""insère une clef dans l'arbre en préservant la structure ABR"""</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.racine <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.racine <span class="op">=</span> racine</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.gauche <span class="op">=</span> ABR()</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.droit <span class="op">=</span> ABR()</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> racine <span class="op">&lt;</span> <span class="va">self</span>.racine:</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.gauche.insere(racine)</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.droit.insere(racine)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Pour définir un arbre binaire de recherche valide, on utilisera toujours la méthode <code>insere</code>, car elle permet de s’assurer de toujours conserver un ABR.</p>
-<p>Pour faciliter la vérification, nous définissons une fonction <code>estABR</code> qui peut s’appliquer aussi bien à un arbre binaire quelconque qu’à un ABR et qui retourne <code>True</code> si l’arbre est un ABR et <code>False</code> sinon.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> estABR(arbre, mini<span class="op">=-</span><span class="bu">float</span>(<span class="st">"inf"</span>), maxi<span class="op">=+</span><span class="bu">float</span>(<span class="st">"inf"</span>)) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.getRacine() <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> estABR(arbre.getSousArbreGauche(), mini, arbre.getRacine()) <span class="kw">and</span> </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>               estABR(arbre.getSousArbreDroit(), arbre.getRacine(), maxi) <span class="kw">and</span> </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>               mini <span class="op">&lt;</span> arbre.racine <span class="op">&lt;</span> maxi</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Prendre le temps de bien comprendre cette fonction…</p>
-<p>Utilisation :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> structures <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> ABR()</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>a.setRacine(<span class="dv">8</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">5</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">3</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">12</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">10</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">15</span>)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(estABR(a))</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Affectation directe à proscrire :</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># a.getSousArbreDroit().setRacine(1) ## provoque une erreur</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Sortie :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">8</span>, (<span class="dv">5</span>, (<span class="dv">3</span>, (), ()), ()), (<span class="dv">12</span>, (<span class="dv">10</span>, (), ()), (<span class="dv">15</span>, (), ())))</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>L’arbre correspond à :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="arbre.gv.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="arbre.gv.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
-</figure>
-</div>
-<p>Le module <code>structure.py</code> est à conserver : il sera utilisé en exercices et dans les chapitres suivants.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Complément
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>On peut ajouter une fonctionnalité de représentation graphique d’un arbre en utilisant les bibliothèques <code>networkx</code> et <code>matplotlib</code>. Ajouter la fonction ci-dessous au fichier <code>structures.py</code> :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> afficheArbre(arbre, size<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>), null_node<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">size : tuple de 2 entiers. Si size est int -&gt; (size, size)</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">null_node : si True, trace les liaisons vers les sous-arbres vides</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>arbreAsTuple <span class="op">=</span> <span class="bu">eval</span>(arbre.<span class="fu">__str__</span>())</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parkour(arbre, noeuds, branches, labels, positions, profondeur, </span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            pos_courante, pos_parent, null_node):</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="op">!=</span> ():</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        noeuds[<span class="dv">0</span>].append(pos_courante)</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        positions[pos_courante] <span class="op">=</span> (pos_courante, profondeur)</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        profondeur <span class="op">-=</span> <span class="dv">1</span></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        labels[pos_courante] <span class="op">=</span> <span class="bu">str</span>(arbre[<span class="dv">0</span>])</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        branches[<span class="dv">0</span>].append((pos_courante, pos_parent))</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        pos_gauche <span class="op">=</span> pos_courante <span class="op">-</span> <span class="dv">2</span> <span class="op">**</span> profondeur</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        parkour(arbre[<span class="dv">1</span>], noeuds, branches, labels, positions, profondeur, </span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>                pos_gauche, pos_courante, null_node)</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>        pos_droit <span class="op">=</span> pos_courante <span class="op">+</span> <span class="dv">2</span> <span class="op">**</span> profondeur</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        parkour(arbre[<span class="dv">2</span>], noeuds, branches, labels, positions, profondeur, </span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>                pos_droit, pos_courante, null_node)</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> null_node:</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>        noeuds[<span class="dv">1</span>].append(pos_courante)</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>        positions[pos_courante] <span class="op">=</span> (pos_courante, profondeur)</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>        branches[<span class="dv">1</span>].append((pos_courante, pos_parent))</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> arbreAsTuple <span class="op">==</span> ():</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span></span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>branches <span class="op">=</span> [[]]</span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>profondeur <span class="op">=</span> hauteur(arbre)</span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>pos_courante <span class="op">=</span> <span class="dv">2</span> <span class="op">**</span> profondeur</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>noeuds <span class="op">=</span> [[pos_courante]]</span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> {pos_courante: (pos_courante, profondeur)}</span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> {pos_courante: <span class="bu">str</span>(arbreAsTuple[<span class="dv">0</span>])}</span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> null_node:</span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    branches.append([])</span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    noeuds.append([])</span>
-<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>profondeur <span class="op">-=</span> <span class="dv">1</span></span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>parkour(arbreAsTuple[<span class="dv">1</span>], noeuds, branches, labels, positions, profondeur, </span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>        pos_courante <span class="op">-</span> <span class="dv">2</span> <span class="op">**</span> profondeur, pos_courante, null_node)</span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>parkour(arbreAsTuple[<span class="dv">2</span>], noeuds, branches, labels, positions, profondeur, </span>
-<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>        pos_courante <span class="op">+</span> <span class="dv">2</span> <span class="op">**</span> profondeur, pos_courante, null_node)</span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>mon_arbre <span class="op">=</span> nx.Graph()</span>
-<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">type</span>(size) <span class="op">==</span> <span class="bu">int</span>:</span>
-<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> (size, size)</span>
-<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>size)</span>
-<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx_nodes(mon_arbre, positions, nodelist<span class="op">=</span>noeuds[<span class="dv">0</span>], </span>
-<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>                       node_color<span class="op">=</span><span class="st">"white"</span>, node_size<span class="op">=</span><span class="dv">550</span>, edgecolors<span class="op">=</span><span class="st">"blue"</span>)</span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx_edges(mon_arbre, positions, edgelist<span class="op">=</span>branches[<span class="dv">0</span>], </span>
-<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>                       edge_color<span class="op">=</span><span class="st">"black"</span>, width<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx_labels(mon_arbre, positions, labels)</span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> null_node:</span>
-<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>    nx.draw_networkx_nodes(mon_arbre, positions, nodelist<span class="op">=</span>noeuds[<span class="dv">1</span>], </span>
-<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>                           node_color<span class="op">=</span><span class="st">"white"</span>, node_size<span class="op">=</span><span class="dv">50</span>, edgecolors<span class="op">=</span><span class="st">"grey"</span>)</span>
-<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>    nx.draw_networkx_edges(mon_arbre, positions, edgelist<span class="op">=</span>branches[<span class="dv">1</span>], </span>
-<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>                           edge_color<span class="op">=</span><span class="st">"grey"</span>, width<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.gca()</span>
-<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a>ax.margins(<span class="fl">0.1</span>)</span>
-<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">"off"</span>)</span>
-<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Utilisation :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> structures <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> ABR()</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>a.setRacine(<span class="dv">8</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">5</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">3</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">12</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">10</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>a.insere(<span class="dv">15</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>afficheArbre(a)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Sortie :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="arbre.gv.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="arbre.gv.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
-</figure>
-</div>
-</div>
-</div>
+<h2 class="anchored" data-anchor-id="arbres-binaires-de-recherche-abr">4. Arbres Binaires de Recherche (ABR)</h2>
+<p>Pour les ABR, nous pouvons créer une classe spécifique ou simplement utiliser des fonctions d’insertion. Voici une approche fonctionnelle pure (sans modification en place) et une approche avec modification.</p>
+<section id="insertion-version-récursive" class="level3">
+<h3 class="anchored" data-anchor-id="insertion-version-récursive">Insertion (Version récursive)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> insere_abr(arbre, valeur):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Insère une valeur dans un ABR et renvoie la nouvelle racine.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Si l'arbre est vide, crée un nouveau noeud.</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Noeud(valeur)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> valeur <span class="op">&lt;</span> arbre.etiquette:</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        arbre.gauche <span class="op">=</span> insere_abr(arbre.gauche, valeur)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> valeur <span class="op">&gt;</span> arbre.etiquette:</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        arbre.droit <span class="op">=</span> insere_abr(arbre.droit, valeur)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si valeur == arbre.etiquette, on ne fait rien (pas de doublons)</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> arbre</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Exemple d’utilisation :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>abr <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>abr <span class="op">=</span> insere_abr(abr, <span class="dv">10</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>abr <span class="op">=</span> insere_abr(abr, <span class="dv">5</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>abr <span class="op">=</span> insere_abr(abr, <span class="dv">15</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>abr <span class="op">=</span> insere_abr(abr, <span class="dv">2</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="recherche" class="level3">
+<h3 class="anchored" data-anchor-id="recherche">Recherche</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> appartient_abr(arbre, valeur) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Renvoie True si la valeur est dans l'ABR."""</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> valeur <span class="op">==</span> arbre.etiquette:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> valeur <span class="op">&lt;</span> arbre.etiquette:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> appartient_abr(arbre.gauche, valeur)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> appartient_abr(arbre.droit, valeur)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1697,38 +1563,6 @@ cookieconsent.run({
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

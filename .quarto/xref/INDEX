@@ -604,5 +604,14 @@
   },
   "03-BDD/projet_BDD.qmd": {
     "projet_BDD.html": "2ef55ee2"
+  },
+  "03-BDD/cours_SQL.ipynb": {
+    "cours_SQL.html": "36d65128"
+  },
+  "04-arbres/arbres_cours_bak.qmd": {
+    "arbres_cours_bak.html": "311ef2c8"
+  },
+  "04-arbres/implementationArbres_bak.qmd": {
+    "implementationArbres_bak.html": "4f0f0312"
   }
 }

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ch. 5 - Arbres : Cours - Partie 1 – NSI - Terminale</title>
+<title>2. Le langage SQL – NSI - Terminale</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../04-arbres/arbres_exercices.html" rel="next">
-<link href="../03-BDD/projet_BDD.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -87,9 +85,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -135,9 +130,6 @@ cookieconsent.run({
 });
 </script> 
   
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 <!-- Matomo -->
 <script>
@@ -320,35 +312,6 @@ cookieconsent.run({
   <!-- End Matomo Code -->
   
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 
@@ -404,7 +367,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres binaires</a></li><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres : Cours - Partie 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">2. Le langage SQL</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -622,16 +585,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Ch. 5 - Arbres binaires</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../04-arbres/arbres_cours.html" class="sidebar-item-text sidebar-link active">
+  <a href="../04-arbres/arbres_cours.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ch. 5 - Arbres : Cours - Partie 1</span></a>
   </div>
 </li>
@@ -945,23 +908,18 @@ window.Quarto = {
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a>
+  <li><a href="#requêtes-dinterrogation-requêtes-simplesquand-on-désire-extraire-des-informations-dune-table-on-effectue-une-requête-dinterrogation-à-laide-du-mot-clé-select.-voici-un-exemple-de-requête-dinterrogation" id="toc-requêtes-dinterrogation-requêtes-simplesquand-on-désire-extraire-des-informations-dune-table-on-effectue-une-requête-dinterrogation-à-laide-du-mot-clé-select.-voici-un-exemple-de-requête-dinterrogation" class="nav-link active" data-scroll-target="#requêtes-dinterrogation-requêtes-simplesquand-on-désire-extraire-des-informations-dune-table-on-effectue-une-requête-dinterrogation-à-laide-du-mot-clé-select.-voici-un-exemple-de-requête-dinterrogation">2.1. Requêtes d’interrogation### Requêtes simplesQuand on désire extraire des informations d’une table, on effectue une <strong>requête d’interrogation</strong> à l’aide du mot clé <strong>SELECT</strong>. Voici un exemple de requête d’interrogation :</a>
   <ul class="collapse">
-  <li><a href="#vocabulaire" id="toc-vocabulaire" class="nav-link" data-scroll-target="#vocabulaire">1.1. Vocabulaire</a></li>
-  <li><a href="#exemples-dutilisation" id="toc-exemples-dutilisation" class="nav-link" data-scroll-target="#exemples-dutilisation">1.2. Exemples d’utilisation</a></li>
-  <li><a href="#caractéristiques-numériques" id="toc-caractéristiques-numériques" class="nav-link" data-scroll-target="#caractéristiques-numériques">1.3. Caractéristiques numériques</a></li>
+  <li><a href="#requêtes-conditionnellesla-clause-where-permet-dimposer-une-ou-des-conditions-permettant-de-sélectionner-uniquement-certaines-lignes.la-condition-doit-suivre-le-mot-clé-where.la-requête-ci-dessous-permet-dafficher-le-nom-des-communes-dont-la-population-est-strictement-supérieure-à-2500-habitants." id="toc-requêtes-conditionnellesla-clause-where-permet-dimposer-une-ou-des-conditions-permettant-de-sélectionner-uniquement-certaines-lignes.la-condition-doit-suivre-le-mot-clé-where.la-requête-ci-dessous-permet-dafficher-le-nom-des-communes-dont-la-population-est-strictement-supérieure-à-2500-habitants." class="nav-link" data-scroll-target="#requêtes-conditionnellesla-clause-where-permet-dimposer-une-ou-des-conditions-permettant-de-sélectionner-uniquement-certaines-lignes.la-condition-doit-suivre-le-mot-clé-where.la-requête-ci-dessous-permet-dafficher-le-nom-des-communes-dont-la-population-est-strictement-supérieure-à-2500-habitants.">Requêtes conditionnellesLa clause <strong>WHERE</strong> permet d’imposer une (ou des) condition(s) permettant de sélectionner uniquement certaines lignes.La condition doit suivre le mot-clé <strong>WHERE</strong>.La requête ci-dessous permet d’afficher le nom des communes dont la population est strictement supérieure à 2500 habitants.</a></li>
+  <li><a href="#ordonner-les-résultatsla-clause-order-by-permet-dordonner-les-résultats-dans-lordre-croissant.cette-requête-affiche-le-nom-et-la-population-des-communes-de-plus-de-5000-habitants-dans-lordre-croissant-de-leur-population." id="toc-ordonner-les-résultatsla-clause-order-by-permet-dordonner-les-résultats-dans-lordre-croissant.cette-requête-affiche-le-nom-et-la-population-des-communes-de-plus-de-5000-habitants-dans-lordre-croissant-de-leur-population." class="nav-link" data-scroll-target="#ordonner-les-résultatsla-clause-order-by-permet-dordonner-les-résultats-dans-lordre-croissant.cette-requête-affiche-le-nom-et-la-population-des-communes-de-plus-de-5000-habitants-dans-lordre-croissant-de-leur-population.">Ordonner les résultatsLa clause <strong>ORDER BY</strong> permet d’ordonner les résultats dans l’ordre croissant.Cette requête affiche le nom et la population des communes de plus de 5000 habitants dans l’ordre croissant de leur population.</a></li>
+  <li><a href="#éviter-les-doublonspour-éviter-les-doublons-dans-les-résultats-dune-requête-on-peut-ajouter-la-clause-distinct-juste-après-select.considérons-par-exemple-la-relation-communes-la-requête-suivante-a-pour-objectif-dafficher-dans-lordre-croissant-la-liste-des-codes-postaux-des-communes-du-cantal" id="toc-éviter-les-doublonspour-éviter-les-doublons-dans-les-résultats-dune-requête-on-peut-ajouter-la-clause-distinct-juste-après-select.considérons-par-exemple-la-relation-communes-la-requête-suivante-a-pour-objectif-dafficher-dans-lordre-croissant-la-liste-des-codes-postaux-des-communes-du-cantal" class="nav-link" data-scroll-target="#éviter-les-doublonspour-éviter-les-doublons-dans-les-résultats-dune-requête-on-peut-ajouter-la-clause-distinct-juste-après-select.considérons-par-exemple-la-relation-communes-la-requête-suivante-a-pour-objectif-dafficher-dans-lordre-croissant-la-liste-des-codes-postaux-des-communes-du-cantal">Éviter les doublonsPour éviter les doublons dans les résultats d’une requête, on peut ajouter la clause DISTINCT juste après SELECT.Considérons par exemple la relation “communes”, la requête suivante a pour objectif d’afficher, dans l’ordre croissant, la liste des codes postaux des communes du Cantal :</a></li>
+  <li><a href="#les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes." id="toc-les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes." class="nav-link" data-scroll-target="#les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes.">Les jointuresUne requête dans une base de donnée peut nécessiter de regrouper des données provenant de différentes tables.!!! info “Définition”Une requête combinant les données de plusieurs relations (tables) est appelée une <strong>jointure</strong>.!!!Poursuivons avec l’exemple de la base de données des établissements scolaires du Cantal qui comporte deux tables, dont on rappelle ci-dessous le schéma relationnel :* communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span>: TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://flallemand.fr/nsi/assets/images/BDD11.png" class="img-fluid">La requête suivante permet d’obtenir la table des noms d’établissements suivis du nom de leur commune. Il faut pour cela <strong>joindre</strong> les informations de la table “etablissements” (pour le nom de l’établissement) avec celles de la table “communes” (pour le nom de la commune). L’élément qui permet cette <strong>jointure</strong> est la <strong>clef étrangère</strong> “id_commune” de la table “etablissements” qui fait référence à la <strong>clef primaire</strong> “Codecommune” de la table “communes”.</a></li>
   </ul></li>
-  <li><a href="#arbres-binaires" id="toc-arbres-binaires" class="nav-link" data-scroll-target="#arbres-binaires">2. Arbres Binaires</a>
+  <li><a href="#requêtes-de-mise-à-jour-ajouter-une-entréepour-ajouter-une-entrée-nous-utilisons-la-clause-insert.supposons-par-exemple-quun-nouvel-établissement-soit-ouvert-à-labrousse-code-85-il-sagit-dun-lycée-hôtelier-public.-la-requête-suivante-permet-de-créer-cette-nouvelle-entrée.-attention-lordre-des-valeurs-données-doit-être-strictement-le-même-que-lordre-des-attributs-cités." id="toc-requêtes-de-mise-à-jour-ajouter-une-entréepour-ajouter-une-entrée-nous-utilisons-la-clause-insert.supposons-par-exemple-quun-nouvel-établissement-soit-ouvert-à-labrousse-code-85-il-sagit-dun-lycée-hôtelier-public.-la-requête-suivante-permet-de-créer-cette-nouvelle-entrée.-attention-lordre-des-valeurs-données-doit-être-strictement-le-même-que-lordre-des-attributs-cités." class="nav-link" data-scroll-target="#requêtes-de-mise-à-jour-ajouter-une-entréepour-ajouter-une-entrée-nous-utilisons-la-clause-insert.supposons-par-exemple-quun-nouvel-établissement-soit-ouvert-à-labrousse-code-85-il-sagit-dun-lycée-hôtelier-public.-la-requête-suivante-permet-de-créer-cette-nouvelle-entrée.-attention-lordre-des-valeurs-données-doit-être-strictement-le-même-que-lordre-des-attributs-cités.">2.2. Requêtes de mise à jour### Ajouter une entréePour ajouter une entrée, nous utilisons la clause INSERT.Supposons par exemple qu’un nouvel établissement soit ouvert à Labrousse (code 85): il s’agit d’un lycée hôtelier public. La requête suivante permet de créer cette nouvelle entrée. Attention, l’ordre des valeurs données doit être strictement le même que l’ordre des attributs cités.</a>
   <ul class="collapse">
-  <li><a href="#définition-1" id="toc-définition-1" class="nav-link" data-scroll-target="#définition-1">2.1. Définition</a></li>
-  <li><a href="#structure-récursive" id="toc-structure-récursive" class="nav-link" data-scroll-target="#structure-récursive">2.2. Structure récursive</a></li>
-  <li><a href="#types-darbres-binaires-particuliers" id="toc-types-darbres-binaires-particuliers" class="nav-link" data-scroll-target="#types-darbres-binaires-particuliers">2.3. Types d’arbres binaires particuliers</a></li>
-  <li><a href="#relation-entre-taille-et-hauteur" id="toc-relation-entre-taille-et-hauteur" class="nav-link" data-scroll-target="#relation-entre-taille-et-hauteur">2.4. Relation entre Taille et Hauteur</a></li>
-  </ul></li>
-  <li><a href="#arbres-binaires-de-recherche-abr" id="toc-arbres-binaires-de-recherche-abr" class="nav-link" data-scroll-target="#arbres-binaires-de-recherche-abr">3. Arbres Binaires de Recherche (ABR)</a>
-  <ul class="collapse">
-  <li><a href="#définition-3" id="toc-définition-3" class="nav-link" data-scroll-target="#définition-3">3.1. Définition</a></li>
-  <li><a href="#intérêt" id="toc-intérêt" class="nav-link" data-scroll-target="#intérêt">3.2. Intérêt</a></li>
+  <li><a href="#modifier-une-entrée-existantepour-modifier-un-ou-plusieurs-attributs-dun-p-uplet-existant-on-utilise-la-clause-update.supposons-par-exemple-que-le-nouveau-lycée-soit-en-fait-un-lycée-privé-et-que-son-code-soit-0158888z" id="toc-modifier-une-entrée-existantepour-modifier-un-ou-plusieurs-attributs-dun-p-uplet-existant-on-utilise-la-clause-update.supposons-par-exemple-que-le-nouveau-lycée-soit-en-fait-un-lycée-privé-et-que-son-code-soit-0158888z" class="nav-link" data-scroll-target="#modifier-une-entrée-existantepour-modifier-un-ou-plusieurs-attributs-dun-p-uplet-existant-on-utilise-la-clause-update.supposons-par-exemple-que-le-nouveau-lycée-soit-en-fait-un-lycée-privé-et-que-son-code-soit-0158888z">Modifier une entrée existantePour modifier un ou plusieurs attributs d’un p-uplet existant, on utilise la clause UPDATE.Supposons par exemple que le nouveau lycée soit en fait un lycée Privé et que son code soit “0158888Z” :</a></li>
+  <li><a href="#calculer-une-moyennepar-exemple-la-population-moyenne-des-communes-du-cantal-dont-le-code-postal-est-15250-avg-average" id="toc-calculer-une-moyennepar-exemple-la-population-moyenne-des-communes-du-cantal-dont-le-code-postal-est-15250-avg-average" class="nav-link" data-scroll-target="#calculer-une-moyennepar-exemple-la-population-moyenne-des-communes-du-cantal-dont-le-code-postal-est-15250-avg-average">Calculer une moyennePar exemple, la population moyenne des communes du Cantal dont le code postal est 15250 (AVG = average):</a></li>
+  <li><a href="#calculer-un-minimum-ou-un-maximumles-fonctions-min-et-max-fonctionnent-de-la-même-façon.quel-est-le-nom-et-la-population-de-la-commune-du-cantal-la-moins-peuplée" id="toc-calculer-un-minimum-ou-un-maximumles-fonctions-min-et-max-fonctionnent-de-la-même-façon.quel-est-le-nom-et-la-population-de-la-commune-du-cantal-la-moins-peuplée" class="nav-link" data-scroll-target="#calculer-un-minimum-ou-un-maximumles-fonctions-min-et-max-fonctionnent-de-la-même-façon.quel-est-le-nom-et-la-population-de-la-commune-du-cantal-la-moins-peuplée">Calculer un minimum ou un maximumLes fonctions MIN et MAX fonctionnent de la même façon.Quel est le nom et la population de la commune du Cantal la moins peuplée ?</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
@@ -970,9 +928,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres binaires</a></li><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres : Cours - Partie 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ch. 5 - Arbres : Cours - Partie 1</h1>
+<h1 class="title">2. Le langage SQL</h1>
 </div>
 
 
@@ -989,293 +947,112 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
-<section id="vocabulaire" class="level3">
-<h3 class="anchored" data-anchor-id="vocabulaire">1.1. Vocabulaire</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Nous avons étudié la structure d’une base de données relationnelle, nous allons maintenant apprendre à réaliser des <strong>requêtes</strong>, c’est-à-dire que nous allons apprendre à créer une base des données, créer des attributs, ajouter des données, modifier des données et enfin, nous allons surtout apprendre à interroger une base de données afin d’obtenir des informations.</p>
+<p>Pour réaliser toutes ces requêtes, nous allons devoir apprendre un langage de requêtes : SQL (Structured Query Language). SQL est propre aux bases de données relationnelles.</p>
+<p>Dans ce cours nous allons travailler avec SQLite. SQLite est un système de gestion de base de données relationnelle très répandu. Noter qu’il existe d’autres systèmes de gestion de base de données relationnelle comme MySQL ou PostgreSQL. Dans tous les cas, le langage de requête utilisé est le SQL (même si parfois on peut noter quelques petites différences). Ce qui sera vu ici avec SQLite pourra, à quelques petites modifications près, être utilisé avec, par exemple, MySQL.</p>
+<p>Nous allons illustrer chacune des instructions SQL du programme avec la base de donnée <a href="https://flallemand.fr/nsi/assets/BDD/Cantal.db"><code>Cantal.db</code></a> contenant les deux tables “etablissements” et “communes” déjà rencontrées dans la partie précédente, dont voici un extrait (les noms des attributs ont été un peu modifiés (pas d’espaces) ; la copie d’écran est faite à partir de DB Browser for SqLite). De plus, nous avons déplacé l’attribut “Codepostal” de la table “etablissement” vers la table “communes”, ce qui est plus cohérent.<img src="https://flallemand.fr/nsi/assets/images/BDD9.png" class="img-fluid"><img src="https://flallemand.fr/nsi/assets/images/BDD10.png" class="img-fluid"><strong>Schéma relationnel</strong> : * communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span> : TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://flallemand.fr/nsi/assets/images/BDD11.png" class="img-fluid">Pour se connecter à cette base de donnée, nous utiliserons ici ce notebook Jupyter dans lequel la base a été chargée à l’ouverture.</p>
+<section id="requêtes-dinterrogation-requêtes-simplesquand-on-désire-extraire-des-informations-dune-table-on-effectue-une-requête-dinterrogation-à-laide-du-mot-clé-select.-voici-un-exemple-de-requête-dinterrogation" class="level2">
+<h2 class="anchored" data-anchor-id="requêtes-dinterrogation-requêtes-simplesquand-on-désire-extraire-des-informations-dune-table-on-effectue-une-requête-dinterrogation-à-laide-du-mot-clé-select.-voici-un-exemple-de-requête-dinterrogation">2.1. Requêtes d’interrogation### Requêtes simplesQuand on désire extraire des informations d’une table, on effectue une <strong>requête d’interrogation</strong> à l’aide du mot clé <strong>SELECT</strong>. Voici un exemple de requête d’interrogation :</h2>
+<div id="cell-4" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>SELECT Nomdelacommune, PopulationtotaleFROM communes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Définition
+<p>Cette requête permet d’obtenir le nom de la commune et sa population pour toutes les communes présentes dans la table “communes”.D’une façon générale, le mot clé <strong>SELECT</strong> est suivi par les attributs que l’on désire obtenir. Le mot clé <strong>FROM</strong> est suivi par la table concernée.Noter qu’il est possible d’obtenir tous les attributs sans être obligé de tous les noter grâce au caractère étoile * :</p>
+<div id="cell-6" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span>FROM communes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>est équivalent à :<code>SQLSELECT  Codecommune, Nomdelacommune, Populationtotale, CodepostalFROM communes</code></p>
+<section id="requêtes-conditionnellesla-clause-where-permet-dimposer-une-ou-des-conditions-permettant-de-sélectionner-uniquement-certaines-lignes.la-condition-doit-suivre-le-mot-clé-where.la-requête-ci-dessous-permet-dafficher-le-nom-des-communes-dont-la-population-est-strictement-supérieure-à-2500-habitants." class="level3">
+<h3 class="anchored" data-anchor-id="requêtes-conditionnellesla-clause-where-permet-dimposer-une-ou-des-conditions-permettant-de-sélectionner-uniquement-certaines-lignes.la-condition-doit-suivre-le-mot-clé-where.la-requête-ci-dessous-permet-dafficher-le-nom-des-communes-dont-la-population-est-strictement-supérieure-à-2500-habitants.">Requêtes conditionnellesLa clause <strong>WHERE</strong> permet d’imposer une (ou des) condition(s) permettant de sélectionner uniquement certaines lignes.La condition doit suivre le mot-clé <strong>WHERE</strong>.La requête ci-dessous permet d’afficher le nom des communes dont la population est strictement supérieure à 2500 habitants.</h3>
+<div id="cell-9" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>SELECT NomdelacommuneFROM communesWHERE Populationtotale <span class="op">&gt;</span> <span class="dv">2500</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-body-container callout-body">
-<p>En informatique, un <strong>arbre</strong> est une structure de données hiérarchique (non linéaire). Elle est composée de <strong>nœuds</strong>.</p>
-<ul>
-<li>Le nœud initial est appelé <strong>racine</strong>.</li>
-<li>Il existe un chemin unique de la racine à n’importe quel autre nœud.</li>
-</ul>
+<p>Il est possible de combiner les conditions à l’aide d’un OR ou d’un AND :Cette requête permet d’obtenir le nom des communes dont la population est comprise entre 2500 et 10000 habitants.</p>
+<div id="cell-11" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>SELECT NomdelacommuneFROM communesWHERE Populationtotale <span class="op">&gt;</span> <span class="dv">2500</span> AND Populationtotale <span class="op">&lt;</span> <span class="dv">10000</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-    D((D)) --- U((U))
-    D --- L((L))
-    D --- A((A))
-    A --- V((V))
-    U --- C((C))
-    L --- X((X))
-    style D fill:#f9f,stroke:#333,stroke-width:4px
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p><strong>Vocabulaire détaillé :</strong></p>
-<ul>
-<li><strong>Père / Fils</strong> : Chaque nœud a exactement un nœud <strong>père</strong>, sauf la <strong>racine</strong> qui n’en a pas. Un nœud peut avoir un nombre quelconque de <strong>fils</strong>.</li>
-<li><strong>Feuille</strong> : Un nœud qui n’a aucun fils est appelé une <strong>feuille</strong> (ou nœud externe).</li>
-<li><strong>Nœud interne</strong> : Un nœud qui n’est pas une feuille.</li>
-<li><strong>Étiquette (ou Clé)</strong> : La valeur portée par le nœud.</li>
-<li><strong>Arête</strong> : Le lien reliant deux nœuds.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Astuce</span>Exemple sur l’arbre ci-dessus
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>La <strong>racine</strong> est <strong>D</strong>.</li>
-<li><strong>D</strong> a trois fils : <strong>U</strong>, <strong>L</strong> et <strong>A</strong>.</li>
-<li><strong>V</strong> est un fils de <strong>A</strong>. <strong>A</strong> est le père de <strong>V</strong>.</li>
-<li>Les <strong>feuilles</strong> sont <strong>C</strong>, <strong>X</strong> et <strong>V</strong>.</li>
-</ul>
-</div>
+<p>La requête ci-dessous permet d’afficher le nom des communes dont la population est supérieure à 5000 habitants OU dont le nom contient la lettre “Z” (noter le symbole “%” qui remplace n’importe quelle séquence de carcatères en SQL).</p>
+<div id="cell-13" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SELECT NomdelacommuneFROM communesWHERE Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> OR Nomdelacommune LIKE <span class="st">"%Z%"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="exemples-dutilisation" class="level3">
-<h3 class="anchored" data-anchor-id="exemples-dutilisation">1.2. Exemples d’utilisation</h3>
-<p>Les structures arborescentes sont omniprésentes en informatique :</p>
-<ol type="1">
-<li><strong>Systèmes de fichiers</strong> : Dossiers et fichiers sur un disque dur.</li>
-</ol>
-<p><a href="arborescence.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="arborescence.png" class="img-fluid"></a></p>
-<ol start="2" type="1">
-<li><strong>DOM (Document Object Model)</strong> : Structure d’une page HTML. Par exemple, le code HTML ci-dessous sera modélisé par l’arbre ci-dessous (source : <a href="https://www.w3.org/TR/WD-DOM/introduction.html">w3.org</a>).</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">TABLE</span><span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">ROWS</span><span class="dt">&gt;</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">TR</span><span class="dt">&gt;</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">TD</span><span class="dt">&gt;</span>Shady Grove<span class="dt">&lt;/</span><span class="kw">TD</span><span class="dt">&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">TD</span><span class="dt">&gt;</span>Aeolian<span class="dt">&lt;/</span><span class="kw">TD</span><span class="dt">&gt;</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">TR</span><span class="dt">&gt;</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">TR</span><span class="dt">&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">TD</span><span class="dt">&gt;</span>Over the River, Charlie<span class="dt">&lt;/</span><span class="kw">TD</span><span class="dt">&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">TD</span><span class="dt">&gt;</span>Dorian<span class="dt">&lt;/</span><span class="kw">TD</span><span class="dt">&gt;</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">TR</span><span class="dt">&gt;</span> </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">ROWS</span><span class="dt">&gt;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">TABLE</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p><a href="DOM.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="DOM.png" class="img-fluid"></a></p>
-<ol start="3" type="1">
-<li><strong>Arbres syntaxiques</strong> : Utilisés par les compilateurs pour analyser le code source (ex: <span class="math inline">\(3 \times (4 + 5)\)</span>).</li>
-</ol>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-    M((x)) --- T(3)
-    M --- P((\+))
-    P --- Q(4)
-    P --- C(5)
-</pre>
+<section id="ordonner-les-résultatsla-clause-order-by-permet-dordonner-les-résultats-dans-lordre-croissant.cette-requête-affiche-le-nom-et-la-population-des-communes-de-plus-de-5000-habitants-dans-lordre-croissant-de-leur-population." class="level3">
+<h3 class="anchored" data-anchor-id="ordonner-les-résultatsla-clause-order-by-permet-dordonner-les-résultats-dans-lordre-croissant.cette-requête-affiche-le-nom-et-la-population-des-communes-de-plus-de-5000-habitants-dans-lordre-croissant-de-leur-population.">Ordonner les résultatsLa clause <strong>ORDER BY</strong> permet d’ordonner les résultats dans l’ordre croissant.Cette requête affiche le nom et la population des communes de plus de 5000 habitants dans l’ordre croissant de leur population.</h3>
+<div id="cell-15" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>SELECT Nomdelacommune, PopulationtotaleFROM communesWHERE Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> ORDER BY Populationtotale</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p></p></figure><p></p>
+<p>Pour ordonner les résultats dans l’ordre décroissant, on ajoute <strong>DESC</strong>.Si la clause <strong>ORDER BY</strong> porte sur un attribut de type TEXT, on aura un rangement dans l’ordre alphabétique.Cette requête affiche le nom et la population des communes de plus de 5000 habitants dans l’ordre inverse de l’ordre alphabétique de leur nom.</p>
+<div id="cell-17" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SELECT Nomdelacommune, PopulationtotaleFROM communesWHERE Populationtotale <span class="op">&gt;</span> <span class="dv">5000</span> ORDER BY Nomdelacommune DESC</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-</div>
-<ol start="4" type="1">
-<li><strong>Arbres généalogiques</strong> (ascendants ou descendants).</li>
-</ol>
-<p><a href="arbre_genea.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="arbre_genea.png" class="img-fluid"></a></p>
 </section>
-<section id="caractéristiques-numériques" class="level3">
-<h3 class="anchored" data-anchor-id="caractéristiques-numériques">1.3. Caractéristiques numériques</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="éviter-les-doublonspour-éviter-les-doublons-dans-les-résultats-dune-requête-on-peut-ajouter-la-clause-distinct-juste-après-select.considérons-par-exemple-la-relation-communes-la-requête-suivante-a-pour-objectif-dafficher-dans-lordre-croissant-la-liste-des-codes-postaux-des-communes-du-cantal" class="level3">
+<h3 class="anchored" data-anchor-id="éviter-les-doublonspour-éviter-les-doublons-dans-les-résultats-dune-requête-on-peut-ajouter-la-clause-distinct-juste-après-select.considérons-par-exemple-la-relation-communes-la-requête-suivante-a-pour-objectif-dafficher-dans-lordre-croissant-la-liste-des-codes-postaux-des-communes-du-cantal">Éviter les doublonsPour éviter les doublons dans les résultats d’une requête, on peut ajouter la clause DISTINCT juste après SELECT.Considérons par exemple la relation “communes”, la requête suivante a pour objectif d’afficher, dans l’ordre croissant, la liste des codes postaux des communes du Cantal :</h3>
+<div id="cell-19" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>SELECT codepostalFROM communesORDER BY codepostal</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Définitions
+<p>Nous voyons que les codes postaux sont répétés autant de fois qu’il y a de communes desservies par ce code postal.La requête suivante, avec la clause DISTINCT, permet de n’afficher qu’une fois chacun des codes postaux considérés :</p>
+<div id="cell-21" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>SELECT DISTINCT codepostalFROM communesORDER BY codepostal</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes." class="level3">
+<h3 class="anchored" data-anchor-id="les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes.">Les jointuresUne requête dans une base de donnée peut nécessiter de regrouper des données provenant de différentes tables.!!! info “Définition”Une requête combinant les données de plusieurs relations (tables) est appelée une <strong>jointure</strong>.!!!Poursuivons avec l’exemple de la base de données des établissements scolaires du Cantal qui comporte deux tables, dont on rappelle ci-dessous le schéma relationnel :* communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span>: TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://flallemand.fr/nsi/assets/images/BDD11.png" class="img-fluid">La requête suivante permet d’obtenir la table des noms d’établissements suivis du nom de leur commune. Il faut pour cela <strong>joindre</strong> les informations de la table “etablissements” (pour le nom de l’établissement) avec celles de la table “communes” (pour le nom de la commune). L’élément qui permet cette <strong>jointure</strong> est la <strong>clef étrangère</strong> “id_commune” de la table “etablissements” qui fait référence à la <strong>clef primaire</strong> “Codecommune” de la table “communes”.</h3>
+<div id="cell-23" class="cell" data-trusted="false" data-scrolled="true">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>SELECT etablissements.nom, communes.Nomdelacommune FROM etablissements JOIN communes ON etablissements.id_commune <span class="op">=</span> communes.Codecommune</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Taille</strong> : Le nombre total de nœuds de l’arbre.</li>
-<li><strong>Profondeur d’un nœud</strong> : Le nombre de nœuds sur le chemin de la racine à ce nœud (inclus).
-<ul>
-<li><em>Convention</em> : La profondeur de la racine est 1. (Certaines sources utilisent 0, attention aux conventions).</li>
-</ul></li>
-<li><strong>Hauteur de l’arbre</strong> : La profondeur maximale parmi tous les nœuds de l’arbre.
-<ul>
-<li><em>Convention</em> : Arbre vide = hauteur 0. Arbre réduit à la racine = hauteur 1.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Astuce</span>Exemple
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Considérons l’arbre ci-dessous :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="arbre.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="arbre.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
-</figure>
-</div>
-<ul>
-<li>La taille de cet arbre est égale à 7.</li>
-<li>La profondeur du nœud <strong>C</strong> est égale à 3, celle de <strong>X</strong> est égale à 4.</li>
-<li>La hauteur de cet arbre est égale à 4 : <strong>X</strong> est le nœud le plus profond.</li>
-</ul>
-</div>
+<p>!!! note “Remarque”Lorsqu’on effectue une jointure, plusieurs tables sont en jeu. Pour davantage de clarté, il est recommandé de préfixer chaque attribut par le nom de la table dont il provient. On utilise pour cela un point : “etablissements.nom” est l’attribut nommé “nom” de la relation “etablissements”.!!!Il est possible d’ajouter à la suite de la jointure une clause WHERE afin de ne sélectionner que quelques lignes de la table obtenue. La requête suivante renvoie la table de tous les collèges avec leur commune :</p>
+<div id="cell-25" class="cell" data-trusted="false" data-scrolled="true">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>SELECT etablissements.nom, communes.Nomdelacommune FROM etablissements JOIN communes ON etablissements.id_commune <span class="op">=</span> communes.CodecommuneWHERE etablissements.nom LIKE <span class="st">"Collège%"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
-<section id="arbres-binaires" class="level2">
-<h2 class="anchored" data-anchor-id="arbres-binaires">2. Arbres Binaires</h2>
-<section id="définition-1" class="level3">
-<h3 class="anchored" data-anchor-id="définition-1">2.1. Définition</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="requêtes-de-mise-à-jour-ajouter-une-entréepour-ajouter-une-entrée-nous-utilisons-la-clause-insert.supposons-par-exemple-quun-nouvel-établissement-soit-ouvert-à-labrousse-code-85-il-sagit-dun-lycée-hôtelier-public.-la-requête-suivante-permet-de-créer-cette-nouvelle-entrée.-attention-lordre-des-valeurs-données-doit-être-strictement-le-même-que-lordre-des-attributs-cités." class="level2">
+<h2 class="anchored" data-anchor-id="requêtes-de-mise-à-jour-ajouter-une-entréepour-ajouter-une-entrée-nous-utilisons-la-clause-insert.supposons-par-exemple-quun-nouvel-établissement-soit-ouvert-à-labrousse-code-85-il-sagit-dun-lycée-hôtelier-public.-la-requête-suivante-permet-de-créer-cette-nouvelle-entrée.-attention-lordre-des-valeurs-données-doit-être-strictement-le-même-que-lordre-des-attributs-cités.">2.2. Requêtes de mise à jour### Ajouter une entréePour ajouter une entrée, nous utilisons la clause INSERT.Supposons par exemple qu’un nouvel établissement soit ouvert à Labrousse (code 85): il s’agit d’un lycée hôtelier public. La requête suivante permet de créer cette nouvelle entrée. Attention, l’ordre des valeurs données doit être strictement le même que l’ordre des attributs cités.</h2>
+<div id="cell-27" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>INSERT INTO etablissements(code, nom, statut, id_commune, latitude, longitude)VALUES(<span class="st">"0159999Z"</span>, <span class="st">"Lycée hôtelier du Cantal"</span>, <span class="st">"Public"</span>, <span class="dv">85</span>, <span class="fl">44.8572222</span>, <span class="fl">2.5427778</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Définition
+<section id="modifier-une-entrée-existantepour-modifier-un-ou-plusieurs-attributs-dun-p-uplet-existant-on-utilise-la-clause-update.supposons-par-exemple-que-le-nouveau-lycée-soit-en-fait-un-lycée-privé-et-que-son-code-soit-0158888z" class="level3">
+<h3 class="anchored" data-anchor-id="modifier-une-entrée-existantepour-modifier-un-ou-plusieurs-attributs-dun-p-uplet-existant-on-utilise-la-clause-update.supposons-par-exemple-que-le-nouveau-lycée-soit-en-fait-un-lycée-privé-et-que-son-code-soit-0158888z">Modifier une entrée existantePour modifier un ou plusieurs attributs d’un p-uplet existant, on utilise la clause UPDATE.Supposons par exemple que le nouveau lycée soit en fait un lycée Privé et que son code soit “0158888Z” :</h3>
+<div id="cell-29" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>UPDATE etablissementsSET code<span class="op">=</span><span class="st">"0158888Z"</span>, statut<span class="op">=</span><span class="st">"Privé"</span>WHERE code<span class="op">=</span><span class="st">"0159999Z"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>La clause WHERE permet de spécifier le ou les p-uplets à modifier.### Supprimer une entréePour supprimer un p-uplet, on utilise la clause DELETE.Finalement, le projet de lycée hôtelier est abandonné :</p>
+<div id="cell-31" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>DELETE FROM etablissementsWHERE code<span class="op">=</span><span class="st">"0158888Z"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Un <strong>arbre binaire</strong> est un arbre dans lequel chaque nœud possède <strong>au plus deux fils</strong>. On distingue le fils <strong>gauche</strong> et le fils <strong>droit</strong>.</p>
-</div>
-</div>
-<p>L’arbre donné en exemple ci-dessus n’est pas un arbre binaire car le nœud <strong>D</strong> possède 3 fils.</p>
-<p>L’arbre ci-dessous est un arbre binaire :</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="arbre_bin.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="arbre_bin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
-</figure>
+<p>!!! danger “Attention !”La requête DELETE, sans clause WHERE, supprimera tous les p-uplets de la relation !!!!## 2.3. Quelques complémentsLe langage SQL propose aussi des <strong>fonctions d’agrégation</strong> permettant de faire quelques calculs à partir des données d’une table. En voici quelques exemples.### Calculer une sommePar exemple, la somme des populations de toutes les communes du Cantal :</p>
+<div id="cell-33" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>SELECT SUM(Populationtotale)FROM communes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="structure-récursive" class="level3">
-<h3 class="anchored" data-anchor-id="structure-récursive">2.2. Structure récursive</h3>
-<p>Un arbre binaire est une structure de données <strong>récursive</strong>. Un arbre binaire est :</p>
-<ul>
-<li>Soit un arbre vide (noté souvent <span class="math inline">\(\emptyset\)</span> ou <code>None</code>).</li>
-<li>Soit un nœud (la racine) associé à deux arbres binaires disjoints appelés <strong>sous-arbre gauche</strong> et <strong>sous-arbre droit</strong>.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="arbre_bin2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="arbre_bin2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Astuce</span>Exemple
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Pour l’arbre représenté ci-dessous, nous avons mis en évidence le sous-arbre gauche et le sous-arbre droit du nœud racine <strong>C</strong>.</p>
-<p>Le nœud <strong>Q</strong> admet comme sous-arbre gauche le nœud <strong>H</strong> et comme sous-arbre droit, l’arbre vide.</p>
-</div>
-</div>
-<p>Cette notion de sous arbre permet de mettre en évidence la <strong>structure récursive</strong> d’un arbre binaire : un arbre binaire est un arbre dans lequel chaque nœud possède un arbre fils gauche et un arbre fils droit qui sont tous deux des arbres binaires.</p>
-</section>
-<section id="types-darbres-binaires-particuliers" class="level3">
-<h3 class="anchored" data-anchor-id="types-darbres-binaires-particuliers">2.3. Types d’arbres binaires particuliers</h3>
-<p>Il est important de distinguer ces cas particuliers pour les calculs de complexité.</p>
-<ul>
-<li><strong>Arbre Filiforme (ou Dégénéré)</strong> : Chaque nœud n’a qu’un seul fils (sauf la feuille unique). L’arbre ressemble à une liste chaînée.
-<ul>
-<li>Sa hauteur <span class="math inline">\(h\)</span> est égale à sa taille <span class="math inline">\(n\)</span>.</li>
-</ul></li>
-<li><strong>Arbre Binaire Parfait</strong> (souvent appelé “Complet” par abus de langage) : Tous les niveaux sont remplis. Toutes les feuilles sont à la même profondeur.
-<ul>
-<li>C’est l’arbre le plus “tassé” possible.</li>
-</ul></li>
-<li><strong>Arbre Binaire Complet</strong> : Tous les niveaux sont remplis excepté éventuellement le dernier, qui est rempli de la gauche vers la droite.</li>
-</ul>
-</section>
-<section id="relation-entre-taille-et-hauteur" class="level3">
-<h3 class="anchored" data-anchor-id="relation-entre-taille-et-hauteur">2.4. Relation entre Taille et Hauteur</h3>
-<p>Soit un arbre binaire de taille <span class="math inline">\(n\)</span> et de hauteur <span class="math inline">\(h\)</span>.</p>
-<ol type="1">
-<li><p><strong>Cas le moins favorable (Arbre filiforme)</strong> : <span class="math display">\[h = n\]</span></p></li>
-<li><p><strong>Cas le plus favorable (Arbre parfait)</strong> : Dans un arbre parfait de hauteur <span class="math inline">\(h\)</span>, le nombre de nœuds est la somme des puissances de 2 : <span class="math display">\[n = 1 + 2 + 4 + ... + 2^{h-1} = \sum_{i=0}^{h-1} 2^i = 2^h - 1\]</span></p>
-<p>On a donc <span class="math inline">\(n = 2^h - 1\)</span>, ce qui équivaut à <span class="math inline">\(h = \log_2(n+1)\)</span>.</p></li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Encadrement de la hauteur
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Pour tout arbre binaire de taille <span class="math inline">\(n\)</span> et de hauteur <span class="math inline">\(h\)</span> : <span class="math display">\[ \log_2(n+1) \leqslant h \leqslant n \]</span></p>
-</div>
-</div>
-<p>Cette propriété est fondamentale : elle signifie que si un arbre est bien équilibré (proche d’un arbre parfait), sa hauteur est très petite par rapport à sa taille (logarithmique). Cela rendra les algorithmes de recherche très efficaces.</p>
-</section>
-</section>
-<section id="arbres-binaires-de-recherche-abr" class="level2">
-<h2 class="anchored" data-anchor-id="arbres-binaires-de-recherche-abr">3. Arbres Binaires de Recherche (ABR)</h2>
-<section id="définition-3" class="level3">
-<h3 class="anchored" data-anchor-id="définition-3">3.1. Définition</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Définition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Un <strong>Arbre Binaire de Recherche (ABR)</strong> est un arbre binaire dont les clés vérifient la propriété suivante pour tout nœud :</p>
-<ul>
-<li>Toutes les clés du <strong>sous-arbre gauche</strong> sont <strong>inférieures ou égales</strong> à la clé du nœud.</li>
-<li>Toutes les clés du <strong>sous-arbre droit</strong> sont <strong>supérieures</strong> à la clé du nœud.</li>
-</ul>
-</div>
-</div>
-<p><em>(Note : On suppose souvent que les clés sont distinctes, auquel cas les inégalités sont strictes).</em></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="ABR.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="ABR.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></a></p>
-</figure>
+<section id="calculer-une-moyennepar-exemple-la-population-moyenne-des-communes-du-cantal-dont-le-code-postal-est-15250-avg-average" class="level3">
+<h3 class="anchored" data-anchor-id="calculer-une-moyennepar-exemple-la-population-moyenne-des-communes-du-cantal-dont-le-code-postal-est-15250-avg-average">Calculer une moyennePar exemple, la population moyenne des communes du Cantal dont le code postal est 15250 (AVG = average):</h3>
+<div id="cell-35" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>SELECT AVG(Populationtotale)FROM communeswhere Codepostal<span class="op">=</span><span class="dv">15250</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="intérêt" class="level3">
-<h3 class="anchored" data-anchor-id="intérêt">3.2. Intérêt</h3>
-<p>La structure d’ABR permet d’effectuer des recherches très rapides, similaires à la <strong>recherche dichotomique</strong> dans un tableau trié. Si l’arbre est équilibré, la complexité de la recherche est en <span class="math inline">\(\mathcal{O}(\log_2 n)\)</span>.</p>
+<section id="calculer-un-minimum-ou-un-maximumles-fonctions-min-et-max-fonctionnent-de-la-même-façon.quel-est-le-nom-et-la-population-de-la-commune-du-cantal-la-moins-peuplée" class="level3">
+<h3 class="anchored" data-anchor-id="calculer-un-minimum-ou-un-maximumles-fonctions-min-et-max-fonctionnent-de-la-même-façon.quel-est-le-nom-et-la-population-de-la-commune-du-cantal-la-moins-peuplée">Calculer un minimum ou un maximumLes fonctions MIN et MAX fonctionnent de la même façon.Quel est le nom et la population de la commune du Cantal la moins peuplée ?</h3>
+<div id="cell-37" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>SELECT Nomdelacommune, PopulationtotaleFROM communesWHERE Populationtotale <span class="op">=</span> (SELECT MIN(Populationtotale) FROM communes)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>!!! note “Remarque”Ce dernier exemple est un peu plus compliqué que les précédents : on a en effet imbriqué deux requêtes l’une dans l’autre : on parle de requêts <strong>composées</strong>. La requête “SELECT MIN(Populationtotale) FROM communes” située entre parenthèses retourne la valeur minimale des populations de toutes les communes. On demande ensuite le nom de la ou des communes dont la population est cette valeur minimale. Prenez le temps de bien comprendre cet exemple.!!!### Compter des donnéesLa fonction COUNT permet de compter des données.Combien y a-t-il d’établissements scolaires dans le Cantal ?</p>
+<div id="cell-39" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>SELECT COUNT(<span class="op">*</span>)FROM etablissements</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Combien de communes possèdent le code postal 15250 ?</p>
+<div id="cell-41" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>SELECT COUNT(<span class="op">*</span>)FROM communesWHERE Codepostal<span class="op">=</span><span class="dv">15250</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Combien de noms d’établissements différents parmi les établissements scolaires ?</p>
+<div id="cell-43" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>SELECT COUNT(DISTINCT nom)FROM etablissements</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>À quelle question répond la requête suivante ?</p>
+<div id="cell-45" class="cell" data-trusted="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>SELECT COUNT(<span class="op">*</span>)FROM etablissements JOIN communes ON etablissements.id_commune<span class="op">=</span>communes.CodecommuneWHERE (etablissements.nom LIKE <span class="st">"Collège%"</span>) AND communes.Nomdelacommune<span class="op">=</span><span class="st">"AURILLAC"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>!!! success “Réponse”Combien y a-t-il de collèges à Aurillac ?!!!!!! example “Pour compléter …”* Excellentes vidéos sur Lumni : * <a href="http://www.lumni.fr/video/qu-est-ce-qu-une-base-de-donnees-relationnelle">Qu’est-ce qu’une base de données relationnelle ?</a> * <a href="http://www.lumni.fr/video/interrogation-d-une-base-de-donnees-relationnelle">Interrogation d’une base de données relationnelle</a>!!!</p>
 
 
 </section>
@@ -1697,18 +1474,6 @@ window.Quarto = {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../03-BDD/projet_BDD.html" class="pagination-link" aria-label="Mini projet SQL - The Mondial Database">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Mini projet SQL - The Mondial Database</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../04-arbres/arbres_exercices.html" class="pagination-link" aria-label="Exercices sur les arbres">
-        <span class="nav-page-text">Exercices sur les arbres</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1741,38 +1506,6 @@ window.Quarto = {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
