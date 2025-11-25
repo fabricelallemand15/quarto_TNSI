@@ -1,5 +1,5 @@
 ---
-title: TP - Manipulation d'arbres
+title: TP - Implémentations d'arbres
 lang: fr
 tbl-cap-location: bottom
 crossref: 
@@ -10,6 +10,6 @@ format:
     html: default
 ---
 
-## T.P. : Arbres binaires, quelques compléments utiles
+## T.P. : Arbres binaires, différentes implémentations
 
-Ce T.P. est à réaliser et à rendre dans [Capytale](https://capytale2.ac-paris.fr/web/c/15c9-991659){target="_blank"}.
+Ce T.P. est à réaliser et à rendre dans [Capytale](https://capytale2.ac-paris.fr/web/c/2354-8258064){target="_blank"}.

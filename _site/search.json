@@ -934,13 +934,13 @@
   {
     "objectID": "04-arbres/TParbres.html",
     "href": "04-arbres/TParbres.html",
-    "title": "TP - Manipulation d’arbres",
+    "title": "TP - Implémentations d’arbres",
     "section": "",
     "text": "Ce T.P. est à réaliser et à rendre dans Capytale.",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Ch. 5 - Arbres binaires",
-      "TP - Manipulation d'arbres"
+      "TP - Implémentations d'arbres"
     ]
   },
   {
@@ -3361,5 +3361,17 @@
     "title": "Spécialité NSI - Terminale",
     "section": "",
     "text": "Bienvenue !\nCe site est destiné à regrouper les cours et les exercices concernant l’enseignement de spécialité NSI de terminale du lycée Émile Duclaux d’Aurillac.\nLien vers l’ENT du lycée : https://cas.ent.auvergnerhonealpes.fr/login\nLien vers Capytale : https://capytale2.ac-paris.fr/web/c-auth/list\nLien vers le programme officiel : Programme officiel terminale NSI\n\n\n\nImage by storyset on Freepik"
+  },
+  {
+    "objectID": "04-arbres/TParbres.html#t.p.-arbres-binaires-différentes-implémentations",
+    "href": "04-arbres/TParbres.html#t.p.-arbres-binaires-différentes-implémentations",
+    "title": "TP - Implémentations d’arbres",
+    "section": "",
+    "text": "Ce T.P. est à réaliser et à rendre dans Capytale.",
+    "crumbs": [
+      "{{< fa house-chimney-window >}} Accueil",
+      "Ch. 5 - Arbres binaires",
+      "TP - Implémentations d'arbres"
+    ]
   }
 ]
