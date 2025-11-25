@@ -78,7 +78,7 @@ graph TD
     P --- C(5)
 ```
 
-4.  **Arbres généalogiques** (ascendants ou descendants).
+1.  **Arbres généalogiques** (ascendants ou descendants).
 
 ![](arbre_genea.png)
 

@@ -22,21 +22,30 @@ class Noeud:
     def __init__(self, etiquette, gauche=None, droit=None):
         """
         Crée un nouveau noeud.
-        :param etiquette: La valeur stockée dans le noeud.
-        :param gauche: Le sous-arbre gauche (instance de Noeud ou None).
-        :param droit: Le sous-arbre droit (instance de Noeud ou None).
+
+        Parameters
+        ----------
+        etiquette : Any
+            La valeur stockée dans le noeud.
+        gauche : Noeud, optional
+            Le sous-arbre gauche (default is None).
+        droit : Noeud, optional
+            Le sous-arbre droit (default is None).
         """
         self.etiquette = etiquette
         self.gauche = gauche
         self.droit = droit
 
     def est_feuille(self) -> bool:
-        """Renvoie True si le noeud est une feuille."""
-        return self.gauche is None and self.droit is None
+        """
+        Renvoie True si le noeud est une feuille.
 
-    def __repr__(self):
-        """Représentation textuelle pour le débogage."""
-        return f"Noeud({self.etiquette})"
+        Returns
+        -------
+        bool
+            True si le noeud n'a aucun fils, False sinon.
+        """
+        return self.gauche is None and self.droit is None
 ```
 
 ### Construction d'un arbre
@@ -73,6 +82,16 @@ Puisque l'arbre vide est représenté par `None`, nous ne pouvons pas utiliser d
 def taille(arbre) -> int:
     """
     Calcule la taille de l'arbre (nombre total de noeuds).
+
+    Parameters
+    ----------
+    arbre : Noeud
+        L'arbre dont on veut calculer la taille.
+
+    Returns
+    -------
+    int
+        Le nombre de noeuds de l'arbre.
     """
     if arbre is None:
         return 0
@@ -83,6 +102,16 @@ def hauteur(arbre) -> int:
     """
     Calcule la hauteur de l'arbre.
     Convention : Hauteur(vide) = 0, Hauteur(feuille) = 1.
+
+    Parameters
+    ----------
+    arbre : Noeud
+        L'arbre dont on veut calculer la hauteur.
+
+    Returns
+    -------
+    int
+        La hauteur de l'arbre.
     """
     if arbre is None:
         return 0
@@ -95,8 +124,19 @@ def hauteur(arbre) -> int:
 Pour visualiser l'arbre, nous pouvons utiliser une fonction récursive qui affiche l'arbre dans la console (tourné à 90°).
 
 ```python
-def affiche(arbre, niveau=0, prefixe="Racine: "):
-    """Affiche l'arbre dans la console de manière textuelle."""
+def affiche(arbre, niveau=0, prefixe="----"):
+    """
+    Affiche l'arbre dans la console de manière textuelle.
+
+    Parameters
+    ----------
+    arbre : Noeud
+        L'arbre à afficher.
+    niveau : int, optional
+        Le niveau de profondeur actuel (default is 0).
+    prefixe : str, optional
+        Le préfixe à afficher avant le noeud (default is "Racine: ").
+    """
     if arbre is None:
         return
     
@@ -104,7 +144,7 @@ def affiche(arbre, niveau=0, prefixe="Racine: "):
     affiche(arbre.droit, niveau + 1, " /-- ")
     
     # On affiche le noeud courant
-    print("    " * niveau + prefixe + str(self.etiquette))
+    print("    " * niveau + prefixe + str(arbre.etiquette))
     
     # On affiche le sous-arbre gauche
     affiche(arbre.gauche, niveau + 1, " \\-- ")
@@ -121,6 +161,18 @@ def insere_abr(arbre, valeur):
     """
     Insère une valeur dans un ABR et renvoie la nouvelle racine.
     Si l'arbre est vide, crée un nouveau noeud.
+
+    Parameters
+    ----------
+    arbre : Noeud
+        L'arbre dans lequel insérer la valeur.
+    valeur : Any
+        La valeur à insérer.
+
+    Returns
+    -------
+    Noeud
+        La racine de l'arbre après insertion.
     """
     if arbre is None:
         return Noeud(valeur)
@@ -143,18 +195,59 @@ abr = insere_abr(abr, 15)
 abr = insere_abr(abr, 2)
 ```
 
-### Recherche
+On obtient l'ABR suivant :
+
+```{mermaid}
+graph TD
+    10((10)) --> 5((5))
+    10((10)) --> 15((15))
+    5((5)) --> 2((2))
+    5((5)) --- invis1( )
+    style invis1 fill:none,stroke:none
+    linkStyle 3 stroke-width:0px,markerWidth 3 0,markerHeight 3 0
+```
+
+## 5. Bonus : visualisation avec Graphviz
 
 ```python
-def appartient_abr(arbre, valeur) -> bool:
-    """Renvoie True si la valeur est dans l'ABR."""
-    if arbre is None:
-        return False
-    
-    if valeur == arbre.etiquette:
-        return True
-    elif valeur < arbre.etiquette:
-        return appartient_abr(arbre.gauche, valeur)
-    else:
-        return appartient_abr(arbre.droit, valeur)
-```
+def visualise_arbre(arbre):
+    """
+    Visualise l'arbre en utilisant Graphviz.
+
+    Parameters
+    ----------
+    arbre : Noeud
+        L'arbre à visualiser.
+    """
+    def ajouter_noeud(g, noeud):
+        if noeud is not None:
+            g.node(str(id(noeud)), str(noeud.etiquette))
+            if noeud.gauche is not None:
+                g.edge(str(id(noeud)), str(id(noeud.gauche)))
+                ajouter_noeud(g, noeud.gauche)
+                if noeud.droit is None:
+                    #ajout d'un noeud fantôme pour aligner les branches
+                    fantome = Noeud("")
+                    g.node(str(id(fantome)), "", style="invis")
+                    g.edge(str(id(noeud)), str(id(fantome)), style="invis")
+            if noeud.droit is not None:
+                g.edge(str(id(noeud)), str(id(noeud.droit)))
+                ajouter_noeud(g, noeud.droit)
+                if noeud.gauche is None:
+                    #ajout d'un noeud fantôme pour aligner les branches
+                    fantome = Noeud("")
+                    g.node(str(id(fantome)), "", style="invis")
+                    g.edge(str(id(noeud)), str(id(fantome)), style="invis")
+
+    g = Digraph()
+    ajouter_noeud(g, arbre)
+    return g
+
+# Exemple d'utilisation
+arbre = insere_abr(None, 10)
+arbre = insere_abr(arbre, 5)
+arbre = insere_abr(arbre, 15)
+arbre = insere_abr(arbre, 2)
+g = visualise_arbre(arbre)
+g.render('arbre', format='png', view=True)
+``` 

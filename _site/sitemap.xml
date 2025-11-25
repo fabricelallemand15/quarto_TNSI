@@ -101,12 +101,16 @@
     <lastmod>2023-12-05T20:37:59.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/implementationArbres.html</loc>
-    <lastmod>2025-11-24T21:31:26.718Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/04-arbres/implementationArbres_bak.html</loc>
+    <lastmod>2024-12-15T15:32:28.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/04-arbres/arbres_exercices.html</loc>
+    <lastmod>2023-08-14T19:24:48.000Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/04-arbres/arbres_cours.html</loc>
-    <lastmod>2025-11-24T21:27:38.296Z</lastmod>
+    <lastmod>2025-11-25T11:53:43.234Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/03-BDD/TP2.html</loc>
@@ -125,104 +129,108 @@
     <lastmod>2025-10-29T05:02:04.145Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/listes_exercices.html</loc>
-    <lastmod>2023-10-02T11:31:18.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/interfaces_cours.html</loc>
-    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/index.html</loc>
-    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires.html</loc>
-    <lastmod>2023-03-07T19:03:34.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/projet_detecteur_langue.html</loc>
-    <lastmod>2024-11-07T08:56:50.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/files_cours.html</loc>
-    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_cours.html</loc>
-    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/TPPOOBataille.html</loc>
-    <lastmod>2023-08-14T19:17:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/recursivite_exercices.html</loc>
-    <lastmod>2025-09-14T12:57:15.290Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_exercices.html</loc>
-    <lastmod>2025-08-30T07:07:11.898Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_complements.html</loc>
-    <lastmod>2025-08-30T06:32:14.521Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/paradigmes_cours.html</loc>
-    <lastmod>2025-09-14T12:28:30.113Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/index.html</loc>
-    <lastmod>2023-08-14T19:16:31.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/paradigmes_exercices.html</loc>
-    <lastmod>2025-09-14T12:29:38.263Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_cours.html</loc>
-    <lastmod>2025-08-29T18:01:39.525Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/recursivite_cours.html</loc>
-    <lastmod>2025-09-14T12:23:54.444Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/TPHanoi.html</loc>
-    <lastmod>2024-11-29T21:37:05.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/piles_cours.html</loc>
-    <lastmod>2023-08-14T17:31:30.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_exercices.html</loc>
-    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/POO/index.html</loc>
-    <lastmod>2023-02-14T19:53:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaire.html</loc>
-    <lastmod>2023-10-16T11:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires_CORR.html</loc>
-    <lastmod>2023-03-07T19:03:34.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/interface/index.html</loc>
-    <lastmod>2023-02-14T19:47:48.000Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/03-BDD/index.html</loc>
+    <lastmod>2023-08-14T19:24:48.000Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/02-structures/listes_cours.html</loc>
     <lastmod>2023-08-14T17:31:58.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/index.html</loc>
-    <lastmod>2023-08-14T19:24:48.000Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/02-structures/interface/index.html</loc>
+    <lastmod>2023-02-14T19:47:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires_CORR.html</loc>
+    <lastmod>2023-03-07T19:03:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaire.html</loc>
+    <lastmod>2023-10-16T11:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/POO/index.html</loc>
+    <lastmod>2023-02-14T19:53:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_exercices.html</loc>
+    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/piles_cours.html</loc>
+    <lastmod>2023-08-14T17:31:30.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/TPHanoi.html</loc>
+    <lastmod>2024-11-29T21:37:05.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/recursivite_cours.html</loc>
+    <lastmod>2025-09-14T12:23:54.444Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_cours.html</loc>
+    <lastmod>2025-08-29T18:01:39.525Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/paradigmes_exercices.html</loc>
+    <lastmod>2025-09-14T12:29:38.263Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/index.html</loc>
+    <lastmod>2023-08-14T19:16:31.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/paradigmes_cours.html</loc>
+    <lastmod>2025-09-14T12:28:30.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_complements.html</loc>
+    <lastmod>2025-08-30T06:32:14.521Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_exercices.html</loc>
+    <lastmod>2025-08-30T07:07:11.898Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/recursivite_exercices.html</loc>
+    <lastmod>2025-09-14T12:57:15.290Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/01-langagesProgr/TPPOOBataille.html</loc>
+    <lastmod>2023-08-14T19:17:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_cours.html</loc>
+    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/files_cours.html</loc>
+    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/projet_detecteur_langue.html</loc>
+    <lastmod>2024-11-07T08:56:50.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires.html</loc>
+    <lastmod>2023-03-07T19:03:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/index.html</loc>
+    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/interfaces_cours.html</loc>
+    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/listes_exercices.html</loc>
+    <lastmod>2023-10-02T11:31:18.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/03-BDD/cours_SQL.html</loc>
+    <lastmod>2023-03-13T10:58:49.000Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/03-BDD/partie1.html</loc>
@@ -241,8 +249,12 @@
     <lastmod>2023-08-14T19:24:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/arbres_exercices.html</loc>
+    <loc>https://tnsi.sitelf.fr/04-arbres/arbres_cours_bak.html</loc>
     <lastmod>2023-08-14T19:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/04-arbres/implementationArbres.html</loc>
+    <lastmod>2025-11-25T11:52:21.089Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/04-arbres/index.html</loc>
@@ -343,17 +355,5 @@
   <url>
     <loc>https://tnsi.sitelf.fr/index.html</loc>
     <lastmod>2025-09-03T19:51:47.936Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/arbres_cours_bak.html</loc>
-    <lastmod>2023-08-14T19:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/cours_SQL.html</loc>
-    <lastmod>2023-03-13T10:58:49.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/implementationArbres_bak.html</loc>
-    <lastmod>2024-12-15T15:32:28.000Z</lastmod>
   </url>
 </urlset>
