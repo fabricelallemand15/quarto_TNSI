@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Algorithmes sur les arbres - Exercices – NSI - Terminale</title>
+<title>Algorithmes sur les arbres – NSI - Terminale</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../08-graphes/index_graphes.html" rel="next">
-<link href="../06-algo/algo_arbres_cours.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -52,6 +85,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-420fec3d6c8e0c84a781766562f663c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -279,6 +315,35 @@ cookieconsent.run({
   <!-- End Matomo Code -->
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 
@@ -334,7 +399,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres binaires</a></li><li class="breadcrumb-item"><a href="../06-algo/algo_arbres_exos.html">Algorithmes sur les arbres - Exercices</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Algorithmes sur les arbres</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -552,13 +617,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Ch. 5 - Arbres binaires</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../04-arbres/arbres_cours.html" class="sidebar-item-text sidebar-link">
@@ -603,7 +668,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../06-algo/algo_arbres_exos.html" class="sidebar-item-text sidebar-link active">
+  <a href="../06-algo/algo_arbres_exos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Algorithmes sur les arbres - Exercices</span></a>
   </div>
 </li>
@@ -875,7 +940,20 @@ cookieconsent.run({
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#exercices-tirés-des-annales" id="toc-exercices-tirés-des-annales" class="nav-link active" data-scroll-target="#exercices-tirés-des-annales">Exercices tirés des annales</a></li>
+  <li><a href="#calculer-la-taille-et-la-hauteur-dun-arbre-binaire" id="toc-calculer-la-taille-et-la-hauteur-dun-arbre-binaire" class="nav-link active" data-scroll-target="#calculer-la-taille-et-la-hauteur-dun-arbre-binaire">1. Calculer la taille et la hauteur d’un arbre binaire</a>
+  <ul class="collapse">
+  <li><a href="#taille-dun-arbre" id="toc-taille-dun-arbre" class="nav-link" data-scroll-target="#taille-dun-arbre">Taille d’un arbre</a></li>
+  <li><a href="#hauteur-dun-arbre" id="toc-hauteur-dun-arbre" class="nav-link" data-scroll-target="#hauteur-dun-arbre">Hauteur d’un arbre</a></li>
+  </ul></li>
+  <li><a href="#parcourir-un-arbre" id="toc-parcourir-un-arbre" class="nav-link" data-scroll-target="#parcourir-un-arbre">2. Parcourir un arbre</a>
+  <ul class="collapse">
+  <li><a href="#parcours-en-profondeur-avec-ordre-préfixe" id="toc-parcours-en-profondeur-avec-ordre-préfixe" class="nav-link" data-scroll-target="#parcours-en-profondeur-avec-ordre-préfixe">2.1. Parcours en profondeur avec ordre préfixe</a></li>
+  <li><a href="#parcours-en-profondeur-avec-ordre-infixe" id="toc-parcours-en-profondeur-avec-ordre-infixe" class="nav-link" data-scroll-target="#parcours-en-profondeur-avec-ordre-infixe">2.1. Parcours en profondeur avec ordre infixe</a></li>
+  <li><a href="#parcours-en-profondeur-avec-ordre-suffixe" id="toc-parcours-en-profondeur-avec-ordre-suffixe" class="nav-link" data-scroll-target="#parcours-en-profondeur-avec-ordre-suffixe">2.3. Parcours en profondeur avec ordre suffixe</a></li>
+  <li><a href="#parcours-en-largeur-dabord" id="toc-parcours-en-largeur-dabord" class="nav-link" data-scroll-target="#parcours-en-largeur-dabord">2.4. Parcours en largeur d’abord</a></li>
+  </ul></li>
+  <li><a href="#insertion-dune-clef-dans-un-arbre-de-recherche" id="toc-insertion-dune-clef-dans-un-arbre-de-recherche" class="nav-link" data-scroll-target="#insertion-dune-clef-dans-un-arbre-de-recherche">3. Insertion d’une clef dans un arbre de recherche</a></li>
+  <li><a href="#recherche-dune-clef-dans-un-arbre-de-recherche" id="toc-recherche-dune-clef-dans-un-arbre-de-recherche" class="nav-link" data-scroll-target="#recherche-dune-clef-dans-un-arbre-de-recherche">4. Recherche d’une clef dans un arbre de recherche</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
@@ -883,9 +961,9 @@ cookieconsent.run({
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04-arbres/arbres_cours.html">Ch. 5 - Arbres binaires</a></li><li class="breadcrumb-item"><a href="../06-algo/algo_arbres_exos.html">Algorithmes sur les arbres - Exercices</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Algorithmes sur les arbres - Exercices</h1>
+<h1 class="title">Algorithmes sur les arbres</h1>
 </div>
 
 
@@ -902,13 +980,510 @@ cookieconsent.run({
 </header>
 
 
-<section id="exercices-tirés-des-annales" class="level2">
-<h2 class="anchored" data-anchor-id="exercices-tirés-des-annales">Exercices tirés des annales</h2>
+<section id="calculer-la-taille-et-la-hauteur-dun-arbre-binaire" class="level2">
+<h2 class="anchored" data-anchor-id="calculer-la-taille-et-la-hauteur-dun-arbre-binaire">1. Calculer la taille et la hauteur d’un arbre binaire</h2>
+<p>Nous avons déjà rencontré ces algorithmes, sous la forme de programmes Python, dans le chapitre sur les arbres binaires. On s’intéresse ici à leur étude algorithmique.</p>
+<p>D’une façon générale, la structure d’arbre binaire est particulièrement adaptée à la mise en œuvre d’algorithmes récursifs. Dans la suite tous les arbres sont binaires.</p>
+<section id="taille-dun-arbre" class="level3">
+<h3 class="anchored" data-anchor-id="taille-dun-arbre">Taille d’un arbre</h3>
+<p>La taille d’un arbre est son nombre total de nœuds.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Algorithme de calcul de la taille d’un arbre
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 60%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> taille(<em>arbre</em> : arbre binaire) : entier<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> est vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>retourner</strong> 0</span><br> <span style="margin-left: 20px;"><strong>sinon</strong></span><br> <span style="margin-left: 40px;"><strong>retourner</strong> 1 + taille(sous-arbre gauche de <em>arbre</em>) + taille(sous-arbre droit de <em>arbre</em>)</span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+</section>
+<section id="hauteur-dun-arbre" class="level3">
+<h3 class="anchored" data-anchor-id="hauteur-dun-arbre">Hauteur d’un arbre</h3>
+<p>La hauteur d’un arbre est la profondeur de son nœud le plus profond. Par convention, si l’arbre est vide, sa hauteur vaut 0, si l’arbre n’est composé que d’un nœud racine, sa hauteur vaut 1.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Algorithme de calcul de la hauteur d’un arbre
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> hauteur(<em>arbre</em> : arbre binaire) : entier<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> est vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>retourner</strong> 0</span><br> <span style="margin-left: 20px;"><strong>sinon</strong></span><br> <span style="margin-left: 40px;"><strong>retourner</strong> 1 + max(hauteur(sous-arbre gauche de <em>arbre</em>), hauteur(sous-arbre droit de <em>arbre</em>))</span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="parcourir-un-arbre" class="level2">
+<h2 class="anchored" data-anchor-id="parcourir-un-arbre">2. Parcourir un arbre</h2>
+<p><strong>Remarque</strong> : en anglais les parcours en profondeur sont appelés <em>depth-first search</em> (DFS) et les parcours en largeur sont appelés <em>breadth-first search</em> (BFS).</p>
+<p>Tous ces algorithmes de parcours ont en commun de visiter tous les sommets d’un arbre, mais pas dans le même ordre. La structure récursive de la structure de données <em>arbre binaire</em> permet de définir très naturellement ces algorithmes de façon récursive. Chacun des algorithmes de parcours sont définis sous forme de fonctions qui comportent deux appels récursifs et qui visitent à chaque fois un seul sommet. Si on note <span class="math inline">\(n\)</span> la taille de l’arbre (le nombre de sommets), on aura donc pour tous ces algorithmes une complexité en <span class="math inline">\(\mathcal{O}(n)\)</span>.</p>
+<section id="parcours-en-profondeur-avec-ordre-préfixe" class="level3">
+<h3 class="anchored" data-anchor-id="parcours-en-profondeur-avec-ordre-préfixe">2.1. Parcours en profondeur avec ordre préfixe</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Définition : ordre <strong>préfixe</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On appelle parcours <strong>préfixe</strong> un parcours dans lequel chaque noeud est visité, <strong>puis</strong> chacun de ses fils :</p>
 <ul>
-<li><a href="../annales/2021_Sujet_0.pdf" target="_blank">Sujet zéro 2021 - Exercice 3</a></li>
-<li><a href="../annales/2021_AmeriqueDuNord_1.pdf" target="_blank">Amérique du Nord 2021 sujet 1 - Exercice 4</a></li>
-<li><a href="../annales/2021_CentresEtrangers_1.pdf" target="_blank">Centres étrangers 2021 sujet 1 - Exercice 3</a></li>
-<li><a href="../annales/2021_Metropole_CL_2.pdf" target="_blank">Métropole Candidats Libres 2021 sujet 2 - Exercice 3</a></li>
+<li>on visite la racine ;</li>
+<li>ensuite on visite récursivement le sous-arbre gauche ;</li>
+<li>enfin on visite récursivement le sous-arbre droit.</li>
+</ul>
+<p>Le parcours est dans l’ordre <strong>noeud - gauche - droit</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Exemple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="prefixe.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Ordre préfixe"><img src="prefixe.png" class="img-fluid figure-img" alt="Ordre préfixe"></a></p>
+<figcaption>Ordre préfixe</figcaption>
+</figure>
+</div>
+<p>Ordre de parcours des sommets : C-Z-U-R-G-Q-H.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Algorithme de parcours préfixe en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> parcoursPrefixe(<em>arbre</em> : arbre binaire)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>afficher</strong> racine de <em>arbre</em></span><br> <span style="margin-left: 40px;">parcoursPrefixe(sous-arbre gauche de <em>arbre</em>)</span><br> <span style="margin-left: 40px;">parcoursPrefixe(sous-arbre droit de <em>arbre</em>)</span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+<p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Version itérative avec retour liste</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreGauche())</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreDroit())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreGauche(), liste)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        parcoursPrefixe(arbre.getSousArbreDroit(), liste)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursPrefixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Liste pour stocker les valeurs des noeuds</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parcours de l'arbre en utilisant une pile</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    pile <span class="op">=</span> [arbre]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> pile <span class="op">!=</span> []:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        noeud <span class="op">=</span> pile.pop()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        valeurs.append(noeud.getRacine())</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># On ajoute les enfants dans la pile dans l'ordre inverse pour</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># obtenir le parcours en profondeur préfixe</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreDroit().estVide():</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreDroit())</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreGauche().estVide():</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreGauche())</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Renvoie la liste des valeurs des noeuds parcourus</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>Dérouler à la main, en mode papier-crayon, l’exécution de ces trois programmes est un très bon exercice !</p>
+</section>
+<section id="parcours-en-profondeur-avec-ordre-infixe" class="level3">
+<h3 class="anchored" data-anchor-id="parcours-en-profondeur-avec-ordre-infixe">2.1. Parcours en profondeur avec ordre infixe</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Définition : ordre infixe
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On appelle parcours <strong>infixe</strong> un parcours dans lequel chaque noeud est visité <strong>entre</strong> les noeuds de son sous arbre gauche et ceux de son sous arbre droit :</p>
+<ul>
+<li>on visite récursivement le sous-arbre gauche ;</li>
+<li>ensuite on visite la racine ;</li>
+<li>enfin on visite récursivement le sous-arbre droit.</li>
+</ul>
+<p>Le parcours est dans l’ordre <strong>gauche - noeud - droit</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Exemple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="infixe.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Ordre infixe"><img src="infixe.drawio.png" class="img-fluid figure-img" alt="Ordre infixe"></a></p>
+<figcaption>Ordre infixe</figcaption>
+</figure>
+</div>
+<p>Ordre de parcours des sommets : U-Z-R-G-C-H-Q.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Algorithme de parcours infixe en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> parcoursInfixe(<em>arbre</em> : arbre binaire)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;">parcoursInfixe(sous-arbre gauche de <em>arbre</em>)</span><br> <span style="margin-left: 40px;"><strong>afficher</strong> racine de <em>arbre</em></span><br> <span style="margin-left: 40px;">parcoursInfixe(sous-arbre droit de <em>arbre</em>)</span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+<p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Version itérative avec retour liste</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreGauche())</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreDroit())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreGauche(), liste)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        parcoursInfixe(arbre.getSousArbreDroit(), liste)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursInfixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Liste pour stocker les valeurs des noeuds</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parcours de l'arbre en utilisant une pile</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    pile <span class="op">=</span> []</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    noeud <span class="op">=</span> arbre</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> noeud.estVide() <span class="kw">or</span> pile <span class="op">!=</span> []:</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Si l'on a atteint une feuille, on récupère la valeur et on revient en arrière</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> noeud.estVide():</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> pile.pop()</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            valeurs.append(noeud.getRacine())</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> noeud.getSousArbreDroit()</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Sinon, on parcourt le sous-arbre gauche et on enregistre l'état actuel</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="co"># pour pouvoir revenir plus tard</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> noeud.getSousArbreGauche()</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>Dérouler à la main, en mode papier-crayon, l’exécution de ces trois programmes est un très bon exercice !</p>
+</section>
+<section id="parcours-en-profondeur-avec-ordre-suffixe" class="level3">
+<h3 class="anchored" data-anchor-id="parcours-en-profondeur-avec-ordre-suffixe">2.3. Parcours en profondeur avec ordre suffixe</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Définition : ordre suffixe
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On appelle parcours <strong>suffixe</strong> (ou <strong>postfixe</strong>) un parcours dans lequel chaque noeud est visité <strong>après</strong> les noeuds de son sous arbre gauche et ceux de son sous arbre droit :</p>
+<ul>
+<li>on visite récursivement le sous-arbre gauche ;</li>
+<li>ensuite on visite récursivement le sous-arbre droit ;</li>
+<li>ensuite on visite la racine.</li>
+</ul>
+<p>Le parcours est dans l’ordre <strong>gauche - droit - noeud</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Exemple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="suffixe.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Ordre suffixe"><img src="suffixe.drawio.png" class="img-fluid figure-img" alt="Ordre suffixe"></a></p>
+<figcaption>Ordre suffixe</figcaption>
+</figure>
+</div>
+<p>Ordre de parcours des sommets : U-G-R-Z-H-Q-C.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Algorithme de parcours suffixe en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> parcoursSuffixe(<em>arbre</em> : arbre binaire)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;">parcoursSuffixe(sous-arbre gauche de <em>arbre</em>)</span><br> <span style="margin-left: 40px;">parcoursSuffixe(sous-arbre droit de <em>arbre</em>)</span><br> <span style="margin-left: 40px;"><strong>afficher</strong> racine de <em>arbre</em></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Voici deux arbres binaires. Pour chacun d’entre eux, indiquer l’ordre de parcours des sommets pour chacun de types de parcours en profondeur définis ci-dessus.</p>
+<p><a href="arbre_parcours_exos.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="arbre_parcours_exos.drawio.png" class="img-fluid"></a></p>
+</div>
+</div>
+<p><strong>Implémentation en Python</strong> : Trois versions sont proposées ci-dessous. La première version est <strong>récursive</strong> et reprend à l’identique la structure de l’algorithme en pseudo-code. La seconde est également récursive et a été légèrement modifiée pour retourner les sommets visités sous forme d’une liste, ce qui peut être utile pour un traitement ultérieur. La troisième version, plus difficile, est <strong>itérative</strong> et retourne également les sommets visités sous forme d’une liste. Elle utilise une structure de <strong>pile</strong> (sous forme de liste).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Version récursive avec simple affichage</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Version récursive avec retour liste</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Version itérative avec retour liste</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreGauche())</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreDroit())</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arbre.getRacine())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire, liste <span class="op">=</span> []):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreGauche(), liste)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        parcoursSuffixe(arbre.getSousArbreDroit(), liste)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        liste.append(arbre.getRacine())</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> liste</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursSuffixe(arbre: ArbreBinaire) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si l'arbre est vide, on arrête le parcours</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre.estVide():</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Liste pour stocker les valeurs des noeuds</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parcours de l'arbre en utilisant une pile</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    pile <span class="op">=</span> [arbre]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> pile <span class="op">!=</span> []:</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># On dépile et on note l'élément en haut de la pile</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        noeud <span class="op">=</span> pile.pop()</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        valeurs.append(noeud.getRacine())</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># On empile les sous arbres gauche et droits s'ils existent</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Droit sera traité avant Gauche car on parcours à l'envers</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreGauche().estVide():</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreGauche())</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreDroit().estVide():</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>            pile.append(noeud.getSousArbreDroit())</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On remet à l'endroit</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    valeurs.reverse()</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>Dérouler à la main, en mode papier-crayon, l’exécution de ces trois programmes est un très bon exercice !</p>
+</section>
+<section id="parcours-en-largeur-dabord" class="level3">
+<h3 class="anchored" data-anchor-id="parcours-en-largeur-dabord">2.4. Parcours en largeur d’abord</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Définition : parcours en largeur d’abord
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On appelle <strong>parcours en largeur d’abord</strong> un parcours dans lequel les noeuds sont visités <strong>par ordre de niveaux croissant</strong>, de <strong>gauche à droite</strong>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Exemple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="largeur.drawio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Parcours en largeur"><img src="largeur.drawio.png" class="img-fluid figure-img" alt="Parcours en largeur"></a></p>
+<figcaption>Parcours en largeur</figcaption>
+</figure>
+</div>
+<p>Ordre de parcours des sommets : C-Z-Q-U-R-H-G.</p>
+</div>
+</div>
+<p>Le parcours en largeur est simple à comprendre visuellement, mais il est plus difficile à traduire par un algorithme, car il n’exploite pas la définition récursive des arbres binaires.</p>
+<p>Nous utiliserons une <strong>file</strong> pour effectuer le parcours en largeur d’un arbre binaire.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Algorithme de parcours en largeur en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> parcoursLargeur(arbre : arbre binaire)<br> <span style="margin-left: 20px;">créer une liste de résultats vide</span><br> <span style="margin-left: 20px;"><strong>si</strong> arbre n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;">créer une file vide</span><br> <span style="margin-left: 40px;">ajouter arbre à la file</span><br> <span style="margin-left: 40px;"><strong>tant que</strong> la file n’est pas vide <strong>faire</strong></span><br> <span style="margin-left: 60px;">noeud <span class="math inline">\(\leftarrow\)</span> défiler le premier élément de la file</span><br> <span style="margin-left: 60px;">ajouter l’étiquette de noeud à la liste de résultats</span><br> <span style="margin-left: 60px;"><strong>si</strong> noeud a un fils gauche <strong>alors</strong></span><br> <span style="margin-left: 80px;">ajouter le fils gauche de noeud à la file</span><br> <span style="margin-left: 60px;"><strong>fin si</strong></span><br> <span style="margin-left: 60px;"><strong>si</strong> noeud a un fils droit <strong>alors</strong></span><br> <span style="margin-left: 80px;">ajouter le fils droit de noeud à la file</span><br> <span style="margin-left: 60px;"><strong>fin si</strong></span><br> <span style="margin-left: 40px;"><strong>fin tant que</strong></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;">retourner la liste de résultats</span><br></p>
+</div>
+</div>
+</div>
+<p>Traduction en Python :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parcoursLargeur(arbre: ArbreBinaire()) <span class="op">-&gt;</span> <span class="bu">list</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    valeurs <span class="op">=</span> []</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> arbre.estVide():</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span> <span class="op">=</span> []</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">file</span>.append(arbre)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="bu">file</span> <span class="op">!=</span> []:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            noeud <span class="op">=</span> <span class="bu">file</span>.pop(<span class="dv">0</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>            valeurs.append(noeud.getRacine())</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreGauche().estVide():</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                <span class="bu">file</span>.append(noeud.getSousArbreGauche())</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> noeud.getSousArbreDroit().estVide():</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                <span class="bu">file</span>.append(noeud.getSousArbreDroit())</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeurs</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Une fois encore, dérouler à la main, en mode papier-crayon, l’exécution de ce programme est un très bon exercice !</p>
+</section>
+</section>
+<section id="insertion-dune-clef-dans-un-arbre-de-recherche" class="level2">
+<h2 class="anchored" data-anchor-id="insertion-dune-clef-dans-un-arbre-de-recherche">3. Insertion d’une clef dans un arbre de recherche</h2>
+<p>On s’intéresse maintenant aux arbres binaires de recherche.</p>
+<p>Nous avons déjà utilisé cette structure de données dans la séquence 4 sur les arbres. Notre module <code>structures.py</code> définit la structure d’arbre binaire de recherche par une classe <code>ABR</code> qui possède une <strong>méthode</strong> <code>insere</code> qui insère une clef dans l’arbre en préservant la structure ABR.</p>
+<p>Voici en pseudo-code l’algorithme utilisé par cette méthode. L’insertion d’une clef va se faire au niveau d’une feuille, donc au bas de l’arbre. Il n’est pourtant pas nécessaire de descendre manuellement dans l’arbre jusqu’au bon endroit car nous exploitons la structure à la fois récursive et ordonnée d’un ABR : il suffit de distinguer dans lequel des deux sous-arbres gauche et droit doit se trouver la future clef, et d’appeler récursivement la fonction d’insertion dans le sous-arbre en question.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Algorithme d’insertion d’une clef dans un ABR en pseudo-code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
+<p><strong>fonction</strong> insere(<em>arbre</em> : ABR, <em>valeur</em>)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> est vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>définir</strong> la racine de <em>arbre</em> avec <em>valeur</em> comme clef</span><br> <span style="margin-left: 40px;"><strong>retourner</strong> <em>arbre</em></span><br> <span style="margin-left: 20px;"><strong>sinon</strong></span><br> <span style="margin-left: 40px;"><em>clef</em> <span class="math inline">\(\leftarrow\)</span> clef de la racine de <em>arbre</em></span><br> <span style="margin-left: 40px;"><strong>si</strong> <em>valeur</em> est inférieure ou égale à <em>clef</em></span><br> <span style="margin-left: 60px;">sous-arbre gauche de <em>arbre</em> <span class="math inline">\(\leftarrow\)</span> insere(sous-arbre gauche de <em>arbre</em>, valeur)</span><br> <span style="margin-left: 40px;"><strong>sinon</strong></span><br> <span style="margin-left: 60px;">sous-arbre droit de <em>arbre</em> <span class="math inline">\(\leftarrow\)</span> insere(sous-arbre droit de <em>arbre</em>, valeur)</span><br> <span style="margin-left: 40px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;"><strong>retourner</strong> <em>arbre</em></span><br></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Exercice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On considère l’ABR représenté ci-dessous. Dérouler à la main l’exécution de l’algorithme ci-dessus pour insérer la valeur 3 dans cet arbre, puis la valeur 11.</p>
+<p><a href="ABR_algo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="ABR_algo.png" class="img-fluid"></a></p>
+</div>
+</div>
+</section>
+<section id="recherche-dune-clef-dans-un-arbre-de-recherche" class="level2">
+<h2 class="anchored" data-anchor-id="recherche-dune-clef-dans-un-arbre-de-recherche">4. Recherche d’une clef dans un arbre de recherche</h2>
+<p>Notre module <code>structure.py</code>, dans sa version définitive, comporte une fonction <code>appartient_ABR</code> qui teste l’appartenance d’un élément donné en argument à un ABR donné en argument et renvoie un booléen.</p>
+<p>Voici le code Python de cette fonction.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> appartientABR(element, arbre) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""teste l'appartenance d'un élément à un ABR"""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> arbre <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> element <span class="op">==</span> arbre.getRacine():</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> arbre.getRacine() <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> element <span class="op">&lt;</span> arbre.getRacine():</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> appartientABR(element, arbre.getSousArbreGauche())</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> appartientABR(element, arbre.getSousArbreDroit())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cette fonction exploite à la fois la structure récursive et la structure ordonnée d’un ABR afin de n’effectuer qu’<strong>un appel récursif</strong> à chaque passage.</p>
+<p><strong>Déterminons une évaluation de sa complexité temporelle</strong>, dans le pire des cas, <strong>dans le cas particulier d’un arbre équilibré</strong>.</p>
+<p>On note <span class="math inline">\(n\)</span> la taille de l’arbre, c’est-à-dire son nombre de noeuds. Au départ, nous avons donc <span class="math inline">\(n\)</span> noeuds à explorer. Après chaque examen d’un noeud, le nombre de noeuds restant à explorer est divisé par 2.</p>
+<p><a href="rechercheABR.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="rechercheABR.png" class="img-fluid"></a></p>
+<p>Dans le <strong>pire des cas</strong>, il faudra parcourir tous les étages de l’arbre pour trouver la clef (qui est alors une feuille) ou pour constater qu’elle n’est pas dans l’arbre. On va donc parcourir au total <span class="math inline">\(h\)</span> noeuds, où <span class="math inline">\(h\)</span> est la hauteur de l’arbre.</p>
+<p>Or, nous avons vu que pour un arbre complet, nous avons la relation : <span class="math inline">\(n=2^h-1\)</span> équivalente à <span class="math inline">\(2^h=n+1\)</span> et donc <span class="math inline">\(h=\log_2(n+1)\)</span>.</p>
+<p>La complexité de la recherche d’une valeur dans un ABR est donc en <span class="math inline">\(\mathcal{O}(log_2(n))\)</span>. Il s’agit d’une complexité très performante : par exemple, pour un arbre de taille 10000, 14 étapes suffiront.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>À retenir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La complexité temporelle de la recherche d’une valeur dans un ABR équilibré est de l’ordre de <span class="math inline">\(\log_2(n)\)</span>.</p>
+</div>
+</div>
+<p><strong>Remarque</strong> :</p>
+<ul>
+<li>Cet algorithme est à rapprocher de l’algorithme de <strong>recherche dichotomique</strong> d’une valeur dans un tableau trié, étudié en première.</li>
 </ul>
 
 
@@ -1330,18 +1905,6 @@ cookieconsent.run({
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../06-algo/algo_arbres_cours.html" class="pagination-link" aria-label="Chap. 5 : Arbres - Cours (partie 3)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chap. 5 : Arbres - Cours (partie 3)</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../08-graphes/index_graphes.html" class="pagination-link" aria-label="Programme">
-        <span class="nav-page-text">Programme</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1374,6 +1937,38 @@ cookieconsent.run({
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
