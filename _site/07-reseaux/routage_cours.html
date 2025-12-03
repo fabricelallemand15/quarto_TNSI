@@ -1753,6 +1753,68 @@ window.Quarto = {
     </div>
   </div>
 </footer>
+<!-- snow.html -->
+<style>
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    color: #fff; /* Couleur blanche */
+    text-shadow: 0 0 5px #000; /* Ombre pour visibilité sur fond clair */
+    user-select: none;
+    pointer-events: none;
+    cursor: default;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-10vh) translateX(0);
+    }
+    100% {
+      transform: translateY(105vh) translateX(20px);
+    }
+  }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const symbol = "❄"; // Vous pouvez changer pour ❅ ou ❆
+  const flakeCount = 50; // Nombre max de flocons en même temps
+
+  function createFlake() {
+    const flake = document.createElement('div');
+    flake.innerHTML = symbol;
+    flake.className = 'snowflake';
+    
+    // Position horizontale aléatoire
+    flake.style.left = Math.random() * 100 + 'vw';
+    
+    // Taille aléatoire
+    const size = Math.random() * 1.5 + 0.5 + 'em';
+    flake.style.fontSize = size;
+    
+    // Durée de chute aléatoire (entre 3s et 8s)
+    const duration = Math.random() * 5 + 3 + 's';
+    flake.style.animationDuration = duration;
+    
+    // Opacité aléatoire
+    flake.style.opacity = Math.random() * 0.7 + 0.3;
+
+    document.body.appendChild(flake);
+
+    // Supprimer le flocon une fois l'animation finie
+    setTimeout(() => {
+      flake.remove();
+    }, parseFloat(duration) * 1000);
+  }
+
+  // Créer des flocons en continu
+  setInterval(createFlake, 200); 
+});
+</script>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

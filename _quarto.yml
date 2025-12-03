@@ -147,3 +147,5 @@ format:
     code-block-bg: true
     include-in-header: 
       file: matomo.html
+    include-after-body: 
+      file: snow.html
