@@ -77,16 +77,16 @@
     <lastmod>2023-08-14T19:24:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/diviser_pour_regner_exos.html</loc>
+    <loc>https://tnsi.sitelf.fr/06-algo/exos_cycles_chemins.html</loc>
+    <lastmod>2023-04-25T21:08:38.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/06-algo/diviser_pour_regner_cours.html</loc>
     <lastmod>2023-08-14T19:24:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_exos.html</loc>
-    <lastmod>2023-08-14T19:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_cours.html</loc>
-    <lastmod>2025-11-27T18:13:19.836Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_cours_bak.html</loc>
+    <lastmod>2025-11-27T18:09:11.416Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/05-archiSE/processus_TP.html</loc>
@@ -129,8 +129,20 @@
     <lastmod>2025-10-29T06:01:10.059Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/cours_SQL.html</loc>
-    <lastmod>2023-03-13T10:58:49.000Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/03-BDD/exercices.html</loc>
+    <lastmod>2025-10-29T05:02:04.145Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires_CORR.html</loc>
+    <lastmod>2023-03-07T19:03:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaire.html</loc>
+    <lastmod>2023-10-16T11:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/POO/index.html</loc>
+    <lastmod>2023-02-14T19:53:24.000Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/02-structures/listes_exercices.html</loc>
@@ -145,19 +157,7 @@
     <lastmod>2023-08-14T17:24:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires.html</loc>
-    <lastmod>2023-03-07T19:03:34.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/projet_detecteur_langue.html</loc>
-    <lastmod>2024-11-07T08:56:50.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/files_cours.html</loc>
-    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_cours.html</loc>
+    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_exercices.html</loc>
     <lastmod>2023-08-14T17:24:48.000Z</lastmod>
   </url>
   <url>
@@ -201,24 +201,12 @@
     <lastmod>2024-11-29T21:37:05.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/piles_cours.html</loc>
-    <lastmod>2023-08-14T17:31:30.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_exercices.html</loc>
+    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_cours.html</loc>
     <lastmod>2023-08-14T17:24:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/POO/index.html</loc>
-    <lastmod>2023-02-14T19:53:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaire.html</loc>
-    <lastmod>2023-10-16T11:24:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires_CORR.html</loc>
-    <lastmod>2023-03-07T19:03:34.000Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/02-structures/files_cours.html</loc>
+    <lastmod>2023-08-14T17:24:48.000Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/02-structures/interface/index.html</loc>
@@ -229,12 +217,24 @@
     <lastmod>2023-08-14T17:31:58.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/index.html</loc>
-    <lastmod>2023-08-14T19:24:48.000Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/02-structures/piles_cours.html</loc>
+    <lastmod>2023-08-14T17:31:30.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/exercices.html</loc>
-    <lastmod>2025-10-29T05:02:04.145Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/02-structures/projet_detecteur_langue.html</loc>
+    <lastmod>2024-11-07T08:56:50.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires.html</loc>
+    <lastmod>2023-03-07T19:03:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/03-BDD/cours_SQL.html</loc>
+    <lastmod>2023-03-13T10:58:49.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/03-BDD/index.html</loc>
+    <lastmod>2023-08-14T19:24:48.000Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/03-BDD/partie2.html</loc>
@@ -273,20 +273,20 @@
     <lastmod>2023-08-14T19:24:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/exos_graphes_fiche1.html</loc>
-    <lastmod>2023-04-25T20:27:32.000Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_cours.html</loc>
+    <lastmod>2025-11-27T18:13:19.836Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_cours_bak.html</loc>
-    <lastmod>2025-11-27T18:09:11.416Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/diviser_pour_regner_cours.html</loc>
+    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_exos.html</loc>
     <lastmod>2023-08-14T19:24:48.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/exos_cycles_chemins.html</loc>
-    <lastmod>2023-04-25T21:08:38.000Z</lastmod>
+    <loc>https://tnsi.sitelf.fr/06-algo/diviser_pour_regner_exos.html</loc>
+    <lastmod>2023-08-14T19:24:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.sitelf.fr/06-algo/exos_graphes_fiche1.html</loc>
+    <lastmod>2023-04-25T20:27:32.000Z</lastmod>
   </url>
   <url>
     <loc>https://tnsi.sitelf.fr/06-algo/rappels.html</loc>
