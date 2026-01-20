@@ -111,6 +111,7 @@ website:
       - section: "Baccalauréat"
         contents: 
           - bac/index.qmd
+          - bac/ep.qmd
           - bac/annales.qmd
       - section: "Grand Oral"
         contents: 

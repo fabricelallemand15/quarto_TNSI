@@ -1,5 +1,5 @@
 ---
-title: Épreuve de NSI au bac en Terminale
+title: Épreuve écrite
 lang: fr
 tbl-cap-location: bottom
 crossref: 
@@ -16,14 +16,12 @@ format:
 
 ## Nature de l'épreuve de NSI au bac en Terminale
 
-D'après le [Bulletin Officiel n°36 du 30 septembre 2022](https://www.education.gouv.fr/bo/22/Hebdo36/MENE2226770N.htm){ target=_blank} :
+À partir de la session 2026, l'épreuve de spécialité NSI comprend :
 
-* **Durée** : 3 heures 30 + 1 heure
-* **Coefficient** : 16
-* **Format** : L'épreuve terminale obligatoire de spécialité est composée de deux parties : 
+*   **Une épreuve écrite** de 3h30, notée sur 20, coefficient 0,75.
+*   **Une épreuve pratique** d'environ 1h, notée sur 20, coefficient 0,25.
 
-    * une partie écrite, notée sur 20 et comptant pour 75 % de la note finale ;
-    * une partie pratique, notée sur 20 et comptant pour 25 % de la note finale.s
+La note globale de l'enseignement de spécialité NSI est ramenée sur 20 points (coefficient 16).
 
 **Partie écrite de l'épreuve de NSI au bac en terminale**
 
@@ -34,29 +32,5 @@ D'après le [Bulletin Officiel n°36 du 30 septembre 2022](https://www.education
 
 ### Points du programme évaluables lors de l'épreuve écrite
 
-La totalité du programme de NSI de terminale est évaluée lors de l'épreuve écrite.
+La totalité du programme de NSI de terminale et de première est évaluée lors de l'épreuve écrite.
 
-## Partie pratique de l'épreuve de NSI au bac en terminale
-
-* **Durée** : 1 heure
-* **Modalités** : La partie pratique consiste en la résolution de deux exercices sur ordinateur, chacun étant noté sur 10 points.
-    
-    Le candidat est évalué sur la base d'un dialogue avec un professeur-examinateur.
-    
-    Un examinateur évalue au maximum quatre élèves. L'examinateur ne peut pas évaluer un élève qu'il a eu en classe durant l'année en cours.
-    
-    L'évaluation de cette partie se déroule en fin de troisième trimestre. 
-    
-    * **Premier exercice**
-
-        Le premier exercice consiste à programmer un algorithme figurant explicitement au programme, ne présentant pas de difficulté particulière, dont on fournit une spécification.
-
-        Il s'agit donc de restituer un algorithme rencontré et travaillé à plusieurs reprises en cours de formation.
-        
-        Le sujet peut proposer un jeu de test avec les réponses attendues pour permettre au candidat de vérifier son travail.
-
-    * **Deuxième exercice**
-
-        Pour le second exercice, un programme est fourni au candidat.
-        
-        Cet exercice ne demande pas l'écriture complète d'un programme, mais permet de valider des compétences de programmation suivant des modalités variées : le candidat doit, par exemple, compléter un programme « à trous » afin de répondre à une spécification donnée, ou encore compléter un programme pour le documenter, ou encore compléter un programme en ajoutant des assertions, etc.

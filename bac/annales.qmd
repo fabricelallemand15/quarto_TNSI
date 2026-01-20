@@ -12,55 +12,94 @@ format:
 
 # Annales des Épreuves Écrites
 
-## 2024
-- [Centres Étrangers J1](2024/24-NSIJ1G1.pdf)
-- [Centres Étrangers J2](2024/24-NSIJ2G1.pdf)
-- [Amérique du Nord J1](2024/24-NSIJ1AN1.pdf)
-- [Amérique du Nord J2](2024/24-NSIJ2AN1.pdf)
-- [Sujet 0 - version A](2024/bac_nsi_2024_sujet0a.pdf)
-- [Sujet 0 - version B](2024/bac_nsi_2024_sujet0b.pdf)
+## Session 2025
 
-## 2023
-- [Liban J2](2023/2023_Liban_J2.pdf)
-- [Liban J1](2023/2023_Liban_J1.pdf)
-- [Métropole J2](2023/2023_Metropole_J2.pdf)
-- [Métropole J1](2023/2023_Metropole_J1.pdf)
-- [Centres Étrangers J2](2023/2023_Centres_Etrangers_J2.pdf), [corrigé](2023_CE_J2_corrige.qmd).
-- [Centres Étrangers J1](2023/2023_Centres_Etrangers_J1.pdf), [Corrigé](2023_CE_J1_corrige.qmd).
-- [Polynésie J2](2023/2023_Polynesie_J2.pdf)
-- [Polynésie J1](2023/2023_Polynesie_J1.pdf)
-- [Sujet 0 - version A](2023/2023-sujet_0-a.pdf)
-- [Sujet 0 - version B](2023/2023-sujet_0-b.pdf)
+| Sujet | Contenu | Corrigés |
+| :--- | :--- | :---: |
+| **Amérique Nord - Sujet 1** <br> [25-NSIJ1AN1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1AN1.pdf) | **Ex 1** (6 pts) : Arbres binaires, récursivité, POO <br> **Ex 2** (6 pts) : POO, récursivité, algorithmes <br> **Ex 3** (8 pts) : BDD, Graphes, Tris, algo. Gloutons et récursivité | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1AN1-corr.pdf) |
+| **Amérique Nord - Sujet 2A** <br> [25-NSIJ2AN1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2AN1.pdf) | **Ex 1** (6 pts) : tableaux, dictionnaires, arbres binaires, Python, récursivité <br> **Ex 2** (6 pts) : gestion des bugs, algo, structures de données, POO <br> **Ex 3** (8 pts) : BDD, Python, récursivité, parcours de graphes | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2AN1-corr.pdf) |
+| **Amérique Nord - Sujet 2B** <br> [25-NSIPE2.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIPE2.pdf) | **Ex 1** (6 pts) : Python, programmation dynamique <br> **Ex 2** (6 pts) : arbres binaires, Huffman <br> **Ex 3** (8 pts) : POO, graphes, BDD | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIPE2-corr.pdf) |
+| **Asie Sujet 1** <br> [25-NSIJ1JA1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1JA1.pdf) | **Ex 1** (6 pts) : décidabilité, algo, Python <br> **Ex 2** (6 pts) : arbres, Huffman <br> **Ex 3** (8 pts) : dictionnaires, tables, sécurisation, Python | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1JA1-corr.pdf) |
+| **Asie Sujet 2** <br> [25-NSIJ2JA1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2JA1.pdf) | **Ex 1** (6 pts) : POO, algo <br> **Ex 2** (6 pts) : Python, processus <br> **Ex 3** (8 pts) : Python, POO, BDD, SQL, arbres binaires | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2JA1-corr.pdf) |
+| **Centres Étrangers G1 - Sujet 1** <br> [25-NSIJ1G11.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1G11.pdf) | **Ex 1** (6 pts) : graphes, POO <br> **Ex 2** (6 pts) : algo, récursivité, files <br> **Ex 3** (8 pts) : listes, dictionnaires, ABR, BDD | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1G11-corr.pdf) |
+| **Centres Étrangers G1 - Sujet 2** <br> [25-NSIJ2G11.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2G11.pdf) | **Ex 1** (6 pts) : BDD, SQL <br> **Ex 2** (6 pts) : listes, dictionnaires, fonctions, récursivité <br> **Ex 3** (8 pts) : graphes, POO, récursivité | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2G11-corr.pdf) |
+| **Métropole Sujet 1** <br> [25-NSIJ1ME1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1ME1.pdf) | **Ex 1** (6 pts) : BDD, SQL <br> **Ex 2** (6 pts) : algo, structures de données, processus <br> **Ex 3** (8 pts) : archi (réseau), ABR, Python | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1ME1-corr.pdf) |
+| **Métropole Sujet 2** <br> [25-NSIJ2ME1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2ME1.pdf) | **Ex 1** (6 pts) : arbres binaires, Python <br> **Ex 2** (6 pts) : BDD, SQL, programmation <br> **Ex 3** (8 pts) : Python, sécurisation, réseaux | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2ME1-corr.pdf) |
+| **Polynésie Sujet 1** <br> [25-NSIJ1PO1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1PO1.pdf) | **Ex 1** (6 pts) : protocoles réseaux, algo, POO <br> **Ex 2** (6 pts) : Python, récursivité <br> **Ex 3** (8 pts) : Python, BDD, SQL, OS, sécurisation | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1PO1-corr.pdf) |
+| **Polynésie Sujet 2** <br> [25-NSIJ2PO1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2PO1.pdf) | **Ex 1** (6 pts) : POO, algo, Python <br> **Ex 2** (6 pts) : Python, POO, BDD, SQL <br> **Ex 3** (8 pts) : tableaux, dictionnaires, graphes, piles, files, POO | - |
+| **Métropole Sept. Sujet 1** <br> [25-NSIJ1ME3.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1ME3.pdf) | **Ex 1** (6 pts) : programmation, réseaux, routage <br> **Ex 2** (6 pts) : algo, listes, prog dynamique <br> **Ex 3** (8 pts) : SQL, Python, recherche textuelle | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1ME3-corr.pdf) |
+| **Métropole Sept. Sujet 2** <br> [25-NSIJ2ME3.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2ME3.pdf) | **Ex 1** (6 pts) : Python, cryptographie <br> **Ex 2** (6 pts) : OS, programmation, POO <br> **Ex 3** (8 pts) : BDD, graphes, Python | [Corrigé](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2ME3-corr.pdf) |
+| **Asie Pacifique** <br> [25-NSIPE4.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIPE4.pdf) | **Ex 1** (6 pts) : BDD, SQL <br> **Ex 2** (6 pts) : réseaux, routage, graphes, programmation <br> **Ex 3** (8 pts) : tableaux, bugs, listes, piles, POO | - |
+| **Amérique Sud Sujet 1** <br> [25-NSIJ1AS1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ1AS1.pdf) | **Ex 1** (6 pts) : BDD, SQL, arbres binaires <br> **Ex 2** (6 pts) : OS, processus, structures linéaires, Python, POO <br> **Ex 3** (8 pts) : OS, réseaux, Python | - |
+| **Amérique Sud Sujet 2** <br> [25-NSIJ2AS1.pdf](https://www.math93.com/images/pdf/NSI/2025/25-NSIJ2AS1.pdf) | **Ex 1** (6 pts) : BDD, SQL, Python, listes <br> **Ex 2** (6 pts) : pile, POO, algo <br> **Ex 3** (8 pts) : Python, graphes, réseaux | - |
 
-## 2022
+## Session 2024
 
-- [Nouvelle-Calédonie J1](2022/2022_Nouvelle-Caledonie_J1.pdf)
-- [Nouvelle-Calédonie J2](2022/2022_Nouvelle-Caledonie_J2.pdf)
-- [Amérique du Nord J1](2022/2022_AmeriqueDuNord_2.pdf)
-- [Amérique du Nord J2](2022/2022_AmeriqueDuNord_2.pdf)
-- [Amérique du Sud J1](2022/2022_Amerique_Sud_J1.pdf)
-- [Amérique du Sud J2](2022/2022_Amerique_Sud_J2.pdf)
-- [Asie J1](2022/2022_Asie_1.pdf.pdf)
-- [Asie J2](2022/2022_Asie_2.pdf)
-- [Centres Étrangers J2](2022/2022_CentresEtrangers_2.pdf)
-- [Centres Étrangers J1](2022/2022_CentresEtrangers_1.pdf)
-- [La Réunion J2](2022/2022_Mayotte_Liban_2.pdf)
-- [La Réunion J1](2022/2022_Mayotte_Liban_1.pdf)
-- [Métropole J2](2022/2022_Metropole_Jour2.pdf)
-- [Métropole J1](2022/2022_Metropole_Jour1.pdf)
-- [Métropole Septembre](2022/2022_Metropole_Septembre.pdf)
-- [Polynésie](2022/2022_Polynesie_Jour1.pdf)
+| Sujet | Contenu | Corrigés |
+| :--- | :--- | :---: |
+| **Sujet 0 - version A** <br> [bac_nsi_2024_sujet0a.pdf](2024/bac_nsi_2024_sujet0a.pdf) | **Ex 1** (6 pts) : Réseau, architecture, routeurs, protocoles <br> **Ex 2** (6 pts) : Algorithmique, dictionnaires, listes <br> **Ex 3** (8 pts) : Graphes, BDD, SQL | [Corrigé](https://www.math93.com/images/pdf/NSI/bac_nsi_2024_sujet0a_corrige.pdf) |
+| **Sujet 0 - version B** <br> [bac_nsi_2024_sujet0b.pdf](2024/bac_nsi_2024_sujet0b.pdf) | **Ex 1** (6 pts) : Récursivité, listes, prog dynamique <br> **Ex 2** (6 pts) : UNIX, SE, Piles et Files, processus <br> **Ex 3** (8 pts) : Dictionnaires, POO, BDD, SQL | [Corrigé](https://www.math93.com/images/pdf/NSI/bac_nsi_2024_sujet0b_corrige.pdf) |
+| **Amérique du Nord J1** <br> [24-NSIJ1AN1.pdf](2024/24-NSIJ1AN1.pdf) | **Ex 1** (6 pts) : POO, File, Ordonnancement, Interblocage <br> **Ex 2** (6 pts) : Graphes <br> **Ex 3** (8 pts) : Python, BDD, SQL | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1AN1-corr.pdf) |
+| **Amérique du Nord J2** <br> [24-NSIJ2AN1.pdf](2024/24-NSIJ2AN1.pdf) | **Ex 1** (6 pts) : Algo de Tri, récursivité <br> **Ex 2** (6 pts) : SQL, BDD <br> **Ex 3** (8 pts) : POO, structures de données, réseaux | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2AN1-corr.pdf) |
+| **Centres Étrangers J1** <br> [24-NSIJ1G1.pdf](2024/24-NSIJ1G1.pdf) | **Ex 1** (6 pts) : Programmation dynamique, Graphes, réseaux <br> **Ex 2** (6 pts) : Réseaux, protocoles de routage <br> **Ex 3** (8 pts) : POO, BDD, SQL | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1G1-corr.pdf) |
+| **Centres Étrangers J2** <br> [24-NSIJ2G1.pdf](2024/24-NSIJ2G1.pdf) | **Ex 1** (6 pts) : Python, POO, récursivité <br> **Ex 2** (6 pts) : POO, récursivité, arbres binaires, SE <br> **Ex 3** (8 pts) : codage binaire, BDD, SQL | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2G1-corr.pdf) |
+| **Asie Sujet 1** <br> [24-NSIJ1JA1.pdf](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1JA1.pdf) | **Ex 1** (6 pts) : Python, POO, algo <br> **Ex 2** (6 pts) : Graphes, piles, algo des graphes <br> **Ex 3** (8 pts) : Python, POO, BDD, SQL | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1JA1-corr.pdf) |
+| **Asie Sujet 2** <br> [24-NSIJ2JA1.pdf](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2JA1.pdf) | **Ex 1** (6 pts) : Python, diviser pour régner <br> **Ex 2** (6 pts) : POO, structures linéaires <br> **Ex 3** (8 pts) : BDD, SQL, Python | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2JA1-corr.pdf) |
+| **Métropole Sujet 1** <br> [24-NSIJ1ME1.pdf](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1ME1.pdf) | **Ex 1** (6 pts) : POO, graphes <br> **Ex 2** (6 pts) : Routage, sécurité, BDD <br> **Ex 3** (8 pts) : POO, ABR, récursivité | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1ME1-corr.pdf) |
+| **Métropole Sujet 2** <br> [24-NSIJ2ME1.pdf](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2ME1.pdf) | **Ex 1** (6 pts) : BDD, SQL, sécurisation <br> **Ex 2** (6 pts) : POO, tris, algo gloutons, récursivité <br> **Ex 3** (8 pts) : POO, graphes, dictionnaires | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2ME1-corr.pdf) |
+| **Polynésie Sujet 1** <br> [24-NSIJ1PO1.pdf](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1PO1.pdf) | **Ex 1** (6 pts) : Graphes, protocoles réseau <br> **Ex 2** (6 pts) : Récursivité <br> **Ex 3** (8 pts) : Python, BDD, SQL | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1PO1-corr.pdf) |
+| **Polynésie Sujet 2** <br> [24-NSIJ2PO1.pdf](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2PO1.pdf) | **Ex 1** (6 pts) : File, Pile, graphes <br> **Ex 2** (6 pts) : ABR, POO, récursivité <br> **Ex 3** (8 pts) : Réseaux, BDD, SQL, algo | - |
+| **Métropole Sept. Sujet 1** <br> [24-NSIJ1ME3.pdf](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1ME3.pdf) | **Ex 1** (4 pts) : Python, BDD, SQL <br> **Ex 2** (3 pts) : Réseaux, routage, graphes <br> **Ex 3** (5 pts) : Numération, Pile, POO | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ1ME3-corr.pdf) |
+| **Métropole Sept. Sujet 2** <br> [24-NSIJ2ME3.pdf](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2ME3.pdf) | **Ex 1** (4 pts) : Python, décidabilité <br> **Ex 2** (3 pts) : Python, POO, tests, pile <br> **Ex 3** (5 pts) : Réseaux, BDD, SQL | [Corrigé](https://www.math93.com/images/pdf/NSI/2024/24-NSIJ2ME3-corr.pdf) |
 
-## 2021
+## Session 2023
 
-- [Amérique du Nord](2021/2021_AmeriqueDuNord_1.pdf)
-- [Centres Étrangers 1](2021/2021_CentresEtrangers_1.pdf)
-- [Centres Étrangers 2](2021/2021_CentresEtrangers_2.pdf)
-- [Métropole 1](2021/2021_Metropole_1.pdf)
-- [Métropole 2](2021/2021_Metropole_2.pdf)
-- [Métropole Candidats Libres 1](2021/2021_Metropole_CL_1.pdf)
-- [Métropole Candidats Libres 2](2021/2021_Metropole_CL_2.pdf)
-- [Polynésie](2021/2021_Polynesie_2.pdf)
-- [Métropole Septembre 1](2021/2021_Metropole_Septembre_1.pdf)
-- [Métropole Septembre 2](2021/2021_Metropole_Septembre_2.pdf)
-- [Sujet 0](2021/2021_Sujet_0.pdf)
+| Sujet | Contenu | Corrigés |
+| :--- | :--- | :---: |
+| **Sujet 0 - version A** <br> [2023-sujet_0-a.pdf](2023/2023-sujet_0-a.pdf) | **Ex 1** (3 pts) : BDD, types construits <br> **Ex 2** (3 pts) : Architecture, réseaux, OS <br> **Ex 3** (6 pts) : ABR, POO | [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIZERO-A-corr.pdf) |
+| **Sujet 0 - version B** <br> [2023-sujet_0-b.pdf](2023/2023-sujet_0-b.pdf) | **Ex 1** (4 pts) : Linux, tables, BDD <br> **Ex 2** (4 pts) : Récursivité <br> **Ex 3** (4 pts) : ABR, POO | [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIZERO-B-corr.pdf) |
+| **Centres Étrangers J1** <br> [2023_Centres_Etrangers_J1.pdf](2023/2023_Centres_Etrangers_J1.pdf) | **Ex 1** (4 pts) : BDD, SQL <br> **Ex 2** (4 pts) : Réseaux, routage <br> **Ex 3** (4 pts) : Files | [Corrigé local](2023_CE_J1_corrige.qmd) <br> [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIJ1G11-corr.pdf) |
+| **Centres Étrangers J2** <br> [2023_Centres_Etrangers_J2.pdf](2023/2023_Centres_Etrangers_J2.pdf) | **Ex 1** (4 pts) : Adressage IP, routage <br> **Ex 2** (4 pts) : BDD, SQL <br> **Ex 3** (4 pts) : Python, chaînes, ABR, parcours | [Corrigé local](2023_CE_J2_corrige.qmd) <br> [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIJ2G11-corr.pdf) |
+| **Métropole J1** <br> [2023_Metropole_J1.pdf](2023/2023_Metropole_J1.pdf) | **Ex 1** (3 pts) : BDD, SQL <br> **Ex 2** (3 pts) : Réseaux, routage <br> **Ex 3** (6 pts) : POO, algorithmique | [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIJ1ME1-corr.pdf) |
+| **Métropole J2** <br> [2023_Metropole_J2.pdf](2023/2023_Metropole_J2.pdf) | **Ex 1** (3 pts) : Protocoles réseau <br> **Ex 2** (3 pts) : BDD, SQL <br> **Ex 3** (6 pts) : Arbres, files, PO | [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIJ2ME1-corr.pdf) |
+| **Liban J1** <br> [2023_Liban_J1.pdf](2023/2023_Liban_J1.pdf) | **Ex 1** (3 pts) : Algorithmique, récursivité <br> **Ex 2** (5 pts) : BDD, réseaux <br> **Ex 3** (4 pts) : Piles, arbres, algorithmique | [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIJ1LI1-corr.pdf) |
+| **Liban J2** <br> [2023_Liban_J2.pdf](2023/2023_Liban_J2.pdf) | **Ex 1** (4 pts) : BDD <br> **Ex 2** (3 pts) : Réseaux, Python, Tri fusion <br> **Ex 3** (5 pts) : Arbres, algorithmique | [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIJ2LI1-corr.pdf) |
+| **Polynésie J1** <br> [2023_Polynesie_J1.pdf](2023/2023_Polynesie_J1.pdf) | **Ex 1** (4 pts) : BDD, SQL <br> **Ex 2** (4 pts) : Processus, POO <br> **Ex 3** (4 pts) : POO, diviser pour régner | [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIJ1PO1-corr.pdf) |
+| **Polynésie J2** <br> [2023_Polynesie_J2.pdf](2023/2023_Polynesie_J2.pdf) | **Ex 1** (4 pts) : Arbres, POO, récursivité <br> **Ex 2** (4 pts) : BDD, SQL <br> **Ex 3** (4 pts) : Architecture, processus, ordonnancement | [Corrigé math93](https://www.math93.com/images/pdf/NSI/2023/23-NSIJ2PO1-corr.pdf) |
+
+## Session 2022
+
+| Sujet | Contenu | Corrigés |
+| :--- | :--- | :---: |
+| **Nouvelle-Calédonie J1** <br> [2022_Nouvelle-Caledonie_J1.pdf](2022/2022_Nouvelle-Caledonie_J1.pdf) | **Ex 1** (BDD) : requêtes SQL <br> **Ex 2** (Architecture) : protocoles, SE <br> **Ex 3** (Algo) : CSV, Python <br> **Ex 4** (Arbres) : programmation <br> **Ex 5** (POO) : Python | - |
+| **Nouvelle-Calédonie J2** <br> [2022_Nouvelle-Caledonie_J2.pdf](2022/2022_Nouvelle-Caledonie_J2.pdf) | **Ex 1** (POO) : Python <br> **Ex 2** (Arbres) : algo, Python <br> **Ex 3** (BDD) : SQL, relationnel <br> **Ex 4** (Réseaux) : architecture, protocoles <br> **Ex 5** (Architecture) : routage | - |
+| **Amérique du Nord J1** <br> [2022_AmeriqueDuNord_1.pdf](2022/2022_AmeriqueDuNord_2.pdf) | **Ex 1** (BDD) : Vacances autrement <br> **Ex 2** (Réseaux) : protocoles, routage <br> **Ex 3** (Arbres) : ABR, algo <br> **Ex 4** (Récursif) : chaines, tableaux <br> **Ex 5** (Files) : tableaux, algo | - |
+| **Amérique du Nord J2** <br> [2022_AmeriqueDuNord_2.pdf](2022/2022_AmeriqueDuNord_2.pdf) | **Ex 1** (POO) : listes, ABR <br> **Ex 2** (SE) : processus <br> **Ex 3** (BDD) : cinéma <br> **Ex 4** (Arbres) : algo <br> **Ex 5** (Algo) : files, tableaux | - |
+| **Amérique du Sud J1** <br> [2022_Amerique_Sud_J1.pdf](2022/2022_Amerique_Sud_J1.pdf) | **Ex 1** (BDD) : maternité <br> **Ex 2** (Tri) : algorithmes <br> **Ex 3** (Arbres) : binaires <br> **Ex 4** (SE) : processus <br> **Ex 5** (Réseaux) : protocoles | - |
+| **Amérique du Sud J2** <br> [2022_Amerique_Sud_J2.pdf](2022/2022_Amerique_Sud_J2.pdf) | **Ex 1** (Algo) : complexité, plus proche voisin <br> **Ex 2** (Réseaux) : routage <br> **Ex 3** (BDD) : vélos <br> **Ex 4** (Récursif) : diviser pour régner <br> **Ex 5** (Arbres) : POO | - |
+| **Asie J1** <br> [2022_Asie_1.pdf](2022/2022_Asie_1.pdf.pdf) | **Ex 1** (Invariant) : chaînes, complexité <br> **Ex 2** (BDD) : réservation <br> **Ex 3** (SE) : Linux <br> **Ex 4** (POO) : Python <br> **Ex 5** (Algo) : Python | - |
+| **Asie J2** <br> [2022_Asie_2.pdf](2022/2022_Asie_2.pdf) | **Ex 1** (SE) : Linux <br> **Ex 2** (Arbres) : ABR <br> **Ex 3** (Algo) : jeu de la vie <br> **Ex 4** (BDD) : tennis <br> **Ex 5** (Récursif) : bugs, exécution | - |
+| **Centres Étrangers J1** <br> [2022_CentresEtrangers_1.pdf](2022/2022_CentresEtrangers_1.pdf) | **Ex 1** (Algo) : dictionnaires, listes <br> **Ex 2** (POO) : files, Python <br> **Ex 3** (Algo) : dictionnaires <br> **Ex 4** (BDD) : météo <br> **Ex 5** (Réseaux) : routage | - |
+| **Centres Étrangers J2** <br> [2022_CentresEtrangers_2.pdf](2022/2022_CentresEtrangers_2.pdf) | **Ex 1** (Récursif) : Python <br> **Ex 2** (Algo) : dictionnaires <br> **Ex 3** (BDD) : enseignants <br> **Ex 4** (POO) : Python <br> **Ex 5** (Réseaux) : SE, architecture | - |
+| **La Réunion J1** <br> [2022_Mayotte_Liban_1.pdf](2022/2022_Mayotte_Liban_1.pdf) | **Ex 1** (Algo) : listes, piles, files <br> **Ex 2** (POO) : Python <br> **Ex 3** (BDD) : QCM <br> **Ex 4** (Arbres) : algo <br> **Ex 5** (Réseaux) : routage | - |
+| **La Réunion J2** <br> [2022_Mayotte_Liban_2.pdf](2022/2022_Mayotte_Liban_2.pdf) | **Ex 1** (Algo) : piles <br> **Ex 2** (BDD) : hôtel <br> **Ex 3** (Binaire) : SE, entiers <br> **Ex 4** (Arbres) : ABR <br> **Ex 5** (Algo) : TAKAZU | - |
+| **Métropole J1** <br> [2022_Metropole_Jour1.pdf](2022/2022_Metropole_Jour1.pdf) | **Ex 1** (Algo) : HTML, files, piles <br> **Ex 2** (BDD) : cinéma <br> **Ex 3** (Réseaux) : binaire, routage <br> **Ex 4** (Arbres) : récursivité <br> **Ex 5** (POO) : Python | - |
+| **Métropole J2** <br> [2022_Metropole_Jour2.pdf](2022/2022_Metropole_Jour2.pdf) | **Ex 1** (Arbres) : ABR, POO <br> **Ex 2** (Piles) : structures <br> **Ex 3** (Réseaux) : routage <br> **Ex 4** (BDD) : musique <br> **Ex 5** (POO) : diviser pour régner | - |
+| **Métropole Septembre** <br> [2022_Metropole_Septembre.pdf](2022/2022_Metropole_Septembre.pdf) | **Ex 1** (Arbres) : ABR <br> **Ex 2** (Récursif) : itération, classes <br> **Ex 3** (BDD) : satellite <br> **Ex 4** (Réseaux) : SE, processus <br> **Ex 5** (Algo) : files | - |
+| **Polynésie** <br> [2022_Polynesie_Jour1.pdf](2022/2022_Polynesie_Jour1.pdf) | **Ex 1** (Récursif) : Python <br> **Ex 2** (Architecture) : booléens, ordonnancement <br> **Ex 3** (BDD) : site web <br> **Ex 4** (Algo) : piles <br> **Ex 5** (Arbres) : algo | - |
+
+## Session 2021
+
+| Sujet | Contenu | Corrigés |
+| :--- | :--- | :---: |
+| **Sujet 0** <br> [2021_Sujet_0.pdf](2021/2021_Sujet_0.pdf) | **Ex 1** : piles, Python <br> **Ex 2** : récursivité, tableau <br> **Ex 3** : ABR, Python <br> **Ex 4** : BDD <br> **Ex 5** : réseaux, routage | - |
+| **Amérique du Nord** <br> [2021_AmeriqueDuNord_1.pdf](2021/2021_AmeriqueDuNord_1.pdf) | **Ex 1** : BDD <br> **Ex 2** : routage, processus, SOC <br> **Ex 3** : tableaux, Python <br> **Ex 4** : arbres binaires <br> **Ex 5** : piles, files, Python | - |
+| **Centres Étrangers 1** <br> [2021_CentresEtrangers_1.pdf](2021/2021_CentresEtrangers_1.pdf) | **Ex 1** : POO <br> **Ex 2** : dictionnaires, Python <br> **Ex 3** : ABR <br> **Ex 4** : réseaux, binaire, Python <br> **Ex 5** : piles, Python | - |
+| **Centres Étrangers 2** <br> [2021_CentresEtrangers_2.pdf](2021/2021_CentresEtrangers_2.pdf) | **Ex 1** : piles, Python <br> **Ex 2** : tuples, listes, Python <br> **Ex 3** : binaire, XOR <br> **Ex 4** : BDD <br> **Ex 5** : POO | - |
+| **Métropole 1** <br> [2021_Metropole_1.pdf](2021/2021_Metropole_1.pdf) | **Ex 1** : ABR, POO <br> **Ex 2** : processus, booléens <br> **Ex 3** : BDD <br> **Ex 4** : tri fusion, Python <br> **Ex 5** : réseaux, routage | - |
+| **Métropole 2** <br> [2021_Metropole_2.pdf](2021/2021_Metropole_2.pdf) | **Ex 1** : arbres, POO <br> **Ex 2** : BDD <br> **Ex 3** : réseaux, routage <br> **Ex 4** : SE, processus <br> **Ex 5** : files, Python | - |
+| **Métropole Candidats Libres 1** <br> [2021_Metropole_CL_1.pdf](2021/2021_Metropole_CL_1.pdf) | **Ex 1** : BDD <br> **Ex 2** : piles, POO <br> **Ex 3** : processus, routage <br> **Ex 4** : tableaux, Python <br> **Ex 5** : récursivité, diviser pour régner | - |
+| **Métropole Candidats Libres 2** <br> [2021_Metropole_CL_2.pdf](2021/2021_Metropole_CL_2.pdf) | **Ex 1** : BDD <br> **Ex 2** : processus <br> **Ex 3** : ABR, POO <br> **Ex 4** : récursivité, Python <br> **Ex 5** : tableaux, Python | - |
+| **Polynésie** <br> [2021_Polynesie_2.pdf](2021/2021_Polynesie_2.pdf) | **Ex 1** : tris, Python <br> **Ex 2** : BDD <br> **Ex 3** : ABR, POO <br> **Ex 4** : architecture, SE, routage <br> **Ex 5** : BDD | - |
+| **Métropole Septembre 1** <br> [2021_Metropole_Septembre_1.pdf](2021/2021_Metropole_Septembre_1.pdf) | **Ex 1** : réseaux, routage <br> **Ex 2** : dichotomie, récursivité <br> **Ex 3** : BDD <br> **Ex 4** : POO, spécification <br> **Ex 5** : arbres, piles, Python | - |
+| **Métropole Septembre 2** <br> [2021_Metropole_Septembre_2.pdf](2021/2021_Metropole_Septembre_2.pdf) | **Ex 1** : réseaux, routage <br> **Ex 2** : tableaux, dictionnaires <br> **Ex 3** : BDD <br> **Ex 4** : piles, POO <br> **Ex 5** : tables, Python | - |

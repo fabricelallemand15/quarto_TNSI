@@ -1,0 +1,60 @@
+---
+title: Épreuve pratique
+lang: fr
+tbl-cap-location: bottom
+crossref: 
+    eq-prefix: Éq.
+    tbl-prefix: Tableau
+    tbl-title: Tableau
+format:
+    html: default
+---
+
+L'épreuve pratique de NSI évolue pour la session 2026. Voici les modalités officielles et la structure de cette partie de l'examen.
+
+## Organisation générale
+
+- **Durée** : 1 heure.
+- **Notation** : Sur 20 points.
+- **Évaluation** : L'épreuve est évaluée par un professeur-examinateur qui n'a pas eu l'élève en classe durant l'année. Un examinateur peut suivre jusqu'à quatre candidats simultanément.
+
+## Objectifs de l'épreuve
+
+L'épreuve évalue la maîtrise des compétences pratiques à travers deux axes :
+
+1. **La programmation** d'une application informatique à partir d'un énoncé et d'un corpus d'informations (code existant, données).
+2. **L'interaction** avec l'examinateur pour expliquer sa démarche, répondre à des questions ou solliciter une aide permettant de débloquer la suite du travail.
+
+## Structure du sujet
+
+Le sujet s'appuie sur un contexte concret (problèmes réels, enjeux sociétaux ou lien avec d'autres disciplines) et se compose généralement des éléments suivants :
+
+- **Une introduction** présentant la problématique (une page maximum).
+- **Des questions de programmation** : il s'agit d'écrire des fonctions courtes (environ une dizaine de lignes). Contrairement aux sessions précédentes, il n'y a **plus de "code à trous"** (pas de squelette fourni pour ces fonctions).
+- **Des questions de regard critique** : tester un code, déboguer, modifier ou étendre un programme existant.
+- **Un descriptif des fichiers** mis à disposition (fichiers Python, fichiers de données).
+
+## Déroulement de l'épreuve
+
+### 1. Appropriation et programmation
+Après avoir pris connaissance du contexte, l'élève doit réaliser une tâche de programmation. L'écriture de tests peut être demandée pour s'assurer du bon fonctionnement du code.
+
+### 2. Dialogue avec l'examinateur
+Un **appel à l'examinateur est obligatoire** après la première partie. Ce moment d'échange permet :
+
+- De vérifier si le code fonctionne.
+- D'expliquer ses choix et sa compréhension du programme.
+- D'obtenir une aide si nécessaire pour poursuivre le sujet.
+
+### 3. Analyse et modification de code
+
+La suite du sujet demande souvent d'exercer un regard critique sur un code fourni que l'élève n'a pas écrit :
+
+- Identification d'erreurs logiques.
+- Ajout de mécanismes de programmation défensive.
+- Adaptation du code pour répondre à un nouvel objectif.
+
+Dans cette phase, la **démarche de résolution** et la capacité à communiquer avec l'examinateur sont aussi importantes que le résultat final.
+
+
+
