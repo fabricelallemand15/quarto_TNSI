@@ -10,8 +10,6 @@ format:
     html: default
 ---
 
-# Annales des Épreuves Écrites
-
 ## Session 2025
 
 | Sujet | Contenu | Corrigés |
@@ -83,7 +81,7 @@ format:
 | **Amérique du Nord J2** <br> [2022_AmeriqueDuNord_2.pdf](2022/2022_AmeriqueDuNord_2.pdf) | **Ex 1** (POO) : listes, ABR <br> **Ex 2** (SE) : processus <br> **Ex 3** (BDD) : cinéma <br> **Ex 4** (Arbres) : algo <br> **Ex 5** (Algo) : files, tableaux | - |
 | **Amérique du Sud J1** <br> [2022_Amerique_Sud_J1.pdf](2022/2022_Amerique_Sud_J1.pdf) | **Ex 1** (BDD) : maternité <br> **Ex 2** (Tri) : algorithmes <br> **Ex 3** (Arbres) : binaires <br> **Ex 4** (SE) : processus <br> **Ex 5** (Réseaux) : protocoles | - |
 | **Amérique du Sud J2** <br> [2022_Amerique_Sud_J2.pdf](2022/2022_Amerique_Sud_J2.pdf) | **Ex 1** (Algo) : complexité, plus proche voisin <br> **Ex 2** (Réseaux) : routage <br> **Ex 3** (BDD) : vélos <br> **Ex 4** (Récursif) : diviser pour régner <br> **Ex 5** (Arbres) : POO | - |
-| **Asie J1** <br> [2022_Asie_1.pdf](2022/2022_Asie_1.pdf.pdf) | **Ex 1** (Invariant) : chaînes, complexité <br> **Ex 2** (BDD) : réservation <br> **Ex 3** (SE) : Linux <br> **Ex 4** (POO) : Python <br> **Ex 5** (Algo) : Python | - |
+| **Asie J1** <br> [2022_Asie_1.pdf](2022/2022_Asie_1.pdf) | **Ex 1** (Invariant) : chaînes, complexité <br> **Ex 2** (BDD) : réservation <br> **Ex 3** (SE) : Linux <br> **Ex 4** (POO) : Python <br> **Ex 5** (Algo) : Python | - |
 | **Asie J2** <br> [2022_Asie_2.pdf](2022/2022_Asie_2.pdf) | **Ex 1** (SE) : Linux <br> **Ex 2** (Arbres) : ABR <br> **Ex 3** (Algo) : jeu de la vie <br> **Ex 4** (BDD) : tennis <br> **Ex 5** (Récursif) : bugs, exécution | - |
 | **Centres Étrangers J1** <br> [2022_CentresEtrangers_1.pdf](2022/2022_CentresEtrangers_1.pdf) | **Ex 1** (Algo) : dictionnaires, listes <br> **Ex 2** (POO) : files, Python <br> **Ex 3** (Algo) : dictionnaires <br> **Ex 4** (BDD) : météo <br> **Ex 5** (Réseaux) : routage | - |
 | **Centres Étrangers J2** <br> [2022_CentresEtrangers_2.pdf](2022/2022_CentresEtrangers_2.pdf) | **Ex 1** (Récursif) : Python <br> **Ex 2** (Algo) : dictionnaires <br> **Ex 3** (BDD) : enseignants <br> **Ex 4** (POO) : Python <br> **Ex 5** (Réseaux) : SE, architecture | - |
