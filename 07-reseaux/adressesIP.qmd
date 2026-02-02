@@ -195,7 +195,7 @@ L'objectif de cette partie est d'écrire une fonction
 `meme_sous_reseau(ip_a, ip_b, masque)` qui renvoie un booléen indiquant
 si les machines A et B font partie du même sous-réseau.
 
-Cette partie est à traiter dans Capytale : [https://capytale2.ac-paris.fr/web/c/aa58-1299451](https://capytale2.ac-paris.fr/web/c/aa58-1299451).
+Cette partie est à traiter dans Capytale : [https://capytale2.ac-paris.fr/web/c/47db-5504001](https://capytale2.ac-paris.fr/web/c/47db-5504001).
 
 On rappelle quelques instructions qui pourront s'avérer utiles :
 
