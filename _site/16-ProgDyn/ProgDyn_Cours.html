@@ -318,6 +318,7 @@ cookieconsent.run({
     }
   </script><p><img referrerpolicy="no-referrer-when-downgrade" src="//sitelf.fr/matomo/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt=""></p>
   <!-- End Matomo Code -->
+   <script data-goatcounter="https://sitelf.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
   
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -987,7 +988,7 @@ window.Quarto = {
 <p>D’après la définition de la suite, on a, pour tout entier naturel <span class="math inline">\(n\geqslant 2\)</span> :</p>
 <p><span class="math display">\[F_{n}=F_{n-2}+F_{n-1}\]</span></p>
 <p>On en déduit une version <strong>récursive</strong> de l’algorithme de calcul de <span class="math inline">\(F_n\)</span>. Cet algorithme a ceci de particulier que chaque fonction procède à <strong>deux</strong> appels récursifs.</p>
-<div id="6fe4ac18" class="cell" data-execution_count="1">
+<div id="a2dc1d21" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_rec(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version récursive"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
@@ -1015,7 +1016,7 @@ window.Quarto = {
 <p>Nous avons vu que cet algorithme est très inefficace. Le calcul de <span class="math inline">\(F_{50}\)</span>, par exemple, est très long. En effet, le nombre d’appels récursifs est très grand. Il est possible de démontrer que ce nombre augmente de façon <strong>exponentielle</strong>. Pour calculer <span class="math inline">\(F_{100}\)</span>, il y aurait environ <span class="math inline">\(10^{20}\)</span> opérations. À raison de <span class="math inline">\(10^9\)</span> opérations par seconde, le calcul prendra de l’ordre de <span class="math inline">\(10^{11}\)</span> secondes, soit environ 3 000 ans !</p>
 <p><a href="fibo_mermaid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="fibo_mermaid.png" class="img-fluid"></a></p>
 <p>Un autre constat qui montre l’inefficacité de ce programme : plusieurs calculs identiques sont répétés plusieurs fois. On calcule par exemple <span class="math inline">\(F_3\)</span> deux fois et <span class="math inline">\(F_2\)</span> trois fois si l’on veut obtenir <span class="math inline">\(F_5\)</span>. Une solution meilleure serait de garder en mémoire les éléments déjà calculés et de ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la <strong>programmation dynamique</strong> qui consiste pour faire simple à mémoriser les résultats déjà calculés pour ne pas avoir à les recalculer.</p>
-<div id="cb8e612c" class="cell" data-execution_count="2">
+<div id="36368249" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_dyn(n: <span class="bu">int</span>, suite: <span class="bu">dict</span> <span class="op">=</span> {<span class="dv">0</span>: <span class="dv">0</span>, <span class="dv">1</span>: <span class="dv">1</span>}) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version dynamique"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
@@ -1126,7 +1127,7 @@ G --&gt; K{3}
 <p>L’algorithme glouton consiste à payer d’abord avec la plus grosse pièce possible : ici, il s’agit de 20, puisque 50 &gt; 48. Ayant donné 20, il reste 28 à payer, et on poursuit avec la même méthode. Finalement, on va payer 48 sous la forme 48 = 20 + 20 + 5 + 2 + 1. On a eu besoin de 5 pièces.</p>
 <p>Considérons un autre système monétaire (en fait c’est l’ancien système impérial britannique) représenté par la liste suivante de valeurs faciales : <code>imperial = [30, 24, 12, 6, 3, 1]</code>. Pour payer 48 l’algorithme glouton va répondre : 48 = 30+12+6. À la différence du système euro, pour lequel on peut démontrer que l’algorithme glouton donne toujours la réponse optimale, on constate que ce n’est pas le cas avec le système impérial, puisque on aurait pu se contenter de 2 pièces : 48 = 24 + 24.</p>
 <p>Rappelons comment peut se programmer l’algorithme glouton.</p>
-<div id="e3894453" class="cell" data-execution_count="3">
+<div id="3772a8b1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>euros <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>imperial <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">24</span>, <span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1151,7 +1152,7 @@ G --&gt; K{3}
 <p><span class="math display">\[f(s) = \min_{x\leqslant s} (1 + f(s − x))\]</span></p>
 <p>le minimum étant calculé sur toutes les valeurs <span class="math inline">\(x\)</span> d’une pièce.</p>
 <p>Cette remarque permet d’écrire le programme récursif suivant :</p>
-<div id="ad4674d1" class="cell" data-execution_count="4">
+<div id="55083229" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> inf</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursif(valeursFaciales, somme):</span>
@@ -1171,7 +1172,7 @@ G --&gt; K{3}
 <section id="approche-récursive" class="level2">
 <h2 class="anchored" data-anchor-id="approche-récursive">3.1. Approche récursive</h2>
 <p>Il s’agit de l’approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive dont un des arguments est un dictionnaire pour mémoriser les résultats déjà calculés. On prend soin de donner une valeur par défaut vide pour que la fonction reste pure (pas de variable globale).</p>
-<div id="626bda37" class="cell" data-execution_count="5">
+<div id="36509297" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> inf</span>
@@ -1195,7 +1196,7 @@ G --&gt; K{3}
 <h2 class="anchored" data-anchor-id="approche-itérative">3.2. Approche itérative</h2>
 <p>Ici, le calcul de <code>f(s)</code> utilise le calcul de <code>f(s − x)</code> pour chaque valeur de <code>x</code>. Autrement dit, <code>f(s)</code> n’utilise au plus que les valeurs de <code>f(s − 1)</code>, <code>f(s − 2)</code>, …, <code>f(3)</code>, <code>f(2)</code>, <code>f(1)</code>.</p>
 <p>On va donc créer un tableau conservant ces données, et calculer de façon systématique pour des valeurs croissantes de l’index.</p>
-<div id="71746697" class="cell" data-execution_count="6">
+<div id="7e9b31ad" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (somme <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, somme <span class="op">+</span> <span class="dv">1</span>):</span>
@@ -1674,6 +1675,16 @@ G --&gt; K{3}
     </div>
   </div>
 </footer>
+<script>
+
+    // Append to the <body>; can use a CSS selector to append somewhere else.
+
+    window.goatcounter.visit_count({append: 'body'})
+
+</script>
+
+<script data-goatcounter="https://sitelf.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
