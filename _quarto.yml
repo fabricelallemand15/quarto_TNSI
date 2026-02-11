@@ -118,8 +118,9 @@ website:
           - GrandOral/index.qmd
   page-footer: 
     left:
-      - href: http://creativecommons.org/licenses/by/4.0/
+      - href: https://creativecommons.org/licenses/by/4.0/
         text: <img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+      - text: '<span id="page-views"></span>'
     right: 
       - text: "Mentions légales"
         href: about.qmd
@@ -148,6 +149,8 @@ format:
     code-block-bg: true
     include-in-header: 
       file: matomo.html
+    include-after-body: 
+      file: matomo_stats.html
     # include-after-body: 
       # file: compteur.html
     #   file: snow.html

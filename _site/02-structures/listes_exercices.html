@@ -312,7 +312,6 @@ cookieconsent.run({
     }
   </script><p><img referrerpolicy="no-referrer-when-downgrade" src="//sitelf.fr/matomo/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt=""></p>
   <!-- End Matomo Code -->
-   <script data-goatcounter="https://sitelf.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
   
 
 
@@ -1520,9 +1519,12 @@ cookieconsent.run({
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="http://creativecommons.org/licenses/by/4.0/">
+    <a class="nav-link" href="https://creativecommons.org/licenses/by/4.0/">
 <p><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></p>
 </a>
+  </li>  
+    <li class="nav-item">
+ <span id="page-views"></span>
   </li>  
 </ul>
     </div>   
@@ -1548,13 +1550,137 @@ cookieconsent.run({
 </footer>
 <script>
 
-    // Append to the <body>; can use a CSS selector to append somewhere else.
+document.addEventListener("DOMContentLoaded", function() {
 
-    window.goatcounter.visit_count({append: 'body'})
+    var matomoBaseUrl = "https://sitelf.fr/matomo/";
+
+    var siteId = "4"; 
+
+    var domId = "page-views";
+
+
+
+    // 1. DÉTECTION DE L'URL CIBLE
+
+    // Si on est en local (preview), on simule l'URL de production pour voir les vraies stats
+
+    var isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+    var productionHost = "tnsi.sitelf.fr"; // L'URL publique de votre site
+
+    
+
+    var hostname = isLocal ? productionHost : window.location.hostname;
+
+    // Si on est en local on force https car le site prod est en https
+
+    var protocol = isLocal ? "https:" : window.location.protocol;
+
+    
+
+    // On enlève index.html si présent, car Matomo le fait parfois
+
+    var pathname = window.location.pathname; // .replace(/\/index\.html$/, '/'); 
+
+    
+
+    var targetUrl = protocol + '//' + hostname + pathname;
+
+
+
+    // 2. MÉTHODE JSONP (Bypasse le blocage CORS)
+
+    var callbackName = 'matomo_jsonp_callback_' + Math.floor(Math.random() * 10000);
+
+
+
+    // Fonction qui recevra les données
+
+    window[callbackName] = function(data) {
+
+        var hits = 0;
+
+        // Matomo renvoie un tableau ou un objet selon le contexte
+
+        if (Array.isArray(data) && data.length > 0 && data[0].nb_hits) {
+
+            hits = data[0].nb_hits;
+
+        } else if (typeof data === 'object' && data.nb_hits) {
+
+            hits = data.nb_hits;
+
+        }
+
+        
+
+        // Mise à jour de l'affichage
+
+        var element = document.getElementById(domId);
+
+        if (element) {
+
+            element.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + ' vues';
+
+            element.title = "Vues totales depuis la création (URL: " + targetUrl + ")";
+
+            // Si 0, on peut vouloir déboguer :
+
+            if (hits === 0) console.log("Matomo : 0 vues trouvées pour " + targetUrl);
+
+        }
+
+        
+
+        // Nettoyage
+
+        delete window[callbackName];
+
+        var script = document.getElementById(callbackName);
+
+        if (script) script.remove();
+
+    };
+
+
+
+    // Construction de l'URL API avec callback
+
+    var apiUrl = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl" + 
+
+                 "&idSite=" + siteId + 
+
+                 "&pageUrl=" + encodeURIComponent(targetUrl) + 
+
+                 "&format=JSON" + 
+
+                 "&period=range&date=2018-01-01,today" + 
+
+                 "&token_auth=anonymous" +
+
+                 "&jsoncallback=" + callbackName; // Le paramètre clé pour JSONP
+
+
+
+    // Injection du script
+
+    var script = document.createElement('script');
+
+    script.id = callbackName;
+
+    script.src = apiUrl;
+
+    script.onerror = function() {
+
+        console.log('Info: Impossible de récupérer les stats Matomo (Erreur réseau ou bloqueur)');
+
+    };
+
+    document.body.appendChild(script);
+
+});
 
 </script>
-
-<script data-goatcounter="https://sitelf.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
 
 
 

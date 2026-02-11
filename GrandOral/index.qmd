@@ -3,6 +3,7 @@ title: Grand Oral et NSI
 lang: fr
 tbl-cap-location: bottom
 crossref: 
+
     eq-prefix: Éq.
     tbl-prefix: Tableau
     tbl-title: Tableau
@@ -12,13 +13,13 @@ format:
 
 ## Présentation
 
-Le grand oral est une épreuve orale qui se dérouler en juin. Son coefficient est de 10 (sur un total de 100). Vous devez préparer en première et surtout en terminale deux questions en rapport avec vos spécialités de terminale. [Page de présentation officielle du grand oral](https://www.education.gouv.fr/baccalaureat-2021-epreuve-du-grand-oral-permettre-aux-eleves-de-travailler-une-competence-89576) [Article du bulletin officiel (BO) définissant le grand oral](https://www.education.gouv.fr/bo/20/Special2/MENE2002780N.htm).
+Le grand oral est une épreuve orale qui se déroule en juin. Son coefficient est de 10 (sur un total de 100). Vous devez préparer en première et surtout en terminale deux questions en rapport avec vos spécialités de terminale. [Page de présentation officielle du grand oral](https://www.education.gouv.fr/baccalaureat-2021-epreuve-du-grand-oral-permettre-aux-eleves-de-travailler-une-competence-89576) [Article du bulletin officiel (BO) définissant le grand oral](https://www.education.gouv.fr/bo/20/Special2/MENE2002780N.htm).
 
 ## Les deux questions
 
 ### Répartition des spécialités
 
-Le BO dit : "ces questions portent sur les deux enseignements de spécialité soit pris isolément, soit abordés de manière transversale".  On comprend qu'il est nécessaire d'aborder les deux enseignements de spécialité, et qu'il est possible de les mélanger. Néanmoins il semblerait qu'il soit nécessaire (pour des raisons d'organisation, voir plus bas) d'avoir une spécialité majeure différente dans chaque question. Voici donc le schéma des répartitions possibles des spécialités (A et B) dans les deux questions (1 et 2) :
+Le BO dit : "ces questions portent sur les deux enseignements de spécialité soit pris isolément, soit abordés de manière transversale". On comprend qu'il est nécessaire d'aborder les deux enseignements de spécialité, et qu'il est possible de les mélanger. Néanmoins, il semblerait qu'il soit nécessaire (pour des raisons d'organisation, voir plus bas) d'avoir une spécialité majeure différente dans chaque question. Voici donc le schéma des répartitions possibles des spécialités (A et B) dans les deux questions (1 et 2) :
 
 |Question 1 |	Question 2|
 |:---:|:---:|
