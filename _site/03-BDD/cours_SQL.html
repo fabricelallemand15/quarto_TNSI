@@ -310,6 +310,113 @@ cookieconsent.run({
     }
   </script><p><img referrerpolicy="no-referrer-when-downgrade" src="//sitelf.fr/matomo/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt=""></p>
   <!-- End Matomo Code -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var matomoBaseUrl = "https://sitelf.fr/matomo/";
+  var siteId = "4";
+  var pageViewsElement = document.getElementById("page-views");
+
+  if (!pageViewsElement) return;
+
+  var isLocal = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+  var productionHost = "tnsi.sitelf.fr";
+  var hostname = isLocal ? productionHost : window.location.hostname;
+  var protocol = isLocal ? "https:" : window.location.protocol;
+  var pathname = window.location.pathname;
+  var targetUrl = protocol + "//" + hostname + pathname;
+
+  var normalizedPath = pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
+  var pathParts = normalizedPath.split("/").filter(Boolean);
+  var isPostPage = pathParts.length >= 2 && pathParts[0] === "posts";
+
+  function displayHits(hits) {
+    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + " vues";
+  }
+
+  function displayUnavailable() {
+    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> indisponible';
+  }
+
+  function cleanupCallback(callbackName) {
+    delete window[callbackName];
+    var scriptNode = document.getElementById(callbackName);
+    if (scriptNode) scriptNode.remove();
+  }
+
+  function requestJsonp(url, onSuccess, onError) {
+    var callbackName = "matomoCb_" + Math.floor(Math.random() * 1e9);
+    window[callbackName] = function (data) {
+      cleanupCallback(callbackName);
+      onSuccess(data);
+    };
+
+    var scriptNode = document.createElement("script");
+    scriptNode.id = callbackName;
+    scriptNode.src = url + "&jsoncallback=" + callbackName;
+    scriptNode.onerror = function () {
+      cleanupCallback(callbackName);
+      onError();
+    };
+    document.body.appendChild(scriptNode);
+  }
+
+  function findHitsByLabel(nodes, label) {
+    if (!Array.isArray(nodes)) return null;
+    for (var i = 0; i < nodes.length; i += 1) {
+      var node = nodes[i];
+      if (node && node.label === label && typeof node.nb_hits === "number") return node.nb_hits;
+      var nested = findHitsByLabel(node && node.subtable, label);
+      if (nested !== null) return nested;
+    }
+    return null;
+  }
+
+  function fallbackExactUrl() {
+    var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl"
+      + "&idSite=" + siteId
+      + "&pageUrl=" + encodeURIComponent(targetUrl)
+      + "&format=JSON"
+      + "&period=range&date=2018-01-01,today"
+      + "&token_auth=anonymous";
+
+    requestJsonp(url, function (data) {
+      var hits = 0;
+      if (Array.isArray(data) && data.length && typeof data[0].nb_hits === "number") {
+        hits = data[0].nb_hits;
+      } else if (data && typeof data.nb_hits === "number") {
+        hits = data.nb_hits;
+      }
+      displayHits(hits);
+    }, function () {
+      displayUnavailable();
+    });
+  }
+
+  if (!isPostPage) {
+    fallbackExactUrl();
+    return;
+  }
+
+  var slug = pathParts[1];
+  var segmentPath = "/posts/" + slug;
+  var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrls"
+    + "&idSite=" + siteId
+    + "&format=JSON"
+    + "&expanded=1"
+    + "&period=range&date=2018-01-01,today"
+    + "&token_auth=anonymous"
+    + "&segment=" + encodeURIComponent("pageUrl=@" + segmentPath);
+
+  requestJsonp(url, function (data) {
+    var hits = findHitsByLabel(data, slug);
+    if (typeof hits === "number") displayHits(hits);
+    else fallbackExactUrl();
+  }, function () {
+    fallbackExactUrl();
+  });
+});
+</script>
   
 
 
@@ -913,7 +1020,7 @@ cookieconsent.run({
   <li><a href="#requêtes-conditionnellesla-clause-where-permet-dimposer-une-ou-des-conditions-permettant-de-sélectionner-uniquement-certaines-lignes.la-condition-doit-suivre-le-mot-clé-where.la-requête-ci-dessous-permet-dafficher-le-nom-des-communes-dont-la-population-est-strictement-supérieure-à-2500-habitants." id="toc-requêtes-conditionnellesla-clause-where-permet-dimposer-une-ou-des-conditions-permettant-de-sélectionner-uniquement-certaines-lignes.la-condition-doit-suivre-le-mot-clé-where.la-requête-ci-dessous-permet-dafficher-le-nom-des-communes-dont-la-population-est-strictement-supérieure-à-2500-habitants." class="nav-link" data-scroll-target="#requêtes-conditionnellesla-clause-where-permet-dimposer-une-ou-des-conditions-permettant-de-sélectionner-uniquement-certaines-lignes.la-condition-doit-suivre-le-mot-clé-where.la-requête-ci-dessous-permet-dafficher-le-nom-des-communes-dont-la-population-est-strictement-supérieure-à-2500-habitants.">Requêtes conditionnellesLa clause <strong>WHERE</strong> permet d’imposer une (ou des) condition(s) permettant de sélectionner uniquement certaines lignes.La condition doit suivre le mot-clé <strong>WHERE</strong>.La requête ci-dessous permet d’afficher le nom des communes dont la population est strictement supérieure à 2500 habitants.</a></li>
   <li><a href="#ordonner-les-résultatsla-clause-order-by-permet-dordonner-les-résultats-dans-lordre-croissant.cette-requête-affiche-le-nom-et-la-population-des-communes-de-plus-de-5000-habitants-dans-lordre-croissant-de-leur-population." id="toc-ordonner-les-résultatsla-clause-order-by-permet-dordonner-les-résultats-dans-lordre-croissant.cette-requête-affiche-le-nom-et-la-population-des-communes-de-plus-de-5000-habitants-dans-lordre-croissant-de-leur-population." class="nav-link" data-scroll-target="#ordonner-les-résultatsla-clause-order-by-permet-dordonner-les-résultats-dans-lordre-croissant.cette-requête-affiche-le-nom-et-la-population-des-communes-de-plus-de-5000-habitants-dans-lordre-croissant-de-leur-population.">Ordonner les résultatsLa clause <strong>ORDER BY</strong> permet d’ordonner les résultats dans l’ordre croissant.Cette requête affiche le nom et la population des communes de plus de 5000 habitants dans l’ordre croissant de leur population.</a></li>
   <li><a href="#éviter-les-doublonspour-éviter-les-doublons-dans-les-résultats-dune-requête-on-peut-ajouter-la-clause-distinct-juste-après-select.considérons-par-exemple-la-relation-communes-la-requête-suivante-a-pour-objectif-dafficher-dans-lordre-croissant-la-liste-des-codes-postaux-des-communes-du-cantal" id="toc-éviter-les-doublonspour-éviter-les-doublons-dans-les-résultats-dune-requête-on-peut-ajouter-la-clause-distinct-juste-après-select.considérons-par-exemple-la-relation-communes-la-requête-suivante-a-pour-objectif-dafficher-dans-lordre-croissant-la-liste-des-codes-postaux-des-communes-du-cantal" class="nav-link" data-scroll-target="#éviter-les-doublonspour-éviter-les-doublons-dans-les-résultats-dune-requête-on-peut-ajouter-la-clause-distinct-juste-après-select.considérons-par-exemple-la-relation-communes-la-requête-suivante-a-pour-objectif-dafficher-dans-lordre-croissant-la-liste-des-codes-postaux-des-communes-du-cantal">Éviter les doublonsPour éviter les doublons dans les résultats d’une requête, on peut ajouter la clause DISTINCT juste après SELECT.Considérons par exemple la relation “communes”, la requête suivante a pour objectif d’afficher, dans l’ordre croissant, la liste des codes postaux des communes du Cantal :</a></li>
-  <li><a href="#les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes." id="toc-les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes." class="nav-link" data-scroll-target="#les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes.">Les jointuresUne requête dans une base de donnée peut nécessiter de regrouper des données provenant de différentes tables.!!! info “Définition”Une requête combinant les données de plusieurs relations (tables) est appelée une <strong>jointure</strong>.!!!Poursuivons avec l’exemple de la base de données des établissements scolaires du Cantal qui comporte deux tables, dont on rappelle ci-dessous le schéma relationnel :* communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span>: TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://flallemand.fr/nsi/assets/images/BDD11.png" class="img-fluid">La requête suivante permet d’obtenir la table des noms d’établissements suivis du nom de leur commune. Il faut pour cela <strong>joindre</strong> les informations de la table “etablissements” (pour le nom de l’établissement) avec celles de la table “communes” (pour le nom de la commune). L’élément qui permet cette <strong>jointure</strong> est la <strong>clef étrangère</strong> “id_commune” de la table “etablissements” qui fait référence à la <strong>clef primaire</strong> “Codecommune” de la table “communes”.</a></li>
+  <li><a href="#les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes." id="toc-les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes." class="nav-link" data-scroll-target="#les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes.">Les jointuresUne requête dans une base de donnée peut nécessiter de regrouper des données provenant de différentes tables.!!! info “Définition”Une requête combinant les données de plusieurs relations (tables) est appelée une <strong>jointure</strong>.!!!Poursuivons avec l’exemple de la base de données des établissements scolaires du Cantal qui comporte deux tables, dont on rappelle ci-dessous le schéma relationnel :* communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span>: TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://sitelf.fr/nsi/assets/images/BDD11.png" class="img-fluid">La requête suivante permet d’obtenir la table des noms d’établissements suivis du nom de leur commune. Il faut pour cela <strong>joindre</strong> les informations de la table “etablissements” (pour le nom de l’établissement) avec celles de la table “communes” (pour le nom de la commune). L’élément qui permet cette <strong>jointure</strong> est la <strong>clef étrangère</strong> “id_commune” de la table “etablissements” qui fait référence à la <strong>clef primaire</strong> “Codecommune” de la table “communes”.</a></li>
   </ul></li>
   <li><a href="#requêtes-de-mise-à-jour-ajouter-une-entréepour-ajouter-une-entrée-nous-utilisons-la-clause-insert.supposons-par-exemple-quun-nouvel-établissement-soit-ouvert-à-labrousse-code-85-il-sagit-dun-lycée-hôtelier-public.-la-requête-suivante-permet-de-créer-cette-nouvelle-entrée.-attention-lordre-des-valeurs-données-doit-être-strictement-le-même-que-lordre-des-attributs-cités." id="toc-requêtes-de-mise-à-jour-ajouter-une-entréepour-ajouter-une-entrée-nous-utilisons-la-clause-insert.supposons-par-exemple-quun-nouvel-établissement-soit-ouvert-à-labrousse-code-85-il-sagit-dun-lycée-hôtelier-public.-la-requête-suivante-permet-de-créer-cette-nouvelle-entrée.-attention-lordre-des-valeurs-données-doit-être-strictement-le-même-que-lordre-des-attributs-cités." class="nav-link" data-scroll-target="#requêtes-de-mise-à-jour-ajouter-une-entréepour-ajouter-une-entrée-nous-utilisons-la-clause-insert.supposons-par-exemple-quun-nouvel-établissement-soit-ouvert-à-labrousse-code-85-il-sagit-dun-lycée-hôtelier-public.-la-requête-suivante-permet-de-créer-cette-nouvelle-entrée.-attention-lordre-des-valeurs-données-doit-être-strictement-le-même-que-lordre-des-attributs-cités.">2.2. Requêtes de mise à jour### Ajouter une entréePour ajouter une entrée, nous utilisons la clause INSERT.Supposons par exemple qu’un nouvel établissement soit ouvert à Labrousse (code 85): il s’agit d’un lycée hôtelier public. La requête suivante permet de créer cette nouvelle entrée. Attention, l’ordre des valeurs données doit être strictement le même que l’ordre des attributs cités.</a>
   <ul class="collapse">
@@ -950,7 +1057,7 @@ cookieconsent.run({
 <p>Nous avons étudié la structure d’une base de données relationnelle, nous allons maintenant apprendre à réaliser des <strong>requêtes</strong>, c’est-à-dire que nous allons apprendre à créer une base des données, créer des attributs, ajouter des données, modifier des données et enfin, nous allons surtout apprendre à interroger une base de données afin d’obtenir des informations.</p>
 <p>Pour réaliser toutes ces requêtes, nous allons devoir apprendre un langage de requêtes : SQL (Structured Query Language). SQL est propre aux bases de données relationnelles.</p>
 <p>Dans ce cours nous allons travailler avec SQLite. SQLite est un système de gestion de base de données relationnelle très répandu. Noter qu’il existe d’autres systèmes de gestion de base de données relationnelle comme MySQL ou PostgreSQL. Dans tous les cas, le langage de requête utilisé est le SQL (même si parfois on peut noter quelques petites différences). Ce qui sera vu ici avec SQLite pourra, à quelques petites modifications près, être utilisé avec, par exemple, MySQL.</p>
-<p>Nous allons illustrer chacune des instructions SQL du programme avec la base de donnée <a href="https://flallemand.fr/nsi/assets/BDD/Cantal.db"><code>Cantal.db</code></a> contenant les deux tables “etablissements” et “communes” déjà rencontrées dans la partie précédente, dont voici un extrait (les noms des attributs ont été un peu modifiés (pas d’espaces) ; la copie d’écran est faite à partir de DB Browser for SqLite). De plus, nous avons déplacé l’attribut “Codepostal” de la table “etablissement” vers la table “communes”, ce qui est plus cohérent.<img src="https://flallemand.fr/nsi/assets/images/BDD9.png" class="img-fluid"><img src="https://flallemand.fr/nsi/assets/images/BDD10.png" class="img-fluid"><strong>Schéma relationnel</strong> : * communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span> : TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://flallemand.fr/nsi/assets/images/BDD11.png" class="img-fluid">Pour se connecter à cette base de donnée, nous utiliserons ici ce notebook Jupyter dans lequel la base a été chargée à l’ouverture.</p>
+<p>Nous allons illustrer chacune des instructions SQL du programme avec la base de donnée <a href="https://sitelf.fr/nsi/assets/BDD/Cantal.db"><code>Cantal.db</code></a> contenant les deux tables “etablissements” et “communes” déjà rencontrées dans la partie précédente, dont voici un extrait (les noms des attributs ont été un peu modifiés (pas d’espaces) ; la copie d’écran est faite à partir de DB Browser for SqLite). De plus, nous avons déplacé l’attribut “Codepostal” de la table “etablissement” vers la table “communes”, ce qui est plus cohérent.<img src="https://sitelf.fr/nsi/assets/images/BDD9.png" class="img-fluid"><img src="https://sitelf.fr/nsi/assets/images/BDD10.png" class="img-fluid"><strong>Schéma relationnel</strong> : * communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span> : TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://sitelf.fr/nsi/assets/images/BDD11.png" class="img-fluid">Pour se connecter à cette base de donnée, nous utiliserons ici ce notebook Jupyter dans lequel la base a été chargée à l’ouverture.</p>
 <section id="requêtes-dinterrogation-requêtes-simplesquand-on-désire-extraire-des-informations-dune-table-on-effectue-une-requête-dinterrogation-à-laide-du-mot-clé-select.-voici-un-exemple-de-requête-dinterrogation" class="level2">
 <h2 class="anchored" data-anchor-id="requêtes-dinterrogation-requêtes-simplesquand-on-désire-extraire-des-informations-dune-table-on-effectue-une-requête-dinterrogation-à-laide-du-mot-clé-select.-voici-un-exemple-de-requête-dinterrogation">2.1. Requêtes d’interrogation### Requêtes simplesQuand on désire extraire des informations d’une table, on effectue une <strong>requête d’interrogation</strong> à l’aide du mot clé <strong>SELECT</strong>. Voici un exemple de requête d’interrogation :</h2>
 <div id="cell-4" class="cell" data-trusted="false">
@@ -996,7 +1103,7 @@ cookieconsent.run({
 </div>
 </section>
 <section id="les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes." class="level3">
-<h3 class="anchored" data-anchor-id="les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes.">Les jointuresUne requête dans une base de donnée peut nécessiter de regrouper des données provenant de différentes tables.!!! info “Définition”Une requête combinant les données de plusieurs relations (tables) est appelée une <strong>jointure</strong>.!!!Poursuivons avec l’exemple de la base de données des établissements scolaires du Cantal qui comporte deux tables, dont on rappelle ci-dessous le schéma relationnel :* communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span>: TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://flallemand.fr/nsi/assets/images/BDD11.png" class="img-fluid">La requête suivante permet d’obtenir la table des noms d’établissements suivis du nom de leur commune. Il faut pour cela <strong>joindre</strong> les informations de la table “etablissements” (pour le nom de l’établissement) avec celles de la table “communes” (pour le nom de la commune). L’élément qui permet cette <strong>jointure</strong> est la <strong>clef étrangère</strong> “id_commune” de la table “etablissements” qui fait référence à la <strong>clef primaire</strong> “Codecommune” de la table “communes”.</h3>
+<h3 class="anchored" data-anchor-id="les-jointuresune-requête-dans-une-base-de-donnée-peut-nécessiter-de-regrouper-des-données-provenant-de-différentes-tables.-info-définitionune-requête-combinant-les-données-de-plusieurs-relations-tables-est-appelée-une-jointure.poursuivons-avec-lexemple-de-la-base-de-données-des-établissements-scolaires-du-cantal-qui-comporte-deux-tables-dont-on-rappelle-ci-dessous-le-schéma-relationnel-communescodecommune-int-nomdelacommune-text-populationtotale-int-codepostal-int-etablissementscode-text-nom-text-statut-text-id_commune-int-latitude-float-longitude-floatla-requête-suivante-permet-dobtenir-la-table-des-noms-détablissements-suivis-du-nom-de-leur-commune.-il-faut-pour-cela-joindre-les-informations-de-la-table-etablissements-pour-le-nom-de-létablissement-avec-celles-de-la-table-communes-pour-le-nom-de-la-commune.-lélément-qui-permet-cette-jointure-est-la-clef-étrangère-id_commune-de-la-table-etablissements-qui-fait-référence-à-la-clef-primaire-codecommune-de-la-table-communes.">Les jointuresUne requête dans une base de donnée peut nécessiter de regrouper des données provenant de différentes tables.!!! info “Définition”Une requête combinant les données de plusieurs relations (tables) est appelée une <strong>jointure</strong>.!!!Poursuivons avec l’exemple de la base de données des établissements scolaires du Cantal qui comporte deux tables, dont on rappelle ci-dessous le schéma relationnel :* communes(<span style="text-decoration: underline">Codecommune</span>: INT, Nomdelacommune: TEXT, Populationtotale: INT, Codepostal: INT)* etablissements(<span style="text-decoration: underline">code</span>: TEXT, nom: TEXT, statut: TEXT, #id_commune: INT, latitude: FLOAT, longitude: FLOAT)<img src="https://sitelf.fr/nsi/assets/images/BDD11.png" class="img-fluid">La requête suivante permet d’obtenir la table des noms d’établissements suivis du nom de leur commune. Il faut pour cela <strong>joindre</strong> les informations de la table “etablissements” (pour le nom de l’établissement) avec celles de la table “communes” (pour le nom de la commune). L’élément qui permet cette <strong>jointure</strong> est la <strong>clef étrangère</strong> “id_commune” de la table “etablissements” qui fait référence à la <strong>clef primaire</strong> “Codecommune” de la table “communes”.</h3>
 <div id="cell-23" class="cell" data-trusted="false" data-scrolled="true">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>SELECT etablissements.nom, communes.Nomdelacommune FROM etablissements JOIN communes ON etablissements.id_commune <span class="op">=</span> communes.Codecommune</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1509,140 +1616,6 @@ cookieconsent.run({
     </div>
   </div>
 </footer>
-<script>
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    var matomoBaseUrl = "https://sitelf.fr/matomo/";
-
-    var siteId = "4"; 
-
-    var domId = "page-views";
-
-
-
-    // 1. DÉTECTION DE L'URL CIBLE
-
-    // Si on est en local (preview), on simule l'URL de production pour voir les vraies stats
-
-    var isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-
-    var productionHost = "tnsi.sitelf.fr"; // L'URL publique de votre site
-
-    
-
-    var hostname = isLocal ? productionHost : window.location.hostname;
-
-    // Si on est en local on force https car le site prod est en https
-
-    var protocol = isLocal ? "https:" : window.location.protocol;
-
-    
-
-    // On enlève index.html si présent, car Matomo le fait parfois
-
-    var pathname = window.location.pathname; // .replace(/\/index\.html$/, '/'); 
-
-    
-
-    var targetUrl = protocol + '//' + hostname + pathname;
-
-
-
-    // 2. MÉTHODE JSONP (Bypasse le blocage CORS)
-
-    var callbackName = 'matomo_jsonp_callback_' + Math.floor(Math.random() * 10000);
-
-
-
-    // Fonction qui recevra les données
-
-    window[callbackName] = function(data) {
-
-        var hits = 0;
-
-        // Matomo renvoie un tableau ou un objet selon le contexte
-
-        if (Array.isArray(data) && data.length > 0 && data[0].nb_hits) {
-
-            hits = data[0].nb_hits;
-
-        } else if (typeof data === 'object' && data.nb_hits) {
-
-            hits = data.nb_hits;
-
-        }
-
-        
-
-        // Mise à jour de l'affichage
-
-        var element = document.getElementById(domId);
-
-        if (element) {
-
-            element.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + ' vues';
-
-            element.title = "Vues totales depuis la création (URL: " + targetUrl + ")";
-
-            // Si 0, on peut vouloir déboguer :
-
-            if (hits === 0) console.log("Matomo : 0 vues trouvées pour " + targetUrl);
-
-        }
-
-        
-
-        // Nettoyage
-
-        delete window[callbackName];
-
-        var script = document.getElementById(callbackName);
-
-        if (script) script.remove();
-
-    };
-
-
-
-    // Construction de l'URL API avec callback
-
-    var apiUrl = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl" + 
-
-                 "&idSite=" + siteId + 
-
-                 "&pageUrl=" + encodeURIComponent(targetUrl) + 
-
-                 "&format=JSON" + 
-
-                 "&period=range&date=2018-01-01,today" + 
-
-                 "&token_auth=anonymous" +
-
-                 "&jsoncallback=" + callbackName; // Le paramètre clé pour JSONP
-
-
-
-    // Injection du script
-
-    var script = document.createElement('script');
-
-    script.id = callbackName;
-
-    script.src = apiUrl;
-
-    script.onerror = function() {
-
-        console.log('Info: Impossible de récupérer les stats Matomo (Erreur réseau ou bloqueur)');
-
-    };
-
-    document.body.appendChild(script);
-
-});
-
-</script>
-
 
 
 

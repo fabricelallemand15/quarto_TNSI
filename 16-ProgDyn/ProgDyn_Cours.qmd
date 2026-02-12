@@ -114,7 +114,7 @@ Dérouler à la main, l'algorithme décrit ci-dessus, en deux versions : une ver
 
 # 3. Exemple de référence : le rendu de monnaie
 
-[On a déjà vu en classe de première qu’un algorithme glouton pouvait donner une réponse au problème.](https://pnsi.flallemand.fr/26_gloutons/gloutons_cours.html#exemples-dalgorithmes-gloutons)
+[On a déjà vu en classe de première qu'un algorithme glouton pouvait donner une réponse au problème.](https://pnsi.sitelf.fr/26_gloutons/gloutons_cours.html#exemples-dalgorithmes-gloutons)
 
 Fixons les notations. On suppose donné un système monétaire où les valeurs faciales des pièces (ou des billets) sont rangées
 en ordre décroissant. Par exemple, le système Euro pourra être décrit par la liste ``euros = [50, 20, 10, 5, 2, 1]``. Pour

@@ -318,6 +318,113 @@ cookieconsent.run({
     }
   </script><p><img referrerpolicy="no-referrer-when-downgrade" src="//sitelf.fr/matomo/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt=""></p>
   <!-- End Matomo Code -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var matomoBaseUrl = "https://sitelf.fr/matomo/";
+  var siteId = "4";
+  var pageViewsElement = document.getElementById("page-views");
+
+  if (!pageViewsElement) return;
+
+  var isLocal = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+  var productionHost = "tnsi.sitelf.fr";
+  var hostname = isLocal ? productionHost : window.location.hostname;
+  var protocol = isLocal ? "https:" : window.location.protocol;
+  var pathname = window.location.pathname;
+  var targetUrl = protocol + "//" + hostname + pathname;
+
+  var normalizedPath = pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
+  var pathParts = normalizedPath.split("/").filter(Boolean);
+  var isPostPage = pathParts.length >= 2 && pathParts[0] === "posts";
+
+  function displayHits(hits) {
+    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + " vues";
+  }
+
+  function displayUnavailable() {
+    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> indisponible';
+  }
+
+  function cleanupCallback(callbackName) {
+    delete window[callbackName];
+    var scriptNode = document.getElementById(callbackName);
+    if (scriptNode) scriptNode.remove();
+  }
+
+  function requestJsonp(url, onSuccess, onError) {
+    var callbackName = "matomoCb_" + Math.floor(Math.random() * 1e9);
+    window[callbackName] = function (data) {
+      cleanupCallback(callbackName);
+      onSuccess(data);
+    };
+
+    var scriptNode = document.createElement("script");
+    scriptNode.id = callbackName;
+    scriptNode.src = url + "&jsoncallback=" + callbackName;
+    scriptNode.onerror = function () {
+      cleanupCallback(callbackName);
+      onError();
+    };
+    document.body.appendChild(scriptNode);
+  }
+
+  function findHitsByLabel(nodes, label) {
+    if (!Array.isArray(nodes)) return null;
+    for (var i = 0; i < nodes.length; i += 1) {
+      var node = nodes[i];
+      if (node && node.label === label && typeof node.nb_hits === "number") return node.nb_hits;
+      var nested = findHitsByLabel(node && node.subtable, label);
+      if (nested !== null) return nested;
+    }
+    return null;
+  }
+
+  function fallbackExactUrl() {
+    var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl"
+      + "&idSite=" + siteId
+      + "&pageUrl=" + encodeURIComponent(targetUrl)
+      + "&format=JSON"
+      + "&period=range&date=2018-01-01,today"
+      + "&token_auth=anonymous";
+
+    requestJsonp(url, function (data) {
+      var hits = 0;
+      if (Array.isArray(data) && data.length && typeof data[0].nb_hits === "number") {
+        hits = data[0].nb_hits;
+      } else if (data && typeof data.nb_hits === "number") {
+        hits = data.nb_hits;
+      }
+      displayHits(hits);
+    }, function () {
+      displayUnavailable();
+    });
+  }
+
+  if (!isPostPage) {
+    fallbackExactUrl();
+    return;
+  }
+
+  var slug = pathParts[1];
+  var segmentPath = "/posts/" + slug;
+  var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrls"
+    + "&idSite=" + siteId
+    + "&format=JSON"
+    + "&expanded=1"
+    + "&period=range&date=2018-01-01,today"
+    + "&token_auth=anonymous"
+    + "&segment=" + encodeURIComponent("pageUrl=@" + segmentPath);
+
+  requestJsonp(url, function (data) {
+    var hits = findHitsByLabel(data, slug);
+    if (typeof hits === "number") displayHits(hits);
+    else fallbackExactUrl();
+  }, function () {
+    fallbackExactUrl();
+  });
+});
+</script>
   
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -987,7 +1094,7 @@ window.Quarto = {
 <p>D’après la définition de la suite, on a, pour tout entier naturel <span class="math inline">\(n\geqslant 2\)</span> :</p>
 <p><span class="math display">\[F_{n}=F_{n-2}+F_{n-1}\]</span></p>
 <p>On en déduit une version <strong>récursive</strong> de l’algorithme de calcul de <span class="math inline">\(F_n\)</span>. Cet algorithme a ceci de particulier que chaque fonction procède à <strong>deux</strong> appels récursifs.</p>
-<div id="08d85335" class="cell" data-execution_count="1">
+<div id="00441f15" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_rec(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version récursive"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
@@ -1015,7 +1122,7 @@ window.Quarto = {
 <p>Nous avons vu que cet algorithme est très inefficace. Le calcul de <span class="math inline">\(F_{50}\)</span>, par exemple, est très long. En effet, le nombre d’appels récursifs est très grand. Il est possible de démontrer que ce nombre augmente de façon <strong>exponentielle</strong>. Pour calculer <span class="math inline">\(F_{100}\)</span>, il y aurait environ <span class="math inline">\(10^{20}\)</span> opérations. À raison de <span class="math inline">\(10^9\)</span> opérations par seconde, le calcul prendra de l’ordre de <span class="math inline">\(10^{11}\)</span> secondes, soit environ 3 000 ans !</p>
 <p><a href="fibo_mermaid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="fibo_mermaid.png" class="img-fluid"></a></p>
 <p>Un autre constat qui montre l’inefficacité de ce programme : plusieurs calculs identiques sont répétés plusieurs fois. On calcule par exemple <span class="math inline">\(F_3\)</span> deux fois et <span class="math inline">\(F_2\)</span> trois fois si l’on veut obtenir <span class="math inline">\(F_5\)</span>. Une solution meilleure serait de garder en mémoire les éléments déjà calculés et de ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la <strong>programmation dynamique</strong> qui consiste pour faire simple à mémoriser les résultats déjà calculés pour ne pas avoir à les recalculer.</p>
-<div id="97de4db2" class="cell" data-execution_count="2">
+<div id="e7461273" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_dyn(n: <span class="bu">int</span>, suite: <span class="bu">dict</span> <span class="op">=</span> {<span class="dv">0</span>: <span class="dv">0</span>, <span class="dv">1</span>: <span class="dv">1</span>}) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version dynamique"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
@@ -1120,13 +1227,13 @@ G --&gt; K{3}
 </section>
 <section id="exemple-de-référence-le-rendu-de-monnaie" class="level1">
 <h1>3. Exemple de référence : le rendu de monnaie</h1>
-<p><a href="https://pnsi.flallemand.fr/26_gloutons/gloutons_cours.html#exemples-dalgorithmes-gloutons">On a déjà vu en classe de première qu’un algorithme glouton pouvait donner une réponse au problème.</a></p>
+<p><a href="https://pnsi.sitelf.fr/26_gloutons/gloutons_cours.html#exemples-dalgorithmes-gloutons">On a déjà vu en classe de première qu’un algorithme glouton pouvait donner une réponse au problème.</a></p>
 <p>Fixons les notations. On suppose donné un système monétaire où les valeurs faciales des pièces (ou des billets) sont rangées en ordre décroissant. Par exemple, le système Euro pourra être décrit par la liste <code>euros = [50, 20, 10, 5, 2, 1]</code>. Pour payer une somme de 48 unités on pourrait bien sûr payer 48 pièces de 1, ou encore 3 pièces de 10, 3 pièces de 5, 1 pièce de 2 et 1 pièce de 1.</p>
 <p>On cherche à payer la somme indiquée, en supposant qu’on a autant de pièces de chaque valeur que de besoin, en utilisant un nombre minimal de pièces.</p>
 <p>L’algorithme glouton consiste à payer d’abord avec la plus grosse pièce possible : ici, il s’agit de 20, puisque 50 &gt; 48. Ayant donné 20, il reste 28 à payer, et on poursuit avec la même méthode. Finalement, on va payer 48 sous la forme 48 = 20 + 20 + 5 + 2 + 1. On a eu besoin de 5 pièces.</p>
 <p>Considérons un autre système monétaire (en fait c’est l’ancien système impérial britannique) représenté par la liste suivante de valeurs faciales : <code>imperial = [30, 24, 12, 6, 3, 1]</code>. Pour payer 48 l’algorithme glouton va répondre : 48 = 30+12+6. À la différence du système euro, pour lequel on peut démontrer que l’algorithme glouton donne toujours la réponse optimale, on constate que ce n’est pas le cas avec le système impérial, puisque on aurait pu se contenter de 2 pièces : 48 = 24 + 24.</p>
 <p>Rappelons comment peut se programmer l’algorithme glouton.</p>
-<div id="e89325ae" class="cell" data-execution_count="3">
+<div id="68c85599" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>euros <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>imperial <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">24</span>, <span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1151,7 +1258,7 @@ G --&gt; K{3}
 <p><span class="math display">\[f(s) = \min_{x\leqslant s} (1 + f(s − x))\]</span></p>
 <p>le minimum étant calculé sur toutes les valeurs <span class="math inline">\(x\)</span> d’une pièce.</p>
 <p>Cette remarque permet d’écrire le programme récursif suivant :</p>
-<div id="70ec0cb6" class="cell" data-execution_count="4">
+<div id="fc844e7c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> inf</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursif(valeursFaciales, somme):</span>
@@ -1171,7 +1278,7 @@ G --&gt; K{3}
 <section id="approche-récursive" class="level2">
 <h2 class="anchored" data-anchor-id="approche-récursive">3.1. Approche récursive</h2>
 <p>Il s’agit de l’approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive dont un des arguments est un dictionnaire pour mémoriser les résultats déjà calculés. On prend soin de donner une valeur par défaut vide pour que la fonction reste pure (pas de variable globale).</p>
-<div id="b334c470" class="cell" data-execution_count="5">
+<div id="a9899bb0" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> inf</span>
@@ -1195,7 +1302,7 @@ G --&gt; K{3}
 <h2 class="anchored" data-anchor-id="approche-itérative">3.2. Approche itérative</h2>
 <p>Ici, le calcul de <code>f(s)</code> utilise le calcul de <code>f(s − x)</code> pour chaque valeur de <code>x</code>. Autrement dit, <code>f(s)</code> n’utilise au plus que les valeurs de <code>f(s − 1)</code>, <code>f(s − 2)</code>, …, <code>f(3)</code>, <code>f(2)</code>, <code>f(1)</code>.</p>
 <p>On va donc créer un tableau conservant ces données, et calculer de façon systématique pour des valeurs croissantes de l’index.</p>
-<div id="d805c6a6" class="cell" data-execution_count="6">
+<div id="c92de19f" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (somme <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, somme <span class="op">+</span> <span class="dv">1</span>):</span>
@@ -1677,140 +1784,6 @@ G --&gt; K{3}
     </div>
   </div>
 </footer>
-<script>
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    var matomoBaseUrl = "https://sitelf.fr/matomo/";
-
-    var siteId = "4"; 
-
-    var domId = "page-views";
-
-
-
-    // 1. DÉTECTION DE L'URL CIBLE
-
-    // Si on est en local (preview), on simule l'URL de production pour voir les vraies stats
-
-    var isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-
-    var productionHost = "tnsi.sitelf.fr"; // L'URL publique de votre site
-
-    
-
-    var hostname = isLocal ? productionHost : window.location.hostname;
-
-    // Si on est en local on force https car le site prod est en https
-
-    var protocol = isLocal ? "https:" : window.location.protocol;
-
-    
-
-    // On enlève index.html si présent, car Matomo le fait parfois
-
-    var pathname = window.location.pathname; // .replace(/\/index\.html$/, '/'); 
-
-    
-
-    var targetUrl = protocol + '//' + hostname + pathname;
-
-
-
-    // 2. MÉTHODE JSONP (Bypasse le blocage CORS)
-
-    var callbackName = 'matomo_jsonp_callback_' + Math.floor(Math.random() * 10000);
-
-
-
-    // Fonction qui recevra les données
-
-    window[callbackName] = function(data) {
-
-        var hits = 0;
-
-        // Matomo renvoie un tableau ou un objet selon le contexte
-
-        if (Array.isArray(data) && data.length > 0 && data[0].nb_hits) {
-
-            hits = data[0].nb_hits;
-
-        } else if (typeof data === 'object' && data.nb_hits) {
-
-            hits = data.nb_hits;
-
-        }
-
-        
-
-        // Mise à jour de l'affichage
-
-        var element = document.getElementById(domId);
-
-        if (element) {
-
-            element.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + ' vues';
-
-            element.title = "Vues totales depuis la création (URL: " + targetUrl + ")";
-
-            // Si 0, on peut vouloir déboguer :
-
-            if (hits === 0) console.log("Matomo : 0 vues trouvées pour " + targetUrl);
-
-        }
-
-        
-
-        // Nettoyage
-
-        delete window[callbackName];
-
-        var script = document.getElementById(callbackName);
-
-        if (script) script.remove();
-
-    };
-
-
-
-    // Construction de l'URL API avec callback
-
-    var apiUrl = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl" + 
-
-                 "&idSite=" + siteId + 
-
-                 "&pageUrl=" + encodeURIComponent(targetUrl) + 
-
-                 "&format=JSON" + 
-
-                 "&period=range&date=2018-01-01,today" + 
-
-                 "&token_auth=anonymous" +
-
-                 "&jsoncallback=" + callbackName; // Le paramètre clé pour JSONP
-
-
-
-    // Injection du script
-
-    var script = document.createElement('script');
-
-    script.id = callbackName;
-
-    script.src = apiUrl;
-
-    script.onerror = function() {
-
-        console.log('Info: Impossible de récupérer les stats Matomo (Erreur réseau ou bloqueur)');
-
-    };
-
-    document.body.appendChild(script);
-
-});
-
-</script>
-
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

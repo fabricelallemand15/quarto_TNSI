@@ -16,4 +16,111 @@
   </script>
   <noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="//sitelf.fr/matomo/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Matomo Code -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var matomoBaseUrl = "https://sitelf.fr/matomo/";
+  var siteId = "4";
+  var pageViewsElement = document.getElementById("page-views");
+
+  if (!pageViewsElement) return;
+
+  var isLocal = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+  var productionHost = "tnsi.sitelf.fr";
+  var hostname = isLocal ? productionHost : window.location.hostname;
+  var protocol = isLocal ? "https:" : window.location.protocol;
+  var pathname = window.location.pathname;
+  var targetUrl = protocol + "//" + hostname + pathname;
+
+  var normalizedPath = pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
+  var pathParts = normalizedPath.split("/").filter(Boolean);
+  var isPostPage = pathParts.length >= 2 && pathParts[0] === "posts";
+
+  function displayHits(hits) {
+    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + " vues";
+  }
+
+  function displayUnavailable() {
+    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> indisponible';
+  }
+
+  function cleanupCallback(callbackName) {
+    delete window[callbackName];
+    var scriptNode = document.getElementById(callbackName);
+    if (scriptNode) scriptNode.remove();
+  }
+
+  function requestJsonp(url, onSuccess, onError) {
+    var callbackName = "matomoCb_" + Math.floor(Math.random() * 1e9);
+    window[callbackName] = function (data) {
+      cleanupCallback(callbackName);
+      onSuccess(data);
+    };
+
+    var scriptNode = document.createElement("script");
+    scriptNode.id = callbackName;
+    scriptNode.src = url + "&jsoncallback=" + callbackName;
+    scriptNode.onerror = function () {
+      cleanupCallback(callbackName);
+      onError();
+    };
+    document.body.appendChild(scriptNode);
+  }
+
+  function findHitsByLabel(nodes, label) {
+    if (!Array.isArray(nodes)) return null;
+    for (var i = 0; i < nodes.length; i += 1) {
+      var node = nodes[i];
+      if (node && node.label === label && typeof node.nb_hits === "number") return node.nb_hits;
+      var nested = findHitsByLabel(node && node.subtable, label);
+      if (nested !== null) return nested;
+    }
+    return null;
+  }
+
+  function fallbackExactUrl() {
+    var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl"
+      + "&idSite=" + siteId
+      + "&pageUrl=" + encodeURIComponent(targetUrl)
+      + "&format=JSON"
+      + "&period=range&date=2018-01-01,today"
+      + "&token_auth=anonymous";
+
+    requestJsonp(url, function (data) {
+      var hits = 0;
+      if (Array.isArray(data) && data.length && typeof data[0].nb_hits === "number") {
+        hits = data[0].nb_hits;
+      } else if (data && typeof data.nb_hits === "number") {
+        hits = data.nb_hits;
+      }
+      displayHits(hits);
+    }, function () {
+      displayUnavailable();
+    });
+  }
+
+  if (!isPostPage) {
+    fallbackExactUrl();
+    return;
+  }
+
+  var slug = pathParts[1];
+  var segmentPath = "/posts/" + slug;
+  var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrls"
+    + "&idSite=" + siteId
+    + "&format=JSON"
+    + "&expanded=1"
+    + "&period=range&date=2018-01-01,today"
+    + "&token_auth=anonymous"
+    + "&segment=" + encodeURIComponent("pageUrl=@" + segmentPath);
+
+  requestJsonp(url, function (data) {
+    var hits = findHitsByLabel(data, slug);
+    if (typeof hits === "number") displayHits(hits);
+    else fallbackExactUrl();
+  }, function () {
+    fallbackExactUrl();
+  });
+});
+</script>
   

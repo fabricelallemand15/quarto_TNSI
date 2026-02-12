@@ -212,7 +212,7 @@ Cette implémentation sera testée en exercices.
 
 On peut comparer en termes de temps d'exécution l'efficacité de ces deux implémentations.
 
-On utilise pour cela la bibliothèque ``timeit`` présentée dans [cet article](https://www.flallemand.fr/wp/2022/06/05/mesurer-le-temps-dexecution-dun-fragment-de-code/){ target=_blank }.
+On utilise pour cela la bibliothèque ``timeit`` présentée dans [cet article](https://www.sitelf.fr/wp/2022/06/05/mesurer-le-temps-dexecution-dun-fragment-de-code/){ target=_blank }.
 
 Pour cela, on ajoute les lignes suivantes au code de la version "listes Python" :
 

@@ -1,0 +1,164 @@
+CONSIGNES POUR L’IA — Corriger un compteur de vues Matomo sur un site Quarto
+
+Objectif
+- Afficher un compteur de vues dans le footer de chaque page.
+- Faire correspondre le nombre affiché avec le tableau de bord Matomo (même logique de regroupement), et pas seulement une URL exacte.
+
+Contexte cible
+- Site statique Quarto.
+- Matomo déjà installé (script de tracking présent).
+- Un élément HTML existe dans le footer, par exemple : <span id="page-views"></span>
+
+Ce que l’IA doit faire (ordre strict)
+
+1) Vérifier le point d’injection du compteur
+- Confirmer qu’un élément existe pour afficher la valeur : id="page-views".
+- S’il n’existe pas, l’ajouter dans le footer Quarto (dans _quarto.yml, format.html.footer, ou template équivalent).
+
+2) Éviter les doublons Matomo
+- Vérifier les includes Quarto (souvent format.html.include-in-header).
+- Garder UNE seule inclusion pour le script Matomo + compteur.
+- Supprimer les doublons (ex: 2 fichiers header qui injectent Matomo en parallèle).
+
+3) Ajouter/mettre à jour le script global dans le header
+- Le script doit :
+  - attendre DOMContentLoaded,
+  - cibler #page-views,
+  - utiliser JSONP (paramètre jsoncallback) pour éviter les problèmes CORS,
+  - récupérer le slug de l’article depuis l’URL (cas /posts/<slug>/...),
+  - interroger Matomo avec Actions.getPageUrls + expanded=1 + segment=pageUrl=@/posts/<slug>,
+  - parcourir récursivement la réponse pour trouver le nœud label == <slug> et lire nb_hits,
+  - afficher « 👁 X vues » (ou icône Font Awesome déjà utilisée par le site),
+  - fallback : si rien trouvé, appeler Actions.getPageUrl avec l’URL exacte,
+  - en cas d’erreur finale : afficher « indisponible ».
+
+4) Détails d’implémentation à respecter
+- Variables configurables en haut du script :
+  - matomoBaseUrl (ex: https://example.com/matomo/)
+  - siteId
+- Pour le fallback URL exacte :
+  - construire targetUrl à partir de location,
+  - si hostname est localhost/127.0.0.1, utiliser le domaine de prod attendu (option recommandée) pour éviter les faux comptages preview.
+- Nettoyer chaque callback JSONP après exécution (delete window[callbackName] + remove script injecté).
+
+5) Validation minimale obligatoire
+- Lancer un rendu Quarto (au moins la page test) :
+  - quarto render index.qmd
+- Vérifier que le script est bien injecté dans le HTML généré.
+- Tester un article connu dans Matomo :
+  - la valeur affichée doit correspondre au regroupement vu dans « Actions > Page URLs » pour ce slug.
+
+6) Critères d’acceptation
+- Le compteur n’est plus vide.
+- Le compteur reflète le même ordre de grandeur/valeur que Matomo Dashboard (logique Page URLs par slug).
+- Pas de double inclusion Matomo dans la config Quarto.
+- Pas d’erreur JS dans la console sur la page.
+
+Exemple de script (à adapter)
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var matomoBaseUrl = "https://VOTRE_DOMAINE/matomo/";
+  var siteId = "2";
+  var pageViewsElement = document.getElementById("page-views");
+
+  if (!pageViewsElement) return;
+
+  var isLocal = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+  var productionHost = "VOTRE_DOMAINE_PUBLIC";
+  var hostname = isLocal ? productionHost : window.location.hostname;
+  var protocol = isLocal ? "https:" : window.location.protocol;
+  var pathname = window.location.pathname;
+  var targetUrl = protocol + "//" + hostname + pathname;
+
+  var normalizedPath = pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
+  var pathParts = normalizedPath.split("/").filter(Boolean);
+  var isPostPage = pathParts.length >= 2 && pathParts[0] === "posts";
+
+  function displayHits(hits) {
+    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + ' vues';
+  }
+
+  function cleanupCallback(callbackName) {
+    delete window[callbackName];
+    var s = document.getElementById(callbackName);
+    if (s) s.remove();
+  }
+
+  function requestJsonp(url, onSuccess, onError) {
+    var callbackName = "matomoCb_" + Math.floor(Math.random() * 1e9);
+    window[callbackName] = function (data) {
+      cleanupCallback(callbackName);
+      onSuccess(data);
+    };
+
+    var script = document.createElement("script");
+    script.id = callbackName;
+    script.src = url + "&jsoncallback=" + callbackName;
+    script.onerror = function () {
+      cleanupCallback(callbackName);
+      onError();
+    };
+    document.body.appendChild(script);
+  }
+
+  function findHitsByLabel(nodes, label) {
+    if (!Array.isArray(nodes)) return null;
+    for (var i = 0; i < nodes.length; i += 1) {
+      var n = nodes[i];
+      if (n && n.label === label && typeof n.nb_hits === "number") return n.nb_hits;
+      var nested = findHitsByLabel(n && n.subtable, label);
+      if (nested !== null) return nested;
+    }
+    return null;
+  }
+
+  function fallbackExactUrl() {
+    var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl"
+      + "&idSite=" + siteId
+      + "&pageUrl=" + encodeURIComponent(targetUrl)
+      + "&format=JSON"
+      + "&period=range&date=2018-01-01,today";
+
+    requestJsonp(url, function (data) {
+      var hits = 0;
+      if (Array.isArray(data) && data.length && typeof data[0].nb_hits === "number") {
+        hits = data[0].nb_hits;
+      } else if (data && typeof data.nb_hits === "number") {
+        hits = data.nb_hits;
+      }
+      displayHits(hits);
+    }, function () {
+      pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> indisponible';
+    });
+  }
+
+  if (!isPostPage) {
+    fallbackExactUrl();
+    return;
+  }
+
+  var slug = pathParts[1];
+  var segmentPath = "/posts/" + slug;
+  var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrls"
+    + "&idSite=" + siteId
+    + "&format=JSON"
+    + "&expanded=1"
+    + "&period=range&date=2018-01-01,today"
+    + "&segment=" + encodeURIComponent("pageUrl=@" + segmentPath);
+
+  requestJsonp(url, function (data) {
+    var hits = findHitsByLabel(data, slug);
+    if (typeof hits === "number") displayHits(hits);
+    else fallbackExactUrl();
+  }, function () {
+    fallbackExactUrl();
+  });
+});
+</script>
+
+Instructions finales pour l’IA
+- Appliquer des modifications minimales (pas de refactor global inutile).
+- Conserver le style existant du projet.
+- Rendre une page et confirmer la correspondance de la valeur sur un article de référence Matomo.
+- Donner un court compte-rendu des fichiers modifiés et du résultat de validation.

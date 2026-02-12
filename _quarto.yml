@@ -149,8 +149,8 @@ format:
     code-block-bg: true
     include-in-header: 
       file: matomo.html
-    include-after-body: 
-      file: matomo_stats.html
+    # include-after-body: 
+    #   file: matomo_stats.html
     # include-after-body: 
       # file: compteur.html
     #   file: snow.html
