@@ -6,6 +6,13 @@ title: "Spécialité NSI - Terminale"
 
 Ce site est destiné à regrouper les cours et les exercices concernant l'enseignement de spécialité NSI de terminale du lycée Émile Duclaux d'Aurillac.
 
+::: {.callout-note .updates-box}
+## Dernières mises à jour
+
+- Février 2026 - Mise à jour de la [*page sur le grand oral*](GrandOral/index.qmd).
+- Janvier 2026 - Refonte de la page [*Annales du bac*](bac/annales.qmd).
+:::
+
 Lien vers l'ENT du lycée : [https://cas.ent.auvergnerhonealpes.fr/login](https://cas.ent.auvergnerhonealpes.fr/login){target="_blank"}
 
 Lien vers Capytale : [https://capytale2.ac-paris.fr/web/c-auth/list](https://capytale2.ac-paris.fr/web/c-auth/list){target="_blank"}

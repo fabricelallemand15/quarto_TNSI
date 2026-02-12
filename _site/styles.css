@@ -35,3 +35,64 @@ body {
 .sousligne {
     text-decoration: underline;
 }
+/* Boîte "Dernières mises à jour" (accueil) */
+.updates-box {
+    position: relative;
+    border: 2px solid color-mix(in srgb, var(--bs-primary) 50%, var(--bs-border-color));
+    border-left-width: 12px;
+    border-left-color: var(--bs-primary);
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--bs-primary) 18%, var(--bs-body-bg)) 0%,
+        color-mix(in srgb, var(--bs-info) 16%, var(--bs-body-bg)) 45%,
+        color-mix(in srgb, var(--bs-warning) 14%, var(--bs-body-bg)) 100%
+    );
+    border-radius: calc(var(--bs-border-radius) * 1.25);
+    box-shadow: var(--bs-box-shadow);
+    margin: 1.25rem 0 1.5rem 0;
+    overflow: hidden;
+}
+
+.updates-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--bs-primary),
+        var(--bs-info),
+        var(--bs-success),
+        var(--bs-warning),
+        var(--bs-danger)
+    );
+}
+
+.updates-box .callout-title {
+    font-weight: 800;
+    font-size: 1.12rem;
+    letter-spacing: 0.2px;
+    color: color-mix(in srgb, var(--bs-primary) 80%, var(--bs-emphasis-color));
+}
+
+.updates-box ul {
+    margin-bottom: 0;
+    padding-left: 1.25rem;
+}
+
+.updates-box li {
+    margin-bottom: 0.35rem;
+    padding-left: 0.1rem;
+}
+
+.updates-box li:last-child {
+    margin-bottom: 0;
+}
+
+.updates-box .callout-header {
+    border-bottom: 1px dashed color-mix(in srgb, var(--bs-info) 45%, var(--bs-border-color));
+    padding: 0.45rem 0 0.35rem 0;
+    margin-bottom: 0.2rem;
+}
