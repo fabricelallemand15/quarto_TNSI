@@ -15,6 +15,8 @@ format:
 
 Le grand oral est une épreuve orale qui se déroule en juin. Son coefficient est de 10 (sur un total de 100). Vous devez préparer en première et surtout en terminale deux questions en rapport avec vos spécialités de terminale. [Page de présentation officielle du grand oral](https://www.education.gouv.fr/baccalaureat-2021-epreuve-du-grand-oral-permettre-aux-eleves-de-travailler-une-competence-89576) [Article du bulletin officiel (BO) définissant le grand oral](https://www.education.gouv.fr/bo/20/Special2/MENE2002780N.htm).
 
+**Le coefficient deviendra 8 à partir de la session 2027 !**
+
 ## Les deux questions
 
 ### Répartition des spécialités
@@ -68,11 +70,11 @@ Vous serez évalué par un jury composé d'un professeur d'une de vos spécialit
 
 #### 20 minutes de préparation
 
-Une fois que vous connaissez la question choisie par le jury, vous avez 20 minutes pour mettre vos idées au clair. Vous avez la possibilité de réaliser un support sur ue feuille fournie. Vous pouvez donner ce support au jury au début de l'entretien.
+Une fois que vous connaissez la question choisie par le jury, vous avez 20 minutes pour mettre vos idées au clair. Vous avez la possibilité de réaliser un support sur une ou plusieurs feuilles fournies. Vous ne pouvez pas donner ce support au jury, mais vous pouvez le montrer pendant votre présentation, pour présenter un schéma, une courbe, un diagramme, un tableau, une formule mathématique… 
 
 #### 20 minutes d'entretien
 
-L'entretien se déroule en trois temps. Tout l'entretien se fait sans notes et sans support excepté, éventuellement, celui que vous avez créé pendant votre préparation.
+L'entretien se déroule en deux temps. Tout l'entretien se fait sans notes et sans support excepté, éventuellement, celui que vous avez créé pendant votre préparation.
 
 ::: {.callout-important}
 ## Précisions au sujet du support papier
@@ -82,23 +84,23 @@ Ce support est une aide pour la parole du candidat ; il n’a pas vocation à ê
 **Source** : [Eduscol](https://eduscol.education.fr/729/presentation-du-grand-oral)
 :::
 
-##### 5 minutes de présentation
+##### 10 minutes de présentation
 
-Vous disposez de 5 minutes pour :
+Vous disposez de 10 minutes pour :
 
 * expliquer pourquoi vous avez choisi cette question ;
 * développer le question ;
 * y répondre.
 
-Le jury ne vous interrompt pas sauf si vous dépassez du temps imparti. Tout cela se fait sans notes et sans support.
+Le jury ne vous interrompt pas sauf si vous dépassez du temps imparti.
+
+L'exposé se fait debout, face au jury. Pendant cette partie, l'utilisation du tableau est interdite.
 
 ##### 10 minutes d'échange avec le jury
 
 Pendant ce temps, le jury vous interroge sur votre question, il demande des précisions. Il peut élargir les questions au thème abordé puis à tout le programme de terminale et première.
 
-##### 5 minutes d'échange sur votre projet d'orientation
-
-Il est conseillé de faire un lien entre la question traitée et votre projet d'orientation. Vous devez expliquer les étapes de la maturation de votre projet d'orientation et détailler votre projet après le bac.
+Pendant cet échange, vous pouvez utiliser le tableau pour faire des schémas, des diagrammes, des tableaux, des formules mathématiques… 
 
 ### Évaluation
 
