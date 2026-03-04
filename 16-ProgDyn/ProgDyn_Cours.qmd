@@ -1,5 +1,5 @@
 ---
-title: "Programmation dynamique"
+title: "8.2 - Programmation dynamique"
 ---
 
 # 1. Rappel introductif : la suite de Fibonacci
