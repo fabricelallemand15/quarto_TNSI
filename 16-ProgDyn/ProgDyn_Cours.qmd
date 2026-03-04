@@ -28,46 +28,63 @@ for k in range(10):
 
 Nous avons vu que cet algorithme est très inefficace. Le calcul de $F_{50}$, par exemple, est très long. En effet, le nombre d'appels récursifs est très grand. Il est possible de démontrer que ce nombre augmente de façon **exponentielle**. Pour calculer $F_{100}$, il y aurait environ $10^{20}$ opérations. À raison de $10^9$ opérations par seconde, le calcul prendra de l'ordre de $10^{11}$ secondes, soit environ 3 000 ans !
 
-![](fibo_mermaid.png)
+![Arbre des appels récursifs pour le calcul de $F_5$ : on voit que $F_3$ est calculé 2 fois, $F_2$ est calculé 3 fois, etc.](fibo_mermaid.png)
 
-Un autre constat qui montre l'inefficacité de ce programme : plusieurs calculs identiques sont répétés plusieurs fois. On calcule par exemple $F_3$ deux fois et $F_2$ trois fois si l'on veut obtenir $F_5$. Une solution meilleure serait de garder en mémoire les éléments déjà calculés et de ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la **programmation dynamique** qui consiste pour faire simple à mémoriser les résultats déjà calculés pour ne pas avoir à les recalculer.
+Ce phénomène où les mêmes calculs sont répétés de nombreuses fois s'appelle le **chevauchement des sous-problèmes**. Une solution consiste à garder en mémoire les éléments déjà calculés et à ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la **programmation dynamique**.
 
 ```{python}
-def fibo_dyn(n: int, suite: dict = {0: 0, 1: 1}) -> int:
-    """Suite de Fibonacci version dynamique"""
+def fibo_dyn(n: int, memo: dict = None) -> int:
+    """Suite de Fibonacci version dynamique (mémoïsation)"""
+    if memo is None:
+        memo = {0: 0, 1: 1}
     # Cas de base
     if n in {0,1}:
         return n
-    # Récursion
-    else:
-        # Si Fn est déjà calculé, on le retourne
-        if n in suite:
-            return suite[n]
-        else:
-            # Sinon, on le calcule et on le garde en mémoire
-            f = fibo_dyn(n-2, suite) + fibo_dyn(n-1, suite)
-            suite[n] = f
-            return f
-
+    # Récursion avec mémoïsation
+    if n not in memo:
+        memo[n] = fibo_dyn(n-1, memo) + fibo_dyn(n-2, memo)
+    return memo[n]
 
 for k in range(10):
     print(fibo_dyn(k))
 ```
 
-Avec cette version, la calcule de $F_{50}$ ne pose plus de problème.
+:::{.callout-note}
+## Remarque sur l'implémentation
+On initialise le dictionnaire `memo` à `None` par défaut, puis on le crée dans le corps de la fonction. C'est une bonne pratique en Python : utiliser un objet **mutable** (comme un dictionnaire) comme valeur par défaut d'un paramètre peut causer des effets de bord indésirables, car cet objet est partagé entre tous les appels.
+:::
+
+Avec cette version, le calcul de $F_{50}$ ne pose plus de problème.
 
 # 2. Principe de la programmation dynamique
 
 La programmation dynamique est une méthode algorithmique qui résout des problèmes complexes en les décomposant en sous-problèmes plus simples, en **évitant la redondance** des calculs grâce à la mémorisation des résultats intermédiaires. Cette technique est particulièrement efficace pour les problèmes d'optimisation où l'on cherche la meilleure solution parmi un ensemble de possibilités.
 
-Le principe repose sur deux concepts clés : l'**optimalité** et la **sous-structure optimale**. Un problème présente une sous-structure optimale si une solution optimale globale peut être construite à partir de solutions optimales de ses sous-problèmes. L'optimalité, quant à elle, garantit que pour obtenir la meilleure solution, il suffit de considérer les meilleures solutions des sous-problèmes.
+Le principe repose sur deux propriétés clés :
 
-Pour mettre en œuvre la programmation dynamique, on utilise généralement deux approches : la **mémoïsation**, qui consiste à enregistrer les solutions des sous-problèmes dans une structure de données (comme un tableau) pour les réutiliser ultérieurement ; et la **programmation en bottom-up**, qui calcule les solutions des sous-problèmes de manière itérative en partant des cas les plus simples pour remonter vers la solution complète.
+1. **Sous-structure optimale** : un problème possède une sous-structure optimale si une solution optimale globale peut être construite à partir de solutions optimales de ses sous-problèmes. C'est ce qui permet d'écrire une **relation de récurrence** reliant la solution d'un problème à celles de problèmes plus petits.
+
+2. **Chevauchement des sous-problèmes** (*overlapping subproblems*) : les mêmes sous-problèmes apparaissent de nombreuses fois lors de la résolution. C'est précisément ce qui rend l'approche naïve (récursive sans mémorisation) inefficace, et ce qui justifie la mémorisation des résultats.
+
+:::{.callout-warning}
+## Attention
+La programmation dynamique ne s'applique pas à tous les problèmes ! Ces deux propriétés (**sous-structure optimale** et **chevauchement des sous-problèmes**) doivent être vérifiées.
+:::
+
+Pour mettre en œuvre la programmation dynamique, on utilise généralement deux approches :
+
+- **Approche descendante** (*top-down*) avec **mémoïsation** : on écrit une fonction récursive, mais on mémorise les résultats des sous-problèmes déjà résolus (dans un dictionnaire ou un tableau) pour ne pas les recalculer.
+- **Approche ascendante** (*bottom-up*) avec **tabulation** : on calcule les solutions des sous-problèmes de manière itérative, en partant des cas les plus simples (cas de base) pour construire progressivement la solution du problème complet.
 
 :::{.callout-tip}
 ## En résumé
 
-La programmation dynamique transforme un problème complexe en un assemblage de problèmes plus petits et gérables, permettant ainsi de réduire considérablement le temps de calcul nécessaire à la résolution du problème initial.
+La programmation dynamique transforme un problème complexe en un assemblage de sous-problèmes plus petits. Elle repose sur :
+
+1. L'identification d'une **relation de récurrence** (sous-structure optimale) ;
+2. La **mémorisation** des résultats intermédiaires pour éviter les calculs redondants (chevauchement des sous-problèmes).
+
+Cela permet de réduire considérablement le temps de calcul, passant souvent d'une complexité exponentielle à une complexité polynomiale.
 :::
 
 **Exemple détaillé : retour sur la chenille vorace**
@@ -96,7 +113,11 @@ Le paradigme de la programmation dynamique permet d'obtenir un algorithme effica
 
 Pour toute position  $\displaystyle x$ dans la pyramide, notons ${\displaystyle v(x)}$ le nombre écrit à cette position et  ${\displaystyle c(x)}$ la somme des nombres traversés dans un chemin maximal issu de $\displaystyle x$. Les sous-problèmes consistent à calculer les valeurs de ${\displaystyle c(x)}$ pour tout ${\displaystyle x}$. Le problème initial consiste à calculer ${\displaystyle c(x)}$ lorsque ${\displaystyle x}$ est le sommet de la pyramide.
 
-Donnons maintenant une définition récursive de ${\displaystyle c(x)}$ : ${\displaystyle c(x)=v(x)}$ pour toute position ${\displaystyle x}$ située au rez-de chaussée de la pyramide ${\displaystyle c(x)=v(x)+\max(c(g(x)),c(d(x)))}$ pour toute autre position ${\displaystyle x}$, où ${\displaystyle g(x)}$ et ${\displaystyle d(x)}$ sont les positions inférieures gauche et droite sous la position ${\displaystyle x}$.
+Donnons maintenant une définition récursive de ${\displaystyle c(x)}$ :
+
+$$c(x) = \begin{cases} v(x) & \text{si } x \text{ est au dernier niveau de la pyramide} \\ v(x) + \max\big(c(g(x)),\, c(d(x))\big) & \text{sinon} \end{cases}$$
+
+où ${\displaystyle g(x)}$ et ${\displaystyle d(x)}$ désignent respectivement les positions inférieures gauche et droite sous la position ${\displaystyle x}$.
 
 Si on cherche à calculer directement par la définition récursive, on évalue plusieurs fois la même valeur : dans l'exemple ci-dessus, la valeur 4 de la troisième ligne est calculée deux fois en venant de la ligne supérieure (une fois depuis le 7, une fois depuis le 4). Le paradigme de la programmation dynamique consiste à calculer les valeurs ${\displaystyle c(x)}$, soit à l'aide d'un algorithme itératif ascendant en stockant les valeurs déjà calculées dans un tableau, soit à l'aide d'un algorithme récursif descendant avec mémoïsation. L'important est de conserver dans un tableau les valeurs intermédiaires.
 
@@ -108,9 +129,79 @@ Si on cherche à calculer directement par la définition récursive, on évalue 
 
 Le nombre de calculs est seulement ${\displaystyle n(n-1)/2}$ : la complexité est donc ramenée à ${\displaystyle O(n^2)}$.
 
+### Algorithme : approche ascendante (bottom-up)
+
+On part du dernier niveau de la pyramide et on remonte niveau par niveau. À chaque position, on calcule $c(x)$ en utilisant les valeurs déjà calculées au niveau inférieur, que l'on stocke dans un tableau.
+
+```
+Données : pyramide P à n niveaux, P[i][j] = valeur à la ligne i, colonne j
+          (lignes numérotées de 0 à n-1, de haut en bas)
+Résultat : la somme maximale d'un chemin du sommet à la base
+
+# Étape 1 : Initialiser un tableau C de mêmes dimensions que P
+# Le dernier niveau de C est identique à celui de P (cas de base)
+Pour j de 0 à n-1 :
+    C[n-1][j] ← P[n-1][j]
+
+# Étape 2 : Remonter niveau par niveau, du bas vers le haut
+Pour i de n-2 à 0 (en décroissant) :
+    Pour j de 0 à i :
+        # c(x) = v(x) + max(c(gauche), c(droite))
+        # Les enfants de P[i][j] sont P[i+1][j] (gauche) et P[i+1][j+1] (droite)
+        C[i][j] ← P[i][j] + max(C[i+1][j], C[i+1][j+1])
+
+# Étape 3 : La réponse est au sommet
+Renvoyer C[0][0]
+```
+
+:::{.callout-note}
+## Pourquoi ça marche ?
+On remplit le tableau **de bas en haut**. Quand on calcule `C[i][j]`, les valeurs `C[i+1][j]` et `C[i+1][j+1]` sont **déjà calculées** (elles l'ont été à l'itération précédente). Chaque sous-problème n'est résolu **qu'une seule fois**.
+:::
+
+### Algorithme : approche descendante (top-down) avec mémoïsation
+
+On écrit la relation de récurrence sous forme récursive. On utilise un tableau `memo` pour stocker les résultats déjà calculés et éviter les recalculs.
+
+```
+Données : pyramide P à n niveaux, tableau memo initialisé à -1 partout
+Résultat : la somme maximale d'un chemin issu de la position (i, j)
+
+Fonction chenille(i, j) :
+    # Étape 1 : Vérifier si le résultat est déjà en mémoire
+    Si memo[i][j] ≠ -1 :
+        Renvoyer memo[i][j]      # résultat déjà connu, pas de calcul !
+
+    # Étape 2 : Cas de base (dernier niveau)
+    Si i = n-1 :
+        memo[i][j] ← P[i][j]
+
+    # Étape 3 : Cas récursif
+    Sinon :
+        # On calcule récursivement les deux sous-chemins
+        chemin_gauche ← chenille(i+1, j)
+        chemin_droite ← chenille(i+1, j+1)
+        # On prend le meilleur et on ajoute la valeur courante
+        memo[i][j] ← P[i][j] + max(chemin_gauche, chemin_droite)
+
+    Renvoyer memo[i][j]
+
+# Appel initial : on part du sommet
+Renvoyer chenille(0, 0)
+```
+
+:::{.callout-note}
+## Pourquoi ça marche ?
+Avant tout calcul, on vérifie si le résultat est déjà dans `memo`. Si oui, on le renvoie immédiatement (coût constant). Sinon, on le calcule **une seule fois** et on le stocke. Ainsi, même si `chenille(2, 1)` est appelée depuis `chenille(1, 0)` et depuis `chenille(1, 1)`, le calcul effectif n'a lieu qu'**une seule fois**.
+:::
+
 ### Exercice
 
-Dérouler à la main, l'algorithme décrit ci-dessus, en deux versions : une version itérative ascendante avec un tableau, et une version récursive avec mémoïsation.
+Dérouler à la main l'algorithme de la chenille vorace sur la pyramide ci-dessus :
+
+1. **Approche ascendante** : construire un tableau en partant du dernier niveau, en calculant $c(x)$ pour chaque position. Montrer les valeurs intermédiaires niveau par niveau.
+2. **Approche descendante** : simuler l'exécution récursive de $c(\text{sommet})$ avec mémoïsation. Indiquer pour chaque appel s'il est calculé ou récupéré en mémoire.
+3. Donner le chemin optimal et sa valeur.
 
 # 3. Exemple de référence : le rendu de monnaie
 
@@ -164,7 +255,7 @@ La réponse optimale est celle qui utilise le nombre minimal de pièces. On a vu
 Une approche récursive permet de résoudre le problème : soit $x$ une valeur faciale de l’une des pièces du système monétaire. Pour
 rendre une somme $s$ de façon optimale, si l’on veut utiliser au moins une fois la pièce $x$, il suffit de rendre $x$ et la somme $s − x$ de
 façon optimale. Il n’y a plus qu’à choisir, parmi tous les choix possibles de $x$, celui qui permet d’utiliser le minimum de pièces.
-Autrement dit, si j’appelle $f(s)$ le nombre minimal de pièces qu’il faut utiliser pour payer la somme $x$, on a simplement $f(0) = 0$ et
+Autrement dit, si l'on appelle $f(s)$ le nombre minimal de pièces qu'il faut utiliser pour payer la somme $s$, on a simplement $f(0) = 0$ et
 
 $$f(s) = \min_{x\leqslant s} (1 + f(s − x))$$
 
@@ -194,9 +285,9 @@ répétée. Une analyse du problème montrerait que la complexité est exponenti
 
 Une idée classique consiste à mémoriser les résultats des appels pour être sûr qu’on n’aura pas besoin de les calculer plusieurs fois.
 
-## 3.1. Approche récursive
+## 3.1. Approche descendante (récursive avec mémoïsation)
 
-Il s'agit de l'approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive dont un des arguments est un dictionnaire pour mémoriser les résultats déjà calculés. On prend soin de donner une valeur par défaut vide pour que la fonction reste pure (pas de variable globale).
+Il s'agit de l'approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive et on mémorise les résultats déjà calculés dans un dictionnaire. La vérification de la présence en mémoire doit se faire **avant** la boucle sur les pièces : si le résultat est déjà connu, on le retourne immédiatement sans aucun calcul supplémentaire.
 
 ```{python}
 def dynRecursifMem(valeursFaciales, somme, mem={}):
@@ -204,26 +295,26 @@ def dynRecursifMem(valeursFaciales, somme, mem={}):
         return inf
     elif somme == 0:
         return 0
+    # Si le résultat a déjà été calculé, on le retourne immédiatement
+    if somme in mem:
+        return mem[somme]
+    # Sinon, on calcule le minimum sur toutes les pièces possibles
     mini = inf
     for x in valeursFaciales:
         if somme >= x:
-            # si le résultat a déjà été calculé, on le récupère
-            if somme in mem:
-                mini = mem[somme]
-            # Sinon, on calcule et mémorise le résultat
-            else:
-                mini = min(mini, 1 + dynRecursifMem(valeursFaciales, somme - x, mem))
+            mini = min(mini, 1 + dynRecursifMem(valeursFaciales, somme - x, mem))
+    # On mémorise le résultat avant de le retourner
     mem[somme] = mini
     return mini
 ```	
 
 Cette fois, l'exécution de ``dynRecursifMem(euros, 48)`` est immédiate.
 
-## 3.2. Approche itérative
+## 3.2. Approche ascendante (itérative avec tabulation)
 
-Ici, le calcul de ``f(s)`` utilise le calcul de ``f(s − x)`` pour chaque valeur de ``x``. Autrement dit, ``f(s)`` n’utilise au plus que les valeurs de ``f(s − 1)``, ``f(s − 2)``, …, ``f(3)``, ``f(2)``, ``f(1)``.
+Ici, le calcul de ``f(s)`` utilise le calcul de ``f(s − x)`` pour chaque valeur de ``x``. Autrement dit, ``f(s)`` n'utilise au plus que les valeurs de ``f(s − 1)``, ``f(s − 2)``, …, ``f(3)``, ``f(2)``, ``f(1)``.
 
-On va donc créer un tableau conservant ces données, et calculer de façon systématique pour des valeurs croissantes de l’index.
+On va donc créer un tableau ``f`` de taille ``somme + 1`` et remplir les cases dans l'ordre croissant des indices. Quand on calcule ``f[s]``, toutes les valeurs ``f[s - x]`` dont on a besoin sont déjà calculées et stockées dans le tableau.
 
 ```{python}
 def dynMemoise(valeursFaciales, somme):
@@ -246,3 +337,24 @@ L’algorithme est de complexité tout à fait raisonnable : les deux boucles em
 de ``somme * len(valeursFaciales)``.
 
 En revanche, il a un coût en espace (ou en mémoire) : il faut réserver la place nécessaire pour ranger toutes les valeurs de ``f(n)``.
+
+## 3.3. Comparaison des approches
+
+| Approche | Complexité temporelle | Complexité spatiale | Avantages | Inconvénients |
+|----------|----------------------|--------------------|-----------|--------------|
+| Récursive naïve | Exponentielle | Profondeur de pile | Simple à écrire | Beaucoup trop lente |
+| Descendante (mémoïsation) | $O(s \times p)$ | $O(s)$ + pile | Naturelle (suit la récurrence) | Profondeur de récursion limitée |
+| Ascendante (tabulation) | $O(s \times p)$ | $O(s)$ | Pas de récursion | Moins intuitive |
+
+où $s$ est la somme à rendre et $p$ le nombre de valeurs faciales.
+
+# 4. Bilan : méthodologie de résolution par programmation dynamique
+
+Pour résoudre un problème par programmation dynamique, on suit généralement les étapes suivantes :
+
+1. **Identifier les sous-problèmes** : définir précisément ce que l'on cherche à calculer (ici $f(s)$, le nombre minimal de pièces pour rendre $s$).
+2. **Écrire la relation de récurrence** : exprimer la solution d'un sous-problème en fonction de sous-problèmes plus petits, avec un ou plusieurs **cas de base**.
+3. **Vérifier le chevauchement** : s'assurer que les mêmes sous-problèmes sont résolus plusieurs fois dans l'approche naïve.
+4. **Choisir une implémentation** : approche descendante (récursive + mémoïsation) ou ascendante (itérative + tabulation).
+5. **Analyser la complexité** : en temps et en espace.
+6. **(Optionnel) Reconstruire la solution** : retrouver non seulement la valeur optimale, mais aussi la solution elle-même (par exemple, quelles pièces ont été utilisées).
