@@ -1067,8 +1067,8 @@ window.Quarto = {
   </ul></li>
   <li><a href="#exemple-de-référence-le-rendu-de-monnaie" id="toc-exemple-de-référence-le-rendu-de-monnaie" class="nav-link" data-scroll-target="#exemple-de-référence-le-rendu-de-monnaie">3. Exemple de référence : le rendu de monnaie</a>
   <ul class="collapse">
-  <li><a href="#approche-descendante-récursive-avec-mémoïsation" id="toc-approche-descendante-récursive-avec-mémoïsation" class="nav-link" data-scroll-target="#approche-descendante-récursive-avec-mémoïsation">3.1. Approche descendante (récursive avec mémoïsation)</a></li>
-  <li><a href="#approche-ascendante-itérative-avec-tabulation" id="toc-approche-ascendante-itérative-avec-tabulation" class="nav-link" data-scroll-target="#approche-ascendante-itérative-avec-tabulation">3.2. Approche ascendante (itérative avec tabulation)</a></li>
+  <li><a href="#approche-ascendante-itérative-avec-tabulation" id="toc-approche-ascendante-itérative-avec-tabulation" class="nav-link" data-scroll-target="#approche-ascendante-itérative-avec-tabulation">3.1. Approche ascendante (itérative avec tabulation)</a></li>
+  <li><a href="#approche-descendante-récursive-avec-mémoïsation" id="toc-approche-descendante-récursive-avec-mémoïsation" class="nav-link" data-scroll-target="#approche-descendante-récursive-avec-mémoïsation">3.2. Approche descendante (récursive avec mémoïsation)</a></li>
   <li><a href="#comparaison-des-approches" id="toc-comparaison-des-approches" class="nav-link" data-scroll-target="#comparaison-des-approches">3.3. Comparaison des approches</a></li>
   </ul></li>
   <li><a href="#bilan-méthodologie-de-résolution-par-programmation-dynamique" id="toc-bilan-méthodologie-de-résolution-par-programmation-dynamique" class="nav-link" data-scroll-target="#bilan-méthodologie-de-résolution-par-programmation-dynamique">4. Bilan : méthodologie de résolution par programmation dynamique</a></li>
@@ -1104,7 +1104,7 @@ window.Quarto = {
 <p>D’après la définition de la suite, on a, pour tout entier naturel <span class="math inline">\(n\geqslant 2\)</span> :</p>
 <p><span class="math display">\[F_{n}=F_{n-2}+F_{n-1}\]</span></p>
 <p>On en déduit une version <strong>récursive</strong> de l’algorithme de calcul de <span class="math inline">\(F_n\)</span>. Cet algorithme a ceci de particulier que chaque fonction procède à <strong>deux</strong> appels récursifs.</p>
-<div id="aac9b3b4" class="cell" data-execution_count="1">
+<div id="a94f2dbf" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_rec(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version récursive"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
@@ -1137,7 +1137,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>Ce phénomène où les mêmes calculs sont répétés de nombreuses fois s’appelle le <strong>chevauchement des sous-problèmes</strong>. Une solution consiste à garder en mémoire les éléments déjà calculés et à ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la <strong>programmation dynamique</strong>.</p>
-<div id="0b30f766" class="cell" data-execution_count="2">
+<div id="8d3ae67b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_dyn(n: <span class="bu">int</span>, memo: <span class="bu">dict</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version dynamique (mémoïsation)"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> memo <span class="kw">is</span> <span class="va">None</span>:</span>
@@ -1365,7 +1365,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <p>L’algorithme glouton consiste à payer d’abord avec la plus grosse pièce possible : ici, il s’agit de 20, puisque 50 &gt; 48. Ayant donné 20, il reste 28 à payer, et on poursuit avec la même méthode. Finalement, on va payer 48 sous la forme 48 = 20 + 20 + 5 + 2 + 1. On a eu besoin de 5 pièces.</p>
 <p>Considérons un autre système monétaire (en fait c’est l’ancien système impérial britannique) représenté par la liste suivante de valeurs faciales : <code>imperial = [30, 24, 12, 6, 3, 1]</code>. Pour payer 48 l’algorithme glouton va répondre : 48 = 30+12+6. À la différence du système euro, pour lequel on peut démontrer que l’algorithme glouton donne toujours la réponse optimale, on constate que ce n’est pas le cas avec le système impérial, puisque on aurait pu se contenter de 2 pièces : 48 = 24 + 24.</p>
 <p>Rappelons comment peut se programmer l’algorithme glouton.</p>
-<div id="51cab019" class="cell" data-execution_count="3">
+<div id="1bbf91bd" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>euros <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>imperial <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">24</span>, <span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1390,7 +1390,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <p><span class="math display">\[f(s) = \min_{x\leqslant s} (1 + f(s − x))\]</span></p>
 <p>le minimum étant calculé sur toutes les valeurs <span class="math inline">\(x\)</span> d’une pièce.</p>
 <p>Cette remarque permet d’écrire le programme récursif suivant :</p>
-<div id="53a41cb0" class="cell" data-execution_count="4">
+<div id="2f26e121" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> inf</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursif(valeursFaciales, somme):</span>
@@ -1407,47 +1407,47 @@ Renvoyer chenille(0, 0)</code></pre>
 <p>On a importé du module <code>math</code> la valeur spéciale <code>inf</code> qui représente l’infini : pour tout entier <code>a</code>, l’expression a<code>&lt; inf</code> vaut <code>True</code>.</p>
 <p>Hélas, l’exécution de l’appel <code>dynRecursif(euros, 48)</code> est extrêmement lente. les mêmes calculs étant effectués de façon répétée. Une analyse du problème montrerait que la complexité est exponentielle.</p>
 <p>Une idée classique consiste à mémoriser les résultats des appels pour être sûr qu’on n’aura pas besoin de les calculer plusieurs fois.</p>
-<section id="approche-descendante-récursive-avec-mémoïsation" class="level2">
-<h2 class="anchored" data-anchor-id="approche-descendante-récursive-avec-mémoïsation">3.1. Approche descendante (récursive avec mémoïsation)</h2>
-<p>Il s’agit de l’approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive et on mémorise les résultats déjà calculés dans un dictionnaire. La vérification de la présence en mémoire doit se faire <strong>avant</strong> la boucle sur les pièces : si le résultat est déjà connu, on le retourne immédiatement sans aucun calcul supplémentaire.</p>
-<div id="a9afea41" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> inf</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> somme <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si le résultat a déjà été calculé, on le retourne immédiatement</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="kw">in</span> mem:</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> mem[somme]</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sinon, on calcule le minimum sur toutes les pièces possibles</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    mini <span class="op">=</span> inf</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> valeursFaciales:</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> somme <span class="op">&gt;=</span> x:</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>            mini <span class="op">=</span> <span class="bu">min</span>(mini, <span class="dv">1</span> <span class="op">+</span> dynRecursifMem(valeursFaciales, somme <span class="op">-</span> x, mem))</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On mémorise le résultat avant de le retourner</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    mem[somme] <span class="op">=</span> mini</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mini</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Cette fois, l’exécution de <code>dynRecursifMem(euros, 48)</code> est immédiate.</p>
-</section>
 <section id="approche-ascendante-itérative-avec-tabulation" class="level2">
-<h2 class="anchored" data-anchor-id="approche-ascendante-itérative-avec-tabulation">3.2. Approche ascendante (itérative avec tabulation)</h2>
+<h2 class="anchored" data-anchor-id="approche-ascendante-itérative-avec-tabulation">3.1. Approche ascendante (itérative avec tabulation)</h2>
 <p>Ici, le calcul de <code>f(s)</code> utilise le calcul de <code>f(s − x)</code> pour chaque valeur de <code>x</code>. Autrement dit, <code>f(s)</code> n’utilise au plus que les valeurs de <code>f(s − 1)</code>, <code>f(s − 2)</code>, …, <code>f(3)</code>, <code>f(2)</code>, <code>f(1)</code>.</p>
 <p>On va donc créer un tableau <code>f</code> de taille <code>somme + 1</code> et remplir les cases dans l’ordre croissant des indices. Quand on calcule <code>f[s]</code>, toutes les valeurs <code>f[s - x]</code> dont on a besoin sont déjà calculées et stockées dans le tableau.</p>
-<div id="91bf8041" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (somme <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, somme <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        f[s] <span class="op">=</span> inf</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> valeursFaciales:</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> s <span class="op">&gt;=</span> x:</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                f[s] <span class="op">=</span> <span class="bu">min</span>(f[s], <span class="dv">1</span> <span class="op">+</span> f[s <span class="op">-</span> x])</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f[somme]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="98d25247" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (somme <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, somme <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        f[s] <span class="op">=</span> inf</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> valeursFaciales:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> s <span class="op">&gt;=</span> x:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                f[s] <span class="op">=</span> <span class="bu">min</span>(f[s], <span class="dv">1</span> <span class="op">+</span> f[s <span class="op">-</span> x])</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f[somme]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Le calcul de <code>f(48)</code> va peut-être utiliser plusieurs fois la valeur de <code>f(8)</code>, mais celle-ci n’aura cette fois été calculée qu’une seule fois, et aussitôt rangée en mémoire. Cela ne fonctionne que parce que pour calculer <code>f(48)</code>, par exemple, on a recours seulement aux valeurs de <code>f(s)</code> pour <code>s &lt; 48</code>.</p>
 <p>Cette fois l’appel <code>dynMemoise(euros, 48)</code> répond immédiatement <code>5</code> (l’algorithme glouton avait bien trouvé la réponse optimale) et <code>dynMemoise(imperial, 48)</code> renvoie <code>2</code>, ce qui correspond à la solution optimale <code>48 = 24 + 24</code>.</p>
 <p>L’algorithme est de complexité tout à fait raisonnable : les deux boucles emboîtées correspondent à un temps d’exécution de l’ordre de <code>somme * len(valeursFaciales)</code>.</p>
 <p>En revanche, il a un coût en espace (ou en mémoire) : il faut réserver la place nécessaire pour ranger toutes les valeurs de <code>f(n)</code>.</p>
+</section>
+<section id="approche-descendante-récursive-avec-mémoïsation" class="level2">
+<h2 class="anchored" data-anchor-id="approche-descendante-récursive-avec-mémoïsation">3.2. Approche descendante (récursive avec mémoïsation)</h2>
+<p>Il s’agit de l’approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive et on mémorise les résultats déjà calculés dans un dictionnaire. La vérification de la présence en mémoire doit se faire <strong>avant</strong> la boucle sur les pièces : si le résultat est déjà connu, on le retourne immédiatement sans aucun calcul supplémentaire.</p>
+<div id="bcecc5f5" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> inf</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> somme <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si le résultat a déjà été calculé, on le retourne immédiatement</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="kw">in</span> mem:</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> mem[somme]</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sinon, on calcule le minimum sur toutes les pièces possibles</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    mini <span class="op">=</span> inf</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> valeursFaciales:</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> somme <span class="op">&gt;=</span> x:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>            mini <span class="op">=</span> <span class="bu">min</span>(mini, <span class="dv">1</span> <span class="op">+</span> dynRecursifMem(valeursFaciales, somme <span class="op">-</span> x, mem))</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># On mémorise le résultat avant de le retourner</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    mem[somme] <span class="op">=</span> mini</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mini</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Cette fois, l’exécution de <code>dynRecursifMem(euros, 48)</code> est immédiate.</p>
 </section>
 <section id="comparaison-des-approches" class="level2">
 <h2 class="anchored" data-anchor-id="comparaison-des-approches">3.3. Comparaison des approches</h2>

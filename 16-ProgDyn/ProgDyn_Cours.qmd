@@ -285,32 +285,7 @@ répétée. Une analyse du problème montrerait que la complexité est exponenti
 
 Une idée classique consiste à mémoriser les résultats des appels pour être sûr qu’on n’aura pas besoin de les calculer plusieurs fois.
 
-## 3.1. Approche descendante (récursive avec mémoïsation)
-
-Il s'agit de l'approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive et on mémorise les résultats déjà calculés dans un dictionnaire. La vérification de la présence en mémoire doit se faire **avant** la boucle sur les pièces : si le résultat est déjà connu, on le retourne immédiatement sans aucun calcul supplémentaire.
-
-```{python}
-def dynRecursifMem(valeursFaciales, somme, mem={}):
-    if somme < 0:
-        return inf
-    elif somme == 0:
-        return 0
-    # Si le résultat a déjà été calculé, on le retourne immédiatement
-    if somme in mem:
-        return mem[somme]
-    # Sinon, on calcule le minimum sur toutes les pièces possibles
-    mini = inf
-    for x in valeursFaciales:
-        if somme >= x:
-            mini = min(mini, 1 + dynRecursifMem(valeursFaciales, somme - x, mem))
-    # On mémorise le résultat avant de le retourner
-    mem[somme] = mini
-    return mini
-```	
-
-Cette fois, l'exécution de ``dynRecursifMem(euros, 48)`` est immédiate.
-
-## 3.2. Approche ascendante (itérative avec tabulation)
+## 3.1. Approche ascendante (itérative avec tabulation)
 
 Ici, le calcul de ``f(s)`` utilise le calcul de ``f(s − x)`` pour chaque valeur de ``x``. Autrement dit, ``f(s)`` n'utilise au plus que les valeurs de ``f(s − 1)``, ``f(s − 2)``, …, ``f(3)``, ``f(2)``, ``f(1)``.
 
@@ -337,6 +312,31 @@ L’algorithme est de complexité tout à fait raisonnable : les deux boucles em
 de ``somme * len(valeursFaciales)``.
 
 En revanche, il a un coût en espace (ou en mémoire) : il faut réserver la place nécessaire pour ranger toutes les valeurs de ``f(n)``.
+
+## 3.2. Approche descendante (récursive avec mémoïsation)
+
+Il s'agit de l'approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive et on mémorise les résultats déjà calculés dans un dictionnaire. La vérification de la présence en mémoire doit se faire **avant** la boucle sur les pièces : si le résultat est déjà connu, on le retourne immédiatement sans aucun calcul supplémentaire.
+
+```{python}
+def dynRecursifMem(valeursFaciales, somme, mem={}):
+    if somme < 0:
+        return inf
+    elif somme == 0:
+        return 0
+    # Si le résultat a déjà été calculé, on le retourne immédiatement
+    if somme in mem:
+        return mem[somme]
+    # Sinon, on calcule le minimum sur toutes les pièces possibles
+    mini = inf
+    for x in valeursFaciales:
+        if somme >= x:
+            mini = min(mini, 1 + dynRecursifMem(valeursFaciales, somme - x, mem))
+    # On mémorise le résultat avant de le retourner
+    mem[somme] = mini
+    return mini
+```	
+
+Cette fois, l'exécution de ``dynRecursifMem(euros, 48)`` est immédiate.
 
 ## 3.3. Comparaison des approches
 
