@@ -195,61 +195,61 @@
   {
     "objectID": "17-RechercheTextuelle/cours.html",
     "href": "17-RechercheTextuelle/cours.html",
-    "title": "5.3 - Recherche textuelle (TP)",
+    "title": "8.3 - Recherche textuelle (TP)",
     "section": "",
     "text": "ImportantObjectif de la recherche textuelle\n\n\n\nOn considère deux chaînes de caractères, l’une appelée texte et l’autre motif. On cherche dans texte s’il existe une occurrence du motif motif.\nAutrement dit, avec les notations de Python, on cherche s’il existe un indice i tel que texte[i:i+len(motif)] == motif.\n\n\nPlusieurs algorithmes ont été inventés pour résoudre ce problème, un des plus connus est l’algorithme de Knuth, Morris, Pratt, qui ne figure pas au programme. Un autre algorithme, très efficace, est l’algorithme de Boyer et Moore, qui a été inventé en 1977. Boyer et Moore travaillaient alors à l’université d’Austin au Texas en tant qu’informaticiens.\nDans la suite, texte correspond au texte intégral du roman Le Rouge et le Noir de Stendhal, au format txt encodé en UTF-8.\n\nfichier = open(\"LeRougeEtLeNoir.txt\", \"r\", encoding=\"utf-8\")\ntexte = fichier.read()\nfichier.close()\n\nCompléter la cellule ci-dessous pour obtenir la taille du texte en caractères.\n\n# À compléter\n\nAvant d’aller plus loin, remarquons qu’il existe une fonction Python qui répond à notre problème : il s’agit de la méthode find de l’objet str. Par exemple, le code ci-dessous renvoie l’indice de la première occurrence du motif Julien trembla dans le texte.\n\nprint(texte.find(\"Julien trembla\"))\n\nL’indice retourné est celui de la première lettre du motif dans le texte :\n\nprint(texte[162926:162960])\n\nSi le motif recherché n’apparaît pas dans le texte, alors la fonction find renvoie -1.\n\nprint(texte.find(\"Goldorak\"))\n\nUne variante de la fonction find prend deux arguments : le second argument est la position de départ dans la recherche.\nCompléter le code suivant, utilisant cette variante, pour déterminer le nombre d’occurrences de motif dans texte.\n\nRemarque : la fonction ci-dessous compte les occurrences avec chevauchement (on avance de position + 1 à chaque occurrence trouvée). Réfléchir à la différence avec un avancement de position + len(motif).\n\n\ndef nbOccurrences(texte, motif):\n    compteur = 0\n    position = texte.find(motif)\n    # À compléter\n    \n    \n    return compteur\n\nExécuter le code ci-dessous pour vérifier votre fonction.\n\nassert nbOccurrences(texte, \"Julien\") == 1908\nassert nbOccurrences(texte, \"Goldorak\") == 0\nassert nbOccurrences(texte, \"mort\") == 178\nprint(\"Tests réussis\")",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Ch. 8 - Stratégies algorithmiques avancées",
-      "5.3 - Recherche textuelle (TP)"
+      "8.3 - Recherche textuelle (TP)"
     ]
   },
   {
     "objectID": "17-RechercheTextuelle/cours.html#exemple-à-la-main",
     "href": "17-RechercheTextuelle/cours.html#exemple-à-la-main",
-    "title": "5.3 - Recherche textuelle (TP)",
+    "title": "8.3 - Recherche textuelle (TP)",
     "section": "Exemple “à la main”",
     "text": "Exemple “à la main”\nNous considérons ici la recherche du motif ‘dab’ dans le texte ‘abracadabra’.\nAvec nos notations, p = 3, n = 11 et la première occurrence du motif dans le texte apparaît en position i = 6.\nOn commence avec la fenêtre tout à gauche, c’est-à-dire avec i = 0.\nabracadabra\ndab\nComme on commence à comparer de droite à gauche, c’est pour j = 2 qu’il y a non-correspondance : motif[2]='b' est différent de 'r'=texte[0 + 2].\nOn note x ='r' le caractère du texte qui ne correspond pas à y ='b' le caractère du motif qui lui fait face.\nDe combien peut-on décaler la fenêtre ? Comme x n’apparaît nulle part dans le motif, on peut carrément décaler le motif de p = 3 unités vers la droite !\nabracadabra\n   dab\nAinsi on se retrouve avec i = 3 et le premier échec intervient avec j = 2, où le caractère x =texte[3 + 2]='a' du texte est distinct du caractère face à lui dans le motif, c’est-à-dire y =motif[2]='b'.\nMais à la différence du cas précédent, le caractère x apparaît bien dans le motif. On déplace donc la fenêtre d’une unité vers la droite.\nVoici la prochaine étape :\nabracadabra\n    dab\ni = 4; x ='d' ; y ='b' : on décale de 2 pour faire correspondre les deux ‘d’.\nFinalement avec i = 6, on trouve la première occurrence du motif et l’algorithme se termine.\nabracadabra\n      dab",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Ch. 8 - Stratégies algorithmiques avancées",
-      "5.3 - Recherche textuelle (TP)"
+      "8.3 - Recherche textuelle (TP)"
     ]
   },
   {
     "objectID": "17-RechercheTextuelle/cours.html#exercice",
     "href": "17-RechercheTextuelle/cours.html#exercice",
-    "title": "5.3 - Recherche textuelle (TP)",
+    "title": "8.3 - Recherche textuelle (TP)",
     "section": "Exercice",
     "text": "Exercice\nDérouler à la main l’exécution de l’algorithme de Boyer et Moore pour la recherche du motif \"cavalier\" dans le texte \"Le cheval court, le cavalier se vante\".",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Ch. 8 - Stratégies algorithmiques avancées",
-      "5.3 - Recherche textuelle (TP)"
+      "8.3 - Recherche textuelle (TP)"
     ]
   },
   {
     "objectID": "17-RechercheTextuelle/cours.html#programmation-de-lalgorithme",
     "href": "17-RechercheTextuelle/cours.html#programmation-de-lalgorithme",
-    "title": "5.3 - Recherche textuelle (TP)",
+    "title": "8.3 - Recherche textuelle (TP)",
     "section": "Programmation de l’algorithme",
     "text": "Programmation de l’algorithme\nOn commence par calculer un dictionnaire dont les clés sont les caractères du motif et les valeurs l’indice de la position la plus à droite du caractère.\nC’est ce que réalise la fonction calculeADroite.\nDans le cas du mot maman, par exemple, ce dictionnaire sera : {'m': 2, 'a': 3, 'n': 4}.\nCompléter le code de la fonction calculeADroite.\n\ndef calculeADroite(motif):\n    p = len(motif)\n    dico = {}\n    # À compléter\n    \n    \n    return dico\n\n\n# test de la fonction calculeADroite\nassert calculeADroite(\"Julien\") == {'J': 0, 'u': 1, 'l': 2, 'i': 3, 'e': 4, 'n': 5}\nassert calculeADroite(\"maman\") == {'m': 2, 'a': 3, 'n': 4}\nprint(\"Tests réussis\")\n\nOn peut maintenant compléter la fonction recherche_BMH pour appliquer les idées ci-dessus : on parcourt le motif de droite à gauche et on calcule le décalage en utilisant le dictionnaire créé par la fonction précédente.\n\nNote : on utilise max(1, j - dico[texte[i+j]]) pour s’assurer que le décalage est toujours d’au moins 1. En effet, si le caractère trouvé dans le motif apparaît à droite de la position de non-correspondance, le décalage brut j - dico[...] serait négatif ou nul, ce qui ferait reculer ou stagner la fenêtre.\n\n\ndef recherche_BMH(texte, motif):\n    n = len(texte)\n    p = len(motif)\n    dico = calculeADroite(motif)\n    i = 0\n    while i &lt;= n - p:\n        j = p - 1\n        # À compléter : parcourir le motif de droite à gauche\n        \n        \n        if j == -1:\n            return i\n        else:\n            # À compléter : calculer le décalage\n            pass\n    return -1\n\n\n# test de la fonction recherche_BMH\nassert recherche_BMH(\"Julien Sorel\", \"Julien\") == 0\nassert recherche_BMH(\"Julien Sorel\", \"Sorel\") == 7\nassert recherche_BMH(\"Julien Sorel\", \"Julienne\") == -1\nassert recherche_BMH(texte, \"Julien trembla\") == 162926\nprint(\"Tests réussis\")",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Ch. 8 - Stratégies algorithmiques avancées",
-      "5.3 - Recherche textuelle (TP)"
+      "8.3 - Recherche textuelle (TP)"
     ]
   },
   {
     "objectID": "17-RechercheTextuelle/cours.html#conclusion",
     "href": "17-RechercheTextuelle/cours.html#conclusion",
-    "title": "5.3 - Recherche textuelle (TP)",
+    "title": "8.3 - Recherche textuelle (TP)",
     "section": "Conclusion",
     "text": "Conclusion\nCommenter les résultats obtenus ci-dessus. Quel algorithme est le plus rapide ? Pourquoi ? Quelle est la complexité dans le pire des cas de chaque algorithme ?",
     "crumbs": [
       "{{< fa house-chimney-window >}} Accueil",
       "Ch. 8 - Stratégies algorithmiques avancées",
-      "5.3 - Recherche textuelle (TP)"
+      "8.3 - Recherche textuelle (TP)"
     ]
   },
   {
