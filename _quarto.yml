@@ -93,6 +93,7 @@ website:
           - 06-algo/diviser_pour_regner_exos.qmd
           - 16-ProgDyn/ProgDyn_Cours.qmd
           - 16-ProgDyn/ProgDyn_Exos.qmd 
+          - 16-ProgDyn/TP_ProgDyn.ipynb
           - 17-RechercheTextuelle/cours.ipynb
       - section: "Ch. 9 - Systèmes sur puce et Processus"
         contents: 
