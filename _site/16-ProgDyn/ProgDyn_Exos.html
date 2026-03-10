@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TP Capytale – NSI - Terminale</title>
+<title>8.2 — Programmation dynamique - Exercices – NSI - Terminale</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -386,6 +421,35 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 
@@ -441,7 +505,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-algo/diviser_pour_regner_cours.html">Ch. 8 - Stratégies algorithmiques avancées</a></li><li class="breadcrumb-item"><a href="../16-ProgDyn/ProgDyn_Exos.html">TP Capytale</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-algo/diviser_pour_regner_cours.html">Ch. 8 - Stratégies algorithmiques avancées</a></li><li class="breadcrumb-item"><a href="../16-ProgDyn/ProgDyn_Exos.html">8.2 — Programmation dynamique - Exercices</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -840,7 +904,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../16-ProgDyn/ProgDyn_Exos.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">TP Capytale</span></a>
+ <span class="menu-text">8.2 — Programmation dynamique - Exercices</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -983,16 +1047,25 @@ document.addEventListener("DOMContentLoaded", function () {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#exercice-1-escalier" id="toc-exercice-1-escalier" class="nav-link active" data-scroll-target="#exercice-1-escalier">Exercice 1 — Escalier ✏️</a></li>
+  <li><a href="#exercice-2-le-livreur-de-colis" id="toc-exercice-2-le-livreur-de-colis" class="nav-link" data-scroll-target="#exercice-2-le-livreur-de-colis">Exercice 2 — Le livreur de colis ✏️</a></li>
+  <li><a href="#exercice-3-pavage-dun-couloir" id="toc-exercice-3-pavage-dun-couloir" class="nav-link" data-scroll-target="#exercice-3-pavage-dun-couloir">Exercice 3 — Pavage d’un couloir ✏️</a></li>
+  <li><a href="#exercice-4-synthèse-choisir-la-bonne-méthode" id="toc-exercice-4-synthèse-choisir-la-bonne-méthode" class="nav-link" data-scroll-target="#exercice-4-synthèse-choisir-la-bonne-méthode">Exercice 4 — Synthèse : choisir la bonne méthode ✏️</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-algo/diviser_pour_regner_cours.html">Ch. 8 - Stratégies algorithmiques avancées</a></li><li class="breadcrumb-item"><a href="../16-ProgDyn/ProgDyn_Exos.html">TP Capytale</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../06-algo/diviser_pour_regner_cours.html">Ch. 8 - Stratégies algorithmiques avancées</a></li><li class="breadcrumb-item"><a href="../16-ProgDyn/ProgDyn_Exos.html">8.2 — Programmation dynamique - Exercices</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">TP Capytale</h1>
+<h1 class="title">8.2 — Programmation dynamique - Exercices</h1>
 </div>
 
 
@@ -1009,9 +1082,153 @@ document.addEventListener("DOMContentLoaded", function () {
 </header>
 
 
-<p>blabla</p>
+<section id="exercice-1-escalier" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-1-escalier">Exercice 1 — Escalier ✏️</h3>
+<p>Un enfant monte un escalier de <span class="math inline">\(n\)</span> marches. À chaque pas, il peut monter <strong>1 ou 2 marches</strong>. On cherche le nombre de façons différentes d’atteindre la marche <span class="math inline">\(n\)</span>.</p>
+<p>Par exemple, pour 3 marches : (1+1+1), (1+2), (2+1) → <strong>3 façons</strong>.</p>
+<p><strong>1.</strong> Trouver à la main le nombre de façons pour <span class="math inline">\(n = 0, 1, 2, 3, 4, 5\)</span>. Que remarque-t-on ?</p>
+<p><strong>2.</strong> Expliquer, en s’appuyant sur les cas <span class="math inline">\(n=4\)</span> et <span class="math inline">\(n=5\)</span>, comment le nombre de façons d’arriver à la marche <span class="math inline">\(n\)</span> se déduit des résultats pour les marches précédentes. <em>Ne pas écrire de formule : expliquer avec des mots.</em></p>
+<p><strong>3.</strong> Pourquoi une approche récursive naïve serait-elle inefficace ? Quel phénomène apparaît-il (nommer ce phénomène) ?</p>
+<p><strong>4.</strong> Remplir le tableau suivant en utilisant l’approche ascendante :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(n\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>façons</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="exercice-2-le-livreur-de-colis" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-2-le-livreur-de-colis">Exercice 2 — Le livreur de colis ✏️</h3>
+<p>Un livreur doit parcourir une rue avec <span class="math inline">\(n\)</span> maisons numérotées de 1 à <span class="math inline">\(n\)</span>. Chaque maison <span class="math inline">\(i\)</span> a un nombre de colis <span class="math inline">\(c_i\)</span> à livrer. La contrainte est la suivante : <strong>il ne peut pas livrer deux maisons consécutives</strong> (il doit laisser une maison entre chaque livraison pour pouvoir garer son camion). Il cherche à maximiser le nombre total de colis livrés.</p>
+<p>Exemple avec <span class="math inline">\(n = 6\)</span> maisons et les colis : <code>[2, 7, 9, 3, 1, 5]</code>.</p>
+<p><strong>1.</strong> L’algorithme glouton consiste à toujours choisir la maison avec le plus de colis parmi les maisons disponibles. Appliquer cette stratégie sur l’exemple. Obtient-on le maximum ?</p>
+<p><strong>2.</strong> On note <span class="math inline">\(M(i)\)</span> le nombre maximal de colis qu’on peut livrer en ne considérant que les <span class="math inline">\(i\)</span> premières maisons. Calculer <span class="math inline">\(M(1), M(2), M(3)\)</span> à la main.</p>
+<p><strong>3.</strong> En réfléchissant à ce qui se passe pour la maison <span class="math inline">\(i\)</span> : soit on la livre (et on ne peut pas livrer la maison <span class="math inline">\(i-1\)</span>), soit on ne la livre pas (et on garde le meilleur résultat sur les <span class="math inline">\(i-1\)</span> premières maisons). Expliquer avec des mots comment calculer <span class="math inline">\(M(i)\)</span> à partir des valeurs précédentes.</p>
+<p><strong>4.</strong> Compléter le tableau :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(i\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>colis</td>
+<td>—</td>
+<td>2</td>
+<td>7</td>
+<td>9</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(M(i)\)</span></td>
+<td>0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>5.</strong> Donner la valeur optimale et indiquer quelles maisons ont été sélectionnées.</p>
+<hr>
+</section>
+<section id="exercice-3-pavage-dun-couloir" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-3-pavage-dun-couloir">Exercice 3 — Pavage d’un couloir ✏️</h3>
+<p>On veut paver un couloir de longueur <span class="math inline">\(n\)</span> avec des dalles de longueur <strong>1</strong> ou <strong>2</strong>. On cherche le nombre de façons différentes de paver ce couloir.</p>
+<p><strong>1.</strong> Trouver à la main le nombre de pavages pour <span class="math inline">\(n = 1, 2, 3, 4\)</span>.</p>
+<p><strong>2.</strong> Dessiner tous les pavages possibles pour <span class="math inline">\(n = 4\)</span>.</p>
+<p><strong>3.</strong> Expliquer avec des mots comment le nombre de pavages pour un couloir de longueur <span class="math inline">\(n\)</span> se déduit des longueurs précédentes. <em>(Indication : réfléchir à la première dalle posée.)</em></p>
+<p><strong>4.</strong> Un élève propose l’algorithme récursif suivant :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pavages(n):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pavages(n <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> pavages(n <span class="op">-</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Quel est le problème avec cet algorithme pour de grandes valeurs de <span class="math inline">\(n\)</span> ? Comment y remédier ?</p>
+<p><strong>5.</strong> Calculer le nombre de pavages pour <span class="math inline">\(n = 10\)</span> grâce à la méthode ascendante.</p>
+<hr>
+</section>
+<section id="exercice-4-synthèse-choisir-la-bonne-méthode" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-4-synthèse-choisir-la-bonne-méthode">Exercice 4 — Synthèse : choisir la bonne méthode ✏️</h3>
+<p>Pour chacun des problèmes suivants, indiquer si on peut appliquer la <strong>programmation dynamique</strong>, un algorithme <strong>glouton</strong>, ou les <strong>deux</strong> (ou aucun), et justifier brièvement.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 44%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problème</th>
+<th>Méthode applicable</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trouver le chemin le plus court dans un graphe sans poids négatifs (algorithme de Dijkstra)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Trouver la plus longue suite croissante dans une liste</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Sélectionner des activités non chevauchantes pour remplir au mieux un agenda</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Colorer une carte géographique avec le moins de couleurs possible</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Calculer le nombre de chemins dans une grille de <span class="math inline">\(n \times m\)</span> cases (en allant uniquement à droite ou en bas)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1458,7 +1675,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>   
     <div class="nav-footer-center">
 
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
