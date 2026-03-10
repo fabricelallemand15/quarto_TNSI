@@ -347,14 +347,3 @@ Cette fois, l'exécution de ``dynRecursifMem(euros, 48)`` est immédiate.
 | Ascendante (tabulation) | $O(s \times p)$ | $O(s)$ | Pas de récursion | Moins intuitive |
 
 où $s$ est la somme à rendre et $p$ le nombre de valeurs faciales.
-
-# 4. Bilan : méthodologie de résolution par programmation dynamique
-
-Pour résoudre un problème par programmation dynamique, on suit généralement les étapes suivantes :
-
-1. **Identifier les sous-problèmes** : définir précisément ce que l'on cherche à calculer (ici $f(s)$, le nombre minimal de pièces pour rendre $s$).
-2. **Écrire la relation de récurrence** : exprimer la solution d'un sous-problème en fonction de sous-problèmes plus petits, avec un ou plusieurs **cas de base**.
-3. **Vérifier le chevauchement** : s'assurer que les mêmes sous-problèmes sont résolus plusieurs fois dans l'approche naïve.
-4. **Choisir une implémentation** : approche descendante (récursive + mémoïsation) ou ascendante (itérative + tabulation).
-5. **Analyser la complexité** : en temps et en espace.
-6. **(Optionnel) Reconstruire la solution** : retrouver non seulement la valeur optimale, mais aussi la solution elle-même (par exemple, quelles pièces ont été utilisées).
