@@ -9,7 +9,7 @@ Ce site est destiné à regrouper les cours et les exercices concernant l'enseig
 ::: {.callout-note .updates-box}
 ## Dernières mises à jour
 
-- Mars 2026 - Corrections et modifications dans le cours sur le [programmation dynamique](16-ProgDyn/ProgDyn_Cours.qmd).
+- Mars 2026 - Chapitre 8 - Stratégies algorithmiques avancées : refonte du cours sur la programmation dynamique, ajout d'exercices papier et d'un TP de programmation, révision et corrections du TP sur la recherche textuelle.
 - Février 2026 - Mise à jour de la [*page sur le grand oral*](GrandOral/index.qmd).
 - Janvier 2026 - Refonte de la page [*Annales du bac*](bac/annales.qmd).
 :::
