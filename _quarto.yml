@@ -95,6 +95,8 @@ website:
           - 16-ProgDyn/ProgDyn_Exos.qmd 
           - 16-ProgDyn/TP_ProgDyn.ipynb
           - 17-RechercheTextuelle/cours.ipynb
+          - text: "8.3-Démonstration interactive - BMH"
+            href: https://sitelf.fr/divers/BMH/
       - section: "Ch. 9 - Systèmes sur puce et Processus"
         contents: 
           - 19-SystPuces/SystPuces_cours.qmd

@@ -229,6 +229,18 @@
     ]
   },
   {
+    "objectID": "17-RechercheTextuelle/cours.html#démonstration-interactive",
+    "href": "17-RechercheTextuelle/cours.html#démonstration-interactive",
+    "title": "8.3 - Recherche textuelle (TP)",
+    "section": "Démonstration interactive",
+    "text": "Démonstration interactive\nPour mieux comprendre le fonctionnement de l’algorithme, voir cette démonstration interactive.",
+    "crumbs": [
+      "{{< fa house-chimney-window >}} Accueil",
+      "Ch. 8 - Stratégies algorithmiques avancées",
+      "8.3 - Recherche textuelle (TP)"
+    ]
+  },
+  {
     "objectID": "17-RechercheTextuelle/cours.html#programmation-de-lalgorithme",
     "href": "17-RechercheTextuelle/cours.html#programmation-de-lalgorithme",
     "title": "8.3 - Recherche textuelle (TP)",
@@ -3503,18 +3515,6 @@
     "href": "index.html",
     "title": "Spécialité NSI - Terminale",
     "section": "",
-    "text": "Bienvenue !\nCe site est destiné à regrouper les cours et les exercices concernant l’enseignement de spécialité NSI de terminale du lycée Émile Duclaux d’Aurillac.\n\n\n\n\n\n\nNoteDernières mises à jour\n\n\n\n\nMars 2026 - Chapitre 8 - Stratégies algorithmiques avancées : refonte du cours sur la programmation dynamique, ajout d’exercices papier et d’un TP de programmation, révision et corrections du TP sur la recherche textuelle.\nFévrier 2026 - Mise à jour de la page sur le grand oral.\nJanvier 2026 - Refonte de la page Annales du bac.\n\n\n\nLien vers l’ENT du lycée : https://cas.ent.auvergnerhonealpes.fr/login\nLien vers Capytale : https://capytale2.ac-paris.fr/web/c-auth/list\nLien vers le programme officiel : Programme officiel terminale NSI\n\n\n\nImage by storyset on Freepik"
-  },
-  {
-    "objectID": "17-RechercheTextuelle/cours.html#démonstration-interactive",
-    "href": "17-RechercheTextuelle/cours.html#démonstration-interactive",
-    "title": "8.3 - Recherche textuelle (TP)",
-    "section": "Démonstration interactive",
-    "text": "Démonstration interactive\nPour mieux comprendre le fonctionnement de l’algorithme, voir cette démonstration interactive.",
-    "crumbs": [
-      "{{< fa house-chimney-window >}} Accueil",
-      "Ch. 8 - Stratégies algorithmiques avancées",
-      "8.3 - Recherche textuelle (TP)"
-    ]
+    "text": "Bienvenue !\nCe site est destiné à regrouper les cours et les exercices concernant l’enseignement de spécialité NSI de terminale du lycée Émile Duclaux d’Aurillac.\n\n\n\n\n\n\nNoteDernières mises à jour\n\n\n\n\nMars 2026 - Chapitre 8 - Stratégies algorithmiques avancées : refonte du cours sur la programmation dynamique, ajout d’exercices papier et d’un TP de programmation, révision et corrections du TP sur la recherche textuelle + démonstration interactive de l’algorithme de Boyer-Moore-Horspool.\nFévrier 2026 - Mise à jour de la page sur le grand oral.\nJanvier 2026 - Refonte de la page Annales du bac.\n\n\n\nLien vers l’ENT du lycée : https://cas.ent.auvergnerhonealpes.fr/login\nLien vers Capytale : https://capytale2.ac-paris.fr/web/c-auth/list\nLien vers le programme officiel : Programme officiel terminale NSI\n\n\n\nImage by storyset on Freepik"
   }
 ]
