@@ -195,6 +195,20 @@ Renvoyer chenille(0, 0)
 Avant tout calcul, on vérifie si le résultat est déjà dans `memo`. Si oui, on le renvoie immédiatement (coût constant). Sinon, on le calcule **une seule fois** et on le stocke. Ainsi, même si `chenille(2, 1)` est appelée depuis `chenille(1, 0)` et depuis `chenille(1, 1)`, le calcul effectif n'a lieu qu'**une seule fois**.
 :::
 
+:::{.callout-important}
+## Retrouver le chemin optimal (backtracking)
+
+Les algorithmes précédents calculent la **valeur optimale** `c(sommet)`, mais on peut aussi reconstruire le **chemin** qui réalise cette valeur.
+
+Principe : partir du sommet, puis descendre niveau par niveau en choisissant à chaque étape l'enfant qui a été retenu par le `max`.
+
+- En approche ascendante : une fois le tableau `C` rempli, à la position `(i, j)`, comparer `C[i+1][j]` et `C[i+1][j+1]`.
+- Si `C[i+1][j] >= C[i+1][j+1]`, on va à gauche ; sinon, on va à droite.
+- Répéter jusqu'au dernier niveau : la suite des positions visitées donne un chemin optimal.
+
+En approche descendante avec mémoïsation, l'idée est la même : après avoir rempli `memo`, on repart de `(0, 0)` et on choisit à chaque niveau l'enfant dont la valeur mémorisée est maximale.
+:::
+
 ### Exercice
 
 Dérouler à la main l'algorithme de la chenille vorace sur la pyramide ci-dessus :
@@ -202,6 +216,17 @@ Dérouler à la main l'algorithme de la chenille vorace sur la pyramide ci-dessu
 1. **Approche ascendante** : construire un tableau en partant du dernier niveau, en calculant $c(x)$ pour chaque position. Montrer les valeurs intermédiaires niveau par niveau.
 2. **Approche descendante** : simuler l'exécution récursive de $c(\text{sommet})$ avec mémoïsation. Indiquer pour chaque appel s'il est calculé ou récupéré en mémoire.
 3. Donner le chemin optimal et sa valeur.
+
+## Visualisation interactive
+
+[Ouvrir l'application dans un nouvel onglet](https://sitelf.fr/divers/ProgDyn/index.html){target="_blank"}
+
+<iframe 
+  src="https://sitelf.fr/divers/ProgDyn/index.html" 
+  width="100%" 
+  height="750px"
+  style="border:none; border-radius:12px;">
+</iframe>
 
 # 3. Exemple de référence : le rendu de monnaie
 

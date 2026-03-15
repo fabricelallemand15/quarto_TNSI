@@ -1076,6 +1076,7 @@ window.Quarto = {
   <li><a href="#algorithme-approche-ascendante-bottom-up" id="toc-algorithme-approche-ascendante-bottom-up" class="nav-link" data-scroll-target="#algorithme-approche-ascendante-bottom-up">Algorithme : approche ascendante (bottom-up)</a></li>
   <li><a href="#algorithme-approche-descendante-top-down-avec-mémoïsation" id="toc-algorithme-approche-descendante-top-down-avec-mémoïsation" class="nav-link" data-scroll-target="#algorithme-approche-descendante-top-down-avec-mémoïsation">Algorithme : approche descendante (top-down) avec mémoïsation</a></li>
   <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice">Exercice</a></li>
+  <li><a href="#visualisation-interactive" id="toc-visualisation-interactive" class="nav-link" data-scroll-target="#visualisation-interactive">Visualisation interactive</a></li>
   </ul></li>
   <li><a href="#exemple-de-référence-le-rendu-de-monnaie" id="toc-exemple-de-référence-le-rendu-de-monnaie" class="nav-link" data-scroll-target="#exemple-de-référence-le-rendu-de-monnaie">3. Exemple de référence : le rendu de monnaie</a>
   <ul class="collapse">
@@ -1115,7 +1116,7 @@ window.Quarto = {
 <p>D’après la définition de la suite, on a, pour tout entier naturel <span class="math inline">\(n\geqslant 2\)</span> :</p>
 <p><span class="math display">\[F_{n}=F_{n-2}+F_{n-1}\]</span></p>
 <p>On en déduit une version <strong>récursive</strong> de l’algorithme de calcul de <span class="math inline">\(F_n\)</span>. Cet algorithme a ceci de particulier que chaque fonction procède à <strong>deux</strong> appels récursifs.</p>
-<div id="b5d25f33" class="cell" data-execution_count="1">
+<div id="8a1e3ceb" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_rec(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version récursive"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
@@ -1148,7 +1149,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>Ce phénomène où les mêmes calculs sont répétés de nombreuses fois s’appelle le <strong>chevauchement des sous-problèmes</strong>. Une solution consiste à garder en mémoire les éléments déjà calculés et à ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la <strong>programmation dynamique</strong>.</p>
-<div id="f5bedf45" class="cell" data-execution_count="2">
+<div id="34aed507" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_dyn(n: <span class="bu">int</span>, memo: <span class="bu">dict</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version dynamique (mémoïsation)"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> memo <span class="kw">is</span> <span class="va">None</span>:</span>
@@ -1357,6 +1358,26 @@ Renvoyer chenille(0, 0)</code></pre>
 <p>Avant tout calcul, on vérifie si le résultat est déjà dans <code>memo</code>. Si oui, on le renvoie immédiatement (coût constant). Sinon, on le calcule <strong>une seule fois</strong> et on le stocke. Ainsi, même si <code>chenille(2, 1)</code> est appelée depuis <code>chenille(1, 0)</code> et depuis <code>chenille(1, 1)</code>, le calcul effectif n’a lieu qu’<strong>une seule fois</strong>.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Retrouver le chemin optimal (backtracking)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Les algorithmes précédents calculent la <strong>valeur optimale</strong> <code>c(sommet)</code>, mais on peut aussi reconstruire le <strong>chemin</strong> qui réalise cette valeur.</p>
+<p>Principe : partir du sommet, puis descendre niveau par niveau en choisissant à chaque étape l’enfant qui a été retenu par le <code>max</code>.</p>
+<ul>
+<li>En approche ascendante : une fois le tableau <code>C</code> rempli, à la position <code>(i, j)</code>, comparer <code>C[i+1][j]</code> et <code>C[i+1][j+1]</code>.</li>
+<li>Si <code>C[i+1][j] &gt;= C[i+1][j+1]</code>, on va à gauche ; sinon, on va à droite.</li>
+<li>Répéter jusqu’au dernier niveau : la suite des positions visitées donne un chemin optimal.</li>
+</ul>
+<p>En approche descendante avec mémoïsation, l’idée est la même : après avoir rempli <code>memo</code>, on repart de <code>(0, 0)</code> et on choisit à chaque niveau l’enfant dont la valeur mémorisée est maximale.</p>
+</div>
+</div>
 </section>
 <section id="exercice" class="level3">
 <h3 class="anchored" data-anchor-id="exercice">Exercice</h3>
@@ -1367,6 +1388,12 @@ Renvoyer chenille(0, 0)</code></pre>
 <li>Donner le chemin optimal et sa valeur.</li>
 </ol>
 </section>
+<section id="visualisation-interactive" class="level2">
+<h2 class="anchored" data-anchor-id="visualisation-interactive">Visualisation interactive</h2>
+<p><a href="https://sitelf.fr/divers/ProgDyn/index.html" target="_blank">Ouvrir l’application dans un nouvel onglet</a></p>
+<iframe src="https://sitelf.fr/divers/ProgDyn/index.html" width="100%" height="750px" style="border:none; border-radius:12px;">
+</iframe>
+</section>
 </section>
 <section id="exemple-de-référence-le-rendu-de-monnaie" class="level1">
 <h1>3. Exemple de référence : le rendu de monnaie</h1>
@@ -1376,7 +1403,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <p>L’algorithme glouton consiste à payer d’abord avec la plus grosse pièce possible : ici, il s’agit de 20, puisque 50 &gt; 48. Ayant donné 20, il reste 28 à payer, et on poursuit avec la même méthode. Finalement, on va payer 48 sous la forme 48 = 20 + 20 + 5 + 2 + 1. On a eu besoin de 5 pièces.</p>
 <p>Considérons un autre système monétaire (en fait c’est l’ancien système impérial britannique) représenté par la liste suivante de valeurs faciales : <code>imperial = [30, 24, 12, 6, 3, 1]</code>. Pour payer 48 l’algorithme glouton va répondre : 48 = 30+12+6. À la différence du système euro, pour lequel on peut démontrer que l’algorithme glouton donne toujours la réponse optimale, on constate que ce n’est pas le cas avec le système impérial, puisque on aurait pu se contenter de 2 pièces : 48 = 24 + 24.</p>
 <p>Rappelons comment peut se programmer l’algorithme glouton.</p>
-<div id="1c5d934e" class="cell" data-execution_count="3">
+<div id="51fef538" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>euros <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>imperial <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">24</span>, <span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1401,7 +1428,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <p><span class="math display">\[f(s) = \min_{x\leqslant s} (1 + f(s − x))\]</span></p>
 <p>le minimum étant calculé sur toutes les valeurs <span class="math inline">\(x\)</span> d’une pièce.</p>
 <p>Cette remarque permet d’écrire le programme récursif suivant :</p>
-<div id="fb8f9822" class="cell" data-execution_count="4">
+<div id="8b7d88c1" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> inf</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursif(valeursFaciales, somme):</span>
@@ -1422,7 +1449,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <h2 class="anchored" data-anchor-id="approche-ascendante-itérative-avec-tabulation">3.1. Approche ascendante (itérative avec tabulation)</h2>
 <p>Ici, le calcul de <code>f(s)</code> utilise le calcul de <code>f(s − x)</code> pour chaque valeur de <code>x</code>. Autrement dit, <code>f(s)</code> n’utilise au plus que les valeurs de <code>f(s − 1)</code>, <code>f(s − 2)</code>, …, <code>f(3)</code>, <code>f(2)</code>, <code>f(1)</code>.</p>
 <p>On va donc créer un tableau <code>f</code> de taille <code>somme + 1</code> et remplir les cases dans l’ordre croissant des indices. Quand on calcule <code>f[s]</code>, toutes les valeurs <code>f[s - x]</code> dont on a besoin sont déjà calculées et stockées dans le tableau.</p>
-<div id="fb97fcc0" class="cell" data-execution_count="5">
+<div id="cbf0c8ad" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (somme <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, somme <span class="op">+</span> <span class="dv">1</span>):</span>
@@ -1440,7 +1467,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <section id="approche-descendante-récursive-avec-mémoïsation" class="level2">
 <h2 class="anchored" data-anchor-id="approche-descendante-récursive-avec-mémoïsation">3.2. Approche descendante (récursive avec mémoïsation)</h2>
 <p>Il s’agit de l’approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive et on mémorise les résultats déjà calculés dans un dictionnaire. La vérification de la présence en mémoire doit se faire <strong>avant</strong> la boucle sur les pièces : si le résultat est déjà connu, on le retourne immédiatement sans aucun calcul supplémentaire.</p>
-<div id="5994ec1f" class="cell" data-execution_count="6">
+<div id="e6f2b7fd" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> inf</span>
