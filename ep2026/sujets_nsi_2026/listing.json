@@ -1,0 +1,968 @@
+[
+  {
+    "id": "697203b622e0107ae737e4d7",
+    "cle": "26_BCG_NSI_1",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4efb8cb85140736350705",
+        "name": "26_BCG_NSI_1.zip",
+        "size": 52794,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:35:04.82",
+        "lastModifiedDate": "2026-03-26T09:35:30.954",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_697203b622e0107ae737e4d7_72636b2b-3180-4fe4-9802-6531b61cd678",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A90",
+          "libelle": "SIEC - ACADEMIES DE CRETEIL PARIS VERSAILLES"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698c88593bfaf818c32b1a89",
+    "cle": "26_BCG_NSI_2",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4efe9b11c7d6a0bc9f9f8",
+        "name": "26_BCG_NSI_2.zip",
+        "size": 38497,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:35:53.413",
+        "lastModifiedDate": "2026-03-26T09:36:31.5",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698c88593bfaf818c32b1a89_b19d8ea4-e77c-4a33-b030-bbb1d13d0b39",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca101fb844338364d5c24",
+    "cle": "26_BCG_NSI_3",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0247dc1be7ea38d75a4",
+        "name": "26_BCG_NSI_3.zip",
+        "size": 44687,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:36:52.64",
+        "lastModifiedDate": "2026-03-26T09:36:58.316",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca101fb844338364d5c24_ca493010-b06d-446f-9aec-1e667e0b0fb4",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca24720108972db330b94",
+    "cle": "26_BCG_NSI_4",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f03f3f7bb27ef4e9d9ad",
+        "name": "26_BCG_NSI_4.zip",
+        "size": 30238,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:37:19.846",
+        "lastModifiedDate": "2026-03-26T09:37:25.184",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca24720108972db330b94_ac284988-c909-46e9-82a2-5eb150caf4a8",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca95eeccd182bd6ee2834",
+    "cle": "26_BCG_NSI_5",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f059cb85140736350711",
+        "name": "26_BCG_NSI_5.zip",
+        "size": 28169,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:37:45.196",
+        "lastModifiedDate": "2026-03-26T09:37:55.397",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca95eeccd182bd6ee2834_69fed560-57a8-4f40-84fa-b96d464b9cd5",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca97feccd182bd6ee2836",
+    "cle": "26_BCG_NSI_6",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f084b11c7d6a0bc9f9fe",
+        "name": "26_BCG_NSI_6.zip",
+        "size": 29621,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:38:28.089",
+        "lastModifiedDate": "2026-03-26T09:38:34.283",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca97feccd182bd6ee2836_fe93457b-52a9-4a18-b421-f683f3d23216",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca98beccd182bd6ee2838",
+    "cle": "26_BCG_NSI_7",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0a48a3f1b2f2dd065ca",
+        "name": "26_BCG_NSI_7.zip",
+        "size": 25443,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:39:00.158",
+        "lastModifiedDate": "2026-03-26T09:39:04.242",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca98beccd182bd6ee2838_ad78c60c-d74f-499c-9648-2cf844712866",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca9a00e5cee50b81fbef6",
+    "cle": "26_BCG_NSI_8",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0bdcb85140736350717",
+        "name": "26_BCG_NSI_8.zip",
+        "size": 27358,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:39:25.144",
+        "lastModifiedDate": "2026-03-26T09:39:30.632",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca9a00e5cee50b81fbef6_b8fab41b-9749-4b51-89e9-46d87bbd75a5",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca9ab0e5cee50b81fbef8",
+    "cle": "26_BCG_NSI_9",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0d8b11c7d6a0bc9fa01",
+        "name": "26_BCG_NSI_9.zip",
+        "size": 47574,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:39:52.104",
+        "lastModifiedDate": "2026-03-26T09:40:06.241",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca9ab0e5cee50b81fbef8_8ac6cf2b-910e-4fd5-8b64-7cc8f4c31db1",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca9ce3bfaf818c32b1ab0",
+    "cle": "26_BCG_NSI_10",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0fd7dc1be7ea38d75aa",
+        "name": "26_BCG_NSI_10.zip",
+        "size": 26755,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:40:29.109",
+        "lastModifiedDate": "2026-03-26T09:40:34.853",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca9ce3bfaf818c32b1ab0_c9f96d9f-669c-44e9-821d-eb9f778069c3",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca9e720108972db330b98",
+    "cle": "26_BCG_NSI_11",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f6018a3f1b2f2dd065cd",
+        "name": "26_BCG_NSI_11.zip",
+        "size": 38068,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T10:01:53.608",
+        "lastModifiedDate": "2026-03-26T10:01:53.608",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca9e720108972db330b98_04245c09-110e-4b6f-b654-a1498c33c9bb",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698ca9faeccd182bd6ee283a",
+    "cle": "26_BCG_NSI_12",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f15e3f7bb27ef4e9d9b6",
+        "name": "26_BCG_NSI_12.zip",
+        "size": 26748,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:42:06.712",
+        "lastModifiedDate": "2026-03-26T09:42:13.243",
+        "createdBy": "ourdia.mahrazi@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698ca9faeccd182bd6ee283a_ae477ef0-e4e5-4e51-b9f9-a101ec3fbf2d",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698caa04eccd182bd6ee283c",
+    "cle": "26_BCG_NSI_13",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4ef50b11c7d6a0bc9f9f5",
+        "name": "26_BCG_NSI_13.zip",
+        "size": 93971,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:33:20.973",
+        "lastModifiedDate": "2026-03-26T09:34:59.392",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698caa04eccd182bd6ee283c_d600071e-e12a-45b0-86ea-d894eda356fa",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698caa13eccd182bd6ee283e",
+    "cle": "26_BCG_NSI_14",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4efd6cb85140736350708",
+        "name": "26_BCG_NSI_14.zip",
+        "size": 32105,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:35:34.369",
+        "lastModifiedDate": "2026-03-26T09:35:34.369",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698caa13eccd182bd6ee283e_a4422ad6-0345-4ac0-bfc7-c80261abbea8",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698caa1deccd182bd6ee2840",
+    "cle": "26_BCG_NSI_15",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f006cb8514073635070b",
+        "name": "26_BCG_NSI_15.zip",
+        "size": 221367,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:36:22.503",
+        "lastModifiedDate": "2026-03-27T09:03:15.154",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "ourdia.mahrazi@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698caa1deccd182bd6ee2840_bc1b836b-52c8-475a-b0b2-af33403aeb6f",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698caa26eccd182bd6ee2842",
+    "cle": "26_BCG_NSI_16",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0223f7bb27ef4e9d9aa",
+        "name": "26_BCG_NSI_16.zip",
+        "size": 54343,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:36:50.974",
+        "lastModifiedDate": "2026-03-26T09:36:50.974",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698caa26eccd182bd6ee2842_45c407c9-6369-4950-bdd4-2bf7505133b7",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698caa97eccd182bd6ee2844",
+    "cle": "26_BCG_NSI_17",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f044cb8514073635070e",
+        "name": "26_BCG_NSI_17.zip",
+        "size": 34756,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:37:24.433",
+        "lastModifiedDate": "2026-03-26T09:37:24.433",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698caa97eccd182bd6ee2844_df0cab60-03df-44a2-9075-cc0900a84d5c",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698cab2b3bfaf818c32b1ab6",
+    "cle": "26_BCG_NSI_18",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f061b11c7d6a0bc9f9fb",
+        "name": "26_BCG_NSI_18.zip",
+        "size": 27711,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:37:53.006",
+        "lastModifiedDate": "2026-03-26T09:37:53.006",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698cab2b3bfaf818c32b1ab6_fe45b1dd-9ad8-4030-a628-4ecdd567f05e",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698cab3b3bfaf818c32b1ab8",
+    "cle": "26_BCG_NSI_19",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f07c7dc1be7ea38d75a7",
+        "name": "26_BCG_NSI_19.zip",
+        "size": 26394,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:38:20.051",
+        "lastModifiedDate": "2026-03-26T09:38:20.051",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698cab3b3bfaf818c32b1ab8_c4f6ae48-2b85-4620-a70e-3c780e316c19",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698cab483bfaf818c32b1aba",
+    "cle": "26_BCG_NSI_20",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0983f7bb27ef4e9d9b0",
+        "name": "26_BCG_NSI_20.zip",
+        "size": 31968,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:38:48.364",
+        "lastModifiedDate": "2026-03-26T09:38:48.364",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698cab483bfaf818c32b1aba_b291066c-c388-4932-a5d4-060a7ee6eacf",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698cab52eccd182bd6ee284a",
+    "cle": "26_BCG_NSI_21",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0b5cb85140736350714",
+        "name": "26_BCG_NSI_21.zip",
+        "size": 29741,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:39:17.418",
+        "lastModifiedDate": "2026-03-26T09:39:17.418",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698cab52eccd182bd6ee284a_a062788d-6d25-41f2-b4f0-a844901ffa1a",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698cab5aeccd182bd6ee284c",
+    "cle": "26_BCG_NSI_22",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0d23f7bb27ef4e9d9b3",
+        "name": "26_BCG_NSI_22.zip",
+        "size": 111892,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:39:46.809",
+        "lastModifiedDate": "2026-03-26T09:39:46.809",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698cab5aeccd182bd6ee284c_118b530b-225c-4688-b248-a949c09c4661",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  },
+  {
+    "id": "698cab6620108972db330b9a",
+    "cle": "26_BCG_NSI_23",
+    "libelle": "",
+    "fichiers": [
+      {
+        "file": null,
+        "id": "69c4f0f1cb8514073635071a",
+        "name": "26_BCG_NSI_23.zip",
+        "size": 30539,
+        "withEntete": false,
+        "extension": "application/x-zip-compressed",
+        "version": 0,
+        "createdDate": "2026-03-26T09:40:17.926",
+        "lastModifiedDate": "2026-03-26T09:40:17.926",
+        "createdBy": "anne-caroline.lorant@ac-paris.fr",
+        "lastModifiedBy": "anne-caroline.lorant@ac-paris.fr",
+        "typeDocument": "SUJET",
+        "formatFichier": "PRINCIPAL",
+        "versionFonctionnelle": 1.0,
+        "identifiantFonctionnel": "S_698cab6620108972db330b9a_0f241c96-7f27-4366-a4e9-196d8e6f1337",
+        "commentaire": "",
+        "efichierAvancement": null,
+        "fromElaboration": false
+      }
+    ],
+    "parametrageSujet": {
+      "academies": [
+        {
+          "clef": "A01",
+          "libelle": "PARIS"
+        }
+      ],
+      "nbPassages": 1,
+      "regroupements": []
+    },
+    "contexteName": {
+      "code": "NSI",
+      "cle": null,
+      "libelle": "Banque Numérique et Sciences Informatiques - Pratique"
+    }
+  }
+]

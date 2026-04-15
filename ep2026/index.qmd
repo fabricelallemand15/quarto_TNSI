@@ -1,0 +1,394 @@
+---
+title: "Sujets et corrigés"
+format: html
+---
+
+Cette section regroupe les 23 sujets de l'épreuve pratique de NSI (session 2026), ainsi qu'une proposition de corrigé.
+
+Pour chaque sujet, vous trouverez :
+
+- un lien vers le PDF officiel et vers les fichiers de données associés (CSV, JSON, SQL) (et un ZIP regroupant tous ces fichiers) ;
+- un lien vers un corrigé Python, avec des explications détaillées et des commentaires dans le code ;
+- des remarques éventuelles sur le sujet.
+
+## Liste des sujets
+
+<table id="table-sujets-ep2026">
+<thead><tr>
+<th>N°</th>
+<th>Thème</th>
+<th>Sujet</th>
+<th>Fichiers</th>
+<th>Corrigé</th>
+<th>Remarques</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Codage RLE d'images en niveaux de gris</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_1/sujet.pdf">Sujet 1</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_1/bac_nsi_32.png">bac_nsi_32.png</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_1/bac_nsi_256.png">bac_nsi_256.png</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_1/rle.py">rle.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_1.zip">26_BCG_NSI_1.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_1/corrige_01.py">Corrigé 1</a></td>
+<td>Il s'agit du premier sujet zéro</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Écarts de salaires et k plus proches voisins</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_2/sujet.pdf">Sujet 2</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_2/donnees.py">donnees.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_2/donnees_completes.py">donnees_completes.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_2/analyse.py">analyse.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_2.zip">26_BCG_NSI_2.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_2/corrige_02.py">Corrigé 2</a></td>
+<td>Il s'agit du second sujet zéro</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Cycle menstruel et calendrier iCalendar</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_3/sujet.pdf">Sujet 3</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_3/cycle_menstruel.py">cycle_menstruel.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_3.zip">26_BCG_NSI_3.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_3/corrige_03.py">Corrigé 3</a></td>
+<td>Il s'agit du troisième sujet zéro. Ce sujet nécessite la bibliothèque `ics` qu'il faut installer préalablement. **Attention !** cette bibliothèque ne fonctionne pas avec les versions récentes de Python. Il faut utiliser un Python antérieur à 3.12.</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Culture de plantes et mesures</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_4/sujet.pdf">Sujet 4</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_4/culture.py">culture.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_4/plantes.py">plantes.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_4/mesures.py">mesures.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_4.zip">26_BCG_NSI_4.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_4/corrige_04.py">Corrigé 4</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Empreinte carbone (JSON)</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_5/sujet.pdf">Sujet 5</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_5/empreinte_ada.json">empreinte_ada.json</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_5/empreinte_ada_agr.json">empreinte_ada_agr.json</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_5/empreinte.py">empreinte.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_5.zip">26_BCG_NSI_5.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_5/corrige_05.py">Corrigé 5</a></td>
+<td>Ce sujet comporte une erreur à la question 3 : avec les données fournies, la fonction à corriger retourne le bon résultat. Elle comporte quand même une erreur de conception, mais les données fournies ne permettent pas de la mettre en évidence.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Smoothie et recettes</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_6/sujet.pdf">Sujet 6</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_6/smoothie.py">smoothie.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_6.zip">26_BCG_NSI_6.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_6/corrige_06.py">Corrigé 6</a></td>
+<td>Ce sujet comporte plusieurs erreurs. Le terme "fonction" est utilisé à plusieurs reprises à la place du terme "méthode", ce qui peut induire une confusion. De plus un des tests fournis utilise un smoothie nommé "Berry mix" qui n'existe pas dans les données.</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Coccinelles et simulation</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_7/sujet.pdf">Sujet 7</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_7/coccinnelles.py">coccinnelles.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_7.zip">26_BCG_NSI_7.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_7/corrige_07.py">Corrigé 7</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Addition en BCD</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_8/sujet.pdf">Sujet 8</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_8/addition_BCD.py">addition_BCD.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_8.zip">26_BCG_NSI_8.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_8/corrige_08.py">Corrigé 8</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Objets 3D et faces</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_9/sujet.pdf">Sujet 9</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_9/Face.py">Face.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_9/Objet3D.py">Objet3D.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_9/Sommet.py">Sommet.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_9/main.py">main.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_9.zip">26_BCG_NSI_9.zip</a></li>
+    </ul>
+</td>
+<td><ul>
+    <li><a href="./sujets_nsi_2026/26_BCG_NSI_9/main_corr.py">main_corr.py</a></li>
+    <li><a href="./sujets_nsi_2026/26_BCG_NSI_9/Objet3D_corr.py">Objet3D_corr.py</a></li>
+    <li><a href="./sujets_nsi_2026/26_BCG_NSI_9/Sommet_corr.py">Sommet_corr.py</a></li>
+    </ul>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Analyse de l'eau</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_10/sujet.pdf">Sujet 10</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_10/analyse_eau.py">analyse_eau.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_10.zip">26_BCG_NSI_10.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_10/corrige_10.py">Corrigé 10</a></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Prédiction d'habitat</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_11/sujet.pdf">Sujet 11</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_11/donnees_habitats.py">donnees_habitats.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_11/prediction_habitat.py">prediction_habitat.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_11.zip">26_BCG_NSI_11.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_11/corrige_11.py">Corrigé 11</a></td>
+<td>Ce sujet comporte une erreur : le dictionnaire `nouveau` défini dans le fichier fourni devrait contenir le couple clé-valeur "presence_renard": 0.</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>Gestion d'un refuge (CSV)</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_12/sujet.pdf">Sujet 12</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_12/donnees_renards.csv">donnees_renards.csv</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_12/gestion_refuge.py">gestion_refuge.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_12.zip">26_BCG_NSI_12.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_12/corrige_12.py">Corrigé 12</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>Étude climatique (CSV)</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_13/sujet.pdf">Sujet 13</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_13/releves_ballon_sonde.csv">releves_ballon_sonde.csv</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_13/etude_climatique.py">etude_climatique.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_13.zip">26_BCG_NSI_13.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_13/corrige_13.py">Corrigé 13</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>Simulation d'évacuation</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_14/sujet.pdf">Sujet 14</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_14/IHM_evacuation.py">IHM_evacuation.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_14/simulation_evacuation.py">simulation_evacuation.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_14.zip">26_BCG_NSI_14.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_14/corrige_14.py">Corrigé 14</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>Cabinet vétérinaire (SQL)</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_15/sujet.pdf">Sujet 15</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_15/cabinet.sqlite">cabinet.sqlite</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_15/veto.py">veto.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_15.zip">26_BCG_NSI_15.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_15/corrige_15.py">Corrigé 15</a></td>
+<td>Sujet avec SQL</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td>Warming stripes (CSV)</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_16/sujet.pdf">Sujet 16</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_16/datas.csv">datas.csv</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_16/warming_stripes.png">warming_stripes.png</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_16/warming_stripes.py">warming_stripes.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_16.zip">26_BCG_NSI_16.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_16/corrige_16.py">Corrigé 16</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>17</td>
+<td>Analyse de budget (CSV)</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_17/sujet.pdf">Sujet 17</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_17/budget_complet.csv">budget_complet.csv</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_17/analyse_budget.py">analyse_budget.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_17.zip">26_BCG_NSI_17.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_17/corrige_17.py">Corrigé 17</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>18</td>
+<td>Températures en Polynésie</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_18/sujet.pdf">Sujet 18</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_18/analyse_temperatures_polynesie.py">analyse_temperatures_polynesie.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_18.zip">26_BCG_NSI_18.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_18/corrige_18.py">Corrigé 18</a></td>
+<td>Petite erreur dans le sujet : l'exemple donné dans la question 3 ne correspond pas aux données de l'énoncé</td>
+</tr>
+
+<tr>
+<td>19</td>
+<td>Gestion de l'eau</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_19/sujet.pdf">Sujet 19</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_19/donnees.py">donnees.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_19/gestion_eau.py">gestion_eau.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_19.zip">26_BCG_NSI_19.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_19/corrige_19.py">Corrigé 19</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>20</td>
+<td>Empreinte carbone (code)</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_20/sujet.pdf">Sujet 20</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_20/code_empreinte.py">code_empreinte.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_20.zip">26_BCG_NSI_20.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_20/corrige_20.py">Corrigé 20</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>21</td>
+<td>Jeu de cartes</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_21/sujet.pdf">Sujet 21</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_21/cartes.py">cartes.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_21.zip">26_BCG_NSI_21.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_21/corrige_21.py">Corrigé 21</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>22</td>
+<td>QR Code et ASCII</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_22/sujet.pdf">Sujet 22</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_22/ascii.py">ascii.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_22/qrcode.py">qrcode.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_22.zip">26_BCG_NSI_22.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_22/corrige_22.py">Corrigé 22</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>23</td>
+<td>Transmission de données</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_23/sujet.pdf">Sujet 23</a></td>
+<td>
+    <ul>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_23/data.txt">data.txt</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_23/analyse.py">analyse.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_23/transmission.py">transmission.py</a></li>
+        <li><a href="./sujets_nsi_2026/26_BCG_NSI_23.zip">26_BCG_NSI_23.zip</a></li>
+    </ul>
+</td>
+<td><a href="./sujets_nsi_2026/26_BCG_NSI_23/corrige_23.py">Corrigé 23</a></td>
+<td>Ce sujet est incohérent et présente plusieurs problèmes.Une petite erreur dans le fichier analyse.py fourni : le premier import doit être `from transmission import Transmission` et non `from Transmission import Transmission`. De plus, le sujet utilise "fonction" pour désigner des "méthodes". Enfin, il est demandé d'écrire des fonctions comme `decoder_temperature(trame)` alors qu'il s'agit d'une méthode de la classe Transmission dont trame est un attribut.</td>
+</tr>
+</tbody>
+</table>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const table = document.querySelector("#table-sujets-ep2026");
+    if (!table) return;
+
+    const rows = table.querySelectorAll("tbody tr");
+    rows.forEach((row) => {
+        const sujetLink = row.querySelector("td:nth-child(3) a");
+        if (sujetLink) {
+            sujetLink.setAttribute("target", "_blank");
+            sujetLink.setAttribute("rel", "noopener noreferrer");
+        }
+
+        const downloadableLinks = row.querySelectorAll("td:nth-child(4) a, td:nth-child(5) a");
+        downloadableLinks.forEach((link) => {
+            link.setAttribute("download", "");
+        });
+    });
+});
+</script>

@@ -1,5 +1,8 @@
 project:
   type: website
+  # render:
+  #   - 
+  #   - "!sujets_nsi_2026/"
 
 website:
   title: "NSI - Terminale"
@@ -116,6 +119,9 @@ website:
           - bac/index.qmd
           - bac/ep.qmd
           - bac/annales.qmd
+      - section: "Épreuve pratique NSI 2026"
+        contents:
+          - ep2026/index.qmd
       - section: "Grand Oral"
         contents: 
           - GrandOral/index.qmd
@@ -152,8 +158,3 @@ format:
     code-block-bg: true
     include-in-header: 
       file: matomo.html
-    # include-after-body: 
-    #   file: matomo_stats.html
-    # include-after-body: 
-      # file: compteur.html
-    #   file: snow.html

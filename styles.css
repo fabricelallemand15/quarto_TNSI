@@ -96,3 +96,28 @@ body {
     padding: 0.45rem 0 0.35rem 0;
     margin-bottom: 0.2rem;
 }
+
+/* Mode lecture plein écran amélioré :
+   quand le bouton reader mode natif de Quarto est activé,
+   on masque les colonnes latérales et on élargit le contenu. */
+body:has(.quarto-reader-toggle.reader) #quarto-sidebar,
+body:has(.quarto-reader-toggle.reader) #quarto-sidebar-glass,
+body:has(.quarto-reader-toggle.reader) #quarto-margin-sidebar {
+    display: none !important;
+}
+
+body:has(.quarto-reader-toggle.reader) #quarto-content.page-columns {
+    display: block !important;
+}
+
+body:has(.quarto-reader-toggle.reader) main.content {
+    max-width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body:has(.quarto-reader-toggle.reader) .page-navigation {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
