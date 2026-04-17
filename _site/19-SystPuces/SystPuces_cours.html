@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Systèmes sur puce (cours) – NSI - Terminale</title>
+<title>9.1 Systèmes sur puce (cours) – NSI - Terminale</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../19-SystPuces/SystPuces_exos.html" rel="next">
+<link href="../05-archiSE/processus_cours.html" rel="next">
 <link href="../17-RechercheTextuelle/cours.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">Ch. 9 - Systèmes sur puce et Processus</a></li><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">Systèmes sur puce (cours)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">Ch. 9 - Systèmes sur puce et Processus</a></li><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">9.1 Systèmes sur puce (cours)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -874,37 +874,37 @@ document.addEventListener("DOMContentLoaded", function () {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../19-SystPuces/SystPuces_cours.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Systèmes sur puce (cours)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../19-SystPuces/SystPuces_exos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Systèmes sur puce (Exercice)</span></a>
+ <span class="menu-text">9.1 Systèmes sur puce (cours)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processus : cours</span></a>
+ <span class="menu-text">9.2 - Processus (Cours)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../05-archiSE/processus_TP.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T.P. - Processus sous Linux</span></a>
+  <a href="../19-SystPuces/SystPuces_exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.1 - Systèmes sur puce (Exercice)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_exos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercices type bac - Processus</span></a>
+ <span class="menu-text">9.2 - Processus - Exercices (bac)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_TP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.2 - T.P. : Processus sous Linux</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processus sous Linux et Python</span></a>
+ <span class="menu-text">9.2 - Processus et Python</span></a>
   </div>
 </li>
       </ul>
@@ -1028,7 +1028,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <li><a href="#lintérieur-dun-pc" id="toc-lintérieur-dun-pc" class="nav-link" data-scroll-target="#lintérieur-dun-pc">2.1 L'intérieur d'un PC</a></li>
   <li><a href="#une-solution-les-soc" id="toc-une-solution-les-soc" class="nav-link" data-scroll-target="#une-solution-les-soc">2.2 Une solution&nbsp;: les SoC</a></li>
   <li><a href="#exemples-quelques-noms-des-soc" id="toc-exemples-quelques-noms-des-soc" class="nav-link" data-scroll-target="#exemples-quelques-noms-des-soc">2.3 Exemples&nbsp;: Quelques noms des SoC</a></li>
-  <li><a href="#architecture-simplifiée-du-soc-samsung-exynos-990---galaxy-s20" id="toc-architecture-simplifiée-du-soc-samsung-exynos-990---galaxy-s20" class="nav-link" data-scroll-target="#architecture-simplifiée-du-soc-samsung-exynos-990---galaxy-s20">2.4 Architecture simplifiée du SoC Samsung Exynos 990 - Galaxy S20</a></li>
+  <li><a href="#architecture-simplifiée-dun-soc-exemple-samsung-exynos-990" id="toc-architecture-simplifiée-dun-soc-exemple-samsung-exynos-990" class="nav-link" data-scroll-target="#architecture-simplifiée-dun-soc-exemple-samsung-exynos-990">2.4 Architecture simplifiée d’un SoC (exemple : Samsung Exynos 990)</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -1038,9 +1038,9 @@ document.addEventListener("DOMContentLoaded", function () {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">Ch. 9 - Systèmes sur puce et Processus</a></li><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">Systèmes sur puce (cours)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">Ch. 9 - Systèmes sur puce et Processus</a></li><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">9.1 Systèmes sur puce (cours)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Systèmes sur puce (cours)</h1>
+<h1 class="title">9.1 Systèmes sur puce (cours)</h1>
 </div>
 
 
@@ -1089,9 +1089,9 @@ document.addEventListener("DOMContentLoaded", function () {
 <ul>
 <li><p>L’<strong>unité arithmétique et logique</strong> est chargée de l’exécution de tous les calculs que peut réaliser le microprocesseur ;</p></li>
 <li><p>Les <strong>registres</strong> permettent de mémoriser de l’information (donnée ou instruction) au sein même du CPU, en très petite quantité ;</p></li>
-<li><p>L’<strong>unité de contrôle (ou de commande)</strong> . C’est le coordinateur général qui lit les instructions du programme en mémoire et commande l’UAL pour exécuter ces instructions.</p></li>
+<li><p>L’<strong>unité de contrôle (ou de commande)</strong>. C’est le coordinateur général qui lit les instructions du programme en mémoire et commande l’UAL pour exécuter ces instructions.</p></li>
 </ul>
-<p>Les microprocesseurs sont <a href="https://fr.wiktionary.org/wiki/cadenc%C3%A9">cadencés</a> par un <a href="https://fr.wikipedia.org/wiki/Signal_d%27horloge">signal d'horloge</a> (signal <a href="https://fr.wiktionary.org/wiki/oscillant">oscillant</a> régulier imposant un rythme au transfert entre circuit). Au milieu des <a href="https://fr.wikipedia.org/wiki/Ann%C3%A9es_1980">années 1980</a>, ce signal avait une fréquence de 4 à 8&nbsp;<a href="https://fr.wikipedia.org/wiki/Hertz">MHz</a>. Dans les années 2000, cette fréquence atteint 3&nbsp;GHz. Plus cette fréquence est élevée, plus le microprocesseur peut exécuter à un rythme élevé les instructions de base des programmes, mais plus la qualité des <a href="https://fr.wikipedia.org/wiki/Bus_(informatique)">bus</a> doit être soignée et leur longueur adaptée à la fréquence.</p>
+<p>Les microprocesseurs sont cadencés par un signal d'horloge (signal oscillant régulier imposant un rythme au transfert entre circuit). Au milieu des années 1980, ce signal avait une fréquence de 4 à 8&nbsp;MHz. Dans les années 2000, cette fréquence atteint 3&nbsp;GHz. Plus cette fréquence est élevée, plus le microprocesseur peut exécuter à un rythme élevé les instructions de base des programmes, mais plus la qualité des bus (communication entre les composants) doit être soignée et leur longueur adaptée à la fréquence.</p>
 </section>
 <section id="la-mémoire" class="level4">
 <h4 class="anchored" data-anchor-id="la-mémoire">La Mémoire</h4>
@@ -1115,8 +1115,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <p>Cette mémoire sert à stocker à <strong>long terme</strong> des <strong>grandes quantités d’informations</strong>. Les technologies les plus courantes de mémoires de masse sont <strong>electromécaniques</strong> (disques durs – HDD) ou à <strong>semi-conducteurs</strong> (SSD, clefs USB, …), elles visent à obtenir une capacité de stockage élevée à faible coût et ont généralement une <strong>vitesse inférieure</strong> aux autres mémoires.</p>
 <p><strong>Ordres de grandeur :</strong></p>
-<p><strong>Capacité : jusqu’à 10 To (HDD)</strong></p>
-<p><strong>Vitesse : jusqu’à 500 Mo/s (SSD)</strong></p>
+<p><strong>Capacité : jusqu’à 24 To (HDD)</strong></p>
+<p><strong>Vitesse : jusqu’à 7 Go/s (SSD NVMe PCIe 4.0)</strong></p>
 <ul>
 <li><strong>La mémoire vive ou RAM&nbsp;: Random Access Memory&nbsp;(non permanente)</strong></li>
 </ul>
@@ -1128,8 +1128,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <p>Espace principal de stockage du microprocesseur, mais dont le contenu disparaît lors de la mise hors tension de l’ordinateur.</p>
 <p><strong>Ordres de grandeur :</strong></p>
-<p><strong>Capacité : jusqu’à 32 Go</strong></p>
-<p><strong>Vitesse : jusqu’à 2 Go/s</strong></p>
+<p><strong>Capacité : jusqu’à 64 Go</strong></p>
+<p><strong>Vitesse : jusqu’à 6 Go/s (DDR5)</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="media/img6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Différents niveaux de mémoire"><img src="media/img6.jpg" class="img-fluid figure-img" alt="Différents niveaux de mémoire"></a></p>
@@ -1152,7 +1152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="les-bus" class="level4">
 <h4 class="anchored" data-anchor-id="les-bus">Les bus</h4>
 <p><a href="media/img7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/img7.png" style="width:4.23472in;height:2.57292in"></a></p>
-<p>Pour que les données circulent entre les différentes parties d’un ordinateur (mémoire, CPU et les entrées/sorties), il existe des systèmes de communication appelés <strong>bus</strong> ( c’est le squelette de l’architecture). Il en existe de 3 grands types :</p>
+<p>Pour que les données circulent entre les différentes parties d’un ordinateur (mémoire, CPU et les entrées/sorties), il existe des systèmes de communication appelés <strong>bus</strong> (c’est le squelette de l’architecture). Il en existe de 3 grands types :</p>
 <ul>
 <li><p>Le <strong>bus d’adresse</strong> permet de faire circuler des adresses. <em>Par exemple, l’adresse d’une donnée à aller chercher en mémoire&nbsp;;</em></p></li>
 <li><p>Le <strong>bus de données</strong> permet de faire circuler des données ;</p></li>
@@ -1173,36 +1173,36 @@ document.addEventListener("DOMContentLoaded", function () {
 <h3 class="anchored" data-anchor-id="une-solution-les-soc">2.2 Une solution&nbsp;: les SoC</h3>
 <p><a href="media/img9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="media/img9.png" style="width:2.91667in;height:2.19792in"></a></p>
 <p>Grâce aux progrès techniques de miniaturisation, tous ces composants sont placés dans une puce unique d'une centaine de mm<sup>2</sup>. Elles accueillent CPU, RAM, circuit graphique (GPU) (équivalent à la carte graphique dans un PC) et circuits radio (Wifi et Bluetooth). Elles sont souvent appelées "système sur puce", "system on a chip" en anglais (abréviation "SoC").</p>
-<p>Les meilleurs SoC, plus fins que les microprocesseurs «&nbsp;classiques&nbsp;» de dernière génération, sont gravés en 5 nm et comprennent des milliards de transistors. Un tel système sur puce est conçu et mis au point de façon logicielle, ses briques électroniques sont accessibles par des APIs, comme pour les bibliothèques logicielles.</p>
-<p>Outre leur taille, les SoC ont d'autres avantages par rapport aux systèmes "classiques" (carte mère + CPU + carte graphique...) : ils sont conçus pour consommer beaucoup moins d'énergie qu'un système classique (à puissance de calcul équivalente).</p>
+<p>Les meilleurs SoC, plus fins que les microprocesseurs «&nbsp;classiques&nbsp;» de dernière génération, sont gravés en 3 nm (voire 2 nm en développement) et comprennent des milliards de transistors. Un tel système sur puce est conçu et mis au point de façon logicielle, ses briques électroniques sont accessibles par des APIs, comme pour les bibliothèques logicielles.</p>
+<p>Outre leur taille, les SoC ont d'autres <strong>avantages</strong> par rapport aux systèmes "classiques" (carte mère + CPU + carte graphique...) : ils sont conçus pour consommer beaucoup moins d'énergie qu'un système classique (à puissance de calcul équivalente).</p>
 <p>Cette consommation réduite permet dans la plupart des cas de s'affranchir de la présence de système de refroidissement actif comme les ventilateurs. Un système équipé de SoC est donc silencieux.</p>
 <p>Vu les distances réduites entre, par exemple, le CPU et la mémoire, les données circulent beaucoup plus vites, ce qui permet d'améliorer les performances.</p>
-<p>En revanche, le principal inconvénient d’un SoC est que là où un ordinateur équipé d'une carte mère permet de faire évoluer les composants individuellement, l'extrême intégration du SoC présente l'inconvénient de n'autoriser aucune mise à jour possible du matériel.</p>
+<p>En revanche, le principal <strong>inconvénient</strong> d’un SoC est que là où un ordinateur équipé d'une carte mère permet de faire évoluer les composants individuellement, l'extrême intégration du SoC présente l'inconvénient de n'autoriser aucune mise à jour possible du matériel.</p>
 </section>
 <section id="exemples-quelques-noms-des-soc" class="level3">
 <h3 class="anchored" data-anchor-id="exemples-quelques-noms-des-soc">2.3 Exemples&nbsp;: Quelques noms des SoC</h3>
 <ul>
-<li><p>Apple iPhone 11 : SoC A13 Bionic</p></li>
-<li><p>Samsung Galaxy S11 : SoC Exynos 990</p></li>
-<li><p>Nintendo Switch : SoC Nvidia Tegra</p></li>
-<li><p>Apple MacBook (ordinateur portable) : SoC M1</p></li>
+<li><p>Apple iPhone 16 : SoC A18 Pro</p></li>
+<li><p>Samsung Galaxy S25 : SoC Snapdragon 8 Elite</p></li>
+<li><p>Nintendo Switch 2 : SoC Nvidia T239</p></li>
+<li><p>Apple MacBook Air/Pro (ordinateur portable) : SoC M4</p></li>
 </ul>
-<p>Le marché des SoC a aujourd'hui un poids économique très important. On commence même à trouver des ordinateurs portables équipés de SoC à la place des cartes mères "classiques". Les SoC commencent doucement, mais sûrement à rattraper les systèmes "classiques" en termes de puissance (pour les systèmes "classiques" d'entrées et de moyennes gammes, mais aussi haut de gamme avec les nouveaux MacBook d'Apple équipés de SoC M1).</p>
+<p>Le marché des SoC a aujourd’hui un poids économique très important. De nombreux ordinateurs portables sont désormais équipés de SoC à la place des cartes mères “classiques”. Les SoC ont rattrapé, et parfois dépassé, les systèmes “classiques” en termes de puissance : les MacBook d’Apple équipés de SoC M4 rivalisent avec des PC de bureau haut de gamme, et des PC portables sous Windows utilisent aussi des SoC (Snapdragon X Elite de Qualcomm).</p>
 <p><a href="media/img10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="media/img10.png" style="width:3.59167in;height:2.225in"></a></p>
 <p>On trouve aussi ce système de SoC sur des nano-ordinateurs comme le Raspberry Pi ou les cartes microbits.</p>
-<p>Dans sa version 4, le Raspberry Pi est équipé du SoC BCM2711 de la société Broadcom</p>
+<p>Dans sa version 5 (2023), le Raspberry Pi est équipé du SoC BCM2712 de la société Broadcom</p>
 </section>
-<section id="architecture-simplifiée-du-soc-samsung-exynos-990---galaxy-s20" class="level3">
-<h3 class="anchored" data-anchor-id="architecture-simplifiée-du-soc-samsung-exynos-990---galaxy-s20">2.4 Architecture simplifiée du SoC Samsung Exynos 990 - Galaxy S20</h3>
+<section id="architecture-simplifiée-dun-soc-exemple-samsung-exynos-990" class="level3">
+<h3 class="anchored" data-anchor-id="architecture-simplifiée-dun-soc-exemple-samsung-exynos-990">2.4 Architecture simplifiée d’un SoC (exemple : Samsung Exynos 990)</h3>
 <p><a href="media/img11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="media/img11.png" style="width:2.09993in;height:2.11458in"></a></p>
 <p><strong>◼ Le processeur (CPU)</strong></p>
 <p>Le processeur ou « Central Processing Unit » (CPU) est le cœur du SoC. Son fonctionnement est identique à celui d’un ordinateur. On y retrouve plusieurs cœurs qui permettent de lancer en parallèle plusieurs applications de manière simultanée (multitâche) et permettent l’utilisation d’applications lourdes comme des jeux.</p>
 <p><strong>◼ La puce graphique (GPU)</strong></p>
-<p>La puce graphique ou « Graphics Processing Unit » (GPU) a en charge de calculer les images afin de pouvoir les afficher à l’écran. Une carte graphique doit donc réaliser un nombre élevé de tâches, puisque qu’elle doit par exemple calculer la couleur à afficher sur chaque pixel de l’écran de votre smartphone. Par exemple dans le cas d’une image Full HD (1920×1080), le GPU affiche 2 073 600 pixels différents ou 8 294 400 pixels pour de l’Ultra HD (3840×2160). Le calcul prend en compte la fréquence de rafraîchissement de l’écran qui peut par exemple varier entre 60 et 120 fois par secondes, c’est-à-dire entre 60 Hz et 120 Hz.</p>
+<p>La puce graphique ou « Graphics Processing Unit » (GPU) a en charge de calculer les images afin de pouvoir les afficher à l’écran. Une carte graphique doit donc réaliser un nombre élevé de tâches, puisque qu’elle doit par exemple calculer la couleur à afficher sur chaque pixel de l’écran de votre smartphone. Par exemple dans le cas d’une image Full HD (1920×1080), le GPU affiche 2 073 600 pixels différents ou 8 294 400 pixels pour de l’Ultra HD (3840×2160). Le calcul prend en compte la fréquence de rafraîchissement de l’écran qui peut par exemple varier entre 60 et 144 fois par seconde, c’est-à-dire entre 60 Hz et 144 Hz.</p>
 <p><strong>◼ La puce neuronale (NPU)</strong></p>
-<p>La puce neuronale ou « Neuronal Processing Unit » (NPU) est une puce en charge de l’intelligence artificielle des smartphones. Les calculs de l’intelligence artificielle ont longtemps été faits par le biais de serveurs dans le cloud (distant). Néanmoins, depuis quelques années pour des raisons de rapidité et de respect de la vie privée, les calculs se font désormais directement sur les smartphones. C’est utile par exemple dans « Google Translate » pour reconnaître des caractères, pour optimiser les photos ou encore l’autonomie.</p>
+<p>La puce neuronale ou « Neuronal Processing Unit » (NPU) est une puce en charge de l’intelligence artificielle des smartphones. Les calculs de l’intelligence artificielle ont longtemps été faits par le biais de serveurs dans le cloud (distant). Néanmoins, depuis quelques années pour des raisons de rapidité et de respect de la vie privée, les calculs se font désormais directement sur les smartphones. C’est utile par exemple pour la reconnaissance vocale, la traduction en temps réel, l’optimisation des photos par IA générative, les assistants intelligents embarqués ou encore la gestion de l’autonomie.</p>
 <p><strong>◼ Le modem (Interface)</strong></p>
-<p>Les smartphones embarquent également dans le SoC une unité réseau assurant la prise en charge des différents protocoles de communication. Cette unité est la partie la plus compliquée à développer et à implémenter sur un SoC. Néanmoins, il s’agit d’un élément crucial afin d’assurer le nomadisme d’un smartphone en itinérance. Le modem intégré au SoC gère non seulement le Wifi, le Bluetooth, le NFC ou bien encore les technologies mobiles. C’est-à-dire la 4G, ou plus récemment la 5G, mais également de plus vieux réseaux tels que la 3G.</p>
+<p>Les smartphones embarquent également dans le SoC une unité réseau assurant la prise en charge des différents protocoles de communication. Cette unité est la partie la plus compliquée à développer et à implémenter sur un SoC. Néanmoins, il s’agit d’un élément crucial afin d’assurer le nomadisme d’un smartphone en itinérance. Le modem intégré au SoC gère non seulement le Wifi, le Bluetooth, le NFC ou bien encore les technologies mobiles. C’est-à-dire la 5G (désormais largement déployée), la 4G, ou encore d’anciens réseaux comme la 2G/3G (en cours d’extinction).</p>
 <p><strong>◼ Le processeur de signal numérique (DSP)</strong></p>
 <p>Le processeur de signal numérique ou « Digital Signal Processor » (DSP) est en charge de traiter les signaux numériques. Ainsi, il va permettre le filtrage, la compression ou encore l’extraction de différents signaux tels que la musique ou encore une vidéo.</p>
 <p><strong>◼ Le processeur de signal d’images (ISP)</strong></p>
@@ -1638,8 +1638,8 @@ document.addEventListener("DOMContentLoaded", function () {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../19-SystPuces/SystPuces_exos.html" class="pagination-link" aria-label="Systèmes sur puce (Exercice)">
-        <span class="nav-page-text">Systèmes sur puce (Exercice)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../05-archiSE/processus_cours.html" class="pagination-link" aria-label="9.2 - Processus (Cours)">
+        <span class="nav-page-text">9.2 - Processus (Cours)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

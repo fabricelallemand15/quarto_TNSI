@@ -103,10 +103,10 @@ website:
       - section: "Ch. 9 - Systèmes sur puce et Processus"
         contents: 
           - 19-SystPuces/SystPuces_cours.qmd
-          - 19-SystPuces/SystPuces_exos.qmd
           - 05-archiSE/processus_cours.qmd
-          - 05-archiSE/processus_TP.qmd
+          - 19-SystPuces/SystPuces_exos.qmd
           - 05-archiSE/processus_exos.qmd
+          - 05-archiSE/processus_TP.qmd
           - 05-archiSE/processus_python.qmd
       - section: "Ch. 10 - Limites du calculable"
         contents: 

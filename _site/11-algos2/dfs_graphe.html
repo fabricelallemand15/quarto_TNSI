@@ -939,37 +939,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../19-SystPuces/SystPuces_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Systèmes sur puce (cours)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../19-SystPuces/SystPuces_exos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Systèmes sur puce (Exercice)</span></a>
+ <span class="menu-text">9.1 Systèmes sur puce (cours)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processus : cours</span></a>
+ <span class="menu-text">9.2 - Processus (Cours)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../05-archiSE/processus_TP.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">T.P. - Processus sous Linux</span></a>
+  <a href="../19-SystPuces/SystPuces_exos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.1 - Systèmes sur puce (Exercice)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_exos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercices type bac - Processus</span></a>
+ <span class="menu-text">9.2 - Processus - Exercices (bac)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05-archiSE/processus_TP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.2 - T.P. : Processus sous Linux</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processus sous Linux et Python</span></a>
+ <span class="menu-text">9.2 - Processus et Python</span></a>
   </div>
 </li>
       </ul>
@@ -1139,7 +1139,7 @@ window.Quarto = {
 <section id="exemple" class="level3">
 <h3 class="anchored" data-anchor-id="exemple">1. Exemple</h3>
 <p>Voici un exemple de graphe et de parcours en profondeur d’abord.</p>
-<div id="edd1ea19" class="cell" data-execution_count="1">
+<div id="361e6e86" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
@@ -1158,7 +1158,7 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"3cf5319ad3b049a3b0c0c6265989b4d4","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"a2ada2009f014c869f4a197e0f91fe1c","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
@@ -1218,7 +1218,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="implémentation-en-python">3. Implémentation en Python</h3>
 <p>Pour l’implémentation, nous supposerons que nous avons un graphe défini en utilisant le module <code>networkx</code> de Python.</p>
 <p>Voici une implémentation de l’algorithme de parcours en profondeur d’abord en Python.</p>
-<div id="e64fb3dd" class="cell" data-execution_count="2">
+<div id="b850f190" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs(graph, start):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Parcours en profondeur d'abord d'un graphe à partir d'un nœud donné.</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
@@ -1237,7 +1237,7 @@ window.Quarto = {
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> visited</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Test de l’algorithme :</p>
-<div id="f2a72e1e" class="cell" data-execution_count="3">
+<div id="adf4e398" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition du graphe</span></span>
@@ -1252,7 +1252,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Le parcours en profondeur d’abord se prête aussi naturellement à une <strong>implémentation récursive</strong>. Voici une implémentation de l’algorithme de parcours en profondeur d’abord en Python, en utilisant une fonction récursive.</p>
-<div id="e39f83a3" class="cell" data-execution_count="4">
+<div id="b4060115" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs_recursive(graph, start, visited<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Parcours en profondeur d'abord d'un graphe à partir d'un nœud donné.</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
@@ -1271,7 +1271,7 @@ window.Quarto = {
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> visited</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Test de l’algorithme :</p>
-<div id="ff99100a" class="cell" data-execution_count="5">
+<div id="017daebf" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parcours en profondeur d'abord à partir du nœud A</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dfs_recursive(graph, <span class="st">"A"</span>))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1280,7 +1280,7 @@ window.Quarto = {
 </div>
 <p><strong>Visualisation du parcours en profondeur d’abord</strong></p>
 <p>Nous pouvons visualiser le parcours en profondeur d’abord en utilisant le module <code>algorithmx</code> de Python. Ce module permet de visualiser les étapes de l’algorithme de parcours en profondeur d’abord.</p>
-<div id="f4fb4c0a" class="cell" data-execution_count="6">
+<div id="9fe7dbad" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> algorithmx <span class="im">import</span> jupyter_canvas</span>
@@ -1315,7 +1315,7 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"c57d6326e52742fd9dc4ad64916cd064","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"ed5f5870d6c04b87863e68db336c83b4","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
@@ -1336,7 +1336,7 @@ window.Quarto = {
 
 </main> <!-- /main -->
 <script type="application/vnd.jupyter.widget-state+json">
-{"state":{"3cf5319ad3b049a3b0c0c6265989b4d4":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}"],"layout":"IPY_MODEL_79c94962ae6243f5b651b44064008e61","show_buttons":true,"tabbable":null,"tooltip":null}},"773c17e21185438396c020e24c556d97":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"79c94962ae6243f5b651b44064008e61":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"c57d6326e52742fd9dc4ad64916cd064":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}","{\"queues\": {\"0\": {\"pause\": 2}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"color\": \"red\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-C\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"C-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"C\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-D\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"D-A\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"D\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-G\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}"],"layout":"IPY_MODEL_773c17e21185438396c020e24c556d97","show_buttons":true,"tabbable":null,"tooltip":null}}},"version_major":2,"version_minor":0}
+{"state":{"62fe83b24cbc42a89d0e572510babd75":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"9d01f73bdc60475ba544a88a512a324e":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"a2ada2009f014c869f4a197e0f91fe1c":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}"],"layout":"IPY_MODEL_62fe83b24cbc42a89d0e572510babd75","show_buttons":true,"tabbable":null,"tooltip":null}},"ed5f5870d6c04b87863e68db336c83b4":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}","{\"queues\": {\"0\": {\"pause\": 2}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"color\": \"red\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-C\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"C-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"C\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-D\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"D-A\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"D\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-G\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}"],"layout":"IPY_MODEL_9d01f73bdc60475ba544a88a512a324e","show_buttons":true,"tabbable":null,"tooltip":null}}},"version_major":2,"version_minor":0}
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

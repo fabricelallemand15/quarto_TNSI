@@ -1,5 +1,5 @@
 ---
-title: "Systèmes sur puce (cours)"
+title: "9.1 Systèmes sur puce (cours)"
 ---
 
 # Les Socs (« *Systèmes on Chip* » ou Système sur Puce en français)
@@ -37,9 +37,9 @@ Il est schématiquement constitué de 3 parties :
 
 * Les **registres** permettent de mémoriser de l'information (donnée ou instruction) au sein même du CPU, en très petite quantité ;
 
-* L'**unité de contrôle (ou de commande)** . C'est le coordinateur général qui lit les instructions du programme en mémoire et commande l'UAL pour exécuter ces instructions.
+* L'**unité de contrôle (ou de commande)**. C'est le coordinateur général qui lit les instructions du programme en mémoire et commande l'UAL pour exécuter ces instructions.
 
-Les microprocesseurs sont [cadencés](https://fr.wiktionary.org/wiki/cadenc%C3%A9) par un [signal d\'horloge](https://fr.wikipedia.org/wiki/Signal_d%27horloge) (signal [oscillant](https://fr.wiktionary.org/wiki/oscillant) régulier imposant un rythme au transfert entre circuit). Au milieu des [années 1980](https://fr.wikipedia.org/wiki/Ann%C3%A9es_1980), ce signal avait une fréquence de 4 à 8 [MHz](https://fr.wikipedia.org/wiki/Hertz). Dans les années 2000, cette fréquence atteint 3 GHz. Plus cette fréquence est élevée, plus le microprocesseur peut exécuter à un rythme élevé les instructions de base des programmes, mais plus la qualité des [bus](https://fr.wikipedia.org/wiki/Bus_(informatique)) doit être soignée et leur longueur adaptée à la fréquence.
+Les microprocesseurs sont cadencés par un signal d\'horloge (signal oscillant régulier imposant un rythme au transfert entre circuit). Au milieu des années 1980, ce signal avait une fréquence de 4 à 8 MHz. Dans les années 2000, cette fréquence atteint 3 GHz. Plus cette fréquence est élevée, plus le microprocesseur peut exécuter à un rythme élevé les instructions de base des programmes, mais plus la qualité des bus (communication entre les composants) doit être soignée et leur longueur adaptée à la fréquence.
 
 #### La Mémoire
 
@@ -59,9 +59,9 @@ Cette mémoire sert à stocker à **long terme** des **grandes quantités d'info
 
 **Ordres de grandeur :**
 
-**Capacité : jusqu'à 10 To (HDD)**
+**Capacité : jusqu'à 24 To (HDD)**
 
-**Vitesse : jusqu'à 500 Mo/s (SSD)**
+**Vitesse : jusqu'à 7 Go/s (SSD NVMe PCIe 4.0)**
 
 * **La mémoire vive ou RAM : Random Access Memory (non permanente)**
 
@@ -71,9 +71,9 @@ Espace principal de stockage du microprocesseur, mais dont le contenu disparaît
 
 **Ordres de grandeur :**
 
-**Capacité : jusqu'à 32 Go**
+**Capacité : jusqu'à 64 Go**
 
-**Vitesse : jusqu'à 2 Go/s**
+**Vitesse : jusqu'à 6 Go/s (DDR5)**
 
 ![Différents niveaux de mémoire](media/img6.jpg)
 
@@ -98,7 +98,7 @@ Intégré au processeur. Ce type de mémoire est très rapide, mais aussi très 
 ![](media/img7.png){width="4.2347222222222225in"
 height="2.5729166666666665in"} 
 
-Pour que les données circulent entre les différentes parties d'un ordinateur (mémoire, CPU et les entrées/sorties), il existe des systèmes de communication appelés **bus** ( c'est le squelette de l'architecture). Il en existe de 3 grands types :
+Pour que les données circulent entre les différentes parties d'un ordinateur (mémoire, CPU et les entrées/sorties), il existe des systèmes de communication appelés **bus** (c'est le squelette de l'architecture). Il en existe de 3 grands types :
 
 -   Le **bus d'adresse** permet de faire circuler des adresses. *Par exemple, l'adresse d'une donnée à aller chercher en mémoire ;*
 
@@ -122,35 +122,35 @@ On peut donc s\'interroger sur la taille d\'un smartphone par rapport à la tail
 
 Grâce aux progrès techniques de miniaturisation, tous ces composants sont placés dans une puce unique d\'une centaine de mm^2^. Elles accueillent CPU, RAM, circuit graphique (GPU) (équivalent à la carte graphique dans un PC) et circuits radio (Wifi et Bluetooth). Elles sont souvent appelées \"système sur puce\", \"system on a chip\" en anglais (abréviation \"SoC\").
 
-Les meilleurs SoC, plus fins que les microprocesseurs « classiques » de dernière génération, sont gravés en 5 nm et comprennent des milliards de transistors. Un tel système sur puce est conçu et mis au point de façon logicielle, ses briques électroniques sont accessibles par des APIs, comme pour les bibliothèques logicielles.
+Les meilleurs SoC, plus fins que les microprocesseurs « classiques » de dernière génération, sont gravés en 3 nm (voire 2 nm en développement) et comprennent des milliards de transistors. Un tel système sur puce est conçu et mis au point de façon logicielle, ses briques électroniques sont accessibles par des APIs, comme pour les bibliothèques logicielles.
 
-Outre leur taille, les SoC ont d\'autres avantages par rapport aux systèmes \"classiques\" (carte mère + CPU + carte graphique\...) : ils sont conçus pour consommer beaucoup moins d\'énergie qu\'un système classique (à puissance de calcul équivalente).
+Outre leur taille, les SoC ont d\'autres **avantages** par rapport aux systèmes \"classiques\" (carte mère + CPU + carte graphique\...) : ils sont conçus pour consommer beaucoup moins d\'énergie qu\'un système classique (à puissance de calcul équivalente).
 
 Cette consommation réduite permet dans la plupart des cas de s\'affranchir de la présence de système de refroidissement actif comme les ventilateurs. Un système équipé de SoC est donc silencieux.
 
 Vu les distances réduites entre, par exemple, le CPU et la mémoire, les données circulent beaucoup plus vites, ce qui permet d\'améliorer les performances.
 
-En revanche, le principal inconvénient d'un SoC est que là où un ordinateur équipé d\'une carte mère permet de faire évoluer les composants individuellement, l\'extrême intégration du SoC présente l\'inconvénient de n\'autoriser aucune mise à jour possible du matériel.
+En revanche, le principal **inconvénient** d'un SoC est que là où un ordinateur équipé d\'une carte mère permet de faire évoluer les composants individuellement, l\'extrême intégration du SoC présente l\'inconvénient de n\'autoriser aucune mise à jour possible du matériel.
 
 ### 2.3 Exemples : Quelques noms des SoC
 
-* Apple iPhone 11 : SoC A13 Bionic
+* Apple iPhone 16 : SoC A18 Pro
 
-* Samsung Galaxy S11 : SoC Exynos 990
+* Samsung Galaxy S25 : SoC Snapdragon 8 Elite
 
-* Nintendo Switch : SoC Nvidia Tegra
+* Nintendo Switch 2 : SoC Nvidia T239
 
-* Apple MacBook (ordinateur portable) : SoC M1
+* Apple MacBook Air/Pro (ordinateur portable) : SoC M4
 
-Le marché des SoC a aujourd\'hui un poids économique très important. On commence même à trouver des ordinateurs portables équipés de SoC à la place des cartes mères \"classiques\". Les SoC commencent doucement, mais sûrement à rattraper les systèmes \"classiques\" en termes de puissance (pour les systèmes \"classiques\" d\'entrées et de moyennes gammes, mais aussi haut de gamme avec les nouveaux MacBook d\'Apple équipés de SoC M1).
+Le marché des SoC a aujourd'hui un poids économique très important. De nombreux ordinateurs portables sont désormais équipés de SoC à la place des cartes mères "classiques". Les SoC ont rattrapé, et parfois dépassé, les systèmes "classiques" en termes de puissance : les MacBook d'Apple équipés de SoC M4 rivalisent avec des PC de bureau haut de gamme, et des PC portables sous Windows utilisent aussi des SoC (Snapdragon X Elite de Qualcomm).
 
 ![](media/img10.png){width="3.591666666666667in" height="2.225in"}
 
 On trouve aussi ce système de SoC sur des nano-ordinateurs comme le Raspberry Pi ou les cartes microbits.
 
-Dans sa version 4, le Raspberry Pi est équipé du SoC BCM2711 de la société Broadcom
+Dans sa version 5 (2023), le Raspberry Pi est équipé du SoC BCM2712 de la société Broadcom
 
-### 2.4 Architecture simplifiée du SoC Samsung Exynos 990 - Galaxy S20
+### 2.4 Architecture simplifiée d'un SoC (exemple : Samsung Exynos 990)
 
 ![](media/img11.png){width="2.099932195975503in" height="2.1145833333333335in"}
 
@@ -160,15 +160,15 @@ Le processeur ou « Central Processing Unit » (CPU) est le cœur du SoC. Son fo
 
 **◼ La puce graphique (GPU)**
 
-La puce graphique ou « Graphics Processing Unit » (GPU) a en charge de calculer les images afin de pouvoir les afficher à l'écran. Une carte graphique doit donc réaliser un nombre élevé de tâches, puisque qu'elle doit par exemple calculer la couleur à afficher sur chaque pixel de l'écran de votre smartphone. Par exemple dans le cas d'une image Full HD (1920×1080), le GPU affiche 2 073 600 pixels différents ou 8 294 400 pixels pour de l'Ultra HD (3840×2160). Le calcul prend en compte la fréquence de rafraîchissement de l'écran qui peut par exemple varier entre 60 et 120 fois par secondes, c'est-à-dire entre 60 Hz et 120 Hz.
+La puce graphique ou « Graphics Processing Unit » (GPU) a en charge de calculer les images afin de pouvoir les afficher à l'écran. Une carte graphique doit donc réaliser un nombre élevé de tâches, puisque qu'elle doit par exemple calculer la couleur à afficher sur chaque pixel de l'écran de votre smartphone. Par exemple dans le cas d'une image Full HD (1920×1080), le GPU affiche 2 073 600 pixels différents ou 8 294 400 pixels pour de l'Ultra HD (3840×2160). Le calcul prend en compte la fréquence de rafraîchissement de l'écran qui peut par exemple varier entre 60 et 144 fois par seconde, c'est-à-dire entre 60 Hz et 144 Hz.
 
 **◼ La puce neuronale (NPU)**
 
-La puce neuronale ou « Neuronal Processing Unit » (NPU) est une puce en charge de l'intelligence artificielle des smartphones. Les calculs de l'intelligence artificielle ont longtemps été faits par le biais de serveurs dans le cloud (distant). Néanmoins, depuis quelques années pour des raisons de rapidité et de respect de la vie privée, les calculs se font désormais directement sur les smartphones. C'est utile par exemple dans « Google Translate » pour reconnaître des caractères, pour optimiser les photos ou encore l'autonomie.
+La puce neuronale ou « Neuronal Processing Unit » (NPU) est une puce en charge de l'intelligence artificielle des smartphones. Les calculs de l'intelligence artificielle ont longtemps été faits par le biais de serveurs dans le cloud (distant). Néanmoins, depuis quelques années pour des raisons de rapidité et de respect de la vie privée, les calculs se font désormais directement sur les smartphones. C'est utile par exemple pour la reconnaissance vocale, la traduction en temps réel, l'optimisation des photos par IA générative, les assistants intelligents embarqués ou encore la gestion de l'autonomie.
 
 **◼ Le modem (Interface)**
 
-Les smartphones embarquent également dans le SoC une unité réseau assurant la prise en charge des différents protocoles de communication. Cette unité est la partie la plus compliquée à développer et à implémenter sur un SoC. Néanmoins, il s'agit d'un élément crucial afin d'assurer le nomadisme d'un smartphone en itinérance. Le modem intégré au SoC gère non seulement le Wifi, le Bluetooth, le NFC ou bien encore les technologies mobiles. C'est-à-dire la 4G, ou plus récemment la 5G, mais également de plus vieux réseaux tels que la 3G.
+Les smartphones embarquent également dans le SoC une unité réseau assurant la prise en charge des différents protocoles de communication. Cette unité est la partie la plus compliquée à développer et à implémenter sur un SoC. Néanmoins, il s'agit d'un élément crucial afin d'assurer le nomadisme d'un smartphone en itinérance. Le modem intégré au SoC gère non seulement le Wifi, le Bluetooth, le NFC ou bien encore les technologies mobiles. C'est-à-dire la 5G (désormais largement déployée), la 4G, ou encore d'anciens réseaux comme la 2G/3G (en cours d'extinction).
 
 **◼ Le processeur de signal numérique (DSP)**
 

@@ -1,5 +1,5 @@
 ---
-title: "Processus : cours"
+title: "9.2 - Processus (Cours)"
 ---
 
 ## 1. Vocabulaire
@@ -45,7 +45,7 @@ des "états" au processus.
 
 ::: {.callout-note}
 ## Remarque
-De nos jours, les ordinateurs ont toujours plusieurs *coeurs*, donc plusieurs processeurs qui travaillent simultanément (véritable *en même temps*) et donc plusieurs processus qui sont vraiment traités simultanément. Cependant, le nombre de processus est toujours supérieur au nombre de processeurs et l'**ordonnancement** des processus par le système d'exploitation est bien toujours nécessaire.
+De nos jours, les ordinateurs ont toujours plusieurs *cœurs*, donc plusieurs processeurs qui travaillent simultanément (véritable *en même temps*) et donc plusieurs processus qui sont vraiment traités simultanément. Cependant, le nombre de processus est toujours supérieur au nombre de processeurs et l'**ordonnancement** des processus par le système d'exploitation est bien toujours nécessaire.
 :::
 
 ![États d'un processus](processusFig1.jpg)
@@ -106,13 +106,9 @@ obligatoirement être dans un état "élu".
 
 ### Exemple d'ordonnancement
 
-L'ordonnanceur (qui fait partie du système d'exploitation), divise le temps de processeur disponible en petits laps de temps (quantum de temps) et, à chaque intervalle, il peut faire passer un processus de l'état *elu* à *prêt* ou inversement.
+L'ordonnanceur (qui fait partie du système d'exploitation), divise le temps de processeur disponible en petits laps de temps (quantum de temps) et, à chaque intervalle, il peut faire passer un processus de l'état *élu* à *prêt* ou inversement.
 
 ![processus](processus_temps.png){width=70%}
-
-**Un bilan** : la vidéo ci-dessous permet de résumer ce qui précède et d'approfondir ces notions.
-
-[**https://www.youtube.com/watch?v=bFqud0gcCHM**](https://www.youtube.com/watch?v=bFqud0gcCHM){target="_blank"}
 
 ## 3. Les processus sous Linux
 
@@ -150,7 +146,7 @@ utilise un compteur qui est incrémenté de 1 à chaque création de
 processus, le système utilise ce compteur pour attribuer 
 les PID aux processus.
 
-* le **PPID** (Parent Process Identification) qui permet de connaitre
+* le **PPID** (Parent Process Identification) qui permet de connaître
 le processus parent du processus.
 
 * le **niveau de priorité** du processus ;
@@ -182,13 +178,13 @@ Enfin, la commande `kill` permet de fermer un processus en le désignant par son
 ## 4. Notion d'interblocage
 
 L'exécution d'un processus nécessite un ensemble de ressources (espace
-mémoire centrale, espace disque, fichier, périphériques, ...) qui lui
+mémoire centrale, espace disque, fichier, périphériques…,) qui lui
 sont attribuées par le système d'exploitation.
 
 ::: {.callout-tip}
 ## Définition
 Un ensemble
-de processus est en **interblocage** (**deadlock**)  si chaque processus attend un évènement
+de processus est en **interblocage** (**deadlock**) si chaque processus attend un évènement
 que seul un autre processus de l'ensemble peut engendrer.
 :::
 
@@ -215,6 +211,3 @@ Si l'allocation d'une ressource peut conduire à un interblocage, elle
 est retardée jusqu'à ce qu'il n'y ait plus de risque.
 
 * Les détecter et y remédier.
-
-
-Pour compléter et approfondir, lire les pages 218 à 225 du manuel (vous y apprendrez comment visualiser les processus sous Windows) et pages 230-231 pour l'interblocage.

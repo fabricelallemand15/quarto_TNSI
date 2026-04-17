@@ -1,5 +1,5 @@
 ---
-title: Exercices type bac - Processus
+title: "9.2 - Processus - Exercices (bac)"
 ---
 
 _Les exercices précédés du symbole {{< fa desktop >}} sont à faire sur machine, en sauvegardant le fichier si nécessaire._
