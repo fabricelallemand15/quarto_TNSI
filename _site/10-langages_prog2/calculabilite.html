@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Calculabilité et décidabilité – NSI - Terminale</title>
+<title>10 - Calculabilité et décidabilité (cours) – NSI - Terminale</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -68,7 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../histoire/index.html" rel="next">
+<link href="../10-langages_prog2/calculabilite_exercices.html" rel="next">
 <link href="../05-archiSE/processus_python.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
@@ -508,7 +508,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">Ch. 10 - Limites du calculable</a></li><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">Calculabilité et décidabilité</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">Ch. 10 - Limites du calculable</a></li><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">10 - Calculabilité et décidabilité (cours)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -936,11 +936,8 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../19-SystPuces/SystPuces_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9.1 Systèmes sur puce (cours)</span></a>
-  </div>
-</li>
+ <span class="menu-text">19-SystPuces/SystPuces_cours.qmd</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
@@ -985,7 +982,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../10-langages_prog2/calculabilite.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Calculabilité et décidabilité</span></a>
+ <span class="menu-text">10 - Calculabilité et décidabilité (cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10-langages_prog2/calculabilite_exercices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 - Calculabilité et décidabilité (Exercices)</span></a>
   </div>
 </li>
       </ul>
@@ -1091,7 +1094,6 @@ window.Quarto = {
   <li><a href="#les-fonctions-calculables" id="toc-les-fonctions-calculables" class="nav-link" data-scroll-target="#les-fonctions-calculables">Les fonctions calculables</a></li>
   <li><a href="#les-programmes-comme-données" id="toc-les-programmes-comme-données" class="nav-link" data-scroll-target="#les-programmes-comme-données">Les programmes comme données</a></li>
   <li><a href="#le-problème-de-larrêt-est-indécidable" id="toc-le-problème-de-larrêt-est-indécidable" class="nav-link" data-scroll-target="#le-problème-de-larrêt-est-indécidable">Le problème de l’arrêt est indécidable</a></li>
-  <li><a href="#un-autre-exemple-de-problème-indécidable-le-dixième-problème-de-hilbert" id="toc-un-autre-exemple-de-problème-indécidable-le-dixième-problème-de-hilbert" class="nav-link" data-scroll-target="#un-autre-exemple-de-problème-indécidable-le-dixième-problème-de-hilbert">Un autre exemple de problème indécidable : Le dixième problème de Hilbert</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
@@ -1100,9 +1102,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">Ch. 10 - Limites du calculable</a></li><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">Calculabilité et décidabilité</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">Ch. 10 - Limites du calculable</a></li><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">10 - Calculabilité et décidabilité (cours)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Calculabilité et décidabilité</h1>
+<h1 class="title">10 - Calculabilité et décidabilité (cours)</h1>
 </div>
 
 
@@ -1142,7 +1144,7 @@ window.Quarto = {
 <p>La <strong>thèse de Church</strong> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> postule que tous ces modèles de calcul sont équivalents : une fonction calculable pour un modèle l’est pour un autre. Cela nous permet d’utiliser le modèle des fonctions programmables en Python <strong>sans perdre de généralité</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://upload.wikimedia.org/wikipedia/en/a/a6/Alonzo_Church.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Alonzo Church (1903-1995)"><img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Alonzo_Church.jpg" class="img-fluid figure-img" style="width:30.0%" alt="Alonzo Church (1903-1995)"></a></p>
+<p><a href="Alonzo_Church.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Alonzo Church (1903-1995)"><img src="Alonzo_Church.jpg" class="img-fluid figure-img" style="width:30.0%" alt="Alonzo Church (1903-1995)"></a></p>
 <figcaption>Alonzo Church (1903-1995)</figcaption>
 </figure>
 </div>
@@ -1192,12 +1194,11 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un problème de décision est la donnée d’un ensemble <span class="math inline">\(E\)</span>, que l’on appelle l’ensemble des <strong>instances</strong> et d’une partie <span class="math inline">\(E^+\)</span> de <span class="math inline">\(E\)</span> que l’on appelle l’ensemble des i<strong>nstances positives</strong>.</p>
+<p>Un <strong>problème de décision</strong> est une question dont la réponse est toujours <em>oui</em> ou <em>non</em>, posée sur un ensemble de <strong>données</strong> appelées <strong>instances</strong>. Les instances pour lesquelles la réponse est <em>oui</em> sont appelées les <strong>instances positives</strong>.</p>
 </div>
 </div>
-<p>Par exemple le problème de la primalité peut être défini par l’ensemble d’instances <span class="math inline">\(E = \mathbb{N}\)</span> et l’ensemble d’instances positives <span class="math inline">\(E^+ = P\)</span>.</p>
-<p>On peut présenter un problème de décision de différentes façons.</p>
-<p>D’abord à l’aide d’un schéma comme celui-ci :</p>
+<p>Par exemple, pour le problème de la primalité, les instances sont les entiers naturels et les instances positives sont les nombres premiers.</p>
+<p>On peut présenter un problème de décision de la façon suivante :</p>
 <section id="nom-du-problème" class="level4">
 <h4 class="anchored" data-anchor-id="nom-du-problème">Nom du problème</h4>
 <p><strong>Donnée :</strong> spécification d’une instance</p>
@@ -1208,7 +1209,7 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="primalité-dun-entier">Primalité d’un entier</h4>
 <p><strong>Donnée :</strong> un entier naturel</p>
 <p><strong>Réponse :</strong> décider si ce nombre est premier</p>
-<p>Une autre façon de définir un problème de décision est de fournir l’ensemble des instances (ici <span class="math inline">\(\mathbb{N}\)</span>) et la description du prédicat testant l’appartenance aux instances positives (ici, le prédicat est une fonction, la fonction <code>isprime</code>).</p>
+<p>Le prédicat associé à un problème de décision est la fonction qui, à chaque instance, associe <em>Vrai</em> si elle est positive, <em>Faux</em> sinon. Pour le problème de la primalité, ce prédicat est la fonction <code>isprime</code>.</p>
 <p>Prenons un autre exemple : colorier un graphe avec un nombre fixé de couleurs, c’est colorier ses sommets de sorte que deux sommets reliés par une arête du graphe ne sont jamais de la même couleur.</p>
 <p>On peut alors définir :</p>
 </section>
@@ -1243,13 +1244,6 @@ window.Quarto = {
 <p>On aura remarqué que le prédicat renvoie une réponse (<code>True</code> ou <code>False</code>) pour n’importe quelle donnée. En particulier, il ne sombre jamais dans une boucle infinie : il termine toujours. On peut donc affirmer que <strong>le problème de la primalité est décidable</strong>.</p>
 <p>Le problème de la coloration des graphes pose un problème de programmation plus difficile, et nous ne détaillerons pas ici un programme Python pour le prédicat associé : contentons-nous de dire qu’il suffit de balayer de façon systématique les coloriages de tous les sommets avec les couleurs disponibles, et, pour chaque coloriage, de vérifier, par un balayage systématique des arêtes, si deux sommets reliés sont coloriés de la même façon. Mais, pour un graphe à <span class="math inline">\(n\)</span> sommets et <span class="math inline">\(p\)</span> arêtes et <span class="math inline">\(c\)</span> couleurs, cela va coûter cher : un nombre d’opérations de l’ordre de <span class="math inline">\(c^n \times p\)</span>.</p>
 <p>Mais on ne s’intéresse pas du tout ici à la complexité et l’important est qu’on puisse affirmer que <strong>le problème de la coloration des graphes est décidable</strong>.</p>
-<p>Notons au passage que savoir résoudre ce problème de décision permet de résoudre un autre type de problème : déterminer le nombre minimal de couleurs dont il faut disposer pour pouvoir colorer un graphe. Si on a écrit un programme qui résout le problème de décision de la coloration d’un graphe, on peut en déduire facilement :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nbMinimalCouleurs(graphe): </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> colorationPossible(graphe,c):</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        c <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>On est assuré de sortir de la boucle : en effet si le graphe possède <span class="math inline">\(n\)</span> sommets, on peut le colorier à coup sûr avec <span class="math inline">\(n\)</span> couleurs, il suffit de colorier chaque sommet par une couleur unique. Ainsi peut-on garantir que la boucle terminera pour une valeur de <span class="math inline">\(c\)</span> au plus égale à <span class="math inline">\(n\)</span>.</p>
 <dl>
 <dt>Le troisième problème que nous avons présenté est, lui aussi, décidable</dt>
 <dd>
@@ -1283,6 +1277,25 @@ la preuve peut se limiter à rappeler qu’il existe un interpréteur du langage
 <p>Un programme écrit en Python n’est autre qu’une chaîne de caractères : c’est le texte même du programme.</p>
 <p>Bien sûr, pour un même programme, en ajoutant des espaces à la fin d’une ligne, ou entre deux mots, on obtient un autre programme qui calcule exactement les mêmes choses. Mais peu importe.</p>
 <p>Cela permet de considérer des fonctions qui prennent en entrée des programmes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Exemples concrets de programmes traitant d’autres programmes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cette idée est omniprésente en informatique :</p>
+<ul>
+<li>Un <strong>interpréteur Python</strong> est lui-même un programme (écrit en C, par exemple) qui prend en entrée un programme Python (une chaîne de caractères) et l’exécute. La thèse de Church nous assure qu’on pourrait tout aussi bien écrire cet interpréteur en Python.</li>
+<li>Un <strong>compilateur</strong> est un programme qui prend en entrée le texte source d’un programme et produit en sortie un programme en langage machine.</li>
+<li><strong>Télécharger un logiciel</strong> revient à recevoir une suite de bits qui constitue un programme : le système d’exploitation, lui-même un programme, va ensuite l’exécuter.</li>
+<li>Un <strong>système d’exploitation</strong> (Linux, Windows…) est un programme qui en gère d’autres : il les lance, les suspend, les arrête, alloue de la mémoire à chacun.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="le-problème-de-larrêt-est-indécidable" class="level3">
 <h3 class="anchored" data-anchor-id="le-problème-de-larrêt-est-indécidable">Le problème de l’arrêt est indécidable</h3>
@@ -1296,72 +1309,35 @@ la preuve peut se limiter à rappeler qu’il existe un interpréteur du langage
 <p>Ce résultat met définitivement fin à tout espoir d’automatiser de façon algorithmique le calcul de n’importe quelle fonction. C’est ce qui fait son importance, à la fois historique, scientifique et philosophique.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Alan Turing (1912 - 1954)"><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg" class="img-fluid figure-img" style="width:30.0%" alt="Alan Turing (1912 - 1954)"></a></p>
+<p><a href="Alan_Turing.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Alan Turing (1912 - 1954)"><img src="Alan_Turing.jpg" class="img-fluid figure-img" style="width:30.0%" alt="Alan Turing (1912 - 1954)"></a></p>
 <figcaption>Alan Turing (1912 - 1954)</figcaption>
 </figure>
 </div>
 <section id="démonstration-du-théorème" class="level4">
 <h4 class="anchored" data-anchor-id="démonstration-du-théorème">Démonstration du théorème</h4>
 <p>La démonstration classique que nous présentons ici est une preuve par l’absurde. On suppose donc qu’il existe un programme Python qui décide du problème de l’arrêt :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> testARRET(programme,x):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ...:</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="co"># si le programme s'arrête sur l'entrée x</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> testARRET(programme,x):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ...:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="co"># si le programme s'arrête sur l'entrée x</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On définit alors le programme suivant :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> testSurSoi(programme):</span>
-<span id="cb4-2"><a href="#cb4-2"></a>    <span class="cf">if</span> testARRET(programme,programme):</span>
-<span id="cb4-3"><a href="#cb4-3"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb4-4"><a href="#cb4-4"></a>            <span class="cf">continue</span> </span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="cf">else</span>:</span>
-<span id="cb4-6"><a href="#cb4-6"></a>        <span class="cf">return</span> <span class="va">True</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> testSurSoi(programme):</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="cf">if</span> testARRET(programme,programme):</span>
+<span id="cb3-3"><a href="#cb3-3"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb3-4"><a href="#cb3-4"></a>            <span class="cf">continue</span> </span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-6"><a href="#cb3-6"></a>        <span class="cf">return</span> <span class="va">True</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Les lignes 3–4 forment une boucle infinie.</p>
 <p>Que se passe-t-il lors de l’appel <code>testSurSoi(testSurSoi)</code> ?</p>
 <p>▷ ou bien cet appel termine, ce qui signifie qu’on n’est pas entré dans la boucle infinie des lignes 3–4. Mais alors, cela signifie que l’appel <code>testARRET(testSurSoi,testSurSoi)</code> a renvoyé la valeur <code>False</code>, ce qui ne peut arriver que si l’appel <code>testSurSoi(testSurSoi)</code> ne termine pas : c’est contradictoire ;</p>
 <p>▷ ou bien cet appel ne termine pas, ce qui signifie qu’on est entré dans la boucle. Cela ne peut arriver que si l’appel <code>testSurSoi(testSurSoi)</code> termine : c’est contradictoire.</p>
 <p>On aboutit dans tous les cas à une contradiction, ce qui achève notre démonstration par l’absurde !</p>
-<p><strong>Rmarque :</strong> on peut regarder une vidéo très amusante qui illustre cette célèbre démonstration ici :</p>
+<p><strong>Remarque :</strong> on peut regarder une vidéo très amusante qui illustre cette célèbre démonstration ici :</p>
 <iframe title="Proof That Computers Can't Do Everything (The Halting Problem)" width="560" height="315" src="https://tube-sciences-technologies.apps.education.fr/videos/embed/64112e4c-6a29-4aa6-be5a-11714512e9a2" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups">
 </iframe>
-</section>
-</section>
-<section id="un-autre-exemple-de-problème-indécidable-le-dixième-problème-de-hilbert" class="level3">
-<h3 class="anchored" data-anchor-id="un-autre-exemple-de-problème-indécidable-le-dixième-problème-de-hilbert">Un autre exemple de problème indécidable : Le dixième problème de Hilbert</h3>
-<p>Lors du deuxième congrès international des mathématiciens, tenu à Paris en août 1900, <strong>le grand mathématicien allemand David Hilbert</strong> (1862–1943) a présenté en août 1900, à Paris, une liste de 23 problèmes à ses collègues. Ces problèmes interrogent en particulier les fondements des mathématiques et de la logique et seule une moitié d’entre eux ont été résolus depuis.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/7/79/Hilbert.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="David Hilbert (1862 - 1943)"><img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Hilbert.jpg" class="img-fluid figure-img" style="width:30.0%" alt="David Hilbert (1862 - 1943)"></a></p>
-<figcaption>David Hilbert (1862 - 1943)</figcaption>
-</figure>
-</div>
-<p>Le dixième problème de Hilbert consiste en la décidabilité d’un problème de décision.</p>
-<p>Il s’agit de déterminer s’il existe un algorithme qui décide si un polynôme à plusieurs variables dont tous les coefficients sont entiers admet ou non des solutions entières.</p>
-<p>Par exemple, l’équation <span class="math inline">\(3x^2 − 2xy + 4y^2z = 31\)</span> admet comme solution <span class="math inline">\(x = 1\)</span>, <span class="math inline">\(y = 2\)</span> et <span class="math inline">\(z = 2\)</span>, alors que l’équation <span class="math inline">\(3x^2 +
-6xy + y^2 + z^2 + 1 = 0\)</span> n’admet aucune solution entière.</p>
-<p>Il a fallu attendre 1970 pour que le mathématicien russe <strong>Iouri Vladimirovitch Matiassevitch</strong> démontre, à l’âge de 23 ans, que ce problème est indécidable.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yuri_Matiyasevich._Portrait_1969.jpg/348px-Yuri_Matiyasevich._Portrait_1969.jpg?uselang=fr" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Iouri Vladimirovitch Matiassevitch (1947 - )"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yuri_Matiyasevich._Portrait_1969.jpg/348px-Yuri_Matiyasevich._Portrait_1969.jpg?uselang=fr" class="img-fluid figure-img" style="width:30.0%" alt="Iouri Vladimirovitch Matiassevitch (1947 - )"></a></p>
-<figcaption>Iouri Vladimirovitch Matiassevitch (1947 - )</figcaption>
-</figure>
-</div>
-<section id="des-cas-simples" class="level4">
-<h4 class="anchored" data-anchor-id="des-cas-simples">Des cas simples</h4>
-<p>Il n’est pas trop difficile de décider si une équation polynomiale à une seule variable entière <span class="math inline">\(x\)</span> a ou non des solutions entières.</p>
-<p>Le professeur de mathématiques pourra facilement donner une preuve générale, mais considérons un exemple pour s’en convaincre. Soit l’équation <span class="math inline">\(3x^5 − 2x^4 + 7x^3 + 22x^2 − 31x + 7 = 0\)</span>.</p>
-<p>Comme le coefficient constant n’est pas nul, <span class="math inline">\(x = 0\)</span> n’est pas solution. Cherchons s’il peut y avoir des solutions entières non nulles.</p>
-<p>En isolant le terme de degré nul, on obtient une équation équivalente <span class="math inline">\(−3x^5 + 2x^4 − 7x^3 − 22x^2 + 31x = 7\)</span>, qu’on peut réécrire sous la forme <span class="math inline">\(x(−3x^4 + 2x^3 − 7x^2 − 22x + 31) = 7\)</span>, ce qui prouve qu’une solution entière <span class="math inline">\(x\)</span> non nulle doit être un diviseur de 7 : il suffit donc de tester quelques entiers parmi <span class="math inline">\(−7\)</span>, <span class="math inline">\(−6\)</span>, <span class="math inline">\(−5\)</span>, …, <span class="math inline">\(−1\)</span>, <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, …, <span class="math inline">\(7\)</span>. (Comme <span class="math inline">\(7\)</span> est premier, on ne teste ici que <span class="math inline">\(−7\)</span>, <span class="math inline">\(−1\)</span>, <span class="math inline">\(1\)</span> et <span class="math inline">\(7\)</span>).</p>
-<p>Il n’est donc besoin que d’une simple boucle pour programmer le prédicat.</p>
-<p>Donc le problème de décider si un polynôme à coefficients entiers et à une seule variable admet ou non des solutions entières est décidable.</p>
-</section>
-<section id="ça-se-complique" class="level4">
-<h4 class="anchored" data-anchor-id="ça-se-complique">Ça se complique</h4>
-<p>Dès que l’équation polynomiale considérée possède deux variables, tout se complique. Par exemple il est vrai que l’équation <span class="math inline">\(x^2 − 991y^2 −
-1 = 0\)</span> a des solutions entières, mais elles ne sont pas faciles à trouver : la plus petite d’entre elles est <span class="math inline">\(x = 379516400906811930638014896080\)</span> et <span class="math inline">\(y = 12055735790331359447442538767\)</span>.</p>
-<p>On sait démontrer que le problème de savoir si une équation polynomiale à coefficients entiers à <span class="math inline">\(p\)</span> inconnues a des solutions entières est décidable pour <span class="math inline">\(p = 1\)</span> (on l’a vu plus haut), on sait aussi qu’il est indécidable pour <span class="math inline">\(p \geqslant 9\)</span>. Mais on ne sait pas si le problème est décidable pour <span class="math inline">\(p \in [2, 8]\)</span>.</p>
-<p>Il y a des sous-problèmes décidables : si on se restreint à des équations où le degré total est inférieur ou égal à 2, le problème est décidable ; le problème devient indécidable pour des degrés inférieurs ou égaux à 4. En revanche, on ne sait dire si le dixième problème de Hilbert restreint aux polynômes de degré 3 est décidable ou non décidable !</p>
 
 
 </section>
@@ -1797,8 +1773,8 @@ la preuve peut se limiter à rappeler qu’il existe un interpréteur du langage
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../histoire/index.html" class="pagination-link" aria-label="Histoire de l'informatique">
-        <span class="nav-page-text">Histoire de l’informatique</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../10-langages_prog2/calculabilite_exercices.html" class="pagination-link" aria-label="10 - Calculabilité et décidabilité (Exercices)">
+        <span class="nav-page-text">10 - Calculabilité et décidabilité (Exercices)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

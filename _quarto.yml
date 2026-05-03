@@ -111,6 +111,7 @@ website:
       - section: "Ch. 10 - Limites du calculable"
         contents: 
           - 10-langages_prog2/calculabilite.qmd
+          - 10-langages_prog2/calculabilite_exercices.qmd
       - section: "Histoire de l'informatique"
         contents: 
           - histoire/index.qmd

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9.1 Systèmes sur puce (cours) – NSI - Terminale</title>
+<title>10 - Calculabilité et décidabilité (Exercices) – NSI - Terminale</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +68,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../05-archiSE/processus_cours.html" rel="next">
-<link href="../17-RechercheTextuelle/cours.html" rel="prev">
+<link href="../histoire/index.html" rel="next">
+<link href="../10-langages_prog2/calculabilite.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -54,9 +89,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -391,6 +423,35 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 
@@ -444,7 +505,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">Ch. 9 - Systèmes sur puce et Processus</a></li><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">9.1 Systèmes sur puce (cours)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">Ch. 10 - Limites du calculable</a></li><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite_exercices.html">10 - Calculabilité et décidabilité (Exercices)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -864,19 +925,16 @@ document.addEventListener("DOMContentLoaded", function () {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Ch. 9 - Systèmes sur puce et Processus</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../19-SystPuces/SystPuces_cours.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">9.1 Systèmes sur puce (cours)</span></a>
-  </div>
-</li>
+ <span class="menu-text">19-SystPuces/SystPuces_cours.qmd</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
@@ -911,17 +969,23 @@ document.addEventListener("DOMContentLoaded", function () {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
  <span class="menu-text">Ch. 10 - Limites du calculable</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../10-langages_prog2/calculabilite.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Calculabilité et décidabilité</span></a>
+ <span class="menu-text">10 - Calculabilité et décidabilité (cours)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../10-langages_prog2/calculabilite_exercices.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">10 - Calculabilité et décidabilité (Exercices)</span></a>
   </div>
 </li>
       </ul>
@@ -1016,21 +1080,10 @@ document.addEventListener("DOMContentLoaded", function () {
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#les-socs-systèmes-on-chip-ou-système-sur-puce-en-français" id="toc-les-socs-systèmes-on-chip-ou-système-sur-puce-en-français" class="nav-link active" data-scroll-target="#les-socs-systèmes-on-chip-ou-système-sur-puce-en-français">Les Socs («&nbsp;<em>Systèmes on Chip</em>&nbsp;» ou Système sur Puce en français)</a>
-  <ul class="collapse">
-  <li><a href="#rappel-architecture-de-von-neumann" id="toc-rappel-architecture-de-von-neumann" class="nav-link" data-scroll-target="#rappel-architecture-de-von-neumann">1. Rappel&nbsp;: Architecture de Von Neumann</a>
-  <ul class="collapse">
-  <li><a href="#définition" id="toc-définition" class="nav-link" data-scroll-target="#définition">1.1 Définition</a></li>
-  <li><a href="#principaux-composants" id="toc-principaux-composants" class="nav-link" data-scroll-target="#principaux-composants">1.2 Principaux composants</a></li>
-  </ul></li>
-  <li><a href="#vers-les-systèmes-sur-puce" id="toc-vers-les-systèmes-sur-puce" class="nav-link" data-scroll-target="#vers-les-systèmes-sur-puce">2. Vers les systèmes sur puce</a>
-  <ul class="collapse">
-  <li><a href="#lintérieur-dun-pc" id="toc-lintérieur-dun-pc" class="nav-link" data-scroll-target="#lintérieur-dun-pc">2.1 L'intérieur d'un PC</a></li>
-  <li><a href="#une-solution-les-soc" id="toc-une-solution-les-soc" class="nav-link" data-scroll-target="#une-solution-les-soc">2.2 Une solution&nbsp;: les SoC</a></li>
-  <li><a href="#exemples-quelques-noms-des-soc" id="toc-exemples-quelques-noms-des-soc" class="nav-link" data-scroll-target="#exemples-quelques-noms-des-soc">2.3 Exemples&nbsp;: Quelques noms des SoC</a></li>
-  <li><a href="#architecture-simplifiée-dun-soc-exemple-samsung-exynos-990" id="toc-architecture-simplifiée-dun-soc-exemple-samsung-exynos-990" class="nav-link" data-scroll-target="#architecture-simplifiée-dun-soc-exemple-samsung-exynos-990">2.4 Architecture simplifiée d’un SoC (exemple : Samsung Exynos 990)</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-1-qcm" id="toc-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-1-qcm" class="nav-link active" data-scroll-target="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-1-qcm"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 1 — QCM</a></li>
+  <li><a href="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-2-décidable-ou-non" id="toc-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-2-décidable-ou-non" class="nav-link" data-scroll-target="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-2-décidable-ou-non"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 2 — Décidable ou non ?</a></li>
+  <li><a href="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-3-instances-et-instances-positives" id="toc-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-3-instances-et-instances-positives" class="nav-link" data-scroll-target="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-3-instances-et-instances-positives"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 3 — Instances et instances positives</a></li>
+  <li><a href="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-4-analyser-la-preuve-de-lindécidabilité-du-problème-de-larrêt" id="toc-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-4-analyser-la-preuve-de-lindécidabilité-du-problème-de-larrêt" class="nav-link" data-scroll-target="#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-4-analyser-la-preuve-de-lindécidabilité-du-problème-de-larrêt"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 4 — Analyser la preuve de l’indécidabilité du problème de l’arrêt</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
@@ -1038,9 +1091,9 @@ document.addEventListener("DOMContentLoaded", function () {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">Ch. 9 - Systèmes sur puce et Processus</a></li><li class="breadcrumb-item"><a href="../19-SystPuces/SystPuces_cours.html">9.1 Systèmes sur puce (cours)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite.html">Ch. 10 - Limites du calculable</a></li><li class="breadcrumb-item"><a href="../10-langages_prog2/calculabilite_exercices.html">10 - Calculabilité et décidabilité (Exercices)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">9.1 Systèmes sur puce (cours)</h1>
+<h1 class="title">10 - Calculabilité et décidabilité (Exercices)</h1>
 </div>
 
 
@@ -1057,162 +1110,91 @@ document.addEventListener("DOMContentLoaded", function () {
 </header>
 
 
-<section id="les-socs-systèmes-on-chip-ou-système-sur-puce-en-français" class="level1">
-<h1>Les Socs («&nbsp;<em>Systèmes on Chip</em>&nbsp;» ou Système sur Puce en français)</h1>
-<section id="rappel-architecture-de-von-neumann" class="level2">
-<h2 class="anchored" data-anchor-id="rappel-architecture-de-von-neumann">1. Rappel&nbsp;: Architecture de Von Neumann</h2>
-<section id="définition" class="level3">
-<h3 class="anchored" data-anchor-id="définition">1.1 Définition</h3>
-<p>L’<strong>architecture de Von Neumann</strong> est un modèle structurel d’ordinateur dans lequel une unité de stockage (mémoire) unique sert à conserver à la fois les instructions et les données demandées ou produites par le calcul. Les ordinateurs actuels sont tous basés sur des versions améliorées de cette architecture.</p>
-<p>L’architecture de Von Neumann décompose l’ordinateur en 4 parties distinctes :</p>
+<p><em>Les exercices précédés du symbole <i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> doivent être résolus par écrit.</em></p>
+<hr>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-1-qcm" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-1-qcm"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 1 — QCM</h2>
+<p>Pour chacune des questions suivantes, choisir la (ou les) bonne(s) réponse(s).</p>
+<p><strong>1.</strong> La thèse de Church affirme que :</p>
+<ol type="a">
+<li>Python est le meilleur langage de programmation.</li>
+<li>Tous les langages de programmation courants permettent de calculer les mêmes fonctions.</li>
+<li>Il existe des fonctions que Python peut calculer mais pas Java.</li>
+<li>Un algorithme efficace en Python le sera forcément dans un autre langage.</li>
+</ol>
+<p><strong>2.</strong> Une fonction est dite <strong>calculable</strong> si :</p>
+<ol type="a">
+<li>elle peut être calculée à la main par un humain.</li>
+<li>il existe un programme Python qui la calcule et qui termine pour toute entrée.</li>
+<li>il existe un programme qui donne une réponse en un temps raisonnable.</li>
+<li>elle est définie sur les entiers naturels.</li>
+</ol>
+<p><strong>3.</strong> Un problème de décision est <strong>décidable</strong> si :</p>
+<ol type="a">
+<li>on peut répondre <em>oui</em> à au moins une instance.</li>
+<li>il existe un algorithme qui répond <em>oui</em> ou <em>non</em> pour toute instance, et qui termine toujours.</li>
+<li>l’algorithme qui le résout est efficace (polynomiale en temps).</li>
+<li>on peut toujours répondre <em>non</em>.</li>
+</ol>
+<p><strong>4.</strong> Le problème de l’arrêt consiste à :</p>
+<ol type="a">
+<li>savoir si un programme Python contient des erreurs de syntaxe.</li>
+<li>déterminer si un programme <span class="math inline">\(\pi\)</span>, exécuté sur une entrée <span class="math inline">\(x\)</span>, finit par s’arrêter.</li>
+<li>calculer le temps d’exécution d’un programme.</li>
+<li>vérifier qu’un programme renvoie le bon résultat.</li>
+</ol>
+<p><strong>5.</strong> L’indécidabilité du problème de l’arrêt implique que :</p>
+<ol type="a">
+<li>aucun programme ne peut s’arrêter.</li>
+<li>il est impossible d’écrire un programme qui détecte, pour tout programme et toute entrée, si le calcul termine.</li>
+<li>Python est un langage insuffisamment puissant.</li>
+<li>certaines questions mathématiques ne pourront jamais être résolues par un algorithme.</li>
+</ol>
+</section>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-2-décidable-ou-non" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-2-décidable-ou-non"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 2 — Décidable ou non ?</h2>
+<p>Pour chacun des problèmes suivants, dire s’il est <strong>décidable</strong> ou <strong>indécidable</strong>, et justifier brièvement.</p>
+<ol type="1">
+<li>Étant donné un entier <span class="math inline">\(n\)</span>, décider si <span class="math inline">\(n\)</span> est pair.</li>
+<li>Étant donné un programme Python <span class="math inline">\(\pi\)</span> et une entrée <span class="math inline">\(x\)</span>, décider si <span class="math inline">\(\pi(x)\)</span> affiche <code>"Bonjour"</code> avant de s’arrêter.</li>
+<li>Étant donné un entier <span class="math inline">\(n\)</span>, décider si <span class="math inline">\(n\)</span> est un nombre parfait (égal à la somme de ses diviseurs stricts).</li>
+<li>Étant donné un programme Python <span class="math inline">\(\pi\)</span>, décider si <span class="math inline">\(\pi\)</span> s’arrête pour <strong>toutes</strong> les entrées possibles.</li>
+<li>Étant donné une chaîne de caractères, décider si elle constitue un programme Python syntaxiquement correct.</li>
+</ol>
+</section>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-3-instances-et-instances-positives" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-3-instances-et-instances-positives"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 3 — Instances et instances positives</h2>
+<p>Pour chacun des problèmes de décision suivants, préciser :</p>
 <ul>
-<li>L’unité <strong>arithmétique et logique</strong> (UAL ou ALU en anglais) ou <strong>unité de traitement</strong> : son rôle est d’effectuer les opérations de base ;</li>
-<li>L’unité <strong>de contrôle (ou de commande)</strong>, chargée du « séquençage » des opérations ;</li>
-<li>La <strong>mémoire</strong> qui contient à la fois les données et le programme qui indiquera à l’unité de contrôle quels sont les calculs à faire sur ces données ;</li>
-<li>Les <strong>dispositifs d’entrée-sortie</strong>, qui permettent de communiquer avec le monde extérieur.</li>
+<li>l’ensemble des <strong>instances</strong> (sur quoi porte la question),</li>
+<li>les <strong>instances positives</strong> (pour quelles instances la réponse est <em>oui</em>).</li>
 </ul>
-<p><a href="media/img1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="media/img1.png" style="width:6.55821in;height:3.88625in"></a></p>
+<ol type="1">
+<li><strong>Divisibilité</strong> : étant donné deux entiers <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span>, décider si <span class="math inline">\(a\)</span> divise <span class="math inline">\(b\)</span>.</li>
+<li><strong>Palindrome</strong> : étant donné un mot (chaîne de caractères), décider si c’est un palindrome.</li>
+<li><strong>Programme sans boucle infinie</strong> : étant donné un programme Python <span class="math inline">\(\pi\)</span> et une entrée <span class="math inline">\(x\)</span>, décider si l’exécution de <span class="math inline">\(\pi(x)\)</span> termine.</li>
+<li><strong>Présence d’un mot</strong> : étant donné un texte et un mot, décider si le mot apparaît dans le texte.</li>
+</ol>
 </section>
-<section id="principaux-composants" class="level3">
-<h3 class="anchored" data-anchor-id="principaux-composants">1.2 Principaux composants</h3>
-<section id="le-microprocesseur" class="level4">
-<h4 class="anchored" data-anchor-id="le-microprocesseur">Le Microprocesseur</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/img2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Intel CPU Core i7 6700K"><img src="media/img2.jpg" style="width:1.90833in;height:1.33333in" alt="Intel CPU Core i7 6700K" class="figure-img"></a></p>
-<figcaption>Intel CPU Core i7 6700K</figcaption>
-</figure>
-</div>
-<p>Le <strong>microprocesseur</strong> (ou unité centrale de traitement&nbsp;: UCT, en anglais Central Processing Unit&nbsp;: <strong>CPU</strong>) est un composant essentiel qui exécute les instructions machine des programmes informatiques.</p>
-<p>Remarque : il est le plus souvent amovible, placé sur un support appelé <strong>socket</strong>, et équipé d’un <strong>radiateur</strong> et d’un <strong>ventilateur</strong> (c’est le composant de la carte mère le plus gourmand en énergie).</p>
-<p>Il est schématiquement constitué de 3 parties :</p>
-<ul>
-<li><p>L’<strong>unité arithmétique et logique</strong> est chargée de l’exécution de tous les calculs que peut réaliser le microprocesseur ;</p></li>
-<li><p>Les <strong>registres</strong> permettent de mémoriser de l’information (donnée ou instruction) au sein même du CPU, en très petite quantité ;</p></li>
-<li><p>L’<strong>unité de contrôle (ou de commande)</strong>. C’est le coordinateur général qui lit les instructions du programme en mémoire et commande l’UAL pour exécuter ces instructions.</p></li>
-</ul>
-<p>Les microprocesseurs sont cadencés par un signal d'horloge (signal oscillant régulier imposant un rythme au transfert entre circuit). Au milieu des années 1980, ce signal avait une fréquence de 4 à 8&nbsp;MHz. Dans les années 2000, cette fréquence atteint 3&nbsp;GHz. Plus cette fréquence est élevée, plus le microprocesseur peut exécuter à un rythme élevé les instructions de base des programmes, mais plus la qualité des bus (communication entre les composants) doit être soignée et leur longueur adaptée à la fréquence.</p>
-</section>
-<section id="la-mémoire" class="level4">
-<h4 class="anchored" data-anchor-id="la-mémoire">La Mémoire</h4>
-<p>La <strong>mémoire</strong> permet de stocker des données et des programmes. Elle se divise entre mémoire volatile donc non permanente (programmes et données en cours de fonctionnement) et mémoire permanente (programmes et données de base de la machine)</p>
-<p>Dans la plupart des mémoires, les informations sont classées par <strong>adresses</strong> : chaque octet est accessible par une adresse unique.</p>
-<p>Pour des raisons économiques, les mémoires sont en général divisées en plusieurs familles :</p>
-<ul>
-<li><strong>Une mémoire de masse ou mémoire de stockage (permanente)</strong></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/img3.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="SSD"><img src="media/img3.jpg" style="width:1.54167in;height:1.00833in" alt="SSD" class="figure-img"></a></p>
-<figcaption>SSD</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/img4.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="HDD"><img src="media/img4.jpg" style="width:1.63333in;height:1.23333in" alt="HDD" class="figure-img"></a></p>
-<figcaption>HDD</figcaption>
-</figure>
-</div>
-<p>Cette mémoire sert à stocker à <strong>long terme</strong> des <strong>grandes quantités d’informations</strong>. Les technologies les plus courantes de mémoires de masse sont <strong>electromécaniques</strong> (disques durs – HDD) ou à <strong>semi-conducteurs</strong> (SSD, clefs USB, …), elles visent à obtenir une capacité de stockage élevée à faible coût et ont généralement une <strong>vitesse inférieure</strong> aux autres mémoires.</p>
-<p><strong>Ordres de grandeur :</strong></p>
-<p><strong>Capacité : jusqu’à 24 To (HDD)</strong></p>
-<p><strong>Vitesse : jusqu’à 7 Go/s (SSD NVMe PCIe 4.0)</strong></p>
-<ul>
-<li><strong>La mémoire vive ou RAM&nbsp;: Random Access Memory&nbsp;(non permanente)</strong></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/img5.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="SDRAM"><img src="media/img5.jpg" style="width:3.325in;height:0.925in" alt="SDRAM" class="figure-img"></a></p>
-<figcaption>SDRAM</figcaption>
-</figure>
-</div>
-<p>Espace principal de stockage du microprocesseur, mais dont le contenu disparaît lors de la mise hors tension de l’ordinateur.</p>
-<p><strong>Ordres de grandeur :</strong></p>
-<p><strong>Capacité : jusqu’à 64 Go</strong></p>
-<p><strong>Vitesse : jusqu’à 6 Go/s (DDR5)</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/img6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Différents niveaux de mémoire"><img src="media/img6.jpg" class="img-fluid figure-img" alt="Différents niveaux de mémoire"></a></p>
-<figcaption>Différents niveaux de mémoire</figcaption>
-</figure>
-</div>
-<ul>
-<li><strong>La mémoire cache</strong></li>
-</ul>
-<p>Sert à conserver un court instant des informations fréquemment consultées. Les technologies des mémoires caches visent à accélérer la vitesse des opérations de consultation. Elles ont une très grande vitesse, et un coût élevé pour une faible capacité de stockage. Cette mémoire est intégrée au microprocesseur.</p>
-<p><strong>Ordres de grandeur : Capacité : quelques ko (L1) à quelques Mo (L2)</strong></p>
-<p><strong>Vitesse : jusqu’à 5 Go/s</strong></p>
-<ul>
-<li><strong>Le registre de processeur</strong></li>
-</ul>
-<p>Intégré au processeur. Ce type de mémoire est très rapide, mais aussi très cher et est donc réservé à une très faible quantité de données.</p>
-<p><strong>Ordres de grandeur : Capacité : quelques dizaines d’octets</strong></p>
-<p><strong>Vitesse : jusqu’à 30 Go/s</strong></p>
-</section>
-<section id="les-bus" class="level4">
-<h4 class="anchored" data-anchor-id="les-bus">Les bus</h4>
-<p><a href="media/img7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="media/img7.png" style="width:4.23472in;height:2.57292in"></a></p>
-<p>Pour que les données circulent entre les différentes parties d’un ordinateur (mémoire, CPU et les entrées/sorties), il existe des systèmes de communication appelés <strong>bus</strong> (c’est le squelette de l’architecture). Il en existe de 3 grands types :</p>
-<ul>
-<li><p>Le <strong>bus d’adresse</strong> permet de faire circuler des adresses. <em>Par exemple, l’adresse d’une donnée à aller chercher en mémoire&nbsp;;</em></p></li>
-<li><p>Le <strong>bus de données</strong> permet de faire circuler des données ;</p></li>
-<li><p>Le <strong>bus de contrôle</strong> permet de spécifier le type d’action. <em>Par exemple&nbsp;: écriture d’une donnée en mémoire, lecture d’une donnée en mémoire.</em></p></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="vers-les-systèmes-sur-puce" class="level2">
-<h2 class="anchored" data-anchor-id="vers-les-systèmes-sur-puce">2. Vers les systèmes sur puce</h2>
-<section id="lintérieur-dun-pc" class="level3">
-<h3 class="anchored" data-anchor-id="lintérieur-dun-pc">2.1 L'intérieur d'un PC</h3>
-<p><a href="media/img8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="media/img8.png" style="width:3.97014in;height:4.27083in"></a></p>
-<p>La carte mère accueille tous les éléments fondamentaux au bon fonctionnement d'un ordinateur : microprocesseur (CPU) (caché sous un système de refroidissement), barrettes de mémoire RAM, carte graphique (qui permet de gérer l'affichage). On trouve aussi sur la carte mère les puces qui gèrent les interfaces réseau (Wifi et Ethernet) et bien d'autres choses...</p>
-<p>On peut donc s'interroger sur la taille d'un smartphone par rapport à la taille d'un PC (la carte mère d'un PC mesure environ 25 cm sur 30 cm, soit bien plus qu'un smartphone). Pourtant, on doit obligatoirement trouver dans un smartphone les mêmes composants que dans un PC : CPU, RAM, carte graphique et interfaces réseau (Wifi et Bluetooth dans le cas d'un smartphone) !</p>
-</section>
-<section id="une-solution-les-soc" class="level3">
-<h3 class="anchored" data-anchor-id="une-solution-les-soc">2.2 Une solution&nbsp;: les SoC</h3>
-<p><a href="media/img9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="media/img9.png" style="width:2.91667in;height:2.19792in"></a></p>
-<p>Grâce aux progrès techniques de miniaturisation, tous ces composants sont placés dans une puce unique d'une centaine de mm<sup>2</sup>. Elles accueillent CPU, RAM, circuit graphique (GPU) (équivalent à la carte graphique dans un PC) et circuits radio (Wifi et Bluetooth). Elles sont souvent appelées "système sur puce", "system on a chip" en anglais (abréviation "SoC").</p>
-<p>Les meilleurs SoC, plus fins que les microprocesseurs «&nbsp;classiques&nbsp;» de dernière génération, sont gravés en 3 nm (voire 2 nm en développement) et comprennent des milliards de transistors. Un tel système sur puce est conçu et mis au point de façon logicielle, ses briques électroniques sont accessibles par des APIs, comme pour les bibliothèques logicielles.</p>
-<p>Outre leur taille, les SoC ont d'autres <strong>avantages</strong> par rapport aux systèmes "classiques" (carte mère + CPU + carte graphique...) : ils sont conçus pour consommer beaucoup moins d'énergie qu'un système classique (à puissance de calcul équivalente).</p>
-<p>Cette consommation réduite permet dans la plupart des cas de s'affranchir de la présence de système de refroidissement actif comme les ventilateurs. Un système équipé de SoC est donc silencieux.</p>
-<p>Vu les distances réduites entre, par exemple, le CPU et la mémoire, les données circulent beaucoup plus vites, ce qui permet d'améliorer les performances.</p>
-<p>En revanche, le principal <strong>inconvénient</strong> d’un SoC est que là où un ordinateur équipé d'une carte mère permet de faire évoluer les composants individuellement, l'extrême intégration du SoC présente l'inconvénient de n'autoriser aucune mise à jour possible du matériel.</p>
-</section>
-<section id="exemples-quelques-noms-des-soc" class="level3">
-<h3 class="anchored" data-anchor-id="exemples-quelques-noms-des-soc">2.3 Exemples&nbsp;: Quelques noms des SoC</h3>
-<ul>
-<li><p>Apple iPhone 16 : SoC A18 Pro</p></li>
-<li><p>Samsung Galaxy S25 : SoC Snapdragon 8 Elite</p></li>
-<li><p>Nintendo Switch 2 : SoC Nvidia T239</p></li>
-<li><p>Apple MacBook Air/Pro (ordinateur portable) : SoC M4</p></li>
-</ul>
-<p>Le marché des SoC a aujourd’hui un poids économique très important. De nombreux ordinateurs portables sont désormais équipés de SoC à la place des cartes mères “classiques”. Les SoC ont rattrapé, et parfois dépassé, les systèmes “classiques” en termes de puissance : les MacBook d’Apple équipés de SoC M4 rivalisent avec des PC de bureau haut de gamme, et des PC portables sous Windows utilisent aussi des SoC (Snapdragon X Elite de Qualcomm).</p>
-<p><a href="media/img10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="media/img10.png" style="width:3.59167in;height:2.225in"></a></p>
-<p>On trouve aussi ce système de SoC sur des nano-ordinateurs comme le Raspberry Pi ou les cartes microbits.</p>
-<p>Dans sa version 5 (2023), le Raspberry Pi est équipé du SoC BCM2712 de la société Broadcom</p>
-</section>
-<section id="architecture-simplifiée-dun-soc-exemple-samsung-exynos-990" class="level3">
-<h3 class="anchored" data-anchor-id="architecture-simplifiée-dun-soc-exemple-samsung-exynos-990">2.4 Architecture simplifiée d’un SoC (exemple : Samsung Exynos 990)</h3>
-<p><a href="media/img11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="media/img11.png" style="width:2.09993in;height:2.11458in"></a></p>
-<p><strong>◼ Le processeur (CPU)</strong></p>
-<p>Le processeur ou « Central Processing Unit » (CPU) est le cœur du SoC. Son fonctionnement est identique à celui d’un ordinateur. On y retrouve plusieurs cœurs qui permettent de lancer en parallèle plusieurs applications de manière simultanée (multitâche) et permettent l’utilisation d’applications lourdes comme des jeux.</p>
-<p><strong>◼ La puce graphique (GPU)</strong></p>
-<p>La puce graphique ou « Graphics Processing Unit » (GPU) a en charge de calculer les images afin de pouvoir les afficher à l’écran. Une carte graphique doit donc réaliser un nombre élevé de tâches, puisque qu’elle doit par exemple calculer la couleur à afficher sur chaque pixel de l’écran de votre smartphone. Par exemple dans le cas d’une image Full HD (1920×1080), le GPU affiche 2 073 600 pixels différents ou 8 294 400 pixels pour de l’Ultra HD (3840×2160). Le calcul prend en compte la fréquence de rafraîchissement de l’écran qui peut par exemple varier entre 60 et 144 fois par seconde, c’est-à-dire entre 60 Hz et 144 Hz.</p>
-<p><strong>◼ La puce neuronale (NPU)</strong></p>
-<p>La puce neuronale ou « Neuronal Processing Unit » (NPU) est une puce en charge de l’intelligence artificielle des smartphones. Les calculs de l’intelligence artificielle ont longtemps été faits par le biais de serveurs dans le cloud (distant). Néanmoins, depuis quelques années pour des raisons de rapidité et de respect de la vie privée, les calculs se font désormais directement sur les smartphones. C’est utile par exemple pour la reconnaissance vocale, la traduction en temps réel, l’optimisation des photos par IA générative, les assistants intelligents embarqués ou encore la gestion de l’autonomie.</p>
-<p><strong>◼ Le modem (Interface)</strong></p>
-<p>Les smartphones embarquent également dans le SoC une unité réseau assurant la prise en charge des différents protocoles de communication. Cette unité est la partie la plus compliquée à développer et à implémenter sur un SoC. Néanmoins, il s’agit d’un élément crucial afin d’assurer le nomadisme d’un smartphone en itinérance. Le modem intégré au SoC gère non seulement le Wifi, le Bluetooth, le NFC ou bien encore les technologies mobiles. C’est-à-dire la 5G (désormais largement déployée), la 4G, ou encore d’anciens réseaux comme la 2G/3G (en cours d’extinction).</p>
-<p><strong>◼ Le processeur de signal numérique (DSP)</strong></p>
-<p>Le processeur de signal numérique ou « Digital Signal Processor » (DSP) est en charge de traiter les signaux numériques. Ainsi, il va permettre le filtrage, la compression ou encore l’extraction de différents signaux tels que la musique ou encore une vidéo.</p>
-<p><strong>◼ Le processeur de signal d’images (ISP)</strong></p>
-<p>Le processeur d’image ou « Image Signal Processor » (ISP) est une puce prenant en charge la création d’images numériques. En effet, à cause de leurs tailles minuscules, les capteurs photo des smartphones ne sont pas de très bonne qualité d’un point de vue de l’optique pure. La qualité qu’il est actuellement possible d’obtenir va être intimement liée à cette puce qui va compenser logiquement certaines limitations optiques (zoom numérique ...).</p>
-<p><strong>◼ Le processeur de sécurité (SPU)</strong></p>
-<p>Le processeur de sécurité ou « Secure Processing Unit » (SPU) est le « bouclier » du smartphone. Son alimentation électrique est indépendante afin de ne pas pouvoir être éteint en cas d’attaque sur celui-ci. Le SPU est d’une importance capitale. En effet celui-ci va stocker les données biométriques, bancaires, la carte SIM ou encore les titres de transport. C’est lui qui contient les clés de chiffrement des données de l’utilisateur.</p>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-4-analyser-la-preuve-de-lindécidabilité-du-problème-de-larrêt" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-4-analyser-la-preuve-de-lindécidabilité-du-problème-de-larrêt"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 4 — Analyser la preuve de l’indécidabilité du problème de l’arrêt</h2>
+<p>On rappelle le programme utilisé dans la démonstration :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> testSurSoi(programme):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> testARRET(programme, programme):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>On suppose (par l’absurde) que <code>testARRET(programme, x)</code> renvoie <code>True</code> si et seulement si l’appel <code>programme(x)</code> termine.</p>
+<ol type="1">
+<li>Que renvoie <code>testARRET(testSurSoi, testSurSoi)</code> si l’appel <code>testSurSoi(testSurSoi)</code> termine ?</li>
+<li>Dans ce cas, que fait alors <code>testSurSoi(testSurSoi)</code> ? Est-ce cohérent ?</li>
+<li>Que renvoie <code>testARRET(testSurSoi, testSurSoi)</code> si l’appel <code>testSurSoi(testSurSoi)</code> ne termine pas ?</li>
+<li>Dans ce cas, que fait alors <code>testSurSoi(testSurSoi)</code> ? Est-ce cohérent ?</li>
+<li>Conclure : pourquoi ces deux cas aboutissent-ils tous les deux à une contradiction ?</li>
+</ol>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1633,13 +1615,13 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../17-RechercheTextuelle/cours.html" class="pagination-link" aria-label="8.3 - Recherche textuelle (TP)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8.3 - Recherche textuelle (TP)</span>
+      <a href="../10-langages_prog2/calculabilite.html" class="pagination-link" aria-label="10 - Calculabilité et décidabilité (cours)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">10 - Calculabilité et décidabilité (cours)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../05-archiSE/processus_cours.html" class="pagination-link" aria-label="9.2 - Processus (Cours)">
-        <span class="nav-page-text">9.2 - Processus (Cours)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../histoire/index.html" class="pagination-link" aria-label="Histoire de l'informatique">
+        <span class="nav-page-text">Histoire de l’informatique</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1678,38 +1660,6 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

@@ -1,0 +1,96 @@
+---
+title: 10 - Calculabilité et décidabilité (Exercices)
+---
+
+_Les exercices précédés du symbole {{< fa solid pencil-alt >}} doivent être résolus par écrit._
+
+---
+
+## {{< fa solid pencil-alt >}} Exercice 1 — QCM
+
+Pour chacune des questions suivantes, choisir la (ou les) bonne(s) réponse(s).
+
+**1.** La thèse de Church affirme que :
+
+a) Python est le meilleur langage de programmation.
+b) Tous les langages de programmation courants permettent de calculer les mêmes fonctions.
+c) Il existe des fonctions que Python peut calculer mais pas Java.
+d) Un algorithme efficace en Python le sera forcément dans un autre langage.
+
+
+**2.** Une fonction est dite **calculable** si :
+
+a) elle peut être calculée à la main par un humain.
+b) il existe un programme Python qui la calcule et qui termine pour toute entrée.
+c) il existe un programme qui donne une réponse en un temps raisonnable.
+d) elle est définie sur les entiers naturels.
+
+
+**3.** Un problème de décision est **décidable** si :
+
+a) on peut répondre *oui* à au moins une instance.
+b) il existe un algorithme qui répond *oui* ou *non* pour toute instance, et qui termine toujours.
+c) l'algorithme qui le résout est efficace (polynomiale en temps).
+d) on peut toujours répondre *non*.
+
+
+**4.** Le problème de l'arrêt consiste à :
+
+a) savoir si un programme Python contient des erreurs de syntaxe.
+b) déterminer si un programme $\pi$, exécuté sur une entrée $x$, finit par s'arrêter.
+c) calculer le temps d'exécution d'un programme.
+d) vérifier qu'un programme renvoie le bon résultat.
+
+
+**5.** L'indécidabilité du problème de l'arrêt implique que :
+
+a) aucun programme ne peut s'arrêter.
+b) il est impossible d'écrire un programme qui détecte, pour tout programme et toute entrée, si le calcul termine.
+c) Python est un langage insuffisamment puissant.
+d) certaines questions mathématiques ne pourront jamais être résolues par un algorithme.
+
+
+## {{< fa solid pencil-alt >}} Exercice 2 — Décidable ou non ?
+
+Pour chacun des problèmes suivants, dire s'il est **décidable** ou **indécidable**, et justifier brièvement.
+
+1. Étant donné un entier $n$, décider si $n$ est pair.
+2. Étant donné un programme Python $\pi$ et une entrée $x$, décider si $\pi(x)$ affiche `"Bonjour"` avant de s'arrêter.
+3. Étant donné un entier $n$, décider si $n$ est un nombre parfait (égal à la somme de ses diviseurs stricts).
+4. Étant donné un programme Python $\pi$, décider si $\pi$ s'arrête pour **toutes** les entrées possibles.
+5. Étant donné une chaîne de caractères, décider si elle constitue un programme Python syntaxiquement correct.
+
+
+## {{< fa solid pencil-alt >}} Exercice 3 — Instances et instances positives
+
+Pour chacun des problèmes de décision suivants, préciser :
+
+- l'ensemble des **instances** (sur quoi porte la question),
+- les **instances positives** (pour quelles instances la réponse est *oui*).
+
+1. **Divisibilité** : étant donné deux entiers $a$ et $b$, décider si $a$ divise $b$.
+2. **Palindrome** : étant donné un mot (chaîne de caractères), décider si c'est un palindrome.
+3. **Programme sans boucle infinie** : étant donné un programme Python $\pi$ et une entrée $x$, décider si l'exécution de $\pi(x)$ termine.
+4. **Présence d'un mot** : étant donné un texte et un mot, décider si le mot apparaît dans le texte.
+
+
+## {{< fa solid pencil-alt >}} Exercice 4 — Analyser la preuve de l'indécidabilité du problème de l'arrêt
+
+On rappelle le programme utilisé dans la démonstration :
+
+```python
+def testSurSoi(programme):
+    if testARRET(programme, programme):
+        while True:
+            continue
+    else:
+        return True
+```
+
+On suppose (par l'absurde) que `testARRET(programme, x)` renvoie `True` si et seulement si l'appel `programme(x)` termine.
+
+1. Que renvoie `testARRET(testSurSoi, testSurSoi)` si l'appel `testSurSoi(testSurSoi)` termine ?
+2. Dans ce cas, que fait alors `testSurSoi(testSurSoi)` ? Est-ce cohérent ?
+3. Que renvoie `testARRET(testSurSoi, testSurSoi)` si l'appel `testSurSoi(testSurSoi)` ne termine pas ?
+4. Dans ce cas, que fait alors `testSurSoi(testSurSoi)` ? Est-ce cohérent ?
+5. Conclure : pourquoi ces deux cas aboutissent-ils tous les deux à une contradiction ?

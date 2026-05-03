@@ -9,6 +9,7 @@ Ce site est destiné à regrouper les cours et les exercices concernant l'enseig
 ::: {.callout-note .updates-box}
 ## Dernières mises à jour
 
+- Mai 2026 - Corrections et allègements dans le [chapitre 10 - Limites du calculable](10-langages_prog2/calculabilite.qmd) et ajout d'exercices pour ce chapitre.
 - Avril 2026 - mise à jour du cours sur [les SOC et processus](19-SystPuces/SystPuces_cours.qmd).
 - Avril 2026 - Publication de la [liste de sujets pour l'épreuve pratique 2026 et de mes corrigés](ep2026/index.qmd).
 - Mars 2026 - Chapitre 8 - Stratégies algorithmiques avancées : refonte du cours sur la programmation dynamique, ajout d'exercices papier et d'un TP de programmation, révision et corrections du TP sur la recherche textuelle + démonstration interactive de l'algorithme de Boyer-Moore-Horspool.

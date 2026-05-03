@@ -1,5 +1,5 @@
 ---
-title: Calculabilité et décidabilité
+title: 10 - Calculabilité et décidabilité (cours)
 ---
 
 ## La thèse de Church
@@ -37,7 +37,7 @@ de calcul sont équivalents : une fonction calculable pour un modèle
 l'est pour un autre. Cela nous permet d'utiliser le modèle des
 fonctions programmables en Python **sans perdre de généralité**.
 
-![Alonzo Church (1903-1995)](https://upload.wikimedia.org/wikipedia/en/a/a6/Alonzo_Church.jpg){width=30%}
+![Alonzo Church (1903-1995)](Alonzo_Church.jpg){width=30%}
 
 ## Fixons le vocabulaire
 
@@ -79,19 +79,16 @@ ${Vrai,Faux}$.
 ::: {.callout-tip}
 ## Problème de décision
 
-Un problème de décision
-est la donnée d'un ensemble $E$, que l'on appelle l'ensemble des
-**instances** et d'une partie $E^+$ de $E$ que l'on appelle l'ensemble des
-i**nstances positives**.
+Un **problème de décision** est une question dont la réponse est toujours
+*oui* ou *non*, posée sur un ensemble de **données** appelées **instances**.
+Les instances pour lesquelles la réponse est *oui* sont appelées les
+**instances positives**.
 :::
 
-Par exemple le problème de la primalité peut être défini par
-l'ensemble d'instances $E = \mathbb{N}$ et l'ensemble d'instances positives
-$E^+ = P$.
+Par exemple, pour le problème de la primalité, les instances sont les entiers
+naturels et les instances positives sont les nombres premiers.
 
-On peut présenter un problème de décision de différentes façons.
-
-D'abord à l'aide d'un schéma comme celui-ci :
+On peut présenter un problème de décision de la façon suivante :
 
 #### Nom du problème
 
@@ -108,10 +105,9 @@ Ce qui donne pour le problème de la primalité :
 
 **Réponse :** décider si ce nombre est premier
 
-Une autre façon de définir un problème de décision est de fournir
-l'ensemble des instances (ici $\mathbb{N}$) et la description du prédicat testant
-l'appartenance aux instances positives (ici, le prédicat est une
-fonction, la fonction ``isprime``).
+Le prédicat associé à un problème de décision est la fonction qui, à chaque
+instance, associe *Vrai* si elle est positive, *Faux* sinon. Pour le problème
+de la primalité, ce prédicat est la fonction ``isprime``.
 
 Prenons un autre exemple : colorier un graphe avec un nombre fixé de
 couleurs, c'est colorier ses sommets de sorte que deux sommets reliés
@@ -183,26 +179,6 @@ Mais on ne s'intéresse pas du tout ici à la complexité et l'important
 est qu'on puisse affirmer que **le problème de la coloration des
 graphes est décidable**.
 
-Notons au passage que savoir résoudre ce problème de décision permet
-de résoudre un autre type de problème : déterminer le nombre minimal
-de couleurs dont il faut disposer pour pouvoir colorer un graphe. Si
-on a écrit un programme qui résout le problème de décision de la
-coloration d'un graphe, on peut en déduire facilement :
-
-~~~~{.python}
-def nbMinimalCouleurs(graphe): 
-    c = 1
-    while not colorationPossible(graphe,c):
-        c += 1
-    return c
-~~~~
-
-On est assuré de sortir de la boucle : en effet si le graphe possède
-$n$ sommets, on peut le colorier à coup sûr avec $n$ couleurs, il
-suffit de colorier chaque sommet par une couleur unique. Ainsi peut-on
-garantir que la boucle terminera pour une valeur de $c$ au plus égale à
-$n$.
-
 Le troisième problème que nous avons présenté est, lui aussi, décidable
 : la preuve peut se limiter à rappeler qu'il existe un interpréteur du
 langage Python, qui en particulier est capable de décider si oui ou
@@ -245,6 +221,17 @@ calcule exactement les mêmes choses. Mais peu importe.
 Cela permet de considérer des fonctions qui prennent en entrée des
 programmes.
 
+::: {.callout-note}
+## Exemples concrets de programmes traitant d'autres programmes
+
+Cette idée est omniprésente en informatique :
+
+- Un **interpréteur Python** est lui-même un programme (écrit en C, par exemple) qui prend en entrée un programme Python (une chaîne de caractères) et l'exécute. La thèse de Church nous assure qu'on pourrait tout aussi bien écrire cet interpréteur en Python.
+- Un **compilateur** est un programme qui prend en entrée le texte source d'un programme et produit en sortie un programme en langage machine.
+- **Télécharger un logiciel** revient à recevoir une suite de bits qui constitue un programme : le système d'exploitation, lui-même un programme, va ensuite l'exécuter.
+- Un **système d'exploitation** (Linux, Windows…) est un programme qui en gère d'autres : il les lance, les suspend, les arrête, alloue de la mémoire à chacun.
+:::
+
 ### Le problème de l'arrêt est indécidable
 
 Voici tout d'abord la définition du problème :
@@ -273,7 +260,7 @@ façon algorithmique le calcul de n'importe quelle fonction. C'est ce
 qui fait son importance, à la fois historique, scientifique et
 philosophique.
 
-![Alan Turing (1912 - 1954)](https://upload.wikimedia.org/wikipedia/commons/1/17/Alan_Turing_%281912-1954%29_in_1936_at_Princeton_University.jpg){width=30%}
+![Alan Turing (1912 - 1954)](Alan_Turing.jpg){width=30%}
 
 #### Démonstration du théorème
 
@@ -319,80 +306,8 @@ c'est contradictoire.
 On aboutit dans tous les cas à une contradiction, ce qui achève notre
 démonstration par l'absurde !
 
-**Rmarque :** on peut regarder une vidéo très amusante qui illustre
+**Remarque :** on peut regarder une vidéo très amusante qui illustre
 cette célèbre démonstration ici :
 
 <iframe title="Proof That Computers Can't Do Everything (The Halting Problem)" width="560" height="315" src="https://tube-sciences-technologies.apps.education.fr/videos/embed/64112e4c-6a29-4aa6-be5a-11714512e9a2" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
 
-### Un autre exemple de problème indécidable : Le dixième problème de Hilbert
-
-Lors du deuxième congrès international des mathématiciens, tenu à
-Paris en août 1900, **le grand mathématicien allemand David Hilbert**
-(1862--1943) a présenté en août 1900, à Paris, une liste de 23
-problèmes à ses collègues. Ces problèmes interrogent en particulier
-les fondements des mathématiques et de la logique et seule une moitié
-d'entre eux ont été résolus depuis.
-
-![David Hilbert (1862 - 1943)](https://upload.wikimedia.org/wikipedia/commons/7/79/Hilbert.jpg){width=30%}
-
-Le dixième problème de Hilbert consiste en la décidabilité d'un
-problème de décision.
-
-Il s'agit de déterminer s'il existe un algorithme qui décide si un
-polynôme à plusieurs variables dont tous les coefficients sont entiers
-admet ou non des solutions entières.
-
-Par exemple, l'équation $3x^2 − 2xy + 4y^2z = 31$ admet comme
-solution $x = 1$, $y = 2$ et $z = 2$, alors que l'équation $3x^2 +
-6xy + y^2 + z^2 + 1 = 0$ n'admet aucune solution entière.
-
-Il a fallu attendre 1970 pour que le mathématicien russe **Iouri Vladimirovitch Matiassevitch** démontre, à l'âge de 23 ans, que ce
-problème est indécidable.
-
-![Iouri Vladimirovitch Matiassevitch (1947 - )](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yuri_Matiyasevich._Portrait_1969.jpg/348px-Yuri_Matiyasevich._Portrait_1969.jpg?uselang=fr){width=30%}
-
-#### Des cas simples
-
-Il n'est pas trop difficile de décider si une équation polynomiale à
-une seule variable entière $x$ a ou non des solutions entières.
-
-Le professeur de mathématiques pourra facilement donner une preuve
-générale, mais considérons un exemple pour s'en convaincre. Soit
-l'équation $3x^5 − 2x^4 + 7x^3 + 22x^2 − 31x + 7 = 0$.
-
-Comme le coefficient constant n'est pas nul, $x = 0$ n'est pas
-solution. Cherchons s'il peut y avoir des solutions entières non
-nulles.
-
-En isolant le terme de degré nul, on obtient une équation équivalente
-$−3x^5 + 2x^4 − 7x^3 − 22x^2 + 31x = 7$, qu'on peut réécrire sous
-la forme $x(−3x^4 + 2x^3 − 7x^2 − 22x + 31) = 7$, ce qui prouve
-qu'une solution entière $x$ non nulle doit être un diviseur de 7 : il
-suffit donc de tester quelques entiers parmi $−7$, $−6$, $−5$, ..., $−1$, $0$,
-$1$, ..., $7$. (Comme $7$ est premier, on ne teste ici que $−7$, $−1$, $1$ et $7$).
-
-Il n'est donc besoin que d'une simple boucle pour programmer le
-prédicat.
-
-Donc le problème de décider si un polynôme à coefficients entiers et à
-une seule variable admet ou non des solutions entières est décidable.
-
-#### Ça se complique
-
-Dès que l'équation polynomiale considérée possède deux variables, tout
-se complique. Par exemple il est vrai que l'équation $x^2 − 991y^2 −
-1 = 0$ a des solutions entières, mais elles ne sont pas faciles à
-trouver : la plus petite d'entre elles est $x = 379516400906811930638014896080$ et $y = 12055735790331359447442538767$.
-
-On sait démontrer que le problème de savoir si une équation
-polynomiale à coefficients entiers à $p$ inconnues a des solutions
-entières est décidable pour $p = 1$ (on l'a vu plus haut), on sait aussi qu'il
-est indécidable pour $p \geqslant 9$. Mais on ne sait pas si le problème est
-décidable pour $p \in [2, 8]$.
-
-Il y a des sous-problèmes décidables : si on se restreint à des
-équations où le degré total est inférieur ou égal à 2, le problème est
-décidable ; le problème devient indécidable pour des degrés inférieurs
-ou égaux à 4. En revanche, on ne sait dire si le dixième problème de
-Hilbert restreint aux polynômes de degré 3 est décidable ou non
-décidable !
