@@ -16,15 +16,15 @@ def distance(habitat_1, habitat_2):
     sortie : 
         - float : distance euclidienne entre habitat_1 et habitat_2.
     '''
-    cles = ['vegetation', 'proximite_eau', 'densite_urbaine', 'disponibilite_proies', 'presence_renard']
+    cles = ['vegetation', 'proximite_eau', 'densite_urbaine', 'disponibilite_proies']
     somme = 0
     for cle in cles:
         somme += (habitat_1[cle] - habitat_2[cle]) ** 2
     return sqrt(somme)
 
 print("Test de la question 1 :")
-h1 = {'vegetation': 5, 'proximite_eau': 2, 'densite_urbaine': 4, 'disponibilite_proies': 6, 'presence_renard': 0}
-h2 = {'vegetation': 9, 'proximite_eau': 6, 'densite_urbaine': 0, 'disponibilite_proies': 4, 'presence_renard': 1}
+h1 = {'vegetation': 5, 'proximite_eau': 2, 'densite_urbaine': 4, 'disponibilite_proies': 6}
+h2 = {'vegetation': 9, 'proximite_eau': 6, 'densite_urbaine': 0, 'disponibilite_proies': 4}
 print(distance(h1, h2))
 
 ####################
@@ -44,8 +44,6 @@ def distance_d_un_habitat(habitat, habitats):
         d = distance(habitat, h)
         resultat.append((d, h))
     return resultat
-
-# Avec l'habitat "nouveau" défini dans le fichier fourni, la fonction renvoie une erreur car "nouveau" ne contient pas la clé "presence_renard". C'est sans doute une erreur dans la question, il faudrait ajouter la clé "presence_renard" à "nouveau" pour que la fonction puisse fonctionner correctement. Par exemple, on peut ajouter "presence_renard": 0 à "nouveau". Ce que j'ai fait pour les tests ci-dessous.
 
 print("Test des questions 2 et 3 :")
 res = distance_d_un_habitat(nouveau, zones_connues[:3])

@@ -81,7 +81,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_4/corrige_04.py">Corrigé 4</a></td>
-<td></td>
+<td>POO, dictionnaires</td>
 </tr>
 
 <tr>
@@ -97,7 +97,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_5/corrige_05.py">Corrigé 5</a></td>
-<td>Ce sujet comporte une erreur à la question 3 : avec les données fournies, la fonction à corriger retourne le bon résultat. Elle comporte quand même une erreur de conception, mais les données fournies ne permettent pas de la mettre en évidence.</td>
+<td>dictionnaires</td>
 </tr>
 
 <tr>
@@ -111,7 +111,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_6/corrige_06.py">Corrigé 6</a></td>
-<td>Ce sujet comporte plusieurs erreurs. Le terme "fonction" est utilisé à plusieurs reprises à la place du terme "méthode", ce qui peut induire une confusion. De plus un des tests fournis utilise un smoothie nommé "Berry mix" qui n'existe pas dans les données.</td>
+<td>Le terme "fonction" est utilisé à plusieurs reprises à la place du terme "méthode", ce qui peut induire une confusion. POO, dictionnaires</td>
 </tr>
 
 <tr>
@@ -125,7 +125,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_7/corrige_07.py">Corrigé 7</a></td>
-<td></td>
+<td>POO, dictionnaires</td>
 </tr>
 
 <tr>
@@ -139,7 +139,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_8/corrige_08.py">Corrigé 8</a></td>
-<td></td>
+<td>tableaux, binaire</td>
 </tr>
 
 <tr>
@@ -161,7 +161,7 @@ Pour chaque sujet, vous trouverez :
     <li><a href="./sujets_nsi_2026/26_BCG_NSI_9/Sommet_corr.py">Sommet_corr.py</a></li>
     </ul>
 </td>
-<td></td>
+<td>POO</td>
 </tr>
 <tr>
 <td>10</td>
@@ -174,7 +174,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_10/corrige_10.py">Corrigé 10</a></td>
-<td></td>
+<td>dictionnaires</td>
 </tr>
 <tr>
 <td>11</td>
@@ -188,7 +188,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_11/corrige_11.py">Corrigé 11</a></td>
-<td>Ce sujet comporte une erreur : le dictionnaire `nouveau` défini dans le fichier fourni devrait contenir le couple clé-valeur "presence_renard": 0.</td>
+<td>dictionnaires, k plus proches voisins</td>
 </tr>
 
 <tr>
@@ -203,7 +203,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_12/corrige_12.py">Corrigé 12</a></td>
-<td></td>
+<td>POO, CSV</td>
 </tr>
 
 <tr>
@@ -218,7 +218,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_13/corrige_13.py">Corrigé 13</a></td>
-<td></td>
+<td>CSV, tableaux</td>
 </tr>
 
 <tr>
@@ -233,7 +233,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_14/corrige_14.py">Corrigé 14</a></td>
-<td></td>
+<td>POO, IHM</td>
 </tr>
 
 <tr>
@@ -264,7 +264,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_16/corrige_16.py">Corrigé 16</a></td>
-<td></td>
+<td>CSV</td>
 </tr>
 
 <tr>
@@ -279,7 +279,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_17/corrige_17.py">Corrigé 17</a></td>
-<td></td>
+<td>CSV, dictionnaires</td>
 </tr>
 
 <tr>
@@ -293,7 +293,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_18/corrige_18.py">Corrigé 18</a></td>
-<td>Petite erreur dans le sujet : l'exemple donné dans la question 3 ne correspond pas aux données de l'énoncé</td>
+<td>dictionnaires</td>
 </tr>
 
 <tr>
@@ -308,7 +308,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_19/corrige_19.py">Corrigé 19</a></td>
-<td></td>
+<td>dictionnaires</td>
 </tr>
 
 <tr>
@@ -322,7 +322,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_20/corrige_20.py">Corrigé 20</a></td>
-<td></td>
+<td>dictionnaires</td>
 </tr>
 
 <tr>
@@ -336,7 +336,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_21/corrige_21.py">Corrigé 21</a></td>
-<td></td>
+<td>POO</td>
 </tr>
 
 <tr>
@@ -351,7 +351,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_22/corrige_22.py">Corrigé 22</a></td>
-<td></td>
+<td>binaire, encodage, tableaux et tuples</td>
 </tr>
 
 <tr>
@@ -367,7 +367,7 @@ Pour chaque sujet, vous trouverez :
     </ul>
 </td>
 <td><a href="./sujets_nsi_2026/26_BCG_NSI_23/corrige_23.py">Corrigé 23</a></td>
-<td>Ce sujet est incohérent et présente plusieurs problèmes.Une petite erreur dans le fichier analyse.py fourni : le premier import doit être `from transmission import Transmission` et non `from Transmission import Transmission`. De plus, le sujet utilise "fonction" pour désigner des "méthodes". Enfin, il est demandé d'écrire des fonctions comme `decoder_temperature(trame)` alors qu'il s'agit d'une méthode de la classe Transmission dont trame est un attribut.</td>
+<td>POO</td>
 </tr>
 </tbody>
 </table>

@@ -98,9 +98,7 @@ def alerte_valeur_aberrante(empreinte, limite):
     return False
 
 # Mise en évidence du problème
-# Il y a une erreur dans l'énoncé, la fonction renvoie bien True.
-
-# Ceci dit la fonction n'est pas correcte, car sa structure récursive empêche de parcourir la totalité du dictionnaire. Si un valeur supérieure à 1000 est à la fin du dictionnaire, elle n'est pas détectée.
+# la fonction n'est pas correcte, car sa structure récursive empêche de parcourir la totalité du dictionnaire. Si un valeur supérieure à 1000 est à la fin du dictionnaire, elle n'est pas détectée.
 # Exemple de test qui met en évidence le problème :
 empreinte_test = {
     "chauffage": 800,

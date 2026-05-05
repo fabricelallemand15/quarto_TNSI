@@ -117,9 +117,6 @@ def test_liste_smoothies_possibles():
     boutique3 = Boutique_smoothie(["Orange", "Mangue", "Papaye"])
     assert boutique1.liste_smoothies_possibles() == [
         "Tropical", "Tropical citron"]
-    # assert boutique2.liste_smoothies_possibles() == [
-    #     "Rouge", "Agrume", "Berry Mix"]
-    # ERREUR DU SUJET : "Berry Mix" n'existe pas dans la base de données des smoothies
     assert boutique2.liste_smoothies_possibles() == [
         "Rouge", "Agrume", 'Rouge kiwi']
     assert boutique3.liste_smoothies_possibles() == []
