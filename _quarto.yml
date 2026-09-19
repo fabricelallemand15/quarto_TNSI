@@ -157,5 +157,9 @@ format:
     lightbox: auto
     code-block-border-left: "#31BAE9"
     code-block-bg: true
+    # KaTeX auto-h\u00e9berg\u00e9 (libs/katex/) : \u00e9vite le CDN cdn.jsdelivr.net et le polyfill Cloudflare utilis\u00e9s par MathJax
+    html-math-method:
+      method: katex
+      url: libs/katex/
     include-in-header: 
       file: matomo.html

@@ -1,4 +1,8 @@
 /*-- scss:defaults --*/
+// Ne pas charger la police Lato depuis fonts.googleapis.com (indépendance / RGPD) : on retombe sur les polices système
+$web-font-path: false !default;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
 // Sidebar
 // $sidebar-bg: #e5f3df;
 // $navbar-bg: #e5f3df;

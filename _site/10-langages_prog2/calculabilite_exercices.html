@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9dd1c25a58f71442998f5194405f5c35.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5a6fdad410dddab32c78d887ced862dc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -423,8 +423,22 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -1139,7 +1153,7 @@ window.Quarto = {
 <p><strong>4.</strong> Le problème de l’arrêt consiste à :</p>
 <ol type="a">
 <li>savoir si un programme Python contient des erreurs de syntaxe.</li>
-<li>déterminer si un programme <span class="math inline">\(\pi\)</span>, exécuté sur une entrée <span class="math inline">\(x\)</span>, finit par s’arrêter.</li>
+<li>déterminer si un programme <span class="math inline">\pi</span>, exécuté sur une entrée <span class="math inline">x</span>, finit par s’arrêter.</li>
 <li>calculer le temps d’exécution d’un programme.</li>
 <li>vérifier qu’un programme renvoie le bon résultat.</li>
 </ol>
@@ -1155,10 +1169,10 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736f6c69642070656e63696c2d616c74203e7d7d-exercice-2-décidable-ou-non"><i class="fa-solid fa-pencil-alt" aria-label="pencil-alt"></i> Exercice 2 — Décidable ou non ?</h2>
 <p>Pour chacun des problèmes suivants, dire s’il est <strong>décidable</strong> ou <strong>indécidable</strong>, et justifier brièvement.</p>
 <ol type="1">
-<li>Étant donné un entier <span class="math inline">\(n\)</span>, décider si <span class="math inline">\(n\)</span> est pair.</li>
-<li>Étant donné un programme Python <span class="math inline">\(\pi\)</span> et une entrée <span class="math inline">\(x\)</span>, décider si <span class="math inline">\(\pi(x)\)</span> affiche <code>"Bonjour"</code> avant de s’arrêter.</li>
-<li>Étant donné un entier <span class="math inline">\(n\)</span>, décider si <span class="math inline">\(n\)</span> est un nombre parfait (égal à la somme de ses diviseurs stricts).</li>
-<li>Étant donné un programme Python <span class="math inline">\(\pi\)</span>, décider si <span class="math inline">\(\pi\)</span> s’arrête pour <strong>toutes</strong> les entrées possibles.</li>
+<li>Étant donné un entier <span class="math inline">n</span>, décider si <span class="math inline">n</span> est pair.</li>
+<li>Étant donné un programme Python <span class="math inline">\pi</span> et une entrée <span class="math inline">x</span>, décider si <span class="math inline">\pi(x)</span> affiche <code>"Bonjour"</code> avant de s’arrêter.</li>
+<li>Étant donné un entier <span class="math inline">n</span>, décider si <span class="math inline">n</span> est un nombre parfait (égal à la somme de ses diviseurs stricts).</li>
+<li>Étant donné un programme Python <span class="math inline">\pi</span>, décider si <span class="math inline">\pi</span> s’arrête pour <strong>toutes</strong> les entrées possibles.</li>
 <li>Étant donné une chaîne de caractères, décider si elle constitue un programme Python syntaxiquement correct.</li>
 </ol>
 </section>
@@ -1170,9 +1184,9 @@ window.Quarto = {
 <li>les <strong>instances positives</strong> (pour quelles instances la réponse est <em>oui</em>).</li>
 </ul>
 <ol type="1">
-<li><strong>Divisibilité</strong> : étant donné deux entiers <span class="math inline">\(a\)</span> et <span class="math inline">\(b\)</span>, décider si <span class="math inline">\(a\)</span> divise <span class="math inline">\(b\)</span>.</li>
+<li><strong>Divisibilité</strong> : étant donné deux entiers <span class="math inline">a</span> et <span class="math inline">b</span>, décider si <span class="math inline">a</span> divise <span class="math inline">b</span>.</li>
 <li><strong>Palindrome</strong> : étant donné un mot (chaîne de caractères), décider si c’est un palindrome.</li>
-<li><strong>Programme sans boucle infinie</strong> : étant donné un programme Python <span class="math inline">\(\pi\)</span> et une entrée <span class="math inline">\(x\)</span>, décider si l’exécution de <span class="math inline">\(\pi(x)\)</span> termine.</li>
+<li><strong>Programme sans boucle infinie</strong> : étant donné un programme Python <span class="math inline">\pi</span> et une entrée <span class="math inline">x</span>, décider si l’exécution de <span class="math inline">\pi(x)</span> termine.</li>
 <li><strong>Présence d’un mot</strong> : étant donné un texte et un mot, décider si le mot apparaît dans le texte.</li>
 </ol>
 </section>

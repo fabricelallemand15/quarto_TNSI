@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9dd1c25a58f71442998f5194405f5c35.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5a6fdad410dddab32c78d887ced862dc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -429,8 +429,22 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -1128,11 +1142,11 @@ window.Quarto = {
 
 <section id="rappel-introductif-la-suite-de-fibonacci" class="level1">
 <h1>1. Rappel introductif : la suite de Fibonacci</h1>
-<p>La suite de Fibonacci est une suite de nombres entiers notés <span class="math inline">\(F_n\)</span>, définie par <span class="math inline">\(F_0=0\)</span>, <span class="math inline">\(F_1=1\)</span> et dans laquelle chaque terme est égal à la somme des deux termes qui le précèdent.</p>
-<p>D’après la définition de la suite, on a, pour tout entier naturel <span class="math inline">\(n\geqslant 2\)</span> :</p>
-<p><span class="math display">\[F_{n}=F_{n-2}+F_{n-1}\]</span></p>
-<p>On en déduit une version <strong>récursive</strong> de l’algorithme de calcul de <span class="math inline">\(F_n\)</span>. Cet algorithme a ceci de particulier que chaque fonction procède à <strong>deux</strong> appels récursifs.</p>
-<div id="5f66ba7b" class="cell" data-execution_count="1">
+<p>La suite de Fibonacci est une suite de nombres entiers notés <span class="math inline">F_n</span>, définie par <span class="math inline">F_0=0</span>, <span class="math inline">F_1=1</span> et dans laquelle chaque terme est égal à la somme des deux termes qui le précèdent.</p>
+<p>D’après la définition de la suite, on a, pour tout entier naturel <span class="math inline">n\geqslant 2</span> :</p>
+<p><span class="math display">F_{n}=F_{n-2}+F_{n-1}</span></p>
+<p>On en déduit une version <strong>récursive</strong> de l’algorithme de calcul de <span class="math inline">F_n</span>. Cet algorithme a ceci de particulier que chaque fonction procède à <strong>deux</strong> appels récursifs.</p>
+<div id="3b0c9429" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_rec(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version récursive"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
@@ -1157,15 +1171,15 @@ window.Quarto = {
 34</code></pre>
 </div>
 </div>
-<p>Nous avons vu que cet algorithme est très inefficace. Le calcul de <span class="math inline">\(F_{50}\)</span>, par exemple, est très long. En effet, le nombre d’appels récursifs est très grand. Il est possible de démontrer que ce nombre augmente de façon <strong>exponentielle</strong>. Pour calculer <span class="math inline">\(F_{100}\)</span>, il y aurait environ <span class="math inline">\(10^{20}\)</span> opérations. À raison de <span class="math inline">\(10^9\)</span> opérations par seconde, le calcul prendra de l’ordre de <span class="math inline">\(10^{11}\)</span> secondes, soit environ 3 000 ans !</p>
+<p>Nous avons vu que cet algorithme est très inefficace. Le calcul de <span class="math inline">F_{50}</span>, par exemple, est très long. En effet, le nombre d’appels récursifs est très grand. Il est possible de démontrer que ce nombre augmente de façon <strong>exponentielle</strong>. Pour calculer <span class="math inline">F_{100}</span>, il y aurait environ <span class="math inline">10^{20}</span> opérations. À raison de <span class="math inline">10^9</span> opérations par seconde, le calcul prendra de l’ordre de <span class="math inline">10^{11}</span> secondes, soit environ 3 000 ans !</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="fibo_mermaid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Arbre des appels récursifs pour le calcul de F_5 : on voit que F_3 est calculé 2 fois, F_2 est calculé 3 fois, etc."><img src="fibo_mermaid.png" class="img-fluid figure-img" alt="Arbre des appels récursifs pour le calcul de F_5 : on voit que F_3 est calculé 2 fois, F_2 est calculé 3 fois, etc."></a></p>
-<figcaption>Arbre des appels récursifs pour le calcul de <span class="math inline">\(F_5\)</span> : on voit que <span class="math inline">\(F_3\)</span> est calculé 2 fois, <span class="math inline">\(F_2\)</span> est calculé 3 fois, etc.</figcaption>
+<figcaption>Arbre des appels récursifs pour le calcul de <span class="math inline">F_5</span> : on voit que <span class="math inline">F_3</span> est calculé 2 fois, <span class="math inline">F_2</span> est calculé 3 fois, etc.</figcaption>
 </figure>
 </div>
 <p>Ce phénomène où les mêmes calculs sont répétés de nombreuses fois s’appelle le <strong>chevauchement des sous-problèmes</strong>. Une solution consiste à garder en mémoire les éléments déjà calculés et à ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la <strong>programmation dynamique</strong>.</p>
-<div id="c1bd9042" class="cell" data-execution_count="2">
+<div id="0bb994bd" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_dyn(n: <span class="bu">int</span>, memo: <span class="bu">dict</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version dynamique (mémoïsation)"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> memo <span class="kw">is</span> <span class="va">None</span>:</span>
@@ -1206,7 +1220,7 @@ window.Quarto = {
 <p>On initialise le dictionnaire <code>memo</code> à <code>None</code> par défaut, puis on le crée dans le corps de la fonction. C’est une bonne pratique en Python : utiliser un objet <strong>mutable</strong> (comme un dictionnaire) comme valeur par défaut d’un paramètre peut causer des effets de bord indésirables, car cet objet est partagé entre tous les appels.</p>
 </div>
 </div>
-<p>Avec cette version, le calcul de <span class="math inline">\(F_{50}\)</span> ne pose plus de problème.</p>
+<p>Avec cette version, le calcul de <span class="math inline">F_{50}</span> ne pose plus de problème.</p>
 </section>
 <section id="principe-de-la-programmation-dynamique" class="level1">
 <h1>2. Principe de la programmation dynamique</h1>
@@ -1278,13 +1292,13 @@ G --&gt; K{3}
 </div>
 </div>
 </div>
-<p>Un algorithme naïf, sur l’exemple, consiste à examiner les 8 chemins possibles, et choisir celui qui a le plus grand total. En général, quand la pyramide a <span class="math inline">\(n\)</span> niveaux, il y a <span class="math inline">\(\displaystyle 2^{n-1}\)</span> chemins et <span class="math inline">\(\displaystyle 2^{n}-2\)</span> calculs à effectuer. Donc l’algorithme naïf est de complexité exponentielle.</p>
+<p>Un algorithme naïf, sur l’exemple, consiste à examiner les 8 chemins possibles, et choisir celui qui a le plus grand total. En général, quand la pyramide a <span class="math inline">n</span> niveaux, il y a <span class="math inline">\displaystyle 2^{n-1}</span> chemins et <span class="math inline">\displaystyle 2^{n}-2</span> calculs à effectuer. Donc l’algorithme naïf est de complexité exponentielle.</p>
 <p>Le paradigme de la programmation dynamique permet d’obtenir un algorithme efficace en définissant des sous-problèmes, en écrivant une relation de récurrence, puis en donnant un algorithme (avec méthode ascendante ou descendante).</p>
-<p>Pour toute position <span class="math inline">\(\displaystyle x\)</span> dans la pyramide, notons <span class="math inline">\({\displaystyle v(x)}\)</span> le nombre écrit à cette position et <span class="math inline">\({\displaystyle c(x)}\)</span> la somme des nombres traversés dans un chemin maximal issu de <span class="math inline">\(\displaystyle x\)</span>. Les sous-problèmes consistent à calculer les valeurs de <span class="math inline">\({\displaystyle c(x)}\)</span> pour tout <span class="math inline">\({\displaystyle x}\)</span>. Le problème initial consiste à calculer <span class="math inline">\({\displaystyle c(x)}\)</span> lorsque <span class="math inline">\({\displaystyle x}\)</span> est le sommet de la pyramide.</p>
-<p>Donnons maintenant une définition récursive de <span class="math inline">\({\displaystyle c(x)}\)</span> :</p>
-<p><span class="math display">\[c(x) = \begin{cases} v(x) &amp; \text{si } x \text{ est au dernier niveau de la pyramide} \\ v(x) + \max\big(c(g(x)),\, c(d(x))\big) &amp; \text{sinon} \end{cases}\]</span></p>
-<p>où <span class="math inline">\({\displaystyle g(x)}\)</span> et <span class="math inline">\({\displaystyle d(x)}\)</span> désignent respectivement les positions inférieures gauche et droite sous la position <span class="math inline">\({\displaystyle x}\)</span>.</p>
-<p>Si on cherche à calculer directement par la définition récursive, on évalue plusieurs fois la même valeur : dans l’exemple ci-dessus, la valeur 4 de la troisième ligne est calculée deux fois en venant de la ligne supérieure (une fois depuis le 7, une fois depuis le 4). Le paradigme de la programmation dynamique consiste à calculer les valeurs <span class="math inline">\({\displaystyle c(x)}\)</span>, soit à l’aide d’un algorithme itératif ascendant en stockant les valeurs déjà calculées dans un tableau, soit à l’aide d’un algorithme récursif descendant avec mémoïsation. L’important est de conserver dans un tableau les valeurs intermédiaires.</p>
+<p>Pour toute position <span class="math inline">\displaystyle x</span> dans la pyramide, notons <span class="math inline">{\displaystyle v(x)}</span> le nombre écrit à cette position et <span class="math inline">{\displaystyle c(x)}</span> la somme des nombres traversés dans un chemin maximal issu de <span class="math inline">\displaystyle x</span>. Les sous-problèmes consistent à calculer les valeurs de <span class="math inline">{\displaystyle c(x)}</span> pour tout <span class="math inline">{\displaystyle x}</span>. Le problème initial consiste à calculer <span class="math inline">{\displaystyle c(x)}</span> lorsque <span class="math inline">{\displaystyle x}</span> est le sommet de la pyramide.</p>
+<p>Donnons maintenant une définition récursive de <span class="math inline">{\displaystyle c(x)}</span> :</p>
+<p><span class="math display">c(x) = \begin{cases} v(x) &amp; \text{si } x \text{ est au dernier niveau de la pyramide} \\ v(x) + \max\big(c(g(x)),\, c(d(x))\big) &amp; \text{sinon} \end{cases}</span></p>
+<p>où <span class="math inline">{\displaystyle g(x)}</span> et <span class="math inline">{\displaystyle d(x)}</span> désignent respectivement les positions inférieures gauche et droite sous la position <span class="math inline">{\displaystyle x}</span>.</p>
+<p>Si on cherche à calculer directement par la définition récursive, on évalue plusieurs fois la même valeur : dans l’exemple ci-dessus, la valeur 4 de la troisième ligne est calculée deux fois en venant de la ligne supérieure (une fois depuis le 7, une fois depuis le 4). Le paradigme de la programmation dynamique consiste à calculer les valeurs <span class="math inline">{\displaystyle c(x)}</span>, soit à l’aide d’un algorithme itératif ascendant en stockant les valeurs déjà calculées dans un tableau, soit à l’aide d’un algorithme récursif descendant avec mémoïsation. L’important est de conserver dans un tableau les valeurs intermédiaires.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1298,10 +1312,10 @@ G --&gt; K{3}
 <p><strong>Mémoïsation</strong> : En informatique, la mémoïsation (ou mémoïzation) est la mise en cache des valeurs de retour d’une fonction selon ses valeurs d’entrée. Le but de cette technique d’optimisation de code est de diminuer le temps d’exécution d’un programme informatique en mémorisant les valeurs retournées par une fonction.</p>
 </div>
 </div>
-<p>Le nombre de calculs est seulement <span class="math inline">\({\displaystyle n(n-1)/2}\)</span> : la complexité est donc ramenée à <span class="math inline">\({\displaystyle O(n^2)}\)</span>.</p>
+<p>Le nombre de calculs est seulement <span class="math inline">{\displaystyle n(n-1)/2}</span> : la complexité est donc ramenée à <span class="math inline">{\displaystyle O(n^2)}</span>.</p>
 <section id="algorithme-approche-ascendante-bottom-up" class="level3">
 <h3 class="anchored" data-anchor-id="algorithme-approche-ascendante-bottom-up">Algorithme : approche ascendante (bottom-up)</h3>
-<p>On part du dernier niveau de la pyramide et on remonte niveau par niveau. À chaque position, on calcule <span class="math inline">\(c(x)\)</span> en utilisant les valeurs déjà calculées au niveau inférieur, que l’on stocke dans un tableau.</p>
+<p>On part du dernier niveau de la pyramide et on remonte niveau par niveau. À chaque position, on calcule <span class="math inline">c(x)</span> en utilisant les valeurs déjà calculées au niveau inférieur, que l’on stocke dans un tableau.</p>
 <pre><code>Données : pyramide P à n niveaux, P[i][j] = valeur à la ligne i, colonne j
           (lignes numérotées de 0 à n-1, de haut en bas)
 Résultat : la somme maximale d'un chemin du sommet à la base
@@ -1399,8 +1413,8 @@ Renvoyer chenille(0, 0)</code></pre>
 <h3 class="anchored" data-anchor-id="exercice">Exercice</h3>
 <p>Dérouler à la main l’algorithme de la chenille vorace sur la pyramide ci-dessus :</p>
 <ol type="1">
-<li><strong>Approche ascendante</strong> : construire un tableau en partant du dernier niveau, en calculant <span class="math inline">\(c(x)\)</span> pour chaque position. Montrer les valeurs intermédiaires niveau par niveau.</li>
-<li><strong>Approche descendante</strong> : simuler l’exécution récursive de <span class="math inline">\(c(\text{sommet})\)</span> avec mémoïsation. Indiquer pour chaque appel s’il est calculé ou récupéré en mémoire.</li>
+<li><strong>Approche ascendante</strong> : construire un tableau en partant du dernier niveau, en calculant <span class="math inline">c(x)</span> pour chaque position. Montrer les valeurs intermédiaires niveau par niveau.</li>
+<li><strong>Approche descendante</strong> : simuler l’exécution récursive de <span class="math inline">c(\text{sommet})</span> avec mémoïsation. Indiquer pour chaque appel s’il est calculé ou récupéré en mémoire.</li>
 <li>Donner le chemin optimal et sa valeur.</li>
 </ol>
 </section>
@@ -1419,7 +1433,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <p>L’algorithme glouton consiste à payer d’abord avec la plus grosse pièce possible : ici, il s’agit de 20, puisque 50 &gt; 48. Ayant donné 20, il reste 28 à payer, et on poursuit avec la même méthode. Finalement, on va payer 48 sous la forme 48 = 20 + 20 + 5 + 2 + 1. On a eu besoin de 5 pièces.</p>
 <p>Considérons un autre système monétaire (en fait c’est l’ancien système impérial britannique) représenté par la liste suivante de valeurs faciales : <code>imperial = [30, 24, 12, 6, 3, 1]</code>. Pour payer 48 l’algorithme glouton va répondre : 48 = 30+12+6. À la différence du système euro, pour lequel on peut démontrer que l’algorithme glouton donne toujours la réponse optimale, on constate que ce n’est pas le cas avec le système impérial, puisque on aurait pu se contenter de 2 pièces : 48 = 24 + 24.</p>
 <p>Rappelons comment peut se programmer l’algorithme glouton.</p>
-<div id="1cddcdf9" class="cell" data-execution_count="3">
+<div id="b75bdbfa" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>euros <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>imperial <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">24</span>, <span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1440,11 +1454,11 @@ Renvoyer chenille(0, 0)</code></pre>
 </div>
 <p>L’appel <code>glouton(euros, 48)</code> renvoie la liste <code>[20, 20, 5, 2, 1]</code>; l’appel <code>glouton(imperial, 48)</code> renvoie la liste <code>[30, 12, 6]</code>.</p>
 <p>La réponse optimale est celle qui utilise le nombre minimal de pièces. On a vu que l’algorithme glouton échoue à la trouver en général (l’exemple de rendre 48 avec le système impérial suffit à le prouver).</p>
-<p>Une approche récursive permet de résoudre le problème : soit <span class="math inline">\(x\)</span> une valeur faciale de l’une des pièces du système monétaire. Pour rendre une somme <span class="math inline">\(s\)</span> de façon optimale, si l’on veut utiliser au moins une fois la pièce <span class="math inline">\(x\)</span>, il suffit de rendre <span class="math inline">\(x\)</span> et la somme <span class="math inline">\(s − x\)</span> de façon optimale. Il n’y a plus qu’à choisir, parmi tous les choix possibles de <span class="math inline">\(x\)</span>, celui qui permet d’utiliser le minimum de pièces. Autrement dit, si l’on appelle <span class="math inline">\(f(s)\)</span> le nombre minimal de pièces qu’il faut utiliser pour payer la somme <span class="math inline">\(s\)</span>, on a simplement <span class="math inline">\(f(0) = 0\)</span> et</p>
-<p><span class="math display">\[f(s) = \min_{x\leqslant s} (1 + f(s − x))\]</span></p>
-<p>le minimum étant calculé sur toutes les valeurs <span class="math inline">\(x\)</span> d’une pièce.</p>
+<p>Une approche récursive permet de résoudre le problème : soit <span class="math inline">x</span> une valeur faciale de l’une des pièces du système monétaire. Pour rendre une somme <span class="math inline">s</span> de façon optimale, si l’on veut utiliser au moins une fois la pièce <span class="math inline">x</span>, il suffit de rendre <span class="math inline">x</span> et la somme <span class="math inline">s − x</span> de façon optimale. Il n’y a plus qu’à choisir, parmi tous les choix possibles de <span class="math inline">x</span>, celui qui permet d’utiliser le minimum de pièces. Autrement dit, si l’on appelle <span class="math inline">f(s)</span> le nombre minimal de pièces qu’il faut utiliser pour payer la somme <span class="math inline">s</span>, on a simplement <span class="math inline">f(0) = 0</span> et</p>
+<p><span class="math display">f(s) = \min_{x\leqslant s} (1 + f(s − x))</span></p>
+<p>le minimum étant calculé sur toutes les valeurs <span class="math inline">x</span> d’une pièce.</p>
 <p>Cette remarque permet d’écrire le programme récursif suivant :</p>
-<div id="b61e3ccc" class="cell" data-execution_count="4">
+<div id="27484440" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> inf</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursif(valeursFaciales, somme):</span>
@@ -1465,7 +1479,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <h2 class="anchored" data-anchor-id="approche-ascendante-itérative-avec-tabulation">3.1. Approche ascendante (itérative avec tabulation)</h2>
 <p>Ici, le calcul de <code>f(s)</code> utilise le calcul de <code>f(s − x)</code> pour chaque valeur de <code>x</code>. Autrement dit, <code>f(s)</code> n’utilise au plus que les valeurs de <code>f(s − 1)</code>, <code>f(s − 2)</code>, …, <code>f(3)</code>, <code>f(2)</code>, <code>f(1)</code>.</p>
 <p>On va donc créer un tableau <code>f</code> de taille <code>somme + 1</code> et remplir les cases dans l’ordre croissant des indices. Quand on calcule <code>f[s]</code>, toutes les valeurs <code>f[s - x]</code> dont on a besoin sont déjà calculées et stockées dans le tableau.</p>
-<div id="91fe5d5a" class="cell" data-execution_count="5">
+<div id="03007e24" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (somme <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, somme <span class="op">+</span> <span class="dv">1</span>):</span>
@@ -1483,7 +1497,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <section id="approche-descendante-récursive-avec-mémoïsation" class="level2">
 <h2 class="anchored" data-anchor-id="approche-descendante-récursive-avec-mémoïsation">3.2. Approche descendante (récursive avec mémoïsation)</h2>
 <p>Il s’agit de l’approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive et on mémorise les résultats déjà calculés dans un dictionnaire. La vérification de la présence en mémoire doit se faire <strong>avant</strong> la boucle sur les pièces : si le résultat est déjà connu, on le retourne immédiatement sans aucun calcul supplémentaire.</p>
-<div id="90fc95e4" class="cell" data-execution_count="6">
+<div id="b7af7277" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> inf</span>
@@ -1532,21 +1546,21 @@ Renvoyer chenille(0, 0)</code></pre>
 </tr>
 <tr class="even">
 <td>Descendante (mémoïsation)</td>
-<td><span class="math inline">\(O(s \times p)\)</span></td>
-<td><span class="math inline">\(O(s)\)</span> + pile</td>
+<td><span class="math inline">O(s \times p)</span></td>
+<td><span class="math inline">O(s)</span> + pile</td>
 <td>Naturelle (suit la récurrence)</td>
 <td>Profondeur de récursion limitée</td>
 </tr>
 <tr class="odd">
 <td>Ascendante (tabulation)</td>
-<td><span class="math inline">\(O(s \times p)\)</span></td>
-<td><span class="math inline">\(O(s)\)</span></td>
+<td><span class="math inline">O(s \times p)</span></td>
+<td><span class="math inline">O(s)</span></td>
 <td>Pas de récursion</td>
 <td>Moins intuitive</td>
 </tr>
 </tbody>
 </table>
-<p>où <span class="math inline">\(s\)</span> est la somme à rendre et <span class="math inline">\(p\)</span> le nombre de valeurs faciales.</p>
+<p>où <span class="math inline">s</span> est la somme à rendre et <span class="math inline">p</span> le nombre de valeurs faciales.</p>
 
 
 </section>

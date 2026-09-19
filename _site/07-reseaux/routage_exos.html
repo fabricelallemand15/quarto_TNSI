@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9dd1c25a58f71442998f5194405f5c35.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5a6fdad410dddab32c78d887ced862dc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -391,8 +391,22 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -1156,12 +1170,12 @@ window.Quarto = {
 <p>On utilise le protocole OSPF et on dispose des informations suivantes sur les débits :</p>
 <ul>
 <li>à l’intérieur du réseau 192.168.0.0/25 : 1,544 Mb/s</li>
-<li>liaison Routeur_1 <span class="math inline">\(\rightarrow\)</span> Switch_1 : 100 Mb/s</li>
-<li>liaison Switch_1 <span class="math inline">\(\rightarrow\)</span> Routeur_2 : 2,048 Mb/s</li>
-<li>liaison Switch_1 <span class="math inline">\(\rightarrow\)</span> Routeur_3 : 100 Mb/s</li>
-<li>liaison Routeur_2 <span class="math inline">\(\rightarrow\)</span> Switch_2 : 1,544 Mb/s</li>
-<li>liaison Switch_3 <span class="math inline">\(\rightarrow\)</span> Routeur_3 et Routeur_4 : 10 Mb/s</li>
-<li>liaison Routeur_4 <span class="math inline">\(\rightarrow\)</span> Internet : 100 Mb/s</li>
+<li>liaison Routeur_1 <span class="math inline">\rightarrow</span> Switch_1 : 100 Mb/s</li>
+<li>liaison Switch_1 <span class="math inline">\rightarrow</span> Routeur_2 : 2,048 Mb/s</li>
+<li>liaison Switch_1 <span class="math inline">\rightarrow</span> Routeur_3 : 100 Mb/s</li>
+<li>liaison Routeur_2 <span class="math inline">\rightarrow</span> Switch_2 : 1,544 Mb/s</li>
+<li>liaison Switch_3 <span class="math inline">\rightarrow</span> Routeur_3 et Routeur_4 : 10 Mb/s</li>
+<li>liaison Routeur_4 <span class="math inline">\rightarrow</span> Internet : 100 Mb/s</li>
 </ul>
 <p>Le débit de référénce est de 100 Mb/s.</p>
 <ol type="1">
@@ -1203,9 +1217,9 @@ window.Quarto = {
 <p>3/ On a rétabli la liaison entre R1 et R2. Par ailleurs, pour tenir compte du débit des liaisons, on décide d’utiliser le protocole OSPF (distance liée au coût minimal des liaisons) pour effectuer le routage. Le coût des liaisons entre les routeurs est donné par le tableau suivant :</p>
 <p><a href="routage_bac3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="routage_bac3.png" class="img-fluid" style="width:90.0%"></a></p>
 <ol type="a">
-<li>Le coût <em>C</em> d’une liaison est donné ici par la formule <span class="math inline">\(C = \frac{10^9}{BP}\)</span></li>
+<li>Le coût <em>C</em> d’une liaison est donné ici par la formule <span class="math inline">C = \frac{10^9}{BP}</span></li>
 </ol>
-<p>où <span class="math inline">\(BP\)</span> est la bande passante de la connexion en bps (bits par seconde). Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le coût correspondant.</p>
+<p>où <span class="math inline">BP</span> est la bande passante de la connexion en bps (bits par seconde). Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le coût correspondant.</p>
 <ol start="2" type="a">
 <li><p>Déterminer le chemin parcouru par un paquet partant du réseau L1 et arrivant au réseau L2, en utilisant le protocole OSPF.</p></li>
 <li><p>Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modifié pour un paquet à destination de L2, avec la métrique OSPF.</p></li>
@@ -1250,7 +1264,7 @@ window.Quarto = {
 <p>1.c. Combien de machines peut-on connecter au maximum à chacun des réseaux locaux L1 et L2 ?</p>
 <p>2/ 2.a. Expliquer l’utilité d’avoir plusieurs chemins possibles reliant les réseaux L1 et L2.</p>
 <p>2.b. Quel est le chemin le plus court en nombre de sauts pour relier R1 et R6 ? Donner le nombre de sauts de ce chemin et préciser les routeurs utilisés.</p>
-<p>2.c. La bande passante d’une liaison Ether (quantité d’information qui peut être transmise en bits/s) est de <span class="math inline">\(10^7\)</span> bits/s et celle d’une liaison FastEther est de <span class="math inline">\(10^8\)</span> bits/s. Le coût d’une liaison est défini par <span class="math inline">\(\frac{10^8}{d}\)</span> , où <span class="math inline">\(d\)</span> est sa bande passante en bits/s.</p>
+<p>2.c. La bande passante d’une liaison Ether (quantité d’information qui peut être transmise en bits/s) est de <span class="math inline">10^7</span> bits/s et celle d’une liaison FastEther est de <span class="math inline">10^8</span> bits/s. Le coût d’une liaison est défini par <span class="math inline">\frac{10^8}{d}</span> , où <span class="math inline">d</span> est sa bande passante en bits/s.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1304,7 +1318,7 @@ On donne ci-dessous les tables de routage des routeurs A à F obtenues avec le p
 <p>L’adresse dont tous les bits de la partie « machine » sont à 1 est appelée adresse de diffusion.</p>
 <p>Ces adresses sont réservées et ne peuvent pas être attribuées à des machines. Le choix des routes empruntées par les paquets IP est uniquement basé sur le protocole OSPF. On prendra comme débit maximal de référence 10 000 Mbit/s.</p>
 <p>Le coût est alors calculé de la façon suivante :</p>
-<p><span class="math display">\[\text{coût} = \frac{\text{débit maximal de référence}}{\text{débit du réseau concerné}}\]</span></p>
+<p><span class="math display">\text{coût} = \frac{\text{débit maximal de référence}}{\text{débit du réseau concerné}}</span></p>
 <ol type="1">
 <li><p>La configuration IP partielle ci-dessous a été affichée sur l’un des ordinateurs :</p>
 <p><code>IP hôte : 172.16.2.3</code></p>
@@ -1341,8 +1355,8 @@ On donne ci-dessous les tables de routage des routeurs A à F obtenues avec le p
 </ul>
 <p><a href="routage_sujet0b_fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="routage_sujet0b_fig1.png" class="img-fluid"></a></p>
 <p>On rappelle que la bande passante des liaisons FTTH (fibre optique : Fiber To The Home) est de 10 Gbit/s et celle des liaisons FastEthernet de 100 Mbit/s.</p>
-<p>On s’intéresse au protocole de routage OSPF. Le protocole OSPF est un protocole de routage qui cherche à minimiser la somme des coûts des liaisons entre les routeurs empruntés par un paquet. Le coût <span class="math inline">\(\mathcal{C}\)</span> d’une liaison est donné par :</p>
-<p><span class="math display">\[\mathcal{C}=\frac{10^8}{d}\]</span></p>
+<p>On s’intéresse au protocole de routage OSPF. Le protocole OSPF est un protocole de routage qui cherche à minimiser la somme des coûts des liaisons entre les routeurs empruntés par un paquet. Le coût <span class="math inline">\mathcal{C}</span> d’une liaison est donné par :</p>
+<p><span class="math display">\mathcal{C}=\frac{10^8}{d}</span></p>
 <p>où d est la bande passante en bit/s de la liaison.</p>
 <ol type="1">
 <li>Calculer le coût d’une liaison de communication par la technologie FastEthernet.</li>

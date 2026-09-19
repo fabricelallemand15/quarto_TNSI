@@ -7,7 +7,9 @@ crossref:
     tbl-prefix: Tableau
     tbl-title: Tableau
 format:
-    html: default
+    html:
+        # MathML (natif navigateur, sans JS) : évite le conflit KaTeX/RequireJS qui casse les widgets Jupyter (algorithmx) de cette page
+        html-math-method: mathml
 #     pdf: 
 #         geometry:
 #             - top=20mm

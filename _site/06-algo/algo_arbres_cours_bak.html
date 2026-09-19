@@ -82,9 +82,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9dd1c25a58f71442998f5194405f5c35.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5a6fdad410dddab32c78d887ced862dc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -424,8 +424,22 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -1167,7 +1181,7 @@ window.Quarto = {
 <section id="parcourir-un-arbre" class="level2">
 <h2 class="anchored" data-anchor-id="parcourir-un-arbre">2. Parcourir un arbre</h2>
 <p><strong>Remarque</strong> : en anglais les parcours en profondeur sont appelés <em>depth-first search</em> (DFS) et les parcours en largeur sont appelés <em>breadth-first search</em> (BFS).</p>
-<p>Tous ces algorithmes de parcours ont en commun de visiter tous les sommets d’un arbre, mais pas dans le même ordre. La structure récursive de la structure de données <em>arbre binaire</em> permet de définir très naturellement ces algorithmes de façon récursive. Chacun des algorithmes de parcours sont définis sous forme de fonctions qui comportent deux appels récursifs et qui visitent à chaque fois un seul sommet. Si on note <span class="math inline">\(n\)</span> la taille de l’arbre (le nombre de sommets), on aura donc pour tous ces algorithmes une complexité en <span class="math inline">\(\mathcal{O}(n)\)</span>.</p>
+<p>Tous ces algorithmes de parcours ont en commun de visiter tous les sommets d’un arbre, mais pas dans le même ordre. La structure récursive de la structure de données <em>arbre binaire</em> permet de définir très naturellement ces algorithmes de façon récursive. Chacun des algorithmes de parcours sont définis sous forme de fonctions qui comportent deux appels récursifs et qui visitent à chaque fois un seul sommet. Si on note <span class="math inline">n</span> la taille de l’arbre (le nombre de sommets), on aura donc pour tous ces algorithmes une complexité en <span class="math inline">\mathcal{O}(n)</span>.</p>
 <section id="parcours-en-profondeur-avec-ordre-préfixe" class="level3">
 <h3 class="anchored" data-anchor-id="parcours-en-profondeur-avec-ordre-préfixe">2.1. Parcours en profondeur avec ordre préfixe</h3>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1530,7 +1544,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
-<p><strong>fonction</strong> parcoursLargeur(arbre : arbre binaire)<br> <span style="margin-left: 20px;">créer une liste de résultats vide</span><br> <span style="margin-left: 20px;"><strong>si</strong> arbre n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;">créer une file vide</span><br> <span style="margin-left: 40px;">ajouter arbre à la file</span><br> <span style="margin-left: 40px;"><strong>tant que</strong> la file n’est pas vide <strong>faire</strong></span><br> <span style="margin-left: 60px;">noeud <span class="math inline">\(\leftarrow\)</span> défiler le premier élément de la file</span><br> <span style="margin-left: 60px;">ajouter l’étiquette de noeud à la liste de résultats</span><br> <span style="margin-left: 60px;"><strong>si</strong> noeud a un fils gauche <strong>alors</strong></span><br> <span style="margin-left: 80px;">ajouter le fils gauche de noeud à la file</span><br> <span style="margin-left: 60px;"><strong>fin si</strong></span><br> <span style="margin-left: 60px;"><strong>si</strong> noeud a un fils droit <strong>alors</strong></span><br> <span style="margin-left: 80px;">ajouter le fils droit de noeud à la file</span><br> <span style="margin-left: 60px;"><strong>fin si</strong></span><br> <span style="margin-left: 40px;"><strong>fin tant que</strong></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;">retourner la liste de résultats</span><br></p>
+<p><strong>fonction</strong> parcoursLargeur(arbre : arbre binaire)<br> <span style="margin-left: 20px;">créer une liste de résultats vide</span><br> <span style="margin-left: 20px;"><strong>si</strong> arbre n’est pas vide <strong>alors</strong></span><br> <span style="margin-left: 40px;">créer une file vide</span><br> <span style="margin-left: 40px;">ajouter arbre à la file</span><br> <span style="margin-left: 40px;"><strong>tant que</strong> la file n’est pas vide <strong>faire</strong></span><br> <span style="margin-left: 60px;">noeud <span class="math inline">\leftarrow</span> défiler le premier élément de la file</span><br> <span style="margin-left: 60px;">ajouter l’étiquette de noeud à la liste de résultats</span><br> <span style="margin-left: 60px;"><strong>si</strong> noeud a un fils gauche <strong>alors</strong></span><br> <span style="margin-left: 80px;">ajouter le fils gauche de noeud à la file</span><br> <span style="margin-left: 60px;"><strong>fin si</strong></span><br> <span style="margin-left: 60px;"><strong>si</strong> noeud a un fils droit <strong>alors</strong></span><br> <span style="margin-left: 80px;">ajouter le fils droit de noeud à la file</span><br> <span style="margin-left: 60px;"><strong>fin si</strong></span><br> <span style="margin-left: 40px;"><strong>fin tant que</strong></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;">retourner la liste de résultats</span><br></p>
 </div>
 </div>
 </div>
@@ -1567,7 +1581,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <div style="width: 65%; display: block; margin: 0 auto; border-left: solid; border-color: gray; padding-left: 5px;">
-<p><strong>fonction</strong> insere(<em>arbre</em> : ABR, <em>valeur</em>)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> est vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>définir</strong> la racine de <em>arbre</em> avec <em>valeur</em> comme clef</span><br> <span style="margin-left: 40px;"><strong>retourner</strong> <em>arbre</em></span><br> <span style="margin-left: 20px;"><strong>sinon</strong></span><br> <span style="margin-left: 40px;"><em>clef</em> <span class="math inline">\(\leftarrow\)</span> clef de la racine de <em>arbre</em></span><br> <span style="margin-left: 40px;"><strong>si</strong> <em>valeur</em> est inférieure ou égale à <em>clef</em></span><br> <span style="margin-left: 60px;">sous-arbre gauche de <em>arbre</em> <span class="math inline">\(\leftarrow\)</span> insere(sous-arbre gauche de <em>arbre</em>, valeur)</span><br> <span style="margin-left: 40px;"><strong>sinon</strong></span><br> <span style="margin-left: 60px;">sous-arbre droit de <em>arbre</em> <span class="math inline">\(\leftarrow\)</span> insere(sous-arbre droit de <em>arbre</em>, valeur)</span><br> <span style="margin-left: 40px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;"><strong>retourner</strong> <em>arbre</em></span><br></p>
+<p><strong>fonction</strong> insere(<em>arbre</em> : ABR, <em>valeur</em>)<br> <span style="margin-left: 20px;"><strong>si</strong> <em>arbre</em> est vide <strong>alors</strong></span><br> <span style="margin-left: 40px;"><strong>définir</strong> la racine de <em>arbre</em> avec <em>valeur</em> comme clef</span><br> <span style="margin-left: 40px;"><strong>retourner</strong> <em>arbre</em></span><br> <span style="margin-left: 20px;"><strong>sinon</strong></span><br> <span style="margin-left: 40px;"><em>clef</em> <span class="math inline">\leftarrow</span> clef de la racine de <em>arbre</em></span><br> <span style="margin-left: 40px;"><strong>si</strong> <em>valeur</em> est inférieure ou égale à <em>clef</em></span><br> <span style="margin-left: 60px;">sous-arbre gauche de <em>arbre</em> <span class="math inline">\leftarrow</span> insere(sous-arbre gauche de <em>arbre</em>, valeur)</span><br> <span style="margin-left: 40px;"><strong>sinon</strong></span><br> <span style="margin-left: 60px;">sous-arbre droit de <em>arbre</em> <span class="math inline">\leftarrow</span> insere(sous-arbre droit de <em>arbre</em>, valeur)</span><br> <span style="margin-left: 40px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;"><strong>fin si</strong></span><br> <span style="margin-left: 20px;"><strong>retourner</strong> <em>arbre</em></span><br></p>
 </div>
 </div>
 </div>
@@ -1604,11 +1618,11 @@ window.Quarto = {
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> appartientABR(element, arbre.getSousArbreDroit())</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette fonction exploite à la fois la structure récursive et la structure ordonnée d’un ABR afin de n’effectuer qu’<strong>un appel récursif</strong> à chaque passage.</p>
 <p><strong>Déterminons une évaluation de sa complexité temporelle</strong>, dans le pire des cas, <strong>dans le cas particulier d’un arbre équilibré</strong>.</p>
-<p>On note <span class="math inline">\(n\)</span> la taille de l’arbre, c’est-à-dire son nombre de noeuds. Au départ, nous avons donc <span class="math inline">\(n\)</span> noeuds à explorer. Après chaque examen d’un noeud, le nombre de noeuds restant à explorer est divisé par 2.</p>
+<p>On note <span class="math inline">n</span> la taille de l’arbre, c’est-à-dire son nombre de noeuds. Au départ, nous avons donc <span class="math inline">n</span> noeuds à explorer. Après chaque examen d’un noeud, le nombre de noeuds restant à explorer est divisé par 2.</p>
 <p><a href="rechercheABR.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="rechercheABR.png" class="img-fluid"></a></p>
-<p>Dans le <strong>pire des cas</strong>, il faudra parcourir tous les étages de l’arbre pour trouver la clef (qui est alors une feuille) ou pour constater qu’elle n’est pas dans l’arbre. On va donc parcourir au total <span class="math inline">\(h\)</span> noeuds, où <span class="math inline">\(h\)</span> est la hauteur de l’arbre.</p>
-<p>Or, nous avons vu que pour un arbre complet, nous avons la relation : <span class="math inline">\(n=2^h-1\)</span> équivalente à <span class="math inline">\(2^h=n+1\)</span> et donc <span class="math inline">\(h=\log_2(n+1)\)</span>.</p>
-<p>La complexité de la recherche d’une valeur dans un ABR est donc en <span class="math inline">\(\mathcal{O}(log_2(n))\)</span>. Il s’agit d’une complexité très performante : par exemple, pour un arbre de taille 10000, 14 étapes suffiront.</p>
+<p>Dans le <strong>pire des cas</strong>, il faudra parcourir tous les étages de l’arbre pour trouver la clef (qui est alors une feuille) ou pour constater qu’elle n’est pas dans l’arbre. On va donc parcourir au total <span class="math inline">h</span> noeuds, où <span class="math inline">h</span> est la hauteur de l’arbre.</p>
+<p>Or, nous avons vu que pour un arbre complet, nous avons la relation : <span class="math inline">n=2^h-1</span> équivalente à <span class="math inline">2^h=n+1</span> et donc <span class="math inline">h=\log_2(n+1)</span>.</p>
+<p>La complexité de la recherche d’une valeur dans un ABR est donc en <span class="math inline">\mathcal{O}(log_2(n))</span>. Il s’agit d’une complexité très performante : par exemple, pour un arbre de taille 10000, 14 étapes suffiront.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1619,7 +1633,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La complexité temporelle de la recherche d’une valeur dans un ABR équilibré est de l’ordre de <span class="math inline">\(\log_2(n)\)</span>.</p>
+<p>La complexité temporelle de la recherche d’une valeur dans un ABR équilibré est de l’ordre de <span class="math inline">\log_2(n)</span>.</p>
 </div>
 </div>
 <p><strong>Remarque</strong> :</p>

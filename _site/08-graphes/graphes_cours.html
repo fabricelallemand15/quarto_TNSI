@@ -68,9 +68,9 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9dd1c25a58f71442998f5194405f5c35.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5a6fdad410dddab32c78d887ced862dc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -410,8 +410,22 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -1170,7 +1184,7 @@ Figure&nbsp;2: Graphe orienté
 <li>deux sommets reliés par une arête (ou un arc) sont dits <strong>adjacents</strong>, ou <strong>voisins</strong> ;</li>
 <li>un sommet est dit <strong>isolé</strong> s’il n’est relié à aucun autre sommet ;</li>
 <li>l’<strong>ordre</strong> d’un graphe est le nombre de ses sommets ;</li>
-<li>le <strong>degré</strong> d’un sommet <span class="math inline">\(S\)</span>, noté <span class="math inline">\(deg(S)\)</span>, est le nombre d’arêtes (ou d’arcs) qui le relient à d’autres sommets ;</li>
+<li>le <strong>degré</strong> d’un sommet <span class="math inline">S</span>, noté <span class="math inline">deg(S)</span>, est le nombre d’arêtes (ou d’arcs) qui le relient à d’autres sommets ;</li>
 </ul>
 </section>
 <section id="lien-avec-les-arbres" class="level3">
@@ -1234,10 +1248,10 @@ Figure&nbsp;2: Graphe orienté
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La <strong>matrice d’adjacence</strong> d’un graphe <span class="math inline">\(G\)</span> (orienté ou non) est une matrice carrée <span class="math inline">\(A\)</span> de taille <span class="math inline">\(n\)</span> telle que :</p>
+<p>La <strong>matrice d’adjacence</strong> d’un graphe <span class="math inline">G</span> (orienté ou non) est une matrice carrée <span class="math inline">A</span> de taille <span class="math inline">n</span> telle que :</p>
 <ul>
-<li><span class="math inline">\(A_{i,j} = 1\)</span> si les sommets <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> sont adjacents ;</li>
-<li><span class="math inline">\(A_{i,j} = 0\)</span> si les sommets <span class="math inline">\(i\)</span> et <span class="math inline">\(j\)</span> ne sont pas adjacents.</li>
+<li><span class="math inline">A_{i,j} = 1</span> si les sommets <span class="math inline">i</span> et <span class="math inline">j</span> sont adjacents ;</li>
+<li><span class="math inline">A_{i,j} = 0</span> si les sommets <span class="math inline">i</span> et <span class="math inline">j</span> ne sont pas adjacents.</li>
 </ul>
 </div>
 </div>
@@ -1257,7 +1271,7 @@ Figure&nbsp;2: Graphe orienté
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{pmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
@@ -1267,7 +1281,7 @@ Figure&nbsp;2: Graphe orienté
 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
 \end{pmatrix}
-\]</span></p>
+</span></p>
 </div>
 </div>
 </div>
@@ -1299,9 +1313,9 @@ Figure&nbsp;2: Graphe orienté
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La <strong>liste d’adjacence</strong> d’un graphe <span class="math inline">\(G\)</span> (orienté ou non) dont les sommets sont les entiers compris entre 0 et <span class="math inline">\(n-1\)</span> est une liste <span class="math inline">\(L\)</span> de taille <span class="math inline">\(n\)</span> telle que :</p>
+<p>La <strong>liste d’adjacence</strong> d’un graphe <span class="math inline">G</span> (orienté ou non) dont les sommets sont les entiers compris entre 0 et <span class="math inline">n-1</span> est une liste <span class="math inline">L</span> de taille <span class="math inline">n</span> telle que :</p>
 <ul>
-<li><span class="math inline">\(L[i]\)</span> est la liste des sommets adjacents au sommet <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">L[i]</span> est la liste des sommets adjacents au sommet <span class="math inline">i</span>.</li>
 </ul>
 </div>
 </div>
@@ -1321,7 +1335,7 @@ Figure&nbsp;2: Graphe orienté
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{|c|c|}
 \hline
 0 &amp; [6] \\
@@ -1339,7 +1353,7 @@ Figure&nbsp;2: Graphe orienté
 6 &amp; [0] \\
 \hline
 \end{array}
-\]</span></p>
+</span></p>
 </div>
 </div>
 </div>

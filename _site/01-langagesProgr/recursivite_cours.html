@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9dd1c25a58f71442998f5194405f5c35.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5a6fdad410dddab32c78d887ced862dc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -426,8 +426,22 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -1117,8 +1131,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="motivation-et-introduction-du-concept">1. Motivation et introduction du concept</h2>
 <p>Un algorithme est dit récursif s’il <strong>s’appelle lui-même</strong> directement ou indirectement via l’appel d’une ou de plusieurs autres fonctions qui elles-mêmes finissent par l’appeler.</p>
 <p>La récursivité est un concept fondamental en informatique qui met naturellement en pratique un mode de pensée puissant qui consiste à pouvoir découper la tâche à réaliser en sous-tâches de mêmes natures, mais plus petites qui finalement sont simples à résoudre.</p>
-<p>Prenons par exemple le calcul de la factorielle d’un nombre entier <span class="math inline">\(n\)</span>. Par définition pour un <span class="math inline">\(n\)</span> entier strictement positif, <span class="math inline">\(n!\)</span> est égale au produit des entiers strictement positifs inférieurs à <span class="math inline">\(n\)</span>. Par convention, on a aussi <span class="math inline">\(0! = 1\)</span>.</p>
-<p>Par exemple, on a : <span class="math inline">\(5!=1\times 2\times 3\times 4\times 5 = 120\)</span>.</p>
+<p>Prenons par exemple le calcul de la factorielle d’un nombre entier <span class="math inline">n</span>. Par définition pour un <span class="math inline">n</span> entier strictement positif, <span class="math inline">n!</span> est égale au produit des entiers strictement positifs inférieurs à <span class="math inline">n</span>. Par convention, on a aussi <span class="math inline">0! = 1</span>.</p>
+<p>Par exemple, on a : <span class="math inline">5!=1\times 2\times 3\times 4\times 5 = 120</span>.</p>
 <p>Donnons le code itératif d’une fonction calculant la factorielle&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> fact(n):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Renvoie la factorielle de n."""</span></span>
@@ -1126,7 +1140,7 @@ window.Quarto = {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n<span class="op">+</span><span class="dv">1</span>):</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      res <span class="op">=</span> res <span class="op">*</span> i  </span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>La définition récursive se base sur le fait que <span class="math inline">\(n! = n\times (n-1)!\)</span> pour tout <span class="math inline">\(n&gt;0\)</span>.</p>
+<p>La définition récursive se base sur le fait que <span class="math inline">n! = n\times (n-1)!</span> pour tout <span class="math inline">n&gt;0</span>.</p>
 <p>On obtient le code&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> fact(n):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Renvoie la factorielle de n (méthode récursive)."""</span></span>
@@ -1168,8 +1182,8 @@ Fin avec n =  3</code></pre>
 </figure>
 </div>
 <p>Il est important de bien comprendre que la fonction située au sommet de la pile d’exécution est en cours d’exécution. Toutes les fonctions situées “en dessous” sont mises en pause jusqu’au moment où elles se retrouveront au sommet de la pile. Quand une fonction termine son exécution, elle est automatiquement retirée du sommet de la pile (on dit que la fonction est dépilée).</p>
-<p>La pile d’exécution permet de retenir la prochaine instruction à exécuter au moment où une fonction sera sortie de son “état de pause” (qu’elle se retrouvera au sommet de la pile d’exécution). Elle enregistre aussi <strong>le contexte</strong>, c’est-à-dire par exemple ici la valeur de la variable locale <span class="math inline">\(n\)</span> associée à chaque appel de la fonction.</p>
-<p>Nous pouvons comprendre que ce sont plusieurs copies (on dira plutôt des <strong>instances</strong>) de la fonction <code>foo</code> qui sont présentes dans la pile, chacune ayant son propre <strong>espace de noms</strong> : la variable <span class="math inline">\(n\)</span> de la fonction située en haut de la pile n’est pas la même que la variable <span class="math inline">\(n\)</span> de la fonction située en dessous.</p>
+<p>La pile d’exécution permet de retenir la prochaine instruction à exécuter au moment où une fonction sera sortie de son “état de pause” (qu’elle se retrouvera au sommet de la pile d’exécution). Elle enregistre aussi <strong>le contexte</strong>, c’est-à-dire par exemple ici la valeur de la variable locale <span class="math inline">n</span> associée à chaque appel de la fonction.</p>
+<p>Nous pouvons comprendre que ce sont plusieurs copies (on dira plutôt des <strong>instances</strong>) de la fonction <code>foo</code> qui sont présentes dans la pile, chacune ayant son propre <strong>espace de noms</strong> : la variable <span class="math inline">n</span> de la fonction située en haut de la pile n’est pas la même que la variable <span class="math inline">n</span> de la fonction située en dessous.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

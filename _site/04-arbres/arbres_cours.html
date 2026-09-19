@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9dd1c25a58f71442998f5194405f5c35.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d8104f9182703224d469bb949c303124.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5a6fdad410dddab32c78d887ced862dc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c5df1074c2cf306b6ffe9591415a190f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -429,8 +429,22 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
   
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -1221,7 +1235,7 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">TABLE</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p><a href="DOM.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="DOM.png" class="img-fluid"></a></p>
 <ol start="3" type="1">
-<li><strong>Arbres syntaxiques</strong> : Utilisés par les compilateurs pour analyser le code source (ex: <span class="math inline">\(3 \times (4 + 5)\)</span>).</li>
+<li><strong>Arbres syntaxiques</strong> : Utilisés par les compilateurs pour analyser le code source (ex: <span class="math inline">3 \times (4 + 5)</span>).</li>
 </ol>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -1323,7 +1337,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="structure-récursive">2.2. Structure récursive</h3>
 <p>Un arbre binaire est une structure de données <strong>récursive</strong>. Un arbre binaire est :</p>
 <ul>
-<li>Soit un arbre vide (noté souvent <span class="math inline">\(\emptyset\)</span> ou <code>None</code>).</li>
+<li>Soit un arbre vide (noté souvent <span class="math inline">\emptyset</span> ou <code>None</code>).</li>
 <li>Soit un nœud (la racine) associé à deux arbres binaires disjoints appelés <strong>sous-arbre gauche</strong> et <strong>sous-arbre droit</strong>.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
@@ -1353,7 +1367,7 @@ window.Quarto = {
 <ul>
 <li><strong>Arbre Filiforme (ou Dégénéré)</strong> : Chaque nœud n’a qu’un seul fils (sauf la feuille unique). L’arbre ressemble à une liste chaînée.
 <ul>
-<li>Sa hauteur <span class="math inline">\(h\)</span> est égale à sa taille <span class="math inline">\(n\)</span>.</li>
+<li>Sa hauteur <span class="math inline">h</span> est égale à sa taille <span class="math inline">n</span>.</li>
 </ul></li>
 <li><strong>Arbre Binaire Parfait</strong> (souvent appelé “Complet” par abus de langage) : Tous les niveaux sont remplis. Toutes les feuilles sont à la même profondeur.
 <ul>
@@ -1364,11 +1378,11 @@ window.Quarto = {
 </section>
 <section id="relation-entre-taille-et-hauteur" class="level3">
 <h3 class="anchored" data-anchor-id="relation-entre-taille-et-hauteur">2.4. Relation entre Taille et Hauteur</h3>
-<p>Soit un arbre binaire de taille <span class="math inline">\(n\)</span> et de hauteur <span class="math inline">\(h\)</span>.</p>
+<p>Soit un arbre binaire de taille <span class="math inline">n</span> et de hauteur <span class="math inline">h</span>.</p>
 <ol type="1">
-<li><p><strong>Cas le moins favorable (Arbre filiforme)</strong> : <span class="math display">\[h = n\]</span></p></li>
-<li><p><strong>Cas le plus favorable (Arbre parfait)</strong> : Dans un arbre parfait de hauteur <span class="math inline">\(h\)</span>, le nombre de nœuds est la somme des puissances de 2 : <span class="math display">\[n = 1 + 2 + 4 + ... + 2^{h-1} = \sum_{i=0}^{h-1} 2^i = 2^h - 1\]</span></p>
-<p>On a donc <span class="math inline">\(n = 2^h - 1\)</span>, ce qui équivaut à <span class="math inline">\(h = \log_2(n+1)\)</span>.</p></li>
+<li><p><strong>Cas le moins favorable (Arbre filiforme)</strong> : <span class="math display">h = n</span></p></li>
+<li><p><strong>Cas le plus favorable (Arbre parfait)</strong> : Dans un arbre parfait de hauteur <span class="math inline">h</span>, le nombre de nœuds est la somme des puissances de 2 : <span class="math display">n = 1 + 2 + 4 + ... + 2^{h-1} = \sum_{i=0}^{h-1} 2^i = 2^h - 1</span></p>
+<p>On a donc <span class="math inline">n = 2^h - 1</span>, ce qui équivaut à <span class="math inline">h = \log_2(n+1)</span>.</p></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1380,7 +1394,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Pour tout arbre binaire de taille <span class="math inline">\(n\)</span> et de hauteur <span class="math inline">\(h\)</span> : <span class="math display">\[ \log_2(n+1) \leqslant h \leqslant n \]</span></p>
+<p>Pour tout arbre binaire de taille <span class="math inline">n</span> et de hauteur <span class="math inline">h</span> : <span class="math display"> \log_2(n+1) \leqslant h \leqslant n </span></p>
 </div>
 </div>
 <p>Cette propriété est fondamentale : elle signifie que si un arbre est bien équilibré (proche d’un arbre parfait), sa hauteur est très petite par rapport à sa taille (logarithmique). Cela rendra les algorithmes de recherche très efficaces.</p>
@@ -1416,7 +1430,7 @@ window.Quarto = {
 </section>
 <section id="intérêt" class="level3">
 <h3 class="anchored" data-anchor-id="intérêt">3.2. Intérêt</h3>
-<p>La structure d’ABR permet d’effectuer des recherches très rapides, similaires à la <strong>recherche dichotomique</strong> dans un tableau trié. Si l’arbre est équilibré, la complexité de la recherche est en <span class="math inline">\(\mathcal{O}(\log_2 n)\)</span>.</p>
+<p>La structure d’ABR permet d’effectuer des recherches très rapides, similaires à la <strong>recherche dichotomique</strong> dans un tableau trié. Si l’arbre est équilibré, la complexité de la recherche est en <span class="math inline">\mathcal{O}(\log_2 n)</span>.</p>
 
 
 </section>
