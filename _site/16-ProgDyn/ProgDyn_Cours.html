@@ -71,8 +71,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../16-ProgDyn/ProgDyn_Exos.html" rel="next">
 <link href="../06-algo/diviser_pour_regner_exos.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
-<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -119,44 +117,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Recherche"
   }
 }</script>
-
-<script type="text/javascript" charset="UTF-8">
-document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({
-  "notice_banner_type":"simple",
-  "consent_type":"express",
-  "palette":"light",
-  "language":"en",
-  "page_load_consent_levels":["strictly-necessary"],
-  "notice_banner_reject_button_hide":false,
-  "preferences_center_close_button_hide":false,
-  "website_name":""
-  ,
-"language":"fr"
-  });
-});
-</script> 
-  
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-<!-- Matomo -->
-<script>
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(["setCookieDomain", "*.sitelf.fr"]);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//sitelf.fr/matomo/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '4']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
   </script>
-  <noscript></noscript></head><body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -318,165 +330,7 @@ cookieconsent.run({
     } else {
       toggleColorMode(false);
     }
-  </script><p><img referrerpolicy="no-referrer-when-downgrade" src="//sitelf.fr/matomo/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt=""></p>
-  <!-- End Matomo Code -->
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  var matomoBaseUrl = "https://sitelf.fr/matomo/";
-  var siteId = "4";
-  var pageViewsElement = document.getElementById("page-views");
-
-  if (!pageViewsElement) return;
-
-  var isLocal = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
-  var productionHost = "tnsi.sitelf.fr";
-  var hostname = isLocal ? productionHost : window.location.hostname;
-  var protocol = isLocal ? "https:" : window.location.protocol;
-  var pathname = window.location.pathname;
-  var targetUrl = protocol + "//" + hostname + pathname;
-
-  var normalizedPath = pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
-  var pathParts = normalizedPath.split("/").filter(Boolean);
-  var isPostPage = pathParts.length >= 2 && pathParts[0] === "posts";
-
-  function displayHits(hits) {
-    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + " vues";
-  }
-
-  function displayUnavailable() {
-    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> indisponible';
-  }
-
-  function cleanupCallback(callbackName) {
-    delete window[callbackName];
-    var scriptNode = document.getElementById(callbackName);
-    if (scriptNode) scriptNode.remove();
-  }
-
-  function requestJsonp(url, onSuccess, onError) {
-    var callbackName = "matomoCb_" + Math.floor(Math.random() * 1e9);
-    window[callbackName] = function (data) {
-      cleanupCallback(callbackName);
-      onSuccess(data);
-    };
-
-    var scriptNode = document.createElement("script");
-    scriptNode.id = callbackName;
-    scriptNode.src = url + "&jsoncallback=" + callbackName;
-    scriptNode.onerror = function () {
-      cleanupCallback(callbackName);
-      onError();
-    };
-    document.body.appendChild(scriptNode);
-  }
-
-  function findHitsByLabel(nodes, label) {
-    if (!Array.isArray(nodes)) return null;
-    for (var i = 0; i < nodes.length; i += 1) {
-      var node = nodes[i];
-      if (node && node.label === label && typeof node.nb_hits === "number") return node.nb_hits;
-      var nested = findHitsByLabel(node && node.subtable, label);
-      if (nested !== null) return nested;
-    }
-    return null;
-  }
-
-  function fallbackExactUrl() {
-    var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl"
-      + "&idSite=" + siteId
-      + "&pageUrl=" + encodeURIComponent(targetUrl)
-      + "&format=JSON"
-      + "&period=range&date=2018-01-01,today"
-      + "&token_auth=anonymous";
-
-    requestJsonp(url, function (data) {
-      var hits = 0;
-      if (Array.isArray(data) && data.length && typeof data[0].nb_hits === "number") {
-        hits = data[0].nb_hits;
-      } else if (data && typeof data.nb_hits === "number") {
-        hits = data.nb_hits;
-      }
-      displayHits(hits);
-    }, function () {
-      displayUnavailable();
-    });
-  }
-
-  if (!isPostPage) {
-    fallbackExactUrl();
-    return;
-  }
-
-  var slug = pathParts[1];
-  var segmentPath = "/posts/" + slug;
-  var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrls"
-    + "&idSite=" + siteId
-    + "&format=JSON"
-    + "&expanded=1"
-    + "&period=range&date=2018-01-01,today"
-    + "&token_auth=anonymous"
-    + "&segment=" + encodeURIComponent("pageUrl=@" + segmentPath);
-
-  requestJsonp(url, function (data) {
-    var hits = findHitsByLabel(data, slug);
-    if (typeof hits === "number") displayHits(hits);
-    else fallbackExactUrl();
-  }, function () {
-    fallbackExactUrl();
-  });
-});
-</script>
-  
-
-  <script defer="" src="../libs/katex/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
   </script>
-  <link rel="stylesheet" href="../libs/katex/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-
-
-
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -953,8 +807,11 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">19-SystPuces/SystPuces_cours.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../19-SystPuces/SystPuces_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.1 Systèmes sur puce (cours)</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
@@ -1115,7 +972,7 @@ window.Quarto = {
   <li><a href="#comparaison-des-approches" id="toc-comparaison-des-approches" class="nav-link" data-scroll-target="#comparaison-des-approches">3.3. Comparaison des approches</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1146,7 +1003,7 @@ window.Quarto = {
 <p>D’après la définition de la suite, on a, pour tout entier naturel <span class="math inline">n\geqslant 2</span> :</p>
 <p><span class="math display">F_{n}=F_{n-2}+F_{n-1}</span></p>
 <p>On en déduit une version <strong>récursive</strong> de l’algorithme de calcul de <span class="math inline">F_n</span>. Cet algorithme a ceci de particulier que chaque fonction procède à <strong>deux</strong> appels récursifs.</p>
-<div id="3b0c9429" class="cell" data-execution_count="1">
+<div id="fd893af4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_rec(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version récursive"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cas de base</span></span>
@@ -1179,7 +1036,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>Ce phénomène où les mêmes calculs sont répétés de nombreuses fois s’appelle le <strong>chevauchement des sous-problèmes</strong>. Une solution consiste à garder en mémoire les éléments déjà calculés et à ne calculer que les nouveaux éléments encore jamais rencontrés. Une telle démarche relève de la <strong>programmation dynamique</strong>.</p>
-<div id="0bb994bd" class="cell" data-execution_count="2">
+<div id="477c3951" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibo_dyn(n: <span class="bu">int</span>, memo: <span class="bu">dict</span> <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Suite de Fibonacci version dynamique (mémoïsation)"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> memo <span class="kw">is</span> <span class="va">None</span>:</span>
@@ -1433,7 +1290,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <p>L’algorithme glouton consiste à payer d’abord avec la plus grosse pièce possible : ici, il s’agit de 20, puisque 50 &gt; 48. Ayant donné 20, il reste 28 à payer, et on poursuit avec la même méthode. Finalement, on va payer 48 sous la forme 48 = 20 + 20 + 5 + 2 + 1. On a eu besoin de 5 pièces.</p>
 <p>Considérons un autre système monétaire (en fait c’est l’ancien système impérial britannique) représenté par la liste suivante de valeurs faciales : <code>imperial = [30, 24, 12, 6, 3, 1]</code>. Pour payer 48 l’algorithme glouton va répondre : 48 = 30+12+6. À la différence du système euro, pour lequel on peut démontrer que l’algorithme glouton donne toujours la réponse optimale, on constate que ce n’est pas le cas avec le système impérial, puisque on aurait pu se contenter de 2 pièces : 48 = 24 + 24.</p>
 <p>Rappelons comment peut se programmer l’algorithme glouton.</p>
-<div id="b75bdbfa" class="cell" data-execution_count="3">
+<div id="4f9ffd42" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>euros <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>imperial <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">24</span>, <span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1458,7 +1315,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <p><span class="math display">f(s) = \min_{x\leqslant s} (1 + f(s − x))</span></p>
 <p>le minimum étant calculé sur toutes les valeurs <span class="math inline">x</span> d’une pièce.</p>
 <p>Cette remarque permet d’écrire le programme récursif suivant :</p>
-<div id="27484440" class="cell" data-execution_count="4">
+<div id="0c0239e2" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> inf</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursif(valeursFaciales, somme):</span>
@@ -1479,7 +1336,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <h2 class="anchored" data-anchor-id="approche-ascendante-itérative-avec-tabulation">3.1. Approche ascendante (itérative avec tabulation)</h2>
 <p>Ici, le calcul de <code>f(s)</code> utilise le calcul de <code>f(s − x)</code> pour chaque valeur de <code>x</code>. Autrement dit, <code>f(s)</code> n’utilise au plus que les valeurs de <code>f(s − 1)</code>, <code>f(s − 2)</code>, …, <code>f(3)</code>, <code>f(2)</code>, <code>f(1)</code>.</p>
 <p>On va donc créer un tableau <code>f</code> de taille <code>somme + 1</code> et remplir les cases dans l’ordre croissant des indices. Quand on calcule <code>f[s]</code>, toutes les valeurs <code>f[s - x]</code> dont on a besoin sont déjà calculées et stockées dans le tableau.</p>
-<div id="03007e24" class="cell" data-execution_count="5">
+<div id="9e223415" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynMemoise(valeursFaciales, somme):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (somme <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, somme <span class="op">+</span> <span class="dv">1</span>):</span>
@@ -1497,7 +1354,7 @@ Renvoyer chenille(0, 0)</code></pre>
 <section id="approche-descendante-récursive-avec-mémoïsation" class="level2">
 <h2 class="anchored" data-anchor-id="approche-descendante-récursive-avec-mémoïsation">3.2. Approche descendante (récursive avec mémoïsation)</h2>
 <p>Il s’agit de l’approche utilisée pour la suite de Fibonacci : on utilise une fonction récursive et on mémorise les résultats déjà calculés dans un dictionnaire. La vérification de la présence en mémoire doit se faire <strong>avant</strong> la boucle sur les pièces : si le résultat est déjà connu, on le retourne immédiatement sans aucun calcul supplémentaire.</p>
-<div id="b7af7277" class="cell" data-execution_count="6">
+<div id="b090e8de" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dynRecursifMem(valeursFaciales, somme, mem<span class="op">=</span>{}):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> somme <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> inf</span>
@@ -1653,7 +1510,7 @@ Renvoyer chenille(0, 0)</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tnsi\.sitelf\.fr");
+        var filterRegex = new RegExp("https:\/\/tnsi\.mathsinfolycee\.fr\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -2010,8 +1867,8 @@ Renvoyer chenille(0, 0)</code></pre>
 </ul>
     </div>   
     <div class="nav-footer-center">
-
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -2020,8 +1877,8 @@ Renvoyer chenille(0, 0)</code></pre>
 </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/fabricelallemand15/quarto_TNSI">
-      <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi">
+      <i class="bi bi-gitlab" role="img">
 </i> 
     </a>
   </li>  

@@ -1,375 +1,379 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tnsi.sitelf.fr/ressources.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/ressources.html</loc>
     <lastmod>2026-04-03T07:15:26.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/projet_BDD.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/projet_BDD.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/sql_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/sql_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/partie1.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/partie1.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/exercices.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/exercices.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires_CORR.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/TPDictionnaires_CORR.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/piles_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/piles_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_exercices.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/dictionnaires_exercices.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/listes_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/listes_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaires.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/TPDictionnaires.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/dictionnaires_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/dictionnaires_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/files_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/files_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/recursivite_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/recursivite_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/paradigmes_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/paradigmes_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/TPPOOBataille.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/TPPOOBataille.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/recursivite_exercices.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/recursivite_exercices.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/19-SystPuces/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/19-SystPuces/SystPuces_cours.html</loc>
+    <lastmod>2026-09-28T11:33:04.676Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/11-algos2/exos_graphes.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/11-algos2/bfs_graphe.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/11-algos2/dfs_graphe.html</loc>
     <lastmod>2026-09-19T20:22:13.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/index.html</loc>
-    <lastmod>2026-05-18T19:34:53.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/17-RechercheTextuelle/cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/17-RechercheTextuelle/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/graphes_exercices.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/GrandOral/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/tp_graphe_liste_capytale.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/tp_graphe_liste.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/tp_graphe_matrice.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/tp_graphe_matrice_CORR.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/tp_graphe_liste_CORR.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/tp_graphe_matrice_capytale.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/graphes_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/index_graphes.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/diviser_pour_regner_exos.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_cours_bak.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/rappels.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_exos.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/exos_cycles_chemins.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/algo_arbres_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/exos_graphes_fiche1.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/10-langages_prog2/calculabilite_exercices.html</loc>
-    <lastmod>2026-05-03T15:46:15.139Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/05-archiSE/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/diviser_pour_regner_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/05-archiSE/processus_cours.html</loc>
-    <lastmod>2026-04-17T08:12:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/05-archiSE/processus_TP.html</loc>
-    <lastmod>2026-04-17T08:15:47.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/arbres_exercices.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/implementationArbres.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/arbres_cours_bak.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/implementationArbres_bak.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/09-reseaux2/HTTPS_cours.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/16-ProgDyn/ProgDyn_Exos.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/16-ProgDyn/TP_ProgDyn.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/bac/ep.html</loc>
-    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/bac/index.html</loc>
-    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/bac/annales.html</loc>
-    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/07-reseaux/adressesIP.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/07-reseaux/routage_exos.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/07-reseaux/routage_cours.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/histoire/index.html</loc>
-    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/bac/2023_CE_J1_corrige.html</loc>
-    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/bac/2023_CE_J2_corrige.html</loc>
-    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/ep2026/index.html</loc>
-    <lastmod>2026-05-05T20:19:07.137Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/16-ProgDyn/ProgDyn_Cours.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/16-ProgDyn/index.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/09-reseaux2/index.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/arbres_cours.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/TParbres.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/04-arbres/index.html</loc>
-    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/about.html</loc>
-    <lastmod>2026-04-03T07:15:25.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/05-archiSE/processus_python.html</loc>
-    <lastmod>2026-04-17T08:16:29.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/05-archiSE/processus_exos.html</loc>
-    <lastmod>2026-04-17T08:14:59.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tnsi.sitelf.fr/10-langages_prog2/calculabilite.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/10-langages_prog2/calculabilite.html</loc>
     <lastmod>2026-05-03T15:47:00.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/diviser_pour_regner_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/05-archiSE/processus_exos.html</loc>
+    <lastmod>2026-04-17T08:14:59.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/05-archiSE/processus_python.html</loc>
+    <lastmod>2026-04-17T08:16:29.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/about.html</loc>
+    <lastmod>2026-04-03T07:15:25.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/04-arbres/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/exos_graphes_fiche1.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/04-arbres/TParbres.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/exos_cycles_chemins.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/04-arbres/arbres_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/rappels.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/09-reseaux2/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/06-algo/diviser_pour_regner_exos.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/16-ProgDyn/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/index_graphes.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/16-ProgDyn/ProgDyn_Cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/tp_graphe_matrice_capytale.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/ep2026/index.html</loc>
+    <lastmod>2026-05-05T20:19:07.137Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/bac/2023_CE_J2_corrige.html</loc>
+    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/bac/2023_CE_J1_corrige.html</loc>
+    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/histoire/index.html</loc>
+    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/07-reseaux/routage_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/tp_graphe_matrice_CORR.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/07-reseaux/routage_exos.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/08-graphes/tp_graphe_liste.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/07-reseaux/adressesIP.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/GrandOral/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/bac/annales.html</loc>
+    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/bac/index.html</loc>
+    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/bac/ep.html</loc>
+    <lastmod>2026-04-03T07:15:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/16-ProgDyn/TP_ProgDyn.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/17-RechercheTextuelle/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/16-ProgDyn/ProgDyn_Exos.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/11-algos2/dfs_graphe.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/09-reseaux2/HTTPS_cours.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/04-arbres/implementationArbres_bak.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/04-arbres/arbres_cours_bak.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/04-arbres/implementationArbres.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/04-arbres/arbres_exercices.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/05-archiSE/processus_TP.html</loc>
+    <lastmod>2026-04-17T08:15:47.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/05-archiSE/processus_cours.html</loc>
+    <lastmod>2026-04-17T08:12:26.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/05-archiSE/index.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/10-langages_prog2/calculabilite_exercices.html</loc>
+    <lastmod>2026-05-03T15:46:15.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/algo_arbres_cours.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/algo_arbres_exos.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/algo_arbres_cours_bak.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/06-algo/index.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/graphes_cours.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/tp_graphe_liste_CORR.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/tp_graphe_matrice.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/tp_graphe_liste_capytale.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/08-graphes/graphes_exercices.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/17-RechercheTextuelle/cours.html</loc>
+    <lastmod>2026-04-03T07:15:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/index.html</loc>
+    <lastmod>2026-09-28T11:49:37.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tnsi.mathsinfolycee.fr/11-algos2/bfs_graphe.html</loc>
     <lastmod>2026-09-19T20:22:13.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/11-algos2/exos_graphes.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/19-SystPuces/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/19-SystPuces/SystPuces_exos.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/19-SystPuces/SystPuces_exos.html</loc>
     <lastmod>2026-04-17T08:08:21.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/paradigmes_exercices.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/paradigmes_exercices.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/TPHanoi.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/TPHanoi.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/POO_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_complements.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/POO_complements.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/01-langagesProgr/POO_exercices.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/01-langagesProgr/POO_exercices.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/POO/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/POO/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/listes_exercices.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/listes_exercices.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/TPDictionnaire.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/TPDictionnaire.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/interface/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/interface/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/interfaces_cours.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/interfaces_cours.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/index.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/index.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/02-structures/projet_detecteur_langue.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/02-structures/projet_detecteur_langue.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/TP2.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/TP2.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/cours_SQL.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/cours_SQL.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/TP1.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/TP1.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/partie2.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/partie2.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://tnsi.sitelf.fr/03-BDD/TP3.html</loc>
+    <loc>https://tnsi.mathsinfolycee.fr/03-BDD/TP3.html</loc>
     <lastmod>2026-04-03T07:15:24.000Z</lastmod>
   </url>
 </urlset>

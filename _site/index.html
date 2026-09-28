@@ -34,8 +34,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./favicon.ico" rel="icon">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -83,40 +81,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-<script type="text/javascript" charset="UTF-8">
-document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({
-  "notice_banner_type":"simple",
-  "consent_type":"express",
-  "palette":"light",
-  "language":"en",
-  "page_load_consent_levels":["strictly-necessary"],
-  "notice_banner_reject_button_hide":false,
-  "preferences_center_close_button_hide":false,
-  "website_name":""
-  ,
-"language":"fr"
-  });
-});
-</script> 
-  
 
-<!-- Matomo -->
-<script>
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(["setCookieDomain", "*.sitelf.fr"]);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//sitelf.fr/matomo/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '4']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  <noscript></noscript></head><body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -278,122 +247,7 @@ cookieconsent.run({
     } else {
       toggleColorMode(false);
     }
-  </script><p><img referrerpolicy="no-referrer-when-downgrade" src="//sitelf.fr/matomo/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt=""></p>
-  <!-- End Matomo Code -->
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  var matomoBaseUrl = "https://sitelf.fr/matomo/";
-  var siteId = "4";
-  var pageViewsElement = document.getElementById("page-views");
-
-  if (!pageViewsElement) return;
-
-  var isLocal = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
-  var productionHost = "tnsi.sitelf.fr";
-  var hostname = isLocal ? productionHost : window.location.hostname;
-  var protocol = isLocal ? "https:" : window.location.protocol;
-  var pathname = window.location.pathname;
-  var targetUrl = protocol + "//" + hostname + pathname;
-
-  var normalizedPath = pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
-  var pathParts = normalizedPath.split("/").filter(Boolean);
-  var isPostPage = pathParts.length >= 2 && pathParts[0] === "posts";
-
-  function displayHits(hits) {
-    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + " vues";
-  }
-
-  function displayUnavailable() {
-    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> indisponible';
-  }
-
-  function cleanupCallback(callbackName) {
-    delete window[callbackName];
-    var scriptNode = document.getElementById(callbackName);
-    if (scriptNode) scriptNode.remove();
-  }
-
-  function requestJsonp(url, onSuccess, onError) {
-    var callbackName = "matomoCb_" + Math.floor(Math.random() * 1e9);
-    window[callbackName] = function (data) {
-      cleanupCallback(callbackName);
-      onSuccess(data);
-    };
-
-    var scriptNode = document.createElement("script");
-    scriptNode.id = callbackName;
-    scriptNode.src = url + "&jsoncallback=" + callbackName;
-    scriptNode.onerror = function () {
-      cleanupCallback(callbackName);
-      onError();
-    };
-    document.body.appendChild(scriptNode);
-  }
-
-  function findHitsByLabel(nodes, label) {
-    if (!Array.isArray(nodes)) return null;
-    for (var i = 0; i < nodes.length; i += 1) {
-      var node = nodes[i];
-      if (node && node.label === label && typeof node.nb_hits === "number") return node.nb_hits;
-      var nested = findHitsByLabel(node && node.subtable, label);
-      if (nested !== null) return nested;
-    }
-    return null;
-  }
-
-  function fallbackExactUrl() {
-    var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl"
-      + "&idSite=" + siteId
-      + "&pageUrl=" + encodeURIComponent(targetUrl)
-      + "&format=JSON"
-      + "&period=range&date=2018-01-01,today"
-      + "&token_auth=anonymous";
-
-    requestJsonp(url, function (data) {
-      var hits = 0;
-      if (Array.isArray(data) && data.length && typeof data[0].nb_hits === "number") {
-        hits = data[0].nb_hits;
-      } else if (data && typeof data.nb_hits === "number") {
-        hits = data.nb_hits;
-      }
-      displayHits(hits);
-    }, function () {
-      displayUnavailable();
-    });
-  }
-
-  if (!isPostPage) {
-    fallbackExactUrl();
-    return;
-  }
-
-  var slug = pathParts[1];
-  var segmentPath = "/posts/" + slug;
-  var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrls"
-    + "&idSite=" + siteId
-    + "&format=JSON"
-    + "&expanded=1"
-    + "&period=range&date=2018-01-01,today"
-    + "&token_auth=anonymous"
-    + "&segment=" + encodeURIComponent("pageUrl=@" + segmentPath);
-
-  requestJsonp(url, function (data) {
-    var hits = findHitsByLabel(data, slug);
-    if (typeof hits === "number") displayHits(hits);
-    else fallbackExactUrl();
-  }, function () {
-    fallbackExactUrl();
-  });
-});
-</script>
-  
-
-
-<link rel="stylesheet" href="styles.css">
-
-
-
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -870,8 +724,11 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">19-SystPuces/SystPuces_cours.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./19-SystPuces/SystPuces_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.1 Systèmes sur puce (cours)</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
@@ -1019,7 +876,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <ul>
   <li><a href="#bienvenue" id="toc-bienvenue" class="nav-link active" data-scroll-target="#bienvenue">Bienvenue !</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1058,17 +915,15 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <div class="callout-body-container callout-body">
 <ul>
+<li>Septembre 2026 - Changement des polices du site pour des polices libres ; auto-hébergement du moteur de rendu des équations mathématiques (KaTeX). Suppression de la bannière de cookies (le site ne collecte aucune donnée personnelle). Suppression du compteur de pages vues.</li>
 <li>Mai 2026 - Corrections et allègements dans le <a href="./10-langages_prog2/calculabilite.html">chapitre 10 - Limites du calculable</a> et ajout d’exercices pour ce chapitre.</li>
-<li>Avril 2026 - mise à jour du cours sur <a href="19-SystPuces/SystPuces_cours.qmd">les SOC et processus</a>.</li>
+<li>Avril 2026 - mise à jour du cours sur <a href="./19-SystPuces/SystPuces_cours.html">les SOC et processus</a>.</li>
 <li>Avril 2026 - Publication de la <a href="./ep2026/index.html">liste de sujets pour l’épreuve pratique 2026 et de mes corrigés</a>.</li>
 <li>Mars 2026 - Chapitre 8 - Stratégies algorithmiques avancées : refonte du cours sur la programmation dynamique, ajout d’exercices papier et d’un TP de programmation, révision et corrections du TP sur la recherche textuelle + démonstration interactive de l’algorithme de Boyer-Moore-Horspool.</li>
-<li>Février 2026 - Mise à jour de la <a href="./GrandOral/index.html"><em>page sur le grand oral</em></a>.</li>
-<li>Janvier 2026 - Refonte de la page <a href="./bac/annales.html"><em>Annales du bac</em></a>.</li>
 </ul>
 </div>
 </div>
 <p>Lien vers l’ENT du lycée : <a href="https://cas.ent.auvergnerhonealpes.fr/login" target="_blank">https://cas.ent.auvergnerhonealpes.fr/login</a></p>
-<p>Lien vers Capytale : <a href="https://capytale2.ac-paris.fr/web/c-auth/list" target="_blank">https://capytale2.ac-paris.fr/web/c-auth/list</a></p>
 <p>Lien vers le programme officiel : <a href="Programme_Term_NSI.pdf">Programme officiel terminale NSI</a></p>
 <p>Sources de ce site sur La Forge : <a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi" target="_blank">https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi</a></p>
 <div class="quarto-figure quarto-figure-center">
@@ -1168,7 +1023,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tnsi\.sitelf\.fr");
+        var filterRegex = new RegExp("https:\/\/tnsi\.mathsinfolycee\.fr\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1513,8 +1368,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </ul>
     </div>   
     <div class="nav-footer-center">
-
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1523,8 +1378,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/fabricelallemand15/quarto_TNSI">
-      <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi">
+      <i class="bi bi-gitlab" role="img">
 </i> 
     </a>
   </li>  

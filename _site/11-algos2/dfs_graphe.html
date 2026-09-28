@@ -71,8 +71,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../11-algos2/bfs_graphe.html" rel="next">
 <link href="../08-graphes/graphes_exercices.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
-<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -116,45 +114,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Recherche"
   }
 }</script>
-
-<script type="text/javascript" charset="UTF-8">
-document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({
-  "notice_banner_type":"simple",
-  "consent_type":"express",
-  "palette":"light",
-  "language":"en",
-  "page_load_consent_levels":["strictly-necessary"],
-  "notice_banner_reject_button_hide":false,
-  "preferences_center_close_button_hide":false,
-  "website_name":""
-  ,
-"language":"fr"
-  });
-});
-</script> 
-  
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
-<!-- Matomo -->
-<script>
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(["setCookieDomain", "*.sitelf.fr"]);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//sitelf.fr/matomo/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '4']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  <noscript></noscript></head><body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -316,122 +285,7 @@ cookieconsent.run({
     } else {
       toggleColorMode(false);
     }
-  </script><p><img referrerpolicy="no-referrer-when-downgrade" src="//sitelf.fr/matomo/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt=""></p>
-  <!-- End Matomo Code -->
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  var matomoBaseUrl = "https://sitelf.fr/matomo/";
-  var siteId = "4";
-  var pageViewsElement = document.getElementById("page-views");
-
-  if (!pageViewsElement) return;
-
-  var isLocal = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
-  var productionHost = "tnsi.sitelf.fr";
-  var hostname = isLocal ? productionHost : window.location.hostname;
-  var protocol = isLocal ? "https:" : window.location.protocol;
-  var pathname = window.location.pathname;
-  var targetUrl = protocol + "//" + hostname + pathname;
-
-  var normalizedPath = pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
-  var pathParts = normalizedPath.split("/").filter(Boolean);
-  var isPostPage = pathParts.length >= 2 && pathParts[0] === "posts";
-
-  function displayHits(hits) {
-    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> ' + hits + " vues";
-  }
-
-  function displayUnavailable() {
-    pageViewsElement.innerHTML = '<i class="fa-solid fa-eye"></i> indisponible';
-  }
-
-  function cleanupCallback(callbackName) {
-    delete window[callbackName];
-    var scriptNode = document.getElementById(callbackName);
-    if (scriptNode) scriptNode.remove();
-  }
-
-  function requestJsonp(url, onSuccess, onError) {
-    var callbackName = "matomoCb_" + Math.floor(Math.random() * 1e9);
-    window[callbackName] = function (data) {
-      cleanupCallback(callbackName);
-      onSuccess(data);
-    };
-
-    var scriptNode = document.createElement("script");
-    scriptNode.id = callbackName;
-    scriptNode.src = url + "&jsoncallback=" + callbackName;
-    scriptNode.onerror = function () {
-      cleanupCallback(callbackName);
-      onError();
-    };
-    document.body.appendChild(scriptNode);
-  }
-
-  function findHitsByLabel(nodes, label) {
-    if (!Array.isArray(nodes)) return null;
-    for (var i = 0; i < nodes.length; i += 1) {
-      var node = nodes[i];
-      if (node && node.label === label && typeof node.nb_hits === "number") return node.nb_hits;
-      var nested = findHitsByLabel(node && node.subtable, label);
-      if (nested !== null) return nested;
-    }
-    return null;
-  }
-
-  function fallbackExactUrl() {
-    var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrl"
-      + "&idSite=" + siteId
-      + "&pageUrl=" + encodeURIComponent(targetUrl)
-      + "&format=JSON"
-      + "&period=range&date=2018-01-01,today"
-      + "&token_auth=anonymous";
-
-    requestJsonp(url, function (data) {
-      var hits = 0;
-      if (Array.isArray(data) && data.length && typeof data[0].nb_hits === "number") {
-        hits = data[0].nb_hits;
-      } else if (data && typeof data.nb_hits === "number") {
-        hits = data.nb_hits;
-      }
-      displayHits(hits);
-    }, function () {
-      displayUnavailable();
-    });
-  }
-
-  if (!isPostPage) {
-    fallbackExactUrl();
-    return;
-  }
-
-  var slug = pathParts[1];
-  var segmentPath = "/posts/" + slug;
-  var url = matomoBaseUrl + "index.php?module=API&method=Actions.getPageUrls"
-    + "&idSite=" + siteId
-    + "&format=JSON"
-    + "&expanded=1"
-    + "&period=range&date=2018-01-01,today"
-    + "&token_auth=anonymous"
-    + "&segment=" + encodeURIComponent("pageUrl=@" + segmentPath);
-
-  requestJsonp(url, function (data) {
-    var hits = findHitsByLabel(data, slug);
-    if (typeof hits === "number") displayHits(hits);
-    else fallbackExactUrl();
-  }, function () {
-    fallbackExactUrl();
-  });
-});
-</script>
-  
-
-
-<link rel="stylesheet" href="../styles.css">
-
-
-
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -908,8 +762,11 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">19-SystPuces/SystPuces_cours.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../19-SystPuces/SystPuces_cours.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9.1 Systèmes sur puce (cours)</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../05-archiSE/processus_cours.html" class="sidebar-item-text sidebar-link">
@@ -1063,7 +920,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <li><a href="#exemples-dapplications" id="toc-exemples-dapplications" class="nav-link" data-scroll-target="#exemples-dapplications">4. Exemples d’applications</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1113,7 +970,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exemple" class="level3">
 <h3 class="anchored" data-anchor-id="exemple">1. Exemple</h3>
 <p>Voici un exemple de graphe et de parcours en profondeur d’abord.</p>
-<div id="809acdd0" class="cell" data-execution_count="1">
+<div id="66a5f9f8" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
@@ -1132,7 +989,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </details>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"b9ece03918214e7fa1ff0a2db80a7a2b","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"ad3fc88e541b492883552724ddbf879e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
@@ -1192,7 +1049,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h3 class="anchored" data-anchor-id="implémentation-en-python">3. Implémentation en Python</h3>
 <p>Pour l’implémentation, nous supposerons que nous avons un graphe défini en utilisant le module <code>networkx</code> de Python.</p>
 <p>Voici une implémentation de l’algorithme de parcours en profondeur d’abord en Python.</p>
-<div id="f6b243ab" class="cell" data-execution_count="2">
+<div id="d443f74e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs(graph, start):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Parcours en profondeur d'abord d'un graphe à partir d'un nœud donné.</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
@@ -1211,7 +1068,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> visited</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Test de l’algorithme :</p>
-<div id="38267c56" class="cell" data-execution_count="3">
+<div id="72b3ee0b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition du graphe</span></span>
@@ -1226,7 +1083,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 <p>Le parcours en profondeur d’abord se prête aussi naturellement à une <strong>implémentation récursive</strong>. Voici une implémentation de l’algorithme de parcours en profondeur d’abord en Python, en utilisant une fonction récursive.</p>
-<div id="1445a465" class="cell" data-execution_count="4">
+<div id="acf2191a" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs_recursive(graph, start, visited<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Parcours en profondeur d'abord d'un graphe à partir d'un nœud donné.</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
@@ -1245,7 +1102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> visited</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Test de l’algorithme :</p>
-<div id="87093de9" class="cell" data-execution_count="5">
+<div id="ac47da88" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parcours en profondeur d'abord à partir du nœud A</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dfs_recursive(graph, <span class="st">"A"</span>))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1254,7 +1111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <p><strong>Visualisation du parcours en profondeur d’abord</strong></p>
 <p>Nous pouvons visualiser le parcours en profondeur d’abord en utilisant le module <code>algorithmx</code> de Python. Ce module permet de visualiser les étapes de l’algorithme de parcours en profondeur d’abord.</p>
-<div id="5a4f867b" class="cell" data-execution_count="6">
+<div id="a5099bc7" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> algorithmx <span class="im">import</span> jupyter_canvas</span>
@@ -1289,7 +1146,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </details>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"fdd479bd04024b29bbff66806fb8b347","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"5f517da4259c497190deb9f81e9300a1","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
@@ -1310,7 +1167,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </main> <!-- /main -->
 <script type="application/vnd.jupyter.widget-state+json">
-{"state":{"b9ece03918214e7fa1ff0a2db80a7a2b":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}"],"layout":"IPY_MODEL_c473c50e72164c8db6106fdc2faa1e75","show_buttons":true,"tabbable":null,"tooltip":null}},"c473c50e72164c8db6106fdc2faa1e75":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"d18e5987a8ea47e29aa7280e3497f487":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"fdd479bd04024b29bbff66806fb8b347":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}","{\"queues\": {\"0\": {\"pause\": 2}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"color\": \"red\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-C\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"C-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"C\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-D\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"D-A\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"D\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-G\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}"],"layout":"IPY_MODEL_d18e5987a8ea47e29aa7280e3497f487","show_buttons":true,"tabbable":null,"tooltip":null}}},"version_major":2,"version_minor":0}
+{"state":{"05ddc536da6840ffac47e89c7ff6900f":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"1e7e1b3521e04456a110de49a28c013f":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"5f517da4259c497190deb9f81e9300a1":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}","{\"queues\": {\"0\": {\"pause\": 2}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"color\": \"red\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"A-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"A\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"A\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"B-C\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"B\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"B\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"C-F\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"C\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"C\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-E\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-B\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"E-D\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"E\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"E\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"D-A\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"D\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"1.6x\"}}}}","{\"attrs\": {\"nodes\": {\"F\": {\"color\": \"red\"}}}}","{\"attrs\": {\"nodes\": {\"D\": {\"size\": \"0.8x\"}}}}","{\"queues\": {\"0\": {\"pause\": 1}}, \"withQ\": 0}","{\"attrs\": {\"edges\": {\"F-G\": {\"color\": {\"animtype\": \"traverse\", \"value\": \"blue\", \"animsource\": \"F\"}}}}}","{\"queues\": {\"0\": {\"pause\": 0.5}}, \"withQ\": 0}","{\"attrs\": {\"nodes\": {\"F\": {\"size\": \"0.8x\"}}}}"],"layout":"IPY_MODEL_05ddc536da6840ffac47e89c7ff6900f","show_buttons":true,"tabbable":null,"tooltip":null}},"ad3fc88e541b492883552724ddbf879e":{"model_module":"algorithmx-jupyter","model_module_version":"^3.0.0","model_name":"AlgorithmXModel","state":{"_dom_classes":[],"_model_module":"algorithmx-jupyter","_model_module_version":"^3.0.0","_model_name":"AlgorithmXModel","_view_count":null,"_view_module":"algorithmx-jupyter","_view_module_version":"^3.0.0","_view_name":"AlgorithmXView","events":["{\"attrs\": {\"nodes\": {\"A\": {}, \"B\": {}, \"C\": {}, \"D\": {}, \"E\": {}, \"F\": {}, \"G\": {}}}}","{\"attrs\": {\"edges\": {\"A-B\": {\"source\": \"A\", \"target\": \"B\", \"directed\": false}, \"A-D\": {\"source\": \"A\", \"target\": \"D\", \"directed\": false}, \"B-C\": {\"source\": \"B\", \"target\": \"C\", \"directed\": false}, \"B-E\": {\"source\": \"B\", \"target\": \"E\", \"directed\": false}, \"C-F\": {\"source\": \"C\", \"target\": \"F\", \"directed\": false}, \"D-E\": {\"source\": \"D\", \"target\": \"E\", \"directed\": false}, \"E-F\": {\"source\": \"E\", \"target\": \"F\", \"directed\": false}, \"F-G\": {\"source\": \"F\", \"target\": \"G\", \"directed\": false}}}}"],"layout":"IPY_MODEL_1e7e1b3521e04456a110de49a28c013f","show_buttons":true,"tabbable":null,"tooltip":null}}},"version_major":2,"version_minor":0}
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1398,7 +1255,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tnsi\.sitelf\.fr");
+        var filterRegex = new RegExp("https:\/\/tnsi\.mathsinfolycee\.fr\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1755,8 +1612,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </ul>
     </div>   
     <div class="nav-footer-center">
-
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fabricelallemand15/quarto_TNSI/issues/new" class="toc-action"><i class="bi bi-github"></i>Faire part d'un problème</a></li></ul></div><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1765,8 +1622,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/fabricelallemand15/quarto_TNSI">
-      <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi">
+      <i class="bi bi-gitlab" role="img">
 </i> 
     </a>
   </li>  
