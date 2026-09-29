@@ -1,50 +1,20 @@
 ---
-title: Listes (Cours)
+title: Chapitre 3 - Partie 2 - Listes
 lang: fr
-tbl-cap-location: bottom
-crossref: 
-    eq-prefix: Éq.
-    tbl-prefix: Tableau
-    tbl-title: Tableau
-format:
-    html: default
-#     pdf: 
-#         geometry:
-#             - top=20mm
-#             - bottom=20mm
-#             - left=20mm
-#             - right=20mm
-#             - heightrounded
-#         include-in-header:
-#             - text:
-#                 \usepackage{fancyhdr}
-#                 \pagestyle{fancy}
-#                 \usepackage{lastpage}
-#         include-before-body:
-#             - text:
-#                 \lhead{Spécialité NSI} 
-#                 \rhead{Terminale}
-#                 \chead{} 
-#                 \cfoot{}
-#                 \lfoot{Lycée \'Emile Duclaux}
-#                 \rfoot{Page \thepage/\pageref{LastPage}}
-#                 \renewcommand{\headrulewidth}{0pt}
-#                 \renewcommand{\footrulewidth}{0pt}
-#                 \thispagestyle{fancy}
-#                 \vspace{-2cm}
-#         biblio-title: Sources utilisées
-#         reference-location: document
-#         # fig-pos: h
-#         # fig-width: 4
-#         # fig-height: 2.5
-#         keep-tex: true
-# format-links: [pdf, tex]
+# papersize: a4
+# tbl-cap-location: bottom
+# crossref: 
+#     eq-prefix: Éq.
+#     tbl-prefix: Tableau
+#     tbl-title: Tableau
+# format: pdf
+# keep-tex: true
 ---
 
 ::: {.callout-warning}
 ## Attention !
 
-En Première, nous avons utilisé le type de données ``list`` de Python pour représenter des **tableaux** de d'éléments de même type. Le vocabulaire propre à Python peut induire en erreur et amener à penser que le type "liste" est déjà connu. La structure ``list`` de Python réalise en fait l'implémentation du type abstrait de données "tableau dynamique" et doit être laissée de côté, malgré l'utilisation du même vocabulaire.
+En Première, nous avons utilisé le type de données ``list`` de Python pour représenter des **tableaux** d'éléments de même type. Le vocabulaire propre à Python peut induire en erreur et amener à penser que le type "liste" est déjà connu. La structure ``list`` de Python réalise en fait l'implémentation du type abstrait de données "tableau dynamique" et doit être laissée de côté, malgré l'utilisation du même vocabulaire.
 
 Cela ne nous empêchera pas d'implémenter le type abstrait de données liste en utilisant des structures de type ``list`` en Python.
 :::
@@ -59,21 +29,37 @@ Une liste est une structure de données qui permet de stocker des données et d'
 C'est un type abstrait de données :
 
 * linéaire : les données sont stockées dans une structure unidimensionnelle ;
-* indexé : chaque donnée est associée à une valeur ;
 * ordonné : les données sont présentées les unes après les autres.
+:::
+
+::: {.callout-note}
+## Liste chaînée ou tableau ?
+
+Ne pas confondre deux structures :
+
+* un **tableau** (ou liste **indexée**) associe chaque donnée à un **indice** : on peut accéder directement à n'importe quel élément ;
+* une **liste chaînée** (le TAD étudié ici) ne donne accès qu'à la **tête** : pour atteindre un élément, il faut parcourir la liste depuis le début.
+
+Le type abstrait étudié dans ce chapitre est la **liste chaînée** : elle n'est **pas indexée**.
 :::
 
 Une liste est une collection finie de données. On appelle **tête** le premier élément de la liste et **queue** la liste privée de son premier élément. Il est seulement possible d'ajouter et de lire une donnée en tête de la liste.
 
-L'**interface** minimale  permettant de définir le type abstrait de données "liste" comporte cinq fonctions, qui sont appelées **primitives** :
+L'**interface** minimale permettant de définir le type abstrait de données "liste" comporte cinq fonctions, qui sont appelées **primitives** :
 
 * ``creer()``, qui crée une liste vide ;
-* ``ajouter(element, liste)``, qui ajoute un élément en tête de liste ; ces deux première primitives peuvent parfois se regrouper en une seule ;
+* ``ajouter(element, liste)``, qui ajoute un élément en tête de liste ; ces deux premières primitives peuvent parfois se regrouper en une seule ;
 * ``tete(liste)``, qui renvoie la valeur de l'élément en tête de liste ;
 * ``queue(liste)``, qui renvoie la liste privée de son premier élément ;
 * ``est_vide(liste)``, qui renvoie vrai si la liste est vide, faux sinon.
 
-Ce type abstrait de données est non mutable (il n'y a pas de primitive permettant de modifier la valeur d'un élément de la liste).
+::: {.callout-note}
+## Mutabilité
+
+La version **fonctionnelle** (avec des tuples) de ce type abstrait est **non mutable** : aucune primitive ne permet de modifier une liste existante, on en crée toujours une nouvelle.
+
+La version **objet** présentée plus bas, en revanche, **modifie** l'objet sur lequel on travaille : elle est donc **mutable**. Il faut en avoir conscience lorsque l'on choisit une implémentation.
+:::
 
 **Remarque** : on peut selon les besoins ajouter d'autres fonctions permettant par exemple de renvoyer la longueur d'une liste, de rechercher un élément ou d'accéder au ième élément ...
 
@@ -92,14 +78,14 @@ tete(L1)
 L2 = queue(L1)
 ```
 
-* La ligne 1 créée une liste vide ``L`` ;
+* La ligne 1 crée une liste vide ``L`` ;
 * La ligne 2 affiche ``True`` car la liste ``L`` est vide ;
 * Après exécution de la ligne 3, la liste ``L1`` contient l'élément unique 12 ;
 * La ligne 4 affiche ``False`` car la liste ``L1`` n'est pas vide ;
-* Après exécution de la ligne 5, la liste ``L1`` contient les éléments 12 et 15 ;
-* La ligne 6 montre que l'on peut **composer** les ajouts pour ajouter en une seule fois plusieurs éléments. Après exécution de la ligne 6, la liste ``L1`` contient les éléments 12, 15, 11 et 1 ;
+* Après exécution de la ligne 5, la liste ``L1`` contient les éléments 15 puis 12 (en partant de la tête) ;
+* La ligne 6 montre que l'on peut **composer** les ajouts pour ajouter en une seule fois plusieurs éléments. Après exécution de la ligne 6, la liste ``L1`` contient les éléments 1, 11, 15 et 12 (en partant de la tête) ;
 * La ligne 7 affiche 1 : c'est la tête de la liste (il s'agit du dernier élément ajouté) ;
-* La ligne 8 définit une liste ``L2`` égale à la queue de la liste ``L1``. ``L2`` contient donc les éléments 12, 15 et 11.
+* La ligne 8 définit une liste ``L2`` égale à la queue de la liste ``L1``. ``L2`` contient donc les éléments 11, 15 et 12 (en partant de la tête).
 :::
 
 ## 2. Du point de vue concepteur : implémentation(s)
@@ -113,13 +99,12 @@ Nous allons ici utiliser des tuples et la programmation fonctionnelle (rappel : 
 ````python
 """ Implémentation du type abstrait "liste" avec des tuples"""
 
-
 def creer() -> tuple:
     """Retourne une liste vide"""
     return ()
 
 
-def ajouter(element: all, liste: tuple) -> tuple:
+def ajouter(element, liste: tuple) -> tuple:
     """Retourne la liste avec l'élément ajouté en tête de liste"""
     return (element, liste)
 
@@ -129,7 +114,7 @@ def est_vide(liste: tuple) -> bool:
     return liste == ()
 
 
-def tete(liste: tuple) -> all:
+def tete(liste: tuple):
     """Retourne la tête de la liste"""
     assert not est_vide(liste), "Erreur : liste vide"
     return liste[0]
@@ -156,11 +141,23 @@ $$L=(1, (11, (15, (12, ()))))$$
 
 On remarquera que la fonction ``longueur`` est codée sans boucle, mais de façon récursive, afin de correspondre au **paradigme fonctionnel**.
 
+::: {.callout-note}
+## Complexité de cette implémentation
+
+* ``ajouter``, ``tete``, ``queue`` et ``est_vide`` sont en $\mathcal{O}(1)$ : elles ne dépendent pas du nombre d'éléments ;
+* ``longueur`` est en $\mathcal{O}(n)$ : elle parcourt toute la liste.
+:::
+
 ### Implémentation en POO
 
 Conformément au programme, on se limite à une version **naïve** de la POO. On pourra à titre d'exercice reprendre cette implémentation en respectant les règles plus strictes édictées dans [les compléments de cours sur la POO](../01-langagesProgr/POO_complements.qmd).
 
 On définit ci-dessous une **liste chaînée** : chaque chaînon est constitué de l'élément qui fait partie de la liste et de la référence à l'élément suivant. C'est la classe ``Chainon`` qui implémente cette structure. L'objet ``Liste`` est défini à partir de son premier élément (tête) et ses primitives sont définies sous forme de **méthodes**.
+
+```{mermaid}
+graph LR
+    H["head"] --> C1["12"] --> C2["15"] --> C3["11"] --> C4["1"] --> N["None"]
+```
 
 ````python
 """Implémentation du type abstrait liste en POO"""
@@ -188,10 +185,12 @@ class Liste:
 
     def tete(self):
         """Retourne la valeur de la tête de la liste"""
+        assert not self.est_vide(), "Erreur : liste vide"
         return self.head.element
 
     def queue(self):
         """Retourne la queue de la liste, c.-à-d. la liste privée de sa tête"""
+        assert not self.est_vide(), "Erreur : liste vide"
         new_liste = Liste()
         new_liste.head = self.head.suivant
         return new_liste
@@ -206,6 +205,12 @@ class Liste:
         return long
 
 ````
+
+::: {.callout-warning}
+## Limite de cette implémentation
+
+Ici, la liste vide est représentée par un chaînon dont l'élément vaut ``None``. Ce choix peut poser problème : si l'on ajoute réellement la valeur ``None`` dans la liste, ``est_vide`` renverra ``True`` à tort. Une implémentation plus robuste utiliserait un attribut ``taille`` ou un booléen dédié pour savoir si la liste est vide.
+:::
 
 On peut améliorer l'implémentation en redéfinissant les méthodes spéciales ``__len__`` (qui permettra de taper ``len(L)`` au lieu de ``L.longueur()``) et ``__str__`` (qui permettra d'utiliser l'instruction ``print(L)``).
 

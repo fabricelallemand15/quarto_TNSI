@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Listes (Cours) – NSI - Terminale</title>
+<title>Chapitre 3 - Partie 2 - Listes – NSI - Terminale</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -114,6 +114,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Recherche"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script defer="" src="../libs/katex/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -373,7 +376,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/listes_cours.html">Listes (Cours)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/listes_cours.html">Chapitre 3 - Partie 2 - Listes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -473,43 +476,43 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/interfaces_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interfaces et implémentations (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 1 - Interfaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/listes_cours.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Listes (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 2 - Listes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/piles_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Piles (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 3 - Piles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/files_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Files (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 4 - Files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/listes_exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Listes, Piles et Files (Exercices)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 6 - Listes, Piles et Files (Exercices)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/dictionnaires_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictionnaires (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 5 - Dictionnaires</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/dictionnaires_exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictionnaires (Exercices)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 7 - Dictionnaires (Exercices)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -964,9 +967,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/listes_cours.html">Listes (Cours)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/listes_cours.html">Chapitre 3 - Partie 2 - Listes</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Listes (Cours)</h1>
+<h1 class="title">Chapitre 3 - Partie 2 - Listes</h1>
 </div>
 
 
@@ -993,7 +996,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En Première, nous avons utilisé le type de données <code>list</code> de Python pour représenter des <strong>tableaux</strong> de d’éléments de même type. Le vocabulaire propre à Python peut induire en erreur et amener à penser que le type “liste” est déjà connu. La structure <code>list</code> de Python réalise en fait l’implémentation du type abstrait de données “tableau dynamique” et doit être laissée de côté, malgré l’utilisation du même vocabulaire.</p>
+<p>En Première, nous avons utilisé le type de données <code>list</code> de Python pour représenter des <strong>tableaux</strong> d’éléments de même type. Le vocabulaire propre à Python peut induire en erreur et amener à penser que le type “liste” est déjà connu. La structure <code>list</code> de Python réalise en fait l’implémentation du type abstrait de données “tableau dynamique” et doit être laissée de côté, malgré l’utilisation du même vocabulaire.</p>
 <p>Cela ne nous empêchera pas d’implémenter le type abstrait de données liste en utilisant des structures de type <code>list</code> en Python.</p>
 </div>
 </div>
@@ -1013,21 +1016,51 @@ window.Quarto = {
 <p>C’est un type abstrait de données :</p>
 <ul>
 <li>linéaire : les données sont stockées dans une structure unidimensionnelle ;</li>
-<li>indexé : chaque donnée est associée à une valeur ;</li>
 <li>ordonné : les données sont présentées les unes après les autres.</li>
 </ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Liste chaînée ou tableau ?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ne pas confondre deux structures :</p>
+<ul>
+<li>un <strong>tableau</strong> (ou liste <strong>indexée</strong>) associe chaque donnée à un <strong>indice</strong> : on peut accéder directement à n’importe quel élément ;</li>
+<li>une <strong>liste chaînée</strong> (le TAD étudié ici) ne donne accès qu’à la <strong>tête</strong> : pour atteindre un élément, il faut parcourir la liste depuis le début.</li>
+</ul>
+<p>Le type abstrait étudié dans ce chapitre est la <strong>liste chaînée</strong> : elle n’est <strong>pas indexée</strong>.</p>
 </div>
 </div>
 <p>Une liste est une collection finie de données. On appelle <strong>tête</strong> le premier élément de la liste et <strong>queue</strong> la liste privée de son premier élément. Il est seulement possible d’ajouter et de lire une donnée en tête de la liste.</p>
 <p>L’<strong>interface</strong> minimale permettant de définir le type abstrait de données “liste” comporte cinq fonctions, qui sont appelées <strong>primitives</strong> :</p>
 <ul>
 <li><code>creer()</code>, qui crée une liste vide ;</li>
-<li><code>ajouter(element, liste)</code>, qui ajoute un élément en tête de liste ; ces deux première primitives peuvent parfois se regrouper en une seule ;</li>
+<li><code>ajouter(element, liste)</code>, qui ajoute un élément en tête de liste ; ces deux premières primitives peuvent parfois se regrouper en une seule ;</li>
 <li><code>tete(liste)</code>, qui renvoie la valeur de l’élément en tête de liste ;</li>
 <li><code>queue(liste)</code>, qui renvoie la liste privée de son premier élément ;</li>
 <li><code>est_vide(liste)</code>, qui renvoie vrai si la liste est vide, faux sinon.</li>
 </ul>
-<p>Ce type abstrait de données est non mutable (il n’y a pas de primitive permettant de modifier la valeur d’un élément de la liste).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Mutabilité
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La version <strong>fonctionnelle</strong> (avec des tuples) de ce type abstrait est <strong>non mutable</strong> : aucune primitive ne permet de modifier une liste existante, on en crée toujours une nouvelle.</p>
+<p>La version <strong>objet</strong> présentée plus bas, en revanche, <strong>modifie</strong> l’objet sur lequel on travaille : elle est donc <strong>mutable</strong>. Il faut en avoir conscience lorsque l’on choisit une implémentation.</p>
+</div>
+</div>
 <p><strong>Remarque</strong> : on peut selon les besoins ajouter d’autres fonctions permettant par exemple de renvoyer la longueur d’une liste, de rechercher un élément ou d’accéder au ième élément …</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1049,14 +1082,14 @@ window.Quarto = {
 <span id="cb1-7"><a href="#cb1-7"></a>tete(L1)</span>
 <span id="cb1-8"><a href="#cb1-8"></a>L2 <span class="op">=</span> queue(L1)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li>La ligne 1 créée une liste vide <code>L</code> ;</li>
+<li>La ligne 1 crée une liste vide <code>L</code> ;</li>
 <li>La ligne 2 affiche <code>True</code> car la liste <code>L</code> est vide ;</li>
 <li>Après exécution de la ligne 3, la liste <code>L1</code> contient l’élément unique 12 ;</li>
 <li>La ligne 4 affiche <code>False</code> car la liste <code>L1</code> n’est pas vide ;</li>
-<li>Après exécution de la ligne 5, la liste <code>L1</code> contient les éléments 12 et 15 ;</li>
-<li>La ligne 6 montre que l’on peut <strong>composer</strong> les ajouts pour ajouter en une seule fois plusieurs éléments. Après exécution de la ligne 6, la liste <code>L1</code> contient les éléments 12, 15, 11 et 1 ;</li>
+<li>Après exécution de la ligne 5, la liste <code>L1</code> contient les éléments 15 puis 12 (en partant de la tête) ;</li>
+<li>La ligne 6 montre que l’on peut <strong>composer</strong> les ajouts pour ajouter en une seule fois plusieurs éléments. Après exécution de la ligne 6, la liste <code>L1</code> contient les éléments 1, 11, 15 et 12 (en partant de la tête) ;</li>
 <li>La ligne 7 affiche 1 : c’est la tête de la liste (il s’agit du dernier élément ajouté) ;</li>
-<li>La ligne 8 définit une liste <code>L2</code> égale à la queue de la liste <code>L1</code>. <code>L2</code> contient donc les éléments 12, 15 et 11.</li>
+<li>La ligne 8 définit une liste <code>L2</code> égale à la queue de la liste <code>L1</code>. <code>L2</code> contient donc les éléments 11, 15 et 12 (en partant de la tête).</li>
 </ul>
 </div>
 </div>
@@ -1069,48 +1102,76 @@ window.Quarto = {
 <p>Nous allons ici utiliser des tuples et la programmation fonctionnelle (rappel : fonctions pures, pas d’affectations, pas de boucles).</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">""" Implémentation du type abstrait "liste" avec des tuples"""</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> creer() <span class="op">-&gt;</span> <span class="bu">tuple</span>:</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne une liste vide"""</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> creer() <span class="op">-&gt;</span> <span class="bu">tuple</span>:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne une liste vide"""</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ajouter(element: <span class="bu">all</span>, liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">tuple</span>:</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la liste avec l'élément ajouté en tête de liste"""</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (element, liste)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ajouter(element, liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">tuple</span>:</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la liste avec l'élément ajouté en tête de liste"""</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (element, liste)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> est_vide(liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne True si la liste est vide et False sinon"""</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> liste <span class="op">==</span> ()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> est_vide(liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne True si la liste est vide et False sinon"""</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> liste <span class="op">==</span> ()</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tete(liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">all</span>:</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la tête de la liste"""</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> est_vide(liste), <span class="st">"Erreur : liste vide"</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> liste[<span class="dv">0</span>]</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tete(liste: <span class="bu">tuple</span>):</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la tête de la liste"""</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> est_vide(liste), <span class="st">"Erreur : liste vide"</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> liste[<span class="dv">0</span>]</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> queue(liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">tuple</span>:</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la queue de la liste"""</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> est_vide(liste), <span class="st">"Erreur : liste vide"</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> liste[<span class="dv">1</span>]</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> queue(liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">tuple</span>:</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne la queue de la liste"""</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> est_vide(liste), <span class="st">"Erreur : liste vide"</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> liste[<span class="dv">1</span>]</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> longueur(liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne le nombre d'éléments de la liste"""</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> est_vide(liste):</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> longueur(liste[<span class="dv">1</span>])</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> longueur(liste: <span class="bu">tuple</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne le nombre d'éléments de la liste"""</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> est_vide(liste):</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span> <span class="op">+</span> longueur(liste[<span class="dv">1</span>])</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Avec cette représentation une liste est toujours un tuple à deux éléments dont le premier est la tête de la liste (le dernier élément ajouté) et le deuxième est la queue (c’est donc une liste).</p>
 <p><span class="math display">L=(1, (11, (15, (12, ()))))</span></p>
 <p>On remarquera que la fonction <code>longueur</code> est codée sans boucle, mais de façon récursive, afin de correspondre au <strong>paradigme fonctionnel</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Complexité de cette implémentation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>ajouter</code>, <code>tete</code>, <code>queue</code> et <code>est_vide</code> sont en <span class="math inline">\mathcal{O}(1)</span> : elles ne dépendent pas du nombre d’éléments ;</li>
+<li><code>longueur</code> est en <span class="math inline">\mathcal{O}(n)</span> : elle parcourt toute la liste.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="implémentation-en-poo" class="level3">
 <h3 class="anchored" data-anchor-id="implémentation-en-poo">Implémentation en POO</h3>
 <p>Conformément au programme, on se limite à une version <strong>naïve</strong> de la POO. On pourra à titre d’exercice reprendre cette implémentation en respectant les règles plus strictes édictées dans <a href="../01-langagesProgr/POO_complements.html">les compléments de cours sur la POO</a>.</p>
 <p>On définit ci-dessous une <strong>liste chaînée</strong> : chaque chaînon est constitué de l’élément qui fait partie de la liste et de la référence à l’élément suivant. C’est la classe <code>Chainon</code> qui implémente cette structure. L’objet <code>Liste</code> est défini à partir de son premier élément (tête) et ses primitives sont définies sous forme de <strong>méthodes</strong>.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    H["head"] --&gt; C1["12"] --&gt; C2["15"] --&gt; C3["11"] --&gt; C4["1"] --&gt; N["None"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""Implémentation du type abstrait liste en POO"""</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1136,22 +1197,37 @@ window.Quarto = {
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> tete(<span class="va">self</span>):</span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne la valeur de la tête de la liste"""</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.head.element</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> queue(<span class="va">self</span>):</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne la queue de la liste, c.-à-d. la liste privée de sa tête"""</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        new_liste <span class="op">=</span> Liste()</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        new_liste.head <span class="op">=</span> <span class="va">self</span>.head.suivant</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> new_liste</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> longueur(<span class="va">self</span>):</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne la longueur de la liste"""</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">long</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        chainon <span class="op">=</span> <span class="va">self</span>.head</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> chainon.element <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>            chainon <span class="op">=</span> chainon.suivant</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>            <span class="bu">long</span> <span class="op">=</span> <span class="bu">long</span> <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">long</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="kw">not</span> <span class="va">self</span>.est_vide(), <span class="st">"Erreur : liste vide"</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.head.element</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> queue(<span class="va">self</span>):</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne la queue de la liste, c.-à-d. la liste privée de sa tête"""</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="kw">not</span> <span class="va">self</span>.est_vide(), <span class="st">"Erreur : liste vide"</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        new_liste <span class="op">=</span> Liste()</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        new_liste.head <span class="op">=</span> <span class="va">self</span>.head.suivant</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> new_liste</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> longueur(<span class="va">self</span>):</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne la longueur de la liste"""</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        <span class="bu">long</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        chainon <span class="op">=</span> <span class="va">self</span>.head</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> chainon.element <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>            chainon <span class="op">=</span> chainon.suivant</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>            <span class="bu">long</span> <span class="op">=</span> <span class="bu">long</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">long</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Limite de cette implémentation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ici, la liste vide est représentée par un chaînon dont l’élément vaut <code>None</code>. Ce choix peut poser problème : si l’on ajoute réellement la valeur <code>None</code> dans la liste, <code>est_vide</code> renverra <code>True</code> à tort. Une implémentation plus robuste utiliserait un attribut <code>taille</code> ou un booléen dédié pour savoir si la liste est vide.</p>
+</div>
+</div>
 <p>On peut améliorer l’implémentation en redéfinissant les méthodes spéciales <code>__len__</code> (qui permettra de taper <code>len(L)</code> au lieu de <code>L.longueur()</code>) et <code>__str__</code> (qui permettra d’utiliser l’instruction <code>print(L)</code>).</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.longueur()</span>
@@ -1592,13 +1668,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../02-structures/interfaces_cours.html" class="pagination-link" aria-label="Interfaces et implémentations (Cours)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interfaces et implémentations (Cours)</span>
+      <a href="../02-structures/interfaces_cours.html" class="pagination-link" aria-label="Chapitre 3 - Partie 1 - Interfaces">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapitre 3 - Partie 1 - Interfaces</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../02-structures/piles_cours.html" class="pagination-link" aria-label="Piles (Cours)">
-        <span class="nav-page-text">Piles (Cours)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../02-structures/piles_cours.html" class="pagination-link" aria-label="Chapitre 3 - Partie 3 - Piles">
+        <span class="nav-page-text">Chapitre 3 - Partie 3 - Piles</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

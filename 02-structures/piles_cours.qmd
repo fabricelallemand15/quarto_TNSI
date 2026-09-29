@@ -1,44 +1,9 @@
 ---
-title: Piles (Cours)
+title: Chapitre 3 - Partie 3 - Piles
 lang: fr
-tbl-cap-location: bottom
-crossref: 
-    eq-prefix: Éq.
-    tbl-prefix: Tableau
-    tbl-title: Tableau
-format:
-    html: default
-#     pdf: 
-#         geometry:
-#             - top=20mm
-#             - bottom=20mm
-#             - left=20mm
-#             - right=20mm
-#             - heightrounded
-#         include-in-header:
-#             - text:
-#                 \usepackage{fancyhdr}
-#                 \pagestyle{fancy}
-#                 \usepackage{lastpage}
-#         include-before-body:
-#             - text:
-#                 \lhead{Spécialité NSI} 
-#                 \rhead{Terminale}
-#                 \chead{} 
-#                 \cfoot{}
-#                 \lfoot{Lycée \'Emile Duclaux}
-#                 \rfoot{Page \thepage/\pageref{LastPage}}
-#                 \renewcommand{\headrulewidth}{0pt}
-#                 \renewcommand{\footrulewidth}{0pt}
-#                 \thispagestyle{fancy}
-#                 \vspace{-2cm}
-#         biblio-title: Sources utilisées
-#         reference-location: document
-#         # fig-pos: h
-#         # fig-width: 4
-#         # fig-height: 2.5
-#         keep-tex: true
-# format-links: [pdf, tex]
+# papersize: a4
+# format: pdf
+# keep-tex: true
 ---
 
 ## 1. Du point de vue utilisateur : interface
@@ -77,8 +42,8 @@ L'opération d'empilement se dit "push" en anglais, l'opération de dépilement 
 * algorithme d'un navigateur pour pouvoir mémoriser les pages web et revenir en arrière (ou ré-avancer) sur certaines pages ;
 * stocker des actions et les annuler (ou les réappliquer), sur l'ordinateur (fonction CTRL+Z, et CTRL+Y) ;
 * coder une calculatrice en notation polonaise inversée (voir exercices) ;
-* algorithme du parcours en profondeur pour les arbres et les graphes, par exemple, pour résoudre un labyrinthe, trouver un trajet sur une carte... (voir séquence 6) ;
-* écrire des versions itératives de certains algorithmes récursifs (voir séquence 1) ;
+* algorithme du parcours en profondeur pour les arbres et les graphes, par exemple, pour résoudre un labyrinthe, trouver un trajet sur une carte... (voir chapitre dédié) ;
+* écrire des versions itératives de certains algorithmes récursifs (voir le chapitre sur la récursivité) ;
 * illustration du fonctionnement de la pile d'appels des fonctions lors de l'exécution d'un programme.
 :::
 
@@ -92,14 +57,14 @@ Supposons implémenté le type abstrait **pile**. Nous disposons d'une interface
     empiler(P,42)
     depiler(P)
     taille(P)
-    estVide(P)
+    est_vide(P)
 ```
 
 * L'exécution de la ligne 1 renvoie la valeur 22 et la pile est maintenant composée des éléments 12, 14, 8, 7 et 19 ;
 * L'exécution de la ligne 2 place l'élément 42 au sommet de la pile ;
 * L'exécution de la ligne 3 renvoie la valeur 42 et la pile est maintenant à nouveau composée des éléments 12, 14, 8, 7 et 19 ;
 * La ligne 4 renvoie la taille de ``P`` : 5 ;
-* La pile n'est pas vide, on obtient dont ``False``.
+* La pile n'est pas vide, on obtient donc ``False``.
 :::
 
 ## 2. Du point de vue concepteur : implémentation(s)
@@ -135,20 +100,22 @@ def empiler(pile, element):
 def depiler(pile):
     """Retourne l'élément situé au sommet de la pile
     et le supprime de celle-ci"""
-    if not est_vide(pile):
-        return pile.pop()
-    else:
-        return None
+    assert not est_vide(pile), "Erreur : pile vide"
+    return pile.pop()
 
 
 def sommet(pile):
     """Retourne l'élément situé au sommet de la pile"""
-    if not est_vide(pile):
-        return pile[-1]
-    else:
-        return None
+    assert not est_vide(pile), "Erreur : pile vide"
+    return pile[-1]
 
 ````
+
+::: {.callout-note}
+## Remarque
+
+On peut aussi utiliser la classe ``collections.deque`` pour implémenter une pile : ses méthodes ``append`` et ``pop`` sont également en $\mathcal{O}(1)$.
+:::
 
 Cette implémentation sera testée en exercices.
 
@@ -157,6 +124,11 @@ Cette implémentation sera testée en exercices.
 Conformément au programme, on se limite à une version **naïve** de la POO. On pourra à titre d'exercice reprendre cette implémentation en respectant les règles plus strictes édictées dans [les compléments de cours sur la POO](../01-langagesProgr/POO_complements.qmd).
 
 On reprend l'idée de **chaînon** utilisée pour les listes.
+
+```{mermaid}
+graph TD
+    S["summit"] --> C1["22"] --> C2["19"] --> C3["7"] --> C4["8"] --> C5["14"] --> C6["12"] --> N["None"]
+```
 
 ````python
 """Implémentation du type abstrait pile en POO"""
@@ -172,12 +144,12 @@ class Chainon:
 class Pile:
     def __init__(self):
         """Crée une pile vide"""
-        self.summit = Chainon()
+        self.sommet_pile = Chainon()
 
     def taille(self):
         """Retourne le nombre d'éléments dans la pile"""
         long = 0
-        chainon = self.summit
+        chainon = self.sommet_pile
         while chainon.element is not None:
             chainon = chainon.suivant
             long = long + 1
@@ -185,22 +157,24 @@ class Pile:
 
     def est_vide(self) -> bool:
         """Retourne True si la pile est vide et False sinon"""
-        return self.summit.element is None
+        return self.sommet_pile.element is None
 
     def empiler(self, element):
-        """Empile element qu sommet de la pile"""
-        self.summit = Chainon(element, self.summit)
+        """Empile element au sommet de la pile"""
+        self.sommet_pile = Chainon(element, self.sommet_pile)
 
     def depiler(self):
         """Retourne l'élément situé au sommet de la pile
         et le supprime de celle-ci"""
-        item = self.summit.element
-        self.summit = self.summit.suivant
+        assert not self.est_vide(), "Erreur : pile vide"
+        item = self.sommet_pile.element
+        self.sommet_pile = self.sommet_pile.suivant
         return item
 
     def sommet(self):
         """Retourne la valeur du sommet de la pile"""
-        return self.summit.element
+        assert not self.est_vide(), "Erreur : pile vide"
+        return self.sommet_pile.element
 
 
 ````
@@ -212,7 +186,7 @@ Cette implémentation sera testée en exercices.
 
 On peut comparer en termes de temps d'exécution l'efficacité de ces deux implémentations.
 
-On utilise pour cela la bibliothèque ``timeit`` présentée dans [cet article](https://www.sitelf.fr/wp/2022/06/05/mesurer-le-temps-dexecution-dun-fragment-de-code/){ target=_blank }.
+On utilise pour cela la bibliothèque ``timeit`` présentée dans [cet article](https://mathsinfolycee.fr/posts/timeexec/){ target=_blank }.
 
 Pour cela, on ajoute les lignes suivantes au code de la version "listes Python" :
 
@@ -220,13 +194,7 @@ Pour cela, on ajoute les lignes suivantes au code de la version "listes Python" 
 import timeit
 
 ma_pile = creer()
-print(timeit.timeit('empiler(ma_pile,1)', number=10000000, globals=globals()))
-````
-
-on obtient : 
-
-````python
-2.2605971000011778
+print(timeit.timeit('empiler(ma_pile,1)', number=100000, globals=globals()))
 ````
 
 et les lignes suivantes au code de la version "POO" :
@@ -235,18 +203,26 @@ et les lignes suivantes au code de la version "POO" :
 import timeit
 
 ma_pile = Pile()
-print(timeit.timeit('ma_pile.empiler(1)', number=10000000, globals=globals()))
+print(timeit.timeit('ma_pile.empiler(1)', number=100000, globals=globals()))
 ````
 
-on obtient : 
+::: {.callout-note}
+## Protocole de mesure
 
-````python
-7.292327400005888
-````
+Les temps obtenus dépendent de la machine, de la version de Python et de la charge du système. Il faut donc comparer les deux valeurs **sur la même machine** et dans les **mêmes conditions**, et non se fier à des valeurs absolues. On peut répéter la mesure plusieurs fois (paramètre ``repeat``) et prendre la moyenne.
+:::
 
-On constate donc que la version utilisant les listes Python est beaucoup plus efficace. Cela s'explique notamment par le fait que l'implantation avec les listes Python repose sur une programmation avancée et optimisée, contrairement à l'implantation objet qui a été construite sans utiliser de structure externe.
+On constate que la version utilisant les listes Python est beaucoup plus efficace. Cela s'explique notamment par le fait que l'implantation avec les listes Python repose sur une programmation avancée et optimisée, contrairement à l'implantation objet qui a été construite sans utiliser de structure externe.
 
 Néanmoins, on peut montrer que, dans les deux implémentations, les opérations d'empilement et de dépilement sont en $\mathcal{O}(1)$, ce qui signifie que le temps d'exécution ne dépend pas du nombre de données.
+
+::: {.callout-warning}
+## Attention à la complexité de ``taille``
+
+Dans la version « listes Python », ``taille`` est en $\mathcal{O}(1)$ (``len`` est immédiat).
+
+Dans la version POO, en revanche, ``taille`` **parcourt tous les chaînons** : elle est en $\mathcal{O}(n)$. Il faut donc éviter de l'appeler à répétition dans une boucle.
+:::
 
 L'utilisation des listes est la plus efficace. Néanmoins, l'implantation objet a pour avantage de montrer et d'assimiler le fonctionnement interne de cette structure. C'est donc un meilleur outil d'apprentissage des concepts.
 :::

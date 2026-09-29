@@ -1,44 +1,9 @@
 ---
-title: Listes, Piles et Files (Exercices)
+title: Chapitre 3 - Listes, Piles et Files (Exercices)
 lang: fr
-tbl-cap-location: bottom
-crossref: 
-    eq-prefix: Éq.
-    tbl-prefix: Tableau
-    tbl-title: Tableau
-format:
-    html: default
-#     pdf: 
-#         geometry:
-#             - top=20mm
-#             - bottom=20mm
-#             - left=20mm
-#             - right=20mm
-#             - heightrounded
-#         include-in-header:
-#             - text:
-#                 \usepackage{fancyhdr}
-#                 \pagestyle{fancy}
-#                 \usepackage{lastpage}
-#         include-before-body:
-#             - text:
-#                 \lhead{Spécialité NSI} 
-#                 \rhead{Terminale}
-#                 \chead{} 
-#                 \cfoot{}
-#                 \lfoot{Lycée \'Emile Duclaux}
-#                 \rfoot{Page \thepage/\pageref{LastPage}}
-#                 \renewcommand{\headrulewidth}{0pt}
-#                 \renewcommand{\footrulewidth}{0pt}
-#                 \thispagestyle{fancy}
-#                 \vspace{-2cm}
-#         biblio-title: Sources utilisées
-#         reference-location: document
-#         # fig-pos: h
-#         # fig-width: 4
-#         # fig-height: 2.5
-#         keep-tex: true
-# format-links: [pdf, tex]
+# papersize: a4
+# format: pdf
+# keep-tex: true
 ---
 
 _Les exercices précédés du symbole {{< fa desktop >}} sont à faire sur machine, en sauvegardant le fichier si nécessaire._
@@ -130,7 +95,7 @@ Donnez l'état de la pile `pile` après l'exécution de ce programme.
 
 ## {{< fa solid pencil-alt >}} {{< fa desktop >}} Exercice 5 (piles)
 
-Ce problème propose une application concrète des piles. Il s'agit d'écrire une fonction qui contrôle si une expression mathématique, donnée sous forme d'une chaîne de caractères, est bien parenthésée, c'est- à-dire s'il y a autant de parenthèses ouvrantes que de fermantes, et qu'elles sont bien placées
+Ce problème propose une application concrète des piles. Il s'agit d'écrire une fonction qui contrôle si une expression mathématique, donnée sous forme d'une chaîne de caractères, est bien parenthésée, c'est-à-dire s'il y a autant de parenthèses ouvrantes que de fermantes, et qu'elles sont bien placées.
 
 Par exemple :
 
@@ -148,7 +113,7 @@ on retourne faux )
 
 1. En utilisant l'une des structures pile du cours, écrire une fonction ``verification(expr)`` qui vérifie si une expression mathématique passée en paramètre est correctement parenthésée.
 2. Proposer un jeu de tests unitaires vérifiant le bon fonctionnement de la fonction.
-3. Faire en sorte que le programme tienne compte également des [.
+3. Faire en sorte que le programme tienne compte également des crochets ``[`` ``]`` et des accolades ``{`` ``}``.
 
 ## {{< fa solid pencil-alt >}} Exercice 6 (files)
 
@@ -193,6 +158,14 @@ for i in tab:
 Donnez l'état de la file `file` après l'exécution de ce programme
 
 *Expérimenter ensuite ces commandes dans la console Python*.
+
+## {{< fa solid pencil-alt >}} Exercice 8 (complexité)
+
+On reprend les deux implémentations de la pile vues dans le cours (listes Python et POO).
+
+1. En utilisant la bibliothèque ``timeit``, mesurer le temps d'exécution de ``empiler`` pour les deux implémentations, avec ``number=100000``.
+2. Comparer les résultats obtenus et expliquer l'écart observé.
+3. Mesurer maintenant le temps d'exécution de ``taille`` pour les deux implémentations. Que constate-t-on ? Expliquer.
 
 ## {{< fa solid pencil-alt >}} Exercices tombés au bac
 

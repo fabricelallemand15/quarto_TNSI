@@ -1,44 +1,14 @@
 ---
-title: Interfaces et implémentations (Cours)
+title: Chapitre 3 - Partie 1 - Interfaces
 lang: fr
-tbl-cap-location: bottom
-crossref: 
-    eq-prefix: Éq.
-    tbl-prefix: Tableau
-    tbl-title: Tableau
-format:
-    html: default
-#     pdf: 
-#         geometry:
-#             - top=20mm
-#             - bottom=20mm
-#             - left=20mm
-#             - right=20mm
-#             - heightrounded
-#         include-in-header:
-#             - text:
-#                 \usepackage{fancyhdr}
-#                 \pagestyle{fancy}
-#                 \usepackage{lastpage}
-#         include-before-body:
-#             - text:
-#                 \lhead{Spécialité NSI} 
-#                 \rhead{Terminale}
-#                 \chead{} 
-#                 \cfoot{}
-#                 \lfoot{Lycée \'Emile Duclaux}
-#                 \rfoot{Page \thepage/\pageref{LastPage}}
-#                 \renewcommand{\headrulewidth}{0pt}
-#                 \renewcommand{\footrulewidth}{0pt}
-#                 \thispagestyle{fancy}
-#                 \vspace{-2cm}
-#         biblio-title: Sources utilisées
-#         reference-location: document
-#         # fig-pos: h
-#         # fig-width: 4
-#         # fig-height: 2.5
-#         keep-tex: true
-# format-links: [pdf, tex]
+# tbl-cap-location: bottom
+# papersize: a4
+# crossref: 
+#     eq-prefix: Éq.
+#     tbl-prefix: Tableau
+#     tbl-title: Tableau
+# format: pdf
+# keep-tex: true
 ---
 
 Nous allons dans ce chapitre nous intéresser aux **structures de données** comme les **listes**, les **piles**, les **files** et les **dictionnaires**.
@@ -50,21 +20,50 @@ Toutes ces structures de données sont des **types abstraits** qui doivent être
 ::: {.callout-tip}
 ## Définition
 
-**Implémenter** un algorithme, c'est le traduire dans un langage de programmation.
+**Implémenter** un **type abstrait de données** (TAD), c'est choisir une **représentation** concrète des données (par exemple un tuple, une liste Python, des objets...) puis coder les **opérations** (fonctions ou méthodes) qui agissent sur cette représentation.
+
+**Implémenter** un **algorithme**, c'est le traduire dans un langage de programmation.
+:::
+
+::: {.callout-note}
+## Structure de données, type abstrait, implémentation
+
+* Une **structure de données** est une manière d'organiser des données en mémoire.
+* Un **type abstrait de données** (TAD) est défini par les **données** qu'il contient et par les **opérations** que l'on peut effectuer sur elles, **sans référence** à la façon dont il est réalisé.
+* Une **implémentation** est une réalisation concrète d'un TAD dans un langage donné.
+
+Un même TAD peut donc avoir plusieurs implémentations.
 :::
 
 Pour un type abstrait donné, disons les dictionnaires, plusieurs implémentations sont possibles. Elles peuvent se différencier par leur rapidité d'exécution ou leur capacité à travailler avec des données de grande taille par exemple.
 
-Une fois implémenté, le type abstrait doit pouvoir être **utilisé** par un programmeur (utilisateur). Cet utilisateur n'a pas besoin de connaître comment le type "dictionnaire" a été concrètement implémenté dans le langage de programmation qu'il utilise. Par contre, il faut qu'il connaisse précisément les actions qu'i peut réaliser sur ce type de données.
+Une fois implémenté, le type abstrait doit pouvoir être **utilisé** par un programmeur (utilisateur). Cet utilisateur n'a pas besoin de connaître comment le type "dictionnaire" a été concrètement implémenté dans le langage de programmation qu'il utilise. Par contre, il faut qu'il connaisse précisément les actions qu'il peut réaliser sur ce type de données.
 
 Par exemple, un dictionnaire associe à un ensemble de clés un ensemble de valeurs (ce sont les données) et permet notamment les opérations :
 
 * d'ajout d'un couple clé-valeur ;
 * de suppression d'une clé, et donc de la valeur correspondante ;
-* de modification de la valeur associée à une clé et ;
+* de modification de la valeur associée à une clé ;
 * de recherche de la valeur correspondant à une clé.
 
-L'ensemble des fonctions (méthodes) associées à un type abstrait constitue son **interface**. Ces fonctions et leurs spécifications, permettent à l'utilisateur d'utiliser le type abstrait dans son programme.
+L'ensemble des fonctions (méthodes) associées à un type abstrait constitue son **interface**. Ces fonctions et leurs spécifications permettent à l'utilisateur d'utiliser le type abstrait dans son programme.
+
+::: {.callout-note}
+## Schéma de principe : la « boîte noire »
+
+Le schéma ci-dessous résume la relation entre les trois acteurs. L'utilisateur ne voit que l'**interface** (la façade) ; l'**implémentation** reste cachée derrière, comme une **boîte noire**.
+
+```{mermaid}
+graph LR
+    U["Utilisateur<br/>(programme client)"] -- "appelle les primitives" --> I["Interface<br/>(API : creer, empiler, ...)"]
+    I -- "est réalisée par" --> M["Implémentation<br/>(tuples, listes, POO...)"]
+    M -- "renvoie un résultat" --> U
+```
+
+* L'**utilisateur** ne connaît que les **spécifications** de l'interface (nom des primitives, paramètres, résultat) ;
+* l'**interface** est le seul point de contact : elle **encapsule** l'implémentation ;
+* l'**implémentation** peut changer librement tant que l'interface est préservée.
+:::
 
 Quand on utilise une bibliothèque contenant l'implémentation de structures de données, l'ensemble de ces spécifications est nommée API (Application Programming Interface, Interface de Programmation en français).
 
@@ -85,4 +84,30 @@ L'usage des bibliothèques permet à chaque programmeur d'ajouter des structures
     - d'outils de correction des problèmes de programmation ;
 * une meilleure lisibilité du code de l'application.
 
+::: {.callout-caution}
+## Exemple : changer l'implémentation sans changer l'interface
+
+Imaginons un programme client qui utilise une pile uniquement à travers son interface (`empiler`, `depiler`, `est_vide`, ...). Si le concepteur remplace l'implémentation « listes Python » par une implémentation « POO avec chaînons », le programme client **n'a pas besoin d'être modifié** : seule l'interface compte pour l'utilisateur. C'est tout l'intérêt de l'encapsulation.
+:::
+
+::: {.callout-note}
+## Complexité : un rappel
+
+Dans la suite du chapitre, nous parlerons de la **complexité** des opérations. On note :
+
+* $\mathcal{O}(1)$ : le temps d'exécution **ne dépend pas** du nombre $n$ de données ;
+* $\mathcal{O}(n)$ : le temps d'exécution est **proportionnel** au nombre $n$ de données.
+
+Ainsi, une opération en $\mathcal{O}(1)$ reste rapide même sur de grandes structures, alors qu'une opération en $\mathcal{O}(n)$ ralentit lorsque la structure grandit.
+:::
+
+## Feuille de route
+
 Dans la suite de ce chapitre, nous allons étudier successivement les listes, les piles, les files et les dictionnaires du point de vue du concepteur (implémentation) et de l'utilisateur (interface).
+
+| Structure | Données | Primitives principales |
+|---|---|---|
+| Liste | suite ordonnée d'éléments | `creer`, `ajouter`, `tete`, `queue`, `est_vide` |
+| Pile | éléments empilés (LIFO) | `creer`, `empiler`, `depiler`, `sommet`, `est_vide`, `taille` |
+| File | éléments en attente (FIFO) | `creer`, `enfiler`, `defiler`, `tete`, `est_vide`, `taille` |
+| Dictionnaire | couples clé:valeur | `creer`, `ajouter`, `modifier`, `supprimer`, `rechercher` |

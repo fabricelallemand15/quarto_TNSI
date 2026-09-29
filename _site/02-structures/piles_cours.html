@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Piles (Cours) – NSI - Terminale</title>
+<title>Chapitre 3 - Partie 3 - Piles – NSI - Terminale</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -117,6 +117,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Recherche"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script defer="" src="../libs/katex/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -376,7 +379,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/piles_cours.html">Piles (Cours)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/piles_cours.html">Chapitre 3 - Partie 3 - Piles</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -476,43 +479,43 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/interfaces_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interfaces et implémentations (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 1 - Interfaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/listes_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Listes (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 2 - Listes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/piles_cours.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Piles (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 3 - Piles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/files_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Files (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 4 - Files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/listes_exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Listes, Piles et Files (Exercices)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 6 - Listes, Piles et Files (Exercices)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/dictionnaires_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictionnaires (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 5 - Dictionnaires</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/dictionnaires_exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictionnaires (Exercices)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 7 - Dictionnaires (Exercices)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -967,9 +970,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/piles_cours.html">Piles (Cours)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/piles_cours.html">Chapitre 3 - Partie 3 - Piles</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Piles (Cours)</h1>
+<h1 class="title">Chapitre 3 - Partie 3 - Piles</h1>
 </div>
 
 
@@ -1040,8 +1043,8 @@ window.Quarto = {
 <li>algorithme d’un navigateur pour pouvoir mémoriser les pages web et revenir en arrière (ou ré-avancer) sur certaines pages ;</li>
 <li>stocker des actions et les annuler (ou les réappliquer), sur l’ordinateur (fonction CTRL+Z, et CTRL+Y) ;</li>
 <li>coder une calculatrice en notation polonaise inversée (voir exercices) ;</li>
-<li>algorithme du parcours en profondeur pour les arbres et les graphes, par exemple, pour résoudre un labyrinthe, trouver un trajet sur une carte… (voir séquence 6) ;</li>
-<li>écrire des versions itératives de certains algorithmes récursifs (voir séquence 1) ;</li>
+<li>algorithme du parcours en profondeur pour les arbres et les graphes, par exemple, pour résoudre un labyrinthe, trouver un trajet sur une carte… (voir chapitre dédié) ;</li>
+<li>écrire des versions itératives de certains algorithmes récursifs (voir le chapitre sur la récursivité) ;</li>
 <li>illustration du fonctionnement de la pile d’appels des fonctions lors de l’exécution d’un programme.</li>
 </ul>
 </div>
@@ -1061,13 +1064,13 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2"></a>    empiler(P,<span class="dv">42</span>)</span>
 <span id="cb1-3"><a href="#cb1-3"></a>    depiler(P)</span>
 <span id="cb1-4"><a href="#cb1-4"></a>    taille(P)</span>
-<span id="cb1-5"><a href="#cb1-5"></a>    estVide(P)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-5"><a href="#cb1-5"></a>    est_vide(P)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>L’exécution de la ligne 1 renvoie la valeur 22 et la pile est maintenant composée des éléments 12, 14, 8, 7 et 19 ;</li>
 <li>L’exécution de la ligne 2 place l’élément 42 au sommet de la pile ;</li>
 <li>L’exécution de la ligne 3 renvoie la valeur 42 et la pile est maintenant à nouveau composée des éléments 12, 14, 8, 7 et 19 ;</li>
 <li>La ligne 4 renvoie la taille de <code>P</code> : 5 ;</li>
-<li>La pile n’est pas vide, on obtient dont <code>False</code>.</li>
+<li>La pile n’est pas vide, on obtient donc <code>False</code>.</li>
 </ul>
 </div>
 </div>
@@ -1103,24 +1106,46 @@ window.Quarto = {
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> depiler(pile):</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne l'élément situé au sommet de la pile</span></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">    et le supprime de celle-ci"""</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> est_vide(pile):</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> pile.pop()</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sommet(pile):</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne l'élément situé au sommet de la pile"""</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> est_vide(pile):</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> pile[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> est_vide(pile), <span class="st">"Erreur : pile vide"</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pile.pop()</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sommet(pile):</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Retourne l'élément situé au sommet de la pile"""</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="kw">not</span> est_vide(pile), <span class="st">"Erreur : pile vide"</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pile[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Remarque
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On peut aussi utiliser la classe <code>collections.deque</code> pour implémenter une pile : ses méthodes <code>append</code> et <code>pop</code> sont également en <span class="math inline">\mathcal{O}(1)</span>.</p>
+</div>
+</div>
 <p>Cette implémentation sera testée en exercices.</p>
 </section>
 <section id="implémentation-en-poo" class="level3">
 <h3 class="anchored" data-anchor-id="implémentation-en-poo">Implémentation en POO</h3>
 <p>Conformément au programme, on se limite à une version <strong>naïve</strong> de la POO. On pourra à titre d’exercice reprendre cette implémentation en respectant les règles plus strictes édictées dans <a href="../01-langagesProgr/POO_complements.html">les compléments de cours sur la POO</a>.</p>
 <p>On reprend l’idée de <strong>chaînon</strong> utilisée pour les listes.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    S["summit"] --&gt; C1["22"] --&gt; C2["19"] --&gt; C3["7"] --&gt; C4["8"] --&gt; C5["14"] --&gt; C6["12"] --&gt; N["None"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""Implémentation du type abstrait pile en POO"""</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1134,12 +1159,12 @@ window.Quarto = {
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Pile:</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Crée une pile vide"""</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.summit <span class="op">=</span> Chainon()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sommet_pile <span class="op">=</span> Chainon()</span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> taille(<span class="va">self</span>):</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne le nombre d'éléments dans la pile"""</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">long</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        chainon <span class="op">=</span> <span class="va">self</span>.summit</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        chainon <span class="op">=</span> <span class="va">self</span>.sommet_pile</span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> chainon.element <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>            chainon <span class="op">=</span> chainon.suivant</span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>            <span class="bu">long</span> <span class="op">=</span> <span class="bu">long</span> <span class="op">+</span> <span class="dv">1</span></span>
@@ -1147,23 +1172,25 @@ window.Quarto = {
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> est_vide(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne True si la pile est vide et False sinon"""</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.summit.element <span class="kw">is</span> <span class="va">None</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.sommet_pile.element <span class="kw">is</span> <span class="va">None</span></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> empiler(<span class="va">self</span>, element):</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Empile element qu sommet de la pile"""</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.summit <span class="op">=</span> Chainon(element, <span class="va">self</span>.summit)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Empile element au sommet de la pile"""</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sommet_pile <span class="op">=</span> Chainon(element, <span class="va">self</span>.sommet_pile)</span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> depiler(<span class="va">self</span>):</span>
 <span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne l'élément situé au sommet de la pile</span></span>
 <span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">        et le supprime de celle-ci"""</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> <span class="va">self</span>.summit.element</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.summit <span class="op">=</span> <span class="va">self</span>.summit.suivant</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> item</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sommet(<span class="va">self</span>):</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne la valeur du sommet de la pile"""</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.summit.element</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="kw">not</span> <span class="va">self</span>.est_vide(), <span class="st">"Erreur : pile vide"</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> <span class="va">self</span>.sommet_pile.element</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sommet_pile <span class="op">=</span> <span class="va">self</span>.sommet_pile.suivant</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> item</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sommet(<span class="va">self</span>):</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Retourne la valeur du sommet de la pile"""</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="kw">not</span> <span class="va">self</span>.est_vide(), <span class="st">"Erreur : pile vide"</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.sommet_pile.element</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette implémentation sera testée en exercices.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1176,23 +1203,46 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>On peut comparer en termes de temps d’exécution l’efficacité de ces deux implémentations.</p>
-<p>On utilise pour cela la bibliothèque <code>timeit</code> présentée dans <a href="https://www.sitelf.fr/wp/2022/06/05/mesurer-le-temps-dexecution-dun-fragment-de-code/" target="_blank">cet article</a>.</p>
+<p>On utilise pour cela la bibliothèque <code>timeit</code> présentée dans <a href="https://mathsinfolycee.fr/posts/timeexec/" target="_blank">cet article</a>.</p>
 <p>Pour cela, on ajoute les lignes suivantes au code de la version “listes Python” :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> timeit</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ma_pile <span class="op">=</span> creer()</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(timeit.timeit(<span class="st">'empiler(ma_pile,1)'</span>, number<span class="op">=</span><span class="dv">10000000</span>, <span class="bu">globals</span><span class="op">=</span><span class="bu">globals</span>()))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>on obtient :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fl">2.2605971000011778</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(timeit.timeit(<span class="st">'empiler(ma_pile,1)'</span>, number<span class="op">=</span><span class="dv">100000</span>, <span class="bu">globals</span><span class="op">=</span><span class="bu">globals</span>()))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>et les lignes suivantes au code de la version “POO” :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> timeit</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ma_pile <span class="op">=</span> Pile()</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(timeit.timeit(<span class="st">'ma_pile.empiler(1)'</span>, number<span class="op">=</span><span class="dv">10000000</span>, <span class="bu">globals</span><span class="op">=</span><span class="bu">globals</span>()))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>on obtient :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fl">7.292327400005888</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<p>On constate donc que la version utilisant les listes Python est beaucoup plus efficace. Cela s’explique notamment par le fait que l’implantation avec les listes Python repose sur une programmation avancée et optimisée, contrairement à l’implantation objet qui a été construite sans utiliser de structure externe.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> timeit</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>ma_pile <span class="op">=</span> Pile()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(timeit.timeit(<span class="st">'ma_pile.empiler(1)'</span>, number<span class="op">=</span><span class="dv">100000</span>, <span class="bu">globals</span><span class="op">=</span><span class="bu">globals</span>()))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Protocole de mesure
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Les temps obtenus dépendent de la machine, de la version de Python et de la charge du système. Il faut donc comparer les deux valeurs <strong>sur la même machine</strong> et dans les <strong>mêmes conditions</strong>, et non se fier à des valeurs absolues. On peut répéter la mesure plusieurs fois (paramètre <code>repeat</code>) et prendre la moyenne.</p>
+</div>
+</div>
+<p>On constate que la version utilisant les listes Python est beaucoup plus efficace. Cela s’explique notamment par le fait que l’implantation avec les listes Python repose sur une programmation avancée et optimisée, contrairement à l’implantation objet qui a été construite sans utiliser de structure externe.</p>
 <p>Néanmoins, on peut montrer que, dans les deux implémentations, les opérations d’empilement et de dépilement sont en <span class="math inline">\mathcal{O}(1)</span>, ce qui signifie que le temps d’exécution ne dépend pas du nombre de données.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Attention à la complexité de <code>taille</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dans la version « listes Python », <code>taille</code> est en <span class="math inline">\mathcal{O}(1)</span> (<code>len</code> est immédiat).</p>
+<p>Dans la version POO, en revanche, <code>taille</code> <strong>parcourt tous les chaînons</strong> : elle est en <span class="math inline">\mathcal{O}(n)</span>. Il faut donc éviter de l’appeler à répétition dans une boucle.</p>
+</div>
+</div>
 <p>L’utilisation des listes est la plus efficace. Néanmoins, l’implantation objet a pour avantage de montrer et d’assimiler le fonctionnement interne de cette structure. C’est donc un meilleur outil d’apprentissage des concepts.</p>
 </div>
 </div>
@@ -1619,13 +1669,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../02-structures/listes_cours.html" class="pagination-link" aria-label="Listes (Cours)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Listes (Cours)</span>
+      <a href="../02-structures/listes_cours.html" class="pagination-link" aria-label="Chapitre 3 - Partie 2 - Listes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapitre 3 - Partie 2 - Listes</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../02-structures/files_cours.html" class="pagination-link" aria-label="Files (Cours)">
-        <span class="nav-page-text">Files (Cours)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../02-structures/files_cours.html" class="pagination-link" aria-label="Chapitre 3 - Partie 4 - Files">
+        <span class="nav-page-text">Chapitre 3 - Partie 4 - Files</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

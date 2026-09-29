@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Interfaces et implémentations (Cours) – NSI - Terminale</title>
+<title>Chapitre 3 - Partie 1 - Interfaces – NSI - Terminale</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,7 +79,53 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Recherche"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script defer="" src="../libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="../libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -295,7 +341,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Interfaces et implémentations (Cours)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Chapitre 3 - Partie 1 - Interfaces</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -395,43 +441,43 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/interfaces_cours.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Interfaces et implémentations (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 1 - Interfaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/listes_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Listes (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 2 - Listes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/piles_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Piles (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 3 - Piles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/files_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Files (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 4 - Files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/listes_exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Listes, Piles et Files (Exercices)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 6 - Listes, Piles et Files (Exercices)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/dictionnaires_cours.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictionnaires (Cours)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 5 - Dictionnaires</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02-structures/dictionnaires_exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dictionnaires (Exercices)</span></a>
+ <span class="menu-text">Chapitre 3 - Partie 7 - Dictionnaires (Exercices)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -868,16 +914,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#feuille-de-route" id="toc-feuille-de-route" class="nav-link active" data-scroll-target="#feuille-de-route">Feuille de route</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Interfaces et implémentations (Cours)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Ch. 3 - Structures linéaires : listes, piles, files et dictionnaires - Interface et implémentation</a></li><li class="breadcrumb-item"><a href="../02-structures/interfaces_cours.html">Chapitre 3 - Partie 1 - Interfaces</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Interfaces et implémentations (Cours)</h1>
+<h1 class="title">Chapitre 3 - Partie 1 - Interfaces</h1>
 </div>
 
 
@@ -907,19 +959,71 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Implémenter</strong> un algorithme, c’est le traduire dans un langage de programmation.</p>
+<p><strong>Implémenter</strong> un <strong>type abstrait de données</strong> (TAD), c’est choisir une <strong>représentation</strong> concrète des données (par exemple un tuple, une liste Python, des objets…) puis coder les <strong>opérations</strong> (fonctions ou méthodes) qui agissent sur cette représentation.</p>
+<p><strong>Implémenter</strong> un <strong>algorithme</strong>, c’est le traduire dans un langage de programmation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Structure de données, type abstrait, implémentation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Une <strong>structure de données</strong> est une manière d’organiser des données en mémoire.</li>
+<li>Un <strong>type abstrait de données</strong> (TAD) est défini par les <strong>données</strong> qu’il contient et par les <strong>opérations</strong> que l’on peut effectuer sur elles, <strong>sans référence</strong> à la façon dont il est réalisé.</li>
+<li>Une <strong>implémentation</strong> est une réalisation concrète d’un TAD dans un langage donné.</li>
+</ul>
+<p>Un même TAD peut donc avoir plusieurs implémentations.</p>
 </div>
 </div>
 <p>Pour un type abstrait donné, disons les dictionnaires, plusieurs implémentations sont possibles. Elles peuvent se différencier par leur rapidité d’exécution ou leur capacité à travailler avec des données de grande taille par exemple.</p>
-<p>Une fois implémenté, le type abstrait doit pouvoir être <strong>utilisé</strong> par un programmeur (utilisateur). Cet utilisateur n’a pas besoin de connaître comment le type “dictionnaire” a été concrètement implémenté dans le langage de programmation qu’il utilise. Par contre, il faut qu’il connaisse précisément les actions qu’i peut réaliser sur ce type de données.</p>
+<p>Une fois implémenté, le type abstrait doit pouvoir être <strong>utilisé</strong> par un programmeur (utilisateur). Cet utilisateur n’a pas besoin de connaître comment le type “dictionnaire” a été concrètement implémenté dans le langage de programmation qu’il utilise. Par contre, il faut qu’il connaisse précisément les actions qu’il peut réaliser sur ce type de données.</p>
 <p>Par exemple, un dictionnaire associe à un ensemble de clés un ensemble de valeurs (ce sont les données) et permet notamment les opérations :</p>
 <ul>
 <li>d’ajout d’un couple clé-valeur ;</li>
 <li>de suppression d’une clé, et donc de la valeur correspondante ;</li>
-<li>de modification de la valeur associée à une clé et ;</li>
+<li>de modification de la valeur associée à une clé ;</li>
 <li>de recherche de la valeur correspondant à une clé.</li>
 </ul>
-<p>L’ensemble des fonctions (méthodes) associées à un type abstrait constitue son <strong>interface</strong>. Ces fonctions et leurs spécifications, permettent à l’utilisateur d’utiliser le type abstrait dans son programme.</p>
+<p>L’ensemble des fonctions (méthodes) associées à un type abstrait constitue son <strong>interface</strong>. Ces fonctions et leurs spécifications permettent à l’utilisateur d’utiliser le type abstrait dans son programme.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Schéma de principe : la « boîte noire »
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le schéma ci-dessous résume la relation entre les trois acteurs. L’utilisateur ne voit que l’<strong>interface</strong> (la façade) ; l’<strong>implémentation</strong> reste cachée derrière, comme une <strong>boîte noire</strong>.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    U["Utilisateur&lt;br/&gt;(programme client)"] -- "appelle les primitives" --&gt; I["Interface&lt;br/&gt;(API : creer, empiler, ...)"]
+    I -- "est réalisée par" --&gt; M["Implémentation&lt;br/&gt;(tuples, listes, POO...)"]
+    M -- "renvoie un résultat" --&gt; U
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li>L’<strong>utilisateur</strong> ne connaît que les <strong>spécifications</strong> de l’interface (nom des primitives, paramètres, résultat) ;</li>
+<li>l’<strong>interface</strong> est le seul point de contact : elle <strong>encapsule</strong> l’implémentation ;</li>
+<li>l’<strong>implémentation</strong> peut changer librement tant que l’interface est préservée.</li>
+</ul>
+</div>
+</div>
 <p>Quand on utilise une bibliothèque contenant l’implémentation de structures de données, l’ensemble de ces spécifications est nommée API (Application Programming Interface, Interface de Programmation en français).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -947,9 +1051,79 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>une meilleure lisibilité du code de l’application.</li>
 </ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Mise en garde</span>Exemple : changer l’implémentation sans changer l’interface
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imaginons un programme client qui utilise une pile uniquement à travers son interface (<code>empiler</code>, <code>depiler</code>, <code>est_vide</code>, …). Si le concepteur remplace l’implémentation « listes Python » par une implémentation « POO avec chaînons », le programme client <strong>n’a pas besoin d’être modifié</strong> : seule l’interface compte pour l’utilisateur. C’est tout l’intérêt de l’encapsulation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Complexité : un rappel
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dans la suite du chapitre, nous parlerons de la <strong>complexité</strong> des opérations. On note :</p>
+<ul>
+<li><span class="math inline">\mathcal{O}(1)</span> : le temps d’exécution <strong>ne dépend pas</strong> du nombre <span class="math inline">n</span> de données ;</li>
+<li><span class="math inline">\mathcal{O}(n)</span> : le temps d’exécution est <strong>proportionnel</strong> au nombre <span class="math inline">n</span> de données.</li>
+</ul>
+<p>Ainsi, une opération en <span class="math inline">\mathcal{O}(1)</span> reste rapide même sur de grandes structures, alors qu’une opération en <span class="math inline">\mathcal{O}(n)</span> ralentit lorsque la structure grandit.</p>
+</div>
+</div>
+<section id="feuille-de-route" class="level2">
+<h2 class="anchored" data-anchor-id="feuille-de-route">Feuille de route</h2>
 <p>Dans la suite de ce chapitre, nous allons étudier successivement les listes, les piles, les files et les dictionnaires du point de vue du concepteur (implémentation) et de l’utilisateur (interface).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Structure</th>
+<th>Données</th>
+<th>Primitives principales</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Liste</td>
+<td>suite ordonnée d’éléments</td>
+<td><code>creer</code>, <code>ajouter</code>, <code>tete</code>, <code>queue</code>, <code>est_vide</code></td>
+</tr>
+<tr class="even">
+<td>Pile</td>
+<td>éléments empilés (LIFO)</td>
+<td><code>creer</code>, <code>empiler</code>, <code>depiler</code>, <code>sommet</code>, <code>est_vide</code>, <code>taille</code></td>
+</tr>
+<tr class="odd">
+<td>File</td>
+<td>éléments en attente (FIFO)</td>
+<td><code>creer</code>, <code>enfiler</code>, <code>defiler</code>, <code>tete</code>, <code>est_vide</code>, <code>taille</code></td>
+</tr>
+<tr class="even">
+<td>Dictionnaire</td>
+<td>couples clé:valeur</td>
+<td><code>creer</code>, <code>ajouter</code>, <code>modifier</code>, <code>supprimer</code>, <code>rechercher</code></td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1374,8 +1548,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../02-structures/listes_cours.html" class="pagination-link" aria-label="Listes (Cours)">
-        <span class="nav-page-text">Listes (Cours)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../02-structures/listes_cours.html" class="pagination-link" aria-label="Chapitre 3 - Partie 2 - Listes">
+        <span class="nav-page-text">Chapitre 3 - Partie 2 - Listes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1396,7 +1570,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://forge.apps.education.fr/lallemandfabrice/quarto-tnsi/issues/new" class="toc-action"><i class="bi bi-git"></i>Faire part d'un problème</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
