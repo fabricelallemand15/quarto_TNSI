@@ -1,5 +1,5 @@
 ---
-title: Chapitre 3 - Partie 1 - Interfaces
+title: Ch. 3 - Partie 1 - Interfaces
 lang: fr
 # tbl-cap-location: bottom
 # papersize: a4

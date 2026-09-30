@@ -1,5 +1,5 @@
 ---
-title: Chapitre 3 - Partie 5 - Dictionnaires
+title: Ch. 3 - Partie 5 - Dictionnaires
 lang: fr
 # papersize: a4
 # format: pdf

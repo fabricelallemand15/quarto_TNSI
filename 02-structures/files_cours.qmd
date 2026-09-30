@@ -1,5 +1,5 @@
 ---
-title: Chapitre 3 - Partie 4 - Files
+title: Ch. 3 - Partie 4 - Files
 lang: fr
 # papersize: a4
 # format: pdf

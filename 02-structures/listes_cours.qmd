@@ -1,5 +1,5 @@
 ---
-title: Chapitre 3 - Partie 2 - Listes
+title: Ch. 3 - Partie 2 - Listes
 lang: fr
 # papersize: a4
 # tbl-cap-location: bottom
