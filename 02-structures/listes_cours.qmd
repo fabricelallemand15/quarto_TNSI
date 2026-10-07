@@ -156,7 +156,7 @@ On définit ci-dessous une **liste chaînée** : chaque chaînon est constitué 
 
 ```{mermaid}
 graph LR
-    H["head"] --> C1["12"] --> C2["15"] --> C3["11"] --> C4["1"] --> N["None"]
+    H["head"] --> C1["1"] --> C2["11"] --> C3["15"] --> C4["12"] --> N["None"]
 ```
 
 ````python
